@@ -102,14 +102,14 @@ class Oauth2TokenProvider extends AccessTokenProvider {
   @override
   Future<String> getAuthorizationToken(Uri uri,
       [Map<String, Object>? additionalAuthenticationContext]) async {
-    return 'bearer-token';
+    return 'your-bearer-token';
   }
 }
 ```
 Compared to the simple client, using no authorization, this client
 uses a BaseBearerTokenAuthenticationProvider, that requires a Oauth2TokenProvider.
 
-Before you run the client make sure that you have set the baseUrl correctly
+Before you run the client make sure that you have set the adapter.baseUrl correctly
 and that you have replaced the string 'your-bearer-token' wih a valid bearer token.
 
 Getting a valid bearer token is out of scope for this document.

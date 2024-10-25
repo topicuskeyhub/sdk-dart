@@ -1,7 +1,5 @@
 import 'package:kiota_abstractions/kiota_abstractions.dart';
-import 'package:kiota_serialization_form/kiota_serialization_form.dart';
 import 'package:kiota_serialization_json/kiota_serialization_json.dart';
-import 'package:kiota_serialization_text/kiota_serialization_text.dart';
 import './account/account_request_builder.dart';
 import './audit/audit_request_builder.dart';
 import './certificate/certificate_request_builder.dart';
@@ -27,7 +25,7 @@ import './vaultrecord/vaultrecord_request_builder.dart';
 import './webhook/webhook_request_builder.dart';
 
 /// The main entry point of the SDK, exposes the configuration and the fluent API.
-class KeyHubApi extends BaseRequestBuilder<KeyHubApi> {
+class KeyHubClient extends BaseRequestBuilder<KeyHubClient> {
     ///  The account property
     AccountRequestBuilder get account {
         return AccountRequestBuilder(pathParameters, requestAdapter);
@@ -122,20 +120,16 @@ class KeyHubApi extends BaseRequestBuilder<KeyHubApi> {
     }
     /// Clones the requestbuilder.
     @override
-     KeyHubApi clone() {
-        return KeyHubApi(requestAdapter);
+     KeyHubClient clone() {
+        return KeyHubClient(requestAdapter);
     }
-    /// Instantiates a new [KeyHubApi] and sets the default values.
+    /// Instantiates a new [KeyHubClient] and sets the default values.
     /// <param name="requestAdapter">requestAdapter</param>
-     KeyHubApi(RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}", {}) {
+     KeyHubClient(RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}", {}) {
         ApiClientBuilder.registerDefaultSerializer(() => JsonSerializationWriterFactory());
-        ApiClientBuilder.registerDefaultSerializer(() => TextSerializationWriterFactory());
-        ApiClientBuilder.registerDefaultSerializer(() => FormSerializationWriterFactory());
         ApiClientBuilder.registerDefaultDeserializer(() => JsonParseNodeFactory());
-        ApiClientBuilder.registerDefaultDeserializer(() => FormParseNodeFactory());
-        ApiClientBuilder.registerDefaultDeserializer(() => TextParseNodeFactory());
         if (requestAdapter.baseUrl == null || requestAdapter.baseUrl!.isEmpty) {
-            requestAdapter.baseUrl = 'https://keyhub.topicusonderwijs.nl/keyhub/rest/v1';
+            requestAdapter.baseUrl = 'https://keyhub.example.com/keyhub/rest/v1';
         }
         pathParameters['baseurl'] = requestAdapter.baseUrl;
     }

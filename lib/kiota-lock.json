@@ -12,13 +12,13 @@
   "includeAdditionalData": true,
   "disableSSLValidation": false,
   "serializers": [
-    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory"
+    "kiota_serialization_json/kiota_serialization_json.JsonSerializationWriterFactory"
   ],
   "deserializers": [
-    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory"
+    "kiota_serialization_json/kiota_serialization_json.JsonParseNodeFactory"
   ],
   "structuredMimeTypes": [
-    "application/vnd.topicus.keyhub+json"
+    "application/vnd.topicus.keyhub\u002Bjson"
   ],
   "includePatterns": [],
   "excludePatterns": [],

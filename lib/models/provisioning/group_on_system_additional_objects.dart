@@ -17,16 +17,16 @@ class GroupOnSystemAdditionalObjects implements AdditionalDataHolder, Parsable {
     ///  The serviceAccounts property
     ServiceAccountPrimerLinkableWrapper? serviceAccounts;
     /// Instantiates a new [GroupOnSystemAdditionalObjects] and sets the default values.
-     GroupOnSystemAdditionalObjects() :  
+    GroupOnSystemAdditionalObjects() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static GroupOnSystemAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
+    static GroupOnSystemAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
         return GroupOnSystemAdditionalObjects();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['accessProfileProvisioning'] = (node) => accessProfileProvisioning = node.getObjectValue<AccessProfileProvisioningLinkableWrapper>(AccessProfileProvisioningLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
@@ -37,7 +37,7 @@ class GroupOnSystemAdditionalObjects implements AdditionalDataHolder, Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeObjectValue<AccessProfileProvisioningLinkableWrapper>('accessProfileProvisioning', accessProfileProvisioning);
         writer.writeObjectValue<AuditInfo>('audit', audit);
         writer.writeObjectValue<ProvisioningGroupLinkableWrapper>('provgroups', provgroups);

@@ -26,12 +26,12 @@ class AccountDirectory extends AccountDirectoryPrimer implements Parsable {
     ///  The usernameCustomizable property
     bool? usernameCustomizable;
     /// Instantiates a new [AccountDirectory] and sets the default values.
-     AccountDirectory() : super() {
+    AccountDirectory() : super() {
         typeEscaped = 'directory.AccountDirectory';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AccountDirectory createFromDiscriminatorValue(ParseNode parseNode) {
+    static AccountDirectory createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'directory.InternalDirectory' => InternalDirectory(),
@@ -44,7 +44,7 @@ class AccountDirectory extends AccountDirectoryPrimer implements Parsable {
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<AccountDirectoryAdditionalObjects>(AccountDirectoryAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['baseOrganizationalUnit'] = (node) => baseOrganizationalUnit = node.getObjectValue<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);
@@ -58,7 +58,7 @@ class AccountDirectory extends AccountDirectoryPrimer implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<AccountDirectoryAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeObjectValue<OrganizationalUnitPrimer>('baseOrganizationalUnit', baseOrganizationalUnit);

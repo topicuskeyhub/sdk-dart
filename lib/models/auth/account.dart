@@ -52,12 +52,12 @@ class Account extends AccountPrimer implements Parsable {
     ///  The validInDirectory property
     bool? validInDirectory;
     /// Instantiates a new [Account] and sets the default values.
-     Account() : super() {
+    Account() : super() {
         typeEscaped = 'auth.Account';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static Account createFromDiscriminatorValue(ParseNode parseNode) {
+    static Account createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'auth.InternalAccount' => InternalAccount(),
@@ -66,7 +66,7 @@ class Account extends AccountPrimer implements Parsable {
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['accountPermissions'] = (node) => accountPermissions = node.getCollectionOfObjectValues<Permission>(Permission.createFromDiscriminatorValue);
         deserializerMap['active'] = (node) => active = node.getBoolValue();
@@ -93,7 +93,7 @@ class Account extends AccountPrimer implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<AccountAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeObjectValue<AccountDirectoryPrimer>('directory', directory);

@@ -10,16 +10,16 @@ class InternalAccountAdditionalObjects implements AdditionalDataHolder, Parsable
     ///  The reason property
     String? reason;
     /// Instantiates a new [InternalAccountAdditionalObjects] and sets the default values.
-     InternalAccountAdditionalObjects() :  
+    InternalAccountAdditionalObjects() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static InternalAccountAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
+    static InternalAccountAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
         return InternalAccountAdditionalObjects();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
         deserializerMap['reason'] = (node) => reason = node.getStringValue();
@@ -28,7 +28,7 @@ class InternalAccountAdditionalObjects implements AdditionalDataHolder, Parsable
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeObjectValue<AuditInfo>('audit', audit);
         writer.writeStringValue('reason', reason);
         writer.writeAdditionalData(additionalData);

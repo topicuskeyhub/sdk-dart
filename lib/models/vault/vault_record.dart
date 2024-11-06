@@ -22,17 +22,17 @@ class VaultRecord extends VaultRecordPrimer implements Parsable {
     ///  The warningPeriod property
     VaultRecordWarningPeriod? warningPeriod;
     /// Instantiates a new [VaultRecord] and sets the default values.
-     VaultRecord() : super() {
+    VaultRecord() : super() {
         typeEscaped = 'vault.VaultRecord';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static VaultRecord createFromDiscriminatorValue(ParseNode parseNode) {
+    static VaultRecord createFromDiscriminatorValue(ParseNode parseNode) {
         return VaultRecord();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<VaultRecordAdditionalObjects>(VaultRecordAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['derived'] = (node) => derived = node.getBoolValue();
@@ -47,7 +47,7 @@ class VaultRecord extends VaultRecordPrimer implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<VaultRecordAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeDateOnlyValue('endDate', endDate);

@@ -9,27 +9,27 @@ import './item/with_internalaccount_item_request_builder.dart';
 class InternalaccountRequestBuilder extends BaseRequestBuilder<InternalaccountRequestBuilder> {
     /// Gets an item from the ApiSdk.directory.item.internalaccount.item collection
     /// <param name="internalaccountid">internalaccountid</param>
-     WithInternalaccountItemRequestBuilder byInternalaccountid(int internalaccountid) {
+    WithInternalaccountItemRequestBuilder byInternalaccountid(int internalaccountid) {
         var urlTplParams = Map.of(pathParameters);
         urlTplParams.putIfAbsent("internalaccountid", ()=> internalaccountid);
         return WithInternalaccountItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
     @override
-     InternalaccountRequestBuilder clone() {
+    InternalaccountRequestBuilder clone() {
         return InternalaccountRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [InternalaccountRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     InternalaccountRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/directory/{directoryid}/internalaccount{?account*,additional*,any*,createdAfter*,createdBefore*,directory*,directoryOwnerGroup*,exclude*,hasBeenActive*,id*,modifiedSince*,organizationalUnit*,q*,sort*,status*}", pathParameters) ;
+    InternalaccountRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/directory/{directoryid}/internalaccount{?account*,additional*,any*,createdAfter*,createdBefore*,directory*,directoryOwnerGroup*,exclude*,hasBeenActive*,id*,modifiedSince*,organizationalUnit*,q*,sort*,status*}", pathParameters) ;
     /// Instantiates a new [InternalaccountRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     InternalaccountRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/directory/{directoryid}/internalaccount{?account*,additional*,any*,createdAfter*,createdBefore*,directory*,directoryOwnerGroup*,exclude*,hasBeenActive*,id*,modifiedSince*,organizationalUnit*,q*,sort*,status*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    InternalaccountRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/directory/{directoryid}/internalaccount{?account*,additional*,any*,createdAfter*,createdBefore*,directory*,directoryOwnerGroup*,exclude*,hasBeenActive*,id*,modifiedSince*,organizationalUnit*,q*,sort*,status*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Queries over all internal accounts within a directory. The various query parameters can be used to filter the response.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<InternalAccountLinkableWrapper?> getAsync([Function(RequestConfiguration<InternalaccountRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    Future<InternalAccountLinkableWrapper?> getAsync([Function(RequestConfiguration<InternalaccountRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -39,7 +39,7 @@ class InternalaccountRequestBuilder extends BaseRequestBuilder<InternalaccountRe
     /// Creates one or more new internal accounts within a directory and returns the newly created accounts.
     /// <param name="body">body</param>
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<InternalAccountLinkableWrapper?> postAsync(InternalAccountLinkableWrapper body, [Function(RequestConfiguration<InternalaccountRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
+    Future<InternalAccountLinkableWrapper?> postAsync(InternalAccountLinkableWrapper body, [Function(RequestConfiguration<InternalaccountRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -48,20 +48,20 @@ class InternalaccountRequestBuilder extends BaseRequestBuilder<InternalaccountRe
     }
     /// Queries over all internal accounts within a directory. The various query parameters can be used to filter the response.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toGetRequestInformation([Function(RequestConfiguration<InternalaccountRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    RequestInformation toGetRequestInformation([Function(RequestConfiguration<InternalaccountRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<InternalaccountRequestBuilderGetQueryParameters>(requestConfiguration, () => InternalaccountRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
     /// Creates one or more new internal accounts within a directory and returns the newly created accounts.
     /// <param name="body">body</param>
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toPostRequestInformation(InternalAccountLinkableWrapper body, [Function(RequestConfiguration<InternalaccountRequestBuilderPostQueryParameters>)? requestConfiguration]) {
+    RequestInformation toPostRequestInformation(InternalAccountLinkableWrapper body, [Function(RequestConfiguration<InternalaccountRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<InternalaccountRequestBuilderPostQueryParameters>(requestConfiguration, () => InternalaccountRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=73', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
         return requestInfo;
     }
 }

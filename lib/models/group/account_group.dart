@@ -20,17 +20,17 @@ class AccountGroup extends GroupPrimer implements Parsable {
     ///  The visibleForProvisioning property
     bool? visibleForProvisioning;
     /// Instantiates a new [AccountGroup] and sets the default values.
-     AccountGroup() : super() {
+    AccountGroup() : super() {
         typeEscaped = 'group.AccountGroup';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AccountGroup createFromDiscriminatorValue(ParseNode parseNode) {
+    static AccountGroup createFromDiscriminatorValue(ParseNode parseNode) {
         return AccountGroup();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<AccountGroupAdditionalObjects>(AccountGroupAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['endDate'] = (node) => endDate = node.getDateOnlyValue();
@@ -44,7 +44,7 @@ class AccountGroup extends GroupPrimer implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<AccountGroupAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeDateOnlyValue('endDate', endDate);

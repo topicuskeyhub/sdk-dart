@@ -120,12 +120,12 @@ class KeyHubClient extends BaseRequestBuilder<KeyHubClient> {
     }
     /// Clones the requestbuilder.
     @override
-     KeyHubClient clone() {
+    KeyHubClient clone() {
         return KeyHubClient(requestAdapter);
     }
     /// Instantiates a new [KeyHubClient] and sets the default values.
     /// <param name="requestAdapter">requestAdapter</param>
-     KeyHubClient(RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}", {}) {
+    KeyHubClient(RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}", {}) {
         ApiClientBuilder.registerDefaultSerializer(() => JsonSerializationWriterFactory());
         ApiClientBuilder.registerDefaultDeserializer(() => JsonParseNodeFactory());
         if (requestAdapter.baseUrl == null || requestAdapter.baseUrl!.isEmpty) {

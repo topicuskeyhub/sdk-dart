@@ -6,20 +6,20 @@ import '../../models/group/groups_audit_stats.dart';
 class AuditstatsRequestBuilder extends BaseRequestBuilder<AuditstatsRequestBuilder> {
     /// Clones the requestbuilder.
     @override
-     AuditstatsRequestBuilder clone() {
+    AuditstatsRequestBuilder clone() {
         return AuditstatsRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [AuditstatsRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     AuditstatsRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/auditstats", pathParameters) ;
+    AuditstatsRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/auditstats", pathParameters) ;
     /// Instantiates a new [AuditstatsRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     AuditstatsRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/auditstats", {RequestInformation.rawUrlKey : rawUrl}) ;
+    AuditstatsRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/auditstats", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Returns the counts and statistics of groups within Topicus KeyHub.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<GroupsAuditStats?> getAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    Future<GroupsAuditStats?> getAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -28,10 +28,10 @@ class AuditstatsRequestBuilder extends BaseRequestBuilder<AuditstatsRequestBuild
     }
     /// Returns the counts and statistics of groups within Topicus KeyHub.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toGetRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    RequestInformation toGetRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
 }

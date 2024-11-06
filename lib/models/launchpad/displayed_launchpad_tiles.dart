@@ -6,17 +6,17 @@ class DisplayedLaunchpadTiles extends NonLinkable implements Parsable {
     ///  The items property
     Iterable<DisplayedLaunchpadTile>? items;
     /// Instantiates a new [DisplayedLaunchpadTiles] and sets the default values.
-     DisplayedLaunchpadTiles() : super() {
+    DisplayedLaunchpadTiles() : super() {
         typeEscaped = 'launchpad.DisplayedLaunchpadTiles';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static DisplayedLaunchpadTiles createFromDiscriminatorValue(ParseNode parseNode) {
+    static DisplayedLaunchpadTiles createFromDiscriminatorValue(ParseNode parseNode) {
         return DisplayedLaunchpadTiles();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['items'] = (node) => items = node.getCollectionOfObjectValues<DisplayedLaunchpadTile>(DisplayedLaunchpadTile.createFromDiscriminatorValue);
         return deserializerMap;
@@ -24,7 +24,7 @@ class DisplayedLaunchpadTiles extends NonLinkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeCollectionOfObjectValues<DisplayedLaunchpadTile>('items', items);
     }

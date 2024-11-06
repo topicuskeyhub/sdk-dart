@@ -7,6 +7,7 @@ import './auth/account.dart';
 import './auth/account_primer.dart';
 import './auth/internal_account.dart';
 import './auth/permission.dart';
+import './auth/stored_user_session.dart';
 import './certificate/certificate.dart';
 import './certificate/certificate_primer.dart';
 import './client/client_application.dart';
@@ -48,6 +49,7 @@ import './organization/organizational_unit_account.dart';
 import './organization/organizational_unit_primer.dart';
 import './profile/access_profile.dart';
 import './profile/access_profile_account.dart';
+import './profile/access_profile_account_with_attributes.dart';
 import './profile/access_profile_primer.dart';
 import './profile/access_profile_provisioning.dart';
 import './provisioning/abstract_provisioned_l_d_a_p.dart';
@@ -88,6 +90,7 @@ import './request/grant_group_on_system_request_request.dart';
 import './request/grant_service_account_group_request.dart';
 import './request/join_group_request.dart';
 import './request/join_vault_request.dart';
+import './request/link_directory_to_access_profile_request.dart';
 import './request/modification_request.dart';
 import './request/move_groups_request.dart';
 import './request/password_reset_request.dart';
@@ -108,6 +111,7 @@ import './request/transfer_provisioned_system_content_administration_request.dar
 import './request/transfer_provisioned_system_ownership_request.dart';
 import './request/transfer_service_account_administration_request.dart';
 import './request/update_group_membership_request.dart';
+import './request/update_license_request.dart';
 import './request/verify_internal_account_request.dart';
 import './serviceaccount/service_account.dart';
 import './serviceaccount/service_account_group.dart';
@@ -130,11 +134,11 @@ class Linkable implements AdditionalDataHolder, Parsable {
     ///  The Type property
     String? typeEscaped;
     /// Instantiates a new [Linkable] and sets the default values.
-     Linkable() :  
+    Linkable() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static Linkable createFromDiscriminatorValue(ParseNode parseNode) {
+    static Linkable createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'audit.AuditRecord' => AuditRecord(),
@@ -144,6 +148,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'auth.Account' => Account(),
             'auth.AccountPrimer' => AccountPrimer(),
             'auth.InternalAccount' => InternalAccount(),
+            'auth.StoredUserSession' => StoredUserSession(),
             'certificate.Certificate' => Certificate(),
             'certificate.CertificatePrimer' => CertificatePrimer(),
             'client.ClientApplication' => ClientApplication(),
@@ -184,6 +189,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'organization.OrganizationalUnitPrimer' => OrganizationalUnitPrimer(),
             'profile.AccessProfile' => AccessProfile(),
             'profile.AccessProfileAccount' => AccessProfileAccount(),
+            'profile.AccessProfileAccountWithAttributes' => AccessProfileAccountWithAttributes(),
             'profile.AccessProfilePrimer' => AccessProfilePrimer(),
             'profile.AccessProfileProvisioning' => AccessProfileProvisioning(),
             'provisioning.AbstractProvisionedLDAP' => AbstractProvisionedLDAP(),
@@ -224,6 +230,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'request.GrantServiceAccountGroupRequest' => GrantServiceAccountGroupRequest(),
             'request.JoinGroupRequest' => JoinGroupRequest(),
             'request.JoinVaultRequest' => JoinVaultRequest(),
+            'request.LinkDirectoryToAccessProfileRequest' => LinkDirectoryToAccessProfileRequest(),
             'request.ModificationRequest' => ModificationRequest(),
             'request.MoveGroupsRequest' => MoveGroupsRequest(),
             'request.PasswordResetRequest' => PasswordResetRequest(),
@@ -244,6 +251,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'request.TransferProvisionedSystemOwnershipRequest' => TransferProvisionedSystemOwnershipRequest(),
             'request.TransferServiceAccountAdministrationRequest' => TransferServiceAccountAdministrationRequest(),
             'request.UpdateGroupMembershipRequest' => UpdateGroupMembershipRequest(),
+            'request.UpdateLicenseRequest' => UpdateLicenseRequest(),
             'request.VerifyInternalAccountRequest' => VerifyInternalAccountRequest(),
             'serviceaccount.ServiceAccount' => ServiceAccount(),
             'serviceaccount.ServiceAccountGroup' => ServiceAccountGroup(),
@@ -259,7 +267,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['links'] = (node) => links = node.getCollectionOfObjectValues<Link>(Link.createFromDiscriminatorValue);
         deserializerMap['permissions'] = (node) => permissions = node.getCollectionOfObjectValues<Permission>(Permission.createFromDiscriminatorValue);
@@ -269,7 +277,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<Link>('links', links);
         writer.writeCollectionOfObjectValues<Permission>('permissions', permissions);
         writer.writeStringValue('\$type', typeEscaped);

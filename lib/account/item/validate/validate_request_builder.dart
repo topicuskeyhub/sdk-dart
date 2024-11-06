@@ -6,20 +6,20 @@ import '../../../models/error_report.dart';
 class ValidateRequestBuilder extends BaseRequestBuilder<ValidateRequestBuilder> {
     /// Clones the requestbuilder.
     @override
-     ValidateRequestBuilder clone() {
+    ValidateRequestBuilder clone() {
         return ValidateRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [ValidateRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     ValidateRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/{accountid}/validate", pathParameters) ;
+    ValidateRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/{accountid}/validate", pathParameters) ;
     /// Instantiates a new [ValidateRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     ValidateRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/{accountid}/validate", {RequestInformation.rawUrlKey : rawUrl}) ;
+    ValidateRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/{accountid}/validate", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Checks the validity of the account in its directory and returns the updated status.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<Account?> postAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    Future<Account?> postAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -28,10 +28,10 @@ class ValidateRequestBuilder extends BaseRequestBuilder<ValidateRequestBuilder> 
     }
     /// Checks the validity of the account in its directory and returns the updated status.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toPostRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    RequestInformation toPostRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
 }

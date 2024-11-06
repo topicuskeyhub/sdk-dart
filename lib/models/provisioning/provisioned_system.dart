@@ -46,12 +46,12 @@ class ProvisionedSystem extends ProvisionedSystemPrimer implements Parsable {
     ///  The usernamePrefix property
     String? usernamePrefix;
     /// Instantiates a new [ProvisionedSystem] and sets the default values.
-     ProvisionedSystem() : super() {
+    ProvisionedSystem() : super() {
         typeEscaped = 'provisioning.ProvisionedSystem';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ProvisionedSystem createFromDiscriminatorValue(ParseNode parseNode) {
+    static ProvisionedSystem createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'provisioning.AbstractProvisionedLDAP' => AbstractProvisionedLDAP(),
@@ -69,7 +69,7 @@ class ProvisionedSystem extends ProvisionedSystemPrimer implements Parsable {
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['accountCount'] = (node) => accountCount = node.getIntValue();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<ProvisionedSystemAdditionalObjects>(ProvisionedSystemAdditionalObjects.createFromDiscriminatorValue);
@@ -90,7 +90,7 @@ class ProvisionedSystem extends ProvisionedSystemPrimer implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<ProvisionedSystemAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeObjectValue<ProvisionedSystemCleanupPeriod>('cleanupPeriod', cleanupPeriod);

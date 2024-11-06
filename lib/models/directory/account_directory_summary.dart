@@ -17,17 +17,17 @@ class AccountDirectorySummary extends Linkable implements Parsable {
     ///  The usernameCustomizable property
     bool? usernameCustomizable;
     /// Instantiates a new [AccountDirectorySummary] and sets the default values.
-     AccountDirectorySummary() : super() {
+    AccountDirectorySummary() : super() {
         typeEscaped = 'directory.AccountDirectorySummary';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AccountDirectorySummary createFromDiscriminatorValue(ParseNode parseNode) {
+    static AccountDirectorySummary createFromDiscriminatorValue(ParseNode parseNode) {
         return AccountDirectorySummary();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['type'] = (node) => accountDirectorySummaryType = node.getEnumValue<AccountDirectoryType>((stringValue) => AccountDirectoryType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['domainRestriction'] = (node) => domainRestriction = node.getStringValue();
@@ -40,7 +40,7 @@ class AccountDirectorySummary extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeEnumValue<AccountDirectoryType>('type', accountDirectorySummaryType, (e) => e?.value);
         writer.writeStringValue('domainRestriction', domainRestriction);

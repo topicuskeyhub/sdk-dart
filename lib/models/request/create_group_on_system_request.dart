@@ -16,17 +16,17 @@ class CreateGroupOnSystemRequest extends AbstractProvisionedSystemModificationRe
     ///  The owner property
     GroupPrimer? owner;
     /// Instantiates a new [CreateGroupOnSystemRequest] and sets the default values.
-     CreateGroupOnSystemRequest() : super() {
+    CreateGroupOnSystemRequest() : super() {
         typeEscaped = 'request.CreateGroupOnSystemRequest';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static CreateGroupOnSystemRequest createFromDiscriminatorValue(ParseNode parseNode) {
+    static CreateGroupOnSystemRequest createFromDiscriminatorValue(ParseNode parseNode) {
         return CreateGroupOnSystemRequest();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['accessProfile'] = (node) => accessProfile = node.getObjectValue<AccessProfilePrimer>(AccessProfilePrimer.createFromDiscriminatorValue);
         deserializerMap['activationRequired'] = (node) => activationRequired = node.getBoolValue();
@@ -38,7 +38,7 @@ class CreateGroupOnSystemRequest extends AbstractProvisionedSystemModificationRe
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<AccessProfilePrimer>('accessProfile', accessProfile);
         writer.writeBoolValue('activationRequired', value:activationRequired);

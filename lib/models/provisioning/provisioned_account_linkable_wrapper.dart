@@ -8,16 +8,16 @@ class ProvisionedAccountLinkableWrapper implements AdditionalDataHolder, Parsabl
     ///  The items property
     Iterable<ProvisionedAccount>? items;
     /// Instantiates a new [ProvisionedAccountLinkableWrapper] and sets the default values.
-     ProvisionedAccountLinkableWrapper() :  
+    ProvisionedAccountLinkableWrapper() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ProvisionedAccountLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
+    static ProvisionedAccountLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
         return ProvisionedAccountLinkableWrapper();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['items'] = (node) => items = node.getCollectionOfObjectValues<ProvisionedAccount>(ProvisionedAccount.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class ProvisionedAccountLinkableWrapper implements AdditionalDataHolder, Parsabl
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<ProvisionedAccount>('items', items);
         writer.writeAdditionalData(additionalData);
     }

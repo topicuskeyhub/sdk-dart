@@ -35,17 +35,17 @@ class LDAPDirectory extends AccountDirectory implements Parsable {
     ///  The trustedCertificate property
     CertificatePrimer? trustedCertificate;
     /// Instantiates a new [LDAPDirectory] and sets the default values.
-     LDAPDirectory() : super() {
+    LDAPDirectory() : super() {
         typeEscaped = 'directory.LDAPDirectory';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static LDAPDirectory createFromDiscriminatorValue(ParseNode parseNode) {
+    static LDAPDirectory createFromDiscriminatorValue(ParseNode parseNode) {
         return LDAPDirectory();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['attributesToStore'] = (node) => attributesToStore = node.getStringValue();
         deserializerMap['baseDN'] = (node) => baseDN = node.getStringValue();
@@ -66,7 +66,7 @@ class LDAPDirectory extends AccountDirectory implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeStringValue('attributesToStore', attributesToStore);
         writer.writeStringValue('baseDN', baseDN);

@@ -31,17 +31,17 @@ class OAuth2Client extends ClientApplication implements Parsable {
     ///  The useClientCredentials property
     bool? useClientCredentials;
     /// Instantiates a new [OAuth2Client] and sets the default values.
-     OAuth2Client() : super() {
+    OAuth2Client() : super() {
         typeEscaped = 'client.OAuth2Client';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static OAuth2Client createFromDiscriminatorValue(ParseNode parseNode) {
+    static OAuth2Client createFromDiscriminatorValue(ParseNode parseNode) {
         return OAuth2Client();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['accountPermissions'] = (node) => accountPermissions = node.getCollectionOfObjectValues<Permission>(Permission.createFromDiscriminatorValue);
         deserializerMap['attributes'] = (node) => attributes = node.getObjectValue<OAuth2ClientAttributes>(OAuth2ClientAttributes.createFromDiscriminatorValue);
@@ -60,7 +60,7 @@ class OAuth2Client extends ClientApplication implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<OAuth2ClientAttributes>('attributes', attributes);
         writer.writeStringValue('callbackURI', callbackURI);

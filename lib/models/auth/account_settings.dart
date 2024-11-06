@@ -32,17 +32,17 @@ class AccountSettings extends NonLinkable implements Parsable {
     ///  The vaultStatus property
     AccountVaultStatus? vaultStatus;
     /// Instantiates a new [AccountSettings] and sets the default values.
-     AccountSettings() : super() {
+    AccountSettings() : super() {
         typeEscaped = 'auth.AccountSettings';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AccountSettings createFromDiscriminatorValue(ParseNode parseNode) {
+    static AccountSettings createFromDiscriminatorValue(ParseNode parseNode) {
         return AccountSettings();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['defaultOrganizationalUnit'] = (node) => defaultOrganizationalUnit = node.getObjectValue<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);
         deserializerMap['directoryName'] = (node) => directoryName = node.getStringValue();
@@ -61,7 +61,7 @@ class AccountSettings extends NonLinkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<OrganizationalUnitPrimer>('defaultOrganizationalUnit', defaultOrganizationalUnit);
         writer.writeStringValue('directoryName', directoryName);

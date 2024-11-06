@@ -13,6 +13,8 @@ class ProfileRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<DateTime>? createdAfter;
     ///  Only return records that have been created before the given instant.
     List<DateTime>? createdBefore;
+    ///  Filter the access profiles on the directory they are linked to,specified by id. This parameter supports composition with all parameters from the account directory resource.
+    List<int>? directory;
     ///  Filter the results to exclude the given ids.
     List<int>? exclude;
     ///  Filter the results on the given ids.
@@ -39,13 +41,14 @@ class ProfileRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<String>? uuid;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
-     Map<String, dynamic> toMap() {
+    Map<String, dynamic> toMap() {
         return {
             'additional' : additional,
             'any' : any,
             'containsAccount' : containsAccount,
             'createdAfter' : createdAfter,
             'createdBefore' : createdBefore,
+            'directory' : directory,
             'exclude' : exclude,
             'id' : id,
             'modifiedSince' : modifiedSince,

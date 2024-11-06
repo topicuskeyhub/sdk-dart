@@ -10,12 +10,12 @@ class AbstractOrganizationalUnitModificationRequest extends ModificationRequest 
     ///  The organizationalUnit property
     OrganizationalUnitPrimer? organizationalUnit;
     /// Instantiates a new [AbstractOrganizationalUnitModificationRequest] and sets the default values.
-     AbstractOrganizationalUnitModificationRequest() : super() {
+    AbstractOrganizationalUnitModificationRequest() : super() {
         typeEscaped = 'request.AbstractOrganizationalUnitModificationRequest';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AbstractOrganizationalUnitModificationRequest createFromDiscriminatorValue(ParseNode parseNode) {
+    static AbstractOrganizationalUnitModificationRequest createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'request.CreateGroupRequest' => CreateGroupRequest(),
@@ -27,7 +27,7 @@ class AbstractOrganizationalUnitModificationRequest extends ModificationRequest 
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['organizationalUnit'] = (node) => organizationalUnit = node.getObjectValue<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);
         return deserializerMap;
@@ -35,7 +35,7 @@ class AbstractOrganizationalUnitModificationRequest extends ModificationRequest 
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<OrganizationalUnitPrimer>('organizationalUnit', organizationalUnit);
     }

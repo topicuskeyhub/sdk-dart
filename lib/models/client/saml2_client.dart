@@ -13,17 +13,17 @@ class Saml2Client extends ClientApplication implements Parsable {
     ///  The subjectFormat property
     SubjectFormat? subjectFormat;
     /// Instantiates a new [Saml2Client] and sets the default values.
-     Saml2Client() : super() {
+    Saml2Client() : super() {
         typeEscaped = 'client.Saml2Client';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static Saml2Client createFromDiscriminatorValue(ParseNode parseNode) {
+    static Saml2Client createFromDiscriminatorValue(ParseNode parseNode) {
         return Saml2Client();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['attributes'] = (node) => attributes = node.getObjectValue<Saml2ClientAttributes>(Saml2ClientAttributes.createFromDiscriminatorValue);
         deserializerMap['metadata'] = (node) => metadata = node.getStringValue();
@@ -34,7 +34,7 @@ class Saml2Client extends ClientApplication implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<Saml2ClientAttributes>('attributes', attributes);
         writer.writeStringValue('metadata', metadata);

@@ -7,7 +7,7 @@ class WithGroupclientItemRequestBuilderPutQueryParameters implements AbstractQue
     List<PutAdditionalQueryParameterType>? additional;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
-     Map<String, dynamic> toMap() {
+    Map<String, dynamic> toMap() {
         return {
             'additional' : additional,
         };

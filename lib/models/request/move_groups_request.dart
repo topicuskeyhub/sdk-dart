@@ -6,17 +6,17 @@ class MoveGroupsRequest extends AbstractOrganizationalUnitModificationRequest im
     ///  The groups property
     Iterable<GroupPrimer>? groups;
     /// Instantiates a new [MoveGroupsRequest] and sets the default values.
-     MoveGroupsRequest() : super() {
+    MoveGroupsRequest() : super() {
         typeEscaped = 'request.MoveGroupsRequest';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static MoveGroupsRequest createFromDiscriminatorValue(ParseNode parseNode) {
+    static MoveGroupsRequest createFromDiscriminatorValue(ParseNode parseNode) {
         return MoveGroupsRequest();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['groups'] = (node) => groups = node.getCollectionOfObjectValues<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         return deserializerMap;
@@ -24,7 +24,7 @@ class MoveGroupsRequest extends AbstractOrganizationalUnitModificationRequest im
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeCollectionOfObjectValues<GroupPrimer>('groups', groups);
     }

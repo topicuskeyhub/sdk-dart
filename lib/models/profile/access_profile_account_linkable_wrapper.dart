@@ -8,16 +8,16 @@ class AccessProfileAccountLinkableWrapper implements AdditionalDataHolder, Parsa
     ///  The items property
     Iterable<AccessProfileAccount>? items;
     /// Instantiates a new [AccessProfileAccountLinkableWrapper] and sets the default values.
-     AccessProfileAccountLinkableWrapper() :  
+    AccessProfileAccountLinkableWrapper() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AccessProfileAccountLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
+    static AccessProfileAccountLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
         return AccessProfileAccountLinkableWrapper();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['items'] = (node) => items = node.getCollectionOfObjectValues<AccessProfileAccount>(AccessProfileAccount.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class AccessProfileAccountLinkableWrapper implements AdditionalDataHolder, Parsa
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<AccessProfileAccount>('items', items);
         writer.writeAdditionalData(additionalData);
     }

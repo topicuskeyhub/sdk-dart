@@ -1,5 +1,5 @@
 enum PostAdditionalQueryParameterType {
-    audit("audit");
+    audit('audit');
     const PostAdditionalQueryParameterType(this.value);
     final String value;
 }

@@ -139,7 +139,7 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     List<GroupVisibility>? visibility;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
-     Map<String, dynamic> toMap() {
+    Map<String, dynamic> toMap() {
         return {
             'accessModifiedSince' : accessModifiedSince,
             'accessProfileAdministration' : accessProfileAdministration,

@@ -6,17 +6,17 @@ class RotatingPasswordRequiredNotification extends Notification implements Parsa
     ///  The groups property
     Iterable<GroupPrimer>? groups;
     /// Instantiates a new [RotatingPasswordRequiredNotification] and sets the default values.
-     RotatingPasswordRequiredNotification() : super() {
+    RotatingPasswordRequiredNotification() : super() {
         typeEscaped = 'notification.RotatingPasswordRequiredNotification';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static RotatingPasswordRequiredNotification createFromDiscriminatorValue(ParseNode parseNode) {
+    static RotatingPasswordRequiredNotification createFromDiscriminatorValue(ParseNode parseNode) {
         return RotatingPasswordRequiredNotification();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['groups'] = (node) => groups = node.getCollectionOfObjectValues<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         return deserializerMap;
@@ -24,7 +24,7 @@ class RotatingPasswordRequiredNotification extends Notification implements Parsa
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeCollectionOfObjectValues<GroupPrimer>('groups', groups);
     }

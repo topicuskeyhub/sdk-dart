@@ -12,17 +12,17 @@ class InternalAccount extends Account implements Parsable {
     ///  The status property
     InternalAccountStatus? status;
     /// Instantiates a new [InternalAccount] and sets the default values.
-     InternalAccount() : super() {
+    InternalAccount() : super() {
         typeEscaped = 'auth.InternalAccount';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static InternalAccount createFromDiscriminatorValue(ParseNode parseNode) {
+    static InternalAccount createFromDiscriminatorValue(ParseNode parseNode) {
         return InternalAccount();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['activationCode'] = (node) => activationCode = node.getStringValue();
         deserializerMap['activationDeadline'] = (node) => activationDeadline = node.getDateTimeValue();
@@ -33,7 +33,7 @@ class InternalAccount extends Account implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeStringValue('company', company);
         writer.writeEnumValue<InternalAccountStatus>('status', status, (e) => e?.value);

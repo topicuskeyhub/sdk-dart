@@ -8,16 +8,16 @@ class ProvisionedSystemPrimerLinkableWrapper implements AdditionalDataHolder, Pa
     ///  The items property
     Iterable<ProvisionedSystemPrimer>? items;
     /// Instantiates a new [ProvisionedSystemPrimerLinkableWrapper] and sets the default values.
-     ProvisionedSystemPrimerLinkableWrapper() :  
+    ProvisionedSystemPrimerLinkableWrapper() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ProvisionedSystemPrimerLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
+    static ProvisionedSystemPrimerLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
         return ProvisionedSystemPrimerLinkableWrapper();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['items'] = (node) => items = node.getCollectionOfObjectValues<ProvisionedSystemPrimer>(ProvisionedSystemPrimer.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class ProvisionedSystemPrimerLinkableWrapper implements AdditionalDataHolder, Pa
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<ProvisionedSystemPrimer>('items', items);
         writer.writeAdditionalData(additionalData);
     }

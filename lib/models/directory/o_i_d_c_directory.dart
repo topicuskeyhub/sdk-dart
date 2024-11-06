@@ -26,17 +26,17 @@ class OIDCDirectory extends AccountDirectory implements Parsable {
     ///  The vendor property
     OIDCVendor? vendor;
     /// Instantiates a new [OIDCDirectory] and sets the default values.
-     OIDCDirectory() : super() {
+    OIDCDirectory() : super() {
         typeEscaped = 'directory.OIDCDirectory';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static OIDCDirectory createFromDiscriminatorValue(ParseNode parseNode) {
+    static OIDCDirectory createFromDiscriminatorValue(ParseNode parseNode) {
         return OIDCDirectory();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['acrValues'] = (node) => acrValues = node.getStringValue();
         deserializerMap['attributesToStore'] = (node) => attributesToStore = node.getStringValue();
@@ -54,7 +54,7 @@ class OIDCDirectory extends AccountDirectory implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeStringValue('acrValues', acrValues);
         writer.writeStringValue('attributesToStore', attributesToStore);

@@ -53,7 +53,7 @@ class OrganizationalunitRequestBuilderGetQueryParameters implements AbstractQuer
     List<String>? uuid;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
-     Map<String, dynamic> toMap() {
+    Map<String, dynamic> toMap() {
         return {
             'accountIsAuditor' : accountIsAuditor,
             'additional' : additional,

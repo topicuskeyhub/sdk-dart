@@ -9,15 +9,15 @@ class GroupRequestBuilder extends BaseRequestBuilder<GroupRequestBuilder> {
     }
     /// Clones the requestbuilder.
     @override
-     GroupRequestBuilder clone() {
+    GroupRequestBuilder clone() {
         return GroupRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [GroupRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     GroupRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/serviceaccount/group", pathParameters) ;
+    GroupRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/serviceaccount/group", pathParameters) ;
     /// Instantiates a new [GroupRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     GroupRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/serviceaccount/group", {RequestInformation.rawUrlKey : rawUrl}) ;
+    GroupRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/serviceaccount/group", {RequestInformation.rawUrlKey : rawUrl}) ;
 }

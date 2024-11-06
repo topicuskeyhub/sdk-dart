@@ -10,17 +10,17 @@ class ProvisionedNamespace extends ProvisionedSystem implements Parsable {
     ///  The serviceAccountDN property
     String? serviceAccountDN;
     /// Instantiates a new [ProvisionedNamespace] and sets the default values.
-     ProvisionedNamespace() : super() {
+    ProvisionedNamespace() : super() {
         typeEscaped = 'provisioning.ProvisionedNamespace';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ProvisionedNamespace createFromDiscriminatorValue(ParseNode parseNode) {
+    static ProvisionedNamespace createFromDiscriminatorValue(ParseNode parseNode) {
         return ProvisionedNamespace();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['baseSystem'] = (node) => baseSystem = node.getObjectValue<ProvisionedSystemPrimer>(ProvisionedSystemPrimer.createFromDiscriminatorValue);
         deserializerMap['groupDN'] = (node) => groupDN = node.getStringValue();
@@ -30,7 +30,7 @@ class ProvisionedNamespace extends ProvisionedSystem implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<ProvisionedSystemPrimer>('baseSystem', baseSystem);
         writer.writeStringValue('groupDN', groupDN);

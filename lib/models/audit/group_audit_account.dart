@@ -29,17 +29,17 @@ class GroupAuditAccount extends Linkable implements Parsable {
     ///  The username property
     String? username;
     /// Instantiates a new [GroupAuditAccount] and sets the default values.
-     GroupAuditAccount() : super() {
+    GroupAuditAccount() : super() {
         typeEscaped = 'audit.GroupAuditAccount';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static GroupAuditAccount createFromDiscriminatorValue(ParseNode parseNode) {
+    static GroupAuditAccount createFromDiscriminatorValue(ParseNode parseNode) {
         return GroupAuditAccount();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['accountUuid'] = (node) => accountUuid = node.getStringValue();
         deserializerMap['accountValid'] = (node) => accountValid = node.getBoolValue();
@@ -58,7 +58,7 @@ class GroupAuditAccount extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeStringValue('accountUuid', accountUuid);
         writer.writeEnumValue<AuditAccountAction>('action', action, (e) => e?.value);

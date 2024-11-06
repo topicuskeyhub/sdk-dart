@@ -8,16 +8,16 @@ class ModificationRequestLinkableWrapper implements AdditionalDataHolder, Parsab
     ///  The items property
     Iterable<ModificationRequest>? items;
     /// Instantiates a new [ModificationRequestLinkableWrapper] and sets the default values.
-     ModificationRequestLinkableWrapper() :  
+    ModificationRequestLinkableWrapper() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ModificationRequestLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
+    static ModificationRequestLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
         return ModificationRequestLinkableWrapper();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['items'] = (node) => items = node.getCollectionOfObjectValues<ModificationRequest>(ModificationRequest.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class ModificationRequestLinkableWrapper implements AdditionalDataHolder, Parsab
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<ModificationRequest>('items', items);
         writer.writeAdditionalData(additionalData);
     }

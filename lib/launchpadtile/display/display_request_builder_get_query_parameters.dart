@@ -7,7 +7,7 @@ class DisplayRequestBuilderGetQueryParameters implements AbstractQueryParameters
     String? modifiedSince;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
-     Map<String, dynamic> toMap() {
+    Map<String, dynamic> toMap() {
         return {
             'filter' : filter,
             'group' : group,

@@ -8,16 +8,16 @@ class WebhookLinkableWrapper implements AdditionalDataHolder, Parsable {
     ///  The items property
     Iterable<Webhook>? items;
     /// Instantiates a new [WebhookLinkableWrapper] and sets the default values.
-     WebhookLinkableWrapper() :  
+    WebhookLinkableWrapper() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static WebhookLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
+    static WebhookLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
         return WebhookLinkableWrapper();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['items'] = (node) => items = node.getCollectionOfObjectValues<Webhook>(Webhook.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class WebhookLinkableWrapper implements AdditionalDataHolder, Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<Webhook>('items', items);
         writer.writeAdditionalData(additionalData);
     }

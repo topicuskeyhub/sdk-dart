@@ -2,34 +2,34 @@ import 'package:kiota_abstractions/kiota_abstractions.dart';
 import '../non_linkable.dart';
 import './modification_request_report_change_details.dart';
 
-class ModificationRequestReportGroupChangeDetails extends NonLinkable implements Parsable {
+class ModificationRequestReportObjectChangeDetails extends NonLinkable implements Parsable {
     ///  The changeDetails property
     Iterable<ModificationRequestReportChangeDetails>? changeDetails;
-    ///  The groupName property
-    String? groupName;
-    /// Instantiates a new [ModificationRequestReportGroupChangeDetails] and sets the default values.
-     ModificationRequestReportGroupChangeDetails() : super() {
-        typeEscaped = 'request.ModificationRequestReportGroupChangeDetails';
+    ///  The name property
+    String? name;
+    /// Instantiates a new [ModificationRequestReportObjectChangeDetails] and sets the default values.
+    ModificationRequestReportObjectChangeDetails() : super() {
+        typeEscaped = 'request.ModificationRequestReportObjectChangeDetails';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ModificationRequestReportGroupChangeDetails createFromDiscriminatorValue(ParseNode parseNode) {
-        return ModificationRequestReportGroupChangeDetails();
+    static ModificationRequestReportObjectChangeDetails createFromDiscriminatorValue(ParseNode parseNode) {
+        return ModificationRequestReportObjectChangeDetails();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['changeDetails'] = (node) => changeDetails = node.getCollectionOfObjectValues<ModificationRequestReportChangeDetails>(ModificationRequestReportChangeDetails.createFromDiscriminatorValue);
-        deserializerMap['groupName'] = (node) => groupName = node.getStringValue();
+        deserializerMap['name'] = (node) => name = node.getStringValue();
         return deserializerMap;
     }
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeCollectionOfObjectValues<ModificationRequestReportChangeDetails>('changeDetails', changeDetails);
-        writer.writeStringValue('groupName', groupName);
+        writer.writeStringValue('name', name);
     }
 }

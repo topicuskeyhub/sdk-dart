@@ -11,16 +11,16 @@ class GroupClassificationAdditionalObjects implements AdditionalDataHolder, Pars
     ///  The info property
     GroupClassificationInfo? info;
     /// Instantiates a new [GroupClassificationAdditionalObjects] and sets the default values.
-     GroupClassificationAdditionalObjects() :  
+    GroupClassificationAdditionalObjects() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static GroupClassificationAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
+    static GroupClassificationAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
         return GroupClassificationAdditionalObjects();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
         deserializerMap['info'] = (node) => info = node.getObjectValue<GroupClassificationInfo>(GroupClassificationInfo.createFromDiscriminatorValue);
@@ -29,7 +29,7 @@ class GroupClassificationAdditionalObjects implements AdditionalDataHolder, Pars
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeObjectValue<AuditInfo>('audit', audit);
         writer.writeObjectValue<GroupClassificationInfo>('info', info);
         writer.writeAdditionalData(additionalData);

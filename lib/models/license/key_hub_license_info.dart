@@ -37,17 +37,17 @@ class KeyHubLicenseInfo extends NonLinkable implements Parsable {
     ///  The version property
     int? version;
     /// Instantiates a new [KeyHubLicenseInfo] and sets the default values.
-     KeyHubLicenseInfo() : super() {
+    KeyHubLicenseInfo() : super() {
         typeEscaped = 'license.KeyHubLicenseInfo';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static KeyHubLicenseInfo createFromDiscriminatorValue(ParseNode parseNode) {
+    static KeyHubLicenseInfo createFromDiscriminatorValue(ParseNode parseNode) {
         return KeyHubLicenseInfo();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['currentLicenseStatus'] = (node) => currentLicenseStatus = node.getEnumValue<KeyHubLicenseInfoLicenseStatus>((stringValue) => KeyHubLicenseInfoLicenseStatus.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['customerCompany'] = (node) => customerCompany = node.getStringValue();
@@ -70,7 +70,7 @@ class KeyHubLicenseInfo extends NonLinkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeEnumValue<KeyHubLicenseInfoLicenseStatus>('currentLicenseStatus', currentLicenseStatus, (e) => e?.value);
         writer.writeStringValue('customerCompany', customerCompany);

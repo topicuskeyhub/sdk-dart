@@ -9,15 +9,15 @@ class VaultRequestBuilder extends BaseRequestBuilder<VaultRequestBuilder> {
     }
     /// Clones the requestbuilder.
     @override
-     VaultRequestBuilder clone() {
+    VaultRequestBuilder clone() {
         return VaultRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [VaultRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     VaultRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/vault", pathParameters) ;
+    VaultRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/vault", pathParameters) ;
     /// Instantiates a new [VaultRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     VaultRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/vault", {RequestInformation.rawUrlKey : rawUrl}) ;
+    VaultRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/vault", {RequestInformation.rawUrlKey : rawUrl}) ;
 }

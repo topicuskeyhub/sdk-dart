@@ -1,6 +1,7 @@
 import 'package:kiota_abstractions/kiota_abstractions.dart';
 import '../auth/account_primer.dart';
 import './access_profile_account_additional_objects.dart';
+import './access_profile_account_with_attributes.dart';
 
 class AccessProfileAccount extends AccountPrimer implements Parsable {
     ///  The additionalObjects property
@@ -8,17 +9,21 @@ class AccessProfileAccount extends AccountPrimer implements Parsable {
     ///  The manual property
     bool? manual;
     /// Instantiates a new [AccessProfileAccount] and sets the default values.
-     AccessProfileAccount() : super() {
+    AccessProfileAccount() : super() {
         typeEscaped = 'profile.AccessProfileAccount';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AccessProfileAccount createFromDiscriminatorValue(ParseNode parseNode) {
-        return AccessProfileAccount();
+    static AccessProfileAccount createFromDiscriminatorValue(ParseNode parseNode) {
+        var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
+        return switch(mappingValue) {
+            'profile.AccessProfileAccountWithAttributes' => AccessProfileAccountWithAttributes(),
+            _ => AccessProfileAccount(),
+        };
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<AccessProfileAccountAdditionalObjects>(AccessProfileAccountAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['manual'] = (node) => manual = node.getBoolValue();
@@ -27,7 +32,7 @@ class AccessProfileAccount extends AccountPrimer implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<AccessProfileAccountAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeBoolValue('manual', value:manual);

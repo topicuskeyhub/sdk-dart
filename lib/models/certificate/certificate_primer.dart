@@ -23,12 +23,12 @@ class CertificatePrimer extends Linkable implements Parsable {
     ///  The uuid property
     String? uuid;
     /// Instantiates a new [CertificatePrimer] and sets the default values.
-     CertificatePrimer() : super() {
+    CertificatePrimer() : super() {
         typeEscaped = 'certificate.CertificatePrimer';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static CertificatePrimer createFromDiscriminatorValue(ParseNode parseNode) {
+    static CertificatePrimer createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'certificate.Certificate' => Certificate(),
@@ -37,7 +37,7 @@ class CertificatePrimer extends Linkable implements Parsable {
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['alias'] = (node) => alias = node.getStringValue();
         deserializerMap['certificateData'] = (node) => certificateData = node.getStringValue();
@@ -53,7 +53,7 @@ class CertificatePrimer extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeStringValue('alias', alias);
         writer.writeStringValue('certificateData', certificateData);

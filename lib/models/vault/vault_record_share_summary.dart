@@ -8,17 +8,17 @@ class VaultRecordShareSummary extends NonLinkable implements Parsable {
     ///  The parent property
     VaultRecordShare? parent;
     /// Instantiates a new [VaultRecordShareSummary] and sets the default values.
-     VaultRecordShareSummary() : super() {
+    VaultRecordShareSummary() : super() {
         typeEscaped = 'vault.VaultRecordShareSummary';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static VaultRecordShareSummary createFromDiscriminatorValue(ParseNode parseNode) {
+    static VaultRecordShareSummary createFromDiscriminatorValue(ParseNode parseNode) {
         return VaultRecordShareSummary();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['children'] = (node) => children = node.getCollectionOfObjectValues<VaultRecordShare>(VaultRecordShare.createFromDiscriminatorValue);
         deserializerMap['parent'] = (node) => parent = node.getObjectValue<VaultRecordShare>(VaultRecordShare.createFromDiscriminatorValue);
@@ -27,7 +27,7 @@ class VaultRecordShareSummary extends NonLinkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeCollectionOfObjectValues<VaultRecordShare>('children', children);
         writer.writeObjectValue<VaultRecordShare>('parent', parent);

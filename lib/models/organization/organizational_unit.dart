@@ -27,17 +27,17 @@ class OrganizationalUnit extends OrganizationalUnitPrimer implements Parsable {
     ///  The removeGroupApproveGroup property
     GroupPrimer? removeGroupApproveGroup;
     /// Instantiates a new [OrganizationalUnit] and sets the default values.
-     OrganizationalUnit() : super() {
+    OrganizationalUnit() : super() {
         typeEscaped = 'organization.OrganizationalUnit';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static OrganizationalUnit createFromDiscriminatorValue(ParseNode parseNode) {
+    static OrganizationalUnit createFromDiscriminatorValue(ParseNode parseNode) {
         return OrganizationalUnit();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<OrganizationalUnitAdditionalObjects>(OrganizationalUnitAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['auditorGroup'] = (node) => auditorGroup = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
@@ -55,7 +55,7 @@ class OrganizationalUnit extends OrganizationalUnitPrimer implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<OrganizationalUnitAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeObjectValue<GroupPrimer>('auditorGroup', auditorGroup);

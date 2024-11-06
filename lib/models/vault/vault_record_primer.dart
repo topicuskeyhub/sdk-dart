@@ -13,12 +13,12 @@ class VaultRecordPrimer extends Linkable implements Parsable {
     ///  The uuid property
     String? uuid;
     /// Instantiates a new [VaultRecordPrimer] and sets the default values.
-     VaultRecordPrimer() : super() {
+    VaultRecordPrimer() : super() {
         typeEscaped = 'vault.VaultRecordPrimer';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static VaultRecordPrimer createFromDiscriminatorValue(ParseNode parseNode) {
+    static VaultRecordPrimer createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'vault.VaultRecord' => VaultRecord(),
@@ -27,7 +27,7 @@ class VaultRecordPrimer extends Linkable implements Parsable {
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['color'] = (node) => color = node.getEnumValue<VaultRecordColor>((stringValue) => VaultRecordColor.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['name'] = (node) => name = node.getStringValue();
@@ -38,7 +38,7 @@ class VaultRecordPrimer extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeEnumValue<VaultRecordColor>('color', color, (e) => e?.value);
         writer.writeStringValue('name', name);

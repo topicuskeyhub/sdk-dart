@@ -7,20 +7,20 @@ import './with_audit_item_request_builder_get_query_parameters.dart';
 class WithAuditItemRequestBuilder extends BaseRequestBuilder<WithAuditItemRequestBuilder> {
     /// Clones the requestbuilder.
     @override
-     WithAuditItemRequestBuilder clone() {
+    WithAuditItemRequestBuilder clone() {
         return WithAuditItemRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [WithAuditItemRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     WithAuditItemRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/audit/{auditid}{?additional*}", pathParameters) ;
+    WithAuditItemRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/audit/{auditid}{?additional*}", pathParameters) ;
     /// Instantiates a new [WithAuditItemRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     WithAuditItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/audit/{auditid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    WithAuditItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/audit/{auditid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Returns the audit record identified by the id.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<AuditRecord?> getAsync([Function(RequestConfiguration<WithAuditItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    Future<AuditRecord?> getAsync([Function(RequestConfiguration<WithAuditItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -29,10 +29,10 @@ class WithAuditItemRequestBuilder extends BaseRequestBuilder<WithAuditItemReques
     }
     /// Returns the audit record identified by the id.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toGetRequestInformation([Function(RequestConfiguration<WithAuditItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    RequestInformation toGetRequestInformation([Function(RequestConfiguration<WithAuditItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithAuditItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithAuditItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
 }

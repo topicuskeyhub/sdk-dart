@@ -21,17 +21,17 @@ class ProvisionedSCIM extends ProvisionedSystem implements Parsable {
     ///  The vendor property
     ProvisionedSCIMVendor? vendor;
     /// Instantiates a new [ProvisionedSCIM] and sets the default values.
-     ProvisionedSCIM() : super() {
+    ProvisionedSCIM() : super() {
         typeEscaped = 'provisioning.ProvisionedSCIM';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ProvisionedSCIM createFromDiscriminatorValue(ParseNode parseNode) {
+    static ProvisionedSCIM createFromDiscriminatorValue(ParseNode parseNode) {
         return ProvisionedSCIM();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['authenticationScheme'] = (node) => authenticationScheme = node.getEnumValue<HttpAuthenticationScheme>((stringValue) => HttpAuthenticationScheme.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['basicAuthPassword'] = (node) => basicAuthPassword = node.getStringValue();
@@ -46,7 +46,7 @@ class ProvisionedSCIM extends ProvisionedSystem implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeEnumValue<HttpAuthenticationScheme>('authenticationScheme', authenticationScheme, (e) => e?.value);
         writer.writeStringValue('basicAuthPassword', basicAuthPassword);

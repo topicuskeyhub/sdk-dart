@@ -8,16 +8,16 @@ class OAuth2ClientPermissionLinkableWrapper implements AdditionalDataHolder, Par
     ///  The items property
     Iterable<OAuth2ClientPermission>? items;
     /// Instantiates a new [OAuth2ClientPermissionLinkableWrapper] and sets the default values.
-     OAuth2ClientPermissionLinkableWrapper() :  
+    OAuth2ClientPermissionLinkableWrapper() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static OAuth2ClientPermissionLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
+    static OAuth2ClientPermissionLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
         return OAuth2ClientPermissionLinkableWrapper();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['items'] = (node) => items = node.getCollectionOfObjectValues<OAuth2ClientPermission>(OAuth2ClientPermission.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class OAuth2ClientPermissionLinkableWrapper implements AdditionalDataHolder, Par
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<OAuth2ClientPermission>('items', items);
         writer.writeAdditionalData(additionalData);
     }

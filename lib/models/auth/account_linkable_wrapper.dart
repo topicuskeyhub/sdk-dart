@@ -8,16 +8,16 @@ class AccountLinkableWrapper implements AdditionalDataHolder, Parsable {
     ///  The items property
     Iterable<Account>? items;
     /// Instantiates a new [AccountLinkableWrapper] and sets the default values.
-     AccountLinkableWrapper() :  
+    AccountLinkableWrapper() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AccountLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
+    static AccountLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
         return AccountLinkableWrapper();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['items'] = (node) => items = node.getCollectionOfObjectValues<Account>(Account.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class AccountLinkableWrapper implements AdditionalDataHolder, Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<Account>('items', items);
         writer.writeAdditionalData(additionalData);
     }

@@ -6,7 +6,7 @@ class NotificationsRequestBuilderGetQueryParameters implements AbstractQueryPara
     List<int>? requestsToRetainIds;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
-     Map<String, dynamic> toMap() {
+    Map<String, dynamic> toMap() {
         return {
             'requestMailKey' : requestMailKey,
             'requestsToRetainIds' : requestsToRetainIds,

@@ -9,27 +9,27 @@ import './item/with_groupfolder_item_request_builder.dart';
 class GroupfolderRequestBuilder extends BaseRequestBuilder<GroupfolderRequestBuilder> {
     /// Gets an item from the ApiSdk.groupfolder.item collection
     /// <param name="groupfolderid">groupfolderid</param>
-     WithGroupfolderItemRequestBuilder byGroupfolderid(int groupfolderid) {
+    WithGroupfolderItemRequestBuilder byGroupfolderid(int groupfolderid) {
         var urlTplParams = Map.of(pathParameters);
         urlTplParams.putIfAbsent("groupfolderid", ()=> groupfolderid);
         return WithGroupfolderItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
     @override
-     GroupfolderRequestBuilder clone() {
+    GroupfolderRequestBuilder clone() {
         return GroupfolderRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [GroupfolderRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     GroupfolderRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/groupfolder{?additional*,any*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,name*,ownedBy*,q*,sort*}", pathParameters) ;
+    GroupfolderRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/groupfolder{?additional*,any*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,name*,ownedBy*,q*,sort*}", pathParameters) ;
     /// Instantiates a new [GroupfolderRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     GroupfolderRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/groupfolder{?additional*,any*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,name*,ownedBy*,q*,sort*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    GroupfolderRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/groupfolder{?additional*,any*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,name*,ownedBy*,q*,sort*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for all group folders in Topicus KeyHub. The various query parameters can be used to filter the response.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<GroupFolderLinkableWrapper?> getAsync([Function(RequestConfiguration<GroupfolderRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    Future<GroupFolderLinkableWrapper?> getAsync([Function(RequestConfiguration<GroupfolderRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -39,7 +39,7 @@ class GroupfolderRequestBuilder extends BaseRequestBuilder<GroupfolderRequestBui
     /// Creates one or more new group folders and returns the newly created folders.
     /// <param name="body">body</param>
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<GroupFolderLinkableWrapper?> postAsync(GroupFolderLinkableWrapper body, [Function(RequestConfiguration<GroupfolderRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
+    Future<GroupFolderLinkableWrapper?> postAsync(GroupFolderLinkableWrapper body, [Function(RequestConfiguration<GroupfolderRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -48,20 +48,20 @@ class GroupfolderRequestBuilder extends BaseRequestBuilder<GroupfolderRequestBui
     }
     /// Query for all group folders in Topicus KeyHub. The various query parameters can be used to filter the response.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toGetRequestInformation([Function(RequestConfiguration<GroupfolderRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    RequestInformation toGetRequestInformation([Function(RequestConfiguration<GroupfolderRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<GroupfolderRequestBuilderGetQueryParameters>(requestConfiguration, () => GroupfolderRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
     /// Creates one or more new group folders and returns the newly created folders.
     /// <param name="body">body</param>
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toPostRequestInformation(GroupFolderLinkableWrapper body, [Function(RequestConfiguration<GroupfolderRequestBuilderPostQueryParameters>)? requestConfiguration]) {
+    RequestInformation toPostRequestInformation(GroupFolderLinkableWrapper body, [Function(RequestConfiguration<GroupfolderRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<GroupfolderRequestBuilderPostQueryParameters>(requestConfiguration, () => GroupfolderRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=73', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
         return requestInfo;
     }
 }

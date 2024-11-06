@@ -8,16 +8,16 @@ class GroupFolderAdditionalObjects implements AdditionalDataHolder, Parsable {
     ///  The audit property
     AuditInfo? audit;
     /// Instantiates a new [GroupFolderAdditionalObjects] and sets the default values.
-     GroupFolderAdditionalObjects() :  
+    GroupFolderAdditionalObjects() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static GroupFolderAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
+    static GroupFolderAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
         return GroupFolderAdditionalObjects();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class GroupFolderAdditionalObjects implements AdditionalDataHolder, Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeObjectValue<AuditInfo>('audit', audit);
         writer.writeAdditionalData(additionalData);
     }

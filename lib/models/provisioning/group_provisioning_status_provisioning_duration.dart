@@ -9,16 +9,16 @@ class GroupProvisioningStatusProvisioningDuration implements AdditionalDataHolde
     ///  The seconds property
     int? seconds;
     /// Instantiates a new [GroupProvisioningStatusProvisioningDuration] and sets the default values.
-     GroupProvisioningStatusProvisioningDuration() :  
+    GroupProvisioningStatusProvisioningDuration() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static GroupProvisioningStatusProvisioningDuration createFromDiscriminatorValue(ParseNode parseNode) {
+    static GroupProvisioningStatusProvisioningDuration createFromDiscriminatorValue(ParseNode parseNode) {
         return GroupProvisioningStatusProvisioningDuration();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['nanos'] = (node) => nanos = node.getIntValue();
         deserializerMap['seconds'] = (node) => seconds = node.getIntValue();
@@ -27,7 +27,7 @@ class GroupProvisioningStatusProvisioningDuration implements AdditionalDataHolde
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeIntValue('nanos', nanos);
         writer.writeIntValue('seconds', seconds);
         writer.writeAdditionalData(additionalData);

@@ -8,16 +8,16 @@ class AuditRecordAdditionalObjects implements AdditionalDataHolder, Parsable {
     ///  The audit property
     AuditInfo? audit;
     /// Instantiates a new [AuditRecordAdditionalObjects] and sets the default values.
-     AuditRecordAdditionalObjects() :  
+    AuditRecordAdditionalObjects() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AuditRecordAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
+    static AuditRecordAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
         return AuditRecordAdditionalObjects();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class AuditRecordAdditionalObjects implements AdditionalDataHolder, Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeObjectValue<AuditInfo>('audit', audit);
         writer.writeAdditionalData(additionalData);
     }

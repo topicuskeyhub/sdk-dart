@@ -10,17 +10,17 @@ class WebhookNameUuid extends NonLinkable implements Parsable {
     ///  The uuid property
     String? uuid;
     /// Instantiates a new [WebhookNameUuid] and sets the default values.
-     WebhookNameUuid() : super() {
+    WebhookNameUuid() : super() {
         typeEscaped = 'webhook.WebhookNameUuid';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static WebhookNameUuid createFromDiscriminatorValue(ParseNode parseNode) {
+    static WebhookNameUuid createFromDiscriminatorValue(ParseNode parseNode) {
         return WebhookNameUuid();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['name'] = (node) => name = node.getStringValue();
         deserializerMap['object'] = (node) => object = node.getObjectValue<Linkable>(Linkable.createFromDiscriminatorValue);
@@ -30,7 +30,7 @@ class WebhookNameUuid extends NonLinkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeStringValue('name', name);
         writer.writeObjectValue<Linkable>('object', object);

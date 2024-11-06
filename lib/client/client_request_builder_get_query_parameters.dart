@@ -35,6 +35,8 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     List<String>? nameStartsWith;
     ///  Filter the SSO applications not connected to groups, specified by id.
     List<int>? notInGroup;
+    ///  Filter clients on organizational units, specified by id. This parameter is automatically set and primarily used for security permission enforcement.
+    List<int>? organizationalUnitForEnforcement;
     ///  Filter the clients for which the given group is owner, specified by id. This parameter supports composition with all parameters from the group resource.
     List<int>? ownedBy;
     ///  Filter records on a complex CQL query.
@@ -61,7 +63,7 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     List<int>? withRequestedPermissionForOwningGroup;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
-     Map<String, dynamic> toMap() {
+    Map<String, dynamic> toMap() {
         return {
             'additional' : additional,
             'any' : any,
@@ -79,6 +81,7 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
             'nameDoesNotStartWith' : nameDoesNotStartWith,
             'nameStartsWith' : nameStartsWith,
             'notInGroup' : notInGroup,
+            'organizationalUnitForEnforcement' : organizationalUnitForEnforcement,
             'ownedBy' : ownedBy,
             'q' : q,
             'sharedSecret' : sharedSecret,

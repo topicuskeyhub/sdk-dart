@@ -15,17 +15,17 @@ class MoveVaultRecord extends NonLinkable implements Parsable {
     ///  The shareDuration property
     MoveVaultRecordShareDuration? shareDuration;
     /// Instantiates a new [MoveVaultRecord] and sets the default values.
-     MoveVaultRecord() : super() {
+    MoveVaultRecord() : super() {
         typeEscaped = 'vault.MoveVaultRecord';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static MoveVaultRecord createFromDiscriminatorValue(ParseNode parseNode) {
+    static MoveVaultRecord createFromDiscriminatorValue(ParseNode parseNode) {
         return MoveVaultRecord();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['account'] = (node) => account = node.getObjectValue<AccountPrimer>(AccountPrimer.createFromDiscriminatorValue);
         deserializerMap['action'] = (node) => action = node.getEnumValue<MoveVaultRecordAction>((stringValue) => MoveVaultRecordAction.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
@@ -36,7 +36,7 @@ class MoveVaultRecord extends NonLinkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<AccountPrimer>('account', account);
         writer.writeEnumValue<MoveVaultRecordAction>('action', action, (e) => e?.value);

@@ -19,6 +19,7 @@ import './group/group_admin_mail.dart';
 import './group/group_auditing_info.dart';
 import './group/group_classification_info.dart';
 import './group/group_classification_update.dart';
+import './group/group_global_role_info.dart';
 import './group/group_info.dart';
 import './group/groups_audit_stats.dart';
 import './launchpad/displayed_launchpad_tiles.dart';
@@ -39,6 +40,7 @@ import './notification/rotating_password_required_notification.dart';
 import './notification/update_available_notification.dart';
 import './notification/vault_record_expired_notification.dart';
 import './organization/organizational_unit_settings.dart';
+import './profile/access_profile_account_attribute_rule_status.dart';
 import './provisioning/account_provisioning_status.dart';
 import './provisioning/account_provisioning_status_report.dart';
 import './provisioning/circuit_breaker_statistics.dart';
@@ -47,14 +49,17 @@ import './provisioning/group_provisioning_status.dart';
 import './provisioning/provisioning_management_permissions.dart';
 import './provisioning/provisioning_status.dart';
 import './provisioning/token_password.dart';
+import './request/accept_create_group_on_system_request_parameters.dart';
+import './request/accept_create_group_request_parameters.dart';
 import './request/accept_create_provisioned_namespace_request_parameters.dart';
+import './request/accept_create_service_account_request_parameters.dart';
 import './request/accept_grant_access_request_parameters.dart';
 import './request/accept_join_group_request_parameters.dart';
 import './request/accept_modification_request_parameters.dart';
 import './request/modification_request_report.dart';
 import './request/modification_request_report_change_details.dart';
 import './request/modification_request_report_error_details.dart';
-import './request/modification_request_report_group_change_details.dart';
+import './request/modification_request_report_object_change_details.dart';
 import './request/password_reset_request_status.dart';
 import './segment_count.dart';
 import './serviceaccount/service_account_status.dart';
@@ -82,11 +87,11 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
     ///  The Type property
     String? typeEscaped;
     /// Instantiates a new [NonLinkable] and sets the default values.
-     NonLinkable() :  
+    NonLinkable() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static NonLinkable createFromDiscriminatorValue(ParseNode parseNode) {
+    static NonLinkable createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'AuditInfo' => AuditInfo(),
@@ -109,6 +114,7 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'group.GroupAuditingInfo' => GroupAuditingInfo(),
             'group.GroupClassificationInfo' => GroupClassificationInfo(),
             'group.GroupClassificationUpdate' => GroupClassificationUpdate(),
+            'group.GroupGlobalRoleInfo' => GroupGlobalRoleInfo(),
             'group.GroupInfo' => GroupInfo(),
             'group.GroupsAuditStats' => GroupsAuditStats(),
             'launchpad.DisplayedLaunchpadTiles' => DisplayedLaunchpadTiles(),
@@ -129,6 +135,7 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'notification.UpdateAvailableNotification' => UpdateAvailableNotification(),
             'notification.VaultRecordExpiredNotification' => VaultRecordExpiredNotification(),
             'organization.OrganizationalUnitSettings' => OrganizationalUnitSettings(),
+            'profile.AccessProfileAccountAttributeRuleStatus' => AccessProfileAccountAttributeRuleStatus(),
             'provisioning.AccountProvisioningStatus' => AccountProvisioningStatus(),
             'provisioning.AccountProvisioningStatusReport' => AccountProvisioningStatusReport(),
             'provisioning.CircuitBreakerStatistics' => CircuitBreakerStatistics(),
@@ -137,14 +144,17 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'provisioning.ProvisioningManagementPermissions' => ProvisioningManagementPermissions(),
             'provisioning.ProvisioningStatus' => ProvisioningStatus(),
             'provisioning.TokenPassword' => TokenPassword(),
+            'request.AcceptCreateGroupOnSystemRequestParameters' => AcceptCreateGroupOnSystemRequestParameters(),
+            'request.AcceptCreateGroupRequestParameters' => AcceptCreateGroupRequestParameters(),
             'request.AcceptCreateProvisionedNamespaceRequestParameters' => AcceptCreateProvisionedNamespaceRequestParameters(),
+            'request.AcceptCreateServiceAccountRequestParameters' => AcceptCreateServiceAccountRequestParameters(),
             'request.AcceptGrantAccessRequestParameters' => AcceptGrantAccessRequestParameters(),
             'request.AcceptJoinGroupRequestParameters' => AcceptJoinGroupRequestParameters(),
             'request.AcceptModificationRequestParameters' => AcceptModificationRequestParameters(),
             'request.ModificationRequestReport' => ModificationRequestReport(),
             'request.ModificationRequestReportChangeDetails' => ModificationRequestReportChangeDetails(),
             'request.ModificationRequestReportErrorDetails' => ModificationRequestReportErrorDetails(),
-            'request.ModificationRequestReportGroupChangeDetails' => ModificationRequestReportGroupChangeDetails(),
+            'request.ModificationRequestReportObjectChangeDetails' => ModificationRequestReportObjectChangeDetails(),
             'request.PasswordResetRequestStatus' => PasswordResetRequestStatus(),
             'SegmentCount' => SegmentCount(),
             'serviceaccount.ServiceAccountsAuditStats' => ServiceAccountsAuditStats(),
@@ -169,7 +179,7 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['\$type'] = (node) => typeEscaped = node.getStringValue();
         return deserializerMap;
@@ -177,7 +187,7 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeStringValue('\$type', typeEscaped);
         writer.writeAdditionalData(additionalData);
     }

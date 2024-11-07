@@ -7,12 +7,12 @@ import './vault_record_launchpad_tile.dart';
 
 class LaunchpadTilePrimer extends Linkable implements Parsable {
     /// Instantiates a new [LaunchpadTilePrimer] and sets the default values.
-     LaunchpadTilePrimer() : super() {
+    LaunchpadTilePrimer() : super() {
         typeEscaped = 'launchpad.LaunchpadTilePrimer';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static LaunchpadTilePrimer createFromDiscriminatorValue(ParseNode parseNode) {
+    static LaunchpadTilePrimer createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'launchpad.LaunchpadTile' => LaunchpadTile(),
@@ -24,14 +24,14 @@ class LaunchpadTilePrimer extends Linkable implements Parsable {
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         return deserializerMap;
     }
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
     }
 }

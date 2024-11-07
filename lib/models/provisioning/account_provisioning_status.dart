@@ -14,17 +14,17 @@ class AccountProvisioningStatus extends NonLinkable implements Parsable {
     ///  The result property
     AccountProvisioningResult? result;
     /// Instantiates a new [AccountProvisioningStatus] and sets the default values.
-     AccountProvisioningStatus() : super() {
+    AccountProvisioningStatus() : super() {
         typeEscaped = 'provisioning.AccountProvisioningStatus';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AccountProvisioningStatus createFromDiscriminatorValue(ParseNode parseNode) {
+    static AccountProvisioningStatus createFromDiscriminatorValue(ParseNode parseNode) {
         return AccountProvisioningStatus();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['description'] = (node) => description = node.getStringValue();
         deserializerMap['provisionedSystem'] = (node) => provisionedSystem = node.getObjectValue<ProvisionedSystemPrimer>(ProvisionedSystemPrimer.createFromDiscriminatorValue);
@@ -35,7 +35,7 @@ class AccountProvisioningStatus extends NonLinkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeStringValue('description', description);
         writer.writeObjectValue<ProvisionedSystemPrimer>('provisionedSystem', provisionedSystem);

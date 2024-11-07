@@ -3,6 +3,7 @@ import '../group/group_account.dart';
 import '../linkable.dart';
 import '../organization/organizational_unit_account.dart';
 import '../profile/access_profile_account.dart';
+import '../profile/access_profile_account_with_attributes.dart';
 import '../provisioning/provisioned_account.dart';
 import './account.dart';
 import './account_validity.dart';
@@ -20,12 +21,12 @@ class AccountPrimer extends Linkable implements Parsable {
     ///  The validity property
     AccountValidity? validity;
     /// Instantiates a new [AccountPrimer] and sets the default values.
-     AccountPrimer() : super() {
+    AccountPrimer() : super() {
         typeEscaped = 'auth.AccountPrimer';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AccountPrimer createFromDiscriminatorValue(ParseNode parseNode) {
+    static AccountPrimer createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'auth.Account' => Account(),
@@ -33,13 +34,14 @@ class AccountPrimer extends Linkable implements Parsable {
             'group.GroupAccount' => GroupAccount(),
             'organization.OrganizationalUnitAccount' => OrganizationalUnitAccount(),
             'profile.AccessProfileAccount' => AccessProfileAccount(),
+            'profile.AccessProfileAccountWithAttributes' => AccessProfileAccountWithAttributes(),
             'provisioning.ProvisionedAccount' => ProvisionedAccount(),
             _ => AccountPrimer(),
         };
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['displayName'] = (node) => displayName = node.getStringValue();
         deserializerMap['lastActive'] = (node) => lastActive = node.getDateTimeValue();
@@ -51,7 +53,7 @@ class AccountPrimer extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeEnumValue<AccountValidity>('validity', validity, (e) => e?.value);
     }

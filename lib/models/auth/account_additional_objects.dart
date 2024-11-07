@@ -25,16 +25,16 @@ class AccountAdditionalObjects implements AdditionalDataHolder, Parsable {
     ///  The vault property
     Vault? vault;
     /// Instantiates a new [AccountAdditionalObjects] and sets the default values.
-     AccountAdditionalObjects() :  
+    AccountAdditionalObjects() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AccountAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
+    static AccountAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
         return AccountAdditionalObjects();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['activeLogin'] = (node) => activeLogin = node.getBoolValue();
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
@@ -48,7 +48,7 @@ class AccountAdditionalObjects implements AdditionalDataHolder, Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeObjectValue<AuditInfo>('audit', audit);
         writer.writeObjectValue<AccountGroupLinkableWrapper>('groups', groups);
         writer.writeObjectValue<AccountRecoveryStatus>('pendingRecoveryRequests', pendingRecoveryRequests);

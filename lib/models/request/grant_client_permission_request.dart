@@ -9,17 +9,17 @@ class GrantClientPermissionRequest extends AbstractApplicationModificationReques
     ///  The system property
     ProvisionedSystemPrimer? system;
     /// Instantiates a new [GrantClientPermissionRequest] and sets the default values.
-     GrantClientPermissionRequest() : super() {
+    GrantClientPermissionRequest() : super() {
         typeEscaped = 'request.GrantClientPermissionRequest';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static GrantClientPermissionRequest createFromDiscriminatorValue(ParseNode parseNode) {
+    static GrantClientPermissionRequest createFromDiscriminatorValue(ParseNode parseNode) {
         return GrantClientPermissionRequest();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['permissionType'] = (node) => permissionType = node.getEnumValue<OAuth2ClientPermissionType>((stringValue) => OAuth2ClientPermissionType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['system'] = (node) => system = node.getObjectValue<ProvisionedSystemPrimer>(ProvisionedSystemPrimer.createFromDiscriminatorValue);
@@ -28,7 +28,7 @@ class GrantClientPermissionRequest extends AbstractApplicationModificationReques
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeEnumValue<OAuth2ClientPermissionType>('permissionType', permissionType, (e) => e?.value);
         writer.writeObjectValue<ProvisionedSystemPrimer>('system', system);

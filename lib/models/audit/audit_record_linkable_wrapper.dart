@@ -8,16 +8,16 @@ class AuditRecordLinkableWrapper implements AdditionalDataHolder, Parsable {
     ///  The items property
     Iterable<AuditRecord>? items;
     /// Instantiates a new [AuditRecordLinkableWrapper] and sets the default values.
-     AuditRecordLinkableWrapper() :  
+    AuditRecordLinkableWrapper() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AuditRecordLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
+    static AuditRecordLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
         return AuditRecordLinkableWrapper();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['items'] = (node) => items = node.getCollectionOfObjectValues<AuditRecord>(AuditRecord.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class AuditRecordLinkableWrapper implements AdditionalDataHolder, Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<AuditRecord>('items', items);
         writer.writeAdditionalData(additionalData);
     }

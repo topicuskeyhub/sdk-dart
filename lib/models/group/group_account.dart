@@ -27,17 +27,17 @@ class GroupAccount extends AccountPrimer implements Parsable {
     ///  The visibleForProvisioning property
     bool? visibleForProvisioning;
     /// Instantiates a new [GroupAccount] and sets the default values.
-     GroupAccount() : super() {
+    GroupAccount() : super() {
         typeEscaped = 'group.GroupAccount';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static GroupAccount createFromDiscriminatorValue(ParseNode parseNode) {
+    static GroupAccount createFromDiscriminatorValue(ParseNode parseNode) {
         return GroupAccount();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<GroupAccountAdditionalObjects>(GroupAccountAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['directory'] = (node) => directory = node.getObjectValue<AccountDirectoryPrimer>(AccountDirectoryPrimer.createFromDiscriminatorValue);
@@ -54,7 +54,7 @@ class GroupAccount extends AccountPrimer implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<GroupAccountAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeObjectValue<AccountDirectoryPrimer>('directory', directory);

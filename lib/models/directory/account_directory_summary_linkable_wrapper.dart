@@ -8,16 +8,16 @@ class AccountDirectorySummaryLinkableWrapper implements AdditionalDataHolder, Pa
     ///  The items property
     Iterable<AccountDirectorySummary>? items;
     /// Instantiates a new [AccountDirectorySummaryLinkableWrapper] and sets the default values.
-     AccountDirectorySummaryLinkableWrapper() :  
+    AccountDirectorySummaryLinkableWrapper() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AccountDirectorySummaryLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
+    static AccountDirectorySummaryLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
         return AccountDirectorySummaryLinkableWrapper();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['items'] = (node) => items = node.getCollectionOfObjectValues<AccountDirectorySummary>(AccountDirectorySummary.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class AccountDirectorySummaryLinkableWrapper implements AdditionalDataHolder, Pa
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<AccountDirectorySummary>('items', items);
         writer.writeAdditionalData(additionalData);
     }

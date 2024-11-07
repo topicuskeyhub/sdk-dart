@@ -21,17 +21,17 @@ class WebhookDelivery extends Linkable implements Parsable {
     ///  The triggerTime property
     DateTime? triggerTime;
     /// Instantiates a new [WebhookDelivery] and sets the default values.
-     WebhookDelivery() : super() {
+    WebhookDelivery() : super() {
         typeEscaped = 'webhook.WebhookDelivery';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static WebhookDelivery createFromDiscriminatorValue(ParseNode parseNode) {
+    static WebhookDelivery createFromDiscriminatorValue(ParseNode parseNode) {
         return WebhookDelivery();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<WebhookDeliveryAdditionalObjects>(WebhookDeliveryAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['payload'] = (node) => payload = node.getObjectValue<WebhookPush>(WebhookPush.createFromDiscriminatorValue);
@@ -46,7 +46,7 @@ class WebhookDelivery extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<WebhookDeliveryAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeObjectValue<WebhookPush>('payload', payload);

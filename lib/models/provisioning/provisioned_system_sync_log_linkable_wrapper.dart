@@ -8,16 +8,16 @@ class ProvisionedSystemSyncLogLinkableWrapper implements AdditionalDataHolder, P
     ///  The items property
     Iterable<ProvisionedSystemSyncLog>? items;
     /// Instantiates a new [ProvisionedSystemSyncLogLinkableWrapper] and sets the default values.
-     ProvisionedSystemSyncLogLinkableWrapper() :  
+    ProvisionedSystemSyncLogLinkableWrapper() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ProvisionedSystemSyncLogLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
+    static ProvisionedSystemSyncLogLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
         return ProvisionedSystemSyncLogLinkableWrapper();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['items'] = (node) => items = node.getCollectionOfObjectValues<ProvisionedSystemSyncLog>(ProvisionedSystemSyncLog.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class ProvisionedSystemSyncLogLinkableWrapper implements AdditionalDataHolder, P
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<ProvisionedSystemSyncLog>('items', items);
         writer.writeAdditionalData(additionalData);
     }

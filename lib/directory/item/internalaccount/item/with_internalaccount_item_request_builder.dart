@@ -18,20 +18,20 @@ class WithInternalaccountItemRequestBuilder extends BaseRequestBuilder<WithInter
     }
     /// Clones the requestbuilder.
     @override
-     WithInternalaccountItemRequestBuilder clone() {
+    WithInternalaccountItemRequestBuilder clone() {
         return WithInternalaccountItemRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [WithInternalaccountItemRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     WithInternalaccountItemRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/directory/{directoryid}/internalaccount/{internalaccountid}{?additional*}", pathParameters) ;
+    WithInternalaccountItemRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/directory/{directoryid}/internalaccount/{internalaccountid}{?additional*}", pathParameters) ;
     /// Instantiates a new [WithInternalaccountItemRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     WithInternalaccountItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/directory/{directoryid}/internalaccount/{internalaccountid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    WithInternalaccountItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/directory/{directoryid}/internalaccount/{internalaccountid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Removes the specified internal accounts from a directory, including the associated KeyHub account.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<void> deleteAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    Future<void> deleteAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -40,7 +40,7 @@ class WithInternalaccountItemRequestBuilder extends BaseRequestBuilder<WithInter
     }
     /// Returns the single internal accounts within a directory.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<InternalAccount?> getAsync([Function(RequestConfiguration<WithInternalaccountItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    Future<InternalAccount?> getAsync([Function(RequestConfiguration<WithInternalaccountItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -50,7 +50,7 @@ class WithInternalaccountItemRequestBuilder extends BaseRequestBuilder<WithInter
     /// Updates the internal accounts within a directory identified by the id.
     /// <param name="body">body</param>
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<InternalAccount?> putAsync(InternalAccount body, [Function(RequestConfiguration<WithInternalaccountItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
+    Future<InternalAccount?> putAsync(InternalAccount body, [Function(RequestConfiguration<WithInternalaccountItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -59,28 +59,28 @@ class WithInternalaccountItemRequestBuilder extends BaseRequestBuilder<WithInter
     }
     /// Removes the specified internal accounts from a directory, including the associated KeyHub account.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toDeleteRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    RequestInformation toDeleteRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
     /// Returns the single internal accounts within a directory.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toGetRequestInformation([Function(RequestConfiguration<WithInternalaccountItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    RequestInformation toGetRequestInformation([Function(RequestConfiguration<WithInternalaccountItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithInternalaccountItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithInternalaccountItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
     /// Updates the internal accounts within a directory identified by the id.
     /// <param name="body">body</param>
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toPutRequestInformation(InternalAccount body, [Function(RequestConfiguration<WithInternalaccountItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
+    RequestInformation toPutRequestInformation(InternalAccount body, [Function(RequestConfiguration<WithInternalaccountItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithInternalaccountItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithInternalaccountItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=73', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
         return requestInfo;
     }
 }

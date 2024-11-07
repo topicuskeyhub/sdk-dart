@@ -14,12 +14,12 @@ class GroupOnSystemPrimer extends Linkable implements Parsable {
     ///  The shortNameInSystem property
     String? shortNameInSystem;
     /// Instantiates a new [GroupOnSystemPrimer] and sets the default values.
-     GroupOnSystemPrimer() : super() {
+    GroupOnSystemPrimer() : super() {
         typeEscaped = 'provisioning.GroupOnSystemPrimer';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static GroupOnSystemPrimer createFromDiscriminatorValue(ParseNode parseNode) {
+    static GroupOnSystemPrimer createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'provisioning.GroupOnSystem' => GroupOnSystem(),
@@ -29,7 +29,7 @@ class GroupOnSystemPrimer extends Linkable implements Parsable {
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['displayName'] = (node) => displayName = node.getStringValue();
         deserializerMap['type'] = (node) => groupOnSystemPrimerType = node.getEnumValue<GroupOnSystemType>((stringValue) => GroupOnSystemType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
@@ -40,7 +40,7 @@ class GroupOnSystemPrimer extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeEnumValue<GroupOnSystemType>('type', groupOnSystemPrimerType, (e) => e?.value);
         writer.writeStringValue('nameInSystem', nameInSystem);

@@ -10,17 +10,17 @@ class AccountDirectoryStatusReport extends NonLinkable implements Parsable {
     ///  The status property
     AccountDirectoryStatus? status;
     /// Instantiates a new [AccountDirectoryStatusReport] and sets the default values.
-     AccountDirectoryStatusReport() : super() {
+    AccountDirectoryStatusReport() : super() {
         typeEscaped = 'directory.AccountDirectoryStatusReport';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AccountDirectoryStatusReport createFromDiscriminatorValue(ParseNode parseNode) {
+    static AccountDirectoryStatusReport createFromDiscriminatorValue(ParseNode parseNode) {
         return AccountDirectoryStatusReport();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['accounts'] = (node) => accounts = node.getIntValue();
         deserializerMap['reason'] = (node) => reason = node.getStringValue();
@@ -30,7 +30,7 @@ class AccountDirectoryStatusReport extends NonLinkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeEnumValue<AccountDirectoryStatus>('status', status, (e) => e?.value);
     }

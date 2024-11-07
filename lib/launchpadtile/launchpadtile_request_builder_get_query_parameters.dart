@@ -31,7 +31,7 @@ class LaunchpadtileRequestBuilderGetQueryParameters implements AbstractQueryPara
     List<int>? vaultRecord;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
-     Map<String, dynamic> toMap() {
+    Map<String, dynamic> toMap() {
         return {
             'additional' : additional,
             'any' : any,

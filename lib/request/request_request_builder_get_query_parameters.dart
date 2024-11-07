@@ -31,10 +31,14 @@ class RequestRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<DateTime>? createdAfter;
     ///  Only return records that have been created before the given instant.
     List<DateTime>? createdBefore;
-    ///  Only return VerifyInternalAccountRequest for the given internal directory(ies), specified by id. This parameter supports composition with all parameters from the directory resource.
+    ///  Only return requests for the given directory(ies), specified by id. This parameter supports composition with all parameters from the directory resource.
     List<int>? directory;
     ///  Filter the results to exclude the given ids.
     List<int>? exclude;
+    ///  Only return GrantGroupOnSystemRequest(s) that either have activation required enabled or disabled.
+    List<bool>? grantGroupOnSystemRequestActivationRequired;
+    ///  Only return GrantGroupOnSystemRequestRequest(s) that either have activation required enabled or disabled.
+    List<bool>? grantGroupOnSystemRequestRequestActivationRequired;
     ///  Filter requests on the given groups, specified by id. This parameter supports composition with all parameters from the group resource.
     List<int>? group;
     ///  Filter requests on the given group on system, specified by id. This parameter supports composition with all parameters from the group on system resource.
@@ -91,7 +95,7 @@ class RequestRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<int>? wasProcessedBy;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
-     Map<String, dynamic> toMap() {
+    Map<String, dynamic> toMap() {
         return {
             'accessProfile' : accessProfile,
             'accountToUpdate' : accountToUpdate,
@@ -107,6 +111,8 @@ class RequestRequestBuilderGetQueryParameters implements AbstractQueryParameters
             'createdBefore' : createdBefore,
             'directory' : directory,
             'exclude' : exclude,
+            'grantGroupOnSystemRequestActivationRequired' : grantGroupOnSystemRequestActivationRequired,
+            'grantGroupOnSystemRequestRequestActivationRequired' : grantGroupOnSystemRequestRequestActivationRequired,
             'group' : group,
             'groupOnSystem' : groupOnSystem,
             'groupsOverlapWith' : groupsOverlapWith,

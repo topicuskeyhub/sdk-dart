@@ -10,17 +10,17 @@ class ModificationRequestNotification extends Notification implements Parsable {
     ///  The request property
     ModificationRequest? request;
     /// Instantiates a new [ModificationRequestNotification] and sets the default values.
-     ModificationRequestNotification() : super() {
+    ModificationRequestNotification() : super() {
         typeEscaped = 'notification.ModificationRequestNotification';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ModificationRequestNotification createFromDiscriminatorValue(ParseNode parseNode) {
+    static ModificationRequestNotification createFromDiscriminatorValue(ParseNode parseNode) {
         return ModificationRequestNotification();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['admins'] = (node) => admins = node.getCollectionOfPrimitiveValues<String>();
         deserializerMap['groups'] = (node) => groups = node.getCollectionOfPrimitiveValues<String>();
@@ -30,7 +30,7 @@ class ModificationRequestNotification extends Notification implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeCollectionOfPrimitiveValues<String?>('admins', admins);
         writer.writeCollectionOfPrimitiveValues<String?>('groups', groups);

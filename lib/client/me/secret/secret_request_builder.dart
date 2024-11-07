@@ -6,21 +6,21 @@ import '../../../models/generated_secret.dart';
 class SecretRequestBuilder extends BaseRequestBuilder<SecretRequestBuilder> {
     /// Clones the requestbuilder.
     @override
-     SecretRequestBuilder clone() {
+    SecretRequestBuilder clone() {
         return SecretRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [SecretRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     SecretRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client/me/secret", pathParameters) ;
+    SecretRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client/me/secret", pathParameters) ;
     /// Instantiates a new [SecretRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     SecretRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client/me/secret", {RequestInformation.rawUrlKey : rawUrl}) ;
+    SecretRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client/me/secret", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// The given secret will be verified and a new secret generated and returned.
     /// <param name="body">body</param>
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<Iterable<int>?> postAsync(GeneratedSecret body, [Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    Future<Iterable<int>?> postAsync(GeneratedSecret body, [Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -30,11 +30,11 @@ class SecretRequestBuilder extends BaseRequestBuilder<SecretRequestBuilder> {
     /// The given secret will be verified and a new secret generated and returned.
     /// <param name="body">body</param>
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toPostRequestInformation(GeneratedSecret body, [Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    RequestInformation toPostRequestInformation(GeneratedSecret body, [Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=73', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
         return requestInfo;
     }
 }

@@ -14,27 +14,27 @@ class RequestRequestBuilder extends BaseRequestBuilder<RequestRequestBuilder> {
     }
     /// Gets an item from the ApiSdk.request.item collection
     /// <param name="requestid">requestid</param>
-     WithRequestItemRequestBuilder byRequestid(int requestid) {
+    WithRequestItemRequestBuilder byRequestid(int requestid) {
         var urlTplParams = Map.of(pathParameters);
         urlTplParams.putIfAbsent("requestid", ()=> requestid);
         return WithRequestItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
     @override
-     RequestRequestBuilder clone() {
+    RequestRequestBuilder clone() {
         return RequestRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [RequestRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     RequestRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/request{?accessProfile*,accountToUpdate*,additional*,adminToRevoke*,any*,application*,authorizationType*,authorizingGroupType*,clientPermission*,connectAuthorization*,createdAfter*,createdBefore*,directory*,exclude*,group*,groupOnSystem*,groupsOverlapWith*,id*,internalAccount*,mailKey*,modifiedSince*,newAdmin*,newGroupName*,newGroupOnSystemName*,newNamespaceName*,newServiceAccountName*,organizationalUnit*,ownerGroup*,precededBy*,processedBy*,q*,requestedBy*,requestingGroup*,serviceAccount*,sort*,status*,system*,triggeredFollowUpRequest*,type*,updateGroupMembershipType*,wasProcessedBy*}", pathParameters) ;
+    RequestRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/request{?accessProfile*,accountToUpdate*,additional*,adminToRevoke*,any*,application*,authorizationType*,authorizingGroupType*,clientPermission*,connectAuthorization*,createdAfter*,createdBefore*,directory*,exclude*,grantGroupOnSystemRequestActivationRequired*,grantGroupOnSystemRequestRequestActivationRequired*,group*,groupOnSystem*,groupsOverlapWith*,id*,internalAccount*,mailKey*,modifiedSince*,newAdmin*,newGroupName*,newGroupOnSystemName*,newNamespaceName*,newServiceAccountName*,organizationalUnit*,ownerGroup*,precededBy*,processedBy*,q*,requestedBy*,requestingGroup*,serviceAccount*,sort*,status*,system*,triggeredFollowUpRequest*,type*,updateGroupMembershipType*,wasProcessedBy*}", pathParameters) ;
     /// Instantiates a new [RequestRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     RequestRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/request{?accessProfile*,accountToUpdate*,additional*,adminToRevoke*,any*,application*,authorizationType*,authorizingGroupType*,clientPermission*,connectAuthorization*,createdAfter*,createdBefore*,directory*,exclude*,group*,groupOnSystem*,groupsOverlapWith*,id*,internalAccount*,mailKey*,modifiedSince*,newAdmin*,newGroupName*,newGroupOnSystemName*,newNamespaceName*,newServiceAccountName*,organizationalUnit*,ownerGroup*,precededBy*,processedBy*,q*,requestedBy*,requestingGroup*,serviceAccount*,sort*,status*,system*,triggeredFollowUpRequest*,type*,updateGroupMembershipType*,wasProcessedBy*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    RequestRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/request{?accessProfile*,accountToUpdate*,additional*,adminToRevoke*,any*,application*,authorizationType*,authorizingGroupType*,clientPermission*,connectAuthorization*,createdAfter*,createdBefore*,directory*,exclude*,grantGroupOnSystemRequestActivationRequired*,grantGroupOnSystemRequestRequestActivationRequired*,group*,groupOnSystem*,groupsOverlapWith*,id*,internalAccount*,mailKey*,modifiedSince*,newAdmin*,newGroupName*,newGroupOnSystemName*,newNamespaceName*,newServiceAccountName*,organizationalUnit*,ownerGroup*,precededBy*,processedBy*,q*,requestedBy*,requestingGroup*,serviceAccount*,sort*,status*,system*,triggeredFollowUpRequest*,type*,updateGroupMembershipType*,wasProcessedBy*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Queries over all modification requests. The various query parameters can be used to filter the response.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<ModificationRequestLinkableWrapper?> getAsync([Function(RequestConfiguration<RequestRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    Future<ModificationRequestLinkableWrapper?> getAsync([Function(RequestConfiguration<RequestRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -44,7 +44,7 @@ class RequestRequestBuilder extends BaseRequestBuilder<RequestRequestBuilder> {
     /// Creates one or more new modification requests and returns the newly created requests.
     /// <param name="body">body</param>
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<ModificationRequestLinkableWrapper?> postAsync(ModificationRequestLinkableWrapper body, [Function(RequestConfiguration<RequestRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
+    Future<ModificationRequestLinkableWrapper?> postAsync(ModificationRequestLinkableWrapper body, [Function(RequestConfiguration<RequestRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -53,20 +53,20 @@ class RequestRequestBuilder extends BaseRequestBuilder<RequestRequestBuilder> {
     }
     /// Queries over all modification requests. The various query parameters can be used to filter the response.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toGetRequestInformation([Function(RequestConfiguration<RequestRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    RequestInformation toGetRequestInformation([Function(RequestConfiguration<RequestRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<RequestRequestBuilderGetQueryParameters>(requestConfiguration, () => RequestRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
     /// Creates one or more new modification requests and returns the newly created requests.
     /// <param name="body">body</param>
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toPostRequestInformation(ModificationRequestLinkableWrapper body, [Function(RequestConfiguration<RequestRequestBuilderPostQueryParameters>)? requestConfiguration]) {
+    RequestInformation toPostRequestInformation(ModificationRequestLinkableWrapper body, [Function(RequestConfiguration<RequestRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<RequestRequestBuilderPostQueryParameters>(requestConfiguration, () => RequestRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=73', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
         return requestInfo;
     }
 }

@@ -8,20 +8,20 @@ import './with_audit_item_request_builder_put_query_parameters.dart';
 class WithAuditItemRequestBuilder extends BaseRequestBuilder<WithAuditItemRequestBuilder> {
     /// Clones the requestbuilder.
     @override
-     WithAuditItemRequestBuilder clone() {
+    WithAuditItemRequestBuilder clone() {
         return WithAuditItemRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [WithAuditItemRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     WithAuditItemRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/{groupid}/audit/{auditid}{?additional*}", pathParameters) ;
+    WithAuditItemRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/{groupid}/audit/{auditid}{?additional*}", pathParameters) ;
     /// Instantiates a new [WithAuditItemRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     WithAuditItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/{groupid}/audit/{auditid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    WithAuditItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/{groupid}/audit/{auditid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Returns the single audits for the group.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<GroupAudit?> getAsync([Function(RequestConfiguration<WithAuditItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    Future<GroupAudit?> getAsync([Function(RequestConfiguration<WithAuditItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -31,7 +31,7 @@ class WithAuditItemRequestBuilder extends BaseRequestBuilder<WithAuditItemReques
     /// Updates the audits for a group identified by the id. Only audits in draft can be updated.
     /// <param name="body">body</param>
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<GroupAudit?> putAsync(GroupAudit body, [Function(RequestConfiguration<WithAuditItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
+    Future<GroupAudit?> putAsync(GroupAudit body, [Function(RequestConfiguration<WithAuditItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -40,20 +40,20 @@ class WithAuditItemRequestBuilder extends BaseRequestBuilder<WithAuditItemReques
     }
     /// Returns the single audits for the group.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toGetRequestInformation([Function(RequestConfiguration<WithAuditItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    RequestInformation toGetRequestInformation([Function(RequestConfiguration<WithAuditItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithAuditItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithAuditItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
     /// Updates the audits for a group identified by the id. Only audits in draft can be updated.
     /// <param name="body">body</param>
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toPutRequestInformation(GroupAudit body, [Function(RequestConfiguration<WithAuditItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
+    RequestInformation toPutRequestInformation(GroupAudit body, [Function(RequestConfiguration<WithAuditItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithAuditItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithAuditItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=73', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
         return requestInfo;
     }
 }

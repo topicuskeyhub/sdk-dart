@@ -26,12 +26,12 @@ class ProvisionedSystemPrimer extends Linkable implements Parsable {
     ///  The uuid property
     String? uuid;
     /// Instantiates a new [ProvisionedSystemPrimer] and sets the default values.
-     ProvisionedSystemPrimer() : super() {
+    ProvisionedSystemPrimer() : super() {
         typeEscaped = 'provisioning.ProvisionedSystemPrimer';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ProvisionedSystemPrimer createFromDiscriminatorValue(ParseNode parseNode) {
+    static ProvisionedSystemPrimer createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'provisioning.AbstractProvisionedLDAP' => AbstractProvisionedLDAP(),
@@ -50,7 +50,7 @@ class ProvisionedSystemPrimer extends Linkable implements Parsable {
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['active'] = (node) => active = node.getBoolValue();
         deserializerMap['name'] = (node) => name = node.getStringValue();
@@ -62,7 +62,7 @@ class ProvisionedSystemPrimer extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeBoolValue('active', value:active);
         writer.writeStringValue('name', name);

@@ -8,16 +8,16 @@ class GroupAuditLinkableWrapper implements AdditionalDataHolder, Parsable {
     ///  The items property
     Iterable<GroupAudit>? items;
     /// Instantiates a new [GroupAuditLinkableWrapper] and sets the default values.
-     GroupAuditLinkableWrapper() :  
+    GroupAuditLinkableWrapper() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static GroupAuditLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
+    static GroupAuditLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
         return GroupAuditLinkableWrapper();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['items'] = (node) => items = node.getCollectionOfObjectValues<GroupAudit>(GroupAudit.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class GroupAuditLinkableWrapper implements AdditionalDataHolder, Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<GroupAudit>('items', items);
         writer.writeAdditionalData(additionalData);
     }

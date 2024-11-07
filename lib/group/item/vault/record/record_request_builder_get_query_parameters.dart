@@ -68,7 +68,7 @@ class RecordRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     List<int>? vault;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
-     Map<String, dynamic> toMap() {
+    Map<String, dynamic> toMap() {
         return {
             'accessibleByAccount' : accessibleByAccount,
             'accessibleByAccountAsManager' : accessibleByAccountAsManager,

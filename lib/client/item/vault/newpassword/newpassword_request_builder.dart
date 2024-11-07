@@ -7,20 +7,20 @@ import './newpassword_request_builder_get_query_parameters.dart';
 class NewpasswordRequestBuilder extends BaseRequestBuilder<NewpasswordRequestBuilder> {
     /// Clones the requestbuilder.
     @override
-     NewpasswordRequestBuilder clone() {
+    NewpasswordRequestBuilder clone() {
         return NewpasswordRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [NewpasswordRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     NewpasswordRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client/{clientid}/vault/newpassword{?strategy*}", pathParameters) ;
+    NewpasswordRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client/{clientid}/vault/newpassword{?strategy*}", pathParameters) ;
     /// Instantiates a new [NewpasswordRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     NewpasswordRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client/{clientid}/vault/newpassword{?strategy*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    NewpasswordRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client/{clientid}/vault/newpassword{?strategy*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Returns a random generated password using the given strategy, or the default strategy if none given.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<StringValue?> getAsync([Function(RequestConfiguration<NewpasswordRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    Future<StringValue?> getAsync([Function(RequestConfiguration<NewpasswordRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -29,10 +29,10 @@ class NewpasswordRequestBuilder extends BaseRequestBuilder<NewpasswordRequestBui
     }
     /// Returns a random generated password using the given strategy, or the default strategy if none given.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toGetRequestInformation([Function(RequestConfiguration<NewpasswordRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    RequestInformation toGetRequestInformation([Function(RequestConfiguration<NewpasswordRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<NewpasswordRequestBuilderGetQueryParameters>(requestConfiguration, () => NewpasswordRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
 }

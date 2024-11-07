@@ -18,6 +18,7 @@ import './group_account.dart';
 import './group_account_linkable_wrapper.dart';
 import './group_auditing_info.dart';
 import './group_client_linkable_wrapper.dart';
+import './group_global_role_info.dart';
 import './group_info.dart';
 import './group_primer_linkable_wrapper.dart';
 import './group_request_status.dart';
@@ -45,6 +46,8 @@ class GroupAdditionalObjects implements AdditionalDataHolder, Parsable {
     GroupClientLinkableWrapper? clients;
     ///  The contentAdministeredSystems property
     ProvisionedSystemLinkableWrapper? contentAdministeredSystems;
+    ///  The globalRoles property
+    GroupGlobalRoleInfo? globalRoles;
     ///  The groupAccessInfo property
     GroupAccessInfo? groupAccessInfo;
     ///  The groupauditinginfo property
@@ -84,16 +87,16 @@ class GroupAdditionalObjects implements AdditionalDataHolder, Parsable {
     ///  The webhooks property
     WebhookLinkableWrapper? webhooks;
     /// Instantiates a new [GroupAdditionalObjects] and sets the default values.
-     GroupAdditionalObjects() :  
+    GroupAdditionalObjects() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static GroupAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
+    static GroupAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
         return GroupAdditionalObjects();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['accounts'] = (node) => accounts = node.getObjectValue<GroupAccountLinkableWrapper>(GroupAccountLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['administeredClients'] = (node) => administeredClients = node.getObjectValue<ClientApplicationLinkableWrapper>(ClientApplicationLinkableWrapper.createFromDiscriminatorValue);
@@ -104,6 +107,7 @@ class GroupAdditionalObjects implements AdditionalDataHolder, Parsable {
         deserializerMap['clientPermissions'] = (node) => clientPermissions = node.getObjectValue<OAuth2ClientPermissionWithClientLinkableWrapper>(OAuth2ClientPermissionWithClientLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['clients'] = (node) => clients = node.getObjectValue<GroupClientLinkableWrapper>(GroupClientLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['contentAdministeredSystems'] = (node) => contentAdministeredSystems = node.getObjectValue<ProvisionedSystemLinkableWrapper>(ProvisionedSystemLinkableWrapper.createFromDiscriminatorValue);
+        deserializerMap['globalRoles'] = (node) => globalRoles = node.getObjectValue<GroupGlobalRoleInfo>(GroupGlobalRoleInfo.createFromDiscriminatorValue);
         deserializerMap['groupAccessInfo'] = (node) => groupAccessInfo = node.getObjectValue<GroupAccessInfo>(GroupAccessInfo.createFromDiscriminatorValue);
         deserializerMap['groupauditinginfo'] = (node) => groupauditinginfo = node.getObjectValue<GroupAuditingInfo>(GroupAuditingInfo.createFromDiscriminatorValue);
         deserializerMap['groupinfo'] = (node) => groupinfo = node.getObjectValue<GroupInfo>(GroupInfo.createFromDiscriminatorValue);
@@ -128,7 +132,7 @@ class GroupAdditionalObjects implements AdditionalDataHolder, Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeObjectValue<GroupAccountLinkableWrapper>('accounts', accounts);
         writer.writeObjectValue<ClientApplicationLinkableWrapper>('administeredClients', administeredClients);
         writer.writeObjectValue<ProvisionedSystemLinkableWrapper>('administeredSystems', administeredSystems);
@@ -138,6 +142,7 @@ class GroupAdditionalObjects implements AdditionalDataHolder, Parsable {
         writer.writeObjectValue<OAuth2ClientPermissionWithClientLinkableWrapper>('clientPermissions', clientPermissions);
         writer.writeObjectValue<GroupClientLinkableWrapper>('clients', clients);
         writer.writeObjectValue<ProvisionedSystemLinkableWrapper>('contentAdministeredSystems', contentAdministeredSystems);
+        writer.writeObjectValue<GroupGlobalRoleInfo>('globalRoles', globalRoles);
         writer.writeObjectValue<GroupAccessInfo>('groupAccessInfo', groupAccessInfo);
         writer.writeObjectValue<GroupAuditingInfo>('groupauditinginfo', groupauditinginfo);
         writer.writeObjectValue<GroupInfo>('groupinfo', groupinfo);

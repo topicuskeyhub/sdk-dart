@@ -10,12 +10,12 @@ class AbstractApplicationModificationRequest extends ModificationRequest impleme
     ///  The application property
     ClientApplicationPrimer? application;
     /// Instantiates a new [AbstractApplicationModificationRequest] and sets the default values.
-     AbstractApplicationModificationRequest() : super() {
+    AbstractApplicationModificationRequest() : super() {
         typeEscaped = 'request.AbstractApplicationModificationRequest';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AbstractApplicationModificationRequest createFromDiscriminatorValue(ParseNode parseNode) {
+    static AbstractApplicationModificationRequest createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'request.GrantApplicationRequest' => GrantApplicationRequest(),
@@ -27,7 +27,7 @@ class AbstractApplicationModificationRequest extends ModificationRequest impleme
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['application'] = (node) => application = node.getObjectValue<ClientApplicationPrimer>(ClientApplicationPrimer.createFromDiscriminatorValue);
         return deserializerMap;
@@ -35,7 +35,7 @@ class AbstractApplicationModificationRequest extends ModificationRequest impleme
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<ClientApplicationPrimer>('application', application);
     }

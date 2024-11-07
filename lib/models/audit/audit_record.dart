@@ -48,17 +48,17 @@ class AuditRecord extends Linkable implements Parsable {
     ///  The securityLevel property
     SecurityLevel? securityLevel;
     /// Instantiates a new [AuditRecord] and sets the default values.
-     AuditRecord() : super() {
+    AuditRecord() : super() {
         typeEscaped = 'audit.AuditRecord';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AuditRecord createFromDiscriminatorValue(ParseNode parseNode) {
+    static AuditRecord createFromDiscriminatorValue(ParseNode parseNode) {
         return AuditRecord();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<AuditRecordAdditionalObjects>(AuditRecordAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['type'] = (node) => auditRecordType = node.getEnumValue<AuditRecordType>((stringValue) => AuditRecordType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
@@ -86,7 +86,7 @@ class AuditRecord extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<AuditRecordAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeEnumValue<AuditRecordType>('type', auditRecordType, (e) => e?.value);

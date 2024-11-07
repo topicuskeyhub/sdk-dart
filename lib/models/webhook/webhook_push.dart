@@ -50,17 +50,17 @@ class WebhookPush extends NonLinkable implements Parsable {
     ///  The type property
     AuditRecordType? webhookPushType;
     /// Instantiates a new [WebhookPush] and sets the default values.
-     WebhookPush() : super() {
+    WebhookPush() : super() {
         typeEscaped = 'webhook.WebhookPush';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static WebhookPush createFromDiscriminatorValue(ParseNode parseNode) {
+    static WebhookPush createFromDiscriminatorValue(ParseNode parseNode) {
         return WebhookPush();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['accessProfile'] = (node) => accessProfile = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['account'] = (node) => account = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
@@ -89,7 +89,7 @@ class WebhookPush extends NonLinkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<WebhookNameUuid>('accessProfile', accessProfile);
         writer.writeObjectValue<WebhookNameUuid>('account', account);

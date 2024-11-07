@@ -9,15 +9,15 @@ class AccountRequestBuilder extends BaseRequestBuilder<AccountRequestBuilder> {
     }
     /// Clones the requestbuilder.
     @override
-     AccountRequestBuilder clone() {
+    AccountRequestBuilder clone() {
         return AccountRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [AccountRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     AccountRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/account", pathParameters) ;
+    AccountRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/account", pathParameters) ;
     /// Instantiates a new [AccountRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     AccountRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/account", {RequestInformation.rawUrlKey : rawUrl}) ;
+    AccountRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/account", {RequestInformation.rawUrlKey : rawUrl}) ;
 }

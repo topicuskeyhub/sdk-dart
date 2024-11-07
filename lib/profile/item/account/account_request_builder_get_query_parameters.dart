@@ -29,7 +29,7 @@ class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<String>? sort;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
-     Map<String, dynamic> toMap() {
+    Map<String, dynamic> toMap() {
         return {
             'accessProfile' : accessProfile,
             'account' : account,

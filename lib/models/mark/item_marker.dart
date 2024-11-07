@@ -12,17 +12,17 @@ class ItemMarker extends NonLinkable implements Parsable {
     ///  The parameters property
     ItemMarkerParameters? parameters;
     /// Instantiates a new [ItemMarker] and sets the default values.
-     ItemMarker() : super() {
+    ItemMarker() : super() {
         typeEscaped = 'mark.ItemMarker';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ItemMarker createFromDiscriminatorValue(ParseNode parseNode) {
+    static ItemMarker createFromDiscriminatorValue(ParseNode parseNode) {
         return ItemMarker();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['type'] = (node) => itemMarkerType = node.getEnumValue<ItemMarkerType>((stringValue) => ItemMarkerType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['level'] = (node) => level = node.getEnumValue<ItemMarkerLevel>((stringValue) => ItemMarkerLevel.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
@@ -32,7 +32,7 @@ class ItemMarker extends NonLinkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeEnumValue<ItemMarkerType>('type', itemMarkerType, (e) => e?.value);
         writer.writeEnumValue<ItemMarkerLevel>('level', level, (e) => e?.value);

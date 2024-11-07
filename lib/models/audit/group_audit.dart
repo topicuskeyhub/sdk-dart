@@ -33,17 +33,17 @@ class GroupAudit extends Linkable implements Parsable {
     ///  The submittedBy property
     String? submittedBy;
     /// Instantiates a new [GroupAudit] and sets the default values.
-     GroupAudit() : super() {
+    GroupAudit() : super() {
         typeEscaped = 'audit.GroupAudit';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static GroupAudit createFromDiscriminatorValue(ParseNode parseNode) {
+    static GroupAudit createFromDiscriminatorValue(ParseNode parseNode) {
         return GroupAudit();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['accounts'] = (node) => accounts = node.getCollectionOfObjectValues<GroupAuditAccount>(GroupAuditAccount.createFromDiscriminatorValue);
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<GroupAuditAdditionalObjects>(GroupAuditAdditionalObjects.createFromDiscriminatorValue);
@@ -63,7 +63,7 @@ class GroupAudit extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeCollectionOfObjectValues<GroupAuditAccount>('accounts', accounts);
         writer.writeObjectValue<GroupAuditAdditionalObjects>('additionalObjects', additionalObjects);

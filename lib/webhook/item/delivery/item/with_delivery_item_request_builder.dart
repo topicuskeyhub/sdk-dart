@@ -12,20 +12,20 @@ class WithDeliveryItemRequestBuilder extends BaseRequestBuilder<WithDeliveryItem
     }
     /// Clones the requestbuilder.
     @override
-     WithDeliveryItemRequestBuilder clone() {
+    WithDeliveryItemRequestBuilder clone() {
         return WithDeliveryItemRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [WithDeliveryItemRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     WithDeliveryItemRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/webhook/{webhookid}/delivery/{deliveryid}{?additional*}", pathParameters) ;
+    WithDeliveryItemRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/webhook/{webhookid}/delivery/{deliveryid}{?additional*}", pathParameters) ;
     /// Instantiates a new [WithDeliveryItemRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     WithDeliveryItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/webhook/{webhookid}/delivery/{deliveryid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    WithDeliveryItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/webhook/{webhookid}/delivery/{deliveryid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Returns the single webhook delivery.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<WebhookDelivery?> getAsync([Function(RequestConfiguration<WithDeliveryItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    Future<WebhookDelivery?> getAsync([Function(RequestConfiguration<WithDeliveryItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -34,10 +34,10 @@ class WithDeliveryItemRequestBuilder extends BaseRequestBuilder<WithDeliveryItem
     }
     /// Returns the single webhook delivery.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toGetRequestInformation([Function(RequestConfiguration<WithDeliveryItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    RequestInformation toGetRequestInformation([Function(RequestConfiguration<WithDeliveryItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithDeliveryItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithDeliveryItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
 }

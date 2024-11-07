@@ -57,17 +57,17 @@ class Webhook extends Linkable implements Parsable {
     ///  The verbosePayloads property
     bool? verbosePayloads;
     /// Instantiates a new [Webhook] and sets the default values.
-     Webhook() : super() {
+    Webhook() : super() {
         typeEscaped = 'webhook.Webhook';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static Webhook createFromDiscriminatorValue(ParseNode parseNode) {
+    static Webhook createFromDiscriminatorValue(ParseNode parseNode) {
         return Webhook();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['account'] = (node) => account = node.getObjectValue<AccountPrimer>(AccountPrimer.createFromDiscriminatorValue);
         deserializerMap['active'] = (node) => active = node.getBoolValue();
@@ -96,7 +96,7 @@ class Webhook extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<AccountPrimer>('account', account);
         writer.writeBoolValue('active', value:active);

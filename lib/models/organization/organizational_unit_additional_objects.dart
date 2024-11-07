@@ -14,16 +14,16 @@ class OrganizationalUnitAdditionalObjects implements AdditionalDataHolder, Parsa
     ///  The settings property
     OrganizationalUnitSettings? settings;
     /// Instantiates a new [OrganizationalUnitAdditionalObjects] and sets the default values.
-     OrganizationalUnitAdditionalObjects() :  
+    OrganizationalUnitAdditionalObjects() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static OrganizationalUnitAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
+    static OrganizationalUnitAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
         return OrganizationalUnitAdditionalObjects();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
         deserializerMap['createAsParentOf'] = (node) => createAsParentOf = node.getObjectValue<OrganizationalUnitPrimerLinkableWrapper>(OrganizationalUnitPrimerLinkableWrapper.createFromDiscriminatorValue);
@@ -33,7 +33,7 @@ class OrganizationalUnitAdditionalObjects implements AdditionalDataHolder, Parsa
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeObjectValue<AuditInfo>('audit', audit);
         writer.writeObjectValue<OrganizationalUnitPrimerLinkableWrapper>('createAsParentOf', createAsParentOf);
         writer.writeObjectValue<OrganizationalUnitSettings>('settings', settings);

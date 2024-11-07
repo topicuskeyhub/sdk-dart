@@ -8,16 +8,16 @@ class DeletedVaultHolderLinkableWrapper implements AdditionalDataHolder, Parsabl
     ///  The items property
     Iterable<DeletedVaultHolder>? items;
     /// Instantiates a new [DeletedVaultHolderLinkableWrapper] and sets the default values.
-     DeletedVaultHolderLinkableWrapper() :  
+    DeletedVaultHolderLinkableWrapper() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static DeletedVaultHolderLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
+    static DeletedVaultHolderLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
         return DeletedVaultHolderLinkableWrapper();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['items'] = (node) => items = node.getCollectionOfObjectValues<DeletedVaultHolder>(DeletedVaultHolder.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class DeletedVaultHolderLinkableWrapper implements AdditionalDataHolder, Parsabl
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<DeletedVaultHolder>('items', items);
         writer.writeAdditionalData(additionalData);
     }

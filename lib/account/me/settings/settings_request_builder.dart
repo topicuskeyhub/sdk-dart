@@ -11,20 +11,20 @@ class SettingsRequestBuilder extends BaseRequestBuilder<SettingsRequestBuilder> 
     }
     /// Clones the requestbuilder.
     @override
-     SettingsRequestBuilder clone() {
+    SettingsRequestBuilder clone() {
         return SettingsRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [SettingsRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     SettingsRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/me/settings", pathParameters) ;
+    SettingsRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/me/settings", pathParameters) ;
     /// Instantiates a new [SettingsRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     SettingsRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/me/settings", {RequestInformation.rawUrlKey : rawUrl}) ;
+    SettingsRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/me/settings", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Returns an overview of the settings selected by the current user.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<AccountSettings?> getAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    Future<AccountSettings?> getAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -33,10 +33,10 @@ class SettingsRequestBuilder extends BaseRequestBuilder<SettingsRequestBuilder> 
     }
     /// Returns an overview of the settings selected by the current user.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toGetRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    RequestInformation toGetRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
 }

@@ -12,17 +12,17 @@ class AccessProfileProvisioning extends Linkable implements Parsable {
     ///  The groupOnSystem property
     GroupOnSystem? groupOnSystem;
     /// Instantiates a new [AccessProfileProvisioning] and sets the default values.
-     AccessProfileProvisioning() : super() {
+    AccessProfileProvisioning() : super() {
         typeEscaped = 'profile.AccessProfileProvisioning';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AccessProfileProvisioning createFromDiscriminatorValue(ParseNode parseNode) {
+    static AccessProfileProvisioning createFromDiscriminatorValue(ParseNode parseNode) {
         return AccessProfileProvisioning();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['accessProfile'] = (node) => accessProfile = node.getObjectValue<AccessProfilePrimer>(AccessProfilePrimer.createFromDiscriminatorValue);
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<AccessProfileProvisioningAdditionalObjects>(AccessProfileProvisioningAdditionalObjects.createFromDiscriminatorValue);
@@ -32,7 +32,7 @@ class AccessProfileProvisioning extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<AccessProfilePrimer>('accessProfile', accessProfile);
         writer.writeObjectValue<AccessProfileProvisioningAdditionalObjects>('additionalObjects', additionalObjects);

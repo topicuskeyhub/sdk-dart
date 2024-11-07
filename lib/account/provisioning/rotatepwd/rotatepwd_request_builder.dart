@@ -6,20 +6,20 @@ import '../../../models/provisioning/account_provisioning_status_report.dart';
 class RotatepwdRequestBuilder extends BaseRequestBuilder<RotatepwdRequestBuilder> {
     /// Clones the requestbuilder.
     @override
-     RotatepwdRequestBuilder clone() {
+    RotatepwdRequestBuilder clone() {
         return RotatepwdRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [RotatepwdRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     RotatepwdRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/provisioning/rotatepwd", pathParameters) ;
+    RotatepwdRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/provisioning/rotatepwd", pathParameters) ;
     /// Instantiates a new [RotatepwdRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     RotatepwdRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/provisioning/rotatepwd", {RequestInformation.rawUrlKey : rawUrl}) ;
+    RotatepwdRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/provisioning/rotatepwd", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Manually rotates the user's rotating password. This is normally done once a day automatically.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<AccountProvisioningStatusReport?> postAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    Future<AccountProvisioningStatusReport?> postAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -28,10 +28,10 @@ class RotatepwdRequestBuilder extends BaseRequestBuilder<RotatepwdRequestBuilder
     }
     /// Manually rotates the user's rotating password. This is normally done once a day automatically.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toPostRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    RequestInformation toPostRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
 }

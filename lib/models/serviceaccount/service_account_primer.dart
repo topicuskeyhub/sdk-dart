@@ -15,12 +15,12 @@ class ServiceAccountPrimer extends Linkable implements Parsable {
     ///  The uuid property
     String? uuid;
     /// Instantiates a new [ServiceAccountPrimer] and sets the default values.
-     ServiceAccountPrimer() : super() {
+    ServiceAccountPrimer() : super() {
         typeEscaped = 'serviceaccount.ServiceAccountPrimer';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ServiceAccountPrimer createFromDiscriminatorValue(ParseNode parseNode) {
+    static ServiceAccountPrimer createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'serviceaccount.ServiceAccount' => ServiceAccount(),
@@ -29,7 +29,7 @@ class ServiceAccountPrimer extends Linkable implements Parsable {
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['active'] = (node) => active = node.getBoolValue();
         deserializerMap['name'] = (node) => name = node.getStringValue();
@@ -41,7 +41,7 @@ class ServiceAccountPrimer extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeBoolValue('active', value:active);
         writer.writeStringValue('name', name);

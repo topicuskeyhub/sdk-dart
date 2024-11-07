@@ -8,16 +8,16 @@ class ProvisionedSystemLinkableWrapper implements AdditionalDataHolder, Parsable
     ///  The items property
     Iterable<ProvisionedSystem>? items;
     /// Instantiates a new [ProvisionedSystemLinkableWrapper] and sets the default values.
-     ProvisionedSystemLinkableWrapper() :  
+    ProvisionedSystemLinkableWrapper() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ProvisionedSystemLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
+    static ProvisionedSystemLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
         return ProvisionedSystemLinkableWrapper();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['items'] = (node) => items = node.getCollectionOfObjectValues<ProvisionedSystem>(ProvisionedSystem.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class ProvisionedSystemLinkableWrapper implements AdditionalDataHolder, Parsable
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<ProvisionedSystem>('items', items);
         writer.writeAdditionalData(additionalData);
     }

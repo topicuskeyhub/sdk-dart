@@ -7,17 +7,17 @@ class SegmentCount extends NonLinkable implements Parsable {
     ///  The name property
     String? name;
     /// Instantiates a new [SegmentCount] and sets the default values.
-     SegmentCount() : super() {
+    SegmentCount() : super() {
         typeEscaped = 'SegmentCount';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static SegmentCount createFromDiscriminatorValue(ParseNode parseNode) {
+    static SegmentCount createFromDiscriminatorValue(ParseNode parseNode) {
         return SegmentCount();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['count'] = (node) => count = node.getIntValue();
         deserializerMap['name'] = (node) => name = node.getStringValue();
@@ -26,7 +26,7 @@ class SegmentCount extends NonLinkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeIntValue('count', count);
         writer.writeStringValue('name', name);

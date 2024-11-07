@@ -5,20 +5,20 @@ import '../../../../../models/error_report.dart';
 class RedeliverRequestBuilder extends BaseRequestBuilder<RedeliverRequestBuilder> {
     /// Clones the requestbuilder.
     @override
-     RedeliverRequestBuilder clone() {
+    RedeliverRequestBuilder clone() {
         return RedeliverRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [RedeliverRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     RedeliverRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/webhook/{webhookid}/delivery/{deliveryid}/redeliver", pathParameters) ;
+    RedeliverRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/webhook/{webhookid}/delivery/{deliveryid}/redeliver", pathParameters) ;
     /// Instantiates a new [RedeliverRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     RedeliverRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/webhook/{webhookid}/delivery/{deliveryid}/redeliver", {RequestInformation.rawUrlKey : rawUrl}) ;
+    RedeliverRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/webhook/{webhookid}/delivery/{deliveryid}/redeliver", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Perform a redelivery of the webhook payload.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<void> postAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    Future<void> postAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -27,10 +27,10 @@ class RedeliverRequestBuilder extends BaseRequestBuilder<RedeliverRequestBuilder
     }
     /// Perform a redelivery of the webhook payload.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toPostRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    RequestInformation toPostRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
 }

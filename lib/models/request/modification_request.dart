@@ -23,6 +23,7 @@ import './grant_group_on_system_request_request.dart';
 import './grant_service_account_group_request.dart';
 import './join_group_request.dart';
 import './join_vault_request.dart';
+import './link_directory_to_access_profile_request.dart';
 import './modification_request_additional_objects.dart';
 import './modification_request_status.dart';
 import './modification_request_type.dart';
@@ -45,6 +46,7 @@ import './transfer_provisioned_system_content_administration_request.dart';
 import './transfer_provisioned_system_ownership_request.dart';
 import './transfer_service_account_administration_request.dart';
 import './update_group_membership_request.dart';
+import './update_license_request.dart';
 import './verify_internal_account_request.dart';
 
 class ModificationRequest extends Linkable implements Parsable {
@@ -65,12 +67,12 @@ class ModificationRequest extends Linkable implements Parsable {
     ///  The status property
     ModificationRequestStatus? status;
     /// Instantiates a new [ModificationRequest] and sets the default values.
-     ModificationRequest() : super() {
+    ModificationRequest() : super() {
         typeEscaped = 'request.ModificationRequest';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ModificationRequest createFromDiscriminatorValue(ParseNode parseNode) {
+    static ModificationRequest createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'request.AbstractAccessProfileModificationRequest' => AbstractAccessProfileModificationRequest(),
@@ -94,6 +96,7 @@ class ModificationRequest extends Linkable implements Parsable {
             'request.GrantServiceAccountGroupRequest' => GrantServiceAccountGroupRequest(),
             'request.JoinGroupRequest' => JoinGroupRequest(),
             'request.JoinVaultRequest' => JoinVaultRequest(),
+            'request.LinkDirectoryToAccessProfileRequest' => LinkDirectoryToAccessProfileRequest(),
             'request.MoveGroupsRequest' => MoveGroupsRequest(),
             'request.PasswordResetRequest' => PasswordResetRequest(),
             'request.RemoveGroupRequest' => RemoveGroupRequest(),
@@ -113,13 +116,14 @@ class ModificationRequest extends Linkable implements Parsable {
             'request.TransferProvisionedSystemOwnershipRequest' => TransferProvisionedSystemOwnershipRequest(),
             'request.TransferServiceAccountAdministrationRequest' => TransferServiceAccountAdministrationRequest(),
             'request.UpdateGroupMembershipRequest' => UpdateGroupMembershipRequest(),
+            'request.UpdateLicenseRequest' => UpdateLicenseRequest(),
             'request.VerifyInternalAccountRequest' => VerifyInternalAccountRequest(),
             _ => ModificationRequest(),
         };
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['account'] = (node) => account = node.getObjectValue<AccountPrimer>(AccountPrimer.createFromDiscriminatorValue);
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<ModificationRequestAdditionalObjects>(ModificationRequestAdditionalObjects.createFromDiscriminatorValue);
@@ -134,7 +138,7 @@ class ModificationRequest extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<AccountPrimer>('account', account);
         writer.writeObjectValue<ModificationRequestAdditionalObjects>('additionalObjects', additionalObjects);

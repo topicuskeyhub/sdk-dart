@@ -41,12 +41,12 @@ class AbstractProvisionedLDAP extends ProvisionedSystem implements Parsable {
     ///  The userDN property
     String? userDN;
     /// Instantiates a new [AbstractProvisionedLDAP] and sets the default values.
-     AbstractProvisionedLDAP() : super() {
+    AbstractProvisionedLDAP() : super() {
         typeEscaped = 'provisioning.AbstractProvisionedLDAP';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AbstractProvisionedLDAP createFromDiscriminatorValue(ParseNode parseNode) {
+    static AbstractProvisionedLDAP createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'provisioning.ProvisionedAD' => ProvisionedAD(),
@@ -56,7 +56,7 @@ class AbstractProvisionedLDAP extends ProvisionedSystem implements Parsable {
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['attributes'] = (node) => attributes = node.getObjectValue<AbstractProvisionedLDAPAttributes>(AbstractProvisionedLDAPAttributes.createFromDiscriminatorValue);
         deserializerMap['baseDN'] = (node) => baseDN = node.getStringValue();
@@ -79,7 +79,7 @@ class AbstractProvisionedLDAP extends ProvisionedSystem implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<AbstractProvisionedLDAPAttributes>('attributes', attributes);
         writer.writeStringValue('baseDN', baseDN);

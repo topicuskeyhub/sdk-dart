@@ -14,16 +14,16 @@ class AccountDirectoryAdditionalObjects implements AdditionalDataHolder, Parsabl
     ///  The status property
     AccountDirectoryStatusReport? status;
     /// Instantiates a new [AccountDirectoryAdditionalObjects] and sets the default values.
-     AccountDirectoryAdditionalObjects() :  
+    AccountDirectoryAdditionalObjects() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static AccountDirectoryAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
+    static AccountDirectoryAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
         return AccountDirectoryAdditionalObjects();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
         deserializerMap['markers'] = (node) => markers = node.getObjectValue<ItemMarkers>(ItemMarkers.createFromDiscriminatorValue);
@@ -33,7 +33,7 @@ class AccountDirectoryAdditionalObjects implements AdditionalDataHolder, Parsabl
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeObjectValue<AuditInfo>('audit', audit);
         writer.writeObjectValue<ItemMarkers>('markers', markers);
         writer.writeObjectValue<AccountDirectoryStatusReport>('status', status);

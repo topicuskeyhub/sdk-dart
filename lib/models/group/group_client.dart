@@ -18,17 +18,17 @@ class GroupClient extends Linkable implements Parsable {
     ///  The technicalAdministrator property
     GroupPrimer? technicalAdministrator;
     /// Instantiates a new [GroupClient] and sets the default values.
-     GroupClient() : super() {
+    GroupClient() : super() {
         typeEscaped = 'group.GroupClient';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static GroupClient createFromDiscriminatorValue(ParseNode parseNode) {
+    static GroupClient createFromDiscriminatorValue(ParseNode parseNode) {
         return GroupClient();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['activationRequired'] = (node) => activationRequired = node.getBoolValue();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<GroupClientAdditionalObjects>(GroupClientAdditionalObjects.createFromDiscriminatorValue);
@@ -41,7 +41,7 @@ class GroupClient extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeBoolValue('activationRequired', value:activationRequired);
         writer.writeObjectValue<GroupClientAdditionalObjects>('additionalObjects', additionalObjects);

@@ -14,27 +14,27 @@ class LaunchpadtileRequestBuilder extends BaseRequestBuilder<LaunchpadtileReques
     }
     /// Gets an item from the ApiSdk.launchpadtile.item collection
     /// <param name="launchpadtileid">launchpadtileid</param>
-     WithLaunchpadtileItemRequestBuilder byLaunchpadtileid(int launchpadtileid) {
+    WithLaunchpadtileItemRequestBuilder byLaunchpadtileid(int launchpadtileid) {
         var urlTplParams = Map.of(pathParameters);
         urlTplParams.putIfAbsent("launchpadtileid", ()=> launchpadtileid);
         return WithLaunchpadtileItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
     @override
-     LaunchpadtileRequestBuilder clone() {
+    LaunchpadtileRequestBuilder clone() {
         return LaunchpadtileRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [LaunchpadtileRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     LaunchpadtileRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/launchpadtile{?additional*,any*,application*,createdAfter*,createdBefore*,exclude*,group*,id*,modifiedSince*,q*,sort*,title*,vaultRecord*}", pathParameters) ;
+    LaunchpadtileRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/launchpadtile{?additional*,any*,application*,createdAfter*,createdBefore*,exclude*,group*,id*,modifiedSince*,q*,sort*,title*,vaultRecord*}", pathParameters) ;
     /// Instantiates a new [LaunchpadtileRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     LaunchpadtileRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/launchpadtile{?additional*,any*,application*,createdAfter*,createdBefore*,exclude*,group*,id*,modifiedSince*,q*,sort*,title*,vaultRecord*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    LaunchpadtileRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/launchpadtile{?additional*,any*,application*,createdAfter*,createdBefore*,exclude*,group*,id*,modifiedSince*,q*,sort*,title*,vaultRecord*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Queries over all launchpad tiles. The various query parameters can be used to filter the response.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<LaunchpadTileLinkableWrapper?> getAsync([Function(RequestConfiguration<LaunchpadtileRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    Future<LaunchpadTileLinkableWrapper?> getAsync([Function(RequestConfiguration<LaunchpadtileRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -44,7 +44,7 @@ class LaunchpadtileRequestBuilder extends BaseRequestBuilder<LaunchpadtileReques
     /// Creates one or more new launchpad tiles and returns the newly created tiles.
     /// <param name="body">body</param>
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<LaunchpadTileLinkableWrapper?> postAsync(LaunchpadTileLinkableWrapper body, [Function(RequestConfiguration<LaunchpadtileRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
+    Future<LaunchpadTileLinkableWrapper?> postAsync(LaunchpadTileLinkableWrapper body, [Function(RequestConfiguration<LaunchpadtileRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -53,20 +53,20 @@ class LaunchpadtileRequestBuilder extends BaseRequestBuilder<LaunchpadtileReques
     }
     /// Queries over all launchpad tiles. The various query parameters can be used to filter the response.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toGetRequestInformation([Function(RequestConfiguration<LaunchpadtileRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    RequestInformation toGetRequestInformation([Function(RequestConfiguration<LaunchpadtileRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<LaunchpadtileRequestBuilderGetQueryParameters>(requestConfiguration, () => LaunchpadtileRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
     /// Creates one or more new launchpad tiles and returns the newly created tiles.
     /// <param name="body">body</param>
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toPostRequestInformation(LaunchpadTileLinkableWrapper body, [Function(RequestConfiguration<LaunchpadtileRequestBuilderPostQueryParameters>)? requestConfiguration]) {
+    RequestInformation toPostRequestInformation(LaunchpadTileLinkableWrapper body, [Function(RequestConfiguration<LaunchpadtileRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<LaunchpadtileRequestBuilderPostQueryParameters>(requestConfiguration, () => LaunchpadtileRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=73', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
         return requestInfo;
     }
 }

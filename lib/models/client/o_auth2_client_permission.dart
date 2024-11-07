@@ -16,12 +16,12 @@ class OAuth2ClientPermission extends Linkable implements Parsable {
     ///  The value property
     OAuth2ClientPermissionType? value;
     /// Instantiates a new [OAuth2ClientPermission] and sets the default values.
-     OAuth2ClientPermission() : super() {
+    OAuth2ClientPermission() : super() {
         typeEscaped = 'client.OAuth2ClientPermission';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static OAuth2ClientPermission createFromDiscriminatorValue(ParseNode parseNode) {
+    static OAuth2ClientPermission createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'client.OAuth2ClientPermissionWithClient' => OAuth2ClientPermissionWithClient(),
@@ -30,7 +30,7 @@ class OAuth2ClientPermission extends Linkable implements Parsable {
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<OAuth2ClientPermissionAdditionalObjects>(OAuth2ClientPermissionAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['forGroup'] = (node) => forGroup = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
@@ -41,7 +41,7 @@ class OAuth2ClientPermission extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<OAuth2ClientPermissionAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeObjectValue<GroupPrimer>('forGroup', forGroup);

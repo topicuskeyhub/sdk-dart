@@ -23,17 +23,17 @@ class CertificateExpiredNotification extends Notification implements Parsable {
     ///  The webhook property
     Webhook? webhook;
     /// Instantiates a new [CertificateExpiredNotification] and sets the default values.
-     CertificateExpiredNotification() : super() {
+    CertificateExpiredNotification() : super() {
         typeEscaped = 'notification.CertificateExpiredNotification';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static CertificateExpiredNotification createFromDiscriminatorValue(ParseNode parseNode) {
+    static CertificateExpiredNotification createFromDiscriminatorValue(ParseNode parseNode) {
         return CertificateExpiredNotification();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['certificate'] = (node) => certificate = node.getObjectValue<Certificate>(Certificate.createFromDiscriminatorValue);
         deserializerMap['directory'] = (node) => directory = node.getObjectValue<LDAPDirectory>(LDAPDirectory.createFromDiscriminatorValue);
@@ -47,7 +47,7 @@ class CertificateExpiredNotification extends Notification implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<Certificate>('certificate', certificate);
         writer.writeObjectValue<LDAPDirectory>('directory', directory);

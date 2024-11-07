@@ -17,16 +17,16 @@ class ServiceAccountAdditionalObjects implements AdditionalDataHolder, Parsable 
     ///  The supportedFeatures property
     ServiceAccountSupportedFeatures? supportedFeatures;
     /// Instantiates a new [ServiceAccountAdditionalObjects] and sets the default values.
-     ServiceAccountAdditionalObjects() :  
+    ServiceAccountAdditionalObjects() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ServiceAccountAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
+    static ServiceAccountAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
         return ServiceAccountAdditionalObjects();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
         deserializerMap['groups'] = (node) => groups = node.getObjectValue<ServiceAccountGroupLinkableWrapper>(ServiceAccountGroupLinkableWrapper.createFromDiscriminatorValue);
@@ -37,7 +37,7 @@ class ServiceAccountAdditionalObjects implements AdditionalDataHolder, Parsable 
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeObjectValue<AuditInfo>('audit', audit);
         writer.writeObjectValue<ServiceAccountGroupLinkableWrapper>('groups', groups);
         writer.writeObjectValue<GeneratedSecret>('secret', secret);

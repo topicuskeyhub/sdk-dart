@@ -8,16 +8,16 @@ class OrganizationalUnitPrimerLinkableWrapper implements AdditionalDataHolder, P
     ///  The items property
     Iterable<OrganizationalUnitPrimer>? items;
     /// Instantiates a new [OrganizationalUnitPrimerLinkableWrapper] and sets the default values.
-     OrganizationalUnitPrimerLinkableWrapper() :  
+    OrganizationalUnitPrimerLinkableWrapper() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static OrganizationalUnitPrimerLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
+    static OrganizationalUnitPrimerLinkableWrapper createFromDiscriminatorValue(ParseNode parseNode) {
         return OrganizationalUnitPrimerLinkableWrapper();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = {};
         deserializerMap['items'] = (node) => items = node.getCollectionOfObjectValues<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);
         return deserializerMap;
@@ -25,7 +25,7 @@ class OrganizationalUnitPrimerLinkableWrapper implements AdditionalDataHolder, P
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<OrganizationalUnitPrimer>('items', items);
         writer.writeAdditionalData(additionalData);
     }

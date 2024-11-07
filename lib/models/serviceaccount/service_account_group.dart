@@ -6,17 +6,17 @@ class ServiceAccountGroup extends GroupOnSystemPrimer implements Parsable {
     ///  The additionalObjects property
     ServiceAccountGroupAdditionalObjects? additionalObjects;
     /// Instantiates a new [ServiceAccountGroup] and sets the default values.
-     ServiceAccountGroup() : super() {
+    ServiceAccountGroup() : super() {
         typeEscaped = 'serviceaccount.ServiceAccountGroup';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static ServiceAccountGroup createFromDiscriminatorValue(ParseNode parseNode) {
+    static ServiceAccountGroup createFromDiscriminatorValue(ParseNode parseNode) {
         return ServiceAccountGroup();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<ServiceAccountGroupAdditionalObjects>(ServiceAccountGroupAdditionalObjects.createFromDiscriminatorValue);
         return deserializerMap;
@@ -24,7 +24,7 @@ class ServiceAccountGroup extends GroupOnSystemPrimer implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<ServiceAccountGroupAdditionalObjects>('additionalObjects', additionalObjects);
     }

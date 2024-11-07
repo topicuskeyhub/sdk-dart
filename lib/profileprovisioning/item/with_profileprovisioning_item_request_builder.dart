@@ -7,20 +7,20 @@ import './with_profileprovisioning_item_request_builder_get_query_parameters.dar
 class WithProfileprovisioningItemRequestBuilder extends BaseRequestBuilder<WithProfileprovisioningItemRequestBuilder> {
     /// Clones the requestbuilder.
     @override
-     WithProfileprovisioningItemRequestBuilder clone() {
+    WithProfileprovisioningItemRequestBuilder clone() {
         return WithProfileprovisioningItemRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [WithProfileprovisioningItemRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     WithProfileprovisioningItemRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profileprovisioning/{profileprovisioningid}{?additional*}", pathParameters) ;
+    WithProfileprovisioningItemRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profileprovisioning/{profileprovisioningid}{?additional*}", pathParameters) ;
     /// Instantiates a new [WithProfileprovisioningItemRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     WithProfileprovisioningItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profileprovisioning/{profileprovisioningid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    WithProfileprovisioningItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profileprovisioning/{profileprovisioningid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Deletes the access profile provisioning link identified by the id.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<void> deleteAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    Future<void> deleteAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -29,7 +29,7 @@ class WithProfileprovisioningItemRequestBuilder extends BaseRequestBuilder<WithP
     }
     /// Returns the access profile provisioning link identified by the id.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<AccessProfileProvisioning?> getAsync([Function(RequestConfiguration<WithProfileprovisioningItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    Future<AccessProfileProvisioning?> getAsync([Function(RequestConfiguration<WithProfileprovisioningItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -38,18 +38,18 @@ class WithProfileprovisioningItemRequestBuilder extends BaseRequestBuilder<WithP
     }
     /// Deletes the access profile provisioning link identified by the id.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toDeleteRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    RequestInformation toDeleteRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
     /// Returns the access profile provisioning link identified by the id.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toGetRequestInformation([Function(RequestConfiguration<WithProfileprovisioningItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    RequestInformation toGetRequestInformation([Function(RequestConfiguration<WithProfileprovisioningItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithProfileprovisioningItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithProfileprovisioningItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
 }

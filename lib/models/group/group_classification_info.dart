@@ -5,17 +5,17 @@ class GroupClassificationInfo extends NonLinkable implements Parsable {
     ///  The nrGroups property
     int? nrGroups;
     /// Instantiates a new [GroupClassificationInfo] and sets the default values.
-     GroupClassificationInfo() : super() {
+    GroupClassificationInfo() : super() {
         typeEscaped = 'group.GroupClassificationInfo';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static GroupClassificationInfo createFromDiscriminatorValue(ParseNode parseNode) {
+    static GroupClassificationInfo createFromDiscriminatorValue(ParseNode parseNode) {
         return GroupClassificationInfo();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['nrGroups'] = (node) => nrGroups = node.getIntValue();
         return deserializerMap;
@@ -23,7 +23,7 @@ class GroupClassificationInfo extends NonLinkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeIntValue('nrGroups', nrGroups);
     }

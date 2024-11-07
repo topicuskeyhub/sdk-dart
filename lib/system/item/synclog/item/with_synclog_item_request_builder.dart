@@ -7,20 +7,20 @@ import './with_synclog_item_request_builder_get_query_parameters.dart';
 class WithSynclogItemRequestBuilder extends BaseRequestBuilder<WithSynclogItemRequestBuilder> {
     /// Clones the requestbuilder.
     @override
-     WithSynclogItemRequestBuilder clone() {
+    WithSynclogItemRequestBuilder clone() {
         return WithSynclogItemRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [WithSynclogItemRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     WithSynclogItemRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/system/{systemid}/synclog/{synclogid}{?additional*}", pathParameters) ;
+    WithSynclogItemRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/system/{systemid}/synclog/{synclogid}{?additional*}", pathParameters) ;
     /// Instantiates a new [WithSynclogItemRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     WithSynclogItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/system/{systemid}/synclog/{synclogid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    WithSynclogItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/system/{systemid}/synclog/{synclogid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Returns the sync log for a provisioned system.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<ProvisionedSystemSyncLog?> getAsync([Function(RequestConfiguration<WithSynclogItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    Future<ProvisionedSystemSyncLog?> getAsync([Function(RequestConfiguration<WithSynclogItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -29,10 +29,10 @@ class WithSynclogItemRequestBuilder extends BaseRequestBuilder<WithSynclogItemRe
     }
     /// Returns the sync log for a provisioned system.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toGetRequestInformation([Function(RequestConfiguration<WithSynclogItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    RequestInformation toGetRequestInformation([Function(RequestConfiguration<WithSynclogItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithSynclogItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithSynclogItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
 }

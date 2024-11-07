@@ -5,17 +5,17 @@ class RemoveProvisionedSystemRequest extends AbstractProvisionedSystemModificati
     ///  The systemName property
     String? systemName;
     /// Instantiates a new [RemoveProvisionedSystemRequest] and sets the default values.
-     RemoveProvisionedSystemRequest() : super() {
+    RemoveProvisionedSystemRequest() : super() {
         typeEscaped = 'request.RemoveProvisionedSystemRequest';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static RemoveProvisionedSystemRequest createFromDiscriminatorValue(ParseNode parseNode) {
+    static RemoveProvisionedSystemRequest createFromDiscriminatorValue(ParseNode parseNode) {
         return RemoveProvisionedSystemRequest();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['systemName'] = (node) => systemName = node.getStringValue();
         return deserializerMap;
@@ -23,7 +23,7 @@ class RemoveProvisionedSystemRequest extends AbstractProvisionedSystemModificati
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeStringValue('systemName', systemName);
     }

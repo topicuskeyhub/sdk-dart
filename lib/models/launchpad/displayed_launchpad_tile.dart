@@ -17,17 +17,17 @@ class DisplayedLaunchpadTile extends Linkable implements Parsable {
     ///  The uri property
     String? uri;
     /// Instantiates a new [DisplayedLaunchpadTile] and sets the default values.
-     DisplayedLaunchpadTile() : super() {
+    DisplayedLaunchpadTile() : super() {
         typeEscaped = 'launchpad.DisplayedLaunchpadTile';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static DisplayedLaunchpadTile createFromDiscriminatorValue(ParseNode parseNode) {
+    static DisplayedLaunchpadTile createFromDiscriminatorValue(ParseNode parseNode) {
         return DisplayedLaunchpadTile();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['group'] = (node) => group = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         deserializerMap['identiconCode'] = (node) => identiconCode = node.getIntValue();
@@ -40,7 +40,7 @@ class DisplayedLaunchpadTile extends Linkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<GroupPrimer>('group', group);
         writer.writeIntValue('identiconCode', identiconCode);

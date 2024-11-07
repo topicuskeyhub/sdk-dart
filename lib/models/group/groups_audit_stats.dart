@@ -18,17 +18,17 @@ class GroupsAuditStats extends NonLinkable implements Parsable {
     ///  The vaultsWithoutPolicies property
     int? vaultsWithoutPolicies;
     /// Instantiates a new [GroupsAuditStats] and sets the default values.
-     GroupsAuditStats() : super() {
+    GroupsAuditStats() : super() {
         typeEscaped = 'group.GroupsAuditStats';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static GroupsAuditStats createFromDiscriminatorValue(ParseNode parseNode) {
+    static GroupsAuditStats createFromDiscriminatorValue(ParseNode parseNode) {
         return GroupsAuditStats();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['auditedGroups'] = (node) => auditedGroups = node.getIntValue();
         deserializerMap['classifications'] = (node) => classifications = node.getCollectionOfObjectValues<GroupClassification>(GroupClassification.createFromDiscriminatorValue);
@@ -42,7 +42,7 @@ class GroupsAuditStats extends NonLinkable implements Parsable {
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeIntValue('auditedGroups', auditedGroups);
         writer.writeCollectionOfObjectValues<GroupClassification>('classifications', classifications);

@@ -18,17 +18,17 @@ class UpdateGroupMembershipRequest extends ModificationRequest implements Parsab
     ///  The updateGroupMembershipType property
     UpdateGroupMembershipType? updateGroupMembershipType;
     /// Instantiates a new [UpdateGroupMembershipRequest] and sets the default values.
-     UpdateGroupMembershipRequest() : super() {
+    UpdateGroupMembershipRequest() : super() {
         typeEscaped = 'request.UpdateGroupMembershipRequest';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     /// <param name="parseNode">parseNode</param>
-     static UpdateGroupMembershipRequest createFromDiscriminatorValue(ParseNode parseNode) {
+    static UpdateGroupMembershipRequest createFromDiscriminatorValue(ParseNode parseNode) {
         return UpdateGroupMembershipRequest();
     }
     /// The deserialization information for the current model
     @override
-     Map<String, void Function(ParseNode)> getFieldDeserializers() {
+    Map<String, void Function(ParseNode)> getFieldDeserializers() {
         Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
         deserializerMap['accountToUpdate'] = (node) => accountToUpdate = node.getObjectValue<AccountPrimer>(AccountPrimer.createFromDiscriminatorValue);
         deserializerMap['currentEndDate'] = (node) => currentEndDate = node.getDateOnlyValue();
@@ -41,7 +41,7 @@ class UpdateGroupMembershipRequest extends ModificationRequest implements Parsab
     /// Serializes information the current object
     /// <param name="writer">writer</param>
     @override
-     void serialize(SerializationWriter writer) {
+    void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<AccountPrimer>('accountToUpdate', accountToUpdate);
         writer.writeEnumValue<GroupRights>('currentRights', currentRights, (e) => e?.value);

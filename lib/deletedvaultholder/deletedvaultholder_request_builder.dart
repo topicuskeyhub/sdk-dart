@@ -8,27 +8,27 @@ import './item/deletedvaultholder_item_request_builder.dart';
 class DeletedvaultholderRequestBuilder extends BaseRequestBuilder<DeletedvaultholderRequestBuilder> {
     /// Gets an item from the ApiSdk.deletedvaultholder.item collection
     /// <param name="deletedvaultholderId">deletedvaultholderId</param>
-     DeletedvaultholderItemRequestBuilder byDeletedvaultholderId(int deletedvaultholderId) {
+    DeletedvaultholderItemRequestBuilder byDeletedvaultholderId(int deletedvaultholderId) {
         var urlTplParams = Map.of(pathParameters);
         urlTplParams.putIfAbsent("deletedvaultholderId", ()=> deletedvaultholderId);
         return DeletedvaultholderItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
     @override
-     DeletedvaultholderRequestBuilder clone() {
+    DeletedvaultholderRequestBuilder clone() {
         return DeletedvaultholderRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [DeletedvaultholderRequestBuilder] and sets the default values.
     /// <param name="pathParameters">pathParameters</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     DeletedvaultholderRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/deletedvaultholder{?additional*,any*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,q*,sort*,vault*}", pathParameters) ;
+    DeletedvaultholderRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/deletedvaultholder{?additional*,any*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,q*,sort*,vault*}", pathParameters) ;
     /// Instantiates a new [DeletedvaultholderRequestBuilder] and sets the default values.
     /// <param name="rawUrl">rawUrl</param>
     /// <param name="requestAdapter">requestAdapter</param>
-     DeletedvaultholderRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/deletedvaultholder{?additional*,any*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,q*,sort*,vault*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    DeletedvaultholderRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/deletedvaultholder{?additional*,any*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,q*,sort*,vault*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for all deletes vaults in Topicus KeyHub. The various query parameters can be used to filter the response.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     Future<DeletedVaultHolderLinkableWrapper?> getAsync([Function(RequestConfiguration<DeletedvaultholderRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    Future<DeletedVaultHolderLinkableWrapper?> getAsync([Function(RequestConfiguration<DeletedvaultholderRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -37,10 +37,10 @@ class DeletedvaultholderRequestBuilder extends BaseRequestBuilder<Deletedvaultho
     }
     /// Query for all deletes vaults in Topicus KeyHub. The various query parameters can be used to filter the response.
     /// <param name="requestConfiguration">requestConfiguration</param>
-     RequestInformation toGetRequestInformation([Function(RequestConfiguration<DeletedvaultholderRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    RequestInformation toGetRequestInformation([Function(RequestConfiguration<DeletedvaultholderRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DeletedvaultholderRequestBuilderGetQueryParameters>(requestConfiguration, () => DeletedvaultholderRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=73');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
 }

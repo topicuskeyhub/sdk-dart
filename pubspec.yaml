@@ -5,28 +5,28 @@ publish_to: none
 repository: https://github.com/topicuskeyhub/sdk-dart
 
 environment:
-  sdk: ^3.4.4
+  sdk: ^3.4.0
 
 # Add regular dependencies here.
 dependencies:
   kiota_abstractions:
     git:
       url: https://github.com/kiota-community/dart_kiota.git
-      ref: json
+      ref: v0.0.1
       path: packages/kiota_abstractions
   kiota_http:    
     git:
       url: https://github.com/kiota-community/dart_kiota.git
-      ref: json
+      ref: v0.0.1
       path: packages/kiota_http
   kiota_serialization_json:
     git:
       url: https://github.com/kiota-community/dart_kiota.git
-      ref: json
+      ref: v0.0.1
       path: packages/kiota_serialization_json
   http: ^1.2.2
   uuid: ^4.5.1
 
 dev_dependencies:
-  lints: ^5.0.0
+  lints: ^4.0.0
   test: ^1.24.0

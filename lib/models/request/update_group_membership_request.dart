@@ -1,9 +1,11 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../auth/account_primer.dart';
 import '../group/group_rights.dart';
 import './modification_request.dart';
 import './update_group_membership_type.dart';
 
+/// auto generated
 class UpdateGroupMembershipRequest extends ModificationRequest implements Parsable {
     ///  The accountToUpdate property
     AccountPrimer? accountToUpdate;
@@ -19,17 +21,17 @@ class UpdateGroupMembershipRequest extends ModificationRequest implements Parsab
     UpdateGroupMembershipType? updateGroupMembershipType;
     /// Instantiates a new [UpdateGroupMembershipRequest] and sets the default values.
     UpdateGroupMembershipRequest() : super() {
-        typeEscaped = 'request.UpdateGroupMembershipRequest';
+        type_ = 'request.UpdateGroupMembershipRequest';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static UpdateGroupMembershipRequest createFromDiscriminatorValue(ParseNode parseNode) {
         return UpdateGroupMembershipRequest();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['accountToUpdate'] = (node) => accountToUpdate = node.getObjectValue<AccountPrimer>(AccountPrimer.createFromDiscriminatorValue);
         deserializerMap['currentEndDate'] = (node) => currentEndDate = node.getDateOnlyValue();
         deserializerMap['currentRights'] = (node) => currentRights = node.getEnumValue<GroupRights>((stringValue) => GroupRights.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
@@ -39,7 +41,7 @@ class UpdateGroupMembershipRequest extends ModificationRequest implements Parsab
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

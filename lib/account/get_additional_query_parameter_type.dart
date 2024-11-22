@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum GetAdditionalQueryParameterType {
     activeLogin('activeLogin'),
     audit('audit'),

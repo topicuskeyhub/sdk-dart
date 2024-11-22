@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../non_linkable.dart';
 
+/// auto generated
 class PasswordMetadata extends NonLinkable implements Parsable {
     ///  The dictionary property
     bool? dictionary;
@@ -22,17 +24,17 @@ class PasswordMetadata extends NonLinkable implements Parsable {
     int? upperCount;
     /// Instantiates a new [PasswordMetadata] and sets the default values.
     PasswordMetadata() : super() {
-        typeEscaped = 'vault.PasswordMetadata';
+        type_ = 'vault.PasswordMetadata';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static PasswordMetadata createFromDiscriminatorValue(ParseNode parseNode) {
         return PasswordMetadata();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['dictionary'] = (node) => dictionary = node.getBoolValue();
         deserializerMap['duplicate'] = (node) => duplicate = node.getBoolValue();
         deserializerMap['hash'] = (node) => hash = node.getStringValue();
@@ -45,7 +47,7 @@ class PasswordMetadata extends NonLinkable implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

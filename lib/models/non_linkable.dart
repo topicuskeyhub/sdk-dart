@@ -1,4 +1,5 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './audit_info.dart';
 import './auth/account_bulk_update.dart';
 import './auth/account_change_locale.dart';
@@ -80,17 +81,18 @@ import './vault/vault_unlock_response.dart';
 import './webhook/webhook_name_uuid.dart';
 import './webhook/webhook_push.dart';
 
+/// auto generated
 class NonLinkable implements AdditionalDataHolder, Parsable {
     ///  Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     @override
     Map<String, Object?> additionalData;
     ///  The Type property
-    String? typeEscaped;
+    String? type_;
     /// Instantiates a new [NonLinkable] and sets the default values.
     NonLinkable() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static NonLinkable createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
@@ -180,15 +182,15 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = {};
-        deserializerMap['\$type'] = (node) => typeEscaped = node.getStringValue();
+        var deserializerMap = <String, void Function(ParseNode)>{};
+        deserializerMap['\$type'] = (node) => type_ = node.getStringValue();
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
-        writer.writeStringValue('\$type', typeEscaped);
+        writer.writeStringValue('\$type', type_);
         writer.writeAdditionalData(additionalData);
     }
 }

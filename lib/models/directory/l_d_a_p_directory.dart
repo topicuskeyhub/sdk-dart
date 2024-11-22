@@ -1,10 +1,12 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../certificate/certificate_primer.dart';
 import '../t_l_s_level.dart';
 import './account_directory.dart';
 import './l_d_a_p_dialect.dart';
 import './l_d_a_p_directory_password_recovery.dart';
 
+/// auto generated
 class LDAPDirectory extends AccountDirectory implements Parsable {
     ///  The attributesToStore property
     String? attributesToStore;
@@ -36,17 +38,17 @@ class LDAPDirectory extends AccountDirectory implements Parsable {
     CertificatePrimer? trustedCertificate;
     /// Instantiates a new [LDAPDirectory] and sets the default values.
     LDAPDirectory() : super() {
-        typeEscaped = 'directory.LDAPDirectory';
+        type_ = 'directory.LDAPDirectory';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static LDAPDirectory createFromDiscriminatorValue(ParseNode parseNode) {
         return LDAPDirectory();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['attributesToStore'] = (node) => attributesToStore = node.getStringValue();
         deserializerMap['baseDN'] = (node) => baseDN = node.getStringValue();
         deserializerMap['clientCertificate'] = (node) => clientCertificate = node.getObjectValue<CertificatePrimer>(CertificatePrimer.createFromDiscriminatorValue);
@@ -64,7 +66,7 @@ class LDAPDirectory extends AccountDirectory implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

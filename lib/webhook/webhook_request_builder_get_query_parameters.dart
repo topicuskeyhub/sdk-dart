@@ -1,9 +1,11 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../models/audit/audit_record_type.dart';
 import '../models/boolean_enum.dart';
 import '../models/t_l_s_level.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Queries over all webhooks. The various query parameters can be used to filter the response.
 class WebhookRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Filter webhooks on the given accounts, specified by id.
@@ -61,7 +63,7 @@ class WebhookRequestBuilderGetQueryParameters implements AbstractQueryParameters
     ///  Filter results on the given TLS mode(s).
     List<TLSLevel>? tls;
     ///  Only return webhooks that trigger on one of the given type(s).
-    List<AuditRecordType>? typeEscaped;
+    List<AuditRecordType>? type_;
     ///  Filter results on one or more URLs.
     List<String>? url;
     ///  Filter results on one or more UUIDs.
@@ -97,7 +99,7 @@ class WebhookRequestBuilderGetQueryParameters implements AbstractQueryParameters
             'systemAdminGroup' : systemAdminGroup,
             'systemOwnerGroup' : systemOwnerGroup,
             'tls' : tls,
-            'typeEscaped' : typeEscaped,
+            'type_' : type_,
             'url' : url,
             'uuid' : uuid,
         };

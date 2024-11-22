@@ -1,15 +1,17 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../models/auth/stored_user_session_linkable_wrapper.dart';
 import '../../models/error_report.dart';
 import './item/with_session_item_request_builder.dart';
 
+/// auto generated
 /// Builds and executes requests for operations under \account\session
 class SessionRequestBuilder extends BaseRequestBuilder<SessionRequestBuilder> {
     /// Gets an item from the ApiSdk.account.session.item collection
-    /// <param name="sessionId">sessionId</param>
+    ///  [sessionId] Unique identifier of the item
     WithSessionItemRequestBuilder bySessionId(String sessionId) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent("sessionId", ()=> sessionId);
+        urlTplParams.putIfAbsent('sessionId', ()=> sessionId);
         return WithSessionItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -18,16 +20,16 @@ class SessionRequestBuilder extends BaseRequestBuilder<SessionRequestBuilder> {
         return SessionRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [SessionRequestBuilder] and sets the default values.
-    /// <param name="pathParameters">pathParameters</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [pathParameters] Path parameters for the request
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     SessionRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/session", pathParameters) ;
     /// Instantiates a new [SessionRequestBuilder] and sets the default values.
-    /// <param name="rawUrl">rawUrl</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [rawUrl] The raw URL to use for the request builder.
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     SessionRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/session", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Ends all sessions for the current user except the current session. Access tokens issued for these sessions will be revoked.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<Iterable<int>?> deleteAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<Iterable<int>?> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -35,8 +37,8 @@ class SessionRequestBuilder extends BaseRequestBuilder<SessionRequestBuilder> {
         return await requestAdapter.sendPrimitiveCollection<int>(requestInfo, errorMapping);
     }
     /// Returns a list of active sessions for the current user.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<StoredUserSessionLinkableWrapper?> getAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<StoredUserSessionLinkableWrapper?> getAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -44,16 +46,16 @@ class SessionRequestBuilder extends BaseRequestBuilder<SessionRequestBuilder> {
         return await requestAdapter.send<StoredUserSessionLinkableWrapper>(requestInfo, StoredUserSessionLinkableWrapper.createFromDiscriminatorValue, errorMapping);
     }
     /// Ends all sessions for the current user except the current session. Access tokens issued for these sessions will be revoked.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toDeleteRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74, application/vnd.topicus.keyhub+xml;version=74');
         return requestInfo;
     }
     /// Returns a list of active sessions for the current user.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toGetRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');

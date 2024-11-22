@@ -1,7 +1,9 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../non_linkable.dart';
 import '../organization/organizational_unit_primer.dart';
 
+/// auto generated
 class GroupGlobalRoleInfo extends NonLinkable implements Parsable {
     ///  The createGroupApproveGroupFor property
     Iterable<OrganizationalUnitPrimer>? createGroupApproveGroupFor;
@@ -13,17 +15,17 @@ class GroupGlobalRoleInfo extends NonLinkable implements Parsable {
     Iterable<OrganizationalUnitPrimer>? removeGroupApproveGroupFor;
     /// Instantiates a new [GroupGlobalRoleInfo] and sets the default values.
     GroupGlobalRoleInfo() : super() {
-        typeEscaped = 'group.GroupGlobalRoleInfo';
+        type_ = 'group.GroupGlobalRoleInfo';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static GroupGlobalRoleInfo createFromDiscriminatorValue(ParseNode parseNode) {
         return GroupGlobalRoleInfo();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['createGroupApproveGroupFor'] = (node) => createGroupApproveGroupFor = node.getCollectionOfObjectValues<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);
         deserializerMap['enableTechAdminApproveGroupFor'] = (node) => enableTechAdminApproveGroupFor = node.getCollectionOfObjectValues<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);
         deserializerMap['recoveryFallbackGroupFor'] = (node) => recoveryFallbackGroupFor = node.getCollectionOfObjectValues<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);
@@ -31,7 +33,7 @@ class GroupGlobalRoleInfo extends NonLinkable implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

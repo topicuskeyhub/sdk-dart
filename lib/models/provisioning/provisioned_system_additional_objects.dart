@@ -1,4 +1,5 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../audit_info.dart';
 import '../client/o_auth2_client_permission_with_client_linkable_wrapper.dart';
 import '../mark/item_markers.dart';
@@ -7,6 +8,7 @@ import './group_on_system_types.dart';
 import './provisioned_account.dart';
 import './provisioning_management_permissions.dart';
 
+/// auto generated
 class ProvisionedSystemAdditionalObjects implements AdditionalDataHolder, Parsable {
     ///  The account property
     ProvisionedAccount? account;
@@ -31,14 +33,14 @@ class ProvisionedSystemAdditionalObjects implements AdditionalDataHolder, Parsab
     ProvisionedSystemAdditionalObjects() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static ProvisionedSystemAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
         return ProvisionedSystemAdditionalObjects();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = {};
+        var deserializerMap = <String, void Function(ParseNode)>{};
         deserializerMap['account'] = (node) => account = node.getObjectValue<ProvisionedAccount>(ProvisionedAccount.createFromDiscriminatorValue);
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
         deserializerMap['issuedPermissions'] = (node) => issuedPermissions = node.getObjectValue<OAuth2ClientPermissionWithClientLinkableWrapper>(OAuth2ClientPermissionWithClientLinkableWrapper.createFromDiscriminatorValue);
@@ -50,7 +52,7 @@ class ProvisionedSystemAdditionalObjects implements AdditionalDataHolder, Parsab
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         writer.writeObjectValue<ProvisionedAccount>('account', account);

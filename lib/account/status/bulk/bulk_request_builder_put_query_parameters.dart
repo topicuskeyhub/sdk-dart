@@ -1,8 +1,10 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../../models/auth/account_license_role.dart';
 import '../../../models/auth/account_validity.dart';
 import '../../../models/auth/two_factor_authentication_status.dart';
 
+/// auto generated
 /// Updates multiple accounts. The given accounts will be updated according to the selected action, for example, have their license role set to the given license role, provided this matches the current license's conditions.
 class BulkRequestBuilderPutQueryParameters implements AbstractQueryParameters {
     ///  Filter the accounts by membership of access profiles, specified by id. This parameter supports composition with all parameters from the access profile resource.

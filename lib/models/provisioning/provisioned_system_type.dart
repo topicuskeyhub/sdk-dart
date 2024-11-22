@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum ProvisionedSystemType {
     ldap('LDAP'),
     activeDirectory('ACTIVE_DIRECTORY'),

@@ -1,7 +1,9 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../../models/error_report.dart';
 import '../../../models/group/group_admin_mail.dart';
 
+/// auto generated
 /// Builds and executes requests for operations under \group\{groupid}\mail
 class MailRequestBuilder extends BaseRequestBuilder<MailRequestBuilder> {
     /// Clones the requestbuilder.
@@ -10,17 +12,17 @@ class MailRequestBuilder extends BaseRequestBuilder<MailRequestBuilder> {
         return MailRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [MailRequestBuilder] and sets the default values.
-    /// <param name="pathParameters">pathParameters</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [pathParameters] Path parameters for the request
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     MailRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/{groupid}/mail", pathParameters) ;
     /// Instantiates a new [MailRequestBuilder] and sets the default values.
-    /// <param name="rawUrl">rawUrl</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [rawUrl] The raw URL to use for the request builder.
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     MailRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/{groupid}/mail", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Send a mail to the managers of the group identified by the id.
-    /// <param name="body">body</param>
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<void> postAsync(GroupAdminMail body, [Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    ///  [body] The request body
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<void> postAsync(GroupAdminMail body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -28,9 +30,9 @@ class MailRequestBuilder extends BaseRequestBuilder<MailRequestBuilder> {
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
     }
     /// Send a mail to the managers of the group identified by the id.
-    /// <param name="body">body</param>
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toPostRequestInformation(GroupAdminMail body, [Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    ///  [body] The request body
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toPostRequestInformation(GroupAdminMail body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');

@@ -1,4 +1,5 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../directory/account_directory_type.dart';
 import '../non_linkable.dart';
 import '../organization/organizational_unit_primer.dart';
@@ -6,6 +7,7 @@ import '../vault/account_vault_status.dart';
 import './password_mode.dart';
 import './two_factor_authentication_status.dart';
 
+/// auto generated
 class AccountSettings extends NonLinkable implements Parsable {
     ///  The defaultOrganizationalUnit property
     OrganizationalUnitPrimer? defaultOrganizationalUnit;
@@ -33,17 +35,17 @@ class AccountSettings extends NonLinkable implements Parsable {
     AccountVaultStatus? vaultStatus;
     /// Instantiates a new [AccountSettings] and sets the default values.
     AccountSettings() : super() {
-        typeEscaped = 'auth.AccountSettings';
+        type_ = 'auth.AccountSettings';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static AccountSettings createFromDiscriminatorValue(ParseNode parseNode) {
         return AccountSettings();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['defaultOrganizationalUnit'] = (node) => defaultOrganizationalUnit = node.getObjectValue<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);
         deserializerMap['directoryName'] = (node) => directoryName = node.getStringValue();
         deserializerMap['directoryType'] = (node) => directoryType = node.getEnumValue<AccountDirectoryType>((stringValue) => AccountDirectoryType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
@@ -59,7 +61,7 @@ class AccountSettings extends NonLinkable implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

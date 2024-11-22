@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum ModificationRequestReportChange {
     accountRemovedFromGroup('ACCOUNT_REMOVED_FROM_GROUP'),
     modificationRequestCancelled('MODIFICATION_REQUEST_CANCELLED'),

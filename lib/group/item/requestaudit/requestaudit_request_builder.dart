@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../../models/error_report.dart';
 
+/// auto generated
 /// Builds and executes requests for operations under \group\{groupid}\requestaudit
 class RequestauditRequestBuilder extends BaseRequestBuilder<RequestauditRequestBuilder> {
     /// Clones the requestbuilder.
@@ -9,16 +11,16 @@ class RequestauditRequestBuilder extends BaseRequestBuilder<RequestauditRequestB
         return RequestauditRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [RequestauditRequestBuilder] and sets the default values.
-    /// <param name="pathParameters">pathParameters</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [pathParameters] Path parameters for the request
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     RequestauditRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/{groupid}/requestaudit", pathParameters) ;
     /// Instantiates a new [RequestauditRequestBuilder] and sets the default values.
-    /// <param name="rawUrl">rawUrl</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [rawUrl] The raw URL to use for the request builder.
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     RequestauditRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/{groupid}/requestaudit", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Request an audit from the managers of the group identified by the id.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<void> postAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<void> postAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -26,8 +28,8 @@ class RequestauditRequestBuilder extends BaseRequestBuilder<RequestauditRequestB
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
     }
     /// Request an audit from the managers of the group identified by the id.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toPostRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toPostRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');

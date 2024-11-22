@@ -1,28 +1,30 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../group/group_primer.dart';
 import './abstract_organizational_unit_modification_request.dart';
 
+/// auto generated
 class MoveGroupsRequest extends AbstractOrganizationalUnitModificationRequest implements Parsable {
     ///  The groups property
     Iterable<GroupPrimer>? groups;
     /// Instantiates a new [MoveGroupsRequest] and sets the default values.
     MoveGroupsRequest() : super() {
-        typeEscaped = 'request.MoveGroupsRequest';
+        type_ = 'request.MoveGroupsRequest';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static MoveGroupsRequest createFromDiscriminatorValue(ParseNode parseNode) {
         return MoveGroupsRequest();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['groups'] = (node) => groups = node.getCollectionOfObjectValues<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

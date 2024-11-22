@@ -1,8 +1,10 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../../../models/error_report.dart';
 import '../../../../models/serviceaccount/service_account_group.dart';
 import './with_group_item_request_builder_get_query_parameters.dart';
 
+/// auto generated
 /// Builds and executes requests for operations under \serviceaccount\{serviceaccountid}\group\{groupid}
 class WithGroupItemRequestBuilder extends BaseRequestBuilder<WithGroupItemRequestBuilder> {
     /// Clones the requestbuilder.
@@ -11,16 +13,16 @@ class WithGroupItemRequestBuilder extends BaseRequestBuilder<WithGroupItemReques
         return WithGroupItemRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [WithGroupItemRequestBuilder] and sets the default values.
-    /// <param name="pathParameters">pathParameters</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [pathParameters] Path parameters for the request
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     WithGroupItemRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/serviceaccount/{serviceaccountid}/group/{groupid}{?additional*}", pathParameters) ;
     /// Instantiates a new [WithGroupItemRequestBuilder] and sets the default values.
-    /// <param name="rawUrl">rawUrl</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [rawUrl] The raw URL to use for the request builder.
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     WithGroupItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/serviceaccount/{serviceaccountid}/group/{groupid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Deletes the group for a service account identified by the id.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<void> deleteAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -28,8 +30,8 @@ class WithGroupItemRequestBuilder extends BaseRequestBuilder<WithGroupItemReques
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
     }
     /// Returns the group for a service account identified by the id.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<ServiceAccountGroup?> getAsync([Function(RequestConfiguration<WithGroupItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<ServiceAccountGroup?> getAsync([void Function(RequestConfiguration<WithGroupItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -37,16 +39,16 @@ class WithGroupItemRequestBuilder extends BaseRequestBuilder<WithGroupItemReques
         return await requestAdapter.send<ServiceAccountGroup>(requestInfo, ServiceAccountGroup.createFromDiscriminatorValue, errorMapping);
     }
     /// Deletes the group for a service account identified by the id.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toDeleteRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
     /// Returns the group for a service account identified by the id.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toGetRequestInformation([Function(RequestConfiguration<WithGroupItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithGroupItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithGroupItemRequestBuilderGetQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');

@@ -1,17 +1,19 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../models/certificate/certificate_linkable_wrapper.dart';
 import '../models/error_report.dart';
 import './certificate_request_builder_get_query_parameters.dart';
 import './certificate_request_builder_post_query_parameters.dart';
 import './item/with_certificate_item_request_builder.dart';
 
+/// auto generated
 /// Builds and executes requests for operations under \certificate
 class CertificateRequestBuilder extends BaseRequestBuilder<CertificateRequestBuilder> {
     /// Gets an item from the ApiSdk.certificate.item collection
-    /// <param name="certificateid">certificateid</param>
+    ///  [certificateid] Unique identifier of the item
     WithCertificateItemRequestBuilder byCertificateid(int certificateid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent("certificateid", ()=> certificateid);
+        urlTplParams.putIfAbsent('certificateid', ()=> certificateid);
         return WithCertificateItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -20,16 +22,16 @@ class CertificateRequestBuilder extends BaseRequestBuilder<CertificateRequestBui
         return CertificateRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [CertificateRequestBuilder] and sets the default values.
-    /// <param name="pathParameters">pathParameters</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [pathParameters] Path parameters for the request
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     CertificateRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/certificate{?additional*,alias*,any*,createdAfter*,createdBefore*,exclude*,expired*,global*,id*,modifiedSince*,q*,sort*,uuid*}", pathParameters) ;
     /// Instantiates a new [CertificateRequestBuilder] and sets the default values.
-    /// <param name="rawUrl">rawUrl</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [rawUrl] The raw URL to use for the request builder.
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     CertificateRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/certificate{?additional*,alias*,any*,createdAfter*,createdBefore*,exclude*,expired*,global*,id*,modifiedSince*,q*,sort*,uuid*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for all global trusted certificates in Topicus KeyHub. The various query parameters can be used to filter the response.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<CertificateLinkableWrapper?> getAsync([Function(RequestConfiguration<CertificateRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<CertificateLinkableWrapper?> getAsync([void Function(RequestConfiguration<CertificateRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -37,9 +39,9 @@ class CertificateRequestBuilder extends BaseRequestBuilder<CertificateRequestBui
         return await requestAdapter.send<CertificateLinkableWrapper>(requestInfo, CertificateLinkableWrapper.createFromDiscriminatorValue, errorMapping);
     }
     /// Creates one or more new global trusted certificates and returns the newly created certificates.
-    /// <param name="body">body</param>
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<CertificateLinkableWrapper?> postAsync(CertificateLinkableWrapper body, [Function(RequestConfiguration<CertificateRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
+    ///  [body] The request body
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<CertificateLinkableWrapper?> postAsync(CertificateLinkableWrapper body, [void Function(RequestConfiguration<CertificateRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -47,17 +49,17 @@ class CertificateRequestBuilder extends BaseRequestBuilder<CertificateRequestBui
         return await requestAdapter.send<CertificateLinkableWrapper>(requestInfo, CertificateLinkableWrapper.createFromDiscriminatorValue, errorMapping);
     }
     /// Query for all global trusted certificates in Topicus KeyHub. The various query parameters can be used to filter the response.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toGetRequestInformation([Function(RequestConfiguration<CertificateRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toGetRequestInformation([void Function(RequestConfiguration<CertificateRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<CertificateRequestBuilderGetQueryParameters>(requestConfiguration, () => CertificateRequestBuilderGetQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
     /// Creates one or more new global trusted certificates and returns the newly created certificates.
-    /// <param name="body">body</param>
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toPostRequestInformation(CertificateLinkableWrapper body, [Function(RequestConfiguration<CertificateRequestBuilderPostQueryParameters>)? requestConfiguration]) {
+    ///  [body] The request body
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toPostRequestInformation(CertificateLinkableWrapper body, [void Function(RequestConfiguration<CertificateRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<CertificateRequestBuilderPostQueryParameters>(requestConfiguration, () => CertificateRequestBuilderPostQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');

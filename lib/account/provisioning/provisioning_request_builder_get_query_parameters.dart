@@ -1,5 +1,7 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 
+/// auto generated
 /// Returns the status of provisioning for the current user. The groups are filtered by the specified filter or group UUID.
 class ProvisioningRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     String? filter;

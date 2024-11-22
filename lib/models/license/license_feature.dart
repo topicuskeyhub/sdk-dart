@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum LicenseFeature {
     clusterHa('CLUSTER_HA'),
     clusterHaEnterprise('CLUSTER_HA_ENTERPRISE'),

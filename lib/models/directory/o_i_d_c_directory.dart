@@ -1,7 +1,9 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './account_directory.dart';
 import './o_i_d_c_vendor.dart';
 
+/// auto generated
 class OIDCDirectory extends AccountDirectory implements Parsable {
     ///  The acrValues property
     String? acrValues;
@@ -27,17 +29,17 @@ class OIDCDirectory extends AccountDirectory implements Parsable {
     OIDCVendor? vendor;
     /// Instantiates a new [OIDCDirectory] and sets the default values.
     OIDCDirectory() : super() {
-        typeEscaped = 'directory.OIDCDirectory';
+        type_ = 'directory.OIDCDirectory';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static OIDCDirectory createFromDiscriminatorValue(ParseNode parseNode) {
         return OIDCDirectory();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['acrValues'] = (node) => acrValues = node.getStringValue();
         deserializerMap['attributesToStore'] = (node) => attributesToStore = node.getStringValue();
         deserializerMap['clientId'] = (node) => clientId = node.getStringValue();
@@ -52,7 +54,7 @@ class OIDCDirectory extends AccountDirectory implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Returns the vault record identified by the id. When the 'secret' additonal object is requested, the 'topicus-Vault-session' header must be specified.
 class WithRecordItemRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Request additional information to be returned for every record.

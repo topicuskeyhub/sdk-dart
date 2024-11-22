@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum AuditRecordType {
     accessProfileCreated('ACCESS_PROFILE_CREATED'),
     accessProfileModified('ACCESS_PROFILE_MODIFIED'),

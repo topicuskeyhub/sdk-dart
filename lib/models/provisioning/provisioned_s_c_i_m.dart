@@ -1,8 +1,10 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../http_authentication_scheme.dart';
 import './provisioned_s_c_i_m_vendor.dart';
 import './provisioned_system.dart';
 
+/// auto generated
 class ProvisionedSCIM extends ProvisionedSystem implements Parsable {
     ///  The authenticationScheme property
     HttpAuthenticationScheme? authenticationScheme;
@@ -22,17 +24,17 @@ class ProvisionedSCIM extends ProvisionedSystem implements Parsable {
     ProvisionedSCIMVendor? vendor;
     /// Instantiates a new [ProvisionedSCIM] and sets the default values.
     ProvisionedSCIM() : super() {
-        typeEscaped = 'provisioning.ProvisionedSCIM';
+        type_ = 'provisioning.ProvisionedSCIM';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static ProvisionedSCIM createFromDiscriminatorValue(ParseNode parseNode) {
         return ProvisionedSCIM();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['authenticationScheme'] = (node) => authenticationScheme = node.getEnumValue<HttpAuthenticationScheme>((stringValue) => HttpAuthenticationScheme.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['basicAuthPassword'] = (node) => basicAuthPassword = node.getStringValue();
         deserializerMap['basicAuthUsername'] = (node) => basicAuthUsername = node.getStringValue();
@@ -44,7 +46,7 @@ class ProvisionedSCIM extends ProvisionedSystem implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

@@ -1,4 +1,5 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../models/error_report.dart';
 import '../../models/group/group.dart';
 import './account/account_request_builder.dart';
@@ -10,6 +11,7 @@ import './vault/vault_request_builder.dart';
 import './with_group_item_request_builder_get_query_parameters.dart';
 import './with_group_item_request_builder_put_query_parameters.dart';
 
+/// auto generated
 /// Builds and executes requests for operations under \group\{groupid}
 class WithGroupItemRequestBuilder extends BaseRequestBuilder<WithGroupItemRequestBuilder> {
     ///  The account property
@@ -42,16 +44,16 @@ class WithGroupItemRequestBuilder extends BaseRequestBuilder<WithGroupItemReques
         return WithGroupItemRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [WithGroupItemRequestBuilder] and sets the default values.
-    /// <param name="pathParameters">pathParameters</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [pathParameters] Path parameters for the request
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     WithGroupItemRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/{groupid}{?additional*}", pathParameters) ;
     /// Instantiates a new [WithGroupItemRequestBuilder] and sets the default values.
-    /// <param name="rawUrl">rawUrl</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [rawUrl] The raw URL to use for the request builder.
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     WithGroupItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/{groupid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Returns the group identified by the id.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<Group?> getAsync([Function(RequestConfiguration<WithGroupItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<Group?> getAsync([void Function(RequestConfiguration<WithGroupItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -59,9 +61,9 @@ class WithGroupItemRequestBuilder extends BaseRequestBuilder<WithGroupItemReques
         return await requestAdapter.send<Group>(requestInfo, Group.createFromDiscriminatorValue, errorMapping);
     }
     /// Updates the group identified by the id.
-    /// <param name="body">body</param>
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<Group?> putAsync(Group body, [Function(RequestConfiguration<WithGroupItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
+    ///  [body] The request body
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<Group?> putAsync(Group body, [void Function(RequestConfiguration<WithGroupItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -69,17 +71,17 @@ class WithGroupItemRequestBuilder extends BaseRequestBuilder<WithGroupItemReques
         return await requestAdapter.send<Group>(requestInfo, Group.createFromDiscriminatorValue, errorMapping);
     }
     /// Returns the group identified by the id.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toGetRequestInformation([Function(RequestConfiguration<WithGroupItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithGroupItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithGroupItemRequestBuilderGetQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
     /// Updates the group identified by the id.
-    /// <param name="body">body</param>
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toPutRequestInformation(Group body, [Function(RequestConfiguration<WithGroupItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
+    ///  [body] The request body
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toPutRequestInformation(Group body, [void Function(RequestConfiguration<WithGroupItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithGroupItemRequestBuilderPutQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');

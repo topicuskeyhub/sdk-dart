@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum ModificationRequestReportError {
     adminGroupCannotBeMoved('ADMIN_GROUP_CANNOT_BE_MOVED'),
     auditorGroupCannotBeMoved('AUDITOR_GROUP_CANNOT_BE_MOVED'),

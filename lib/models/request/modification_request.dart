@@ -1,4 +1,5 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../auth/account_primer.dart';
 import '../group/group_primer.dart';
 import '../linkable.dart';
@@ -49,6 +50,7 @@ import './update_group_membership_request.dart';
 import './update_license_request.dart';
 import './verify_internal_account_request.dart';
 
+/// auto generated
 class ModificationRequest extends Linkable implements Parsable {
     ///  The account property
     AccountPrimer? account;
@@ -68,10 +70,10 @@ class ModificationRequest extends Linkable implements Parsable {
     ModificationRequestStatus? status;
     /// Instantiates a new [ModificationRequest] and sets the default values.
     ModificationRequest() : super() {
-        typeEscaped = 'request.ModificationRequest';
+        type_ = 'request.ModificationRequest';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static ModificationRequest createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
@@ -124,7 +126,7 @@ class ModificationRequest extends Linkable implements Parsable {
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['account'] = (node) => account = node.getObjectValue<AccountPrimer>(AccountPrimer.createFromDiscriminatorValue);
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<ModificationRequestAdditionalObjects>(ModificationRequestAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['comment'] = (node) => comment = node.getStringValue();
@@ -136,7 +138,7 @@ class ModificationRequest extends Linkable implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

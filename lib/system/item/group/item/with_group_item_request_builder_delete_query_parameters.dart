@@ -1,5 +1,7 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 
+/// auto generated
 /// Deletes the group on system identified by the id. If 'system=true' is passed as query parameter, the group is also removed from the system.
 class WithGroupItemRequestBuilderDeleteQueryParameters implements AbstractQueryParameters {
     ///  When false, the group will not be removed from the system.

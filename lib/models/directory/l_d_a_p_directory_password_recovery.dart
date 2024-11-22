@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum LDAPDirectoryPasswordRecovery {
     disabled('DISABLED'),
     verify2fa('VERIFY_2FA'),

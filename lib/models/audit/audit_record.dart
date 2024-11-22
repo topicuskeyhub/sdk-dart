@@ -1,9 +1,11 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../auth/security_level.dart';
 import '../linkable.dart';
 import './audit_record_additional_objects.dart';
 import './audit_record_type.dart';
 
+/// auto generated
 class AuditRecord extends Linkable implements Parsable {
     ///  The additionalObjects property
     AuditRecordAdditionalObjects? additionalObjects;
@@ -49,17 +51,17 @@ class AuditRecord extends Linkable implements Parsable {
     SecurityLevel? securityLevel;
     /// Instantiates a new [AuditRecord] and sets the default values.
     AuditRecord() : super() {
-        typeEscaped = 'audit.AuditRecord';
+        type_ = 'audit.AuditRecord';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static AuditRecord createFromDiscriminatorValue(ParseNode parseNode) {
         return AuditRecord();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<AuditRecordAdditionalObjects>(AuditRecordAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['type'] = (node) => auditRecordType = node.getEnumValue<AuditRecordType>((stringValue) => AuditRecordType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['dateTime'] = (node) => dateTime = node.getDateTimeValue();
@@ -84,7 +86,7 @@ class AuditRecord extends Linkable implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

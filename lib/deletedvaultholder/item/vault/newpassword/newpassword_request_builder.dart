@@ -1,8 +1,10 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../../../models/error_report.dart';
 import '../../../../models/simple/string_value.dart';
 import './newpassword_request_builder_get_query_parameters.dart';
 
+/// auto generated
 /// Builds and executes requests for operations under \deletedvaultholder\{deletedvaultholder-id}\vault\newpassword
 class NewpasswordRequestBuilder extends BaseRequestBuilder<NewpasswordRequestBuilder> {
     /// Clones the requestbuilder.
@@ -11,16 +13,16 @@ class NewpasswordRequestBuilder extends BaseRequestBuilder<NewpasswordRequestBui
         return NewpasswordRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [NewpasswordRequestBuilder] and sets the default values.
-    /// <param name="pathParameters">pathParameters</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [pathParameters] Path parameters for the request
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     NewpasswordRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/deletedvaultholder/{deletedvaultholder%2Did}/vault/newpassword{?strategy*}", pathParameters) ;
     /// Instantiates a new [NewpasswordRequestBuilder] and sets the default values.
-    /// <param name="rawUrl">rawUrl</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [rawUrl] The raw URL to use for the request builder.
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     NewpasswordRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/deletedvaultholder/{deletedvaultholder%2Did}/vault/newpassword{?strategy*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Returns a random generated password using the given strategy, or the default strategy if none given.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<StringValue?> getAsync([Function(RequestConfiguration<NewpasswordRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<StringValue?> getAsync([void Function(RequestConfiguration<NewpasswordRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -28,8 +30,8 @@ class NewpasswordRequestBuilder extends BaseRequestBuilder<NewpasswordRequestBui
         return await requestAdapter.send<StringValue>(requestInfo, StringValue.createFromDiscriminatorValue, errorMapping);
     }
     /// Returns a random generated password using the given strategy, or the default strategy if none given.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toGetRequestInformation([Function(RequestConfiguration<NewpasswordRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toGetRequestInformation([void Function(RequestConfiguration<NewpasswordRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<NewpasswordRequestBuilderGetQueryParameters>(requestConfiguration, () => NewpasswordRequestBuilderGetQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');

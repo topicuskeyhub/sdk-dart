@@ -1,8 +1,10 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../linkable.dart';
 import './certificate.dart';
 import './certificate_type.dart';
 
+/// auto generated
 class CertificatePrimer extends Linkable implements Parsable {
     ///  The alias property
     String? alias;
@@ -24,10 +26,10 @@ class CertificatePrimer extends Linkable implements Parsable {
     String? uuid;
     /// Instantiates a new [CertificatePrimer] and sets the default values.
     CertificatePrimer() : super() {
-        typeEscaped = 'certificate.CertificatePrimer';
+        type_ = 'certificate.CertificatePrimer';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static CertificatePrimer createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
@@ -38,7 +40,7 @@ class CertificatePrimer extends Linkable implements Parsable {
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['alias'] = (node) => alias = node.getStringValue();
         deserializerMap['certificateData'] = (node) => certificateData = node.getStringValue();
         deserializerMap['type'] = (node) => certificatePrimerType = node.getEnumValue<CertificateType>((stringValue) => CertificateType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
@@ -51,7 +53,7 @@ class CertificatePrimer extends Linkable implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

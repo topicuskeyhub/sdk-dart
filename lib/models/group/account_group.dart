@@ -1,9 +1,11 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './account_group_additional_objects.dart';
 import './group_folder.dart';
 import './group_primer.dart';
 import './group_rights.dart';
 
+/// auto generated
 class AccountGroup extends GroupPrimer implements Parsable {
     ///  The additionalObjects property
     AccountGroupAdditionalObjects? additionalObjects;
@@ -21,17 +23,17 @@ class AccountGroup extends GroupPrimer implements Parsable {
     bool? visibleForProvisioning;
     /// Instantiates a new [AccountGroup] and sets the default values.
     AccountGroup() : super() {
-        typeEscaped = 'group.AccountGroup';
+        type_ = 'group.AccountGroup';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static AccountGroup createFromDiscriminatorValue(ParseNode parseNode) {
         return AccountGroup();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<AccountGroupAdditionalObjects>(AccountGroupAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['endDate'] = (node) => endDate = node.getDateOnlyValue();
         deserializerMap['folder'] = (node) => folder = node.getObjectValue<GroupFolder>(GroupFolder.createFromDiscriminatorValue);
@@ -42,7 +44,7 @@ class AccountGroup extends GroupPrimer implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

@@ -1,4 +1,5 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import 'package:uuid/uuid.dart';
 import '../group/group_primer.dart';
 import './abstract_provisioned_l_d_a_p.dart';
@@ -16,6 +17,7 @@ import './provisioned_system_additional_objects.dart';
 import './provisioned_system_cleanup_period.dart';
 import './provisioned_system_primer.dart';
 
+/// auto generated
 class ProvisionedSystem extends ProvisionedSystemPrimer implements Parsable {
     ///  The accountCount property
     int? accountCount;
@@ -47,10 +49,10 @@ class ProvisionedSystem extends ProvisionedSystemPrimer implements Parsable {
     String? usernamePrefix;
     /// Instantiates a new [ProvisionedSystem] and sets the default values.
     ProvisionedSystem() : super() {
-        typeEscaped = 'provisioning.ProvisionedSystem';
+        type_ = 'provisioning.ProvisionedSystem';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static ProvisionedSystem createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
@@ -70,7 +72,7 @@ class ProvisionedSystem extends ProvisionedSystemPrimer implements Parsable {
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['accountCount'] = (node) => accountCount = node.getIntValue();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<ProvisionedSystemAdditionalObjects>(ProvisionedSystemAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['cleanupPeriod'] = (node) => cleanupPeriod = node.getObjectValue<ProvisionedSystemCleanupPeriod>(ProvisionedSystemCleanupPeriod.createFromDiscriminatorValue);
@@ -88,7 +90,7 @@ class ProvisionedSystem extends ProvisionedSystemPrimer implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

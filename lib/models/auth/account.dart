@@ -1,4 +1,5 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../directory/account_directory_primer.dart';
 import '../directory/account_directory_type.dart';
 import '../directory/directory_rotating_password.dart';
@@ -10,6 +11,7 @@ import './internal_account.dart';
 import './permission.dart';
 import './two_factor_authentication_status.dart';
 
+/// auto generated
 class Account extends AccountPrimer implements Parsable {
     ///  The accountPermissions property
     Iterable<Permission>? accountPermissions;
@@ -53,10 +55,10 @@ class Account extends AccountPrimer implements Parsable {
     bool? validInDirectory;
     /// Instantiates a new [Account] and sets the default values.
     Account() : super() {
-        typeEscaped = 'auth.Account';
+        type_ = 'auth.Account';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static Account createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
@@ -67,7 +69,7 @@ class Account extends AccountPrimer implements Parsable {
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['accountPermissions'] = (node) => accountPermissions = node.getCollectionOfObjectValues<Permission>(Permission.createFromDiscriminatorValue);
         deserializerMap['active'] = (node) => active = node.getBoolValue();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<AccountAdditionalObjects>(AccountAdditionalObjects.createFromDiscriminatorValue);
@@ -91,7 +93,7 @@ class Account extends AccountPrimer implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

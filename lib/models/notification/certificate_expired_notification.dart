@@ -1,4 +1,5 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../certificate/certificate.dart';
 import '../client/ldap_client.dart';
 import '../directory/l_d_a_p_directory.dart';
@@ -7,6 +8,7 @@ import '../webhook/webhook.dart';
 import './certificate_usage.dart';
 import './notification.dart';
 
+/// auto generated
 class CertificateExpiredNotification extends Notification implements Parsable {
     ///  The certificate property
     Certificate? certificate;
@@ -24,17 +26,17 @@ class CertificateExpiredNotification extends Notification implements Parsable {
     Webhook? webhook;
     /// Instantiates a new [CertificateExpiredNotification] and sets the default values.
     CertificateExpiredNotification() : super() {
-        typeEscaped = 'notification.CertificateExpiredNotification';
+        type_ = 'notification.CertificateExpiredNotification';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static CertificateExpiredNotification createFromDiscriminatorValue(ParseNode parseNode) {
         return CertificateExpiredNotification();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['certificate'] = (node) => certificate = node.getObjectValue<Certificate>(Certificate.createFromDiscriminatorValue);
         deserializerMap['directory'] = (node) => directory = node.getObjectValue<LDAPDirectory>(LDAPDirectory.createFromDiscriminatorValue);
         deserializerMap['expiration'] = (node) => expiration = node.getDateTimeValue();
@@ -45,7 +47,7 @@ class CertificateExpiredNotification extends Notification implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

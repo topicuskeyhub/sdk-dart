@@ -1,7 +1,9 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../../models/client/o_auth2_client_permission_type.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Query for all permissions given to a OAuth2 client in Topicus KeyHub. The various query parameters can be used to filter the response.
 class PermissionRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Request additional information to be returned for every record.

@@ -1,4 +1,5 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../audit/audit_record_type.dart';
 import '../auth/account_primer.dart';
 import '../certificate/certificate_primer.dart';
@@ -11,6 +12,7 @@ import '../provisioning/provisioned_system_primer.dart';
 import '../t_l_s_level.dart';
 import './webhook_additional_objects.dart';
 
+/// auto generated
 class Webhook extends Linkable implements Parsable {
     ///  The account property
     AccountPrimer? account;
@@ -58,17 +60,17 @@ class Webhook extends Linkable implements Parsable {
     bool? verbosePayloads;
     /// Instantiates a new [Webhook] and sets the default values.
     Webhook() : super() {
-        typeEscaped = 'webhook.Webhook';
+        type_ = 'webhook.Webhook';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static Webhook createFromDiscriminatorValue(ParseNode parseNode) {
         return Webhook();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['account'] = (node) => account = node.getObjectValue<AccountPrimer>(AccountPrimer.createFromDiscriminatorValue);
         deserializerMap['active'] = (node) => active = node.getBoolValue();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<WebhookAdditionalObjects>(WebhookAdditionalObjects.createFromDiscriminatorValue);
@@ -94,7 +96,7 @@ class Webhook extends Linkable implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

@@ -1,8 +1,10 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../group/group_primer.dart';
 import './organizational_unit_additional_objects.dart';
 import './organizational_unit_primer.dart';
 
+/// auto generated
 class OrganizationalUnit extends OrganizationalUnitPrimer implements Parsable {
     ///  The additionalObjects property
     OrganizationalUnitAdditionalObjects? additionalObjects;
@@ -28,17 +30,17 @@ class OrganizationalUnit extends OrganizationalUnitPrimer implements Parsable {
     GroupPrimer? removeGroupApproveGroup;
     /// Instantiates a new [OrganizationalUnit] and sets the default values.
     OrganizationalUnit() : super() {
-        typeEscaped = 'organization.OrganizationalUnit';
+        type_ = 'organization.OrganizationalUnit';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static OrganizationalUnit createFromDiscriminatorValue(ParseNode parseNode) {
         return OrganizationalUnit();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<OrganizationalUnitAdditionalObjects>(OrganizationalUnitAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['auditorGroup'] = (node) => auditorGroup = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         deserializerMap['createGroupApproveGroup'] = (node) => createGroupApproveGroup = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
@@ -53,7 +55,7 @@ class OrganizationalUnit extends OrganizationalUnitPrimer implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

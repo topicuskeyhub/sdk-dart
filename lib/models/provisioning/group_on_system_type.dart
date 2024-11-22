@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum GroupOnSystemType {
     posixGroup('POSIX_GROUP'),
     groupOfNames('GROUP_OF_NAMES'),

@@ -1,28 +1,30 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './accept_grant_access_request_parameters_access_duration.dart';
 import './accept_modification_request_parameters.dart';
 
+/// auto generated
 class AcceptGrantAccessRequestParameters extends AcceptModificationRequestParameters implements Parsable {
     ///  The accessDuration property
     AcceptGrantAccessRequestParametersAccessDuration? accessDuration;
     /// Instantiates a new [AcceptGrantAccessRequestParameters] and sets the default values.
     AcceptGrantAccessRequestParameters() : super() {
-        typeEscaped = 'request.AcceptGrantAccessRequestParameters';
+        type_ = 'request.AcceptGrantAccessRequestParameters';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static AcceptGrantAccessRequestParameters createFromDiscriminatorValue(ParseNode parseNode) {
         return AcceptGrantAccessRequestParameters();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['accessDuration'] = (node) => accessDuration = node.getObjectValue<AcceptGrantAccessRequestParametersAccessDuration>(AcceptGrantAccessRequestParametersAccessDuration.createFromDiscriminatorValue);
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

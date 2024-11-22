@@ -1,9 +1,11 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../../../models/audit/group_audit.dart';
 import '../../../../models/error_report.dart';
 import './with_audit_item_request_builder_get_query_parameters.dart';
 import './with_audit_item_request_builder_put_query_parameters.dart';
 
+/// auto generated
 /// Builds and executes requests for operations under \group\{groupid}\audit\{auditid}
 class WithAuditItemRequestBuilder extends BaseRequestBuilder<WithAuditItemRequestBuilder> {
     /// Clones the requestbuilder.
@@ -12,16 +14,16 @@ class WithAuditItemRequestBuilder extends BaseRequestBuilder<WithAuditItemReques
         return WithAuditItemRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [WithAuditItemRequestBuilder] and sets the default values.
-    /// <param name="pathParameters">pathParameters</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [pathParameters] Path parameters for the request
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     WithAuditItemRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/{groupid}/audit/{auditid}{?additional*}", pathParameters) ;
     /// Instantiates a new [WithAuditItemRequestBuilder] and sets the default values.
-    /// <param name="rawUrl">rawUrl</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [rawUrl] The raw URL to use for the request builder.
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     WithAuditItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/{groupid}/audit/{auditid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Returns the single audits for the group.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<GroupAudit?> getAsync([Function(RequestConfiguration<WithAuditItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<GroupAudit?> getAsync([void Function(RequestConfiguration<WithAuditItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -29,9 +31,9 @@ class WithAuditItemRequestBuilder extends BaseRequestBuilder<WithAuditItemReques
         return await requestAdapter.send<GroupAudit>(requestInfo, GroupAudit.createFromDiscriminatorValue, errorMapping);
     }
     /// Updates the audits for a group identified by the id. Only audits in draft can be updated.
-    /// <param name="body">body</param>
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<GroupAudit?> putAsync(GroupAudit body, [Function(RequestConfiguration<WithAuditItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
+    ///  [body] The request body
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<GroupAudit?> putAsync(GroupAudit body, [void Function(RequestConfiguration<WithAuditItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -39,17 +41,17 @@ class WithAuditItemRequestBuilder extends BaseRequestBuilder<WithAuditItemReques
         return await requestAdapter.send<GroupAudit>(requestInfo, GroupAudit.createFromDiscriminatorValue, errorMapping);
     }
     /// Returns the single audits for the group.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toGetRequestInformation([Function(RequestConfiguration<WithAuditItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithAuditItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithAuditItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithAuditItemRequestBuilderGetQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
     /// Updates the audits for a group identified by the id. Only audits in draft can be updated.
-    /// <param name="body">body</param>
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toPutRequestInformation(GroupAudit body, [Function(RequestConfiguration<WithAuditItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
+    ///  [body] The request body
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toPutRequestInformation(GroupAudit body, [void Function(RequestConfiguration<WithAuditItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithAuditItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithAuditItemRequestBuilderPutQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');

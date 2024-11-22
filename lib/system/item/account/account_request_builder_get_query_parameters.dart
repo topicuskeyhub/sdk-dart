@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Query for provisioned accounts in a system. The various query parameters can be used to filter the response.
 class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Only return provisioned accounts for the given accounts, specified by id. This parameter supports composition with all parameters from the accounts resource.

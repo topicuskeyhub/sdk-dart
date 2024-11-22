@@ -1,7 +1,9 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../non_linkable.dart';
 import './group_classification.dart';
 
+/// auto generated
 class GroupsAuditStats extends NonLinkable implements Parsable {
     ///  The auditedGroups property
     int? auditedGroups;
@@ -19,17 +21,17 @@ class GroupsAuditStats extends NonLinkable implements Parsable {
     int? vaultsWithoutPolicies;
     /// Instantiates a new [GroupsAuditStats] and sets the default values.
     GroupsAuditStats() : super() {
-        typeEscaped = 'group.GroupsAuditStats';
+        type_ = 'group.GroupsAuditStats';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static GroupsAuditStats createFromDiscriminatorValue(ParseNode parseNode) {
         return GroupsAuditStats();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['auditedGroups'] = (node) => auditedGroups = node.getIntValue();
         deserializerMap['classifications'] = (node) => classifications = node.getCollectionOfObjectValues<GroupClassification>(GroupClassification.createFromDiscriminatorValue);
         deserializerMap['overdueAuditGroups'] = (node) => overdueAuditGroups = node.getIntValue();
@@ -40,7 +42,7 @@ class GroupsAuditStats extends NonLinkable implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

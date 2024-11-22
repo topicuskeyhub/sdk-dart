@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './error_report_application_error_parameters.dart';
 
+/// auto generated
 class ErrorReport extends ApiException implements AdditionalDataHolder, Parsable {
     ///  Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     @override
@@ -53,14 +55,14 @@ class ErrorReport extends ApiException implements AdditionalDataHolder, Parsable
         );
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static ErrorReport createFromDiscriminatorValue(ParseNode parseNode) {
         return ErrorReport(additionalData: {});
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = {};
+        var deserializerMap = <String, void Function(ParseNode)>{};
         deserializerMap['applicationError'] = (node) => applicationError = node.getStringValue();
         deserializerMap['applicationErrorParameters'] = (node) => applicationErrorParameters = node.getObjectValue<ErrorReportApplicationErrorParameters>(ErrorReportApplicationErrorParameters.createFromDiscriminatorValue);
         deserializerMap['code'] = (node) => code = node.getIntValue();
@@ -71,7 +73,7 @@ class ErrorReport extends ApiException implements AdditionalDataHolder, Parsable
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         writer.writeStringValue('applicationError', applicationError);

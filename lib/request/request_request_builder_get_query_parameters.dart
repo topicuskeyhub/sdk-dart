@@ -1,10 +1,12 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../models/client/o_auth2_client_permission_type.dart';
 import '../models/request/authorizing_group_type.dart';
 import '../models/request/modification_request_status.dart';
 import '../models/request/update_group_membership_type.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Queries over all modification requests. The various query parameters can be used to filter the response.
 class RequestRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Filter requests on the given access profiles, specified by id. This parameter supports composition with all parameters from the access profile unit resource.
@@ -88,7 +90,7 @@ class RequestRequestBuilderGetQueryParameters implements AbstractQueryParameters
     ///  Only return requests that did or did not trigger a follow up request.
     List<bool>? triggeredFollowUpRequest;
     ///  Only return requests of the given type(s).
-    List<String>? typeEscaped;
+    List<String>? type_;
     ///  Only return UpdateGroupMembershipRequest(s) of the given update type.
     List<UpdateGroupMembershipType>? updateGroupMembershipType;
     ///  Only return requests the were processed by the given account(s), specified by id. This parameter supports composition with all parameters from the account resource.
@@ -137,7 +139,7 @@ class RequestRequestBuilderGetQueryParameters implements AbstractQueryParameters
             'status' : status,
             'system' : system,
             'triggeredFollowUpRequest' : triggeredFollowUpRequest,
-            'typeEscaped' : typeEscaped,
+            'type_' : type_,
             'updateGroupMembershipType' : updateGroupMembershipType,
             'wasProcessedBy' : wasProcessedBy,
         };

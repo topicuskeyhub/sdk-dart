@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum OAuth2ClientPermissionType {
     accountsCreate('ACCOUNTS_CREATE'),
     accountsQuery('ACCOUNTS_QUERY'),

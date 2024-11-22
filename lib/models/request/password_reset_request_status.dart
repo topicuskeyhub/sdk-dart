@@ -1,7 +1,9 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../non_linkable.dart';
 import './password_reset_email_type.dart';
 
+/// auto generated
 class PasswordResetRequestStatus extends NonLinkable implements Parsable {
     ///  The cooldownEnd property
     DateTime? cooldownEnd;
@@ -13,17 +15,17 @@ class PasswordResetRequestStatus extends NonLinkable implements Parsable {
     PasswordResetEmailType? resetViaMail;
     /// Instantiates a new [PasswordResetRequestStatus] and sets the default values.
     PasswordResetRequestStatus() : super() {
-        typeEscaped = 'request.PasswordResetRequestStatus';
+        type_ = 'request.PasswordResetRequestStatus';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static PasswordResetRequestStatus createFromDiscriminatorValue(ParseNode parseNode) {
         return PasswordResetRequestStatus();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['cooldownEnd'] = (node) => cooldownEnd = node.getDateTimeValue();
         deserializerMap['managers'] = (node) => managers = node.getCollectionOfPrimitiveValues<String>();
         deserializerMap['nrAccepted'] = (node) => nrAccepted = node.getIntValue();
@@ -31,7 +33,7 @@ class PasswordResetRequestStatus extends NonLinkable implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

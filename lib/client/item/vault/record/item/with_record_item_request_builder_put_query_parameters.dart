@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './put_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Updates the vault record identified by the id. To update the secrets, the 'secret' additional object must be used, in addition to specifying the 'topicus-Vault-session' header. When updating a TOTP-secret, make sure to set 'writeTotp' field.
 class WithRecordItemRequestBuilderPutQueryParameters implements AbstractQueryParameters {
     ///  Request additional information to be returned for every record.

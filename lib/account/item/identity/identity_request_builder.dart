@@ -1,7 +1,9 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../../models/error_report.dart';
 import '../../../models/identity/identity.dart';
 
+/// auto generated
 /// Builds and executes requests for operations under \account\{accountid}\identity
 class IdentityRequestBuilder extends BaseRequestBuilder<IdentityRequestBuilder> {
     /// Clones the requestbuilder.
@@ -10,16 +12,16 @@ class IdentityRequestBuilder extends BaseRequestBuilder<IdentityRequestBuilder> 
         return IdentityRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [IdentityRequestBuilder] and sets the default values.
-    /// <param name="pathParameters">pathParameters</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [pathParameters] Path parameters for the request
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     IdentityRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/{accountid}/identity", pathParameters) ;
     /// Instantiates a new [IdentityRequestBuilder] and sets the default values.
-    /// <param name="rawUrl">rawUrl</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [rawUrl] The raw URL to use for the request builder.
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     IdentityRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/{accountid}/identity", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Returns the identity for the account.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<Identity?> getAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<Identity?> getAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -27,9 +29,9 @@ class IdentityRequestBuilder extends BaseRequestBuilder<IdentityRequestBuilder> 
         return await requestAdapter.send<Identity>(requestInfo, Identity.createFromDiscriminatorValue, errorMapping);
     }
     /// Updates the identity for the account.
-    /// <param name="body">body</param>
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<Identity?> putAsync(Identity body, [Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    ///  [body] The request body
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<Identity?> putAsync(Identity body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -37,17 +39,17 @@ class IdentityRequestBuilder extends BaseRequestBuilder<IdentityRequestBuilder> 
         return await requestAdapter.send<Identity>(requestInfo, Identity.createFromDiscriminatorValue, errorMapping);
     }
     /// Returns the identity for the account.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toGetRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
     /// Updates the identity for the account.
-    /// <param name="body">body</param>
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toPutRequestInformation(Identity body, [Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    ///  [body] The request body
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toPutRequestInformation(Identity body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');

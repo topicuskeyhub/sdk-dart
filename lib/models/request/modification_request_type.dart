@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum ModificationRequestType {
     addGroupAdmin('ADD_GROUP_ADMIN'),
     createGroup('CREATE_GROUP'),

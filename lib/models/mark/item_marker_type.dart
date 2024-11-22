@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum ItemMarkerType {
     tlsDisabled('TLS_DISABLED'),
     tlsUnverified('TLS_UNVERIFIED'),

@@ -1,10 +1,12 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../models/group/group_auditing_status.dart';
 import '../models/group/group_classification_conformance.dart';
 import '../models/group/group_visibility.dart';
 import '../models/group/vault_recovery_availability.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Query for all groups in Topicus KeyHub. The various query parameters can be used to filter the response.
 class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Search groups by connected, owned or administrated clients, linked systems, webhooks or service accounts that have been modified since the given instance.

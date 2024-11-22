@@ -1,5 +1,7 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 
+/// auto generated
 /// Query tiles for display on the launchpad. This returns a normalized view over the tiles, per group. A single tile can be returned multiple times if access is given via multiple groups.
 class DisplayRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     String? filter;

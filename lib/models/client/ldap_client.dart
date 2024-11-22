@@ -1,8 +1,10 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../certificate/certificate_primer.dart';
 import '../vault/vault_record_primer.dart';
 import './client_application.dart';
 
+/// auto generated
 class LdapClient extends ClientApplication implements Parsable {
     ///  The bindDn property
     String? bindDn;
@@ -16,17 +18,17 @@ class LdapClient extends ClientApplication implements Parsable {
     bool? usedForProvisioning;
     /// Instantiates a new [LdapClient] and sets the default values.
     LdapClient() : super() {
-        typeEscaped = 'client.LdapClient';
+        type_ = 'client.LdapClient';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static LdapClient createFromDiscriminatorValue(ParseNode parseNode) {
         return LdapClient();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['bindDn'] = (node) => bindDn = node.getStringValue();
         deserializerMap['clientCertificate'] = (node) => clientCertificate = node.getObjectValue<CertificatePrimer>(CertificatePrimer.createFromDiscriminatorValue);
         deserializerMap['sharedSecret'] = (node) => sharedSecret = node.getObjectValue<VaultRecordPrimer>(VaultRecordPrimer.createFromDiscriminatorValue);
@@ -35,7 +37,7 @@ class LdapClient extends ClientApplication implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Query for all clients in Topicus KeyHub. The various query parameters can be used to filter the response.
 class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Request additional information to be returned for every record.
@@ -48,7 +50,7 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     ///  Filter the clients for which the given group is technical administrator, specified by id. This parameter supports composition with all parameters from the group resource.
     List<int>? technicalAdministrator;
     ///  Only return clients of the given type(s).
-    List<String>? typeEscaped;
+    List<String>? type_;
     ///  Only return OAuth2 clients that use or do not use the client credentials grant.
     List<bool>? useClientCredentials;
     ///  Filter results on one or more UUIDs.
@@ -87,7 +89,7 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
             'sharedSecret' : sharedSecret,
             'sort' : sort,
             'technicalAdministrator' : technicalAdministrator,
-            'typeEscaped' : typeEscaped,
+            'type_' : type_,
             'useClientCredentials' : useClientCredentials,
             'uuid' : uuid,
             'vault' : vault,

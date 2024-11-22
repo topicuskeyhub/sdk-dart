@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Query for all organizational units in Topicus KeyHub. The various query parameters can be used to filter the response.
 class OrganizationalunitRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Filter the organizational units for which the given account is auditor, either directly or inherited from one of the parent units, specified by id.

@@ -1,8 +1,10 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../month.dart';
 import './group_classification_additional_objects.dart';
 import './group_classification_primer.dart';
 
+/// auto generated
 class GroupClassification extends GroupClassificationPrimer implements Parsable {
     ///  The additionalObjects property
     GroupClassificationAdditionalObjects? additionalObjects;
@@ -32,17 +34,17 @@ class GroupClassification extends GroupClassificationPrimer implements Parsable 
     bool? vaultRequiresActivation;
     /// Instantiates a new [GroupClassification] and sets the default values.
     GroupClassification() : super() {
-        typeEscaped = 'group.GroupClassification';
+        type_ = 'group.GroupClassification';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static GroupClassification createFromDiscriminatorValue(ParseNode parseNode) {
         return GroupClassification();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<GroupClassificationAdditionalObjects>(GroupClassificationAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['authorizingGroupAuditingRequired'] = (node) => authorizingGroupAuditingRequired = node.getBoolValue();
         deserializerMap['authorizingGroupDelegationRequired'] = (node) => authorizingGroupDelegationRequired = node.getBoolValue();
@@ -59,7 +61,7 @@ class GroupClassification extends GroupClassificationPrimer implements Parsable 
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

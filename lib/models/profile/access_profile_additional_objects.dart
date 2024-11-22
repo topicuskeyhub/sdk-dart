@@ -1,8 +1,10 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../audit_info.dart';
 import './access_profile_account_with_attributes_linkable_wrapper.dart';
 import './access_profile_provisioning_linkable_wrapper.dart';
 
+/// auto generated
 class AccessProfileAdditionalObjects implements AdditionalDataHolder, Parsable {
     ///  The accountsWithAttributes property
     AccessProfileAccountWithAttributesLinkableWrapper? accountsWithAttributes;
@@ -17,21 +19,21 @@ class AccessProfileAdditionalObjects implements AdditionalDataHolder, Parsable {
     AccessProfileAdditionalObjects() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static AccessProfileAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
         return AccessProfileAdditionalObjects();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = {};
+        var deserializerMap = <String, void Function(ParseNode)>{};
         deserializerMap['accountsWithAttributes'] = (node) => accountsWithAttributes = node.getObjectValue<AccessProfileAccountWithAttributesLinkableWrapper>(AccessProfileAccountWithAttributesLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
         deserializerMap['provisioning'] = (node) => provisioning = node.getObjectValue<AccessProfileProvisioningLinkableWrapper>(AccessProfileProvisioningLinkableWrapper.createFromDiscriminatorValue);
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         writer.writeObjectValue<AccessProfileAccountWithAttributesLinkableWrapper>('accountsWithAttributes', accountsWithAttributes);

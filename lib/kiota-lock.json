@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "90A4BE11B74BC72724FBC3F7179A7C0D0E290151334D4EB25EA9ACD3666D7431E4B1889B61B6DA236DFA45DDBAA86AE1F1FB891406BB311B189B9AAE8D113324",
+  "descriptionHash": "3489CD0DA9AFE835344442A00C138B680EB5E275C27A257F779FE18C75F3C17AA93D61D44454D63FBF65455755A0EAD6EAEB739EB32447539E77B0903D49F944",
   "descriptionLocation": "https://keyhub.topicusonderwijs.nl/keyhub/rest/v1/openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.20.0",
+  "kiotaVersion": "1.21.0",
   "clientClassName": "KeyHubClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "ApiSdk",
@@ -12,10 +12,10 @@
   "includeAdditionalData": true,
   "disableSSLValidation": false,
   "serializers": [
-    "kiota_serialization_json/kiota_serialization_json.JsonSerializationWriterFactory"
+    "microsoft_kiota_serialization_json/microsoft_kiota_serialization_json.JsonSerializationWriterFactory"
   ],
   "deserializers": [
-    "kiota_serialization_json/kiota_serialization_json.JsonParseNodeFactory"
+    "microsoft_kiota_serialization_json/microsoft_kiota_serialization_json.JsonParseNodeFactory"
   ],
   "structuredMimeTypes": [
     "application/vnd.topicus.keyhub\u002Bjson"

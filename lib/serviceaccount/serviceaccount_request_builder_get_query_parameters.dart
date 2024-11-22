@@ -1,8 +1,10 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../models/boolean_enum.dart';
 import '../models/serviceaccount/password_rotation_scheme.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Query for all service accounts in Topicus KeyHub. The various query parameters can be used to filter the response.
 class ServiceaccountRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Only return active or inactive service accounts.

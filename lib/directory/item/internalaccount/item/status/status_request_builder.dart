@@ -1,7 +1,9 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../../../../models/auth/internal_account_status_object.dart';
 import '../../../../../models/error_report.dart';
 
+/// auto generated
 /// Builds and executes requests for operations under \directory\{directoryid}\internalaccount\{internalaccountid}\status
 class StatusRequestBuilder extends BaseRequestBuilder<StatusRequestBuilder> {
     /// Clones the requestbuilder.
@@ -10,17 +12,17 @@ class StatusRequestBuilder extends BaseRequestBuilder<StatusRequestBuilder> {
         return StatusRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [StatusRequestBuilder] and sets the default values.
-    /// <param name="pathParameters">pathParameters</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [pathParameters] Path parameters for the request
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     StatusRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/directory/{directoryid}/internalaccount/{internalaccountid}/status", pathParameters) ;
     /// Instantiates a new [StatusRequestBuilder] and sets the default values.
-    /// <param name="rawUrl">rawUrl</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [rawUrl] The raw URL to use for the request builder.
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     StatusRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/directory/{directoryid}/internalaccount/{internalaccountid}/status", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Updates the status for the internal account. Only the status 'NOT_ACTIVATED' can be set.
-    /// <param name="body">body</param>
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<void> putAsync(InternalAccountStatusObject body, [Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    ///  [body] The request body
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<void> putAsync(InternalAccountStatusObject body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -28,9 +30,9 @@ class StatusRequestBuilder extends BaseRequestBuilder<StatusRequestBuilder> {
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
     }
     /// Updates the status for the internal account. Only the status 'NOT_ACTIVATED' can be set.
-    /// <param name="body">body</param>
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toPutRequestInformation(InternalAccountStatusObject body, [Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    ///  [body] The request body
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toPutRequestInformation(InternalAccountStatusObject body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');

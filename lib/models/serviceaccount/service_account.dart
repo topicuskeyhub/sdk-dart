@@ -1,10 +1,12 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../group/group_primer.dart';
 import '../vault/vault_record_primer.dart';
 import './password_rotation_scheme.dart';
 import './service_account_additional_objects.dart';
 import './service_account_primer.dart';
 
+/// auto generated
 class ServiceAccount extends ServiceAccountPrimer implements Parsable {
     ///  The additionalObjects property
     ServiceAccountAdditionalObjects? additionalObjects;
@@ -20,17 +22,17 @@ class ServiceAccount extends ServiceAccountPrimer implements Parsable {
     GroupPrimer? technicalAdministrator;
     /// Instantiates a new [ServiceAccount] and sets the default values.
     ServiceAccount() : super() {
-        typeEscaped = 'serviceaccount.ServiceAccount';
+        type_ = 'serviceaccount.ServiceAccount';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static ServiceAccount createFromDiscriminatorValue(ParseNode parseNode) {
         return ServiceAccount();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<ServiceAccountAdditionalObjects>(ServiceAccountAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['description'] = (node) => description = node.getStringValue();
         deserializerMap['password'] = (node) => password = node.getObjectValue<VaultRecordPrimer>(VaultRecordPrimer.createFromDiscriminatorValue);
@@ -40,7 +42,7 @@ class ServiceAccount extends ServiceAccountPrimer implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

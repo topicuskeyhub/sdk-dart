@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum VaultSecretType {
     password('PASSWORD'),
     file('FILE'),

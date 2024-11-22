@@ -1,4 +1,5 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../audit_info.dart';
 import '../launchpad/vault_record_launchpad_tile.dart';
 import './password_metadata.dart';
@@ -9,6 +10,7 @@ import './vault_record_primer_linkable_wrapper.dart';
 import './vault_record_secrets.dart';
 import './vault_record_share_summary.dart';
 
+/// auto generated
 class VaultRecordAdditionalObjects implements AdditionalDataHolder, Parsable {
     ///  The activationStatus property
     VaultActivationStatus? activationStatus;
@@ -37,14 +39,14 @@ class VaultRecordAdditionalObjects implements AdditionalDataHolder, Parsable {
     VaultRecordAdditionalObjects() :  
         additionalData = {};
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static VaultRecordAdditionalObjects createFromDiscriminatorValue(ParseNode parseNode) {
         return VaultRecordAdditionalObjects();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = {};
+        var deserializerMap = <String, void Function(ParseNode)>{};
         deserializerMap['activationStatus'] = (node) => activationStatus = node.getObjectValue<VaultActivationStatus>(VaultActivationStatus.createFromDiscriminatorValue);
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
         deserializerMap['deleteTile'] = (node) => deleteTile = node.getBoolValue();
@@ -58,7 +60,7 @@ class VaultRecordAdditionalObjects implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         writer.writeObjectValue<VaultActivationStatus>('activationStatus', activationStatus);

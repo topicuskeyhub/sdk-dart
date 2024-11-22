@@ -1,4 +1,5 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../client/client_application_primer.dart';
 import '../group/group_primer.dart';
 import '../vault/vault_record_primer.dart';
@@ -9,6 +10,7 @@ import './manual_launchpad_tile.dart';
 import './sso_application_launchpad_tile.dart';
 import './vault_record_launchpad_tile.dart';
 
+/// auto generated
 class LaunchpadTile extends LaunchpadTilePrimer implements Parsable {
     ///  The additionalObjects property
     LaunchpadTileAdditionalObjects? additionalObjects;
@@ -26,10 +28,10 @@ class LaunchpadTile extends LaunchpadTilePrimer implements Parsable {
     VaultRecordPrimer? vaultRecord;
     /// Instantiates a new [LaunchpadTile] and sets the default values.
     LaunchpadTile() : super() {
-        typeEscaped = 'launchpad.LaunchpadTile';
+        type_ = 'launchpad.LaunchpadTile';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static LaunchpadTile createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
@@ -42,7 +44,7 @@ class LaunchpadTile extends LaunchpadTilePrimer implements Parsable {
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<LaunchpadTileAdditionalObjects>(LaunchpadTileAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['application'] = (node) => application = node.getObjectValue<ClientApplicationPrimer>(ClientApplicationPrimer.createFromDiscriminatorValue);
         deserializerMap['group'] = (node) => group = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
@@ -53,7 +55,7 @@ class LaunchpadTile extends LaunchpadTilePrimer implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

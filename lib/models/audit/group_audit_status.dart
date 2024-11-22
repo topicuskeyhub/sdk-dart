@@ -1,8 +1,10 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum GroupAuditStatus {
-    newEscaped('NEW'),
+    new_('NEW'),
     draft('DRAFT'),
     underReview('UNDER_REVIEW'),
-    finalEscaped('FINAL');
+    final_('FINAL');
     const GroupAuditStatus(this.value);
     final String value;
 }

@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Queries over all client links for a group. The various query parameters can be used to filter the response.
 class GroupclientRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Only return client group links that do or do not require activation.

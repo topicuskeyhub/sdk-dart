@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Query for all provisioning groups in Topicus KeyHub. The various query parameters can be used to filter the response.
 class ProvisioninggroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Only return provisioning groups that do or do not require activation.

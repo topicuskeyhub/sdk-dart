@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum KeyHubLicenseInfoLicenseStatus {
     ok('OK'),
     notYetValid('NOT_YET_VALID'),

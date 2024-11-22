@@ -1,7 +1,9 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../models/error_report.dart';
 import '../../models/group/group_segmented_linkable_wrapper.dart';
 
+/// auto generated
 /// Builds and executes requests for operations under \group\segments
 class SegmentsRequestBuilder extends BaseRequestBuilder<SegmentsRequestBuilder> {
     /// Clones the requestbuilder.
@@ -10,16 +12,16 @@ class SegmentsRequestBuilder extends BaseRequestBuilder<SegmentsRequestBuilder> 
         return SegmentsRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [SegmentsRequestBuilder] and sets the default values.
-    /// <param name="pathParameters">pathParameters</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [pathParameters] Path parameters for the request
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     SegmentsRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/segments", pathParameters) ;
     /// Instantiates a new [SegmentsRequestBuilder] and sets the default values.
-    /// <param name="rawUrl">rawUrl</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [rawUrl] The raw URL to use for the request builder.
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     SegmentsRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/segments", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Returns the segments and counts of the groups. Groups will not be returned, but the counts will be filtered with the specified query parameters.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<GroupSegmentedLinkableWrapper?> getAsync([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<GroupSegmentedLinkableWrapper?> getAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -27,8 +29,8 @@ class SegmentsRequestBuilder extends BaseRequestBuilder<SegmentsRequestBuilder> 
         return await requestAdapter.send<GroupSegmentedLinkableWrapper>(requestInfo, GroupSegmentedLinkableWrapper.createFromDiscriminatorValue, errorMapping);
     }
     /// Returns the segments and counts of the groups. Groups will not be returned, but the counts will be filtered with the specified query parameters.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toGetRequestInformation([Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');

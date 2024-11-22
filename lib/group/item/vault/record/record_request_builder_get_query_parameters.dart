@@ -1,7 +1,9 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../../../models/vault/vault_record_color.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Query for vault records in a specific vault. The various query parameters can be used to filter the response. It is not possible to access secrets with a query that returns multiple results. Secrets can only be read one by one.
 class RecordRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Filter records that accessible by the given account(s), specified by id.

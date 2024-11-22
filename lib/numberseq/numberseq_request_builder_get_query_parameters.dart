@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Query for all provision number sequences in Topicus KeyHub. The various query parameters can be used to filter the response.
 class NumberseqRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Request additional information to be returned for every record.

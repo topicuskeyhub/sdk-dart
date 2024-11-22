@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './post_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Creates one or more new provision number sequences and returns the newly created sequences.
 class NumberseqRequestBuilderPostQueryParameters implements AbstractQueryParameters {
     ///  Request additional information to be returned for every record.

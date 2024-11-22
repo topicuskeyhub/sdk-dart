@@ -1,4 +1,5 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../group/group_primer.dart';
 import '../linkable.dart';
 import '../provisioning/provisioned_system_primer.dart';
@@ -6,6 +7,7 @@ import './o_auth2_client_permission_additional_objects.dart';
 import './o_auth2_client_permission_type.dart';
 import './o_auth2_client_permission_with_client.dart';
 
+/// auto generated
 class OAuth2ClientPermission extends Linkable implements Parsable {
     ///  The additionalObjects property
     OAuth2ClientPermissionAdditionalObjects? additionalObjects;
@@ -17,10 +19,10 @@ class OAuth2ClientPermission extends Linkable implements Parsable {
     OAuth2ClientPermissionType? value;
     /// Instantiates a new [OAuth2ClientPermission] and sets the default values.
     OAuth2ClientPermission() : super() {
-        typeEscaped = 'client.OAuth2ClientPermission';
+        type_ = 'client.OAuth2ClientPermission';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static OAuth2ClientPermission createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
@@ -31,7 +33,7 @@ class OAuth2ClientPermission extends Linkable implements Parsable {
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<OAuth2ClientPermissionAdditionalObjects>(OAuth2ClientPermissionAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['forGroup'] = (node) => forGroup = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         deserializerMap['forSystem'] = (node) => forSystem = node.getObjectValue<ProvisionedSystemPrimer>(ProvisionedSystemPrimer.createFromDiscriminatorValue);
@@ -39,7 +41,7 @@ class OAuth2ClientPermission extends Linkable implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

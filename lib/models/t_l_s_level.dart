@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum TLSLevel {
     verifiedPinned('VERIFIED_PINNED'),
     verified('VERIFIED'),

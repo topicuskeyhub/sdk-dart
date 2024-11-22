@@ -1,10 +1,12 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../auth/permission.dart';
 import '../vault/vault_record_primer.dart';
 import './client_application.dart';
 import './o_auth2_client_attributes.dart';
 import './o_auth2_client_profile.dart';
 
+/// auto generated
 class OAuth2Client extends ClientApplication implements Parsable {
     ///  The accountPermissions property
     Iterable<Permission>? accountPermissions;
@@ -32,17 +34,17 @@ class OAuth2Client extends ClientApplication implements Parsable {
     bool? useClientCredentials;
     /// Instantiates a new [OAuth2Client] and sets the default values.
     OAuth2Client() : super() {
-        typeEscaped = 'client.OAuth2Client';
+        type_ = 'client.OAuth2Client';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static OAuth2Client createFromDiscriminatorValue(ParseNode parseNode) {
         return OAuth2Client();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['accountPermissions'] = (node) => accountPermissions = node.getCollectionOfObjectValues<Permission>(Permission.createFromDiscriminatorValue);
         deserializerMap['attributes'] = (node) => attributes = node.getObjectValue<OAuth2ClientAttributes>(OAuth2ClientAttributes.createFromDiscriminatorValue);
         deserializerMap['callbackURI'] = (node) => callbackURI = node.getStringValue();
@@ -58,7 +60,7 @@ class OAuth2Client extends ClientApplication implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

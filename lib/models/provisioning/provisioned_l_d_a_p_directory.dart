@@ -1,4 +1,5 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../directory/account_directory_primer.dart';
 import './a_d_sam_account_name_scheme.dart';
 import './l_d_a_p_password_hashing_scheme.dart';
@@ -6,6 +7,7 @@ import './l_d_a_p_ssh_public_key_support.dart';
 import './provision_number_sequence.dart';
 import './provisioned_system.dart';
 
+/// auto generated
 class ProvisionedLDAPDirectory extends ProvisionedSystem implements Parsable {
     ///  The accountsWritable property
     bool? accountsWritable;
@@ -25,17 +27,17 @@ class ProvisionedLDAPDirectory extends ProvisionedSystem implements Parsable {
     LDAPSshPublicKeySupport? sshPublicKeySupport;
     /// Instantiates a new [ProvisionedLDAPDirectory] and sets the default values.
     ProvisionedLDAPDirectory() : super() {
-        typeEscaped = 'provisioning.ProvisionedLDAPDirectory';
+        type_ = 'provisioning.ProvisionedLDAPDirectory';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static ProvisionedLDAPDirectory createFromDiscriminatorValue(ParseNode parseNode) {
         return ProvisionedLDAPDirectory();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['accountsWritable'] = (node) => accountsWritable = node.getBoolValue();
         deserializerMap['directory'] = (node) => directory = node.getObjectValue<AccountDirectoryPrimer>(AccountDirectoryPrimer.createFromDiscriminatorValue);
         deserializerMap['gid'] = (node) => gid = node.getIntValue();
@@ -47,7 +49,7 @@ class ProvisionedLDAPDirectory extends ProvisionedSystem implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

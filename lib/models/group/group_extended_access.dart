@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum GroupExtendedAccess {
     notAllowed('NOT_ALLOWED'),
     oneWeek('ONE_WEEK'),

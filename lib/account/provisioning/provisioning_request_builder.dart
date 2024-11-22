@@ -1,4 +1,5 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../models/error_report.dart';
 import '../../models/provisioning/provisioning_status.dart';
 import './provisioning_request_builder_get_query_parameters.dart';
@@ -6,6 +7,7 @@ import './provisioning_request_builder_put_query_parameters.dart';
 import './rotatepwd/rotatepwd_request_builder.dart';
 import './tokenpwd/tokenpwd_request_builder.dart';
 
+/// auto generated
 /// Builds and executes requests for operations under \account\provisioning
 class ProvisioningRequestBuilder extends BaseRequestBuilder<ProvisioningRequestBuilder> {
     ///  The rotatepwd property
@@ -22,16 +24,16 @@ class ProvisioningRequestBuilder extends BaseRequestBuilder<ProvisioningRequestB
         return ProvisioningRequestBuilder(pathParameters, requestAdapter);
     }
     /// Instantiates a new [ProvisioningRequestBuilder] and sets the default values.
-    /// <param name="pathParameters">pathParameters</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [pathParameters] Path parameters for the request
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     ProvisioningRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/provisioning{?filter*,groupUuid*,reason*}", pathParameters) ;
     /// Instantiates a new [ProvisioningRequestBuilder] and sets the default values.
-    /// <param name="rawUrl">rawUrl</param>
-    /// <param name="requestAdapter">requestAdapter</param>
+    ///  [rawUrl] The raw URL to use for the request builder.
+    ///  [requestAdapter] The request adapter to use to execute the requests.
     ProvisioningRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/provisioning{?filter*,groupUuid*,reason*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Returns the status of provisioning for the current user. The groups are filtered by the specified filter or group UUID.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<ProvisioningStatus?> getAsync([Function(RequestConfiguration<ProvisioningRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<ProvisioningStatus?> getAsync([void Function(RequestConfiguration<ProvisioningRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -39,9 +41,9 @@ class ProvisioningRequestBuilder extends BaseRequestBuilder<ProvisioningRequestB
         return await requestAdapter.send<ProvisioningStatus>(requestInfo, ProvisioningStatus.createFromDiscriminatorValue, errorMapping);
     }
     /// Updates the provisioning for the current user. This updates the end time for the given groups. If 'ignoreErrors' is set, errors do not cause the update to abort if errors are detected. To enable groups with auditing enabled the reason query parameter is required.
-    /// <param name="body">body</param>
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    Future<ProvisioningStatus?> putAsync(ProvisioningStatus body, [Function(RequestConfiguration<ProvisioningRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
+    ///  [body] The request body
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    Future<ProvisioningStatus?> putAsync(ProvisioningStatus body, [void Function(RequestConfiguration<ProvisioningRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
         Map<String, ParsableFactory<Parsable>> errorMapping = {
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -49,17 +51,17 @@ class ProvisioningRequestBuilder extends BaseRequestBuilder<ProvisioningRequestB
         return await requestAdapter.send<ProvisioningStatus>(requestInfo, ProvisioningStatus.createFromDiscriminatorValue, errorMapping);
     }
     /// Returns the status of provisioning for the current user. The groups are filtered by the specified filter or group UUID.
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toGetRequestInformation([Function(RequestConfiguration<ProvisioningRequestBuilderGetQueryParameters>)? requestConfiguration]) {
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ProvisioningRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ProvisioningRequestBuilderGetQueryParameters>(requestConfiguration, () => ProvisioningRequestBuilderGetQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
         return requestInfo;
     }
     /// Updates the provisioning for the current user. This updates the end time for the given groups. If 'ignoreErrors' is set, errors do not cause the update to abort if errors are detected. To enable groups with auditing enabled the reason query parameter is required.
-    /// <param name="body">body</param>
-    /// <param name="requestConfiguration">requestConfiguration</param>
-    RequestInformation toPutRequestInformation(ProvisioningStatus body, [Function(RequestConfiguration<ProvisioningRequestBuilderPutQueryParameters>)? requestConfiguration]) {
+    ///  [body] The request body
+    ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
+    RequestInformation toPutRequestInformation(ProvisioningStatus body, [void Function(RequestConfiguration<ProvisioningRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ProvisioningRequestBuilderPutQueryParameters>(requestConfiguration, () => ProvisioningRequestBuilderPutQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');

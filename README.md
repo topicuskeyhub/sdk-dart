@@ -16,10 +16,10 @@ and copy the following content into it.
 
 
 ```
-import 'package:kiota_abstractions/kiota_abstractions.dart';
 import 'package:keyhub_dart_sdk/key_hub_client.dart';
-import 'package:kiota_http/kiota_http.dart';
-import 'package:kiota_serialization_json/kiota_serialization_json.dart';
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
+import 'package:microsoft_kiota_http/microsoft_kiota_http.dart';
+import 'package:microsoft_kiota_serialization_json/microsoft_kiota_serialization_json.dart';
 
 void main() async {
   // Getting version information does not require authentication/authorization,
@@ -68,10 +68,10 @@ and place it in your bin folder. Give it the following content.
 
 
 ```
-import 'package:kiota_abstractions/kiota_abstractions.dart';
 import 'package:keyhub_dart_sdk/key_hub_client.dart';
-import 'package:kiota_http/kiota_http.dart';
-import 'package:kiota_serialization_json/kiota_serialization_json.dart';
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
+import 'package:microsoft_kiota_http/microsoft_kiota_http.dart';
+import 'package:microsoft_kiota_serialization_json/microsoft_kiota_serialization_json.dart';
 
 void main() async {
   final BaseBearerTokenAuthenticationProvider

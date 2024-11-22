@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum GroupEditRequiredReason {
     oneManager('ONE_MANAGER'),
     criteriaUnsatisfiedAuditInterval('CRITERIA_UNSATISFIED_AUDIT_INTERVAL'),

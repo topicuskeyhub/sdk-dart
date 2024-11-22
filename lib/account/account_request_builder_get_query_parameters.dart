@@ -1,9 +1,11 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../models/auth/account_license_role.dart';
 import '../models/auth/account_validity.dart';
 import '../models/auth/two_factor_authentication_status.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Query for all accounts in Topicus KeyHub. This will query over all directories and return both active and inactive accounts. The various query parameters can be used to filter the response.
 class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Filter the accounts by membership of access profiles, specified by id. This parameter supports composition with all parameters from the access profile resource.

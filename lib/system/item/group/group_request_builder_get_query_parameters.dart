@@ -1,7 +1,9 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../../models/provisioning/group_on_system_type.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Query for all groups on systems within a provisioned system in Topicus KeyHub. The various query parameters can be used to filter the response.
 class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Request additional information to be returned for every record.
@@ -51,7 +53,7 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Filter the groups on system on groups that are tier 2 owner for them, specified by id. A tier 2 owner is an owner of a group on system that is linked to a service account this group on system is also linked to.
     List<int>? tier2OwnedBy;
     ///  Filter groups on system on the type.
-    List<GroupOnSystemType>? typeEscaped;
+    List<GroupOnSystemType>? type_;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
     Map<String, dynamic> toMap() {
@@ -79,7 +81,7 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
             'systemForEnforcement' : systemForEnforcement,
             'systemOwnedBy' : systemOwnedBy,
             'tier2OwnedBy' : tier2OwnedBy,
-            'typeEscaped' : typeEscaped,
+            'type_' : type_,
         };
     }
 }

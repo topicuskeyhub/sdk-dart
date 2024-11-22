@@ -1,9 +1,11 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../linkable.dart';
 import '../provisioning/group_on_system.dart';
 import './group_primer.dart';
 import './provisioning_group_additional_objects.dart';
 
+/// auto generated
 class ProvisioningGroup extends Linkable implements Parsable {
     ///  The activationRequired property
     bool? activationRequired;
@@ -15,17 +17,17 @@ class ProvisioningGroup extends Linkable implements Parsable {
     GroupOnSystem? groupOnSystem;
     /// Instantiates a new [ProvisioningGroup] and sets the default values.
     ProvisioningGroup() : super() {
-        typeEscaped = 'group.ProvisioningGroup';
+        type_ = 'group.ProvisioningGroup';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static ProvisioningGroup createFromDiscriminatorValue(ParseNode parseNode) {
         return ProvisioningGroup();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['activationRequired'] = (node) => activationRequired = node.getBoolValue();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<ProvisioningGroupAdditionalObjects>(ProvisioningGroupAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['group'] = (node) => group = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
@@ -33,7 +35,7 @@ class ProvisioningGroup extends Linkable implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

@@ -9,21 +9,21 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
-  kiota_abstractions:
+  microsoft_kiota_abstractions:
     git:
       url: https://github.com/kiota-community/dart_kiota.git
-      ref: v0.0.1
-      path: packages/kiota_abstractions
-  kiota_http:    
+      ref: v0.0.2
+      path: packages/microsoft_kiota_abstractions
+  microsoft_kiota_http:    
     git:
       url: https://github.com/kiota-community/dart_kiota.git
-      ref: v0.0.1
-      path: packages/kiota_http
-  kiota_serialization_json:
+      ref: v0.0.2
+      path: packages/microsoft_kiota_http
+  microsoft_kiota_serialization_json:
     git:
       url: https://github.com/kiota-community/dart_kiota.git
-      ref: v0.0.1
-      path: packages/kiota_serialization_json
+      ref: v0.0.2
+      path: packages/microsoft_kiota_serialization_json
   http: ^1.2.2
   uuid: ^4.5.1
 

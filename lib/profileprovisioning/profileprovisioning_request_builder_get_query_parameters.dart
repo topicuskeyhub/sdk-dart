@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Query for all access profile provisioning links in Topicus KeyHub. The various query parameters can be used to filter the response.
 class ProfileprovisioningRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Filter access profile provisioning links on the given access profiles, specified by id. This parameter supports composition with all parameters from the access profile resource.

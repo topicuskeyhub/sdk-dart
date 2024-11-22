@@ -1,5 +1,7 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 
+/// auto generated
 /// Returns a random generated value of the given length, default 24.
 class RandomRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     int? length;

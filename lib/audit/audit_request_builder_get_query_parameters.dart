@@ -1,7 +1,9 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../models/audit/audit_record_type.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Query for all audit records in Topicus KeyHub. The various query parameters can be used to filter the response.
 class AuditRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Request additional information to be returned for every record.
@@ -45,7 +47,7 @@ class AuditRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Sort the items. Use 'asc-<name>' for ascending and 'desc-<name>' for descending order.
     List<String>? sort;
     ///  Filter audit records on the given type(s).
-    List<AuditRecordType>? typeEscaped;
+    List<AuditRecordType>? type_;
     ///  Only return audit records that are meant to be displayed to the given account, specified by id.
     List<int>? visibleFor;
     /// Extracts the query parameters into a map for the URI template parsing.
@@ -72,7 +74,7 @@ class AuditRequestBuilderGetQueryParameters implements AbstractQueryParameters {
             'performedByUuid' : performedByUuid,
             'q' : q,
             'sort' : sort,
-            'typeEscaped' : typeEscaped,
+            'type_' : type_,
             'visibleFor' : visibleFor,
         };
     }

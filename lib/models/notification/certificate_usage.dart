@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum CertificateUsage {
     ldapDirectory('LDAP_DIRECTORY'),
     provisionedAd('PROVISIONED_AD'),

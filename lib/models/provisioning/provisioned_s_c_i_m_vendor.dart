@@ -1,5 +1,7 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum ProvisionedSCIMVendor {
-    defaultEscaped('DEFAULT'),
+    default_('DEFAULT'),
     aws('AWS'),
     keystone('KEYSTONE');
     const ProvisionedSCIMVendor(this.value);

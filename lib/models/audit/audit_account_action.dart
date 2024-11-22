@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum AuditAccountAction {
     approve('APPROVE'),
     changeToManager('CHANGE_TO_MANAGER'),

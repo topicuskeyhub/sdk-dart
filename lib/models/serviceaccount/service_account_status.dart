@@ -1,27 +1,29 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../non_linkable.dart';
 
+/// auto generated
 class ServiceAccountStatus extends NonLinkable implements Parsable {
     ///  The accountEnabled property
     bool? accountEnabled;
     /// Instantiates a new [ServiceAccountStatus] and sets the default values.
     ServiceAccountStatus() : super() {
-        typeEscaped = 'serviceaccount.ServiceAccountStatus';
+        type_ = 'serviceaccount.ServiceAccountStatus';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static ServiceAccountStatus createFromDiscriminatorValue(ParseNode parseNode) {
         return ServiceAccountStatus();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['accountEnabled'] = (node) => accountEnabled = node.getBoolValue();
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

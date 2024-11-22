@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './accept_modification_request_parameters.dart';
 
+/// auto generated
 class AcceptJoinGroupRequestParameters extends AcceptModificationRequestParameters implements Parsable {
     ///  The endDate property
     DateOnly? endDate;
@@ -8,23 +10,23 @@ class AcceptJoinGroupRequestParameters extends AcceptModificationRequestParamete
     bool? makeManager;
     /// Instantiates a new [AcceptJoinGroupRequestParameters] and sets the default values.
     AcceptJoinGroupRequestParameters() : super() {
-        typeEscaped = 'request.AcceptJoinGroupRequestParameters';
+        type_ = 'request.AcceptJoinGroupRequestParameters';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static AcceptJoinGroupRequestParameters createFromDiscriminatorValue(ParseNode parseNode) {
         return AcceptJoinGroupRequestParameters();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['endDate'] = (node) => endDate = node.getDateOnlyValue();
         deserializerMap['makeManager'] = (node) => makeManager = node.getBoolValue();
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

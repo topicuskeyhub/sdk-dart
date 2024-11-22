@@ -1,9 +1,11 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './vault_record_additional_objects.dart';
 import './vault_record_primer.dart';
 import './vault_record_warning_period.dart';
 import './vault_secret_type.dart';
 
+/// auto generated
 class VaultRecord extends VaultRecordPrimer implements Parsable {
     ///  The additionalObjects property
     VaultRecordAdditionalObjects? additionalObjects;
@@ -23,17 +25,17 @@ class VaultRecord extends VaultRecordPrimer implements Parsable {
     VaultRecordWarningPeriod? warningPeriod;
     /// Instantiates a new [VaultRecord] and sets the default values.
     VaultRecord() : super() {
-        typeEscaped = 'vault.VaultRecord';
+        type_ = 'vault.VaultRecord';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static VaultRecord createFromDiscriminatorValue(ParseNode parseNode) {
         return VaultRecord();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<VaultRecordAdditionalObjects>(VaultRecordAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['derived'] = (node) => derived = node.getBoolValue();
         deserializerMap['endDate'] = (node) => endDate = node.getDateOnlyValue();
@@ -45,7 +47,7 @@ class VaultRecord extends VaultRecordPrimer implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

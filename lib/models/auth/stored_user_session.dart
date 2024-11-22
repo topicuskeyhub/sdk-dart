@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../linkable.dart';
 
+/// auto generated
 class StoredUserSession extends Linkable implements Parsable {
     ///  The ipAddress property
     String? ipAddress;
@@ -18,17 +20,17 @@ class StoredUserSession extends Linkable implements Parsable {
     String? username;
     /// Instantiates a new [StoredUserSession] and sets the default values.
     StoredUserSession() : super() {
-        typeEscaped = 'auth.StoredUserSession';
+        type_ = 'auth.StoredUserSession';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static StoredUserSession createFromDiscriminatorValue(ParseNode parseNode) {
         return StoredUserSession();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['ipAddress'] = (node) => ipAddress = node.getStringValue();
         deserializerMap['lastUsed'] = (node) => lastUsed = node.getDateTimeValue();
         deserializerMap['location'] = (node) => location = node.getStringValue();
@@ -39,7 +41,7 @@ class StoredUserSession extends Linkable implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

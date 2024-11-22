@@ -1,6 +1,8 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum TwoFactorAuthenticationStatus {
     disabled('DISABLED'),
-    externalEscaped('EXTERNAL'),
+    external_('EXTERNAL'),
     totp('TOTP'),
     app('APP'),
     webauthn('WEBAUTHN'),

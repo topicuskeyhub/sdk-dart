@@ -1,6 +1,8 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './provisioned_system.dart';
 
+/// auto generated
 class ProvisionedAzureTenant extends ProvisionedSystem implements Parsable {
     ///  The clientId property
     String? clientId;
@@ -12,17 +14,17 @@ class ProvisionedAzureTenant extends ProvisionedSystem implements Parsable {
     String? tenant;
     /// Instantiates a new [ProvisionedAzureTenant] and sets the default values.
     ProvisionedAzureTenant() : super() {
-        typeEscaped = 'provisioning.ProvisionedAzureTenant';
+        type_ = 'provisioning.ProvisionedAzureTenant';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
-    /// <param name="parseNode">parseNode</param>
+    ///  [parseNode] The parse node to use to read the discriminator value and create the object
     static ProvisionedAzureTenant createFromDiscriminatorValue(ParseNode parseNode) {
         return ProvisionedAzureTenant();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
-        Map<String, Function(ParseNode)> deserializerMap = super.getFieldDeserializers();
+        var deserializerMap = super.getFieldDeserializers();
         deserializerMap['clientId'] = (node) => clientId = node.getStringValue();
         deserializerMap['clientSecret'] = (node) => clientSecret = node.getStringValue();
         deserializerMap['idpDomain'] = (node) => idpDomain = node.getStringValue();
@@ -30,7 +32,7 @@ class ProvisionedAzureTenant extends ProvisionedSystem implements Parsable {
         return deserializerMap;
     }
     /// Serializes information the current object
-    /// <param name="writer">writer</param>
+    ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);

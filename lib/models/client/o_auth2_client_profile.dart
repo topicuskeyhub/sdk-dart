@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum OAuth2ClientProfile {
     serverToServer('SERVER_TO_SERVER'),
     webApplication('WEB_APPLICATION'),

@@ -1,5 +1,7 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 
+/// auto generated
 /// Returns the notifications to be displayed on the dashboard of the user. At most 50 notifications are returned.
 class NotificationsRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     String? requestMailKey;

@@ -1,9 +1,11 @@
-import 'package:kiota_abstractions/kiota_abstractions.dart';
+// ignore_for_file: type=lint
+import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import 'package:uuid/uuid.dart';
 import '../models/boolean_enum.dart';
 import '../models/t_l_s_level.dart';
 import './get_additional_query_parameter_type.dart';
 
+/// auto generated
 /// Query for all provisioned systems in Topicus KeyHub. The various query parameters can be used to filter the response.
 class SystemRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Filter the systems by access profile provisioning which reference a group on the returned systems, specified by id. This parameter supports composition with all parameters from the access profile provisioning resource.
@@ -83,7 +85,7 @@ class SystemRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     ///  Filter the systems on the TLS setting used.
     List<TLSLevel>? tls;
     ///  Only return systems of the given type(s).
-    List<String>? typeEscaped;
+    List<String>? type_;
     ///  Filter results on one or more UUIDs.
     List<String>? uuid;
     /// Extracts the query parameters into a map for the URI template parsing.
@@ -128,7 +130,7 @@ class SystemRequestBuilderGetQueryParameters implements AbstractQueryParameters 
             'sort' : sort,
             'technicalAdministrator' : technicalAdministrator,
             'tls' : tls,
-            'typeEscaped' : typeEscaped,
+            'type_' : type_,
             'uuid' : uuid,
         };
     }

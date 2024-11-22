@@ -1,3 +1,5 @@
+// ignore_for_file: type=lint
+/// auto generated
 enum LDAPPasswordHashingScheme {
     ssha('SSHA'),
     pbkdf2('PBKDF2');

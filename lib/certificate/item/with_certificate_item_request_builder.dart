@@ -25,7 +25,7 @@ class WithCertificateItemRequestBuilder extends BaseRequestBuilder<WithCertifica
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
@@ -34,7 +34,7 @@ class WithCertificateItemRequestBuilder extends BaseRequestBuilder<WithCertifica
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<Certificate?> getAsync([void Function(RequestConfiguration<WithCertificateItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<Certificate>(requestInfo, Certificate.createFromDiscriminatorValue, errorMapping);
@@ -44,7 +44,7 @@ class WithCertificateItemRequestBuilder extends BaseRequestBuilder<WithCertifica
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<Certificate?> putAsync(Certificate body, [void Function(RequestConfiguration<WithCertificateItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<Certificate>(requestInfo, Certificate.createFromDiscriminatorValue, errorMapping);
@@ -54,7 +54,7 @@ class WithCertificateItemRequestBuilder extends BaseRequestBuilder<WithCertifica
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns the global trusted certificate identified by the id.
@@ -62,7 +62,7 @@ class WithCertificateItemRequestBuilder extends BaseRequestBuilder<WithCertifica
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithCertificateItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithCertificateItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithCertificateItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Updates the global trusted certificate identified by the id.
@@ -71,8 +71,8 @@ class WithCertificateItemRequestBuilder extends BaseRequestBuilder<WithCertifica
     RequestInformation toPutRequestInformation(Certificate body, [void Function(RequestConfiguration<WithCertificateItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithCertificateItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithCertificateItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

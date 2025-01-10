@@ -20,19 +20,19 @@ class WithSessionItemRequestBuilder extends BaseRequestBuilder<WithSessionItemRe
     WithSessionItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/session/{sessionId}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Ends the given session for the current user. Access tokens issued for the session will be revoked.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
-    Future<Iterable<int>?> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
-        return await requestAdapter.sendPrimitiveCollection<int>(requestInfo, errorMapping);
+        return await requestAdapter.sendNoContent(requestInfo, errorMapping);
     }
     /// Ends the given session for the current user. Access tokens issued for the session will be revoked.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74, application/vnd.topicus.keyhub+xml;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

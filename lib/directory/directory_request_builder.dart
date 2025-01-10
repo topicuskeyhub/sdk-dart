@@ -13,7 +13,7 @@ class DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryRequestBuilder
     ///  [directoryid] Unique identifier of the item
     WithDirectoryItemRequestBuilder byDirectoryid(int directoryid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('directoryid', ()=> directoryid);
+        urlTplParams.putIfAbsent('directoryid', () => directoryid);
         return WithDirectoryItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -33,7 +33,7 @@ class DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryRequestBuilder
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AccountDirectoryLinkableWrapper?> getAsync([void Function(RequestConfiguration<DirectoryRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<AccountDirectoryLinkableWrapper>(requestInfo, AccountDirectoryLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -43,7 +43,7 @@ class DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryRequestBuilder
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AccountDirectoryLinkableWrapper?> postAsync(AccountDirectoryLinkableWrapper body, [void Function(RequestConfiguration<DirectoryRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<AccountDirectoryLinkableWrapper>(requestInfo, AccountDirectoryLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -53,7 +53,7 @@ class DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryRequestBuilder
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DirectoryRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DirectoryRequestBuilderGetQueryParameters>(requestConfiguration, () => DirectoryRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Creates one or more new directories and returns the newly created directories.
@@ -62,8 +62,8 @@ class DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryRequestBuilder
     RequestInformation toPostRequestInformation(AccountDirectoryLinkableWrapper body, [void Function(RequestConfiguration<DirectoryRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DirectoryRequestBuilderPostQueryParameters>(requestConfiguration, () => DirectoryRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

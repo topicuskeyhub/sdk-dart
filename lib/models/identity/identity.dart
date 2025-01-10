@@ -4,10 +4,14 @@ import '../linkable.dart';
 
 /// auto generated
 class Identity extends Linkable implements Parsable {
-    ///  The firstName property
-    String? firstName;
-    ///  The lastName property
-    String? lastName;
+    ///  The displayName property
+    String? displayName;
+    ///  The familyName property
+    String? familyName;
+    ///  The givenName property
+    String? givenName;
+    ///  The middleName property
+    String? middleName;
     ///  The telephone property
     String? telephone;
     /// Instantiates a new [Identity] and sets the default values.
@@ -23,8 +27,10 @@ class Identity extends Linkable implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
-        deserializerMap['firstName'] = (node) => firstName = node.getStringValue();
-        deserializerMap['lastName'] = (node) => lastName = node.getStringValue();
+        deserializerMap['displayName'] = (node) => displayName = node.getStringValue();
+        deserializerMap['familyName'] = (node) => familyName = node.getStringValue();
+        deserializerMap['givenName'] = (node) => givenName = node.getStringValue();
+        deserializerMap['middleName'] = (node) => middleName = node.getStringValue();
         deserializerMap['telephone'] = (node) => telephone = node.getStringValue();
         return deserializerMap;
     }
@@ -33,8 +39,10 @@ class Identity extends Linkable implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
-        writer.writeStringValue('firstName', firstName);
-        writer.writeStringValue('lastName', lastName);
+        writer.writeStringValue('displayName', displayName);
+        writer.writeStringValue('familyName', familyName);
+        writer.writeStringValue('givenName', givenName);
+        writer.writeStringValue('middleName', middleName);
         writer.writeStringValue('telephone', telephone);
     }
 }

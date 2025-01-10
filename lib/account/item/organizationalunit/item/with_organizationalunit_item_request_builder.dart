@@ -24,7 +24,7 @@ class WithOrganizationalunitItemRequestBuilder extends BaseRequestBuilder<WithOr
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AccountOrganizationalUnit?> getAsync([void Function(RequestConfiguration<WithOrganizationalunitItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<AccountOrganizationalUnit>(requestInfo, AccountOrganizationalUnit.createFromDiscriminatorValue, errorMapping);
@@ -34,7 +34,7 @@ class WithOrganizationalunitItemRequestBuilder extends BaseRequestBuilder<WithOr
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithOrganizationalunitItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithOrganizationalunitItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithOrganizationalunitItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

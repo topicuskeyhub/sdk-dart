@@ -28,7 +28,7 @@ class ServiceaccountRequestBuilder extends BaseRequestBuilder<ServiceaccountRequ
     ///  [serviceaccountid] Unique identifier of the item
     WithServiceaccountItemRequestBuilder byServiceaccountid(int serviceaccountid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('serviceaccountid', ()=> serviceaccountid);
+        urlTplParams.putIfAbsent('serviceaccountid', () => serviceaccountid);
         return WithServiceaccountItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -48,7 +48,7 @@ class ServiceaccountRequestBuilder extends BaseRequestBuilder<ServiceaccountRequ
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ServiceAccountLinkableWrapper?> getAsync([void Function(RequestConfiguration<ServiceaccountRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ServiceAccountLinkableWrapper>(requestInfo, ServiceAccountLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -58,7 +58,7 @@ class ServiceaccountRequestBuilder extends BaseRequestBuilder<ServiceaccountRequ
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ServiceAccountLinkableWrapper?> postAsync(ServiceAccountLinkableWrapper body, [void Function(RequestConfiguration<ServiceaccountRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ServiceAccountLinkableWrapper>(requestInfo, ServiceAccountLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -68,7 +68,7 @@ class ServiceaccountRequestBuilder extends BaseRequestBuilder<ServiceaccountRequ
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ServiceaccountRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ServiceaccountRequestBuilderGetQueryParameters>(requestConfiguration, () => ServiceaccountRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Creates one or more new service accounts and returns the newly created service accounts.
@@ -77,8 +77,8 @@ class ServiceaccountRequestBuilder extends BaseRequestBuilder<ServiceaccountRequ
     RequestInformation toPostRequestInformation(ServiceAccountLinkableWrapper body, [void Function(RequestConfiguration<ServiceaccountRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ServiceaccountRequestBuilderPostQueryParameters>(requestConfiguration, () => ServiceaccountRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

@@ -25,7 +25,7 @@ class WithGroupclassificationItemRequestBuilder extends BaseRequestBuilder<WithG
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
@@ -34,7 +34,7 @@ class WithGroupclassificationItemRequestBuilder extends BaseRequestBuilder<WithG
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupClassification?> getAsync([void Function(RequestConfiguration<WithGroupclassificationItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<GroupClassification>(requestInfo, GroupClassification.createFromDiscriminatorValue, errorMapping);
@@ -44,7 +44,7 @@ class WithGroupclassificationItemRequestBuilder extends BaseRequestBuilder<WithG
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupClassification?> putAsync(GroupClassification body, [void Function(RequestConfiguration<WithGroupclassificationItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<GroupClassification>(requestInfo, GroupClassification.createFromDiscriminatorValue, errorMapping);
@@ -54,7 +54,7 @@ class WithGroupclassificationItemRequestBuilder extends BaseRequestBuilder<WithG
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns the group classification identified by the id.
@@ -62,7 +62,7 @@ class WithGroupclassificationItemRequestBuilder extends BaseRequestBuilder<WithG
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithGroupclassificationItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupclassificationItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithGroupclassificationItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Updates the group classification identified by the id.
@@ -71,8 +71,8 @@ class WithGroupclassificationItemRequestBuilder extends BaseRequestBuilder<WithG
     RequestInformation toPutRequestInformation(GroupClassification body, [void Function(RequestConfiguration<WithGroupclassificationItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupclassificationItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithGroupclassificationItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

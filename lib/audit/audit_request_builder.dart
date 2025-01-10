@@ -17,7 +17,7 @@ class AuditRequestBuilder extends BaseRequestBuilder<AuditRequestBuilder> {
     ///  [auditid] Unique identifier of the item
     WithAuditItemRequestBuilder byAuditid(int auditid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('auditid', ()=> auditid);
+        urlTplParams.putIfAbsent('auditid', () => auditid);
         return WithAuditItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -37,7 +37,7 @@ class AuditRequestBuilder extends BaseRequestBuilder<AuditRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AuditRecordLinkableWrapper?> getAsync([void Function(RequestConfiguration<AuditRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<AuditRecordLinkableWrapper>(requestInfo, AuditRecordLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -47,7 +47,7 @@ class AuditRequestBuilder extends BaseRequestBuilder<AuditRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AuditRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AuditRequestBuilderGetQueryParameters>(requestConfiguration, () => AuditRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

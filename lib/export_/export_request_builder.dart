@@ -23,7 +23,7 @@ class ExportRequestBuilder extends BaseRequestBuilder<ExportRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<Iterable<int>?> getAsync([void Function(RequestConfiguration<ExportRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendPrimitiveCollection<int>(requestInfo, errorMapping);
@@ -33,7 +33,7 @@ class ExportRequestBuilder extends BaseRequestBuilder<ExportRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ExportRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ExportRequestBuilderGetQueryParameters>(requestConfiguration, () => ExportRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'text/csv, application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'text/csv, application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

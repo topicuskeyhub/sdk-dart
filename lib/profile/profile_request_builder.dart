@@ -13,7 +13,7 @@ class ProfileRequestBuilder extends BaseRequestBuilder<ProfileRequestBuilder> {
     ///  [accessprofileId] Unique identifier of the item
     AccessprofileItemRequestBuilder byAccessprofileId(int accessprofileId) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('accessprofileId', ()=> accessprofileId);
+        urlTplParams.putIfAbsent('accessprofile%2Did', () => accessprofileId);
         return AccessprofileItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -33,7 +33,7 @@ class ProfileRequestBuilder extends BaseRequestBuilder<ProfileRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AccessProfileLinkableWrapper?> getAsync([void Function(RequestConfiguration<ProfileRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<AccessProfileLinkableWrapper>(requestInfo, AccessProfileLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -43,7 +43,7 @@ class ProfileRequestBuilder extends BaseRequestBuilder<ProfileRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AccessProfileLinkableWrapper?> postAsync(AccessProfileLinkableWrapper body, [void Function(RequestConfiguration<ProfileRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<AccessProfileLinkableWrapper>(requestInfo, AccessProfileLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -53,7 +53,7 @@ class ProfileRequestBuilder extends BaseRequestBuilder<ProfileRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ProfileRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ProfileRequestBuilderGetQueryParameters>(requestConfiguration, () => ProfileRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Creates one or more new access profiles and returns the newly created access profiles.
@@ -62,8 +62,8 @@ class ProfileRequestBuilder extends BaseRequestBuilder<ProfileRequestBuilder> {
     RequestInformation toPostRequestInformation(AccessProfileLinkableWrapper body, [void Function(RequestConfiguration<ProfileRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ProfileRequestBuilderPostQueryParameters>(requestConfiguration, () => ProfileRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

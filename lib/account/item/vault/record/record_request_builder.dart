@@ -18,7 +18,7 @@ class RecordRequestBuilder extends BaseRequestBuilder<RecordRequestBuilder> {
     ///  [recordid] Unique identifier of the item
     WithRecordItemRequestBuilder byRecordid(int recordid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('recordid', ()=> recordid);
+        urlTplParams.putIfAbsent('recordid', () => recordid);
         return WithRecordItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -38,7 +38,7 @@ class RecordRequestBuilder extends BaseRequestBuilder<RecordRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<VaultRecordLinkableWrapper?> getAsync([void Function(RequestConfiguration<RecordRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<VaultRecordLinkableWrapper>(requestInfo, VaultRecordLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -48,7 +48,7 @@ class RecordRequestBuilder extends BaseRequestBuilder<RecordRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<VaultRecordLinkableWrapper?> postAsync(VaultRecordLinkableWrapper body, [void Function(RequestConfiguration<RecordRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<VaultRecordLinkableWrapper>(requestInfo, VaultRecordLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -58,7 +58,7 @@ class RecordRequestBuilder extends BaseRequestBuilder<RecordRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<RecordRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<RecordRequestBuilderGetQueryParameters>(requestConfiguration, () => RecordRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Creates one or more new vault records and returns the newly created records. Secrets are specified via the additional object secret. It is required to specify the 'topicus-Vault-session' header. When updating a TOTP-secret, make sure to set 'writeTotp' field.
@@ -67,8 +67,8 @@ class RecordRequestBuilder extends BaseRequestBuilder<RecordRequestBuilder> {
     RequestInformation toPostRequestInformation(VaultRecordLinkableWrapper body, [void Function(RequestConfiguration<RecordRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<RecordRequestBuilderPostQueryParameters>(requestConfiguration, () => RecordRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

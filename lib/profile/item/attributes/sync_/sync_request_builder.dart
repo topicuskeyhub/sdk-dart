@@ -14,15 +14,15 @@ class SyncRequestBuilder extends BaseRequestBuilder<SyncRequestBuilder> {
     /// Instantiates a new [SyncRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    SyncRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profile/{accessprofile%2Did}/attributes/sync{?account*,write*}", pathParameters) ;
+    SyncRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profile/{accessprofile%2Did}/attributes/sync{?account*,operation*}", pathParameters) ;
     /// Instantiates a new [SyncRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    SyncRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profile/{accessprofile%2Did}/attributes/sync{?account*,write*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    SyncRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profile/{accessprofile%2Did}/attributes/sync{?account*,operation*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<Iterable<int>?> postAsync([void Function(RequestConfiguration<SyncRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendPrimitiveCollection<int>(requestInfo, errorMapping);
@@ -31,7 +31,7 @@ class SyncRequestBuilder extends BaseRequestBuilder<SyncRequestBuilder> {
     RequestInformation toPostRequestInformation([void Function(RequestConfiguration<SyncRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<SyncRequestBuilderPostQueryParameters>(requestConfiguration, () => SyncRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74, application/vnd.topicus.keyhub+xml;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75, application/vnd.topicus.keyhub+xml;version=75');
         return requestInfo;
     }
 }

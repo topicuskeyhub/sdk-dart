@@ -25,7 +25,7 @@ class WithLaunchpadtileItemRequestBuilder extends BaseRequestBuilder<WithLaunchp
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
@@ -34,7 +34,7 @@ class WithLaunchpadtileItemRequestBuilder extends BaseRequestBuilder<WithLaunchp
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<LaunchpadTile?> getAsync([void Function(RequestConfiguration<WithLaunchpadtileItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<LaunchpadTile>(requestInfo, LaunchpadTile.createFromDiscriminatorValue, errorMapping);
@@ -44,7 +44,7 @@ class WithLaunchpadtileItemRequestBuilder extends BaseRequestBuilder<WithLaunchp
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<LaunchpadTile?> putAsync(LaunchpadTile body, [void Function(RequestConfiguration<WithLaunchpadtileItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<LaunchpadTile>(requestInfo, LaunchpadTile.createFromDiscriminatorValue, errorMapping);
@@ -54,7 +54,7 @@ class WithLaunchpadtileItemRequestBuilder extends BaseRequestBuilder<WithLaunchp
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns the single launchpad tile.
@@ -62,7 +62,7 @@ class WithLaunchpadtileItemRequestBuilder extends BaseRequestBuilder<WithLaunchp
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithLaunchpadtileItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithLaunchpadtileItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithLaunchpadtileItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Updates the launchpad tile identified by the id.
@@ -71,8 +71,8 @@ class WithLaunchpadtileItemRequestBuilder extends BaseRequestBuilder<WithLaunchp
     RequestInformation toPutRequestInformation(LaunchpadTile body, [void Function(RequestConfiguration<WithLaunchpadtileItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithLaunchpadtileItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithLaunchpadtileItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

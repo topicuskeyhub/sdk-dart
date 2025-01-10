@@ -23,7 +23,7 @@ class ClientRequestBuilder extends BaseRequestBuilder<ClientRequestBuilder> {
     ///  [clientid] Unique identifier of the item
     WithClientItemRequestBuilder byClientid(int clientid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('clientid', ()=> clientid);
+        urlTplParams.putIfAbsent('clientid', () => clientid);
         return WithClientItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -43,7 +43,7 @@ class ClientRequestBuilder extends BaseRequestBuilder<ClientRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ClientApplicationLinkableWrapper?> getAsync([void Function(RequestConfiguration<ClientRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ClientApplicationLinkableWrapper>(requestInfo, ClientApplicationLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -53,7 +53,7 @@ class ClientRequestBuilder extends BaseRequestBuilder<ClientRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ClientApplicationLinkableWrapper?> postAsync(ClientApplicationLinkableWrapper body, [void Function(RequestConfiguration<ClientRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ClientApplicationLinkableWrapper>(requestInfo, ClientApplicationLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -63,7 +63,7 @@ class ClientRequestBuilder extends BaseRequestBuilder<ClientRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ClientRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ClientRequestBuilderGetQueryParameters>(requestConfiguration, () => ClientRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Creates one or more new clients and returns the newly created clients.
@@ -72,8 +72,8 @@ class ClientRequestBuilder extends BaseRequestBuilder<ClientRequestBuilder> {
     RequestInformation toPostRequestInformation(ClientApplicationLinkableWrapper body, [void Function(RequestConfiguration<ClientRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ClientRequestBuilderPostQueryParameters>(requestConfiguration, () => ClientRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

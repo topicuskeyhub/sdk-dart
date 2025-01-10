@@ -29,7 +29,7 @@ class WithDeliveryItemRequestBuilder extends BaseRequestBuilder<WithDeliveryItem
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<WebhookDelivery?> getAsync([void Function(RequestConfiguration<WithDeliveryItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<WebhookDelivery>(requestInfo, WebhookDelivery.createFromDiscriminatorValue, errorMapping);
@@ -39,7 +39,7 @@ class WithDeliveryItemRequestBuilder extends BaseRequestBuilder<WithDeliveryItem
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithDeliveryItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithDeliveryItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithDeliveryItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

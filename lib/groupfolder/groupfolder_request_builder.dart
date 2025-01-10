@@ -13,7 +13,7 @@ class GroupfolderRequestBuilder extends BaseRequestBuilder<GroupfolderRequestBui
     ///  [groupfolderid] Unique identifier of the item
     WithGroupfolderItemRequestBuilder byGroupfolderid(int groupfolderid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('groupfolderid', ()=> groupfolderid);
+        urlTplParams.putIfAbsent('groupfolderid', () => groupfolderid);
         return WithGroupfolderItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -33,7 +33,7 @@ class GroupfolderRequestBuilder extends BaseRequestBuilder<GroupfolderRequestBui
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupFolderLinkableWrapper?> getAsync([void Function(RequestConfiguration<GroupfolderRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<GroupFolderLinkableWrapper>(requestInfo, GroupFolderLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -43,7 +43,7 @@ class GroupfolderRequestBuilder extends BaseRequestBuilder<GroupfolderRequestBui
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupFolderLinkableWrapper?> postAsync(GroupFolderLinkableWrapper body, [void Function(RequestConfiguration<GroupfolderRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<GroupFolderLinkableWrapper>(requestInfo, GroupFolderLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -53,7 +53,7 @@ class GroupfolderRequestBuilder extends BaseRequestBuilder<GroupfolderRequestBui
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<GroupfolderRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<GroupfolderRequestBuilderGetQueryParameters>(requestConfiguration, () => GroupfolderRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Creates one or more new group folders and returns the newly created folders.
@@ -62,8 +62,8 @@ class GroupfolderRequestBuilder extends BaseRequestBuilder<GroupfolderRequestBui
     RequestInformation toPostRequestInformation(GroupFolderLinkableWrapper body, [void Function(RequestConfiguration<GroupfolderRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<GroupfolderRequestBuilderPostQueryParameters>(requestConfiguration, () => GroupfolderRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

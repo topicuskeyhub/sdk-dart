@@ -22,8 +22,6 @@ class InternalaccountRequestBuilderGetQueryParameters implements AbstractQueryPa
     List<int>? directoryOwnerGroup;
     ///  Filter the results to exclude the given ids.
     List<int>? exclude;
-    ///  Only return internal accounts that have or have not been active.
-    List<bool>? hasBeenActive;
     ///  Filter the results on the given ids.
     List<int>? id;
     ///  Only return records that have been modified since the given instant.
@@ -48,7 +46,6 @@ class InternalaccountRequestBuilderGetQueryParameters implements AbstractQueryPa
             'directory' : directory,
             'directoryOwnerGroup' : directoryOwnerGroup,
             'exclude' : exclude,
-            'hasBeenActive' : hasBeenActive,
             'id' : id,
             'modifiedSince' : modifiedSince,
             'organizationalUnit' : organizationalUnit,

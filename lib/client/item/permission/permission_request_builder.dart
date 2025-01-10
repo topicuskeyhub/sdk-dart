@@ -12,7 +12,7 @@ class PermissionRequestBuilder extends BaseRequestBuilder<PermissionRequestBuild
     ///  [permissionid] Unique identifier of the item
     WithPermissionItemRequestBuilder byPermissionid(int permissionid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('permissionid', ()=> permissionid);
+        urlTplParams.putIfAbsent('permissionid', () => permissionid);
         return WithPermissionItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -32,7 +32,7 @@ class PermissionRequestBuilder extends BaseRequestBuilder<PermissionRequestBuild
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<OAuth2ClientPermissionLinkableWrapper?> getAsync([void Function(RequestConfiguration<PermissionRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<OAuth2ClientPermissionLinkableWrapper>(requestInfo, OAuth2ClientPermissionLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -42,7 +42,7 @@ class PermissionRequestBuilder extends BaseRequestBuilder<PermissionRequestBuild
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<PermissionRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<PermissionRequestBuilderGetQueryParameters>(requestConfiguration, () => PermissionRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

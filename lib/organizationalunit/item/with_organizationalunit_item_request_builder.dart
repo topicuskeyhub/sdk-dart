@@ -30,7 +30,7 @@ class WithOrganizationalunitItemRequestBuilder extends BaseRequestBuilder<WithOr
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<OrganizationalUnit?> getAsync([void Function(RequestConfiguration<WithOrganizationalunitItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<OrganizationalUnit>(requestInfo, OrganizationalUnit.createFromDiscriminatorValue, errorMapping);
@@ -40,7 +40,7 @@ class WithOrganizationalunitItemRequestBuilder extends BaseRequestBuilder<WithOr
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<OrganizationalUnit?> putAsync(OrganizationalUnit body, [void Function(RequestConfiguration<WithOrganizationalunitItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<OrganizationalUnit>(requestInfo, OrganizationalUnit.createFromDiscriminatorValue, errorMapping);
@@ -50,7 +50,7 @@ class WithOrganizationalunitItemRequestBuilder extends BaseRequestBuilder<WithOr
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithOrganizationalunitItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithOrganizationalunitItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithOrganizationalunitItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Updates the organizational unit identified by the id.
@@ -59,8 +59,8 @@ class WithOrganizationalunitItemRequestBuilder extends BaseRequestBuilder<WithOr
     RequestInformation toPutRequestInformation(OrganizationalUnit body, [void Function(RequestConfiguration<WithOrganizationalunitItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithOrganizationalunitItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithOrganizationalunitItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

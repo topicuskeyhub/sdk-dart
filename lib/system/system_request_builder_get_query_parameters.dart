@@ -8,6 +8,8 @@ import './get_additional_query_parameter_type.dart';
 /// auto generated
 /// Query for all provisioned systems in Topicus KeyHub. The various query parameters can be used to filter the response.
 class SystemRequestBuilderGetQueryParameters implements AbstractQueryParameters {
+    ///  Filter the systems by access profiles which reference a group on the returned systems, specified by id. This parameter supports composition with all parameters from the access profile resource.
+    List<int>? accessprofile;
     ///  Filter the systems by access profile provisioning which reference a group on the returned systems, specified by id. This parameter supports composition with all parameters from the access profile provisioning resource.
     List<int>? accessProfileProvisioning;
     ///  Filter the systems by provisioned accounts, specified by id. This parameter supports composition with all parameters from the provisioned account resource.
@@ -92,6 +94,7 @@ class SystemRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     @override
     Map<String, dynamic> toMap() {
         return {
+            'accessprofile' : accessprofile,
             'accessProfileProvisioning' : accessProfileProvisioning,
             'account' : account,
             'active' : active,

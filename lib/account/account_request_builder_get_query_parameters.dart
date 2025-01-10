@@ -42,6 +42,8 @@ class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<int>? externalId;
     ///  Filter the accounts by membership of groups, specified by id. This parameter supports composition with all parameters from the group resource.
     List<int>? group;
+    ///  Only return accounts that have or have not ever been active.
+    List<bool>? hasBeenActive;
     ///  Only return accounts that have or don't have an e-mail address.
     List<bool>? hasEmail;
     ///  Only return accouts that have or don't have their vaults setup.
@@ -117,6 +119,7 @@ class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters
             'exclude' : exclude,
             'externalId' : externalId,
             'group' : group,
+            'hasBeenActive' : hasBeenActive,
             'hasEmail' : hasEmail,
             'hasVault' : hasVault,
             'hasVaultSecretForGroup' : hasVaultSecretForGroup,

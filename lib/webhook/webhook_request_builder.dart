@@ -13,7 +13,7 @@ class WebhookRequestBuilder extends BaseRequestBuilder<WebhookRequestBuilder> {
     ///  [webhookid] Unique identifier of the item
     WithWebhookItemRequestBuilder byWebhookid(int webhookid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('webhookid', ()=> webhookid);
+        urlTplParams.putIfAbsent('webhookid', () => webhookid);
         return WithWebhookItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -33,7 +33,7 @@ class WebhookRequestBuilder extends BaseRequestBuilder<WebhookRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<WebhookLinkableWrapper?> getAsync([void Function(RequestConfiguration<WebhookRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<WebhookLinkableWrapper>(requestInfo, WebhookLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -43,7 +43,7 @@ class WebhookRequestBuilder extends BaseRequestBuilder<WebhookRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<WebhookLinkableWrapper?> postAsync(WebhookLinkableWrapper body, [void Function(RequestConfiguration<WebhookRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<WebhookLinkableWrapper>(requestInfo, WebhookLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -53,7 +53,7 @@ class WebhookRequestBuilder extends BaseRequestBuilder<WebhookRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WebhookRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WebhookRequestBuilderGetQueryParameters>(requestConfiguration, () => WebhookRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Creates one or more new webhooks and returns the newly created webhooks.
@@ -62,8 +62,8 @@ class WebhookRequestBuilder extends BaseRequestBuilder<WebhookRequestBuilder> {
     RequestInformation toPostRequestInformation(WebhookLinkableWrapper body, [void Function(RequestConfiguration<WebhookRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WebhookRequestBuilderPostQueryParameters>(requestConfiguration, () => WebhookRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

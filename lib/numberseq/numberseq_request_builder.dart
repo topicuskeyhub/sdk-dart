@@ -13,7 +13,7 @@ class NumberseqRequestBuilder extends BaseRequestBuilder<NumberseqRequestBuilder
     ///  [numberseqid] Unique identifier of the item
     WithNumberseqItemRequestBuilder byNumberseqid(int numberseqid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('numberseqid', ()=> numberseqid);
+        urlTplParams.putIfAbsent('numberseqid', () => numberseqid);
         return WithNumberseqItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -33,7 +33,7 @@ class NumberseqRequestBuilder extends BaseRequestBuilder<NumberseqRequestBuilder
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisionNumberSequenceLinkableWrapper?> getAsync([void Function(RequestConfiguration<NumberseqRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ProvisionNumberSequenceLinkableWrapper>(requestInfo, ProvisionNumberSequenceLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -43,7 +43,7 @@ class NumberseqRequestBuilder extends BaseRequestBuilder<NumberseqRequestBuilder
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisionNumberSequenceLinkableWrapper?> postAsync(ProvisionNumberSequenceLinkableWrapper body, [void Function(RequestConfiguration<NumberseqRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ProvisionNumberSequenceLinkableWrapper>(requestInfo, ProvisionNumberSequenceLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -53,7 +53,7 @@ class NumberseqRequestBuilder extends BaseRequestBuilder<NumberseqRequestBuilder
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<NumberseqRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<NumberseqRequestBuilderGetQueryParameters>(requestConfiguration, () => NumberseqRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Creates one or more new provision number sequences and returns the newly created sequences.
@@ -62,8 +62,8 @@ class NumberseqRequestBuilder extends BaseRequestBuilder<NumberseqRequestBuilder
     RequestInformation toPostRequestInformation(ProvisionNumberSequenceLinkableWrapper body, [void Function(RequestConfiguration<NumberseqRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<NumberseqRequestBuilderPostQueryParameters>(requestConfiguration, () => NumberseqRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

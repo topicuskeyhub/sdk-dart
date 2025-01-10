@@ -12,7 +12,7 @@ class VaultrecordRequestBuilder extends BaseRequestBuilder<VaultrecordRequestBui
     ///  [vaultrecordid] Unique identifier of the item
     WithVaultrecordItemRequestBuilder byVaultrecordid(int vaultrecordid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('vaultrecordid', ()=> vaultrecordid);
+        urlTplParams.putIfAbsent('vaultrecordid', () => vaultrecordid);
         return WithVaultrecordItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -32,7 +32,7 @@ class VaultrecordRequestBuilder extends BaseRequestBuilder<VaultrecordRequestBui
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<VaultRecordLinkableWrapper?> getAsync([void Function(RequestConfiguration<VaultrecordRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<VaultRecordLinkableWrapper>(requestInfo, VaultRecordLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -42,7 +42,7 @@ class VaultrecordRequestBuilder extends BaseRequestBuilder<VaultrecordRequestBui
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<VaultrecordRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<VaultrecordRequestBuilderGetQueryParameters>(requestConfiguration, () => VaultrecordRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

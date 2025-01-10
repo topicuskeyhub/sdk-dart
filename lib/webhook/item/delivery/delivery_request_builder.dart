@@ -12,7 +12,7 @@ class DeliveryRequestBuilder extends BaseRequestBuilder<DeliveryRequestBuilder> 
     ///  [deliveryid] Unique identifier of the item
     WithDeliveryItemRequestBuilder byDeliveryid(int deliveryid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('deliveryid', ()=> deliveryid);
+        urlTplParams.putIfAbsent('deliveryid', () => deliveryid);
         return WithDeliveryItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -32,7 +32,7 @@ class DeliveryRequestBuilder extends BaseRequestBuilder<DeliveryRequestBuilder> 
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<WebhookDeliveryLinkableWrapper?> getAsync([void Function(RequestConfiguration<DeliveryRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<WebhookDeliveryLinkableWrapper>(requestInfo, WebhookDeliveryLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -42,7 +42,7 @@ class DeliveryRequestBuilder extends BaseRequestBuilder<DeliveryRequestBuilder> 
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DeliveryRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DeliveryRequestBuilderGetQueryParameters>(requestConfiguration, () => DeliveryRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

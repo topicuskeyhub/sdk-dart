@@ -24,7 +24,7 @@ class WithProfileprovisioningItemRequestBuilder extends BaseRequestBuilder<WithP
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
@@ -33,7 +33,7 @@ class WithProfileprovisioningItemRequestBuilder extends BaseRequestBuilder<WithP
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AccessProfileProvisioning?> getAsync([void Function(RequestConfiguration<WithProfileprovisioningItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<AccessProfileProvisioning>(requestInfo, AccessProfileProvisioning.createFromDiscriminatorValue, errorMapping);
@@ -43,7 +43,7 @@ class WithProfileprovisioningItemRequestBuilder extends BaseRequestBuilder<WithP
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns the access profile provisioning link identified by the id.
@@ -51,7 +51,7 @@ class WithProfileprovisioningItemRequestBuilder extends BaseRequestBuilder<WithP
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithProfileprovisioningItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithProfileprovisioningItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithProfileprovisioningItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

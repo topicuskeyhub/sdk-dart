@@ -25,7 +25,7 @@ class WithNumberseqItemRequestBuilder extends BaseRequestBuilder<WithNumberseqIt
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
@@ -34,7 +34,7 @@ class WithNumberseqItemRequestBuilder extends BaseRequestBuilder<WithNumberseqIt
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisionNumberSequence?> getAsync([void Function(RequestConfiguration<WithNumberseqItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ProvisionNumberSequence>(requestInfo, ProvisionNumberSequence.createFromDiscriminatorValue, errorMapping);
@@ -44,7 +44,7 @@ class WithNumberseqItemRequestBuilder extends BaseRequestBuilder<WithNumberseqIt
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisionNumberSequence?> putAsync(ProvisionNumberSequence body, [void Function(RequestConfiguration<WithNumberseqItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ProvisionNumberSequence>(requestInfo, ProvisionNumberSequence.createFromDiscriminatorValue, errorMapping);
@@ -54,7 +54,7 @@ class WithNumberseqItemRequestBuilder extends BaseRequestBuilder<WithNumberseqIt
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns the provision number sequence identified by the id.
@@ -62,7 +62,7 @@ class WithNumberseqItemRequestBuilder extends BaseRequestBuilder<WithNumberseqIt
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithNumberseqItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithNumberseqItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithNumberseqItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Updates the provision number sequence identified by the id.
@@ -71,8 +71,8 @@ class WithNumberseqItemRequestBuilder extends BaseRequestBuilder<WithNumberseqIt
     RequestInformation toPutRequestInformation(ProvisionNumberSequence body, [void Function(RequestConfiguration<WithNumberseqItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithNumberseqItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithNumberseqItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

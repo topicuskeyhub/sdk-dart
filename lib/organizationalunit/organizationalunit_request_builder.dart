@@ -13,7 +13,7 @@ class OrganizationalunitRequestBuilder extends BaseRequestBuilder<Organizational
     ///  [organizationalunitid] Unique identifier of the item
     WithOrganizationalunitItemRequestBuilder byOrganizationalunitid(int organizationalunitid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('organizationalunitid', ()=> organizationalunitid);
+        urlTplParams.putIfAbsent('organizationalunitid', () => organizationalunitid);
         return WithOrganizationalunitItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -33,7 +33,7 @@ class OrganizationalunitRequestBuilder extends BaseRequestBuilder<Organizational
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<OrganizationalUnitLinkableWrapper?> getAsync([void Function(RequestConfiguration<OrganizationalunitRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<OrganizationalUnitLinkableWrapper>(requestInfo, OrganizationalUnitLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -43,7 +43,7 @@ class OrganizationalunitRequestBuilder extends BaseRequestBuilder<Organizational
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<OrganizationalUnitLinkableWrapper?> postAsync(OrganizationalUnitLinkableWrapper body, [void Function(RequestConfiguration<OrganizationalunitRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<OrganizationalUnitLinkableWrapper>(requestInfo, OrganizationalUnitLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -53,7 +53,7 @@ class OrganizationalunitRequestBuilder extends BaseRequestBuilder<Organizational
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<OrganizationalunitRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<OrganizationalunitRequestBuilderGetQueryParameters>(requestConfiguration, () => OrganizationalunitRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Creates one or more new organizational units and returns the newly created units.
@@ -62,8 +62,8 @@ class OrganizationalunitRequestBuilder extends BaseRequestBuilder<Organizational
     RequestInformation toPostRequestInformation(OrganizationalUnitLinkableWrapper body, [void Function(RequestConfiguration<OrganizationalunitRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<OrganizationalunitRequestBuilderPostQueryParameters>(requestConfiguration, () => OrganizationalunitRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

@@ -25,7 +25,7 @@ class WithGroupclientItemRequestBuilder extends BaseRequestBuilder<WithGroupclie
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
@@ -34,7 +34,7 @@ class WithGroupclientItemRequestBuilder extends BaseRequestBuilder<WithGroupclie
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupClient?> getAsync([void Function(RequestConfiguration<WithGroupclientItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<GroupClient>(requestInfo, GroupClient.createFromDiscriminatorValue, errorMapping);
@@ -44,7 +44,7 @@ class WithGroupclientItemRequestBuilder extends BaseRequestBuilder<WithGroupclie
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupClient?> putAsync(GroupClient body, [void Function(RequestConfiguration<WithGroupclientItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<GroupClient>(requestInfo, GroupClient.createFromDiscriminatorValue, errorMapping);
@@ -54,7 +54,7 @@ class WithGroupclientItemRequestBuilder extends BaseRequestBuilder<WithGroupclie
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns the single client link for the group.
@@ -62,7 +62,7 @@ class WithGroupclientItemRequestBuilder extends BaseRequestBuilder<WithGroupclie
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithGroupclientItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupclientItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithGroupclientItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Updates the client link for a group identified by the id.
@@ -71,8 +71,8 @@ class WithGroupclientItemRequestBuilder extends BaseRequestBuilder<WithGroupclie
     RequestInformation toPutRequestInformation(GroupClient body, [void Function(RequestConfiguration<WithGroupclientItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupclientItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithGroupclientItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

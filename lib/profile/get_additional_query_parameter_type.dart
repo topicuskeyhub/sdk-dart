@@ -2,6 +2,7 @@
 /// auto generated
 enum GetAdditionalQueryParameterType {
     accountsWithAttributes('accountsWithAttributes'),
+    attributeRules('attributeRules'),
     audit('audit'),
     provisioning('provisioning');
     const GetAdditionalQueryParameterType(this.value);

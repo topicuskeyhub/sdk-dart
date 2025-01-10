@@ -30,7 +30,7 @@ class WithRecordItemRequestBuilder extends BaseRequestBuilder<WithRecordItemRequ
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
@@ -39,7 +39,7 @@ class WithRecordItemRequestBuilder extends BaseRequestBuilder<WithRecordItemRequ
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<VaultRecord?> getAsync([void Function(RequestConfiguration<WithRecordItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<VaultRecord>(requestInfo, VaultRecord.createFromDiscriminatorValue, errorMapping);
@@ -49,7 +49,7 @@ class WithRecordItemRequestBuilder extends BaseRequestBuilder<WithRecordItemRequ
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<VaultRecord?> putAsync(VaultRecord body, [void Function(RequestConfiguration<WithRecordItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<VaultRecord>(requestInfo, VaultRecord.createFromDiscriminatorValue, errorMapping);
@@ -59,7 +59,7 @@ class WithRecordItemRequestBuilder extends BaseRequestBuilder<WithRecordItemRequ
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns the vault record identified by the id. When the 'secret' additonal object is requested, the 'topicus-Vault-session' header must be specified.
@@ -67,7 +67,7 @@ class WithRecordItemRequestBuilder extends BaseRequestBuilder<WithRecordItemRequ
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithRecordItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithRecordItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithRecordItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Updates the vault record identified by the id. To update the secrets, the 'secret' additional object must be used, in addition to specifying the 'topicus-Vault-session' header. When updating a TOTP-secret, make sure to set 'writeTotp' field.
@@ -76,8 +76,8 @@ class WithRecordItemRequestBuilder extends BaseRequestBuilder<WithRecordItemRequ
     RequestInformation toPutRequestInformation(VaultRecord body, [void Function(RequestConfiguration<WithRecordItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithRecordItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithRecordItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

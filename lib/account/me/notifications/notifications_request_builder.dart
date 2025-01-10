@@ -24,7 +24,7 @@ class NotificationsRequestBuilder extends BaseRequestBuilder<NotificationsReques
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<Notifications?> getAsync([void Function(RequestConfiguration<NotificationsRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<Notifications>(requestInfo, Notifications.createFromDiscriminatorValue, errorMapping);
@@ -34,7 +34,7 @@ class NotificationsRequestBuilder extends BaseRequestBuilder<NotificationsReques
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<NotificationsRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<NotificationsRequestBuilderGetQueryParameters>(requestConfiguration, () => NotificationsRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

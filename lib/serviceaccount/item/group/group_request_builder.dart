@@ -12,7 +12,7 @@ class GroupRequestBuilder extends BaseRequestBuilder<GroupRequestBuilder> {
     ///  [groupid] Unique identifier of the item
     WithGroupItemRequestBuilder byGroupid(int groupid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('groupid', ()=> groupid);
+        urlTplParams.putIfAbsent('groupid', () => groupid);
         return WithGroupItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -32,7 +32,7 @@ class GroupRequestBuilder extends BaseRequestBuilder<GroupRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ServiceAccountGroupLinkableWrapper?> getAsync([void Function(RequestConfiguration<GroupRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ServiceAccountGroupLinkableWrapper>(requestInfo, ServiceAccountGroupLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -42,7 +42,7 @@ class GroupRequestBuilder extends BaseRequestBuilder<GroupRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<GroupRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<GroupRequestBuilderGetQueryParameters>(requestConfiguration, () => GroupRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

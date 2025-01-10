@@ -2,6 +2,7 @@
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import 'package:microsoft_kiota_serialization_json/microsoft_kiota_serialization_json.dart';
 import './account/account_request_builder.dart';
+import './attributedef/attributedef_request_builder.dart';
 import './audit/audit_request_builder.dart';
 import './certificate/certificate_request_builder.dart';
 import './client/client_request_builder.dart';
@@ -31,6 +32,10 @@ class KeyHubClient extends BaseRequestBuilder<KeyHubClient> {
     ///  The account property
     AccountRequestBuilder get account {
         return AccountRequestBuilder(pathParameters, requestAdapter);
+    }
+    ///  The attributedef property
+    AttributedefRequestBuilder get attributedef {
+        return AttributedefRequestBuilder(pathParameters, requestAdapter);
     }
     ///  The audit property
     AuditRequestBuilder get audit {

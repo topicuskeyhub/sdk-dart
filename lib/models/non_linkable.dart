@@ -23,6 +23,8 @@ import './group/group_classification_update.dart';
 import './group/group_global_role_info.dart';
 import './group/group_info.dart';
 import './group/groups_audit_stats.dart';
+import './identity/account_attribute_value_selection.dart';
+import './identity/account_attribute_value_summary.dart';
 import './launchpad/displayed_launchpad_tiles.dart';
 import './license/key_hub_license_info.dart';
 import './mark/item_marker.dart';
@@ -41,7 +43,6 @@ import './notification/rotating_password_required_notification.dart';
 import './notification/update_available_notification.dart';
 import './notification/vault_record_expired_notification.dart';
 import './organization/organizational_unit_settings.dart';
-import './profile/access_profile_account_attribute_rule_status.dart';
 import './provisioning/account_provisioning_status.dart';
 import './provisioning/account_provisioning_status_report.dart';
 import './provisioning/circuit_breaker_statistics.dart';
@@ -119,6 +120,8 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'group.GroupGlobalRoleInfo' => GroupGlobalRoleInfo(),
             'group.GroupInfo' => GroupInfo(),
             'group.GroupsAuditStats' => GroupsAuditStats(),
+            'identity.AccountAttributeValueSelection' => AccountAttributeValueSelection(),
+            'identity.AccountAttributeValueSummary' => AccountAttributeValueSummary(),
             'launchpad.DisplayedLaunchpadTiles' => DisplayedLaunchpadTiles(),
             'license.KeyHubLicenseInfo' => KeyHubLicenseInfo(),
             'mark.ItemMarker' => ItemMarker(),
@@ -137,7 +140,6 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'notification.UpdateAvailableNotification' => UpdateAvailableNotification(),
             'notification.VaultRecordExpiredNotification' => VaultRecordExpiredNotification(),
             'organization.OrganizationalUnitSettings' => OrganizationalUnitSettings(),
-            'profile.AccessProfileAccountAttributeRuleStatus' => AccessProfileAccountAttributeRuleStatus(),
             'provisioning.AccountProvisioningStatus' => AccountProvisioningStatus(),
             'provisioning.AccountProvisioningStatusReport' => AccountProvisioningStatusReport(),
             'provisioning.CircuitBreakerStatistics' => CircuitBreakerStatistics(),

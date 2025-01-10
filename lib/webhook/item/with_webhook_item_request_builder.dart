@@ -30,7 +30,7 @@ class WithWebhookItemRequestBuilder extends BaseRequestBuilder<WithWebhookItemRe
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
@@ -39,7 +39,7 @@ class WithWebhookItemRequestBuilder extends BaseRequestBuilder<WithWebhookItemRe
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<Webhook?> getAsync([void Function(RequestConfiguration<WithWebhookItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<Webhook>(requestInfo, Webhook.createFromDiscriminatorValue, errorMapping);
@@ -49,7 +49,7 @@ class WithWebhookItemRequestBuilder extends BaseRequestBuilder<WithWebhookItemRe
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<Webhook?> putAsync(Webhook body, [void Function(RequestConfiguration<WithWebhookItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<Webhook>(requestInfo, Webhook.createFromDiscriminatorValue, errorMapping);
@@ -59,7 +59,7 @@ class WithWebhookItemRequestBuilder extends BaseRequestBuilder<WithWebhookItemRe
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns the single webhook.
@@ -67,7 +67,7 @@ class WithWebhookItemRequestBuilder extends BaseRequestBuilder<WithWebhookItemRe
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithWebhookItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithWebhookItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithWebhookItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Updates the webhook identified by the id.
@@ -76,8 +76,8 @@ class WithWebhookItemRequestBuilder extends BaseRequestBuilder<WithWebhookItemRe
     RequestInformation toPutRequestInformation(Webhook body, [void Function(RequestConfiguration<WithWebhookItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithWebhookItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithWebhookItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

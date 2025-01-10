@@ -18,7 +18,7 @@ class RequestRequestBuilder extends BaseRequestBuilder<RequestRequestBuilder> {
     ///  [requestid] Unique identifier of the item
     WithRequestItemRequestBuilder byRequestid(int requestid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('requestid', ()=> requestid);
+        urlTplParams.putIfAbsent('requestid', () => requestid);
         return WithRequestItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -38,7 +38,7 @@ class RequestRequestBuilder extends BaseRequestBuilder<RequestRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ModificationRequestLinkableWrapper?> getAsync([void Function(RequestConfiguration<RequestRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ModificationRequestLinkableWrapper>(requestInfo, ModificationRequestLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -48,7 +48,7 @@ class RequestRequestBuilder extends BaseRequestBuilder<RequestRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ModificationRequestLinkableWrapper?> postAsync(ModificationRequestLinkableWrapper body, [void Function(RequestConfiguration<RequestRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ModificationRequestLinkableWrapper>(requestInfo, ModificationRequestLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -58,7 +58,7 @@ class RequestRequestBuilder extends BaseRequestBuilder<RequestRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<RequestRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<RequestRequestBuilderGetQueryParameters>(requestConfiguration, () => RequestRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Creates one or more new modification requests and returns the newly created requests.
@@ -67,8 +67,8 @@ class RequestRequestBuilder extends BaseRequestBuilder<RequestRequestBuilder> {
     RequestInformation toPostRequestInformation(ModificationRequestLinkableWrapper body, [void Function(RequestConfiguration<RequestRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<RequestRequestBuilderPostQueryParameters>(requestConfiguration, () => RequestRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

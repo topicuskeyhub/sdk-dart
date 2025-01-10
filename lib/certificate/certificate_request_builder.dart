@@ -13,7 +13,7 @@ class CertificateRequestBuilder extends BaseRequestBuilder<CertificateRequestBui
     ///  [certificateid] Unique identifier of the item
     WithCertificateItemRequestBuilder byCertificateid(int certificateid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('certificateid', ()=> certificateid);
+        urlTplParams.putIfAbsent('certificateid', () => certificateid);
         return WithCertificateItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -33,7 +33,7 @@ class CertificateRequestBuilder extends BaseRequestBuilder<CertificateRequestBui
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<CertificateLinkableWrapper?> getAsync([void Function(RequestConfiguration<CertificateRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<CertificateLinkableWrapper>(requestInfo, CertificateLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -43,7 +43,7 @@ class CertificateRequestBuilder extends BaseRequestBuilder<CertificateRequestBui
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<CertificateLinkableWrapper?> postAsync(CertificateLinkableWrapper body, [void Function(RequestConfiguration<CertificateRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<CertificateLinkableWrapper>(requestInfo, CertificateLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -53,7 +53,7 @@ class CertificateRequestBuilder extends BaseRequestBuilder<CertificateRequestBui
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<CertificateRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<CertificateRequestBuilderGetQueryParameters>(requestConfiguration, () => CertificateRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Creates one or more new global trusted certificates and returns the newly created certificates.
@@ -62,8 +62,8 @@ class CertificateRequestBuilder extends BaseRequestBuilder<CertificateRequestBui
     RequestInformation toPostRequestInformation(CertificateLinkableWrapper body, [void Function(RequestConfiguration<CertificateRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<CertificateRequestBuilderPostQueryParameters>(requestConfiguration, () => CertificateRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

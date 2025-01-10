@@ -18,7 +18,7 @@ class AuditRequestBuilder extends BaseRequestBuilder<AuditRequestBuilder> {
     ///  [auditid] Unique identifier of the item
     WithAuditItemRequestBuilder byAuditid(int auditid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('auditid', ()=> auditid);
+        urlTplParams.putIfAbsent('auditid', () => auditid);
         return WithAuditItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -38,7 +38,7 @@ class AuditRequestBuilder extends BaseRequestBuilder<AuditRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupAuditLinkableWrapper?> getAsync([void Function(RequestConfiguration<AuditRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<GroupAuditLinkableWrapper>(requestInfo, GroupAuditLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -48,7 +48,7 @@ class AuditRequestBuilder extends BaseRequestBuilder<AuditRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupAuditLinkableWrapper?> postAsync(GroupAuditLinkableWrapper body, [void Function(RequestConfiguration<AuditRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<GroupAuditLinkableWrapper>(requestInfo, GroupAuditLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -58,7 +58,7 @@ class AuditRequestBuilder extends BaseRequestBuilder<AuditRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AuditRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AuditRequestBuilderGetQueryParameters>(requestConfiguration, () => AuditRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Creates one or more new new audits for a group and returns the newly created memberships. Fetch a template for an audit via the 'new' resource.
@@ -67,8 +67,8 @@ class AuditRequestBuilder extends BaseRequestBuilder<AuditRequestBuilder> {
     RequestInformation toPostRequestInformation(GroupAuditLinkableWrapper body, [void Function(RequestConfiguration<AuditRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AuditRequestBuilderPostQueryParameters>(requestConfiguration, () => AuditRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

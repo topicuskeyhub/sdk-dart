@@ -25,7 +25,7 @@ class WithGroupfolderItemRequestBuilder extends BaseRequestBuilder<WithGroupfold
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
@@ -34,7 +34,7 @@ class WithGroupfolderItemRequestBuilder extends BaseRequestBuilder<WithGroupfold
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupFolder?> getAsync([void Function(RequestConfiguration<WithGroupfolderItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<GroupFolder>(requestInfo, GroupFolder.createFromDiscriminatorValue, errorMapping);
@@ -44,7 +44,7 @@ class WithGroupfolderItemRequestBuilder extends BaseRequestBuilder<WithGroupfold
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupFolder?> putAsync(GroupFolder body, [void Function(RequestConfiguration<WithGroupfolderItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<GroupFolder>(requestInfo, GroupFolder.createFromDiscriminatorValue, errorMapping);
@@ -54,7 +54,7 @@ class WithGroupfolderItemRequestBuilder extends BaseRequestBuilder<WithGroupfold
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns the group folder identified by the id.
@@ -62,7 +62,7 @@ class WithGroupfolderItemRequestBuilder extends BaseRequestBuilder<WithGroupfold
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithGroupfolderItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupfolderItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithGroupfolderItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Updates the group folder identified by the id.
@@ -71,8 +71,8 @@ class WithGroupfolderItemRequestBuilder extends BaseRequestBuilder<WithGroupfold
     RequestInformation toPutRequestInformation(GroupFolder body, [void Function(RequestConfiguration<WithGroupfolderItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupfolderItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithGroupfolderItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

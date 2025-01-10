@@ -35,7 +35,7 @@ class WithClientItemRequestBuilder extends BaseRequestBuilder<WithClientItemRequ
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
@@ -44,7 +44,7 @@ class WithClientItemRequestBuilder extends BaseRequestBuilder<WithClientItemRequ
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ClientApplication?> getAsync([void Function(RequestConfiguration<WithClientItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ClientApplication>(requestInfo, ClientApplication.createFromDiscriminatorValue, errorMapping);
@@ -54,7 +54,7 @@ class WithClientItemRequestBuilder extends BaseRequestBuilder<WithClientItemRequ
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ClientApplication?> putAsync(ClientApplication body, [void Function(RequestConfiguration<WithClientItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ClientApplication>(requestInfo, ClientApplication.createFromDiscriminatorValue, errorMapping);
@@ -64,7 +64,7 @@ class WithClientItemRequestBuilder extends BaseRequestBuilder<WithClientItemRequ
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns the client identified by the id.
@@ -72,7 +72,7 @@ class WithClientItemRequestBuilder extends BaseRequestBuilder<WithClientItemRequ
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithClientItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithClientItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithClientItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Updates the client identified by the id.
@@ -81,8 +81,8 @@ class WithClientItemRequestBuilder extends BaseRequestBuilder<WithClientItemRequ
     RequestInformation toPutRequestInformation(ClientApplication body, [void Function(RequestConfiguration<WithClientItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithClientItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithClientItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

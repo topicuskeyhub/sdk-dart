@@ -12,7 +12,7 @@ class ProvisioninggroupRequestBuilder extends BaseRequestBuilder<Provisioninggro
     ///  [provisioninggroupid] Unique identifier of the item
     WithProvisioninggroupItemRequestBuilder byProvisioninggroupid(int provisioninggroupid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('provisioninggroupid', ()=> provisioninggroupid);
+        urlTplParams.putIfAbsent('provisioninggroupid', () => provisioninggroupid);
         return WithProvisioninggroupItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -32,7 +32,7 @@ class ProvisioninggroupRequestBuilder extends BaseRequestBuilder<Provisioninggro
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisioningGroupLinkableWrapper?> getAsync([void Function(RequestConfiguration<ProvisioninggroupRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ProvisioningGroupLinkableWrapper>(requestInfo, ProvisioningGroupLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -42,7 +42,7 @@ class ProvisioninggroupRequestBuilder extends BaseRequestBuilder<Provisioninggro
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ProvisioninggroupRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ProvisioninggroupRequestBuilderGetQueryParameters>(requestConfiguration, () => ProvisioninggroupRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

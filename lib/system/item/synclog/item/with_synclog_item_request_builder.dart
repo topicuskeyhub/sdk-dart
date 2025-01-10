@@ -24,7 +24,7 @@ class WithSynclogItemRequestBuilder extends BaseRequestBuilder<WithSynclogItemRe
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisionedSystemSyncLog?> getAsync([void Function(RequestConfiguration<WithSynclogItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ProvisionedSystemSyncLog>(requestInfo, ProvisionedSystemSyncLog.createFromDiscriminatorValue, errorMapping);
@@ -34,7 +34,7 @@ class WithSynclogItemRequestBuilder extends BaseRequestBuilder<WithSynclogItemRe
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithSynclogItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithSynclogItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithSynclogItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

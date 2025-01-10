@@ -30,7 +30,7 @@ class WithDirectoryItemRequestBuilder extends BaseRequestBuilder<WithDirectoryIt
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
@@ -39,7 +39,7 @@ class WithDirectoryItemRequestBuilder extends BaseRequestBuilder<WithDirectoryIt
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AccountDirectory?> getAsync([void Function(RequestConfiguration<WithDirectoryItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<AccountDirectory>(requestInfo, AccountDirectory.createFromDiscriminatorValue, errorMapping);
@@ -49,7 +49,7 @@ class WithDirectoryItemRequestBuilder extends BaseRequestBuilder<WithDirectoryIt
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AccountDirectory?> putAsync(AccountDirectory body, [void Function(RequestConfiguration<WithDirectoryItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<AccountDirectory>(requestInfo, AccountDirectory.createFromDiscriminatorValue, errorMapping);
@@ -59,7 +59,7 @@ class WithDirectoryItemRequestBuilder extends BaseRequestBuilder<WithDirectoryIt
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns the directory identified by the id.
@@ -67,7 +67,7 @@ class WithDirectoryItemRequestBuilder extends BaseRequestBuilder<WithDirectoryIt
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithDirectoryItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithDirectoryItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithDirectoryItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Updates the directory identified by the id.
@@ -76,8 +76,8 @@ class WithDirectoryItemRequestBuilder extends BaseRequestBuilder<WithDirectoryIt
     RequestInformation toPutRequestInformation(AccountDirectory body, [void Function(RequestConfiguration<WithDirectoryItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithDirectoryItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithDirectoryItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

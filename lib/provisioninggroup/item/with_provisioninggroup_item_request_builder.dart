@@ -25,7 +25,7 @@ class WithProvisioninggroupItemRequestBuilder extends BaseRequestBuilder<WithPro
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
@@ -34,7 +34,7 @@ class WithProvisioninggroupItemRequestBuilder extends BaseRequestBuilder<WithPro
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisioningGroup?> getAsync([void Function(RequestConfiguration<WithProvisioninggroupItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ProvisioningGroup>(requestInfo, ProvisioningGroup.createFromDiscriminatorValue, errorMapping);
@@ -44,7 +44,7 @@ class WithProvisioninggroupItemRequestBuilder extends BaseRequestBuilder<WithPro
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisioningGroup?> putAsync(ProvisioningGroup body, [void Function(RequestConfiguration<WithProvisioninggroupItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ProvisioningGroup>(requestInfo, ProvisioningGroup.createFromDiscriminatorValue, errorMapping);
@@ -54,7 +54,7 @@ class WithProvisioninggroupItemRequestBuilder extends BaseRequestBuilder<WithPro
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns the provisioning group identified by the id.
@@ -62,7 +62,7 @@ class WithProvisioninggroupItemRequestBuilder extends BaseRequestBuilder<WithPro
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithProvisioninggroupItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithProvisioninggroupItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithProvisioninggroupItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Updates the provisioning group identified by the id.
@@ -71,8 +71,8 @@ class WithProvisioninggroupItemRequestBuilder extends BaseRequestBuilder<WithPro
     RequestInformation toPutRequestInformation(ProvisioningGroup body, [void Function(RequestConfiguration<WithProvisioninggroupItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithProvisioninggroupItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithProvisioninggroupItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

@@ -34,7 +34,7 @@ class DeletedvaultholderItemRequestBuilder extends BaseRequestBuilder<Deletedvau
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
@@ -43,7 +43,7 @@ class DeletedvaultholderItemRequestBuilder extends BaseRequestBuilder<Deletedvau
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<DeletedVaultHolder?> getAsync([void Function(RequestConfiguration<DeletedvaultholderItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<DeletedVaultHolder>(requestInfo, DeletedVaultHolder.createFromDiscriminatorValue, errorMapping);
@@ -53,7 +53,7 @@ class DeletedvaultholderItemRequestBuilder extends BaseRequestBuilder<Deletedvau
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns the deleted vault identified by the id.
@@ -61,7 +61,7 @@ class DeletedvaultholderItemRequestBuilder extends BaseRequestBuilder<Deletedvau
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DeletedvaultholderItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DeletedvaultholderItemRequestBuilderGetQueryParameters>(requestConfiguration, () => DeletedvaultholderItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

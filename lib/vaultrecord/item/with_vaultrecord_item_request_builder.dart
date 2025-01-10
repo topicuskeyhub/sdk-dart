@@ -24,7 +24,7 @@ class WithVaultrecordItemRequestBuilder extends BaseRequestBuilder<WithVaultreco
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<VaultRecord?> getAsync([void Function(RequestConfiguration<WithVaultrecordItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<VaultRecord>(requestInfo, VaultRecord.createFromDiscriminatorValue, errorMapping);
@@ -34,7 +34,7 @@ class WithVaultrecordItemRequestBuilder extends BaseRequestBuilder<WithVaultreco
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithVaultrecordItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithVaultrecordItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithVaultrecordItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

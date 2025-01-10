@@ -6,6 +6,8 @@ import './get_additional_query_parameter_type.dart';
 /// auto generated
 /// Query for all groups on systems within a provisioned system in Topicus KeyHub. The various query parameters can be used to filter the response.
 class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
+    ///  Only return groups on system that have an access profile provisioning link with one of the given access profiles, specified by id. This parameter supports composition with all parameters from the access profile resource.
+    List<int>? accessProfile;
     ///  Request additional information to be returned for every record.
     List<GetAdditionalQueryParameterType>? additional;
     ///  Filter the groups on system on groups that perform technical administration for the systems they belong to, specified by id. This parameter supports composition with all parameters from the group resource.
@@ -58,6 +60,7 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     @override
     Map<String, dynamic> toMap() {
         return {
+            'accessProfile' : accessProfile,
             'additional' : additional,
             'adminnedBy' : adminnedBy,
             'any' : any,

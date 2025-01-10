@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "3489CD0DA9AFE835344442A00C138B680EB5E275C27A257F779FE18C75F3C17AA93D61D44454D63FBF65455755A0EAD6EAEB739EB32447539E77B0903D49F944",
-  "descriptionLocation": "https://keyhub.topicusonderwijs.nl/keyhub/rest/v1/openapi.json",
+  "descriptionHash": "AE5622789C5E1E079981FD171FA0FD34F73A20525C282E678D502A6971C2C1E68263297AC52D9D5E6CE405E3C46184BC06D6A081DB26179F73AF436E80BC6125",
+  "descriptionLocation": "../openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.21.0",
+  "kiotaVersion": "1.22.0",
   "clientClassName": "KeyHubClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "ApiSdk",

@@ -12,7 +12,7 @@ class ProfileprovisioningRequestBuilder extends BaseRequestBuilder<Profileprovis
     ///  [profileprovisioningid] Unique identifier of the item
     WithProfileprovisioningItemRequestBuilder byProfileprovisioningid(int profileprovisioningid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('profileprovisioningid', ()=> profileprovisioningid);
+        urlTplParams.putIfAbsent('profileprovisioningid', () => profileprovisioningid);
         return WithProfileprovisioningItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -32,7 +32,7 @@ class ProfileprovisioningRequestBuilder extends BaseRequestBuilder<Profileprovis
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AccessProfileProvisioningLinkableWrapper?> getAsync([void Function(RequestConfiguration<ProfileprovisioningRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<AccessProfileProvisioningLinkableWrapper>(requestInfo, AccessProfileProvisioningLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -42,7 +42,7 @@ class ProfileprovisioningRequestBuilder extends BaseRequestBuilder<Profileprovis
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ProfileprovisioningRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ProfileprovisioningRequestBuilderGetQueryParameters>(requestConfiguration, () => ProfileprovisioningRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

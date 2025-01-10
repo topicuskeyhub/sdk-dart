@@ -12,7 +12,7 @@ class SynclogRequestBuilder extends BaseRequestBuilder<SynclogRequestBuilder> {
     ///  [synclogid] Unique identifier of the item
     WithSynclogItemRequestBuilder bySynclogid(int synclogid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('synclogid', ()=> synclogid);
+        urlTplParams.putIfAbsent('synclogid', () => synclogid);
         return WithSynclogItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -32,7 +32,7 @@ class SynclogRequestBuilder extends BaseRequestBuilder<SynclogRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisionedSystemSyncLogLinkableWrapper?> getAsync([void Function(RequestConfiguration<SynclogRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ProvisionedSystemSyncLogLinkableWrapper>(requestInfo, ProvisionedSystemSyncLogLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -42,7 +42,7 @@ class SynclogRequestBuilder extends BaseRequestBuilder<SynclogRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<SynclogRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<SynclogRequestBuilderGetQueryParameters>(requestConfiguration, () => SynclogRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

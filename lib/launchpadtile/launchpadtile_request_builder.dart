@@ -18,7 +18,7 @@ class LaunchpadtileRequestBuilder extends BaseRequestBuilder<LaunchpadtileReques
     ///  [launchpadtileid] Unique identifier of the item
     WithLaunchpadtileItemRequestBuilder byLaunchpadtileid(int launchpadtileid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('launchpadtileid', ()=> launchpadtileid);
+        urlTplParams.putIfAbsent('launchpadtileid', () => launchpadtileid);
         return WithLaunchpadtileItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -38,7 +38,7 @@ class LaunchpadtileRequestBuilder extends BaseRequestBuilder<LaunchpadtileReques
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<LaunchpadTileLinkableWrapper?> getAsync([void Function(RequestConfiguration<LaunchpadtileRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<LaunchpadTileLinkableWrapper>(requestInfo, LaunchpadTileLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -48,7 +48,7 @@ class LaunchpadtileRequestBuilder extends BaseRequestBuilder<LaunchpadtileReques
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<LaunchpadTileLinkableWrapper?> postAsync(LaunchpadTileLinkableWrapper body, [void Function(RequestConfiguration<LaunchpadtileRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<LaunchpadTileLinkableWrapper>(requestInfo, LaunchpadTileLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -58,7 +58,7 @@ class LaunchpadtileRequestBuilder extends BaseRequestBuilder<LaunchpadtileReques
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<LaunchpadtileRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<LaunchpadtileRequestBuilderGetQueryParameters>(requestConfiguration, () => LaunchpadtileRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Creates one or more new launchpad tiles and returns the newly created tiles.
@@ -67,8 +67,8 @@ class LaunchpadtileRequestBuilder extends BaseRequestBuilder<LaunchpadtileReques
     RequestInformation toPostRequestInformation(LaunchpadTileLinkableWrapper body, [void Function(RequestConfiguration<LaunchpadtileRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<LaunchpadtileRequestBuilderPostQueryParameters>(requestConfiguration, () => LaunchpadtileRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

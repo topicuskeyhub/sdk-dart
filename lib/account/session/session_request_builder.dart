@@ -11,7 +11,7 @@ class SessionRequestBuilder extends BaseRequestBuilder<SessionRequestBuilder> {
     ///  [sessionId] Unique identifier of the item
     WithSessionItemRequestBuilder bySessionId(String sessionId) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('sessionId', ()=> sessionId);
+        urlTplParams.putIfAbsent('sessionId', () => sessionId);
         return WithSessionItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -29,18 +29,18 @@ class SessionRequestBuilder extends BaseRequestBuilder<SessionRequestBuilder> {
     SessionRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/session", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Ends all sessions for the current user except the current session. Access tokens issued for these sessions will be revoked.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
-    Future<Iterable<int>?> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
-        return await requestAdapter.sendPrimitiveCollection<int>(requestInfo, errorMapping);
+        return await requestAdapter.sendNoContent(requestInfo, errorMapping);
     }
     /// Returns a list of active sessions for the current user.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<StoredUserSessionLinkableWrapper?> getAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<StoredUserSessionLinkableWrapper>(requestInfo, StoredUserSessionLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -50,7 +50,7 @@ class SessionRequestBuilder extends BaseRequestBuilder<SessionRequestBuilder> {
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74, application/vnd.topicus.keyhub+xml;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns a list of active sessions for the current user.
@@ -58,7 +58,7 @@ class SessionRequestBuilder extends BaseRequestBuilder<SessionRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

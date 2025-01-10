@@ -3,15 +3,12 @@ import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../directory/account_directory_primer.dart';
 import '../group/group_primer.dart';
 import './access_profile_additional_objects.dart';
-import './access_profile_attribute_rules.dart';
 import './access_profile_primer.dart';
 
 /// auto generated
 class AccessProfile extends AccessProfilePrimer implements Parsable {
     ///  The additionalObjects property
     AccessProfileAdditionalObjects? additionalObjects;
-    ///  The attributeRules property
-    AccessProfileAttributeRules? attributeRules;
     ///  The description property
     String? description;
     ///  The directory property
@@ -32,7 +29,6 @@ class AccessProfile extends AccessProfilePrimer implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<AccessProfileAdditionalObjects>(AccessProfileAdditionalObjects.createFromDiscriminatorValue);
-        deserializerMap['attributeRules'] = (node) => attributeRules = node.getObjectValue<AccessProfileAttributeRules>(AccessProfileAttributeRules.createFromDiscriminatorValue);
         deserializerMap['description'] = (node) => description = node.getStringValue();
         deserializerMap['directory'] = (node) => directory = node.getObjectValue<AccountDirectoryPrimer>(AccountDirectoryPrimer.createFromDiscriminatorValue);
         deserializerMap['owner'] = (node) => owner = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
@@ -44,7 +40,6 @@ class AccessProfile extends AccessProfilePrimer implements Parsable {
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<AccessProfileAdditionalObjects>('additionalObjects', additionalObjects);
-        writer.writeObjectValue<AccessProfileAttributeRules>('attributeRules', attributeRules);
         writer.writeStringValue('description', description);
         writer.writeObjectValue<AccountDirectoryPrimer>('directory', directory);
         writer.writeObjectValue<GroupPrimer>('owner', owner);

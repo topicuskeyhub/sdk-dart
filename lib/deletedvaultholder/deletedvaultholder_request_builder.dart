@@ -12,7 +12,7 @@ class DeletedvaultholderRequestBuilder extends BaseRequestBuilder<Deletedvaultho
     ///  [deletedvaultholderId] Unique identifier of the item
     DeletedvaultholderItemRequestBuilder byDeletedvaultholderId(int deletedvaultholderId) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('deletedvaultholderId', ()=> deletedvaultholderId);
+        urlTplParams.putIfAbsent('deletedvaultholder%2Did', () => deletedvaultholderId);
         return DeletedvaultholderItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -32,7 +32,7 @@ class DeletedvaultholderRequestBuilder extends BaseRequestBuilder<Deletedvaultho
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<DeletedVaultHolderLinkableWrapper?> getAsync([void Function(RequestConfiguration<DeletedvaultholderRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<DeletedVaultHolderLinkableWrapper>(requestInfo, DeletedVaultHolderLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -42,7 +42,7 @@ class DeletedvaultholderRequestBuilder extends BaseRequestBuilder<Deletedvaultho
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DeletedvaultholderRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DeletedvaultholderRequestBuilderGetQueryParameters>(requestConfiguration, () => DeletedvaultholderRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

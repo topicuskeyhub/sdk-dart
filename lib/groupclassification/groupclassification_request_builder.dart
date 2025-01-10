@@ -13,7 +13,7 @@ class GroupclassificationRequestBuilder extends BaseRequestBuilder<Groupclassifi
     ///  [groupclassificationid] Unique identifier of the item
     WithGroupclassificationItemRequestBuilder byGroupclassificationid(int groupclassificationid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('groupclassificationid', ()=> groupclassificationid);
+        urlTplParams.putIfAbsent('groupclassificationid', () => groupclassificationid);
         return WithGroupclassificationItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -33,7 +33,7 @@ class GroupclassificationRequestBuilder extends BaseRequestBuilder<Groupclassifi
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupClassificationLinkableWrapper?> getAsync([void Function(RequestConfiguration<GroupclassificationRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<GroupClassificationLinkableWrapper>(requestInfo, GroupClassificationLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -43,7 +43,7 @@ class GroupclassificationRequestBuilder extends BaseRequestBuilder<Groupclassifi
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupClassificationLinkableWrapper?> postAsync(GroupClassificationLinkableWrapper body, [void Function(RequestConfiguration<GroupclassificationRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<GroupClassificationLinkableWrapper>(requestInfo, GroupClassificationLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -53,7 +53,7 @@ class GroupclassificationRequestBuilder extends BaseRequestBuilder<Groupclassifi
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<GroupclassificationRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<GroupclassificationRequestBuilderGetQueryParameters>(requestConfiguration, () => GroupclassificationRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Creates one or more new group classifications and returns the newly created classifications.
@@ -62,8 +62,8 @@ class GroupclassificationRequestBuilder extends BaseRequestBuilder<Groupclassifi
     RequestInformation toPostRequestInformation(GroupClassificationLinkableWrapper body, [void Function(RequestConfiguration<GroupclassificationRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<GroupclassificationRequestBuilderPostQueryParameters>(requestConfiguration, () => GroupclassificationRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

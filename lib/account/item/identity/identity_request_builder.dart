@@ -23,7 +23,7 @@ class IdentityRequestBuilder extends BaseRequestBuilder<IdentityRequestBuilder> 
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<Identity?> getAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<Identity>(requestInfo, Identity.createFromDiscriminatorValue, errorMapping);
@@ -33,7 +33,7 @@ class IdentityRequestBuilder extends BaseRequestBuilder<IdentityRequestBuilder> 
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<Identity?> putAsync(Identity body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<Identity>(requestInfo, Identity.createFromDiscriminatorValue, errorMapping);
@@ -43,7 +43,7 @@ class IdentityRequestBuilder extends BaseRequestBuilder<IdentityRequestBuilder> 
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Updates the identity for the account.
@@ -52,8 +52,8 @@ class IdentityRequestBuilder extends BaseRequestBuilder<IdentityRequestBuilder> 
     RequestInformation toPutRequestInformation(Identity body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

@@ -36,6 +36,9 @@ import './group/group_client.dart';
 import './group/group_folder.dart';
 import './group/group_primer.dart';
 import './group/provisioning_group.dart';
+import './identity/account_attribute_definition.dart';
+import './identity/account_attribute_rule.dart';
+import './identity/account_attribute_value.dart';
 import './identity/identity.dart';
 import './launchpad/displayed_launchpad_tile.dart';
 import './launchpad/launchpad_tile.dart';
@@ -178,6 +181,9 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'group.GroupFolder' => GroupFolder(),
             'group.GroupPrimer' => GroupPrimer(),
             'group.ProvisioningGroup' => ProvisioningGroup(),
+            'identity.AccountAttributeDefinition' => AccountAttributeDefinition(),
+            'identity.AccountAttributeRule' => AccountAttributeRule(),
+            'identity.AccountAttributeValue' => AccountAttributeValue(),
             'identity.Identity' => Identity(),
             'launchpad.DisplayedLaunchpadTile' => DisplayedLaunchpadTile(),
             'launchpad.LaunchpadTile' => LaunchpadTile(),

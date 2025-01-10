@@ -35,7 +35,7 @@ class ProvisioningRequestBuilder extends BaseRequestBuilder<ProvisioningRequestB
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisioningStatus?> getAsync([void Function(RequestConfiguration<ProvisioningRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ProvisioningStatus>(requestInfo, ProvisioningStatus.createFromDiscriminatorValue, errorMapping);
@@ -45,7 +45,7 @@ class ProvisioningRequestBuilder extends BaseRequestBuilder<ProvisioningRequestB
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisioningStatus?> putAsync(ProvisioningStatus body, [void Function(RequestConfiguration<ProvisioningRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ProvisioningStatus>(requestInfo, ProvisioningStatus.createFromDiscriminatorValue, errorMapping);
@@ -55,7 +55,7 @@ class ProvisioningRequestBuilder extends BaseRequestBuilder<ProvisioningRequestB
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ProvisioningRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ProvisioningRequestBuilderGetQueryParameters>(requestConfiguration, () => ProvisioningRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Updates the provisioning for the current user. This updates the end time for the given groups. If 'ignoreErrors' is set, errors do not cause the update to abort if errors are detected. To enable groups with auditing enabled the reason query parameter is required.
@@ -64,8 +64,8 @@ class ProvisioningRequestBuilder extends BaseRequestBuilder<ProvisioningRequestB
     RequestInformation toPutRequestInformation(ProvisioningStatus body, [void Function(RequestConfiguration<ProvisioningRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ProvisioningRequestBuilderPutQueryParameters>(requestConfiguration, () => ProvisioningRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

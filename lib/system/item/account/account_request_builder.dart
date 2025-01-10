@@ -12,7 +12,7 @@ class AccountRequestBuilder extends BaseRequestBuilder<AccountRequestBuilder> {
     ///  [accountid] Unique identifier of the item
     WithAccountItemRequestBuilder byAccountid(int accountid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('accountid', ()=> accountid);
+        urlTplParams.putIfAbsent('accountid', () => accountid);
         return WithAccountItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -32,7 +32,7 @@ class AccountRequestBuilder extends BaseRequestBuilder<AccountRequestBuilder> {
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisionedAccountLinkableWrapper?> getAsync([void Function(RequestConfiguration<AccountRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ProvisionedAccountLinkableWrapper>(requestInfo, ProvisionedAccountLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -42,7 +42,7 @@ class AccountRequestBuilder extends BaseRequestBuilder<AccountRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AccountRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AccountRequestBuilderGetQueryParameters>(requestConfiguration, () => AccountRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

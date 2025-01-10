@@ -12,7 +12,7 @@ class GroupclientRequestBuilder extends BaseRequestBuilder<GroupclientRequestBui
     ///  [groupclientid] Unique identifier of the item
     WithGroupclientItemRequestBuilder byGroupclientid(int groupclientid) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('groupclientid', ()=> groupclientid);
+        urlTplParams.putIfAbsent('groupclientid', () => groupclientid);
         return WithGroupclientItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
@@ -32,7 +32,7 @@ class GroupclientRequestBuilder extends BaseRequestBuilder<GroupclientRequestBui
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupClientLinkableWrapper?> getAsync([void Function(RequestConfiguration<GroupclientRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<GroupClientLinkableWrapper>(requestInfo, GroupClientLinkableWrapper.createFromDiscriminatorValue, errorMapping);
@@ -42,7 +42,7 @@ class GroupclientRequestBuilder extends BaseRequestBuilder<GroupclientRequestBui
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<GroupclientRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<GroupclientRequestBuilderGetQueryParameters>(requestConfiguration, () => GroupclientRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

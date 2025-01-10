@@ -39,7 +39,7 @@ class WithServiceaccountItemRequestBuilder extends BaseRequestBuilder<WithServic
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
@@ -48,7 +48,7 @@ class WithServiceaccountItemRequestBuilder extends BaseRequestBuilder<WithServic
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ServiceAccount?> getAsync([void Function(RequestConfiguration<WithServiceaccountItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ServiceAccount>(requestInfo, ServiceAccount.createFromDiscriminatorValue, errorMapping);
@@ -58,7 +58,7 @@ class WithServiceaccountItemRequestBuilder extends BaseRequestBuilder<WithServic
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ServiceAccount?> putAsync(ServiceAccount body, [void Function(RequestConfiguration<WithServiceaccountItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPutRequestInformation(body, requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<ServiceAccount>(requestInfo, ServiceAccount.createFromDiscriminatorValue, errorMapping);
@@ -67,7 +67,7 @@ class WithServiceaccountItemRequestBuilder extends BaseRequestBuilder<WithServic
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns the service account identified by the id.
@@ -75,7 +75,7 @@ class WithServiceaccountItemRequestBuilder extends BaseRequestBuilder<WithServic
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithServiceaccountItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithServiceaccountItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithServiceaccountItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Updates the service account identified by the id.
@@ -84,8 +84,8 @@ class WithServiceaccountItemRequestBuilder extends BaseRequestBuilder<WithServic
     RequestInformation toPutRequestInformation(ServiceAccount body, [void Function(RequestConfiguration<WithServiceaccountItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithServiceaccountItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithServiceaccountItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=74', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
         return requestInfo;
     }
 }

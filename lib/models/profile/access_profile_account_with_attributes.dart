@@ -1,12 +1,12 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
+import '../identity/account_attribute_value_summary.dart';
 import './access_profile_account.dart';
-import './access_profile_account_attribute_rule_status.dart';
 
 /// auto generated
 class AccessProfileAccountWithAttributes extends AccessProfileAccount implements Parsable {
     ///  The attributes property
-    Iterable<AccessProfileAccountAttributeRuleStatus>? attributes;
+    Iterable<AccountAttributeValueSummary>? attributes;
     /// Instantiates a new [AccessProfileAccountWithAttributes] and sets the default values.
     AccessProfileAccountWithAttributes() : super() {
         type_ = 'profile.AccessProfileAccountWithAttributes';
@@ -20,7 +20,7 @@ class AccessProfileAccountWithAttributes extends AccessProfileAccount implements
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
-        deserializerMap['attributes'] = (node) => attributes = node.getCollectionOfObjectValues<AccessProfileAccountAttributeRuleStatus>(AccessProfileAccountAttributeRuleStatus.createFromDiscriminatorValue);
+        deserializerMap['attributes'] = (node) => attributes = node.getCollectionOfObjectValues<AccountAttributeValueSummary>(AccountAttributeValueSummary.createFromDiscriminatorValue);
         return deserializerMap;
     }
     /// Serializes information the current object

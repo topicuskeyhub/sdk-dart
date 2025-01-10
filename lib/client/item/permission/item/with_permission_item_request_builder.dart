@@ -24,7 +24,7 @@ class WithPermissionItemRequestBuilder extends BaseRequestBuilder<WithPermission
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> deleteAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toDeleteRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.sendNoContent(requestInfo, errorMapping);
@@ -33,7 +33,7 @@ class WithPermissionItemRequestBuilder extends BaseRequestBuilder<WithPermission
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<OAuth2ClientPermission?> getAsync([void Function(RequestConfiguration<WithPermissionItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
-        Map<String, ParsableFactory<Parsable>> errorMapping = {
+        final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
         return await requestAdapter.send<OAuth2ClientPermission>(requestInfo, OAuth2ClientPermission.createFromDiscriminatorValue, errorMapping);
@@ -43,7 +43,7 @@ class WithPermissionItemRequestBuilder extends BaseRequestBuilder<WithPermission
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
     /// Returns the permission identified by the id.
@@ -51,7 +51,7 @@ class WithPermissionItemRequestBuilder extends BaseRequestBuilder<WithPermission
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithPermissionItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithPermissionItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithPermissionItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=74');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
         return requestInfo;
     }
 }

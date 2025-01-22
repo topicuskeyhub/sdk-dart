@@ -12,6 +12,10 @@ class PermissionRequestBuilderGetQueryParameters implements AbstractQueryParamet
     List<bool>? any;
     ///  Filter permissions on the clients to which they are given, specified by id. This parameter supports composition with all parameters from the client resource.
     List<int>? client;
+    ///  Filter permissions on the administrator groups of the clients to which they are given, specified by id. This parameter supports composition with all parameters from the client resource.
+    List<int>? clientAdministratorGroup;
+    ///  Filter permissions on the owner groups of the clients to which they are given, specified by id. This parameter supports composition with all parameters from the client resource.
+    List<int>? clientOwnerGroup;
     ///  Only return records that have been created after the given instant.
     List<DateTime>? createdAfter;
     ///  Only return records that have been created before the given instant.
@@ -22,6 +26,12 @@ class PermissionRequestBuilderGetQueryParameters implements AbstractQueryParamet
     List<int>? forGroup;
     ///  Filter permissions on the systems to which they apply, specified by id. This parameter supports composition with all parameters from the system resource.
     List<int>? forSystem;
+    ///  Filter permissions on the content administrator groups of the systems to which they apply, specified by id. This parameter supports composition with all parameters from the group resource.
+    List<int>? forSystemContentAdministratorGroup;
+    ///  Filter permissions on the owner groups of the systems to which they apply, specified by id. This parameter supports composition with all parameters from the group resource.
+    List<int>? forSystemOwnerGroup;
+    ///  Filter permissions on the technical administrator groups of the systems to which they apply, specified by id. This parameter supports composition with all parameters from the group resource.
+    List<int>? forSystemTechnicalAdministratorGroup;
     ///  Filter the results on the given ids.
     List<int>? id;
     ///  Only return records that have been modified since the given instant.
@@ -32,6 +42,10 @@ class PermissionRequestBuilderGetQueryParameters implements AbstractQueryParamet
     List<String>? sort;
     ///  Filter permissions on the permission type(s).
     List<OAuth2ClientPermissionType>? value;
+    ///  Filter the clients for the permissions with permissions for the given groups, either directly or via provisionedsystem ownership, specified by id.
+    List<int>? withPermissionForOwningGroup;
+    ///  Filter the clients for the permissions with active requests for permissions for the given groups, either directly or via provisionedsystem ownership, specified by id.
+    List<int>? withRequestedPermissionForOwningGroup;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
     Map<String, dynamic> toMap() {
@@ -39,16 +53,23 @@ class PermissionRequestBuilderGetQueryParameters implements AbstractQueryParamet
             'additional' : additional,
             'any' : any,
             'client' : client,
+            'clientAdministratorGroup' : clientAdministratorGroup,
+            'clientOwnerGroup' : clientOwnerGroup,
             'createdAfter' : createdAfter,
             'createdBefore' : createdBefore,
             'exclude' : exclude,
             'forGroup' : forGroup,
             'forSystem' : forSystem,
+            'forSystemContentAdministratorGroup' : forSystemContentAdministratorGroup,
+            'forSystemOwnerGroup' : forSystemOwnerGroup,
+            'forSystemTechnicalAdministratorGroup' : forSystemTechnicalAdministratorGroup,
             'id' : id,
             'modifiedSince' : modifiedSince,
             'q' : q,
             'sort' : sort,
             'value' : value,
+            'withPermissionForOwningGroup' : withPermissionForOwningGroup,
+            'withRequestedPermissionForOwningGroup' : withRequestedPermissionForOwningGroup,
         };
     }
 }

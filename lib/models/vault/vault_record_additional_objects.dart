@@ -2,9 +2,9 @@
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../audit_info.dart';
 import '../launchpad/vault_record_launchpad_tile.dart';
+import '../linkable.dart';
 import './password_metadata.dart';
 import './vault_activation_status.dart';
-import './vault_holder.dart';
 import './vault_record_primer.dart';
 import './vault_record_primer_linkable_wrapper.dart';
 import './vault_record_secrets.dart';
@@ -34,7 +34,7 @@ class VaultRecordAdditionalObjects implements AdditionalDataHolder, Parsable {
     ///  The tile property
     VaultRecordLaunchpadTile? tile;
     ///  The vaultholder property
-    VaultHolder? vaultholder;
+    Linkable? vaultholder;
     /// Instantiates a new [VaultRecordAdditionalObjects] and sets the default values.
     VaultRecordAdditionalObjects() :  
         additionalData = {};
@@ -56,7 +56,7 @@ class VaultRecordAdditionalObjects implements AdditionalDataHolder, Parsable {
         deserializerMap['shares'] = (node) => shares = node.getObjectValue<VaultRecordPrimerLinkableWrapper>(VaultRecordPrimerLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['shareSummary'] = (node) => shareSummary = node.getObjectValue<VaultRecordShareSummary>(VaultRecordShareSummary.createFromDiscriminatorValue);
         deserializerMap['tile'] = (node) => tile = node.getObjectValue<VaultRecordLaunchpadTile>(VaultRecordLaunchpadTile.createFromDiscriminatorValue);
-        deserializerMap['vaultholder'] = (node) => vaultholder = node.getObjectValue<VaultHolder>(VaultHolder.createFromDiscriminatorValue);
+        deserializerMap['vaultholder'] = (node) => vaultholder = node.getObjectValue<Linkable>(Linkable.createFromDiscriminatorValue);
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -72,7 +72,7 @@ class VaultRecordAdditionalObjects implements AdditionalDataHolder, Parsable {
         writer.writeObjectValue<VaultRecordPrimerLinkableWrapper>('shares', shares);
         writer.writeObjectValue<VaultRecordShareSummary>('shareSummary', shareSummary);
         writer.writeObjectValue<VaultRecordLaunchpadTile>('tile', tile);
-        writer.writeObjectValue<VaultHolder>('vaultholder', vaultholder);
+        writer.writeObjectValue<Linkable>('vaultholder', vaultholder);
         writer.writeAdditionalData(additionalData);
     }
 }

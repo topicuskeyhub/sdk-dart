@@ -15,6 +15,8 @@ import './vault_record_expired_notification.dart';
 
 /// auto generated
 class Notification extends NonLinkable implements Parsable {
+    ///  The inPlainText property
+    String? inPlainText;
     /// Instantiates a new [Notification] and sets the default values.
     Notification() : super() {
         type_ = 'notification.Notification';
@@ -42,6 +44,7 @@ class Notification extends NonLinkable implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['inPlainText'] = (node) => inPlainText = node.getStringValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -49,5 +52,6 @@ class Notification extends NonLinkable implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeStringValue('inPlainText', inPlainText);
     }
 }

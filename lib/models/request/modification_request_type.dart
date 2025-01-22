@@ -2,6 +2,7 @@
 /// auto generated
 enum ModificationRequestType {
     addGroupAdmin('ADD_GROUP_ADMIN'),
+    addGroupToAccessProfile('ADD_GROUP_TO_ACCESS_PROFILE'),
     createGroup('CREATE_GROUP'),
     createGroupOnSystem('CREATE_GROUP_ON_SYSTEM'),
     createProvisionedNamespace('CREATE_PROVISIONED_NAMESPACE'),

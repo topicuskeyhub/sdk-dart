@@ -50,7 +50,7 @@ class WithOrganizationalunitItemRequestBuilder extends BaseRequestBuilder<WithOr
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithOrganizationalunitItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithOrganizationalunitItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithOrganizationalunitItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
         return requestInfo;
     }
     /// Updates the organizational unit identified by the id.
@@ -59,8 +59,8 @@ class WithOrganizationalunitItemRequestBuilder extends BaseRequestBuilder<WithOr
     RequestInformation toPutRequestInformation(OrganizationalUnit body, [void Function(RequestConfiguration<WithOrganizationalunitItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithOrganizationalunitItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithOrganizationalunitItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=76', body);
         return requestInfo;
     }
 }

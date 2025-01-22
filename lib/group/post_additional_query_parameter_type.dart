@@ -20,6 +20,7 @@ enum PostAdditionalQueryParameterType {
     mydelegatedaccount('mydelegatedaccount'),
     nestedGroups('nestedGroups'),
     onlyLinkedGOS('onlyLinkedGOS'),
+    ownedAccessProfiles('ownedAccessProfiles'),
     ownedClients('ownedClients'),
     ownedDirectories('ownedDirectories'),
     ownedGroupsOnSystem('ownedGroupsOnSystem'),

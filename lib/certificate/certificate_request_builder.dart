@@ -53,7 +53,7 @@ class CertificateRequestBuilder extends BaseRequestBuilder<CertificateRequestBui
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<CertificateRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<CertificateRequestBuilderGetQueryParameters>(requestConfiguration, () => CertificateRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
         return requestInfo;
     }
     /// Creates one or more new global trusted certificates and returns the newly created certificates.
@@ -62,8 +62,8 @@ class CertificateRequestBuilder extends BaseRequestBuilder<CertificateRequestBui
     RequestInformation toPostRequestInformation(CertificateLinkableWrapper body, [void Function(RequestConfiguration<CertificateRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<CertificateRequestBuilderPostQueryParameters>(requestConfiguration, () => CertificateRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=76', body);
         return requestInfo;
     }
 }

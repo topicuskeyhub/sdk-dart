@@ -33,7 +33,7 @@ class ExportRequestBuilder extends BaseRequestBuilder<ExportRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ExportRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ExportRequestBuilderGetQueryParameters>(requestConfiguration, () => ExportRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'text/csv, application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.headers.put('Accept', 'text/csv, application/vnd.topicus.keyhub+json;version=76');
         return requestInfo;
     }
 }

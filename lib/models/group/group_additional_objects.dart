@@ -8,6 +8,7 @@ import '../directory/account_directory_linkable_wrapper.dart';
 import '../directory/account_directory_summary_linkable_wrapper.dart';
 import '../mark/item_markers.dart';
 import '../organization/organizational_unit_linkable_wrapper.dart';
+import '../profile/access_profile_linkable_wrapper.dart';
 import '../provisioning/owned_group_on_systems_wrapper.dart';
 import '../provisioning/provisioned_system_linkable_wrapper.dart';
 import '../serviceaccount/service_account_linkable_wrapper.dart';
@@ -66,6 +67,8 @@ class GroupAdditionalObjects implements AdditionalDataHolder, Parsable {
     GroupAccount? mydelegatedaccount;
     ///  The nestedGroups property
     GroupPrimerLinkableWrapper? nestedGroups;
+    ///  The ownedAccessProfiles property
+    AccessProfileLinkableWrapper? ownedAccessProfiles;
     ///  The ownedClients property
     ClientApplicationLinkableWrapper? ownedClients;
     ///  The ownedDirectories property
@@ -118,6 +121,7 @@ class GroupAdditionalObjects implements AdditionalDataHolder, Parsable {
         deserializerMap['myaccount'] = (node) => myaccount = node.getObjectValue<GroupAccount>(GroupAccount.createFromDiscriminatorValue);
         deserializerMap['mydelegatedaccount'] = (node) => mydelegatedaccount = node.getObjectValue<GroupAccount>(GroupAccount.createFromDiscriminatorValue);
         deserializerMap['nestedGroups'] = (node) => nestedGroups = node.getObjectValue<GroupPrimerLinkableWrapper>(GroupPrimerLinkableWrapper.createFromDiscriminatorValue);
+        deserializerMap['ownedAccessProfiles'] = (node) => ownedAccessProfiles = node.getObjectValue<AccessProfileLinkableWrapper>(AccessProfileLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['ownedClients'] = (node) => ownedClients = node.getObjectValue<ClientApplicationLinkableWrapper>(ClientApplicationLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['ownedDirectories'] = (node) => ownedDirectories = node.getObjectValue<AccountDirectoryLinkableWrapper>(AccountDirectoryLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['ownedGroupsOnSystem'] = (node) => ownedGroupsOnSystem = node.getObjectValue<OwnedGroupOnSystemsWrapper>(OwnedGroupOnSystemsWrapper.createFromDiscriminatorValue);
@@ -153,6 +157,7 @@ class GroupAdditionalObjects implements AdditionalDataHolder, Parsable {
         writer.writeObjectValue<GroupAccount>('myaccount', myaccount);
         writer.writeObjectValue<GroupAccount>('mydelegatedaccount', mydelegatedaccount);
         writer.writeObjectValue<GroupPrimerLinkableWrapper>('nestedGroups', nestedGroups);
+        writer.writeObjectValue<AccessProfileLinkableWrapper>('ownedAccessProfiles', ownedAccessProfiles);
         writer.writeObjectValue<ClientApplicationLinkableWrapper>('ownedClients', ownedClients);
         writer.writeObjectValue<AccountDirectoryLinkableWrapper>('ownedDirectories', ownedDirectories);
         writer.writeObjectValue<OwnedGroupOnSystemsWrapper>('ownedGroupsOnSystem', ownedGroupsOnSystem);

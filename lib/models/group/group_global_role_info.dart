@@ -5,6 +5,8 @@ import '../organization/organizational_unit_primer.dart';
 
 /// auto generated
 class GroupGlobalRoleInfo extends NonLinkable implements Parsable {
+    ///  The auditorGroupFor property
+    Iterable<OrganizationalUnitPrimer>? auditorGroupFor;
     ///  The createGroupApproveGroupFor property
     Iterable<OrganizationalUnitPrimer>? createGroupApproveGroupFor;
     ///  The enableTechAdminApproveGroupFor property
@@ -26,6 +28,7 @@ class GroupGlobalRoleInfo extends NonLinkable implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['auditorGroupFor'] = (node) => auditorGroupFor = node.getCollectionOfObjectValues<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);
         deserializerMap['createGroupApproveGroupFor'] = (node) => createGroupApproveGroupFor = node.getCollectionOfObjectValues<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);
         deserializerMap['enableTechAdminApproveGroupFor'] = (node) => enableTechAdminApproveGroupFor = node.getCollectionOfObjectValues<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);
         deserializerMap['recoveryFallbackGroupFor'] = (node) => recoveryFallbackGroupFor = node.getCollectionOfObjectValues<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);
@@ -37,6 +40,7 @@ class GroupGlobalRoleInfo extends NonLinkable implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeCollectionOfObjectValues<OrganizationalUnitPrimer>('auditorGroupFor', auditorGroupFor);
         writer.writeCollectionOfObjectValues<OrganizationalUnitPrimer>('createGroupApproveGroupFor', createGroupApproveGroupFor);
         writer.writeCollectionOfObjectValues<OrganizationalUnitPrimer>('enableTechAdminApproveGroupFor', enableTechAdminApproveGroupFor);
         writer.writeCollectionOfObjectValues<OrganizationalUnitPrimer>('recoveryFallbackGroupFor', recoveryFallbackGroupFor);

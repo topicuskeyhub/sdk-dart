@@ -1,8 +1,10 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../profile/access_profile_primer.dart';
+import './add_group_to_access_profile_request.dart';
 import './grant_group_on_system_request.dart';
 import './grant_group_on_system_request_request.dart';
+import './join_group_request.dart';
 import './link_directory_to_access_profile_request.dart';
 import './modification_request.dart';
 import './transfer_access_profile_ownership_request.dart';
@@ -20,8 +22,10 @@ class AbstractAccessProfileModificationRequest extends ModificationRequest imple
     static AbstractAccessProfileModificationRequest createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
+            'request.AddGroupToAccessProfileRequest' => AddGroupToAccessProfileRequest(),
             'request.GrantGroupOnSystemRequest' => GrantGroupOnSystemRequest(),
             'request.GrantGroupOnSystemRequestRequest' => GrantGroupOnSystemRequestRequest(),
+            'request.JoinGroupRequest' => JoinGroupRequest(),
             'request.LinkDirectoryToAccessProfileRequest' => LinkDirectoryToAccessProfileRequest(),
             'request.TransferAccessProfileOwnershipRequest' => TransferAccessProfileOwnershipRequest(),
             _ => AbstractAccessProfileModificationRequest(),

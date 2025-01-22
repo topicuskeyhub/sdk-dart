@@ -53,7 +53,7 @@ class AttributedefRequestBuilder extends BaseRequestBuilder<AttributedefRequestB
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AttributedefRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AttributedefRequestBuilderGetQueryParameters>(requestConfiguration, () => AttributedefRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
         return requestInfo;
     }
     /// Creates one or more new account attribute definitions and returns the newly created account attribute definitions.
@@ -62,8 +62,8 @@ class AttributedefRequestBuilder extends BaseRequestBuilder<AttributedefRequestB
     RequestInformation toPostRequestInformation(AccountAttributeDefinitionLinkableWrapper body, [void Function(RequestConfiguration<AttributedefRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AttributedefRequestBuilderPostQueryParameters>(requestConfiguration, () => AttributedefRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=76', body);
         return requestInfo;
     }
 }

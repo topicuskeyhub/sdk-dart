@@ -34,7 +34,7 @@ class WithSynclogItemRequestBuilder extends BaseRequestBuilder<WithSynclogItemRe
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithSynclogItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithSynclogItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithSynclogItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
         return requestInfo;
     }
 }

@@ -102,6 +102,8 @@ class ExportRequestBuilderPostQueryParameters implements AbstractQueryParameters
     List<int>? nestedUnder;
     ///  Only return groups that are not nested under the given groups, specified by id. This parameter supports composition with all parameters from the group resource.
     List<int>? notNestedUnder;
+    ///  Filter the groups not part of the given access profiles, specified by id.
+    List<int>? notPartOfAccessProfile;
     ///  Only return groups that have at least the given number of members.
     List<int>? numberOfAccountsGreaterOrEqual;
     ///  Filter groups on organizational units, specified by id. This parameter supports composition with all parameters from the organizational unit resource.
@@ -114,6 +116,8 @@ class ExportRequestBuilderPostQueryParameters implements AbstractQueryParameters
     List<bool>? ownsGroupOnSystems;
     ///  Only return groups that own or do not own provisioned systems.
     List<bool>? ownsSystems;
+    ///  Filter the groups part of the given access profiles, specified by id. This parameter supports composition with all parameters from the access profile resource.
+    List<int>? partOfAccessProfile;
     ///  Only return groups that are, or are not, marked as private group.
     List<bool>? privateGroup;
     ///  Filter groups for which provisioning is authorized by one of the given groups, specified by id. This parameter supports composition with all parameters from the group resource.
@@ -187,12 +191,14 @@ class ExportRequestBuilderPostQueryParameters implements AbstractQueryParameters
             'nestedGroup' : nestedGroup,
             'nestedUnder' : nestedUnder,
             'notNestedUnder' : notNestedUnder,
+            'notPartOfAccessProfile' : notPartOfAccessProfile,
             'numberOfAccountsGreaterOrEqual' : numberOfAccountsGreaterOrEqual,
             'organizationalUnit' : organizationalUnit,
             'ownsClients' : ownsClients,
             'ownsDirectories' : ownsDirectories,
             'ownsGroupOnSystems' : ownsGroupOnSystems,
             'ownsSystems' : ownsSystems,
+            'partOfAccessProfile' : partOfAccessProfile,
             'privateGroup' : privateGroup,
             'provisioningAuthorizedBy' : provisioningAuthorizedBy,
             'q' : q,

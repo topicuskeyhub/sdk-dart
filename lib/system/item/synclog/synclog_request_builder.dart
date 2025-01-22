@@ -42,7 +42,7 @@ class SynclogRequestBuilder extends BaseRequestBuilder<SynclogRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<SynclogRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<SynclogRequestBuilderGetQueryParameters>(requestConfiguration, () => SynclogRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
         return requestInfo;
     }
 }

@@ -8,6 +8,7 @@ import './abstract_application_modification_request.dart';
 import './abstract_organizational_unit_modification_request.dart';
 import './abstract_provisioned_system_modification_request.dart';
 import './add_group_admin_request.dart';
+import './add_group_to_access_profile_request.dart';
 import './create_group_on_system_request.dart';
 import './create_group_request.dart';
 import './create_provisioned_namespace_request.dart';
@@ -82,6 +83,7 @@ class ModificationRequest extends Linkable implements Parsable {
             'request.AbstractOrganizationalUnitModificationRequest' => AbstractOrganizationalUnitModificationRequest(),
             'request.AbstractProvisionedSystemModificationRequest' => AbstractProvisionedSystemModificationRequest(),
             'request.AddGroupAdminRequest' => AddGroupAdminRequest(),
+            'request.AddGroupToAccessProfileRequest' => AddGroupToAccessProfileRequest(),
             'request.CreateGroupOnSystemRequest' => CreateGroupOnSystemRequest(),
             'request.CreateGroupRequest' => CreateGroupRequest(),
             'request.CreateProvisionedNamespaceRequest' => CreateProvisionedNamespaceRequest(),

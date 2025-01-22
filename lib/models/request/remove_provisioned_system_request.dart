@@ -1,9 +1,12 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
+import '../provisioning/deprovision_action.dart';
 import './abstract_provisioned_system_modification_request.dart';
 
 /// auto generated
 class RemoveProvisionedSystemRequest extends AbstractProvisionedSystemModificationRequest implements Parsable {
+    ///  The deprovisionAction property
+    DeprovisionAction? deprovisionAction;
     ///  The systemName property
     String? systemName;
     /// Instantiates a new [RemoveProvisionedSystemRequest] and sets the default values.
@@ -19,6 +22,7 @@ class RemoveProvisionedSystemRequest extends AbstractProvisionedSystemModificati
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['deprovisionAction'] = (node) => deprovisionAction = node.getEnumValue<DeprovisionAction>((stringValue) => DeprovisionAction.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['systemName'] = (node) => systemName = node.getStringValue();
         return deserializerMap;
     }
@@ -27,6 +31,7 @@ class RemoveProvisionedSystemRequest extends AbstractProvisionedSystemModificati
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeEnumValue<DeprovisionAction>('deprovisionAction', deprovisionAction, (e) => e?.value);
         writer.writeStringValue('systemName', systemName);
     }
 }

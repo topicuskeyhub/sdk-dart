@@ -9,10 +9,12 @@ import './auth/account_primer.dart';
 import './auth/internal_account.dart';
 import './auth/permission.dart';
 import './auth/stored_user_session.dart';
+import './auth/web_authn_key.dart';
 import './certificate/certificate.dart';
 import './certificate/certificate_primer.dart';
 import './client/client_application.dart';
 import './client/client_application_primer.dart';
+import './client/client_consent.dart';
 import './client/ldap_client.dart';
 import './client/o_auth2_client.dart';
 import './client/o_auth2_client_permission.dart';
@@ -54,6 +56,7 @@ import './organization/organizational_unit_primer.dart';
 import './profile/access_profile.dart';
 import './profile/access_profile_account.dart';
 import './profile/access_profile_account_with_attributes.dart';
+import './profile/access_profile_group.dart';
 import './profile/access_profile_primer.dart';
 import './profile/access_profile_provisioning.dart';
 import './provisioning/abstract_provisioned_l_d_a_p.dart';
@@ -78,6 +81,7 @@ import './request/abstract_application_modification_request.dart';
 import './request/abstract_organizational_unit_modification_request.dart';
 import './request/abstract_provisioned_system_modification_request.dart';
 import './request/add_group_admin_request.dart';
+import './request/add_group_to_access_profile_request.dart';
 import './request/create_group_on_system_request.dart';
 import './request/create_group_request.dart';
 import './request/create_provisioned_namespace_request.dart';
@@ -154,10 +158,12 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'auth.AccountPrimer' => AccountPrimer(),
             'auth.InternalAccount' => InternalAccount(),
             'auth.StoredUserSession' => StoredUserSession(),
+            'auth.WebAuthnKey' => WebAuthnKey(),
             'certificate.Certificate' => Certificate(),
             'certificate.CertificatePrimer' => CertificatePrimer(),
             'client.ClientApplication' => ClientApplication(),
             'client.ClientApplicationPrimer' => ClientApplicationPrimer(),
+            'client.ClientConsent' => ClientConsent(),
             'client.LdapClient' => LdapClient(),
             'client.OAuth2Client' => OAuth2Client(),
             'client.OAuth2ClientPermission' => OAuth2ClientPermission(),
@@ -198,6 +204,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'profile.AccessProfile' => AccessProfile(),
             'profile.AccessProfileAccount' => AccessProfileAccount(),
             'profile.AccessProfileAccountWithAttributes' => AccessProfileAccountWithAttributes(),
+            'profile.AccessProfileGroup' => AccessProfileGroup(),
             'profile.AccessProfilePrimer' => AccessProfilePrimer(),
             'profile.AccessProfileProvisioning' => AccessProfileProvisioning(),
             'provisioning.AbstractProvisionedLDAP' => AbstractProvisionedLDAP(),
@@ -222,6 +229,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'request.AbstractOrganizationalUnitModificationRequest' => AbstractOrganizationalUnitModificationRequest(),
             'request.AbstractProvisionedSystemModificationRequest' => AbstractProvisionedSystemModificationRequest(),
             'request.AddGroupAdminRequest' => AddGroupAdminRequest(),
+            'request.AddGroupToAccessProfileRequest' => AddGroupToAccessProfileRequest(),
             'request.CreateGroupOnSystemRequest' => CreateGroupOnSystemRequest(),
             'request.CreateGroupRequest' => CreateGroupRequest(),
             'request.CreateProvisionedNamespaceRequest' => CreateProvisionedNamespaceRequest(),

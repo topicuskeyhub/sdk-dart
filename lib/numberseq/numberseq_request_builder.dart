@@ -53,7 +53,7 @@ class NumberseqRequestBuilder extends BaseRequestBuilder<NumberseqRequestBuilder
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<NumberseqRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<NumberseqRequestBuilderGetQueryParameters>(requestConfiguration, () => NumberseqRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
         return requestInfo;
     }
     /// Creates one or more new provision number sequences and returns the newly created sequences.
@@ -62,8 +62,8 @@ class NumberseqRequestBuilder extends BaseRequestBuilder<NumberseqRequestBuilder
     RequestInformation toPostRequestInformation(ProvisionNumberSequenceLinkableWrapper body, [void Function(RequestConfiguration<NumberseqRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<NumberseqRequestBuilderPostQueryParameters>(requestConfiguration, () => NumberseqRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=76', body);
         return requestInfo;
     }
 }

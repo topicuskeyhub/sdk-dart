@@ -53,7 +53,7 @@ class OrganizationalunitRequestBuilder extends BaseRequestBuilder<Organizational
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<OrganizationalunitRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<OrganizationalunitRequestBuilderGetQueryParameters>(requestConfiguration, () => OrganizationalunitRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
         return requestInfo;
     }
     /// Creates one or more new organizational units and returns the newly created units.
@@ -62,8 +62,8 @@ class OrganizationalunitRequestBuilder extends BaseRequestBuilder<Organizational
     RequestInformation toPostRequestInformation(OrganizationalUnitLinkableWrapper body, [void Function(RequestConfiguration<OrganizationalunitRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<OrganizationalunitRequestBuilderPostQueryParameters>(requestConfiguration, () => OrganizationalunitRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=75', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=76', body);
         return requestInfo;
     }
 }

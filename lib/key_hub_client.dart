@@ -18,6 +18,7 @@ import './launchpadtile/launchpadtile_request_builder.dart';
 import './numberseq/numberseq_request_builder.dart';
 import './organizationalunit/organizationalunit_request_builder.dart';
 import './profile/profile_request_builder.dart';
+import './profilegroup/profilegroup_request_builder.dart';
 import './profileprovisioning/profileprovisioning_request_builder.dart';
 import './provisioninggroup/provisioninggroup_request_builder.dart';
 import './request/request_request_builder.dart';
@@ -96,6 +97,10 @@ class KeyHubClient extends BaseRequestBuilder<KeyHubClient> {
     ///  The profile property
     ProfileRequestBuilder get profile {
         return ProfileRequestBuilder(pathParameters, requestAdapter);
+    }
+    ///  The profilegroup property
+    ProfilegroupRequestBuilder get profilegroup {
+        return ProfilegroupRequestBuilder(pathParameters, requestAdapter);
     }
     ///  The profileprovisioning property
     ProfileprovisioningRequestBuilder get profileprovisioning {

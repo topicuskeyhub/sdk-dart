@@ -43,7 +43,7 @@ class WithProfileprovisioningItemRequestBuilder extends BaseRequestBuilder<WithP
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
         return requestInfo;
     }
     /// Returns the access profile provisioning link identified by the id.
@@ -51,7 +51,7 @@ class WithProfileprovisioningItemRequestBuilder extends BaseRequestBuilder<WithP
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithProfileprovisioningItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithProfileprovisioningItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithProfileprovisioningItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
         return requestInfo;
     }
 }

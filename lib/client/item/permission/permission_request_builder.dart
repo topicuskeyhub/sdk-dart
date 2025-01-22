@@ -23,11 +23,11 @@ class PermissionRequestBuilder extends BaseRequestBuilder<PermissionRequestBuild
     /// Instantiates a new [PermissionRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    PermissionRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client/{clientid}/permission{?additional*,any*,client*,createdAfter*,createdBefore*,exclude*,forGroup*,forSystem*,id*,modifiedSince*,q*,sort*,value*}", pathParameters) ;
+    PermissionRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client/{clientid}/permission{?additional*,any*,client*,clientAdministratorGroup*,clientOwnerGroup*,createdAfter*,createdBefore*,exclude*,forGroup*,forSystem*,forSystemContentAdministratorGroup*,forSystemOwnerGroup*,forSystemTechnicalAdministratorGroup*,id*,modifiedSince*,q*,sort*,value*,withPermissionForOwningGroup*,withRequestedPermissionForOwningGroup*}", pathParameters) ;
     /// Instantiates a new [PermissionRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    PermissionRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client/{clientid}/permission{?additional*,any*,client*,createdAfter*,createdBefore*,exclude*,forGroup*,forSystem*,id*,modifiedSince*,q*,sort*,value*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    PermissionRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client/{clientid}/permission{?additional*,any*,client*,clientAdministratorGroup*,clientOwnerGroup*,createdAfter*,createdBefore*,exclude*,forGroup*,forSystem*,forSystemContentAdministratorGroup*,forSystemOwnerGroup*,forSystemTechnicalAdministratorGroup*,id*,modifiedSince*,q*,sort*,value*,withPermissionForOwningGroup*,withRequestedPermissionForOwningGroup*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for all permissions given to a OAuth2 client in Topicus KeyHub. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<OAuth2ClientPermissionLinkableWrapper?> getAsync([void Function(RequestConfiguration<PermissionRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
@@ -42,7 +42,7 @@ class PermissionRequestBuilder extends BaseRequestBuilder<PermissionRequestBuild
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<PermissionRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<PermissionRequestBuilderGetQueryParameters>(requestConfiguration, () => PermissionRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=75');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
         return requestInfo;
     }
 }

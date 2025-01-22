@@ -1,9 +1,9 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
-import './modification_request.dart';
+import './abstract_access_profile_modification_request.dart';
 
 /// auto generated
-class JoinGroupRequest extends ModificationRequest implements Parsable {
+class JoinGroupRequest extends AbstractAccessProfileModificationRequest implements Parsable {
     /// Instantiates a new [JoinGroupRequest] and sets the default values.
     JoinGroupRequest() : super() {
         type_ = 'request.JoinGroupRequest';

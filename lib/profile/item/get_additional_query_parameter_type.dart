@@ -4,6 +4,7 @@ enum GetAdditionalQueryParameterType {
     accountsWithAttributes('accountsWithAttributes'),
     attributeRules('attributeRules'),
     audit('audit'),
+    groups('groups'),
     provisioning('provisioning');
     const GetAdditionalQueryParameterType(this.value);
     final String value;

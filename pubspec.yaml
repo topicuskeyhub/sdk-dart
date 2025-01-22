@@ -9,9 +9,9 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
-  microsoft_kiota_abstractions: ^0.0.3
+  microsoft_kiota_abstractions: ^0.0.2
   microsoft_kiota_http: ^0.0.3
-  microsoft_kiota_serialization_json: ^0.0.3
+  microsoft_kiota_serialization_json: ^0.0.2
   http: ^1.2.2
   uuid: ^4.5.1
 

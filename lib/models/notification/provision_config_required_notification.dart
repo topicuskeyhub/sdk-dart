@@ -5,6 +5,8 @@ import './notification.dart';
 
 /// auto generated
 class ProvisionConfigRequiredNotification extends Notification implements Parsable {
+    ///  The keyhubPassword property
+    bool? keyhubPassword;
     ///  The systems property
     Iterable<ProvisionedSystemPrimer>? systems;
     /// Instantiates a new [ProvisionConfigRequiredNotification] and sets the default values.
@@ -20,6 +22,7 @@ class ProvisionConfigRequiredNotification extends Notification implements Parsab
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['keyhubPassword'] = (node) => keyhubPassword = node.getBoolValue();
         deserializerMap['systems'] = (node) => systems = node.getCollectionOfObjectValues<ProvisionedSystemPrimer>(ProvisionedSystemPrimer.createFromDiscriminatorValue);
         return deserializerMap;
     }
@@ -28,6 +31,7 @@ class ProvisionConfigRequiredNotification extends Notification implements Parsab
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeBoolValue('keyhubPassword', value:keyhubPassword);
         writer.writeCollectionOfObjectValues<ProvisionedSystemPrimer>('systems', systems);
     }
 }

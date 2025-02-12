@@ -2,6 +2,7 @@
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../linkable.dart';
 import './account_organizational_unit.dart';
+import './client_application_organizational_unit.dart';
 import './organizational_unit.dart';
 
 /// auto generated
@@ -20,6 +21,7 @@ class OrganizationalUnitPrimer extends Linkable implements Parsable {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'organization.AccountOrganizationalUnit' => AccountOrganizationalUnit(),
+            'organization.ClientApplicationOrganizationalUnit' => ClientApplicationOrganizationalUnit(),
             'organization.OrganizationalUnit' => OrganizationalUnit(),
             _ => OrganizationalUnitPrimer(),
         };

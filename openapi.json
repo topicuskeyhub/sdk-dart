@@ -6169,6 +6169,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "loadAll",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
           }
         ],
         "responses": {
@@ -10373,6 +10381,7 @@
                   "deleteTile",
                   "groupclients",
                   "groups",
+                  "organizationalUnits",
                   "secret",
                   "tile",
                   "vaultRecordCount"
@@ -10477,6 +10486,20 @@
             }
           },
           {
+            "name": "baseOrganizationalUnitAncestorOf",
+            "in": "query",
+            "description": "Only return the client applications whose base organizational unit, defined as the technical administrator's organizational unit, is equal to or an ancestor of any of the given unit(s), specified by id.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          {
             "name": "clientId",
             "in": "query",
             "description": "Filter clients on the client ids.",
@@ -10527,6 +10550,20 @@
               "type": "array",
               "items": {
                 "type": "boolean"
+              }
+            }
+          },
+          {
+            "name": "memberOfOrganizationalUnit",
+            "in": "query",
+            "description": "Filter client applications on direct connections to organizational units, specified by id. This parameter supports composition with all parameters from the organizational unit resource.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
               }
             }
           },
@@ -10815,6 +10852,7 @@
                   "deleteTile",
                   "groupclients",
                   "groups",
+                  "organizationalUnits",
                   "secret",
                   "tile",
                   "vaultRecordCount"
@@ -10886,6 +10924,7 @@
                   "deleteTile",
                   "groupclients",
                   "groups",
+                  "organizationalUnits",
                   "secret",
                   "tile",
                   "vaultRecordCount"
@@ -10950,6 +10989,7 @@
                   "deleteTile",
                   "groupclients",
                   "groups",
+                  "organizationalUnits",
                   "secret",
                   "tile",
                   "vaultRecordCount"
@@ -15712,6 +15752,20 @@
             "name": "group",
             "in": "query",
             "description": "Filter client group links on the given groups, specified by id. This parameter supports composition with all parameters from the group resource.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          {
+            "name": "organizationalUnitForEnforcement",
+            "in": "query",
+            "description": "Filter groupclients on their client's organizational units, specified by id. This parameter is automatically set and primarily used for security permission enforcement.",
             "style": "form",
             "explode": true,
             "schema": {
@@ -23941,6 +23995,436 @@
         }
       }
     },
+    "/organizationalunit/{organizationalunitid}/client": {
+      "get": {
+        "tags": [
+          "account",
+          "miscellaneous"
+        ],
+        "summary": "Query for client applications member of an organizational unit",
+        "description": "Queries over client applications that are member of the organizational unit. The various query parameters can be used to filter the response.",
+        "operationId": "list_organizationalunit_client",
+        "parameters": [
+          {
+            "name": "additional",
+            "in": "query",
+            "description": "Request additional information to be returned for every record.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "audit"
+                ]
+              }
+            }
+          },
+          {
+            "name": "any",
+            "in": "query",
+            "description": "Return all or no records. This can be useful when composing parameters.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean"
+              }
+            }
+          },
+          {
+            "name": "createdAfter",
+            "in": "query",
+            "description": "Only return records that have been created after the given instant.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          },
+          {
+            "name": "createdBefore",
+            "in": "query",
+            "description": "Only return records that have been created before the given instant.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          },
+          {
+            "name": "exclude",
+            "in": "query",
+            "description": "Filter the results to exclude the given ids.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "description": "Filter the results on the given ids.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          {
+            "name": "modifiedSince",
+            "in": "query",
+            "description": "Only return records that have been modified since the given instant.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Filter records on a complex CQL query.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "client",
+            "in": "query",
+            "description": "Filter the organizational unit-client links by the client application, specified by id. This parameter supports composition with all parameters from the client application resource",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          {
+            "name": "organizationalUnit",
+            "in": "query",
+            "description": "Filter the organizational unit-client links by the organizational units, specified by id. This parameter supports composition with all parameters from the organizational unit resource.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          {
+            "name": "organizationalUnitOwnedBy",
+            "in": "query",
+            "description": "Filter the organizational units-clients by groups owning the organizational unit, specified by id.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          {
+            "name": "withPermissionForOwningGroup",
+            "in": "query",
+            "description": "Filter the clients for the permissions with permissions for the given groups, either directly or via provisionedsystem ownership, specified by id.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          {
+            "name": "withRequestedPermissionForOwningGroup",
+            "in": "query",
+            "description": "Filter the clients for the permissions with active requests for permissions for the given groups, either directly or via provisionedsystem ownership, specified by id.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort the items. Use 'asc-<name>' for ascending and 'desc-<name>' for descending order.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "Range",
+            "in": "header",
+            "schema": {
+              "$ref": "#/components/schemas/RequestRange"
+            }
+          },
+          {
+            "name": "organizationalunitid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "2XX": {
+            "description": "default response",
+            "content": {
+              "application/vnd.topicus.keyhub+json;version=76": {
+                "schema": {
+                  "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplicationLinkableWrapper"
+                }
+              },
+              "application/vnd.topicus.keyhub+xml;version=76": {
+                "schema": {
+                  "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplicationLinkableWrapper"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "account",
+          "miscellaneous"
+        ],
+        "summary": "Add one or more client applications to the organizational unit",
+        "description": "Adds one or more client applications to the organizational unit and returns the newly created memberships.",
+        "operationId": "create_organizationalunit_client",
+        "parameters": [
+          {
+            "name": "additional",
+            "in": "query",
+            "description": "Request additional information to be returned for every record.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "audit"
+                ]
+              }
+            }
+          },
+          {
+            "name": "organizationalunitid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.topicus.keyhub+json;version=76": {
+              "schema": {
+                "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplicationLinkableWrapper"
+              }
+            },
+            "application/vnd.topicus.keyhub+xml;version=76": {
+              "schema": {
+                "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplicationLinkableWrapper"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "default response",
+            "content": {
+              "application/vnd.topicus.keyhub+json;version=76": {
+                "schema": {
+                  "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplicationLinkableWrapper"
+                }
+              },
+              "application/vnd.topicus.keyhub+xml;version=76": {
+                "schema": {
+                  "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplicationLinkableWrapper"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/organizationalunit/{organizationalunitid}/client/{clientid}": {
+      "get": {
+        "tags": [
+          "account",
+          "miscellaneous"
+        ],
+        "summary": "Read a single client application member of an organizational unit",
+        "description": "Returns the single client application member of the organizational unit.",
+        "operationId": "get_organizationalunit_client",
+        "parameters": [
+          {
+            "name": "additional",
+            "in": "query",
+            "description": "Request additional information to be returned for every record.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "audit"
+                ]
+              }
+            }
+          },
+          {
+            "name": "clientid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "organizationalunitid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "default response",
+            "content": {
+              "application/vnd.topicus.keyhub+json;version=76": {
+                "schema": {
+                  "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplication"
+                }
+              },
+              "application/vnd.topicus.keyhub+xml;version=76": {
+                "schema": {
+                  "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplication"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "account",
+          "miscellaneous"
+        ],
+        "summary": "Remove an client application from an organizational unit",
+        "description": "Removes the specified client application from the organizational unit.",
+        "operationId": "delete_organizationalunit_client",
+        "parameters": [
+          {
+            "name": "clientid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "organizationalunitid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "default response"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
     "/organizationalunit": {
       "get": {
         "tags": [
@@ -25131,15 +25615,15 @@
             }
           },
           {
-            "name": "destroyed",
+            "name": "status",
             "in": "query",
-            "description": "Only return provisioned accounts that are or are not destroyed.",
+            "description": "Only return provisioned accounts with the given statusses.",
             "style": "form",
             "explode": true,
             "schema": {
               "type": "array",
               "items": {
-                "type": "boolean"
+                "$ref": "#/components/schemas/PProvisionedAccountStatus"
               }
             }
           },
@@ -25379,6 +25863,19 @@
               "items": {
                 "type": "integer",
                 "format": "int64"
+              }
+            }
+          },
+          {
+            "name": "accountsWritable",
+            "in": "query",
+            "description": "Only return source directory provisioning systems for which accounts are writable.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean"
               }
             }
           },
@@ -27373,6 +27870,20 @@
             "name": "groupOnSystemOwnerGroup",
             "in": "query",
             "description": "Only return provisioning groups for which one of the given groups is the owner of its group on system, specified by id. This parameter supports composition with all parameters from the groups resource.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          {
+            "name": "organizationalUnitForEnforcement",
+            "in": "query",
+            "description": "Filter provisioning groups on organizational units of the group on system, specified by id.",
             "style": "form",
             "explode": true,
             "schema": {
@@ -31061,8 +31572,10 @@
             "launchpad.SsoApplicationLaunchpadTile": "#/components/schemas/launchpad.SsoApplicationLaunchpadTile",
             "launchpad.VaultRecordLaunchpadTile": "#/components/schemas/launchpad.VaultRecordLaunchpadTile",
             "organization.AccountOrganizationalUnit": "#/components/schemas/organization.AccountOrganizationalUnit",
+            "organization.ClientApplicationOrganizationalUnit": "#/components/schemas/organization.ClientApplicationOrganizationalUnit",
             "organization.OrganizationalUnit": "#/components/schemas/organization.OrganizationalUnit",
             "organization.OrganizationalUnitAccount": "#/components/schemas/organization.OrganizationalUnitAccount",
+            "organization.OrganizationalUnitClientApplication": "#/components/schemas/organization.OrganizationalUnitClientApplication",
             "organization.OrganizationalUnitPrimer": "#/components/schemas/organization.OrganizationalUnitPrimer",
             "profile.AccessProfile": "#/components/schemas/profile.AccessProfile",
             "profile.AccessProfileAccount": "#/components/schemas/profile.AccessProfileAccount",
@@ -31260,6 +31773,14 @@
           }
         },
         "x-tkh-discriminator": "NonLinkable"
+      },
+      "PProvisionedAccountStatus": {
+        "type": "string",
+        "enum": [
+          "NON_EXISTENT",
+          "EXISTS_PASSWORD_SET",
+          "EXISTS_PASSWORD_UNSET"
+        ]
       },
       "RequestRange": {
         "type": "object",
@@ -31545,6 +32066,7 @@
           "CERTIFICATE_MODIFIED",
           "CERTIFICATE_REMOVED",
           "CLIENT_ADDED_TO_GROUP",
+          "CLIENT_ADDED_TO_ORGANIZATIONAL_UNIT",
           "CLIENT_CREATED",
           "CLIENT_MODIFIED",
           "CLIENT_MODIFIED_FOR_GROUP",
@@ -31552,6 +32074,7 @@
           "CLIENT_PERMISSION_REVOKED",
           "CLIENT_REMOVED",
           "CLIENT_REMOVED_FROM_GROUP",
+          "CLIENT_REMOVED_FROM_ORGANIZATIONAL_UNIT",
           "CLIENT_SECRET_ROTATED",
           "CREATE_GROUP_ACCEPTED",
           "CREATE_GROUP_DECLINED",
@@ -32129,7 +32652,7 @@
                   "groups": {
                     "allOf": [
                       {
-                        "$ref": "#/components/schemas/group.AccountGroupLinkableWrapper"
+                        "$ref": "#/components/schemas/group.AccountGroupsWrapper"
                       },
                       {
                         "readOnly": true
@@ -33127,6 +33650,16 @@
                       }
                     ]
                   },
+                  "organizationalUnits": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/organization.ClientApplicationOrganizationalUnitLinkableWrapper"
+                      },
+                      {
+                        "readOnly": true
+                      }
+                    ]
+                  },
                   "groupclients": {
                     "allOf": [
                       {
@@ -33255,7 +33788,8 @@
                 "client.ClientApplicationPrimer": "#/components/schemas/client.ClientApplicationPrimer",
                 "client.LdapClient": "#/components/schemas/client.LdapClient",
                 "client.OAuth2Client": "#/components/schemas/client.OAuth2Client",
-                "client.Saml2Client": "#/components/schemas/client.Saml2Client"
+                "client.Saml2Client": "#/components/schemas/client.Saml2Client",
+                "organization.OrganizationalUnitClientApplication": "#/components/schemas/organization.OrganizationalUnitClientApplication"
               }
             },
             "x-tkh-discriminator": "client.ClientApplicationPrimer"
@@ -34358,6 +34892,30 @@
           }
         },
         "x-tkh-discriminator": "LinkableWrapper"
+      },
+      "group.AccountGroupsWrapper": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/group.AccountGroupLinkableWrapper"
+          },
+          {
+            "required": [
+              "hiddenGroupCount",
+              "totalAccountGroupCount"
+            ],
+            "type": "object",
+            "properties": {
+              "totalAccountGroupCount": {
+                "type": "integer",
+                "format": "int64",
+                "readOnly": true,
+                "x-tkh-default": 0
+              }
+            },
+            "x-tkh-discriminator": "group.AccountGroupsWrapper"
+          }
+        ],
+        "x-tkh-discriminator": "group.AccountGroupsWrapper"
       },
       "group.AuthorizedGroupsWrapper": {
         "allOf": [
@@ -37272,7 +37830,8 @@
           {
             "title": "ProvisionConfigRequiredNotification",
             "required": [
-              "$type"
+              "$type",
+              "keyhubPassword"
             ],
             "type": "object",
             "properties": {
@@ -37281,6 +37840,10 @@
                 "items": {
                   "$ref": "#/components/schemas/provisioning.ProvisionedSystemPrimer"
                 }
+              },
+              "keyhubPassword": {
+                "type": "boolean",
+                "x-tkh-default": false
               },
               "$type": {
                 "type": "string",
@@ -37415,6 +37978,44 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/organization.AccountOrganizationalUnit"
+            }
+          }
+        },
+        "x-tkh-discriminator": "LinkableWrapper"
+      },
+      "organization.ClientApplicationOrganizationalUnit": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/organization.OrganizationalUnitPrimer"
+          },
+          {
+            "title": "ClientApplicationOrganizationalUnit",
+            "required": [
+              "$type",
+              "name"
+            ],
+            "type": "object",
+            "properties": {
+              "$type": {
+                "type": "string",
+                "default": "organization.ClientApplicationOrganizationalUnit"
+              }
+            },
+            "x-tkh-writescope": {
+              "organization.ClientApplicationOrganizationalUnit": true,
+              "organization.OrganizationalUnitPrimer": false
+            },
+            "x-tkh-discriminator": "organization.ClientApplicationOrganizationalUnit"
+          }
+        ]
+      },
+      "organization.ClientApplicationOrganizationalUnitLinkableWrapper": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/organization.ClientApplicationOrganizationalUnit"
             }
           }
         },
@@ -37578,6 +38179,58 @@
           }
         }
       },
+      "organization.OrganizationalUnitClientApplication": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/client.ClientApplicationPrimer"
+          },
+          {
+            "title": "OrganizationalUnitClientApplication",
+            "required": [
+              "$type",
+              "name"
+            ],
+            "type": "object",
+            "properties": {
+              "$type": {
+                "type": "string",
+                "default": "organization.OrganizationalUnitClientApplication"
+              },
+              "additionalObjects": {
+                "type": "object",
+                "properties": {
+                  "audit": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/AuditInfo"
+                      },
+                      {
+                        "readOnly": true
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "x-tkh-writescope": {
+              "client.ClientApplicationPrimer": false,
+              "organization.OrganizationalUnitClientApplication": true
+            },
+            "x-tkh-discriminator": "organization.OrganizationalUnitClientApplication"
+          }
+        ]
+      },
+      "organization.OrganizationalUnitClientApplicationLinkableWrapper": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplication"
+            }
+          }
+        }
+      },
       "organization.OrganizationalUnitLinkableWrapper": {
         "type": "object",
         "properties": {
@@ -37623,6 +38276,7 @@
               "propertyName": "$type",
               "mapping": {
                 "organization.AccountOrganizationalUnit": "#/components/schemas/organization.AccountOrganizationalUnit",
+                "organization.ClientApplicationOrganizationalUnit": "#/components/schemas/organization.ClientApplicationOrganizationalUnit",
                 "organization.OrganizationalUnit": "#/components/schemas/organization.OrganizationalUnit",
                 "organization.OrganizationalUnitPrimer": "#/components/schemas/organization.OrganizationalUnitPrimer"
               }
@@ -37693,6 +38347,12 @@
             ],
             "type": "object",
             "properties": {
+              "matchRuleScript": {
+                "type": "string"
+              },
+              "activateRuleScript": {
+                "type": "string"
+              },
               "description": {
                 "type": "string"
               },
@@ -37787,6 +38447,7 @@
             "title": "AccessProfileAccount",
             "required": [
               "$type",
+              "activation",
               "manual"
             ],
             "type": "object",
@@ -37795,6 +38456,17 @@
                 "type": "boolean",
                 "x-tkh-default": true,
                 "x-tkh-backend-determines-default": true
+              },
+              "activation": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/profile.AccessProfileAccountActivation"
+                  },
+                  {
+                    "x-tkh-default": "ACTIVE",
+                    "x-tkh-backend-determines-default": true
+                  }
+                ]
               },
               "$type": {
                 "type": "string",
@@ -37831,6 +38503,15 @@
           }
         ]
       },
+      "profile.AccessProfileAccountActivation": {
+        "type": "string",
+        "enum": [
+          "INACTIVE",
+          "ACTIVE",
+          "FORCE_INACTIVE",
+          "FORCE_ACTIVE"
+        ]
+      },
       "profile.AccessProfileAccountLinkableWrapper": {
         "type": "object",
         "properties": {
@@ -37850,7 +38531,8 @@
           {
             "title": "AccessProfileAccountWithAttributes",
             "required": [
-              "$type"
+              "$type",
+              "activation"
             ],
             "type": "object",
             "properties": {
@@ -39760,6 +40442,7 @@
             "title": "ProvisioningStatus",
             "required": [
               "$type",
+              "allLoaded",
               "ignoreErrors",
               "restrictedByLicense"
             ],
@@ -39770,6 +40453,10 @@
                 "x-tkh-default": false
               },
               "restrictedByLicense": {
+                "type": "boolean",
+                "x-tkh-default": false
+              },
+              "allLoaded": {
                 "type": "boolean",
                 "x-tkh-default": false
               },
@@ -40980,6 +41667,8 @@
           "SERVICE_ACCOUNT_GROUP_REMOVED_OWNER",
           "GROUP_CLIENT_REMOVED_OUT_OF_SCOPE",
           "GROUP_CLIENT_REMOVED_OWNER",
+          "ORGANIZATIONAL_UNIT_CLIENT_APPLICATION_REMOVED_OUT_OF_SCOPE",
+          "CLIENT_PERMISSION_REMOVED_OUT_OF_SCOPE",
           "GROUP_CLASSIFICATION_REMOVED",
           "GROUP_VAULT_RECOVERY_RESET",
           "GROUP_MADE_PUBLIC",
@@ -40988,6 +41677,7 @@
           "SERVICE_ACCOUNT_REMOVED",
           "ORGANIZATIONAL_UNIT_REMOVED",
           "ACCESS_PROFILE_REMOVED",
+          "SYSTEM_ACCOUNTS_WRITABLE_DISABLED",
           "GROUP_ACTIVATION_FOR_VAULT_DISABLED",
           "GROUP_ACTIVATION_FOR_SSO_DISABLED",
           "GROUP_ACTIVATION_FOR_PROVISIONING_DISABLED"

@@ -50,8 +50,10 @@ import './launchpad/sso_application_launchpad_tile.dart';
 import './launchpad/vault_record_launchpad_tile.dart';
 import './link.dart';
 import './organization/account_organizational_unit.dart';
+import './organization/client_application_organizational_unit.dart';
 import './organization/organizational_unit.dart';
 import './organization/organizational_unit_account.dart';
+import './organization/organizational_unit_client_application.dart';
 import './organization/organizational_unit_primer.dart';
 import './profile/access_profile.dart';
 import './profile/access_profile_account.dart';
@@ -198,8 +200,10 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'launchpad.SsoApplicationLaunchpadTile' => SsoApplicationLaunchpadTile(),
             'launchpad.VaultRecordLaunchpadTile' => VaultRecordLaunchpadTile(),
             'organization.AccountOrganizationalUnit' => AccountOrganizationalUnit(),
+            'organization.ClientApplicationOrganizationalUnit' => ClientApplicationOrganizationalUnit(),
             'organization.OrganizationalUnit' => OrganizationalUnit(),
             'organization.OrganizationalUnitAccount' => OrganizationalUnitAccount(),
+            'organization.OrganizationalUnitClientApplication' => OrganizationalUnitClientApplication(),
             'organization.OrganizationalUnitPrimer' => OrganizationalUnitPrimer(),
             'profile.AccessProfile' => AccessProfile(),
             'profile.AccessProfileAccount' => AccessProfileAccount(),

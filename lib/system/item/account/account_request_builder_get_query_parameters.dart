@@ -1,5 +1,6 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
+import '../../../models/p_provisioned_account_status.dart';
 import './get_additional_query_parameter_type.dart';
 
 /// auto generated
@@ -15,8 +16,6 @@ class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<DateTime>? createdAfter;
     ///  Only return records that have been created before the given instant.
     List<DateTime>? createdBefore;
-    ///  Only return provisioned accounts that are or are not destroyed.
-    List<bool>? destroyed;
     ///  Filter the results to exclude the given ids.
     List<int>? exclude;
     ///  Filter the results on the given ids.
@@ -27,6 +26,8 @@ class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<String>? q;
     ///  Sort the items. Use 'asc-<name>' for ascending and 'desc-<name>' for descending order.
     List<String>? sort;
+    ///  Only return provisioned accounts with the given statusses.
+    List<PProvisionedAccountStatus>? status;
     ///  Only return provisioned accounts for one of the given systems, specified by id. This parameter supports composition with all parameters from the systems resource.
     List<int>? system;
     /// Extracts the query parameters into a map for the URI template parsing.
@@ -38,12 +39,12 @@ class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters
             'any' : any,
             'createdAfter' : createdAfter,
             'createdBefore' : createdBefore,
-            'destroyed' : destroyed,
             'exclude' : exclude,
             'id' : id,
             'modifiedSince' : modifiedSince,
             'q' : q,
             'sort' : sort,
+            'status' : status,
             'system' : system,
         };
     }

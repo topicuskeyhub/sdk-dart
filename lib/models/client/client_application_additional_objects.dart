@@ -5,6 +5,7 @@ import '../generated_secret.dart';
 import '../group/group_client_linkable_wrapper.dart';
 import '../group/group_linkable_wrapper.dart';
 import '../launchpad/sso_application_launchpad_tile.dart';
+import '../organization/client_application_organizational_unit_linkable_wrapper.dart';
 
 /// auto generated
 class ClientApplicationAdditionalObjects implements AdditionalDataHolder, Parsable {
@@ -19,6 +20,8 @@ class ClientApplicationAdditionalObjects implements AdditionalDataHolder, Parsab
     GroupClientLinkableWrapper? groupclients;
     ///  The groups property
     GroupLinkableWrapper? groups;
+    ///  The organizationalUnits property
+    ClientApplicationOrganizationalUnitLinkableWrapper? organizationalUnits;
     ///  The secret property
     GeneratedSecret? secret;
     ///  The tile property
@@ -41,6 +44,7 @@ class ClientApplicationAdditionalObjects implements AdditionalDataHolder, Parsab
         deserializerMap['deleteTile'] = (node) => deleteTile = node.getBoolValue();
         deserializerMap['groupclients'] = (node) => groupclients = node.getObjectValue<GroupClientLinkableWrapper>(GroupClientLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['groups'] = (node) => groups = node.getObjectValue<GroupLinkableWrapper>(GroupLinkableWrapper.createFromDiscriminatorValue);
+        deserializerMap['organizationalUnits'] = (node) => organizationalUnits = node.getObjectValue<ClientApplicationOrganizationalUnitLinkableWrapper>(ClientApplicationOrganizationalUnitLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['secret'] = (node) => secret = node.getObjectValue<GeneratedSecret>(GeneratedSecret.createFromDiscriminatorValue);
         deserializerMap['tile'] = (node) => tile = node.getObjectValue<SsoApplicationLaunchpadTile>(SsoApplicationLaunchpadTile.createFromDiscriminatorValue);
         deserializerMap['vaultRecordCount'] = (node) => vaultRecordCount = node.getIntValue();
@@ -54,6 +58,7 @@ class ClientApplicationAdditionalObjects implements AdditionalDataHolder, Parsab
         writer.writeBoolValue('deleteTile', value:deleteTile);
         writer.writeObjectValue<GroupClientLinkableWrapper>('groupclients', groupclients);
         writer.writeObjectValue<GroupLinkableWrapper>('groups', groups);
+        writer.writeObjectValue<ClientApplicationOrganizationalUnitLinkableWrapper>('organizationalUnits', organizationalUnits);
         writer.writeObjectValue<GeneratedSecret>('secret', secret);
         writer.writeObjectValue<SsoApplicationLaunchpadTile>('tile', tile);
         writer.writeAdditionalData(additionalData);

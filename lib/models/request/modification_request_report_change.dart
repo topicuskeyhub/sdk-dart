@@ -9,6 +9,8 @@ enum ModificationRequestReportChange {
     serviceAccountGroupRemovedOwner('SERVICE_ACCOUNT_GROUP_REMOVED_OWNER'),
     groupClientRemovedOutOfScope('GROUP_CLIENT_REMOVED_OUT_OF_SCOPE'),
     groupClientRemovedOwner('GROUP_CLIENT_REMOVED_OWNER'),
+    organizationalUnitClientApplicationRemovedOutOfScope('ORGANIZATIONAL_UNIT_CLIENT_APPLICATION_REMOVED_OUT_OF_SCOPE'),
+    clientPermissionRemovedOutOfScope('CLIENT_PERMISSION_REMOVED_OUT_OF_SCOPE'),
     groupClassificationRemoved('GROUP_CLASSIFICATION_REMOVED'),
     groupVaultRecoveryReset('GROUP_VAULT_RECOVERY_RESET'),
     groupMadePublic('GROUP_MADE_PUBLIC'),
@@ -17,6 +19,7 @@ enum ModificationRequestReportChange {
     serviceAccountRemoved('SERVICE_ACCOUNT_REMOVED'),
     organizationalUnitRemoved('ORGANIZATIONAL_UNIT_REMOVED'),
     accessProfileRemoved('ACCESS_PROFILE_REMOVED'),
+    systemAccountsWritableDisabled('SYSTEM_ACCOUNTS_WRITABLE_DISABLED'),
     groupActivationForVaultDisabled('GROUP_ACTIVATION_FOR_VAULT_DISABLED'),
     groupActivationForSsoDisabled('GROUP_ACTIVATION_FOR_SSO_DISABLED'),
     groupActivationForProvisioningDisabled('GROUP_ACTIVATION_FOR_PROVISIONING_DISABLED');

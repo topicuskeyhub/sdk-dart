@@ -23,11 +23,11 @@ class ProvisioninggroupRequestBuilder extends BaseRequestBuilder<Provisioninggro
     /// Instantiates a new [ProvisioninggroupRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    ProvisioninggroupRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/provisioninggroup{?activationRequired*,additional*,any*,createdAfter*,createdBefore*,exclude*,group*,groupOnSystem*,groupOnSystemOwnerGroup*,id*,modifiedSince*,q*,sort*,system*,systemAdminGroup*,systemContentAdminGroup*,systemOwnerGroup*}", pathParameters) ;
+    ProvisioninggroupRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/provisioninggroup{?activationRequired*,additional*,any*,createdAfter*,createdBefore*,exclude*,group*,groupOnSystem*,groupOnSystemOwnerGroup*,id*,modifiedSince*,organizationalUnitForEnforcement*,q*,sort*,system*,systemAdminGroup*,systemContentAdminGroup*,systemOwnerGroup*}", pathParameters) ;
     /// Instantiates a new [ProvisioninggroupRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    ProvisioninggroupRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/provisioninggroup{?activationRequired*,additional*,any*,createdAfter*,createdBefore*,exclude*,group*,groupOnSystem*,groupOnSystemOwnerGroup*,id*,modifiedSince*,q*,sort*,system*,systemAdminGroup*,systemContentAdminGroup*,systemOwnerGroup*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    ProvisioninggroupRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/provisioninggroup{?activationRequired*,additional*,any*,createdAfter*,createdBefore*,exclude*,group*,groupOnSystem*,groupOnSystemOwnerGroup*,id*,modifiedSince*,organizationalUnitForEnforcement*,q*,sort*,system*,systemAdminGroup*,systemContentAdminGroup*,systemOwnerGroup*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for all provisioning groups in Topicus KeyHub. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisioningGroupLinkableWrapper?> getAsync([void Function(RequestConfiguration<ProvisioninggroupRequestBuilderGetQueryParameters>)? requestConfiguration]) async {

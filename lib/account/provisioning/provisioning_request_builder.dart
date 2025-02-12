@@ -26,11 +26,11 @@ class ProvisioningRequestBuilder extends BaseRequestBuilder<ProvisioningRequestB
     /// Instantiates a new [ProvisioningRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    ProvisioningRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/provisioning{?filter*,groupUuid*,reason*}", pathParameters) ;
+    ProvisioningRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/provisioning{?filter*,groupUuid*,loadAll*,reason*}", pathParameters) ;
     /// Instantiates a new [ProvisioningRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    ProvisioningRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/provisioning{?filter*,groupUuid*,reason*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    ProvisioningRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/provisioning{?filter*,groupUuid*,loadAll*,reason*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Returns the status of provisioning for the current user. The groups are filtered by the specified filter or group UUID.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisioningStatus?> getAsync([void Function(RequestConfiguration<ProvisioningRequestBuilderGetQueryParameters>)? requestConfiguration]) async {

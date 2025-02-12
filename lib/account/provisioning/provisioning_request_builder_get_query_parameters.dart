@@ -6,12 +6,14 @@ import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 class ProvisioningRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     String? filter;
     String? groupUuid;
+    bool? loadAll;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
     Map<String, dynamic> toMap() {
         return {
             'filter' : filter,
             'groupUuid' : groupUuid,
+            'loadAll' : loadAll,
         };
     }
 }

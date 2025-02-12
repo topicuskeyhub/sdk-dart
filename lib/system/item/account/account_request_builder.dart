@@ -23,11 +23,11 @@ class AccountRequestBuilder extends BaseRequestBuilder<AccountRequestBuilder> {
     /// Instantiates a new [AccountRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    AccountRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/system/{systemid}/account{?account*,additional*,any*,createdAfter*,createdBefore*,destroyed*,exclude*,id*,modifiedSince*,q*,sort*,system*}", pathParameters) ;
+    AccountRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/system/{systemid}/account{?account*,additional*,any*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,q*,sort*,status*,system*}", pathParameters) ;
     /// Instantiates a new [AccountRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    AccountRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/system/{systemid}/account{?account*,additional*,any*,createdAfter*,createdBefore*,destroyed*,exclude*,id*,modifiedSince*,q*,sort*,system*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    AccountRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/system/{systemid}/account{?account*,additional*,any*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,q*,sort*,status*,system*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for provisioned accounts in a system. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisionedAccountLinkableWrapper?> getAsync([void Function(RequestConfiguration<AccountRequestBuilderGetQueryParameters>)? requestConfiguration]) async {

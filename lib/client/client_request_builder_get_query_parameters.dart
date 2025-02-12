@@ -9,6 +9,8 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     List<GetAdditionalQueryParameterType>? additional;
     ///  Return all or no records. This can be useful when composing parameters.
     List<bool>? any;
+    ///  Only return the client applications whose base organizational unit, defined as the technical administrator's organizational unit, is equal to or an ancestor of any of the given unit(s), specified by id.
+    List<int>? baseOrganizationalUnitAncestorOf;
     ///  Filter clients on the client ids.
     List<String>? clientId;
     ///  Only return records that have been created after the given instant.
@@ -25,6 +27,8 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     List<int>? id;
     ///  Only return LDAP clients that are used as provisioned internal LDAP.
     List<bool>? isProvisionedInternalLDAP;
+    ///  Filter client applications on direct connections to organizational units, specified by id. This parameter supports composition with all parameters from the organizational unit resource.
+    List<int>? memberOfOrganizationalUnit;
     ///  Only return records that have been modified since the given instant.
     List<DateTime>? modifiedSince;
     ///  Filter clients on the exact name.
@@ -69,6 +73,7 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
         return {
             'additional' : additional,
             'any' : any,
+            'baseOrganizationalUnitAncestorOf' : baseOrganizationalUnitAncestorOf,
             'clientId' : clientId,
             'createdAfter' : createdAfter,
             'createdBefore' : createdBefore,
@@ -77,6 +82,7 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
             'group' : group,
             'id' : id,
             'isProvisionedInternalLDAP' : isProvisionedInternalLDAP,
+            'memberOfOrganizationalUnit' : memberOfOrganizationalUnit,
             'modifiedSince' : modifiedSince,
             'name' : name,
             'nameContains' : nameContains,

@@ -34,7 +34,7 @@ void main() async {
     client: httpClient,
     authProvider: authProvider,
     pNodeFactory: ParseNodeFactoryRegistry.defaultInstance,
-    sWriterFactory: JsonSerializationWriterFactory(),
+    sWriterFactory: SerializationWriterFactoryRegistry.defaultInstance,
   );
   adapter.baseUrl = 'https://keyhub.example.com/keyhub/rest/v1';
   final keyHubClient = KeyHubClient(adapter);
@@ -85,7 +85,7 @@ void main() async {
     client: httpClient,
     authProvider: baseBearerTokenAuthenticationProvider,
     pNodeFactory: ParseNodeFactoryRegistry.defaultInstance,
-    sWriterFactory: JsonSerializationWriterFactory(),
+    sWriterFactory: SerializationWriterFactoryRegistry.defaultInstance,
   );
   adapter.baseUrl = 'https://keyhub.example.com/keyhub/rest/v1';
 

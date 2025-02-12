@@ -1,25 +1,15 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
-import '../models/client/client_application_linkable_wrapper.dart';
-import '../models/error_report.dart';
+import '../../../models/error_report.dart';
+import '../../../models/organization/organizational_unit_client_application_linkable_wrapper.dart';
 import './client_request_builder_get_query_parameters.dart';
 import './client_request_builder_post_query_parameters.dart';
 import './item/with_client_item_request_builder.dart';
-import './me/me_request_builder.dart';
-import './vault/vault_request_builder.dart';
 
 /// auto generated
-/// Builds and executes requests for operations under \client
+/// Builds and executes requests for operations under \organizationalunit\{organizationalunitid}\client
 class ClientRequestBuilder extends BaseRequestBuilder<ClientRequestBuilder> {
-    ///  The me property
-    MeRequestBuilder get me {
-        return MeRequestBuilder(pathParameters, requestAdapter);
-    }
-    ///  The vault property
-    VaultRequestBuilder get vault {
-        return VaultRequestBuilder(pathParameters, requestAdapter);
-    }
-    /// Gets an item from the ApiSdk.client.item collection
+    /// Gets an item from the ApiSdk.organizationalunit.item.client.item collection
     ///  [clientid] Unique identifier of the item
     WithClientItemRequestBuilder byClientid(int clientid) {
         var urlTplParams = Map.of(pathParameters);
@@ -34,31 +24,31 @@ class ClientRequestBuilder extends BaseRequestBuilder<ClientRequestBuilder> {
     /// Instantiates a new [ClientRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    ClientRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client{?additional*,any*,baseOrganizationalUnitAncestorOf*,clientId*,createdAfter*,createdBefore*,exclude*,expiredCertificate*,group*,id*,isProvisionedInternalLDAP*,memberOfOrganizationalUnit*,modifiedSince*,name*,nameContains*,nameDoesNotStartWith*,nameStartsWith*,notInGroup*,organizationalUnitForEnforcement*,ownedBy*,q*,sharedSecret*,sort*,technicalAdministrator*,type*,useClientCredentials*,uuid*,vault*,withPermission*,withPermissionForOwningGroup*,withRequestedPermissionForOwningGroup*}", pathParameters) ;
+    ClientRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/organizationalunit/{organizationalunitid}/client{?additional*,any*,client*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,organizationalUnit*,organizationalUnitOwnedBy*,q*,sort*,withPermissionForOwningGroup*,withRequestedPermissionForOwningGroup*}", pathParameters) ;
     /// Instantiates a new [ClientRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    ClientRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client{?additional*,any*,baseOrganizationalUnitAncestorOf*,clientId*,createdAfter*,createdBefore*,exclude*,expiredCertificate*,group*,id*,isProvisionedInternalLDAP*,memberOfOrganizationalUnit*,modifiedSince*,name*,nameContains*,nameDoesNotStartWith*,nameStartsWith*,notInGroup*,organizationalUnitForEnforcement*,ownedBy*,q*,sharedSecret*,sort*,technicalAdministrator*,type*,useClientCredentials*,uuid*,vault*,withPermission*,withPermissionForOwningGroup*,withRequestedPermissionForOwningGroup*}", {RequestInformation.rawUrlKey : rawUrl}) ;
-    /// Query for all clients in Topicus KeyHub. The various query parameters can be used to filter the response.
+    ClientRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/organizationalunit/{organizationalunitid}/client{?additional*,any*,client*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,organizationalUnit*,organizationalUnitOwnedBy*,q*,sort*,withPermissionForOwningGroup*,withRequestedPermissionForOwningGroup*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    /// Queries over client applications that are member of the organizational unit. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
-    Future<ClientApplicationLinkableWrapper?> getAsync([void Function(RequestConfiguration<ClientRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
+    Future<OrganizationalUnitClientApplicationLinkableWrapper?> getAsync([void Function(RequestConfiguration<ClientRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
         final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
-        return await requestAdapter.send<ClientApplicationLinkableWrapper>(requestInfo, ClientApplicationLinkableWrapper.createFromDiscriminatorValue, errorMapping);
+        return await requestAdapter.send<OrganizationalUnitClientApplicationLinkableWrapper>(requestInfo, OrganizationalUnitClientApplicationLinkableWrapper.createFromDiscriminatorValue, errorMapping);
     }
-    /// Creates one or more new clients and returns the newly created clients.
+    /// Adds one or more client applications to the organizational unit and returns the newly created memberships.
     ///  [body] The request body
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
-    Future<ClientApplicationLinkableWrapper?> postAsync(ClientApplicationLinkableWrapper body, [void Function(RequestConfiguration<ClientRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
+    Future<OrganizationalUnitClientApplicationLinkableWrapper?> postAsync(OrganizationalUnitClientApplicationLinkableWrapper body, [void Function(RequestConfiguration<ClientRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
         final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
         };
-        return await requestAdapter.send<ClientApplicationLinkableWrapper>(requestInfo, ClientApplicationLinkableWrapper.createFromDiscriminatorValue, errorMapping);
+        return await requestAdapter.send<OrganizationalUnitClientApplicationLinkableWrapper>(requestInfo, OrganizationalUnitClientApplicationLinkableWrapper.createFromDiscriminatorValue, errorMapping);
     }
-    /// Query for all clients in Topicus KeyHub. The various query parameters can be used to filter the response.
+    /// Queries over client applications that are member of the organizational unit. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ClientRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
@@ -66,10 +56,10 @@ class ClientRequestBuilder extends BaseRequestBuilder<ClientRequestBuilder> {
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
         return requestInfo;
     }
-    /// Creates one or more new clients and returns the newly created clients.
+    /// Adds one or more client applications to the organizational unit and returns the newly created memberships.
     ///  [body] The request body
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
-    RequestInformation toPostRequestInformation(ClientApplicationLinkableWrapper body, [void Function(RequestConfiguration<ClientRequestBuilderPostQueryParameters>)? requestConfiguration]) {
+    RequestInformation toPostRequestInformation(OrganizationalUnitClientApplicationLinkableWrapper body, [void Function(RequestConfiguration<ClientRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ClientRequestBuilderPostQueryParameters>(requestConfiguration, () => ClientRequestBuilderPostQueryParameters());
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');

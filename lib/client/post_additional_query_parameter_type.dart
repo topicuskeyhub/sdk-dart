@@ -5,6 +5,7 @@ enum PostAdditionalQueryParameterType {
     deleteTile('deleteTile'),
     groupclients('groupclients'),
     groups('groups'),
+    organizationalUnits('organizationalUnits'),
     secret('secret'),
     tile('tile'),
     vaultRecordCount('vaultRecordCount');

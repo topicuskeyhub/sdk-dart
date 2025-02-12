@@ -1,11 +1,14 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../auth/account_primer.dart';
+import './access_profile_account_activation.dart';
 import './access_profile_account_additional_objects.dart';
 import './access_profile_account_with_attributes.dart';
 
 /// auto generated
 class AccessProfileAccount extends AccountPrimer implements Parsable {
+    ///  The activation property
+    AccessProfileAccountActivation? activation;
     ///  The additionalObjects property
     AccessProfileAccountAdditionalObjects? additionalObjects;
     ///  The manual property
@@ -27,6 +30,7 @@ class AccessProfileAccount extends AccountPrimer implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['activation'] = (node) => activation = node.getEnumValue<AccessProfileAccountActivation>((stringValue) => AccessProfileAccountActivation.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<AccessProfileAccountAdditionalObjects>(AccessProfileAccountAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['manual'] = (node) => manual = node.getBoolValue();
         return deserializerMap;
@@ -36,6 +40,7 @@ class AccessProfileAccount extends AccountPrimer implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeEnumValue<AccessProfileAccountActivation>('activation', activation, (e) => e?.value);
         writer.writeObjectValue<AccessProfileAccountAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeBoolValue('manual', value:manual);
     }

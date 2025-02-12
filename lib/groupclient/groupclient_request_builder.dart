@@ -23,11 +23,11 @@ class GroupclientRequestBuilder extends BaseRequestBuilder<GroupclientRequestBui
     /// Instantiates a new [GroupclientRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    GroupclientRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/groupclient{?activationRequired*,additional*,any*,appAdminGroup*,appOwnerGroup*,client*,createdAfter*,createdBefore*,exclude*,group*,id*,modifiedSince*,q*,sort*}", pathParameters) ;
+    GroupclientRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/groupclient{?activationRequired*,additional*,any*,appAdminGroup*,appOwnerGroup*,client*,createdAfter*,createdBefore*,exclude*,group*,id*,modifiedSince*,organizationalUnitForEnforcement*,q*,sort*}", pathParameters) ;
     /// Instantiates a new [GroupclientRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    GroupclientRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/groupclient{?activationRequired*,additional*,any*,appAdminGroup*,appOwnerGroup*,client*,createdAfter*,createdBefore*,exclude*,group*,id*,modifiedSince*,q*,sort*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    GroupclientRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/groupclient{?activationRequired*,additional*,any*,appAdminGroup*,appOwnerGroup*,client*,createdAfter*,createdBefore*,exclude*,group*,id*,modifiedSince*,organizationalUnitForEnforcement*,q*,sort*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Queries over all client links for a group. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupClientLinkableWrapper?> getAsync([void Function(RequestConfiguration<GroupclientRequestBuilderGetQueryParameters>)? requestConfiguration]) async {

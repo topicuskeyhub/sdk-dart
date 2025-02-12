@@ -1,6 +1,7 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../linkable.dart';
+import '../organization/organizational_unit_client_application.dart';
 import './client_application.dart';
 import './client_application_type.dart';
 import './ldap_client.dart';
@@ -34,6 +35,7 @@ class ClientApplicationPrimer extends Linkable implements Parsable {
             'client.LdapClient' => LdapClient(),
             'client.OAuth2Client' => OAuth2Client(),
             'client.Saml2Client' => Saml2Client(),
+            'organization.OrganizationalUnitClientApplication' => OrganizationalUnitClientApplication(),
             _ => ClientApplicationPrimer(),
         };
     }

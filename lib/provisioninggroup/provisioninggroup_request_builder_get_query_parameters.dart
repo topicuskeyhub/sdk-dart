@@ -27,6 +27,8 @@ class ProvisioninggroupRequestBuilderGetQueryParameters implements AbstractQuery
     List<int>? id;
     ///  Only return records that have been modified since the given instant.
     List<DateTime>? modifiedSince;
+    ///  Filter provisioning groups on organizational units of the group on system, specified by id.
+    List<int>? organizationalUnitForEnforcement;
     ///  Filter records on a complex CQL query.
     List<String>? q;
     ///  Sort the items. Use 'asc-<name>' for ascending and 'desc-<name>' for descending order.
@@ -54,6 +56,7 @@ class ProvisioninggroupRequestBuilderGetQueryParameters implements AbstractQuery
             'groupOnSystemOwnerGroup' : groupOnSystemOwnerGroup,
             'id' : id,
             'modifiedSince' : modifiedSince,
+            'organizationalUnitForEnforcement' : organizationalUnitForEnforcement,
             'q' : q,
             'sort' : sort,
             'system' : system,

@@ -3,6 +3,7 @@ import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../models/error_report.dart';
 import '../../models/organization/organizational_unit.dart';
 import './account/account_request_builder.dart';
+import './client/client_request_builder.dart';
 import './with_organizationalunit_item_request_builder_get_query_parameters.dart';
 import './with_organizationalunit_item_request_builder_put_query_parameters.dart';
 
@@ -12,6 +13,10 @@ class WithOrganizationalunitItemRequestBuilder extends BaseRequestBuilder<WithOr
     ///  The account property
     AccountRequestBuilder get account {
         return AccountRequestBuilder(pathParameters, requestAdapter);
+    }
+    ///  The client property
+    ClientRequestBuilder get client {
+        return ClientRequestBuilder(pathParameters, requestAdapter);
     }
     /// Clones the requestbuilder.
     @override

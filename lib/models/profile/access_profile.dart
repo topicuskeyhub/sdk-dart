@@ -7,12 +7,16 @@ import './access_profile_primer.dart';
 
 /// auto generated
 class AccessProfile extends AccessProfilePrimer implements Parsable {
+    ///  The activateRuleScript property
+    String? activateRuleScript;
     ///  The additionalObjects property
     AccessProfileAdditionalObjects? additionalObjects;
     ///  The description property
     String? description;
     ///  The directory property
     AccountDirectoryPrimer? directory;
+    ///  The matchRuleScript property
+    String? matchRuleScript;
     ///  The owner property
     GroupPrimer? owner;
     /// Instantiates a new [AccessProfile] and sets the default values.
@@ -28,9 +32,11 @@ class AccessProfile extends AccessProfilePrimer implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['activateRuleScript'] = (node) => activateRuleScript = node.getStringValue();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<AccessProfileAdditionalObjects>(AccessProfileAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['description'] = (node) => description = node.getStringValue();
         deserializerMap['directory'] = (node) => directory = node.getObjectValue<AccountDirectoryPrimer>(AccountDirectoryPrimer.createFromDiscriminatorValue);
+        deserializerMap['matchRuleScript'] = (node) => matchRuleScript = node.getStringValue();
         deserializerMap['owner'] = (node) => owner = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         return deserializerMap;
     }
@@ -39,9 +45,11 @@ class AccessProfile extends AccessProfilePrimer implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeStringValue('activateRuleScript', activateRuleScript);
         writer.writeObjectValue<AccessProfileAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeStringValue('description', description);
         writer.writeObjectValue<AccountDirectoryPrimer>('directory', directory);
+        writer.writeStringValue('matchRuleScript', matchRuleScript);
         writer.writeObjectValue<GroupPrimer>('owner', owner);
     }
 }

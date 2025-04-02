@@ -24,11 +24,11 @@ class ProfileRequestBuilder extends BaseRequestBuilder<ProfileRequestBuilder> {
     /// Instantiates a new [ProfileRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    ProfileRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profile{?additional*,any*,containsAccount*,createdAfter*,createdBefore*,directory*,exclude*,id*,modifiedSince*,name*,nameContains*,nameDoesNotStartWith*,nameStartsWith*,organizationalUnit*,ownedBy*,q*,sort*,uuid*}", pathParameters) ;
+    ProfileRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profile{?additional*,any*,containsAccount*,createdAfter*,createdBefore*,directory*,doesNotContainClient*,exclude*,hasMatchRule*,id*,modifiedSince*,name*,nameContains*,nameDoesNotStartWith*,nameStartsWith*,organizationalUnit*,ownedBy*,q*,sort*,uuid*}", pathParameters) ;
     /// Instantiates a new [ProfileRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    ProfileRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profile{?additional*,any*,containsAccount*,createdAfter*,createdBefore*,directory*,exclude*,id*,modifiedSince*,name*,nameContains*,nameDoesNotStartWith*,nameStartsWith*,organizationalUnit*,ownedBy*,q*,sort*,uuid*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    ProfileRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profile{?additional*,any*,containsAccount*,createdAfter*,createdBefore*,directory*,doesNotContainClient*,exclude*,hasMatchRule*,id*,modifiedSince*,name*,nameContains*,nameDoesNotStartWith*,nameStartsWith*,organizationalUnit*,ownedBy*,q*,sort*,uuid*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for all access profiles in Topicus KeyHub. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AccessProfileLinkableWrapper?> getAsync([void Function(RequestConfiguration<ProfileRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
@@ -53,7 +53,7 @@ class ProfileRequestBuilder extends BaseRequestBuilder<ProfileRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ProfileRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ProfileRequestBuilderGetQueryParameters>(requestConfiguration, () => ProfileRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
         return requestInfo;
     }
     /// Creates one or more new access profiles and returns the newly created access profiles.
@@ -62,8 +62,8 @@ class ProfileRequestBuilder extends BaseRequestBuilder<ProfileRequestBuilder> {
     RequestInformation toPostRequestInformation(AccessProfileLinkableWrapper body, [void Function(RequestConfiguration<ProfileRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ProfileRequestBuilderPostQueryParameters>(requestConfiguration, () => ProfileRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=76', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=77', body);
         return requestInfo;
     }
 }

@@ -1,6 +1,7 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import 'package:microsoft_kiota_serialization_json/microsoft_kiota_serialization_json.dart';
+import './accessprofileclient/accessprofileclient_request_builder.dart';
 import './account/account_request_builder.dart';
 import './attributedef/attributedef_request_builder.dart';
 import './audit/audit_request_builder.dart';
@@ -13,6 +14,7 @@ import './group/group_request_builder.dart';
 import './groupclassification/groupclassification_request_builder.dart';
 import './groupclient/groupclient_request_builder.dart';
 import './groupfolder/groupfolder_request_builder.dart';
+import './identitysource/identitysource_request_builder.dart';
 import './info/info_request_builder.dart';
 import './launchpadtile/launchpadtile_request_builder.dart';
 import './numberseq/numberseq_request_builder.dart';
@@ -30,6 +32,10 @@ import './webhook/webhook_request_builder.dart';
 /// auto generated
 /// The main entry point of the SDK, exposes the configuration and the fluent API.
 class KeyHubClient extends BaseRequestBuilder<KeyHubClient> {
+    ///  The accessprofileclient property
+    AccessprofileclientRequestBuilder get accessprofileclient {
+        return AccessprofileclientRequestBuilder(pathParameters, requestAdapter);
+    }
     ///  The account property
     AccountRequestBuilder get account {
         return AccountRequestBuilder(pathParameters, requestAdapter);
@@ -77,6 +83,10 @@ class KeyHubClient extends BaseRequestBuilder<KeyHubClient> {
     ///  The groupfolder property
     GroupfolderRequestBuilder get groupfolder {
         return GroupfolderRequestBuilder(pathParameters, requestAdapter);
+    }
+    ///  The identitysource property
+    IdentitysourceRequestBuilder get identitysource {
+        return IdentitysourceRequestBuilder(pathParameters, requestAdapter);
     }
     ///  The info property
     InfoRequestBuilder get info {

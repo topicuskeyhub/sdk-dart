@@ -158,6 +158,9 @@
                 "description": "The date for which the logs should be collected.",
                 "label": "Date"
               },
+              "OrganizationalUnitClientApplicationPanel$ClientApplicationEditBean#client": {
+                "label": "Application"
+              },
               "RestoreBackupPanel$BackupSettings#NOT_AVAILABLE": "Backup only contains the database",
               "AssignUnallocatedDiskSpacePanel$SpaceAllocationBean#reserved": {
                 "label": "Reserved in MiB"
@@ -179,6 +182,7 @@
               "GroupOAuth2ClientPermissionsPanel$PermissionsForClientBean#permissions": {
                 "label": "Granted permissions"
               },
+              "ApplicationOrSystemAddToAccessProfilePanel$AccessType#APPLICATION": "SSO application",
               "RestoreBackupPanel$BackupSettings#RESTORE": "Restore appliance configuration and database",
               "ExportAuditorServiceAccountsPanel$AuditorExportType#SERVICEACCOUNTS": "Service accounts",
               "AssignUnallocatedDiskSpacePanel$SpaceAllocationBean#log": {
@@ -266,6 +270,9 @@
                 "label": "Linked directory",
                 "description": "The directory for which this access profile can manage account attributes."
               },
+              "AccessProfileClient#accessProfile": {
+                "label": "Access profile"
+              },
               "AccessProfileAccountActivation#ACTIVE": "Active (business rules apply)",
               "AccessProfileAccountActivation#INACTIVE": "Inactive (business rules apply)",
               "AccessProfile#matchRuleScript": {
@@ -289,6 +296,7 @@
               "AuditRecordType#TRANSFER_ACCESS_PROFILE_OWNERSHIP_DECLINED": "Transfer ownership of access profile - Declined",
               "AuditRecordType#TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP_REQUESTED": "Transfer ownership of group on system - Requested",
               "AuditRecordType#SERVICE_ACCOUNT_MODIFIED": "Service account - Modified",
+              "AuditRecordType#IDENTITY_SOURCE_MODIFIED": "Identity source - Modified",
               "AuditRecordType#ACCOUNT_REREGISTERED": "Account - Re-registered",
               "AuditRecordType#TRANSFER_SERVICE_ACCOUNT_ADMINISTRATION_ACCEPTED": "Transfer ownership of service account - Approved",
               "AuditRecordType#ENABLE_TECHNICAL_ADMINISTRATION_REQUESTED": "Enable technical administration - Requested",
@@ -297,10 +305,11 @@
               "AuditRecordType#CLIENT_ADDED_TO_ORGANIZATIONAL_UNIT": "Application - Added to an organisational unit",
               "AuditRecordType#CREATE_PROVISIONED_NAMESPACE_DECLINED": "Create namespace - Declined",
               "AuditRecordType#JOIN_GROUP_REQUESTED": "Join group - Requested",
-              "AuditRecordType#CLIENT_REMOVED_FROM_GROUP": "Application - Removed to group",
+              "AuditRecordType#CLIENT_REMOVED_FROM_GROUP": "Application - Removed from group",
               "AuditRecordType#SETUP_NESTED_GROUP_CONNECT_REQUESTED": "Link nested group - Requested",
               "AuditRecordType#GROUP_ON_SYSTEM_REMOVED": "Group on system - Removed",
               "AuditRecordType#GROUP_CLASSIFICATION_ASSIGNED": "Group classification - Assigned",
+              "AuditRecordType#CLIENT_ADDED_TO_ACCESS_PROFILE": "Application - Added to access profile",
               "AuditRecordType#ACCOUNT_TOKEN_SIGNED": "Account - Token signed",
               "AuditRecordType#SETUP_AUTHORIZING_GROUP_DISCONNECT_REQUESTED": "Remove authorisation - Requested",
               "AuditRecordType#GROUP_MOVED": "Group - Moved",
@@ -324,6 +333,7 @@
               "AuditRecordType#ACCOUNT_REMOVED": "Account - Removed",
               "AuditRecordType#CLIENT_MODIFIED": "Application - Modified",
               "AuditRecordType#ADD_GROUP_TO_ACCESS_PROFILE_DECLINED": "Add group to access profile - Declined",
+              "AuditRecordType#IDENTITY_SOURCE_REMOVED": "Identity source - Removed",
               "AuditRecordType#PROVISIONED_SYSTEM_UNKNOWN_ACCOUNT_DESTROYED": "Linked system - Unknown account removed",
               "AuditNestedGroupAction#MISMATCH": "Not identical",
               "AuditRecordType#GROUP_MODIFIED": "Group - Modified",
@@ -436,6 +446,7 @@
               "AuditRecordType#CLIENT_SECRET_ROTATED": "Application - Secret rotated",
               "AuditRecordType#RESET_PASSWORD_ACCEPTED": "Recover password - Approved",
               "AuditRecordType#DISABLE_2FA_REQUESTED": "Disable 2FA - Requested",
+              "AuditRecordType#IDENTITY_SOURCE_CREATED": "Identity source - Created",
               "AuditRecordType#GRANT_GROUP_ON_SYSTEM_ACCEPTED": "Grant access to group on linked system - Approved",
               "AuditRecordType#CREATE_GROUP_REQUESTED": "Create group - Requested",
               "AuditRecordType#PROVISIONED_SYSTEM_ADDED_TO_ACCESS_PROFILE": "Linked system - Added access profile",
@@ -510,6 +521,7 @@
               "AuditRecordType#SETTING_MODIFIED": "Setting modified",
               "AuditRecordType#GRANT_APPLICATION_DECLINED": "Grant access to application - Declined",
               "AuditRecordType#SETUP_NESTED_GROUP_DISCONNECT_REQUESTED": "Unlink nested group - Requested",
+              "AuditRecordType#CLIENT_REMOVED_FROM_ACCESS_PROFILE": "Application - Removed from access profile",
               "AuditRecordType#GROUP_ON_SYSTEM_MODIFIED": "Group on system - Modified",
               "AuditRecordType#GROUP_ON_SYSTEM_DEPROVISIONED": "Group on system - Removed from linked system",
               "AuditRecordType#PROVISIONED_SYSTEM_MODIFIED": "Linked system - Modified",
@@ -702,6 +714,9 @@
               "ModificationRequestReportError#GROUP_OWNS_OU": "The group has a role for an organisational unit",
               "ModificationRequestReportError#ONE_MOVEABLE_VAULT_ACCESS_OF_MULTIPLE_MEMBERS": "The group has only one member with vault access that can be moved",
               "ModificationRequestType#REMOVE_PROVISIONED_SYSTEM": "REMOVE SYSTEM",
+              "GrantApplicationRequest#application": {
+                "label": "Application"
+              },
               "ModificationRequestReportError#ZERO_MOVEABLE_VAULT_ACCESS_MEMBERS": "The group has no members with vault access that can be moved",
               "AddGroupAdminRequest#newAdmin": {
                 "label": "User"
@@ -1737,15 +1752,20 @@
                 "label": "Update automatically",
                 "description": "Automatically update the attribute when the calculated value changes."
               },
+              "AccountAttributeSystemDefinition#TELEPHONE_PRIVATE": "Private phone number",
               "AccountAttributeValueSelectionStatus#IN_SYNC": "Synchronised",
               "AccountAttributeValueSelectionStatus#DUPLICATE": "Duplicate",
               "AccountAttributeSystemDefinition#DISPLAY_NAME": "Display name",
+              "AccountAttributeSystemDefinition#EMAIL_PRIVATE": "Private email address",
               "AccountAttributeRule#priorityFormula": {
                 "label": "Priority for the script",
                 "description": "The priority (1-5) of a value calculated by the script. A higher number gives this source priority over other sources. A missing value disables the source for this attribute."
               },
               "Identity#givenName": {
                 "label": "Given name"
+              },
+              "Identity#privateTelephone": {
+                "label": "Private phone number"
               },
               "AccountAttributeRule#priorityExternalSource": {
                 "description": "The priority (1-5) of a value provided by an external source. A higher number gives this source priority over other sources. A missing value disables the source for this attribute.",
@@ -1759,6 +1779,7 @@
                 "label": "Allow self-service",
                 "description": "Users can provide a value for this attribute themselves. This value has priority over the other sources."
               },
+              "AccountAttributeSystemDefinition#CAN_REQUEST_GROUPS": "Can request groups",
               "AccountAttributeSystemDefinition#FAMILY_NAME": "Family name",
               "AccountAttributeValueSelectionStatus#ERROR": "Error",
               "AccountAttributeRule#defaultValue": {
@@ -1767,6 +1788,9 @@
               },
               "Identity#middleName": {
                 "label": "Middle name"
+              },
+              "Identity#privateEmail": {
+                "label": "Private email address"
               },
               "AccountAttributeSystemDefinition#TELEPHONE": "Phone number",
               "AccountAttributeRule#priorityDirectory": {
@@ -2305,6 +2329,23 @@
                 "description": "Set the validity period of web session. Use 'm' for minutes and 'h' for hours, for example '4h'."
               }
             },
+            "identitysource": {
+              "IdentitySourcePrimer#uuid": {
+                "label": "UUID"
+              },
+              "AFASIdentitySource#token": {
+                "label": "Token"
+              },
+              "IdentitySourcePrimer#name": {
+                "label": "Name"
+              },
+              "AFASIdentitySource#url": {
+                "label": "URL"
+              },
+              "IdentitySourcePrimer#active": {
+                "label": "Enabled"
+              }
+            },
             "TLSLevel#UNSECURE": "No",
             "launchpad": {
               "SsoApplicationLaunchpadTile#uri": {
@@ -2707,12 +2748,6 @@
         "resetpwd": "Reset password"
       },
       "provisionedldap": "Linked LDAP",
-      "grouponsystem": {
-        "groups": "Groups",
-        "serviceaccounts": "Service accounts",
-        "main": "Group on system",
-        "accessprofiles": "Access profiles"
-      },
       "provisionedazuresyncdirectory": "Linked Azure tenant with AD Connect",
       "organizationalunit": {
         "main": "Organisational unit",
@@ -2734,13 +2769,12 @@
         "main": "Account"
       },
       "authorizedgroupsdashboard": "Dashboard for authorised groups",
-      "applicaties": "Applications",
       "accessprofiles": "Access profiles",
       "group": {
         "accounts": "Accounts",
-        "applicaties": "Applications",
         "main": "Group",
-        "koppelingen": "Linked system"
+        "koppelingen": "Linked system",
+        "applications": "Applications"
       },
       "system": {
         "namespaces": "Namespaces",
@@ -2760,30 +2794,35 @@
         "service": "Service accounts"
       },
       "backups": "Backups",
+      "applications": "Applications",
       "applicationaudit": "Application audit log",
       "provisionedazureoidcdirectory": "Linked Azure OIDC source directory",
       "auditorgroupdetails": "Group details",
       "tokenprompt": "Verification code",
       "mygroupfolders": "Dashboard layout",
       "webhook": "Webhook",
+      "ldapapplication": "LDAP Application",
       "requestgroup": "Request access to a group",
       "auditorserviceaccountauditlog": "Service account audit log",
-      "applicatie": {
-        "permissions": "Permissions",
-        "groups": "Groups"
-      },
       "passwordprompt": "Password",
       "launchpad": "Launchpad",
       "logs": "Logs",
       "internalaccount": "Internal account",
-      "saml2applicatie": "SAML v2.0 Application",
       "provisionedldapdirectory": "Linked LDAP source directory",
       "inloggen": "Sign in",
+      "oauth2application": "OAuth2/OIDC Application",
       "auditoraccountsdashboard": "Auditor dashboard accounts",
+      "identitysources": "Identity sources",
       "device": "Login on another device",
       "ldapdirectory": "LDAP Directory",
       "responsibledisclosure": "Responsible disclosure",
       "error": "Error",
+      "saml2application": "SAML v2.0 Application",
+      "application": {
+        "groups": "Groups",
+        "accessprofiles": "Access profiles",
+        "permissions": "Permissions"
+      },
       "directories": "Directories",
       "supportdumps": "Support dumps",
       "accessprofile": "Access profile",
@@ -2799,7 +2838,6 @@
       "webhooks": "Webhooks",
       "lostmobile": "Lost phone/new phone",
       "groups": "Groups",
-      "oauth2applicatie": "OAuth2/OIDC Application",
       "groupaudits": "Group audits",
       "activeer": "Activate account",
       "organizationalunits": "Organisational units",
@@ -2831,9 +2869,12 @@
         "groupsonsystem": "Groups on system",
         "main": "Service account"
       },
+      "identitysource": {
+        "afas": "AFAS identity source"
+      },
+      "grouponsystem": "Group on system",
       "auditorserviceaccountdetails": "Service account details",
       "dashboard": "Dashboard",
-      "ldapapplicatie": "LDAP Application",
       "addprovisioninggroup": "Request group on system",
       "auditoraccountdetails": "Account details"
     },
@@ -2887,6 +2928,7 @@
       "synclogs": "Synchronisations",
       "groupsonsystem": "Groups on system",
       "vaultrecovery": "Vault recovery",
+      "identitysources": "Identity sources",
       "passwordreset": "Reset password",
       "clientapplications": "Applications",
       "layout": "Dashboard layout",
@@ -2902,6 +2944,10 @@
       "remove": "Remove"
     },
     "attention": {
+      "identitysources": {
+        "line1": "This page shows all identity sources.",
+        "line2": "You can add a new identity source by using the 'Add' button located at the top right of the screen."
+      },
       "accessprofiles": {
         "line2": "You can add a new access profile by using the 'Add' button located at the top right of the screen.",
         "line1": "This page shows all access profiles that you manage."
@@ -3071,6 +3117,16 @@
         "me": "{admin}",
         "main": "{admin}"
       },
+      "grantapplication": {
+        "group": {
+          "main": "{groupName} to {application}",
+          "me": "{groupName} to {application}"
+        },
+        "profile": {
+          "me": "{accessProfile} to {application}",
+          "main": "{accessProfile} to {application}"
+        }
+      },
       "joinvault": {
         "main": "{requester} to {groupName}",
         "me": "{groupName}"
@@ -3092,10 +3148,6 @@
       "updatelicense": {
         "main": "Update license",
         "me": "Update license"
-      },
-      "grantapplication": {
-        "main": "{groupName} to {application}",
-        "me": "{groupName} to {application}"
       },
       "grantgrouponsystem": {
         "static": {
@@ -3372,15 +3424,15 @@
       },
       "grantgrouponsystem": {
         "dynamic": {
-          "main": "{requester} wants to give the users in the group {groupName} access to {gosType} {gosName} on {system}.",
+          "main": "{originalRequester} wants to give the users in the group {groupName} access to {gosType} {gosName} on {system}. This request was approved and forwarded by {requester}.",
           "me": "I want to give the users in the group {groupName} access to {gosType} {gosName} on {system}."
         },
         "profile": {
-          "main": "{requester} wants to give the users in the access profile {accessProfile} access to {gosType} {gosName} on {system}.",
+          "main": "{originalRequester} wants to give the users in the access profile {accessProfile} access to {gosType} {gosName} on {system}. This request was approved and forwarded by {requester}.",
           "me": "I want to give the users in the access profile {accessProfile} access to {gosType} {gosName} on {system}."
         },
         "static": {
-          "main": "{requester} wants to give the users in the group {groupName} access to {gosType} {gosName} on {system} with static account provisioning.",
+          "main": "{originalRequester} wants to give the users in the group {groupName} access to {gosType} {gosName} on {system} with static account provisioning. This request was approved and forwarded by {requester}.",
           "me": "I want to give the users in the group {groupName} access to {gosType} {gosName} on {system} with static account provisioning."
         }
       },
@@ -3444,6 +3496,16 @@
           "me": "I request the membership of {accountToUpdate} of {groupName} to be updated."
         }
       },
+      "grantapplication": {
+        "profile": {
+          "me": "I want to give the users in the access profile {accessProfile} access to the application {application}.",
+          "main": "{requester} wants to give the users in the access profile {accessProfile} access to the application {application}."
+        },
+        "group": {
+          "me": "I want to give the users in {groupName} access to the application {application}.",
+          "main": "{requester} wants to give the users in {groupName} access to the application {application}."
+        }
+      },
       "transferapplicationownership": {
         "main": "{requester} wants to transfer ownership of the application {application} to the group {groupName}.",
         "me": "I want to transfer ownership of the application {application} to the group {groupName}."
@@ -3491,10 +3553,6 @@
       "createserviceaccount": {
         "me": "I requested a service account {username} on {system}.",
         "main": "{requester} requests a new service account {username} on {system} to be created."
-      },
-      "grantapplication": {
-        "main": "{requester} wants to give the users in {groupName} access to the application {application}.",
-        "me": "I want to give the users in {groupName} access to the application {application}."
       },
       "linkdirectorytoaccessprofile": {
         "me": "I want to assign the management of attributes for accounts from {directory} to the access profile {accessProfile}.",
@@ -3708,16 +3766,25 @@
       "sent": "Your request to create the namespace {0}, based on {1}, has been submitted.",
       "subtitle": "Specify the name and content administration group of the new namespace."
     },
-    "addgrouptoaccessprofile": {
-      "sent": "Your request to add {1} to {0} has been submitted.",
-      "header": "Add group",
-      "subtitle": "Add a group to the access profile {0}."
-    },
     "grantapplication": {
+      "profile": {
+        "app": {
+          "subtitle": "Add an application to the access profile {0}."
+        },
+        "header": "Add application to access profile",
+        "profile": {
+          "subtitle": "Add an access profile to the application {0}."
+        }
+      },
       "subtitle": "Give the members of a group access to {0}.",
       "sent": "Your request to give {1} access to {0} has been submitted.",
       "header": "Give a group access",
       "accepted": "Because you are owner of {0}, your request to give {0} access to {1} has accepted automatically."
+    },
+    "addgrouptoaccessprofile": {
+      "sent": "Your request to add {1} to {0} has been submitted.",
+      "header": "Add group",
+      "subtitle": "Add a group to the access profile {0}."
     },
     "grantgrouponsystem": {
       "sent": "Your request to give {2} access to {0} on {1} has been submitted.",
@@ -4003,12 +4070,6 @@
       "groupsinsystem": "Groups on system",
       "permissions": "Issued permissions"
     },
-    "grouponsystem": {
-      "details": "Details",
-      "accessprofiles": "Access profiles",
-      "groups": "Groups",
-      "serviceaccounts": "Service accounts"
-    },
     "auditor": {
       "dashboard": {
         "groups": "Groups",
@@ -4017,6 +4078,13 @@
         "accounts": "Accounts"
       },
       "classifications": "Classifications"
+    },
+    "application": {
+      "details": "Details",
+      "profiles": "Access profiles",
+      "permissions": "Permissions",
+      "auditlog": "Audit log",
+      "groups": "Groups"
     },
     "settings": {
       "webhooks": "Webhooks",
@@ -4037,6 +4105,12 @@
       "settings": "Settings",
       "accounts": "Accounts",
       "clients": "Applications",
+      "details": "Details"
+    },
+    "group": {
+      "applications": "Applications",
+      "accounts": "Accounts",
+      "koppelingen": "Linked systems",
       "details": "Details"
     },
     "mygroups": {
@@ -4102,12 +4176,7 @@
       "accounts": "Accounts"
     },
     "backups": "Backups",
-    "group": {
-      "accounts": "Accounts",
-      "koppelingen": "Linked systems",
-      "applicaties": "Applications",
-      "details": "Details"
-    },
+    "applications": "Applications",
     "support": {
       "main": "Support",
       "logs": "Logs",
@@ -4115,12 +4184,6 @@
     },
     "dashboard": "Dashboard",
     "access": "Manage access",
-    "applicatie": {
-      "details": "Details",
-      "groups": "Groups",
-      "permissions": "Permissions",
-      "auditlog": "Audit log"
-    },
     "directories": "Directories",
     "help": "Help",
     "replication": {
@@ -4133,9 +4196,9 @@
       "step22": "Certificates"
     },
     "auditing": "Auditing",
-    "applicaties": "Applications",
     "launchpad": "Launchpad",
     "vault": "Vaults",
+    "identitysources": "Identity sources",
     "actions": "Actions",
     "groups": "Groups",
     "audit": "Audit log",
@@ -4240,6 +4303,10 @@
     },
     "notapplicable": "N/A",
     "disabled": "Disabled",
+    "hidden": {
+      "n": "<< {0} hidden elements >>",
+      "1": "<< 1 hidden element >>"
+    },
     "off": "Off",
     "filter": "Filter",
     "more": {
@@ -4251,7 +4318,8 @@
     "generated": "Available when saved",
     "nieuw": "New",
     "valuechanged": "{0} (was {1})",
-    "val": "{0}"
+    "val": "{0}",
+    "nodata": "<< no elements >>"
   },
   "access": {
     "hiddengroups": "> Show the {hiddenGroups} hidden group(s) on system without access",
@@ -4345,7 +4413,6 @@
       "name": "Name",
       "owner": "Owner"
     },
-    "nodata": "<< no elements >>",
     "warn": {
       "business": "Provisioning in this group is not available for its members with a Business license."
     },
@@ -4985,6 +5052,7 @@
         "check_updates": "Checking for available updates",
         "remove_snapshot": "Cleaning up",
         "refresh_node_state": "Refreshing the state of the node",
+        "prepare_offline": "Preparing offline update",
         "syncconf": "Updating system configuration",
         "waituser1": "Waiting for the first user to be registered",
         "unpack_offline": "Unpacking offline update file",
@@ -5287,7 +5355,6 @@
   "audit": {
     "JOIN_VAULT_REQUESTED": "{performedBy} requested to be added to the vault for {onGroup}. {reason}",
     "TRANSFER_PROVISIONED_SYSTEM_ADMINISTRATION_DECLINED": "The request to transfer administration of {onSystem} to {onGroup} was rejected by {performedBy}. {reason}",
-    "GRANT_APPLICATION_ACCEPTED": "The request to grant the users in {onGroup} access to {onClient} was approved by {performedBy}. {reason}",
     "SETUP_AUTHORIZING_GROUP_DISCONNECT_DECLINED": {
       "AUDITING": "{performedBy} declined the request to stop reviewing of audits for {onGroup} by {onGroup2}. {reason}",
       "DELEGATION": "{performedBy} declined the request to remove the delegation of management of {onGroup} to {onGroup2}. {reason}",
@@ -5423,6 +5490,7 @@
       "PROVISIONING": "{performedBy} approved the request to remove the authorisation by {onGroup2} on activation of {onGroup}. {reason}",
       "AUDITING": "{performedBy} approved the request to stop reviewing of audits for {onGroup} by {onGroup2}. {reason}"
     },
+    "IDENTITY_SOURCE_REMOVED": "{performedBy} removed the identity source {onIdentitySource}.",
     "INTERNAL_ACCOUNT_MODIFIED": "{performedBy} modified the internal account {onAccount}.",
     "GRANT_ACCESS_ACCEPTED": "{performedBy} approved the request by {onAccount} to get access to {onGroup2} until {parameter3}. {reason}",
     "PROVISIONED_SYSTEM_REMOVED_FROM_GROUP": "{gosTypeCap} {gosName} on {onSystem} was removed from the group {onGroup}.",
@@ -5463,6 +5531,10 @@
       "MOVE": "{performedBy} moved {onVaultRecord} to the vault for {parameter3}.",
       "COPY": "{performedBy} copied {onVaultRecord} to the vault for {parameter3}.",
       "SHARE": "{performedBy} shared {onVaultRecord} with the vault for {parameter3}."
+    },
+    "GRANT_APPLICATION_ACCEPTED": {
+      "profile": "The request to grant the users in the access profile {onAccessProfile} access to {onClient} was approved by {performedBy}. {reason}",
+      "group": "The request to grant the users in {onGroup} access to {onClient} was approved by {performedBy}. {reason}"
     },
     "SERVICE_ACCOUNT_PASSWORD_ROTATED": "The password for the service account {onServiceAccount} on the linked system {onSystem} is rotated.",
     "ACCOUNT_ADDED_TO_ACCESS_PROFILE": {
@@ -5506,6 +5578,10 @@
     "CLIENT_ADDED_TO_ORGANIZATIONAL_UNIT": "{performedBy} has added {onClient} to the organisational unit {onOrganizationalUnit}.",
     "SERVICE_ACCOUNT_GROUP_PROVISIONED": "{gosTypeCap} {gosName} on {onSystem} has been enabled for the service account {onServiceAccount}.",
     "TRANSFER_APPLICATION_OWNERSHIP_DECLINED": "The request to transfer ownership of {onClient} to {onGroup} was rejected by {performedBy}. {reason}",
+    "GRANT_APPLICATION_REQUESTED": {
+      "profile": "{performedBy} requested to grant the users in the access profile {onAccessProfile} access to {onClient}. {reason}",
+      "group": "{performedBy} requested to grant the users in {onGroup} access to {onClient}. {reason}"
+    },
     "error": "An error occurred fetching the audit log: {0}",
     "CLIENT_ADDED_TO_GROUP": "{onClient} was added to the group {onGroup}.",
     "GROUP_ON_SYSTEM_PROVISIONED": "{gosTypeCap} {gosName} was created at {onSystem}.",
@@ -5524,7 +5600,6 @@
     "CREATE_GROUP_DECLINED": "{performedBy} declined the request by {onAccount} to create the group {parameter3}. {reason}",
     "ACCOUNT_GROUP_DEPROVISIONED": "{onAccount} disabled {gosType} {gosName} from {onSystem} via {onGroup}.",
     "TRANSFER_ORGANIZATIONAL_UNIT_OWNERSHIP_DECLINED": "The request to transfer ownership of {onOrganizationalUnit} to {onGroup} was rejected by {performedBy}. {reason}",
-    "GRANT_APPLICATION_DECLINED": "The request to grant the users in {onGroup} access to {onClient} was declined by {performedBy}. {reason}",
     "TRANSFER_PROVISIONED_SYSTEM_ADMINISTRATION_ACCEPTED": "The request to transfer administration of {onSystem} to {onGroup} was approved by {performedBy}. {reason}",
     "PROVISIONED_SYSTEM_ADDED_TO_ACCESS_PROFILE": "{gosTypeCap} {gosName} on {onSystem} was added to the access profile {onAccessProfile}.",
     "LINK_DIRECTORY_TO_ACCESS_PROFILE_ACCEPTED": "The request to assign the management of attributes for accounts from {onDirectory} to the access profile {onAccessProfile} was approved by {performedBy}. {reason}",
@@ -5540,6 +5615,10 @@
     "SERVICE_ACCOUNT_MODIFIED": "{performedBy} modified the service account {onServiceAccount} on {onSystem}.",
     "ACCESS_PROFILE_REMOVED": "{performedBy} removed the access profile {onAccessProfile}.",
     "GROUP_ON_SYSTEM_MODIFIED": "{performedBy} modified {gosType} {gosName} on {onSystem}.",
+    "GRANT_APPLICATION_DECLINED": {
+      "group": "The request to grant the users in {onGroup} access to {onClient} was declined by {performedBy}. {reason}",
+      "profile": "The request to grant the users in the access profile {onAccessProfile} access to {onClient} was declined by {performedBy}. {reason}"
+    },
     "CERTIFICATE_MODIFIED": "{performedBy} modified the certificate {onCertificate}.",
     "SETUP_NESTED_GROUP_DISCONNECT_REQUESTED": "{performedBy} requested to remove the nesting of {onGroup2} within {onGroup}. {reason}",
     "ACCOUNT_MODIFIED_FOR_GROUP": {
@@ -5586,6 +5665,7 @@
     },
     "ACCOUNT_CREATED": "{performedBy} registered an account for {onDirectory}.",
     "PROVISIONED_SYSTEM_MODIFIED": "{performedBy} modified a linked system {onSystem}.",
+    "CLIENT_ADDED_TO_ACCESS_PROFILE": "{onClient} was added to the access profile {onAccessProfile}.",
     "DISABLE_2FA_DECLINED": "The request to disable 2FA for {onAccount} was declined by {performedBy}. {reason}",
     "EXTENDED_ACCESS_DECLINED": "{performedBy} declined the request by {onAccount} to get extended access to {onGroup} until {parameter3}. {reason}",
     "toonEigenRecords": "Only show my records",
@@ -5647,7 +5727,6 @@
     "GRANT_CLIENT_PERMISSION_REQUESTED": "{performedBy} requested to grant {onClient} the permission '{parameter3}'. {reason}",
     "CERTIFICATE_CREATED": "{performedBy} added a new certificate {onCertificate}.",
     "ENABLE_PROFILE_ADMINISTRATION_DECLINED": "The request to enable access profile administration on {onGroup} was rejected by {performedBy}. {reason}",
-    "GRANT_APPLICATION_REQUESTED": "{performedBy} requested to grant the users in {onGroup} access to {onClient}. {reason}",
     "SETUP_NESTED_GROUP_CONNECT_DECLINED": "{performedBy} declined the request to have {onGroup} nested within {onGroup2}. {reason}",
     "ACCOUNT_2FA_ENABLED": "{performedBy} enabled two-factor authentication.",
     "GROUP_CLASSIFICATION_CREATED": "{performedBy} added a new group classification {onGroupClassification}.",
@@ -5665,6 +5744,7 @@
       "MANUAL": "{performedBy} has removed {onAccount} from the access profile {onAccessProfile}."
     },
     "GRANT_CLIENT_PERMISSION_ACCEPTED": "The request to grant {onClient} the permission '{parameter3}' was approved by {performedBy}. {reason}",
+    "IDENTITY_SOURCE_CREATED": "{performedBy} added a new identity source {onIdentitySource}.",
     "CLIENT_MODIFIED": "{performedBy} modified the application {onClient}.",
     "GROUP_ON_SYSTEM_DEPROVISIONED": "{gosTypeCap} {gosName} has been removed from the system {onSystem}.",
     "TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP_DECLINED": "The request to transfer ownership of {gosType} {gosName} on {onSystem} to {onGroup} was rejected by {performedBy}. {reason}",
@@ -5697,6 +5777,7 @@
     "GROUP_REMOVED_FROM_ACCESS_PROFILE": "{onGroup} was removed from the access profile {onAccessProfile}.",
     "ACCOUNT_GROUP_ACTIVATION_REASON": "{performedBy} activated {onGroup} with the following reason: {parameter1}.",
     "ACCOUNT_ACTIVATION_CODE_USED": "{performedBy} used the activation code {parameter1} for a password recovery.",
+    "IDENTITY_SOURCE_MODIFIED": "{performedBy} modified the identity source {onIdentitySource}.",
     "ACCOUNT_TOTP_OFFSET_CHANGED": "The verification code time offset for {performedBy} was changed to {parameter1}.",
     "PROVISIONED_SYSTEM_CREATED": "{performedBy} added a new linked system {onSystem}.",
     "JOIN_GROUP_REQUESTED": {
@@ -5712,6 +5793,7 @@
     "INTERNAL_ACCOUNT_CREATED": "{performedBy} added a new internal account {onAccount}.",
     "TRANSFER_ACCESS_PROFILE_OWNERSHIP_ACCEPTED": "The request to transfer ownership of {onAccessProfile} to {onGroup} was approved by {performedBy}. {reason}",
     "UPDATE_GROUP_MEMBERSHIP_ACCEPTED": "{performedBy} approved the request to give {onAccount} the following access to {onGroup2}: {parameter3} {reason}",
+    "CLIENT_REMOVED_FROM_ACCESS_PROFILE": "The application {onClient} was removed from the access profile {onAccessProfile}.",
     "ADD_GROUP_TO_ACCESS_PROFILE_REQUESTED": "{performedBy} requested to add {onGroup} to the access profile {onAccessProfile}. {reason}",
     "REMOVE_ORGANIZATIONAL_UNIT_REQUESTED": "{performedBy} requested to remove the organisational unit {onOrganizationalUnit}. {reason}",
     "SERVICE_ACCOUNT_CREATED": "{performedBy} added a new service account {onServiceAccount} on {onSystem}.",
@@ -5807,6 +5889,53 @@
     "GROUP_CRITERIA_UNSATISFIED_ROTATING_PASSWORD_REQUIRED": "This group does not have the option \"Rotating password required\" enabled. This is required for its classification.",
     "WEAK_PASSWORD_HASHING": "Uses a weak password hashing scheme"
   },
+  "application": {
+    "saml": {
+      "error": "Invalid SAML metadata: {error}",
+      "clientidmismatch": "The client identifier of the application does not match the entityID in the SAML metadata.",
+      "nospssodescriptor": "The SAML metadata does not contain an SPSSODescriptor for the SAML 2 protocol.",
+      "metadataboth": "You cannot enter both a metadata URL and manual metadata.",
+      "metadatarequired": "Metadata URL or manual metadata is required."
+    },
+    "header": {
+      "ldap": "LDAP application",
+      "saml2": "SAML v2.0 application",
+      "oauth2": "OAuth2/OIDC application"
+    },
+    "secret": {
+      "invalid": "The given secret is invalid",
+      "info": "{name} has a vault with passwords. The secret of the client is required to prevent loss of these records.",
+      "wipe": "When saving, the secret of the application will be lost. Do you still want to save?",
+      "hidden": "(hidden)",
+      "regenerate": "Will be regenerated on save",
+      "required": "Secret for {name} required"
+    },
+    "clientpermission": {
+      "subtitle": "Details for the permission for the application {0}.",
+      "header": "Granted permission"
+    },
+    "versions": {
+      "number": "Version number",
+      "usedat": "Last used at",
+      "header": "Used API versions"
+    },
+    "clientpermissions": {
+      "subtitle": "Details for the permissions for the application {0}.",
+      "header": "Granted permissions"
+    },
+    "attribute": {
+      "script": "Script",
+      "add": "Add attribute",
+      "name": "Attribute name"
+    },
+    "oauth2": {
+      "sso": "Code and implicit grants - Account authentication (SSO)",
+      "client": "Client credentials grant - Client authentication (server-to-server)"
+    },
+    "organizationalunits": {
+      "header": "Organisational units"
+    }
+  },
   "webhook": {
     "category": {
       "requests": {
@@ -5874,6 +6003,7 @@
         "main": "Standard operations",
         "provgroup": "Linked system in group",
         "create": "Created",
+        "accessprofileclient": "SSO application within access profile",
         "internalaccount": "Internal account",
         "client": "Application",
         "accessprofileprov": "Group on system within access profile",
@@ -5881,6 +6011,7 @@
         "systemgroup": "Group on system",
         "update": "Modified",
         "accessprofilegroup": "Group within access profile",
+        "identitysource": "Identity source",
         "group": "Group",
         "certificate": "Certificate",
         "organizationalunit": "Organisational unit",
@@ -5991,6 +6122,206 @@
     },
     "header": "Webhook - {0}"
   },
+  "prompt": {
+    "head": {
+      "delete": {
+        "warn": {
+          "ldapapplication": "When <strong>{0}<\/strong> is removed, its credentials for the LDAP will become invalid.",
+          "identitysource": {
+            "afas": "When <strong>{0}<\/strong> is removed, no more users will be synced."
+          },
+          "account": {
+            "internal": "When <strong>{0}<\/strong> is removed, all configuration for linked systems, including passwords, group memberships and keys is also removed.",
+            "main": "When <strong>{0}<\/strong> is removed, all configuration for linked systems, including passwords, group memberships and keys is also removed."
+          },
+          "serviceaccount": "Remove the service account <strong>{0}<\/strong>.",
+          "organizationalunit": "When <strong>{0}<\/strong> is removed, all connected items will be moved to the parent organisational unit.",
+          "oauth2application": "When <strong>{0}<\/strong> is removed, all connections with groups are also removed.",
+          "sequence": "Remove the number sequence <strong>{0}<\/strong>.",
+          "group": "When <strong>{0}<\/strong> is removed, all data related to this group will also be removed.",
+          "tile": "Remove the tile <strong>{0}<\/strong>.",
+          "directory": "When <strong>{0}<\/strong> is removed, users can no longer register for this directory.",
+          "groupinsystem": "When <strong>{0}<\/strong> is removed, all users will lose access to this group. The group will also be removed on the linked system.",
+          "vaultrecord": "When removed, the password or secret for <strong>{0}<\/strong> cannot be restored.",
+          "bulkaccount": "You are about to delete <strong>{0} accounts<\/strong>. These users will no longer be able to log in and the contents of the personal vaults will be lost.",
+          "serviceaccountgroup": "Revoke access to the group <strong>{0}<\/strong>.",
+          "vaultrecovery": "You did not provide the previous private key for recovery. This will make recovery for all vaults impossible until a vault is opened at least once. When the previous key is still available, please abort and provide this key.",
+          "system": "When <strong>{0}<\/strong> is removed, all connected accounts and groups will also be removed. All access to groups on this system will be revoked.",
+          "groupclient": {
+            "group": "When the link between <strong>{0}<\/strong> and <strong>{1}<\/strong> is removed, all members of the group will lose access to the application.",
+            "client": "When the link between <strong>{0}<\/strong> and <strong>{1}<\/strong> is removed, all members of the group will lose access to the application."
+          },
+          "groupsystem": "When <strong>{0}<\/strong> is removed, all members of the group will lose access to the linked system.",
+          "organizationalunitclientapplication": "If you remove <strong>{0}<\/strong> from organisational unit {1}, the application will lose access to groups and configuration that belong to this organisational unit.",
+          "accessprofileprov": "When <strong>{0}<\/strong> is removed, all members of the access profile will lose access to group on the linked system.",
+          "saml2application": "When <strong>{0}<\/strong> is removed, all connections with groups are also removed.",
+          "certificate": "You are about to delete the certificate <strong>{0}<\/strong>. Once deleted, this certificate cannot be restored without the original files.",
+          "organizationalunitaccount": "If you remove <strong>{0}<\/strong> from organisational unit {1}, the user will lose access to groups and configuration that belong to this organisational unit.",
+          "groupclassification": "When <strong>{0}<\/strong> is removed, all groups with this classification will lose their classification.",
+          "vault": {
+            "personal": "When you reset your personal vault, all stored secrets will be removed. This cannot be undone."
+          },
+          "accessprofileclient": "When the link between <strong>{0}<\/strong> and <strong>{1}<\/strong> is removed, all members of the access profile will lose access to the application.",
+          "webhook": "When the webhook for <strong>{0}<\/strong> is removed this system will no longer be notified of events."
+        },
+        "rep": {
+          "saml2application": "Confirm the removal of the SAML v2.0 application by entering the name.",
+          "account": {
+            "main": "Confirm the removal of the account by entering the username.",
+            "internal": "Confirm the removal of the account by entering the username."
+          },
+          "group": "Confirm the removal of the group by entering the name.",
+          "organizationalunitclientapplication": "Confirm the removal of the application by entering the name.",
+          "groupclient": {
+            "group": "Confirm the removal of the link by entering the group name.",
+            "client": "Confirm the removal of the link by entering the application name."
+          },
+          "groupsystem": "Confirm the removal of the group by entering the name shown.",
+          "identitysource": {
+            "afas": "Confirm the removal of the AFAS identity source by entering the name."
+          },
+          "accessprofileprov": "Confirm the removal of the group by entering the name shown.",
+          "certificate": "Confirm the removal of the certificate by entering the name.",
+          "webhook": "Confirm the removal of the webhook by entering the URL.",
+          "bulkaccount": "Confirm the removal of the accounts by entering 'delete accounts'.",
+          "sequence": "Confirm the removal of the number sequence by entering the name.",
+          "system": "Confirm the removal of the linked system by entering the name.",
+          "vaultrecord": "Confirm the removal of the record by entering the name.",
+          "serviceaccount": "Confirm the removal of the service account by entering the name.",
+          "groupclassification": "Confirm the removal of the group classification by entering the name.",
+          "vault": {
+            "personal": "Confirm the removal of the vault by entering your username."
+          },
+          "tile": "Confirm the removal of the tile by entering the name.",
+          "organizationalunitaccount": "Confirm the removal of the account by entering the username.",
+          "oauth2application": "Confirm the removal of the OAuth2/OIDC application by entering the name.",
+          "groupinsystem": "Confirm the removal of the group by entering the name.",
+          "serviceaccountgroup": "Confirm the revocation of access to the group by entering the name.",
+          "directory": "Confirm the removal of the directory by entering the name.",
+          "ldapapplication": "Confirm the removal of the LDAP application by entering the name.",
+          "accessprofileclient": "Confirm the removal of the link by entering the access profile name.",
+          "vaultrecovery": "If you do want to continue, enter 'I am sure'.",
+          "organizationalunit": "Confirm the removal of the organisational unit by entering the name."
+        },
+        "repeatlabel": {
+          "organizationalunit": "Name",
+          "account": "Username",
+          "system": "Name",
+          "group": "Name"
+        },
+        "comment": {
+          "group": "Removing a group requires permission."
+        }
+      },
+      "password": {
+        "PROVISIONING_CONFIG": {
+          "nogroup": "Configuration is required to activate your account on systems. KeyHub requires your password for this.",
+          "main": "Configuration is required to activate {group}. KeyHub requires your password for this."
+        },
+        "EXPLICIT": "Reauthentication is required for this action.",
+        "FIRST_AUTH": " ",
+        "REREGISTRATION": "Re-registration is required for your account. To do this, enter the password that you use to open your vault.",
+        "EXPIRED": "The password verification performed {time} has expired. KeyHub verifies your password every {pwdtimeout}.",
+        "DIFFERENT_IP": "The password entered {time} was from a different IP-address.",
+        "MAX_AGE_SET": "The Single Sign-on consumer explicitly requests reauthentication."
+      },
+      "federated": {
+        "DIFFERENT_IP": "The authentication you performed {time} was from a different IP-address.",
+        "FIRST_AUTH": " ",
+        "EXPIRED": "The authentication you performed {time} has expired. KeyHub verifies your authentication every {pwdtimeout}.",
+        "EXPLICIT": "Reauthentication is required for this action."
+      },
+      "leave": {
+        "rep": {
+          "mygroup": "For confirmation, enter the name of the group that you want to leave."
+        },
+        "warn": {
+          "mygroup": "Leaving <strong>{0}<\/strong> will revoke all access given by this group, including its vault."
+        }
+      },
+      "disableandaccountswritablechanged": {
+        "rep": {
+          "system": "Confirm the deactivation of the linked system as well as changing the 'accounts writable' property by entering the system's name."
+        },
+        "warn": {
+          "system": "Are you sure you want to modify <strong>{0}<\/strong>?"
+        }
+      },
+      "token": {
+        "DIFFERENT_IP": "The code entered {time} was from a different IP-address.",
+        "REREGISTRATION": "Re-registration is required for your account.",
+        "EXPIRED": "The code verification performed {time} has expired. KeyHub verifies your token every {2fatimeout}.",
+        "FIRST_AUTH": " ",
+        "MAX_AGE_SET": "The Single Sign-on consumer explicitly requests reauthentication.",
+        "EXPLICIT": "Reauthentication is required for this action."
+      },
+      "disable": {
+        "rep": {
+          "directory": "Confirm the deactivation of the directory by entering its name.",
+          "serviceaccount": "Confirm the deactivation of the service account by entering the username.",
+          "system": "Confirm the deactivation of the linked system by entering its name.",
+          "account": "Confirm the deactivation of the account by entering the username."
+        },
+        "warn": {
+          "serviceaccount": "When <strong>{0}<\/strong> is deactivated, it will immediately become unavailable.",
+          "system": "Are you sure you want to deactivate <strong>{0}<\/strong>?",
+          "directory": "Are you sure you want to deactivate <strong>{0}<\/strong>?",
+          "account": "When <strong>{0}<\/strong> is deactivated, their authentication will immediately be invalidated."
+        },
+        "repeatlabel": {
+          "account": "Username"
+        }
+      },
+      "totpoffsetchange": "The clock of your 2FA device seems to have drifted. Please enter 2 consecutive codes to verify your device.",
+      "accountswritablechanged": {
+        "warn": {
+          "system": "Are you sure you want to modify the property 'accounts writable' for <strong>{0}<\/strong>?"
+        },
+        "rep": {
+          "system": "Confirm changing the 'accounts writable' property of the linked system by entering its name."
+        }
+      }
+    },
+    "confirm": {
+      "delete": {
+        "title": "Confirm removal",
+        "error": "The given text is not '{0}'"
+      },
+      "disableandaccountswritablechanged": {
+        "error": "The given text is not '{0}'",
+        "title": "Confirm modification and deactivation"
+      },
+      "leave": {
+        "title": "Confirm leaving",
+        "error": "The given text is not '{0}'"
+      },
+      "disable": {
+        "title": "Confirm deactivation",
+        "error": "The given text is not '{0}'"
+      },
+      "federated": {
+        "main": "Reauthenticate",
+        "hint": "Click 'OK' to reauthenticate at <strong>{0}<\/strong>"
+      },
+      "accountswritablechanged": {
+        "title": "Confirm modification",
+        "error": "The given text is not '{0}'"
+      },
+      "password": {
+        "placeholder": {
+          "directory": "Your {0} password",
+          "main": "Your general password"
+        },
+        "main": "Re-enter your password"
+      },
+      "totpoffsetchange": "Confirm your verification code time drift",
+      "token": "Re-enter your code"
+    },
+    "rotatingpwd": {
+      "head": "Rotating password required",
+      "info": "It is required to have a rotating password for the activation of {group} on {system}."
+    }
+  },
   "mail": {
     "subject": {
       "request": {
@@ -6008,14 +6339,18 @@
         "transferaccessprofileownership": "{from} requests to transfer ownership of {accessProfile} to {group}",
         "createserviceaccount": "{from} requests a new service account {username} on {system}",
         "grantgrouponsystem": {
-          "group": "{from} requests to grant the users in the group {group} access to {gosType} {gosName} on {system}",
-          "profile": "{from} requests to grant the users in the access profile {accessProfile} access to {gosType} {gosName} on {system}"
+          "group": "{originalRequester} (via {from}) requests to grant the users in the group {group} access to {gosType} {gosName} on {system}",
+          "profile": "{originalRequester} (via {from}) requests to grant the users in the access profile {accessProfile} access to {gosType} {gosName} on {system}"
         },
         "transferprovisionedsystemownership": "{from} requests to transfer ownership of {system} to {group}",
         "enabletechnicaladministration": "{from} requests to enable technical administration on {group}",
-        "creategrouponsystem": "{from} requests a new {gosType} {gosName} on {system}",
+        "creategrouponsystem": "{from} requests {gosTypeNew} {gosName} on {system}",
         "removeprovisionedsystem": "{from} wants to remove the linked system {system}",
         "removegroup": "{from} wants to remove the group {group}",
+        "grantapplication": {
+          "profile": "{from} requests to grant the users in the access profile {accessProfile} access to {application}",
+          "group": "{from} requests to grant the users in {group} access to {application}"
+        },
         "transferorganizationalunitownership": "{from} requests to transfer ownership of {organizationalUnit} to {group}",
         "linkdirectorytoprofile": "{from} wants to link the directory {directory} to the access profile {accessProfile}",
         "passwordreset": "{from} requests a password recovery",
@@ -6035,7 +6370,6 @@
         "transferapplicationownership": "{from} requests to transfer ownership of {application} to {group}",
         "reviewaudit": "{from} requests a review of an audit of {group}.",
         "disable2fa": "{from} wants 2fa to be disabled",
-        "grantapplication": "{from} requests to grant the users in {group} access to {application}",
         "updatelicense": "{from} wants to make a change to the license",
         "removeorganizationalunit": "{from} wants to remove the organisational unit {organizationalUnit}",
         "transfergrouponsystemownership": "{from} requests to transfer ownership of {gosType} {gosName} on {system} to {group}",
@@ -6370,53 +6704,6 @@
       "search": "Organisational unit..."
     }
   },
-  "applicatie": {
-    "saml": {
-      "nospssodescriptor": "The SAML metadata does not contain an SPSSODescriptor for the SAML 2 protocol.",
-      "clientidmismatch": "The client identifier of the application does not match the entityID in the SAML metadata.",
-      "metadataboth": "You cannot enter both a metadata URL and manual metadata.",
-      "error": "Invalid SAML metadata: {error}",
-      "metadatarequired": "Metadata URL or manual metadata is required."
-    },
-    "secret": {
-      "wipe": "When saving, the secret of the application will be lost. Do you still want to save?",
-      "hidden": "(hidden)",
-      "required": "Secret for {name} required",
-      "invalid": "The given secret is invalid",
-      "info": "{name} has a vault with passwords. The secret of the client is required to prevent loss of these records.",
-      "regenerate": "Will be regenerated on save"
-    },
-    "header": {
-      "oauth2": "OAuth2/OIDC application",
-      "saml2": "SAML v2.0 application",
-      "ldap": "LDAP application"
-    },
-    "attribute": {
-      "name": "Attribute name",
-      "add": "Add attribute",
-      "script": "Script"
-    },
-    "oauth2": {
-      "sso": "Code and implicit grants - Account authentication (SSO)",
-      "client": "Client credentials grant - Client authentication (server-to-server)"
-    },
-    "clientpermissions": {
-      "header": "Granted permissions",
-      "subtitle": "Details for the permissions for the application {0}."
-    },
-    "versions": {
-      "usedat": "Last used at",
-      "header": "Used API versions",
-      "number": "Version number"
-    },
-    "clientpermission": {
-      "header": "Granted permission",
-      "subtitle": "Details for the permission for the application {0}."
-    },
-    "organizationalunits": {
-      "header": "Organisational units"
-    }
-  },
   "error": {
     "GROUP_HAS_APPS": "This group owns or administers one or more applications and can therefore not be removed.",
     "LICENSE_WRONG_DOMAIN": {
@@ -6550,198 +6837,6 @@
     "PROVISIONING_MISSING_DIRECTORY_ATTRIBUTE": "The directory is missing a required account attribute: {attribute}",
     "GROUP_AUDIT_DRAFT_EXISTS": "A draft audit has already been saved for this group. Open this draft instead of creating a new one.",
     "NO_VAULT_TO_RESTORE": "The user {username} does not have a vault to restore."
-  },
-  "prompt": {
-    "confirm": {
-      "delete": {
-        "title": "Confirm removal",
-        "error": "The given text is not '{0}'"
-      },
-      "disableandaccountswritablechanged": {
-        "error": "The given text is not '{0}'",
-        "title": "Confirm modification and deactivation"
-      },
-      "leave": {
-        "title": "Confirm leaving",
-        "error": "The given text is not '{0}'"
-      },
-      "disable": {
-        "title": "Confirm deactivation",
-        "error": "The given text is not '{0}'"
-      },
-      "federated": {
-        "main": "Reauthenticate",
-        "hint": "Click 'OK' to reauthenticate at <strong>{0}<\/strong>"
-      },
-      "accountswritablechanged": {
-        "title": "Confirm modification",
-        "error": "The given text is not '{0}'"
-      },
-      "password": {
-        "placeholder": {
-          "directory": "Your {0} password",
-          "main": "Your general password"
-        },
-        "main": "Re-enter your password"
-      },
-      "totpoffsetchange": "Confirm your verification code time drift",
-      "token": "Re-enter your code"
-    },
-    "head": {
-      "password": {
-        "PROVISIONING_CONFIG": {
-          "nogroup": "Configuration is required to activate your account on systems. KeyHub requires your password for this.",
-          "main": "Configuration is required to activate {group}. KeyHub requires your password for this."
-        },
-        "EXPLICIT": "Reauthentication is required for this action.",
-        "FIRST_AUTH": " ",
-        "REREGISTRATION": "Re-registration is required for your account. To do this, enter the password that you use to open your vault.",
-        "EXPIRED": "The password verification performed {time} has expired. KeyHub verifies your password every {pwdtimeout}.",
-        "DIFFERENT_IP": "The password entered {time} was from a different IP-address.",
-        "MAX_AGE_SET": "The Single Sign-on consumer explicitly requests reauthentication."
-      },
-      "federated": {
-        "DIFFERENT_IP": "The authentication you performed {time} was from a different IP-address.",
-        "FIRST_AUTH": " ",
-        "EXPIRED": "The authentication you performed {time} has expired. KeyHub verifies your authentication every {pwdtimeout}.",
-        "EXPLICIT": "Reauthentication is required for this action."
-      },
-      "delete": {
-        "rep": {
-          "account": {
-            "main": "Confirm the removal of the account by entering the username.",
-            "internal": "Confirm the removal of the account by entering the username."
-          },
-          "group": "Confirm the removal of the group by entering the name.",
-          "organizationalunitclientapplication": "Confirm the removal of the application by entering the name.",
-          "groupclient": {
-            "group": "Confirm the removal of the link by entering the group name.",
-            "client": "Confirm the removal of the link by entering the application name."
-          },
-          "groupsystem": "Confirm the removal of the group by entering the name shown.",
-          "accessprofileprov": "Confirm the removal of the group by entering the name shown.",
-          "certificate": "Confirm the removal of the certificate by entering the name.",
-          "webhook": "Confirm the removal of the webhook by entering the URL.",
-          "bulkaccount": "Confirm the removal of the accounts by entering 'delete accounts'.",
-          "sequence": "Confirm the removal of the number sequence by entering the name.",
-          "system": "Confirm the removal of the linked system by entering the name.",
-          "vaultrecord": "Confirm the removal of the record by entering the name.",
-          "serviceaccount": "Confirm the removal of the service account by entering the name.",
-          "ldapapplicatie": "Confirm the removal of the LDAP application by entering the name.",
-          "groupclassification": "Confirm the removal of the group classification by entering the name.",
-          "vault": {
-            "personal": "Confirm the removal of the vault by entering your username."
-          },
-          "tile": "Confirm the removal of the tile by entering the name.",
-          "organizationalunitaccount": "Confirm the removal of the account by entering the username.",
-          "oauth2applicatie": "Confirm the removal of the OAuth2/OIDC application by entering the name.",
-          "groupinsystem": "Confirm the removal of the group by entering the name.",
-          "serviceaccountgroup": "Confirm the revocation of access to the group by entering the name.",
-          "directory": "Confirm the removal of the directory by entering the name.",
-          "saml2applicatie": "Confirm the removal of the SAML v2.0 application by entering the name.",
-          "vaultrecovery": "If you do want to continue, enter 'I am sure'.",
-          "organizationalunit": "Confirm the removal of the organisational unit by entering the name."
-        },
-        "repeatlabel": {
-          "organizationalunit": "Name",
-          "account": "Username",
-          "system": "Name",
-          "group": "Name"
-        },
-        "warn": {
-          "account": {
-            "internal": "When <strong>{0}<\/strong> is removed, all configuration for linked systems, including passwords, group memberships and keys is also removed.",
-            "main": "When <strong>{0}<\/strong> is removed, all configuration for linked systems, including passwords, group memberships and keys is also removed."
-          },
-          "serviceaccount": "Remove the service account <strong>{0}<\/strong>.",
-          "ldapapplicatie": "When <strong>{0}<\/strong> is removed, its credentials for the LDAP will become invalid.",
-          "organizationalunit": "When <strong>{0}<\/strong> is removed, all connected items will be moved to the parent organisational unit.",
-          "saml2applicatie": "When <strong>{0}<\/strong> is removed, all connections with groups are also removed.",
-          "oauth2applicatie": "When <strong>{0}<\/strong> is removed, all connections with groups are also removed.",
-          "sequence": "Remove the number sequence <strong>{0}<\/strong>.",
-          "group": "When <strong>{0}<\/strong> is removed, all data related to this group will also be removed.",
-          "tile": "Remove the tile <strong>{0}<\/strong>.",
-          "directory": "When <strong>{0}<\/strong> is removed, users can no longer register for this directory.",
-          "groupinsystem": "When <strong>{0}<\/strong> is removed, all users will lose access to this group. The group will also be removed on the linked system.",
-          "vaultrecord": "When removed, the password or secret for <strong>{0}<\/strong> cannot be restored.",
-          "bulkaccount": "You are about to delete <strong>{0} accounts<\/strong>. These users will no longer be able to log in and the contents of the personal vaults will be lost.",
-          "serviceaccountgroup": "Revoke access to the group <strong>{0}<\/strong>.",
-          "vaultrecovery": "You did not provide the previous private key for recovery. This will make recovery for all vaults impossible until a vault is opened at least once. When the previous key is still available, please abort and provide this key.",
-          "system": "When <strong>{0}<\/strong> is removed, all connected accounts and groups will also be removed. All access to groups on this system will be revoked.",
-          "groupclient": {
-            "group": "When the link between <strong>{0}<\/strong> and <strong>{1}<\/strong> is removed, all members of the group will lose access to the application.",
-            "client": "When the link between <strong>{0}<\/strong> and <strong>{1}<\/strong> is removed, all members of the group will lose access to the application."
-          },
-          "groupsystem": "When <strong>{0}<\/strong> is removed, all members of the group will lose access to the linked system.",
-          "organizationalunitclientapplication": "If you remove <strong>{0}<\/strong> from organisational unit {1}, the application will lose access to groups and configuration that belong to this organisational unit.",
-          "accessprofileprov": "When <strong>{0}<\/strong> is removed, all members of the access profile will lose access to group on the linked system.",
-          "certificate": "You are about to delete the certificate <strong>{0}<\/strong>. Once deleted, this certificate cannot be restored without the original files.",
-          "organizationalunitaccount": "If you remove <strong>{0}<\/strong> from organisational unit {1}, the user will lose access to groups and configuration that belong to this organisational unit.",
-          "groupclassification": "When <strong>{0}<\/strong> is removed, all groups with this classification will lose their classification.",
-          "vault": {
-            "personal": "When you reset your personal vault, all stored secrets will be removed. This cannot be undone."
-          },
-          "webhook": "When the webhook for <strong>{0}<\/strong> is removed this system will no longer be notified of events."
-        },
-        "comment": {
-          "group": "Removing a group requires permission."
-        }
-      },
-      "leave": {
-        "rep": {
-          "mygroup": "For confirmation, enter the name of the group that you want to leave."
-        },
-        "warn": {
-          "mygroup": "Leaving <strong>{0}<\/strong> will revoke all access given by this group, including its vault."
-        }
-      },
-      "disableandaccountswritablechanged": {
-        "rep": {
-          "system": "Confirm the deactivation of the linked system as well as changing the 'accounts writable' property by entering the system's name."
-        },
-        "warn": {
-          "system": "Are you sure you want to modify <strong>{0}<\/strong>?"
-        }
-      },
-      "token": {
-        "DIFFERENT_IP": "The code entered {time} was from a different IP-address.",
-        "REREGISTRATION": "Re-registration is required for your account.",
-        "EXPIRED": "The code verification performed {time} has expired. KeyHub verifies your token every {2fatimeout}.",
-        "FIRST_AUTH": " ",
-        "MAX_AGE_SET": "The Single Sign-on consumer explicitly requests reauthentication.",
-        "EXPLICIT": "Reauthentication is required for this action."
-      },
-      "disable": {
-        "rep": {
-          "directory": "Confirm the deactivation of the directory by entering its name.",
-          "serviceaccount": "Confirm the deactivation of the service account by entering the username.",
-          "system": "Confirm the deactivation of the linked system by entering its name.",
-          "account": "Confirm the deactivation of the account by entering the username."
-        },
-        "warn": {
-          "serviceaccount": "When <strong>{0}<\/strong> is deactivated, it will immediately become unavailable.",
-          "system": "Are you sure you want to deactivate <strong>{0}<\/strong>?",
-          "directory": "Are you sure you want to deactivate <strong>{0}<\/strong>?",
-          "account": "When <strong>{0}<\/strong> is deactivated, their authentication will immediately be invalidated."
-        },
-        "repeatlabel": {
-          "account": "Username"
-        }
-      },
-      "totpoffsetchange": "The clock of your 2FA device seems to have drifted. Please enter 2 consecutive codes to verify your device.",
-      "accountswritablechanged": {
-        "warn": {
-          "system": "Are you sure you want to modify the property 'accounts writable' for <strong>{0}<\/strong>?"
-        },
-        "rep": {
-          "system": "Confirm changing the 'accounts writable' property of the linked system by entering its name."
-        }
-      }
-    },
-    "rotatingpwd": {
-      "head": "Rotating password required",
-      "info": "It is required to have a rotating password for the activation of {group} on {system}."
-    }
   },
   "DerRSAPublicKeyValidator": {
     "invalidkey": "Invalid RSA public key. Use an RSA public key in DER-encoding."
@@ -6890,7 +6985,7 @@
             "head": "Move record"
           }
         },
-        "specific": "Move, copy or share record",
+        "specific": "Share, copy or move record",
         "title": "Move, copy or share",
         "target": {
           "true": "Group",
@@ -7218,12 +7313,6 @@
     "admin": {
       "toevoegen": "Add manager"
     },
-    "applicatie": {
-      "bewerken": {
-        "main": "Edit application",
-        "subtitle": "Choose the required security level for this application."
-      }
-    },
     "search": {
       "mygroups": "Search in my groups",
       "account": "Groups with account..."
@@ -7235,6 +7324,12 @@
       "nrClients": "{0} application(s)"
     },
     "mailadmin": "Mail manager",
+    "application": {
+      "bewerken": {
+        "subtitle": "Select the options for accessing the application through this group.",
+        "main": "Edit application in group"
+      }
+    },
     "private": "(hidden)",
     "header": "Group - {0}",
     "opsystem": "{0} on {1}",
@@ -7247,11 +7342,30 @@
     },
     "leave": "Leave this group"
   },
+  "grouponsystem": {
+    "header": {
+      "group": "Group",
+      "main": "Group on System - {0}",
+      "activationrequired": "Activation required",
+      "serviceaccount": "Service account",
+      "serviceaccounts": "Service accounts",
+      "groups": "Groups",
+      "accessprofiles": "Access profiles",
+      "accessprofile": "Access profile",
+      "username": "Username"
+    }
+  },
   "accessprofile": {
     "gos": {
       "details": {
         "title": "Group on linked system",
         "subtitle": "This access profile has access to the group on the linked system."
+      }
+    },
+    "client": {
+      "details": {
+        "subtitle": "Select the options for accessing the application via this access profile.",
+        "title": "Edit application in access profile"
       }
     },
     "attributerules": {
@@ -7280,10 +7394,12 @@
       "attributes": "Attributes",
       "attributerule": "Attribute",
       "main": "Access profile - {0}",
+      "manual": "Manual",
       "expected": "Expected value",
       "current": "Current value",
       "group": "Group",
-      "account": "User"
+      "account": "User",
+      "activation": "Activation"
     },
     "access": {
       "header": "Access"
@@ -7324,38 +7440,42 @@
       "header": "Members"
     }
   },
-  "grouponsystem": {
-    "header": "Group on System"
-  },
   "gos": {
     "ldap": {
       "main": "the LDAP group",
+      "new": "a new LDAP group",
       "cap": "The LDAP group"
     },
     "azureunified": {
       "cap": "The Microsoft 365 group",
-      "main": "the Microsoft 365 group"
-    },
-    "scim": {
-      "cap": "The SCIM group",
-      "main": "the SCIM group"
-    },
-    "accountonly": {
-      "main": " ",
-      "display": "Account-only provisioning",
-      "cap": " "
-    },
-    "azurerole": {
-      "main": "the Azure directory role",
-      "cap": "The Azure directory role"
+      "main": "the Microsoft 365 group",
+      "new": "a new Microsoft 365 group"
     },
     "ad": {
+      "new": "a new AD group",
       "main": "the AD group",
       "cap": "The AD group"
     },
+    "azurerole": {
+      "new": "a new Azure directory role",
+      "main": "the Azure directory role",
+      "cap": "The Azure directory role"
+    },
+    "scim": {
+      "cap": "The SCIM group",
+      "main": "the SCIM group",
+      "new": "a new SCIM group"
+    },
     "azuresecurity": {
+      "new": "a new Azure security group",
       "main": "the Azure security group",
       "cap": "The Azure security group"
+    },
+    "accountonly": {
+      "main": " ",
+      "new": " ",
+      "display": "Account-only provisioning",
+      "cap": " "
     }
   },
   "serviceaccount": {
@@ -7385,6 +7505,11 @@
       "auditduedate": "Next audit"
     },
     "main": "Group audit"
+  },
+  "identitysource": {
+    "header": {
+      "afas": "AFAS identity source"
+    }
   },
   "notificationcentre": {
     "header": "Notification settings"

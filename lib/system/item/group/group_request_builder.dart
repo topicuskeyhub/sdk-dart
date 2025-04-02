@@ -53,7 +53,7 @@ class GroupRequestBuilder extends BaseRequestBuilder<GroupRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<GroupRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<GroupRequestBuilderGetQueryParameters>(requestConfiguration, () => GroupRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
         return requestInfo;
     }
     /// Creates one or more new groups on systems and returns the newly created groups on systems. The groups will also be provisioned to the targeted provisioned system. By default, for every group on system, a provisioning group will be created granting the owner access to the newly created group. It is also possible to specify the provisioning groups to be created via the 'provgroups' addionalObjects property.
@@ -62,8 +62,8 @@ class GroupRequestBuilder extends BaseRequestBuilder<GroupRequestBuilder> {
     RequestInformation toPostRequestInformation(GroupOnSystemLinkableWrapper body, [void Function(RequestConfiguration<GroupRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<GroupRequestBuilderPostQueryParameters>(requestConfiguration, () => GroupRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=76', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=77', body);
         return requestInfo;
     }
 }

@@ -64,6 +64,8 @@ class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<int>? managerForGroup;
     ///  Filter accounts on direct connections to organizational units, specified by id. This parameter supports composition with all parameters from the organizational unit resource.
     List<int>? memberOfOrganizationalUnit;
+    ///  Filter accounts on connections to organizational units owned by the provided group, specified by id. This parameter supports composition with all parameters from the group resource.
+    List<int>? memberOfOrganizationalUnitOwnedBy;
     ///  Only return records that have been modified since the given instant.
     List<DateTime>? modifiedSince;
     ///  Only return accounts for which the username does not start with one of the given values.
@@ -130,6 +132,7 @@ class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters
             'maintenanceAdmin' : maintenanceAdmin,
             'managerForGroup' : managerForGroup,
             'memberOfOrganizationalUnit' : memberOfOrganizationalUnit,
+            'memberOfOrganizationalUnitOwnedBy' : memberOfOrganizationalUnitOwnedBy,
             'modifiedSince' : modifiedSince,
             'nameDoesNotStartWith' : nameDoesNotStartWith,
             'nameStartsWith' : nameStartsWith,

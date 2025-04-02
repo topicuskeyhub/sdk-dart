@@ -54,7 +54,7 @@ class WithCertificateItemRequestBuilder extends BaseRequestBuilder<WithCertifica
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
         return requestInfo;
     }
     /// Returns the global trusted certificate identified by the id.
@@ -62,7 +62,7 @@ class WithCertificateItemRequestBuilder extends BaseRequestBuilder<WithCertifica
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithCertificateItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithCertificateItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithCertificateItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
         return requestInfo;
     }
     /// Updates the global trusted certificate identified by the id.
@@ -71,8 +71,8 @@ class WithCertificateItemRequestBuilder extends BaseRequestBuilder<WithCertifica
     RequestInformation toPutRequestInformation(Certificate body, [void Function(RequestConfiguration<WithCertificateItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithCertificateItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithCertificateItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=76', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=77', body);
         return requestInfo;
     }
 }

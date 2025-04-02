@@ -45,7 +45,7 @@ class WithAuditItemRequestBuilder extends BaseRequestBuilder<WithAuditItemReques
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithAuditItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithAuditItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithAuditItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
         return requestInfo;
     }
     /// Updates the audits for a group identified by the id. Only audits in draft can be updated.
@@ -54,8 +54,8 @@ class WithAuditItemRequestBuilder extends BaseRequestBuilder<WithAuditItemReques
     RequestInformation toPutRequestInformation(GroupAudit body, [void Function(RequestConfiguration<WithAuditItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithAuditItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithAuditItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=76', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=77', body);
         return requestInfo;
     }
 }

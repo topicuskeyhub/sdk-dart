@@ -2,6 +2,7 @@
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../profile/access_profile_primer.dart';
 import './add_group_to_access_profile_request.dart';
+import './grant_application_request.dart';
 import './grant_group_on_system_request.dart';
 import './grant_group_on_system_request_request.dart';
 import './join_group_request.dart';
@@ -23,6 +24,7 @@ class AbstractAccessProfileModificationRequest extends ModificationRequest imple
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'request.AddGroupToAccessProfileRequest' => AddGroupToAccessProfileRequest(),
+            'request.GrantApplicationRequest' => GrantApplicationRequest(),
             'request.GrantGroupOnSystemRequest' => GrantGroupOnSystemRequest(),
             'request.GrantGroupOnSystemRequestRequest' => GrantGroupOnSystemRequestRequest(),
             'request.JoinGroupRequest' => JoinGroupRequest(),

@@ -1,5 +1,6 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
+import '../auth/account_primer.dart';
 import '../provisioning/group_on_system.dart';
 import './abstract_access_profile_modification_request.dart';
 
@@ -9,6 +10,8 @@ class GrantGroupOnSystemRequest extends AbstractAccessProfileModificationRequest
     bool? activationRequired;
     ///  The groupOnSystem property
     GroupOnSystem? groupOnSystem;
+    ///  The originalRequester property
+    AccountPrimer? originalRequester;
     /// Instantiates a new [GrantGroupOnSystemRequest] and sets the default values.
     GrantGroupOnSystemRequest() : super() {
         type_ = 'request.GrantGroupOnSystemRequest';
@@ -24,6 +27,7 @@ class GrantGroupOnSystemRequest extends AbstractAccessProfileModificationRequest
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['activationRequired'] = (node) => activationRequired = node.getBoolValue();
         deserializerMap['groupOnSystem'] = (node) => groupOnSystem = node.getObjectValue<GroupOnSystem>(GroupOnSystem.createFromDiscriminatorValue);
+        deserializerMap['originalRequester'] = (node) => originalRequester = node.getObjectValue<AccountPrimer>(AccountPrimer.createFromDiscriminatorValue);
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -33,5 +37,6 @@ class GrantGroupOnSystemRequest extends AbstractAccessProfileModificationRequest
         super.serialize(writer);
         writer.writeBoolValue('activationRequired', value:activationRequired);
         writer.writeObjectValue<GroupOnSystem>('groupOnSystem', groupOnSystem);
+        writer.writeObjectValue<AccountPrimer>('originalRequester', originalRequester);
     }
 }

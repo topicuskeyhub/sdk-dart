@@ -43,7 +43,7 @@ class MeRequestBuilder extends BaseRequestBuilder<MeRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
         return requestInfo;
     }
 }

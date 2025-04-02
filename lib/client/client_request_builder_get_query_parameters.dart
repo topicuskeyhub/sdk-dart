@@ -5,6 +5,8 @@ import './get_additional_query_parameter_type.dart';
 /// auto generated
 /// Query for all clients in Topicus KeyHub. The various query parameters can be used to filter the response.
 class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters {
+    ///  Filter the SSO applications connected to access profiles, specified by id. This parameter supports composition with all parameters from the access profile resource.
+    List<int>? accessProfile;
     ///  Request additional information to be returned for every record.
     List<GetAdditionalQueryParameterType>? additional;
     ///  Return all or no records. This can be useful when composing parameters.
@@ -29,6 +31,8 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     List<bool>? isProvisionedInternalLDAP;
     ///  Filter client applications on direct connections to organizational units, specified by id. This parameter supports composition with all parameters from the organizational unit resource.
     List<int>? memberOfOrganizationalUnit;
+    ///  Filter client applications on connections to organizational units by being part of the owner group, specified by id. This parameter supports composition with all parameters from the group resource.
+    List<int>? memberOfOrganizationalUnitOwnedBy;
     ///  Only return records that have been modified since the given instant.
     List<DateTime>? modifiedSince;
     ///  Filter clients on the exact name.
@@ -39,6 +43,8 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     List<String>? nameDoesNotStartWith;
     ///  Only return clients for which the name starts with one of the given values.
     List<String>? nameStartsWith;
+    ///  Filter the SSO applications not connected to access profiles, specified by id.
+    List<int>? notInAccessProfile;
     ///  Filter the SSO applications not connected to groups, specified by id.
     List<int>? notInGroup;
     ///  Filter clients on organizational units, specified by id. This parameter is automatically set and primarily used for security permission enforcement.
@@ -71,6 +77,7 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     @override
     Map<String, dynamic> toMap() {
         return {
+            'accessProfile' : accessProfile,
             'additional' : additional,
             'any' : any,
             'baseOrganizationalUnitAncestorOf' : baseOrganizationalUnitAncestorOf,
@@ -83,11 +90,13 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
             'id' : id,
             'isProvisionedInternalLDAP' : isProvisionedInternalLDAP,
             'memberOfOrganizationalUnit' : memberOfOrganizationalUnit,
+            'memberOfOrganizationalUnitOwnedBy' : memberOfOrganizationalUnitOwnedBy,
             'modifiedSince' : modifiedSince,
             'name' : name,
             'nameContains' : nameContains,
             'nameDoesNotStartWith' : nameDoesNotStartWith,
             'nameStartsWith' : nameStartsWith,
+            'notInAccessProfile' : notInAccessProfile,
             'notInGroup' : notInGroup,
             'organizationalUnitForEnforcement' : organizationalUnitForEnforcement,
             'ownedBy' : ownedBy,

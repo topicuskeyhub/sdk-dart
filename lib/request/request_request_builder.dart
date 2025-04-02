@@ -58,7 +58,7 @@ class RequestRequestBuilder extends BaseRequestBuilder<RequestRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<RequestRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<RequestRequestBuilderGetQueryParameters>(requestConfiguration, () => RequestRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
         return requestInfo;
     }
     /// Creates one or more new modification requests and returns the newly created requests.
@@ -67,8 +67,8 @@ class RequestRequestBuilder extends BaseRequestBuilder<RequestRequestBuilder> {
     RequestInformation toPostRequestInformation(ModificationRequestLinkableWrapper body, [void Function(RequestConfiguration<RequestRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<RequestRequestBuilderPostQueryParameters>(requestConfiguration, () => RequestRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=76', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=77', body);
         return requestInfo;
     }
 }

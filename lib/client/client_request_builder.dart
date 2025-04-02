@@ -34,11 +34,11 @@ class ClientRequestBuilder extends BaseRequestBuilder<ClientRequestBuilder> {
     /// Instantiates a new [ClientRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    ClientRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client{?additional*,any*,baseOrganizationalUnitAncestorOf*,clientId*,createdAfter*,createdBefore*,exclude*,expiredCertificate*,group*,id*,isProvisionedInternalLDAP*,memberOfOrganizationalUnit*,modifiedSince*,name*,nameContains*,nameDoesNotStartWith*,nameStartsWith*,notInGroup*,organizationalUnitForEnforcement*,ownedBy*,q*,sharedSecret*,sort*,technicalAdministrator*,type*,useClientCredentials*,uuid*,vault*,withPermission*,withPermissionForOwningGroup*,withRequestedPermissionForOwningGroup*}", pathParameters) ;
+    ClientRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client{?accessProfile*,additional*,any*,baseOrganizationalUnitAncestorOf*,clientId*,createdAfter*,createdBefore*,exclude*,expiredCertificate*,group*,id*,isProvisionedInternalLDAP*,memberOfOrganizationalUnit*,memberOfOrganizationalUnitOwnedBy*,modifiedSince*,name*,nameContains*,nameDoesNotStartWith*,nameStartsWith*,notInAccessProfile*,notInGroup*,organizationalUnitForEnforcement*,ownedBy*,q*,sharedSecret*,sort*,technicalAdministrator*,type*,useClientCredentials*,uuid*,vault*,withPermission*,withPermissionForOwningGroup*,withRequestedPermissionForOwningGroup*}", pathParameters) ;
     /// Instantiates a new [ClientRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    ClientRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client{?additional*,any*,baseOrganizationalUnitAncestorOf*,clientId*,createdAfter*,createdBefore*,exclude*,expiredCertificate*,group*,id*,isProvisionedInternalLDAP*,memberOfOrganizationalUnit*,modifiedSince*,name*,nameContains*,nameDoesNotStartWith*,nameStartsWith*,notInGroup*,organizationalUnitForEnforcement*,ownedBy*,q*,sharedSecret*,sort*,technicalAdministrator*,type*,useClientCredentials*,uuid*,vault*,withPermission*,withPermissionForOwningGroup*,withRequestedPermissionForOwningGroup*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    ClientRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/client{?accessProfile*,additional*,any*,baseOrganizationalUnitAncestorOf*,clientId*,createdAfter*,createdBefore*,exclude*,expiredCertificate*,group*,id*,isProvisionedInternalLDAP*,memberOfOrganizationalUnit*,memberOfOrganizationalUnitOwnedBy*,modifiedSince*,name*,nameContains*,nameDoesNotStartWith*,nameStartsWith*,notInAccessProfile*,notInGroup*,organizationalUnitForEnforcement*,ownedBy*,q*,sharedSecret*,sort*,technicalAdministrator*,type*,useClientCredentials*,uuid*,vault*,withPermission*,withPermissionForOwningGroup*,withRequestedPermissionForOwningGroup*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for all clients in Topicus KeyHub. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ClientApplicationLinkableWrapper?> getAsync([void Function(RequestConfiguration<ClientRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
@@ -63,7 +63,7 @@ class ClientRequestBuilder extends BaseRequestBuilder<ClientRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ClientRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ClientRequestBuilderGetQueryParameters>(requestConfiguration, () => ClientRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
         return requestInfo;
     }
     /// Creates one or more new clients and returns the newly created clients.
@@ -72,8 +72,8 @@ class ClientRequestBuilder extends BaseRequestBuilder<ClientRequestBuilder> {
     RequestInformation toPostRequestInformation(ClientApplicationLinkableWrapper body, [void Function(RequestConfiguration<ClientRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ClientRequestBuilderPostQueryParameters>(requestConfiguration, () => ClientRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=76', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=77', body);
         return requestInfo;
     }
 }

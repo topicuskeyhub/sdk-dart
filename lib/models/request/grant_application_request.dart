@@ -1,9 +1,12 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
-import './abstract_application_modification_request.dart';
+import '../client/client_application_primer.dart';
+import './abstract_access_profile_modification_request.dart';
 
 /// auto generated
-class GrantApplicationRequest extends AbstractApplicationModificationRequest implements Parsable {
+class GrantApplicationRequest extends AbstractAccessProfileModificationRequest implements Parsable {
+    ///  The application property
+    ClientApplicationPrimer? application;
     /// Instantiates a new [GrantApplicationRequest] and sets the default values.
     GrantApplicationRequest() : super() {
         type_ = 'request.GrantApplicationRequest';
@@ -17,6 +20,7 @@ class GrantApplicationRequest extends AbstractApplicationModificationRequest imp
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['application'] = (node) => application = node.getObjectValue<ClientApplicationPrimer>(ClientApplicationPrimer.createFromDiscriminatorValue);
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -24,5 +28,6 @@ class GrantApplicationRequest extends AbstractApplicationModificationRequest imp
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeObjectValue<ClientApplicationPrimer>('application', application);
     }
 }

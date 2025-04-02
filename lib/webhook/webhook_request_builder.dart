@@ -53,7 +53,7 @@ class WebhookRequestBuilder extends BaseRequestBuilder<WebhookRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WebhookRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WebhookRequestBuilderGetQueryParameters>(requestConfiguration, () => WebhookRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
         return requestInfo;
     }
     /// Creates one or more new webhooks and returns the newly created webhooks.
@@ -62,8 +62,8 @@ class WebhookRequestBuilder extends BaseRequestBuilder<WebhookRequestBuilder> {
     RequestInformation toPostRequestInformation(WebhookLinkableWrapper body, [void Function(RequestConfiguration<WebhookRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WebhookRequestBuilderPostQueryParameters>(requestConfiguration, () => WebhookRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=76', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=77', body);
         return requestInfo;
     }
 }

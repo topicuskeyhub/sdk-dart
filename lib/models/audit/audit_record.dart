@@ -29,6 +29,8 @@ class AuditRecord extends Linkable implements Parsable {
     String? onGroup2;
     ///  The onGroupClassification property
     String? onGroupClassification;
+    ///  The onIdentitySource property
+    String? onIdentitySource;
     ///  The onOrganizationalUnit property
     String? onOrganizationalUnit;
     ///  The onServiceAccount property
@@ -73,6 +75,7 @@ class AuditRecord extends Linkable implements Parsable {
         deserializerMap['onGroup'] = (node) => onGroup = node.getStringValue();
         deserializerMap['onGroup2'] = (node) => onGroup2 = node.getStringValue();
         deserializerMap['onGroupClassification'] = (node) => onGroupClassification = node.getStringValue();
+        deserializerMap['onIdentitySource'] = (node) => onIdentitySource = node.getStringValue();
         deserializerMap['onOrganizationalUnit'] = (node) => onOrganizationalUnit = node.getStringValue();
         deserializerMap['onServiceAccount'] = (node) => onServiceAccount = node.getStringValue();
         deserializerMap['onSystem'] = (node) => onSystem = node.getStringValue();

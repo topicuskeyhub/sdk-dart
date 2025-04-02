@@ -23,7 +23,7 @@ class LaunchpadTile extends LaunchpadTilePrimer implements Parsable {
     ///  The type property
     LaunchpadTileType? launchpadTileType;
     ///  The logo property
-    String? logo;
+    Iterable<int>? logo;
     ///  The vaultRecord property
     VaultRecordPrimer? vaultRecord;
     /// Instantiates a new [LaunchpadTile] and sets the default values.
@@ -50,7 +50,7 @@ class LaunchpadTile extends LaunchpadTilePrimer implements Parsable {
         deserializerMap['group'] = (node) => group = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         deserializerMap['identiconCode'] = (node) => identiconCode = node.getIntValue();
         deserializerMap['type'] = (node) => launchpadTileType = node.getEnumValue<LaunchpadTileType>((stringValue) => LaunchpadTileType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
-        deserializerMap['logo'] = (node) => logo = node.getStringValue();
+        deserializerMap['logo'] = (node) => logo = node.getCollectionOfPrimitiveValues<int>();
         deserializerMap['vaultRecord'] = (node) => vaultRecord = node.getObjectValue<VaultRecordPrimer>(VaultRecordPrimer.createFromDiscriminatorValue);
         return deserializerMap;
     }
@@ -64,7 +64,7 @@ class LaunchpadTile extends LaunchpadTilePrimer implements Parsable {
         writer.writeObjectValue<GroupPrimer>('group', group);
         writer.writeIntValue('identiconCode', identiconCode);
         writer.writeEnumValue<LaunchpadTileType>('type', launchpadTileType, (e) => e?.value);
-        writer.writeStringValue('logo', logo);
+        writer.writeCollectionOfPrimitiveValues<int>('logo', logo);
         writer.writeObjectValue<VaultRecordPrimer>('vaultRecord', vaultRecord);
     }
 }

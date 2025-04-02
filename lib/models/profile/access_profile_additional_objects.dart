@@ -3,6 +3,7 @@ import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../audit_info.dart';
 import '../identity/account_attribute_rule_linkable_wrapper.dart';
 import './access_profile_account_with_attributes_linkable_wrapper.dart';
+import './access_profile_client_linkable_wrapper.dart';
 import './access_profile_group_linkable_wrapper.dart';
 import './access_profile_provisioning_linkable_wrapper.dart';
 
@@ -17,6 +18,8 @@ class AccessProfileAdditionalObjects implements AdditionalDataHolder, Parsable {
     AccountAttributeRuleLinkableWrapper? attributeRules;
     ///  The audit property
     AuditInfo? audit;
+    ///  The clients property
+    AccessProfileClientLinkableWrapper? clients;
     ///  The groups property
     AccessProfileGroupLinkableWrapper? groups;
     ///  The provisioning property
@@ -36,6 +39,7 @@ class AccessProfileAdditionalObjects implements AdditionalDataHolder, Parsable {
         deserializerMap['accountsWithAttributes'] = (node) => accountsWithAttributes = node.getObjectValue<AccessProfileAccountWithAttributesLinkableWrapper>(AccessProfileAccountWithAttributesLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['attributeRules'] = (node) => attributeRules = node.getObjectValue<AccountAttributeRuleLinkableWrapper>(AccountAttributeRuleLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
+        deserializerMap['clients'] = (node) => clients = node.getObjectValue<AccessProfileClientLinkableWrapper>(AccessProfileClientLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['groups'] = (node) => groups = node.getObjectValue<AccessProfileGroupLinkableWrapper>(AccessProfileGroupLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['provisioning'] = (node) => provisioning = node.getObjectValue<AccessProfileProvisioningLinkableWrapper>(AccessProfileProvisioningLinkableWrapper.createFromDiscriminatorValue);
         return deserializerMap;
@@ -47,6 +51,7 @@ class AccessProfileAdditionalObjects implements AdditionalDataHolder, Parsable {
         writer.writeObjectValue<AccessProfileAccountWithAttributesLinkableWrapper>('accountsWithAttributes', accountsWithAttributes);
         writer.writeObjectValue<AccountAttributeRuleLinkableWrapper>('attributeRules', attributeRules);
         writer.writeObjectValue<AuditInfo>('audit', audit);
+        writer.writeObjectValue<AccessProfileClientLinkableWrapper>('clients', clients);
         writer.writeObjectValue<AccessProfileGroupLinkableWrapper>('groups', groups);
         writer.writeObjectValue<AccessProfileProvisioningLinkableWrapper>('provisioning', provisioning);
         writer.writeAdditionalData(additionalData);

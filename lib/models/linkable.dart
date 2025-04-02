@@ -42,6 +42,9 @@ import './identity/account_attribute_definition.dart';
 import './identity/account_attribute_rule.dart';
 import './identity/account_attribute_value.dart';
 import './identity/identity.dart';
+import './identitysource/a_f_a_s_identity_source.dart';
+import './identitysource/identity_source.dart';
+import './identitysource/identity_source_primer.dart';
 import './launchpad/displayed_launchpad_tile.dart';
 import './launchpad/launchpad_tile.dart';
 import './launchpad/launchpad_tile_primer.dart';
@@ -58,6 +61,7 @@ import './organization/organizational_unit_primer.dart';
 import './profile/access_profile.dart';
 import './profile/access_profile_account.dart';
 import './profile/access_profile_account_with_attributes.dart';
+import './profile/access_profile_client.dart';
 import './profile/access_profile_group.dart';
 import './profile/access_profile_primer.dart';
 import './profile/access_profile_provisioning.dart';
@@ -193,6 +197,9 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'identity.AccountAttributeRule' => AccountAttributeRule(),
             'identity.AccountAttributeValue' => AccountAttributeValue(),
             'identity.Identity' => Identity(),
+            'identitysource.AFASIdentitySource' => AFASIdentitySource(),
+            'identitysource.IdentitySource' => IdentitySource(),
+            'identitysource.IdentitySourcePrimer' => IdentitySourcePrimer(),
             'launchpad.DisplayedLaunchpadTile' => DisplayedLaunchpadTile(),
             'launchpad.LaunchpadTile' => LaunchpadTile(),
             'launchpad.LaunchpadTilePrimer' => LaunchpadTilePrimer(),
@@ -208,6 +215,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'profile.AccessProfile' => AccessProfile(),
             'profile.AccessProfileAccount' => AccessProfileAccount(),
             'profile.AccessProfileAccountWithAttributes' => AccessProfileAccountWithAttributes(),
+            'profile.AccessProfileClient' => AccessProfileClient(),
             'profile.AccessProfileGroup' => AccessProfileGroup(),
             'profile.AccessProfilePrimer' => AccessProfilePrimer(),
             'profile.AccessProfileProvisioning' => AccessProfileProvisioning(),

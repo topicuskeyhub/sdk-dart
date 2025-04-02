@@ -11,7 +11,7 @@ class DisplayedLaunchpadTile extends Linkable implements Parsable {
     ///  The identiconCode property
     int? identiconCode;
     ///  The logo property
-    String? logo;
+    Iterable<int>? logo;
     ///  The tile property
     LaunchpadTilePrimer? tile;
     ///  The title property
@@ -33,7 +33,7 @@ class DisplayedLaunchpadTile extends Linkable implements Parsable {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['group'] = (node) => group = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         deserializerMap['identiconCode'] = (node) => identiconCode = node.getIntValue();
-        deserializerMap['logo'] = (node) => logo = node.getStringValue();
+        deserializerMap['logo'] = (node) => logo = node.getCollectionOfPrimitiveValues<int>();
         deserializerMap['tile'] = (node) => tile = node.getObjectValue<LaunchpadTilePrimer>(LaunchpadTilePrimer.createFromDiscriminatorValue);
         deserializerMap['title'] = (node) => title = node.getStringValue();
         deserializerMap['uri'] = (node) => uri = node.getStringValue();
@@ -46,7 +46,7 @@ class DisplayedLaunchpadTile extends Linkable implements Parsable {
         super.serialize(writer);
         writer.writeObjectValue<GroupPrimer>('group', group);
         writer.writeIntValue('identiconCode', identiconCode);
-        writer.writeStringValue('logo', logo);
+        writer.writeCollectionOfPrimitiveValues<int>('logo', logo);
         writer.writeObjectValue<LaunchpadTilePrimer>('tile', tile);
         writer.writeStringValue('title', title);
         writer.writeStringValue('uri', uri);

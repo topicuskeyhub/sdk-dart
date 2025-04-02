@@ -53,7 +53,7 @@ class DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryRequestBuilder
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DirectoryRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DirectoryRequestBuilderGetQueryParameters>(requestConfiguration, () => DirectoryRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
         return requestInfo;
     }
     /// Creates one or more new directories and returns the newly created directories.
@@ -62,8 +62,8 @@ class DirectoryRequestBuilder extends BaseRequestBuilder<DirectoryRequestBuilder
     RequestInformation toPostRequestInformation(AccountDirectoryLinkableWrapper body, [void Function(RequestConfiguration<DirectoryRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DirectoryRequestBuilderPostQueryParameters>(requestConfiguration, () => DirectoryRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=76', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=77', body);
         return requestInfo;
     }
 }

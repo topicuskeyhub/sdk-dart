@@ -53,7 +53,7 @@ class ClientRequestBuilder extends BaseRequestBuilder<ClientRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ClientRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ClientRequestBuilderGetQueryParameters>(requestConfiguration, () => ClientRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
         return requestInfo;
     }
     /// Adds one or more client applications to the organizational unit and returns the newly created memberships.
@@ -62,8 +62,8 @@ class ClientRequestBuilder extends BaseRequestBuilder<ClientRequestBuilder> {
     RequestInformation toPostRequestInformation(OrganizationalUnitClientApplicationLinkableWrapper body, [void Function(RequestConfiguration<ClientRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ClientRequestBuilderPostQueryParameters>(requestConfiguration, () => ClientRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=76', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=77', body);
         return requestInfo;
     }
 }

@@ -17,8 +17,12 @@ class ProfileRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<DateTime>? createdBefore;
     ///  Filter the access profiles on the directory they are linked to,specified by id. This parameter supports composition with all parameters from the account directory resource.
     List<int>? directory;
+    ///  Filter the access profiles by clients not connected to them, specified by id.
+    List<int>? doesNotContainClient;
     ///  Filter the results to exclude the given ids.
     List<int>? exclude;
+    ///  Filter the access profiles by having a match rule or not.
+    List<bool>? hasMatchRule;
     ///  Filter the results on the given ids.
     List<int>? id;
     ///  Only return records that have been modified since the given instant.
@@ -51,7 +55,9 @@ class ProfileRequestBuilderGetQueryParameters implements AbstractQueryParameters
             'createdAfter' : createdAfter,
             'createdBefore' : createdBefore,
             'directory' : directory,
+            'doesNotContainClient' : doesNotContainClient,
             'exclude' : exclude,
+            'hasMatchRule' : hasMatchRule,
             'id' : id,
             'modifiedSince' : modifiedSince,
             'name' : name,

@@ -1,9 +1,9 @@
 // ignore_for_file: type=lint
 /// auto generated
 enum MoveVaultRecordAction {
-    move('MOVE'),
+    share('SHARE'),
     copy('COPY'),
-    share('SHARE');
+    move('MOVE');
     const MoveVaultRecordAction(this.value);
     final String value;
 }

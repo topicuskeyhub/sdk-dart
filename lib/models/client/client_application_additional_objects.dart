@@ -6,9 +6,12 @@ import '../group/group_client_linkable_wrapper.dart';
 import '../group/group_linkable_wrapper.dart';
 import '../launchpad/sso_application_launchpad_tile.dart';
 import '../organization/client_application_organizational_unit_linkable_wrapper.dart';
+import '../profile/access_profile_client_linkable_wrapper.dart';
 
 /// auto generated
 class ClientApplicationAdditionalObjects implements AdditionalDataHolder, Parsable {
+    ///  The accessprofileclients property
+    AccessProfileClientLinkableWrapper? accessprofileclients;
     ///  Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     @override
     Map<String, Object?> additionalData;
@@ -40,6 +43,7 @@ class ClientApplicationAdditionalObjects implements AdditionalDataHolder, Parsab
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = <String, void Function(ParseNode)>{};
+        deserializerMap['accessprofileclients'] = (node) => accessprofileclients = node.getObjectValue<AccessProfileClientLinkableWrapper>(AccessProfileClientLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
         deserializerMap['deleteTile'] = (node) => deleteTile = node.getBoolValue();
         deserializerMap['groupclients'] = (node) => groupclients = node.getObjectValue<GroupClientLinkableWrapper>(GroupClientLinkableWrapper.createFromDiscriminatorValue);
@@ -54,6 +58,7 @@ class ClientApplicationAdditionalObjects implements AdditionalDataHolder, Parsab
     ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
+        writer.writeObjectValue<AccessProfileClientLinkableWrapper>('accessprofileclients', accessprofileclients);
         writer.writeObjectValue<AuditInfo>('audit', audit);
         writer.writeBoolValue('deleteTile', value:deleteTile);
         writer.writeObjectValue<GroupClientLinkableWrapper>('groupclients', groupclients);

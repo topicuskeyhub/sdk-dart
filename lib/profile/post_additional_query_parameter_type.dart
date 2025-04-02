@@ -4,6 +4,7 @@ enum PostAdditionalQueryParameterType {
     accountsWithAttributes('accountsWithAttributes'),
     attributeRules('attributeRules'),
     audit('audit'),
+    clients('clients'),
     groups('groups'),
     provisioning('provisioning');
     const PostAdditionalQueryParameterType(this.value);

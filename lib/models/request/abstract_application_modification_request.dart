@@ -1,7 +1,6 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../client/client_application_primer.dart';
-import './grant_application_request.dart';
 import './grant_client_permission_request.dart';
 import './modification_request.dart';
 import './transfer_application_administration_request.dart';
@@ -20,7 +19,6 @@ class AbstractApplicationModificationRequest extends ModificationRequest impleme
     static AbstractApplicationModificationRequest createFromDiscriminatorValue(ParseNode parseNode) {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
-            'request.GrantApplicationRequest' => GrantApplicationRequest(),
             'request.GrantClientPermissionRequest' => GrantClientPermissionRequest(),
             'request.TransferApplicationAdministrationRequest' => TransferApplicationAdministrationRequest(),
             'request.TransferApplicationOwnershipRequest' => TransferApplicationOwnershipRequest(),

@@ -34,7 +34,7 @@ class NotificationsRequestBuilder extends BaseRequestBuilder<NotificationsReques
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<NotificationsRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<NotificationsRequestBuilderGetQueryParameters>(requestConfiguration, () => NotificationsRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=76');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
         return requestInfo;
     }
 }

@@ -16,6 +16,8 @@ class OAuth2Client extends ClientApplication implements Parsable {
     String? callbackURI;
     ///  The debugMode property
     bool? debugMode;
+    ///  The forIdentitySource property
+    bool? forIdentitySource;
     ///  The idTokenClaims property
     String? idTokenClaims;
     ///  The initiateLoginURI property
@@ -49,6 +51,7 @@ class OAuth2Client extends ClientApplication implements Parsable {
         deserializerMap['attributes'] = (node) => attributes = node.getObjectValue<OAuth2ClientAttributes>(OAuth2ClientAttributes.createFromDiscriminatorValue);
         deserializerMap['callbackURI'] = (node) => callbackURI = node.getStringValue();
         deserializerMap['debugMode'] = (node) => debugMode = node.getBoolValue();
+        deserializerMap['forIdentitySource'] = (node) => forIdentitySource = node.getBoolValue();
         deserializerMap['idTokenClaims'] = (node) => idTokenClaims = node.getStringValue();
         deserializerMap['initiateLoginURI'] = (node) => initiateLoginURI = node.getStringValue();
         deserializerMap['profile'] = (node) => profile = node.getEnumValue<OAuth2ClientProfile>((stringValue) => OAuth2ClientProfile.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);

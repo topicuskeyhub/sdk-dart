@@ -25,6 +25,8 @@ class WebhookPush extends NonLinkable implements Parsable {
     WebhookNameUuid? group2;
     ///  The groupClassification property
     WebhookNameUuid? groupClassification;
+    ///  The identitySource property
+    WebhookNameUuid? identitySource;
     ///  The modificationRequest property
     WebhookNameUuid? modificationRequest;
     ///  The organizationalUnit property
@@ -73,6 +75,7 @@ class WebhookPush extends NonLinkable implements Parsable {
         deserializerMap['group'] = (node) => group = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['group2'] = (node) => group2 = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['groupClassification'] = (node) => groupClassification = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
+        deserializerMap['identitySource'] = (node) => identitySource = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['modificationRequest'] = (node) => modificationRequest = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['organizationalUnit'] = (node) => organizationalUnit = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['parameter1'] = (node) => parameter1 = node.getStringValue();
@@ -102,6 +105,7 @@ class WebhookPush extends NonLinkable implements Parsable {
         writer.writeObjectValue<WebhookNameUuid>('group', group);
         writer.writeObjectValue<WebhookNameUuid>('group2', group2);
         writer.writeObjectValue<WebhookNameUuid>('groupClassification', groupClassification);
+        writer.writeObjectValue<WebhookNameUuid>('identitySource', identitySource);
         writer.writeObjectValue<WebhookNameUuid>('modificationRequest', modificationRequest);
         writer.writeObjectValue<WebhookNameUuid>('organizationalUnit', organizationalUnit);
         writer.writeStringValue('parameter1', parameter1);

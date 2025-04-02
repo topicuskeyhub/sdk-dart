@@ -19,10 +19,16 @@ import './provisioned_system_type.dart';
 class ProvisionedSystemPrimer extends Linkable implements Parsable {
     ///  The active property
     bool? active;
+    ///  The adminPermissions property
+    bool? adminPermissions;
+    ///  The contentAdminPermissions property
+    bool? contentAdminPermissions;
     ///  The name property
     String? name;
     ///  The organizationalUnit property
     OrganizationalUnitPrimer? organizationalUnit;
+    ///  The ownerPermissions property
+    bool? ownerPermissions;
     ///  The type property
     ProvisionedSystemType? provisionedSystemPrimerType;
     ///  The uuid property
@@ -55,8 +61,11 @@ class ProvisionedSystemPrimer extends Linkable implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['active'] = (node) => active = node.getBoolValue();
+        deserializerMap['adminPermissions'] = (node) => adminPermissions = node.getBoolValue();
+        deserializerMap['contentAdminPermissions'] = (node) => contentAdminPermissions = node.getBoolValue();
         deserializerMap['name'] = (node) => name = node.getStringValue();
         deserializerMap['organizationalUnit'] = (node) => organizationalUnit = node.getObjectValue<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);
+        deserializerMap['ownerPermissions'] = (node) => ownerPermissions = node.getBoolValue();
         deserializerMap['type'] = (node) => provisionedSystemPrimerType = node.getEnumValue<ProvisionedSystemType>((stringValue) => ProvisionedSystemType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['uuid'] = (node) => uuid = node.getStringValue();
         return deserializerMap;

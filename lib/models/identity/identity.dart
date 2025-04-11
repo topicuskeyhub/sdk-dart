@@ -12,6 +12,10 @@ class Identity extends Linkable implements Parsable {
     String? givenName;
     ///  The middleName property
     String? middleName;
+    ///  The privateEmail property
+    String? privateEmail;
+    ///  The privateTelephone property
+    String? privateTelephone;
     ///  The telephone property
     String? telephone;
     /// Instantiates a new [Identity] and sets the default values.
@@ -31,6 +35,8 @@ class Identity extends Linkable implements Parsable {
         deserializerMap['familyName'] = (node) => familyName = node.getStringValue();
         deserializerMap['givenName'] = (node) => givenName = node.getStringValue();
         deserializerMap['middleName'] = (node) => middleName = node.getStringValue();
+        deserializerMap['privateEmail'] = (node) => privateEmail = node.getStringValue();
+        deserializerMap['privateTelephone'] = (node) => privateTelephone = node.getStringValue();
         deserializerMap['telephone'] = (node) => telephone = node.getStringValue();
         return deserializerMap;
     }
@@ -43,6 +49,8 @@ class Identity extends Linkable implements Parsable {
         writer.writeStringValue('familyName', familyName);
         writer.writeStringValue('givenName', givenName);
         writer.writeStringValue('middleName', middleName);
+        writer.writeStringValue('privateEmail', privateEmail);
+        writer.writeStringValue('privateTelephone', privateTelephone);
         writer.writeStringValue('telephone', telephone);
     }
 }

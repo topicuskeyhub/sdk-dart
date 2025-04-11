@@ -4,7 +4,6 @@ import '../group/group.dart';
 import '../group/group_folder.dart';
 import '../non_linkable.dart';
 import './account_provisioning_status_report.dart';
-import './group_provisioning_status_provisioning_duration.dart';
 
 /// auto generated
 class GroupProvisioningStatus extends NonLinkable implements Parsable {
@@ -13,7 +12,7 @@ class GroupProvisioningStatus extends NonLinkable implements Parsable {
     ///  The group property
     Group? group;
     ///  The provisioningDuration property
-    GroupProvisioningStatusProvisioningDuration? provisioningDuration;
+    Duration? provisioningDuration;
     ///  The provisioningEndTime property
     DateTime? provisioningEndTime;
     ///  The provisioningPermissionEndTime property
@@ -37,7 +36,7 @@ class GroupProvisioningStatus extends NonLinkable implements Parsable {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['folder'] = (node) => folder = node.getObjectValue<GroupFolder>(GroupFolder.createFromDiscriminatorValue);
         deserializerMap['group'] = (node) => group = node.getObjectValue<Group>(Group.createFromDiscriminatorValue);
-        deserializerMap['provisioningDuration'] = (node) => provisioningDuration = node.getObjectValue<GroupProvisioningStatusProvisioningDuration>(GroupProvisioningStatusProvisioningDuration.createFromDiscriminatorValue);
+        deserializerMap['provisioningDuration'] = (node) => provisioningDuration = node.getDurationValue();
         deserializerMap['provisioningEndTime'] = (node) => provisioningEndTime = node.getDateTimeValue();
         deserializerMap['provisioningPermissionEndTime'] = (node) => provisioningPermissionEndTime = node.getDateTimeValue();
         deserializerMap['statusReport'] = (node) => statusReport = node.getObjectValue<AccountProvisioningStatusReport>(AccountProvisioningStatusReport.createFromDiscriminatorValue);
@@ -51,10 +50,7 @@ class GroupProvisioningStatus extends NonLinkable implements Parsable {
         super.serialize(writer);
         writer.writeObjectValue<GroupFolder>('folder', folder);
         writer.writeObjectValue<Group>('group', group);
-        writer.writeObjectValue<GroupProvisioningStatusProvisioningDuration>('provisioningDuration', provisioningDuration);
         writer.writeDateTimeValue('provisioningEndTime', provisioningEndTime);
-        writer.writeDateTimeValue('provisioningPermissionEndTime', provisioningPermissionEndTime);
         writer.writeObjectValue<AccountProvisioningStatusReport>('statusReport', statusReport);
-        writer.writeBoolValue('visibleOnDashboard', value:visibleOnDashboard);
     }
 }

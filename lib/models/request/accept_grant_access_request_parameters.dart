@@ -1,12 +1,11 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
-import './accept_grant_access_request_parameters_access_duration.dart';
 import './accept_modification_request_parameters.dart';
 
 /// auto generated
 class AcceptGrantAccessRequestParameters extends AcceptModificationRequestParameters implements Parsable {
     ///  The accessDuration property
-    AcceptGrantAccessRequestParametersAccessDuration? accessDuration;
+    Duration? accessDuration;
     /// Instantiates a new [AcceptGrantAccessRequestParameters] and sets the default values.
     AcceptGrantAccessRequestParameters() : super() {
         type_ = 'request.AcceptGrantAccessRequestParameters';
@@ -20,7 +19,7 @@ class AcceptGrantAccessRequestParameters extends AcceptModificationRequestParame
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
-        deserializerMap['accessDuration'] = (node) => accessDuration = node.getObjectValue<AcceptGrantAccessRequestParametersAccessDuration>(AcceptGrantAccessRequestParametersAccessDuration.createFromDiscriminatorValue);
+        deserializerMap['accessDuration'] = (node) => accessDuration = node.getDurationValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -28,6 +27,6 @@ class AcceptGrantAccessRequestParameters extends AcceptModificationRequestParame
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
-        writer.writeObjectValue<AcceptGrantAccessRequestParametersAccessDuration>('accessDuration', accessDuration);
+        writer.writeDurationValue('accessDuration', accessDuration);
     }
 }

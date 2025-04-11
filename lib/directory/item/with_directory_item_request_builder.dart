@@ -59,7 +59,7 @@ class WithDirectoryItemRequestBuilder extends BaseRequestBuilder<WithDirectoryIt
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
     /// Returns the directory identified by the id.
@@ -67,7 +67,7 @@ class WithDirectoryItemRequestBuilder extends BaseRequestBuilder<WithDirectoryIt
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithDirectoryItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithDirectoryItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithDirectoryItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
     /// Updates the directory identified by the id.
@@ -76,8 +76,8 @@ class WithDirectoryItemRequestBuilder extends BaseRequestBuilder<WithDirectoryIt
     RequestInformation toPutRequestInformation(AccountDirectory body, [void Function(RequestConfiguration<WithDirectoryItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithDirectoryItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithDirectoryItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=77', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=78', body);
         return requestInfo;
     }
 }

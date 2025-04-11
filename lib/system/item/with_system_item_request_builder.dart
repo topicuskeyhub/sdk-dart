@@ -70,7 +70,7 @@ class WithSystemItemRequestBuilder extends BaseRequestBuilder<WithSystemItemRequ
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithSystemItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithSystemItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithSystemItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
     /// Updates the provisioned system identified by the id.
@@ -79,8 +79,8 @@ class WithSystemItemRequestBuilder extends BaseRequestBuilder<WithSystemItemRequ
     RequestInformation toPutRequestInformation(ProvisionedSystem body, [void Function(RequestConfiguration<WithSystemItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithSystemItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithSystemItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=77', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=78', body);
         return requestInfo;
     }
 }

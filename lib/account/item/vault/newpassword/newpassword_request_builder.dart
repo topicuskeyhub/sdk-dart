@@ -34,7 +34,7 @@ class NewpasswordRequestBuilder extends BaseRequestBuilder<NewpasswordRequestBui
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<NewpasswordRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<NewpasswordRequestBuilderGetQueryParameters>(requestConfiguration, () => NewpasswordRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
 }

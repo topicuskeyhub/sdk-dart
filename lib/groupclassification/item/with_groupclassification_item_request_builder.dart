@@ -54,7 +54,7 @@ class WithGroupclassificationItemRequestBuilder extends BaseRequestBuilder<WithG
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
     /// Returns the group classification identified by the id.
@@ -62,7 +62,7 @@ class WithGroupclassificationItemRequestBuilder extends BaseRequestBuilder<WithG
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithGroupclassificationItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupclassificationItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithGroupclassificationItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
     /// Updates the group classification identified by the id.
@@ -71,8 +71,8 @@ class WithGroupclassificationItemRequestBuilder extends BaseRequestBuilder<WithG
     RequestInformation toPutRequestInformation(GroupClassification body, [void Function(RequestConfiguration<WithGroupclassificationItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupclassificationItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithGroupclassificationItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=77', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=78', body);
         return requestInfo;
     }
 }

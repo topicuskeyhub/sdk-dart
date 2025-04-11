@@ -42,7 +42,7 @@ class ProfileprovisioningRequestBuilder extends BaseRequestBuilder<Profileprovis
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ProfileprovisioningRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ProfileprovisioningRequestBuilderGetQueryParameters>(requestConfiguration, () => ProfileprovisioningRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
 }

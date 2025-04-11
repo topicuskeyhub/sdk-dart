@@ -2,12 +2,17 @@
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../models/error_report.dart';
 import '../../models/identitysource/identity_source.dart';
+import './sync_/sync_request_builder.dart';
 import './with_identitysource_item_request_builder_get_query_parameters.dart';
 import './with_identitysource_item_request_builder_put_query_parameters.dart';
 
 /// auto generated
 /// Builds and executes requests for operations under \identitysource\{identitysourceid}
 class WithIdentitysourceItemRequestBuilder extends BaseRequestBuilder<WithIdentitysourceItemRequestBuilder> {
+    ///  The sync property
+    SyncRequestBuilder get sync_ {
+        return SyncRequestBuilder(pathParameters, requestAdapter);
+    }
     /// Clones the requestbuilder.
     @override
     WithIdentitysourceItemRequestBuilder clone() {
@@ -54,7 +59,7 @@ class WithIdentitysourceItemRequestBuilder extends BaseRequestBuilder<WithIdenti
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
     /// Returns the identity source identified by the id.
@@ -62,7 +67,7 @@ class WithIdentitysourceItemRequestBuilder extends BaseRequestBuilder<WithIdenti
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithIdentitysourceItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithIdentitysourceItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithIdentitysourceItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
     /// Updates the identity source identified by the id.
@@ -71,8 +76,8 @@ class WithIdentitysourceItemRequestBuilder extends BaseRequestBuilder<WithIdenti
     RequestInformation toPutRequestInformation(IdentitySource body, [void Function(RequestConfiguration<WithIdentitysourceItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithIdentitysourceItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithIdentitysourceItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=77', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=78', body);
         return requestInfo;
     }
 }

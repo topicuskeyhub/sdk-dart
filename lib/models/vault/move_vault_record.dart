@@ -4,7 +4,6 @@ import '../auth/account_primer.dart';
 import '../group/group_primer.dart';
 import '../non_linkable.dart';
 import './move_vault_record_action.dart';
-import './move_vault_record_share_duration.dart';
 
 /// auto generated
 class MoveVaultRecord extends NonLinkable implements Parsable {
@@ -15,7 +14,7 @@ class MoveVaultRecord extends NonLinkable implements Parsable {
     ///  The group property
     GroupPrimer? group;
     ///  The shareDuration property
-    MoveVaultRecordShareDuration? shareDuration;
+    Duration? shareDuration;
     /// Instantiates a new [MoveVaultRecord] and sets the default values.
     MoveVaultRecord() : super() {
         type_ = 'vault.MoveVaultRecord';
@@ -32,7 +31,7 @@ class MoveVaultRecord extends NonLinkable implements Parsable {
         deserializerMap['account'] = (node) => account = node.getObjectValue<AccountPrimer>(AccountPrimer.createFromDiscriminatorValue);
         deserializerMap['action'] = (node) => action = node.getEnumValue<MoveVaultRecordAction>((stringValue) => MoveVaultRecordAction.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['group'] = (node) => group = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
-        deserializerMap['shareDuration'] = (node) => shareDuration = node.getObjectValue<MoveVaultRecordShareDuration>(MoveVaultRecordShareDuration.createFromDiscriminatorValue);
+        deserializerMap['shareDuration'] = (node) => shareDuration = node.getDurationValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -43,6 +42,6 @@ class MoveVaultRecord extends NonLinkable implements Parsable {
         writer.writeObjectValue<AccountPrimer>('account', account);
         writer.writeEnumValue<MoveVaultRecordAction>('action', action, (e) => e?.value);
         writer.writeObjectValue<GroupPrimer>('group', group);
-        writer.writeObjectValue<MoveVaultRecordShareDuration>('shareDuration', shareDuration);
+        writer.writeDurationValue('shareDuration', shareDuration);
     }
 }

@@ -34,7 +34,7 @@ class WithVaultrecordItemRequestBuilder extends BaseRequestBuilder<WithVaultreco
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithVaultrecordItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithVaultrecordItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithVaultrecordItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
 }

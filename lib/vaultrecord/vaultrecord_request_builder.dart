@@ -42,7 +42,7 @@ class VaultrecordRequestBuilder extends BaseRequestBuilder<VaultrecordRequestBui
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<VaultrecordRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<VaultrecordRequestBuilderGetQueryParameters>(requestConfiguration, () => VaultrecordRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
 }

@@ -42,7 +42,7 @@ class DeletedvaultholderRequestBuilder extends BaseRequestBuilder<Deletedvaultho
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DeletedvaultholderRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DeletedvaultholderRequestBuilderGetQueryParameters>(requestConfiguration, () => DeletedvaultholderRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=77');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
 }

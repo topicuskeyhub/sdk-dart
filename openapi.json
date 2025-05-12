@@ -5075,7 +5075,7 @@
           {
             "name": "hasVault",
             "in": "query",
-            "description": "Only return accouts that have or don't have their vaults setup.",
+            "description": "Only return accounts that have or don't have their vaults setup.",
             "style": "form",
             "explode": true,
             "schema": {
@@ -5278,7 +5278,7 @@
           {
             "name": "rotatingPasswordEnabled",
             "in": "query",
-            "description": "Only return accouts that have or don't have rotating password enabled.",
+            "description": "Only return accounts that have or don't have rotating password enabled.",
             "style": "form",
             "explode": true,
             "schema": {
@@ -6985,7 +6985,7 @@
           {
             "name": "hasVault",
             "in": "query",
-            "description": "Only return accouts that have or don't have their vaults setup.",
+            "description": "Only return accounts that have or don't have their vaults setup.",
             "style": "form",
             "explode": true,
             "schema": {
@@ -7188,7 +7188,7 @@
           {
             "name": "rotatingPasswordEnabled",
             "in": "query",
-            "description": "Only return accouts that have or don't have rotating password enabled.",
+            "description": "Only return accounts that have or don't have rotating password enabled.",
             "style": "form",
             "explode": true,
             "schema": {
@@ -7708,7 +7708,7 @@
           {
             "name": "hasVault",
             "in": "query",
-            "description": "Only return accouts that have or don't have their vaults setup.",
+            "description": "Only return accounts that have or don't have their vaults setup.",
             "style": "form",
             "explode": true,
             "schema": {
@@ -7911,7 +7911,7 @@
           {
             "name": "rotatingPasswordEnabled",
             "in": "query",
-            "description": "Only return accouts that have or don't have rotating password enabled.",
+            "description": "Only return accounts that have or don't have rotating password enabled.",
             "style": "form",
             "explode": true,
             "schema": {
@@ -27012,7 +27012,7 @@
           {
             "name": "numbering",
             "in": "query",
-            "description": "Filter provisioned LDAPs on the numbering used, specified by id. This parameter supports composition with all parameters from the numberseq resource.",
+            "description": "Filter provisioned LDAPs on the numbering used (uid or gid), specified by id.",
             "style": "form",
             "explode": true,
             "schema": {
@@ -32359,12 +32359,10 @@
               },
               "oldSecret": {
                 "type": "string",
-                "writeOnly": true,
                 "x-tkh-sensitive": true
               },
               "regenerate": {
-                "type": "boolean",
-                "writeOnly": true
+                "type": "boolean"
               },
               "$type": {
                 "type": "string",
@@ -33709,7 +33707,8 @@
           {
             "title": "AccountChangeLocale",
             "required": [
-              "$type"
+              "$type",
+              "locale"
             ],
             "type": "object",
             "properties": {
@@ -34516,7 +34515,8 @@
           {
             "title": "ClientApplication",
             "required": [
-              "$type"
+              "$type",
+              "name"
             ],
             "type": "object",
             "properties": {
@@ -34663,6 +34663,7 @@
             "title": "ClientApplicationPrimer",
             "required": [
               "$type",
+              "name",
               "ssoApplication"
             ],
             "type": "object",
@@ -34746,7 +34747,8 @@
             "title": "ClientConsent",
             "required": [
               "$type",
-              "client"
+              "client",
+              "identifier"
             ],
             "type": "object",
             "properties": {
@@ -34787,6 +34789,7 @@
             "title": "LdapClient",
             "required": [
               "$type",
+              "name",
               "shareSecretInVault",
               "usedForProvisioning"
             ],
@@ -34843,6 +34846,7 @@
               "$type",
               "debugMode",
               "forIdentitySource",
+              "name",
               "profile",
               "shareSecretInVault",
               "showLandingPage",
@@ -35099,6 +35103,7 @@
             "title": "Saml2Client",
             "required": [
               "$type",
+              "name",
               "subjectFormat"
             ],
             "type": "object",
@@ -35154,6 +35159,7 @@
               "$type",
               "baseOrganizationalUnit",
               "defaultDirectory",
+              "name",
               "restrict2fa",
               "rotatingPassword",
               "usernameCustomizable"
@@ -35258,7 +35264,8 @@
             "required": [
               "$type",
               "accountValiditySupported",
-              "active"
+              "active",
+              "name"
             ],
             "type": "object",
             "properties": {
@@ -35450,6 +35457,7 @@
             "required": [
               "$type",
               "baseOrganizationalUnit",
+              "name",
               "owner",
               "rotatingPassword"
             ],
@@ -35488,8 +35496,11 @@
             "title": "LDAPDirectory",
             "required": [
               "$type",
+              "baseDN",
               "baseOrganizationalUnit",
               "dialect",
+              "host",
+              "name",
               "passwordRecovery",
               "port",
               "rotatingPassword",
@@ -35594,6 +35605,7 @@
             "required": [
               "$type",
               "baseOrganizationalUnit",
+              "name",
               "rotatingPassword"
             ],
             "type": "object",
@@ -35617,7 +35629,11 @@
             "required": [
               "$type",
               "baseOrganizationalUnit",
+              "clientId",
+              "clientSecret",
               "enforces2fa",
+              "issuer",
+              "name",
               "rotatingPassword",
               "sendLoginHint",
               "vendor"
@@ -35708,6 +35724,7 @@
             "required": [
               "$type",
               "baseOrganizationalUnit",
+              "name",
               "rotatingPassword"
             ],
             "type": "object",
@@ -35730,6 +35747,7 @@
             "title": "AccountGroup",
             "required": [
               "$type",
+              "name",
               "rights",
               "visibleForProvisioning"
             ],
@@ -35877,6 +35895,7 @@
               "auditRequested",
               "extendedAccess",
               "hideAuditTrail",
+              "name",
               "privateGroup",
               "profileAdministration",
               "recordTrail",
@@ -36687,6 +36706,7 @@
               "defaultClassification",
               "maximumAuditInterval",
               "minimumNrManagers",
+              "name",
               "recordTrailRequired",
               "rotatingPasswordRequired",
               "vaultRequiresActivation"
@@ -36842,7 +36862,8 @@
           {
             "title": "GroupClassificationPrimer",
             "required": [
-              "$type"
+              "$type",
+              "name"
             ],
             "type": "object",
             "properties": {
@@ -37033,7 +37054,8 @@
           {
             "title": "GroupFolder",
             "required": [
-              "$type"
+              "$type",
+              "name"
             ],
             "type": "object",
             "properties": {
@@ -37214,7 +37236,8 @@
             "title": "GroupPrimer",
             "required": [
               "$type",
-              "admin"
+              "admin",
+              "name"
             ],
             "type": "object",
             "properties": {
@@ -37493,7 +37516,8 @@
             "title": "AccountAttributeDefinition",
             "required": [
               "$type",
-              "format"
+              "format",
+              "name"
             ],
             "type": "object",
             "properties": {
@@ -37953,7 +37977,10 @@
           {
             "title": "AFASIdentitySource",
             "required": [
-              "$type"
+              "$type",
+              "name",
+              "token",
+              "url"
             ],
             "type": "object",
             "properties": {
@@ -37989,7 +38016,8 @@
           {
             "title": "IdentitySource",
             "required": [
-              "$type"
+              "$type",
+              "name"
             ],
             "type": "object",
             "properties": {
@@ -38044,7 +38072,8 @@
             "title": "IdentitySourcePrimer",
             "required": [
               "$type",
-              "active"
+              "active",
+              "name"
             ],
             "type": "object",
             "properties": {
@@ -38302,7 +38331,9 @@
           {
             "title": "ManualLaunchpadTile",
             "required": [
-              "$type"
+              "$type",
+              "title",
+              "uri"
             ],
             "type": "object",
             "properties": {
@@ -39039,7 +39070,8 @@
           {
             "title": "AccountOrganizationalUnit",
             "required": [
-              "$type"
+              "$type",
+              "name"
             ],
             "type": "object",
             "properties": {
@@ -39091,7 +39123,8 @@
           {
             "title": "ClientApplicationOrganizationalUnit",
             "required": [
-              "$type"
+              "$type",
+              "name"
             ],
             "type": "object",
             "properties": {
@@ -39130,6 +39163,7 @@
             "required": [
               "$type",
               "depth",
+              "name",
               "owner",
               "root"
             ],
@@ -39285,7 +39319,8 @@
           {
             "title": "OrganizationalUnitClientApplication",
             "required": [
-              "$type"
+              "$type",
+              "name"
             ],
             "type": "object",
             "properties": {
@@ -39347,7 +39382,8 @@
           {
             "title": "OrganizationalUnitPrimer",
             "required": [
-              "$type"
+              "$type",
+              "name"
             ],
             "type": "object",
             "properties": {
@@ -39438,6 +39474,7 @@
             "title": "AccessProfile",
             "required": [
               "$type",
+              "name",
               "owner"
             ],
             "type": "object",
@@ -39842,7 +39879,8 @@
           {
             "title": "AccessProfilePrimer",
             "required": [
-              "$type"
+              "$type",
+              "name"
             ],
             "type": "object",
             "properties": {
@@ -39985,8 +40023,11 @@
             "title": "AbstractProvisionedLDAP",
             "required": [
               "$type",
+              "baseDN",
               "cleanupPeriod",
               "groupOnSystemProvisioning",
+              "host",
+              "name",
               "owner",
               "port",
               "sshPublicKeySupport",
@@ -40169,7 +40210,8 @@
         "enum": [
           "CLOSED",
           "OPEN",
-          "HALF_OPEN"
+          "HALF_OPEN",
+          "FORCED_OPEN"
         ]
       },
       "provisioning.CircuitBreakerStatistics": {
@@ -40242,6 +40284,7 @@
             "title": "GroupOnSystem",
             "required": [
               "$type",
+              "nameInSystem",
               "owner",
               "provisioningEnabled",
               "type"
@@ -40329,6 +40372,7 @@
             "title": "GroupOnSystemPrimer",
             "required": [
               "$type",
+              "nameInSystem",
               "type"
             ],
             "type": "object",
@@ -40548,8 +40592,8 @@
             "title": "ProvisionNumberSequence",
             "required": [
               "$type",
-              "accountCount",
-              "nextUID"
+              "name",
+              "nextID"
             ],
             "type": "object",
             "properties": {
@@ -40558,18 +40602,12 @@
                 "minLength": 0,
                 "type": "string"
               },
-              "nextUID": {
+              "nextID": {
                 "maximum": 60000,
                 "minimum": 2000,
                 "type": "integer",
                 "format": "int64",
-                "x-tkh-default": 2000
-              },
-              "accountCount": {
-                "type": "integer",
-                "format": "int32",
-                "readOnly": true,
-                "x-tkh-default": 0
+                "x-tkh-default": 2001
               },
               "$type": {
                 "type": "string",
@@ -40628,8 +40666,11 @@
             "title": "ProvisionedAD",
             "required": [
               "$type",
+              "baseDN",
               "cleanupPeriod",
               "groupOnSystemProvisioning",
+              "host",
+              "name",
               "owner",
               "samAccountNameScheme",
               "sshPublicKeySupport",
@@ -40727,8 +40768,10 @@
               "cleanupPeriod",
               "directory",
               "groupOnSystemProvisioning",
+              "name",
               "owner",
-              "technicalAdministrator"
+              "technicalAdministrator",
+              "tenant"
             ],
             "type": "object",
             "properties": {
@@ -40767,10 +40810,14 @@
             "required": [
               "$type",
               "cleanupPeriod",
+              "clientId",
+              "clientSecret",
               "directory",
               "groupOnSystemProvisioning",
+              "name",
               "owner",
-              "technicalAdministrator"
+              "technicalAdministrator",
+              "tenant"
             ],
             "type": "object",
             "properties": {
@@ -40815,9 +40862,13 @@
             "required": [
               "$type",
               "cleanupPeriod",
+              "clientId",
+              "clientSecret",
               "groupOnSystemProvisioning",
+              "name",
               "owner",
-              "technicalAdministrator"
+              "technicalAdministrator",
+              "tenant"
             ],
             "type": "object",
             "properties": {
@@ -40864,6 +40915,7 @@
               "$type",
               "cleanupPeriod",
               "groupOnSystemProvisioning",
+              "name",
               "owner",
               "technicalAdministrator"
             ],
@@ -40895,10 +40947,14 @@
             "title": "ProvisionedLDAP",
             "required": [
               "$type",
+              "baseDN",
               "cleanupPeriod",
               "gid",
+              "gidNumbering",
               "groupOnSystemProvisioning",
               "hashingScheme",
+              "host",
+              "name",
               "numbering",
               "owner",
               "sshPublicKeySupport",
@@ -40916,6 +40972,9 @@
                 "$ref": "#/components/schemas/provisioning.LDAPPasswordHashingScheme"
               },
               "numbering": {
+                "$ref": "#/components/schemas/provisioning.ProvisionNumberSequence"
+              },
+              "gidNumbering": {
                 "$ref": "#/components/schemas/provisioning.ProvisionNumberSequence"
               },
               "$type": {
@@ -40946,8 +41005,10 @@
               "cleanupPeriod",
               "directory",
               "gid",
+              "groupDN",
               "groupOnSystemProvisioning",
               "hashingScheme",
+              "name",
               "owner",
               "samAccountNameScheme",
               "sshPublicKeySupport",
@@ -41000,6 +41061,9 @@
               "numbering": {
                 "$ref": "#/components/schemas/provisioning.ProvisionNumberSequence"
               },
+              "gidNumbering": {
+                "$ref": "#/components/schemas/provisioning.ProvisionNumberSequence"
+              },
               "gid": {
                 "type": "integer",
                 "format": "int64",
@@ -41032,6 +41096,7 @@
               "cleanupPeriod",
               "groupDN",
               "groupOnSystemProvisioning",
+              "name",
               "owner",
               "serviceAccountDN",
               "technicalAdministrator"
@@ -41084,8 +41149,10 @@
               "authenticationScheme",
               "cleanupPeriod",
               "groupOnSystemProvisioning",
+              "name",
               "owner",
               "technicalAdministrator",
+              "url",
               "vendor"
             ],
             "type": "object",
@@ -41177,6 +41244,7 @@
               "accountCount",
               "cleanupPeriod",
               "groupOnSystemProvisioning",
+              "name",
               "owner",
               "selfServiceExistingGroups",
               "selfServiceNewGroups",
@@ -41408,6 +41476,7 @@
               "active",
               "adminPermissions",
               "contentAdminPermissions",
+              "name",
               "ownerPermissions"
             ],
             "type": "object",
@@ -41854,7 +41923,8 @@
           {
             "title": "AcceptCreateGroupOnSystemRequestParameters",
             "required": [
-              "$type"
+              "$type",
+              "updatedName"
             ],
             "type": "object",
             "properties": {
@@ -41879,7 +41949,8 @@
           {
             "title": "AcceptCreateGroupRequestParameters",
             "required": [
-              "$type"
+              "$type",
+              "updatedName"
             ],
             "type": "object",
             "properties": {
@@ -41907,7 +41978,8 @@
             "required": [
               "$type",
               "groupDN",
-              "serviceAccountDN"
+              "serviceAccountDN",
+              "updatedName"
             ],
             "type": "object",
             "properties": {
@@ -41939,7 +42011,8 @@
           {
             "title": "AcceptCreateServiceAccountRequestParameters",
             "required": [
-              "$type"
+              "$type",
+              "updatedName"
             ],
             "type": "object",
             "properties": {
@@ -42124,6 +42197,7 @@
               "$type",
               "activationRequired",
               "groupOnSystemType",
+              "nameInSystem",
               "owner",
               "system"
             ],
@@ -42169,6 +42243,7 @@
             "title": "CreateGroupRequest",
             "required": [
               "$type",
+              "groupName",
               "organizationalUnit"
             ],
             "type": "object",
@@ -42234,7 +42309,8 @@
             "title": "CreateServiceAccountRequest",
             "required": [
               "$type",
-              "system"
+              "system",
+              "username"
             ],
             "type": "object",
             "properties": {
@@ -43747,7 +43823,8 @@
           {
             "title": "VerifyInternalAccountRequest",
             "required": [
-              "$type"
+              "$type",
+              "internalAccountName"
             ],
             "type": "object",
             "properties": {
@@ -43797,9 +43874,11 @@
             "title": "ServiceAccount",
             "required": [
               "$type",
+              "name",
               "passwordRotation",
               "system",
-              "technicalAdministrator"
+              "technicalAdministrator",
+              "username"
             ],
             "type": "object",
             "properties": {
@@ -43899,6 +43978,7 @@
             "title": "ServiceAccountGroup",
             "required": [
               "$type",
+              "nameInSystem",
               "type"
             ],
             "type": "object",
@@ -43960,7 +44040,9 @@
             "required": [
               "$type",
               "active",
-              "system"
+              "name",
+              "system",
+              "username"
             ],
             "type": "object",
             "properties": {
@@ -44519,7 +44601,8 @@
             "required": [
               "$type",
               "color",
-              "derived"
+              "derived",
+              "name"
             ],
             "type": "object",
             "properties": {
@@ -44691,7 +44774,8 @@
             "title": "VaultRecordPrimer",
             "required": [
               "$type",
-              "color"
+              "color",
+              "name"
             ],
             "type": "object",
             "properties": {
@@ -44770,14 +44854,15 @@
                 "x-tkh-sensitive": true
               },
               "totp": {
-                "pattern": "[A-Z0-9\\s]{4,}",
                 "type": "string",
+                "readOnly": true,
                 "x-tkh-sensitive": true
               },
-              "writeTotp": {
-                "type": "boolean",
+              "totpKey": {
+                "pattern": "^$|[A-Z0-9\\s]{4,}",
+                "type": "string",
                 "writeOnly": true,
-                "x-tkh-default": false
+                "x-tkh-sensitive": true
               },
               "file": {
                 "type": "string",
@@ -44968,6 +45053,7 @@
               "active",
               "allTypes",
               "tls",
+              "url",
               "verbosePayloads"
             ],
             "type": "object",

@@ -8,6 +8,8 @@ import './provision_number_sequence.dart';
 class ProvisionedLDAP extends AbstractProvisionedLDAP implements Parsable {
     ///  The gid property
     int? gid;
+    ///  The gidNumbering property
+    ProvisionNumberSequence? gidNumbering;
     ///  The hashingScheme property
     LDAPPasswordHashingScheme? hashingScheme;
     ///  The numbering property
@@ -26,6 +28,7 @@ class ProvisionedLDAP extends AbstractProvisionedLDAP implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['gid'] = (node) => gid = node.getIntValue();
+        deserializerMap['gidNumbering'] = (node) => gidNumbering = node.getObjectValue<ProvisionNumberSequence>(ProvisionNumberSequence.createFromDiscriminatorValue);
         deserializerMap['hashingScheme'] = (node) => hashingScheme = node.getEnumValue<LDAPPasswordHashingScheme>((stringValue) => LDAPPasswordHashingScheme.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['numbering'] = (node) => numbering = node.getObjectValue<ProvisionNumberSequence>(ProvisionNumberSequence.createFromDiscriminatorValue);
         return deserializerMap;
@@ -36,6 +39,7 @@ class ProvisionedLDAP extends AbstractProvisionedLDAP implements Parsable {
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeIntValue('gid', gid);
+        writer.writeObjectValue<ProvisionNumberSequence>('gidNumbering', gidNumbering);
         writer.writeEnumValue<LDAPPasswordHashingScheme>('hashingScheme', hashingScheme, (e) => e?.value);
         writer.writeObjectValue<ProvisionNumberSequence>('numbering', numbering);
     }

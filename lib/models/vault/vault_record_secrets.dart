@@ -12,8 +12,8 @@ class VaultRecordSecrets extends NonLinkable implements Parsable {
     String? password;
     ///  The totp property
     String? totp;
-    ///  The writeTotp property
-    bool? writeTotp;
+    ///  The totpKey property
+    String? totpKey;
     /// Instantiates a new [VaultRecordSecrets] and sets the default values.
     VaultRecordSecrets() : super() {
         type_ = 'vault.VaultRecordSecrets';
@@ -31,7 +31,7 @@ class VaultRecordSecrets extends NonLinkable implements Parsable {
         deserializerMap['file'] = (node) => file = node.getStringValue();
         deserializerMap['password'] = (node) => password = node.getStringValue();
         deserializerMap['totp'] = (node) => totp = node.getStringValue();
-        deserializerMap['writeTotp'] = (node) => writeTotp = node.getBoolValue();
+        deserializerMap['totpKey'] = (node) => totpKey = node.getStringValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -42,7 +42,6 @@ class VaultRecordSecrets extends NonLinkable implements Parsable {
         writer.writeStringValue('comment', comment);
         writer.writeStringValue('file', file);
         writer.writeStringValue('password', password);
-        writer.writeStringValue('totp', totp);
-        writer.writeBoolValue('writeTotp', value:writeTotp);
+        writer.writeStringValue('totpKey', totpKey);
     }
 }

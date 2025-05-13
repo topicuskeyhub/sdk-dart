@@ -62,7 +62,7 @@ class SystemRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     List<String>? nameStartsWith;
     ///  Filter the systems on not having a provisioning group for a group on system on the returned systems, specified by id.
     List<int>? notInGroup;
-    ///  Filter provisioned LDAPs on the numbering used, specified by id. This parameter supports composition with all parameters from the numberseq resource.
+    ///  Filter provisioned LDAPs on the numbering used (uid or gid), specified by id.
     List<int>? numbering;
     ///  Filter systems on organizational units, specified by id. This parameter supports composition with all parameters from the organizational unit resource.
     List<int>? organizationalUnit;

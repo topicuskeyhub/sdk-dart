@@ -15,6 +15,8 @@ class ProvisionedLDAPDirectory extends ProvisionedSystem implements Parsable {
     AccountDirectoryPrimer? directory;
     ///  The gid property
     int? gid;
+    ///  The gidNumbering property
+    ProvisionNumberSequence? gidNumbering;
     ///  The groupDN property
     String? groupDN;
     ///  The hashingScheme property
@@ -41,6 +43,7 @@ class ProvisionedLDAPDirectory extends ProvisionedSystem implements Parsable {
         deserializerMap['accountsWritable'] = (node) => accountsWritable = node.getBoolValue();
         deserializerMap['directory'] = (node) => directory = node.getObjectValue<AccountDirectoryPrimer>(AccountDirectoryPrimer.createFromDiscriminatorValue);
         deserializerMap['gid'] = (node) => gid = node.getIntValue();
+        deserializerMap['gidNumbering'] = (node) => gidNumbering = node.getObjectValue<ProvisionNumberSequence>(ProvisionNumberSequence.createFromDiscriminatorValue);
         deserializerMap['groupDN'] = (node) => groupDN = node.getStringValue();
         deserializerMap['hashingScheme'] = (node) => hashingScheme = node.getEnumValue<LDAPPasswordHashingScheme>((stringValue) => LDAPPasswordHashingScheme.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['numbering'] = (node) => numbering = node.getObjectValue<ProvisionNumberSequence>(ProvisionNumberSequence.createFromDiscriminatorValue);
@@ -56,6 +59,7 @@ class ProvisionedLDAPDirectory extends ProvisionedSystem implements Parsable {
         writer.writeBoolValue('accountsWritable', value:accountsWritable);
         writer.writeObjectValue<AccountDirectoryPrimer>('directory', directory);
         writer.writeIntValue('gid', gid);
+        writer.writeObjectValue<ProvisionNumberSequence>('gidNumbering', gidNumbering);
         writer.writeStringValue('groupDN', groupDN);
         writer.writeEnumValue<LDAPPasswordHashingScheme>('hashingScheme', hashingScheme, (e) => e?.value);
         writer.writeObjectValue<ProvisionNumberSequence>('numbering', numbering);

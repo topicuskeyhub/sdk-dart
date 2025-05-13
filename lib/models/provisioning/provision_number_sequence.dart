@@ -5,14 +5,12 @@ import './provision_number_sequence_additional_objects.dart';
 
 /// auto generated
 class ProvisionNumberSequence extends Linkable implements Parsable {
-    ///  The accountCount property
-    int? accountCount;
     ///  The additionalObjects property
     ProvisionNumberSequenceAdditionalObjects? additionalObjects;
     ///  The name property
     String? name;
-    ///  The nextUID property
-    int? nextUID;
+    ///  The nextID property
+    int? nextID;
     /// Instantiates a new [ProvisionNumberSequence] and sets the default values.
     ProvisionNumberSequence() : super() {
         type_ = 'provisioning.ProvisionNumberSequence';
@@ -26,10 +24,9 @@ class ProvisionNumberSequence extends Linkable implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
-        deserializerMap['accountCount'] = (node) => accountCount = node.getIntValue();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<ProvisionNumberSequenceAdditionalObjects>(ProvisionNumberSequenceAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['name'] = (node) => name = node.getStringValue();
-        deserializerMap['nextUID'] = (node) => nextUID = node.getIntValue();
+        deserializerMap['nextID'] = (node) => nextID = node.getIntValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -39,6 +36,6 @@ class ProvisionNumberSequence extends Linkable implements Parsable {
         super.serialize(writer);
         writer.writeObjectValue<ProvisionNumberSequenceAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeStringValue('name', name);
-        writer.writeIntValue('nextUID', nextUID);
+        writer.writeIntValue('nextID', nextID);
     }
 }

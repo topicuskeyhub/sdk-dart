@@ -43,7 +43,7 @@ class ClientApplicationPrimer extends Linkable implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
-        deserializerMap['type'] = (node) => clientApplicationPrimerType = node.getEnumValue<ClientApplicationType>((stringValue) => ClientApplicationType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['ClientApplicationPrimerType'] = (node) => clientApplicationPrimerType = node.getEnumValue<ClientApplicationType>((stringValue) => ClientApplicationType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['clientId'] = (node) => clientId = node.getStringValue();
         deserializerMap['name'] = (node) => name = node.getStringValue();
         deserializerMap['scopes'] = (node) => scopes = node.getCollectionOfPrimitiveValues<String>();
@@ -56,7 +56,7 @@ class ClientApplicationPrimer extends Linkable implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
-        writer.writeEnumValue<ClientApplicationType>('type', clientApplicationPrimerType, (e) => e?.value);
+        writer.writeEnumValue<ClientApplicationType>('ClientApplicationPrimerType', clientApplicationPrimerType, (e) => e?.value);
         writer.writeStringValue('clientId', clientId);
         writer.writeStringValue('name', name);
         writer.writeCollectionOfPrimitiveValues<String?>('scopes', scopes);

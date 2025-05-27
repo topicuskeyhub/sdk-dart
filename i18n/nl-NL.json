@@ -328,6 +328,7 @@
               "AuditRecordType#EXTENDED_ACCESS_DECLINED": "Verlengde toegang - Afgewezen",
               "AuditRecordType#GROUP_CREATED": "Groep - Toegevoegd",
               "AuditRecordType#ACCESS_PROFILE_REMOVED": "Toegangsprofiel - Verwijderd",
+              "AuditRecordType#ACCOUNT_PROVISIONING_MOVED": "Account - Verplaatst binnen gekoppeld systeem",
               "AuditRecordType#GROUP_CLASSIFICATION_MODIFIED": "Groepsclassificatie - Bewerkt",
               "AuditRecordType#WEBHOOK_MODIFIED": "Webhook - Bewerkt",
               "AuditRecordType#ACCOUNT_REMOVED": "Account - Verwijderd",
@@ -876,7 +877,7 @@
               },
               "AccountDirectoryType#PENDING_ACCOUNTS": "Wachtende accounts",
               "AccountDirectory#helpdeskGroup": {
-                "description": "Verzoeken m.b.t. het resetten van 2FA voor deze directory worden afgehandeld door leden van de geselecteerd groep.",
+                "description": "Verzoeken m.b.t. het resetten van wachtwoorden en 2FA voor deze directory worden afgehandeld door leden van de geselecteerd groep.",
                 "label": "Helpdesk-groep"
               },
               "LDAPDirectory#searchBindDN": {
@@ -1319,6 +1320,10 @@
                 "label": "\"Groep met gedelegeerde rechten\" vereisen",
                 "description": "Voor groepen met deze classificatie is activatie van de optie \"Groep met gedelegeerde rechten\" verplicht."
               },
+              "GroupAccount#provisioningPermissionEndTime": {
+                "label": "Toegang verleend tot",
+                "description": "De gebruiker heeft de mogelijkheid om de groep te activeren tot de getoonde tijd."
+              },
               "ProvisioningGroup#group": {
                 "label": "Groep"
               },
@@ -1448,6 +1453,10 @@
               "ProvisionedAzureTenant#tenant": {
                 "label": "Azure tenant"
               },
+              "ProvisionedLDAP#gidNumbering": {
+                "description": "Kies een bestaande nummerreeks voor GID-nummering of start een nieuwe reeks.",
+                "label": "Group ID (gid) nummerreeks"
+              },
               "ProvisionedSystemType#ACTIVE_DIRECTORY": "Active Directory",
               "ProvisionedSCIM#bearerToken": {
                 "label": "Bearer Token"
@@ -1457,6 +1466,14 @@
                 "label": "SSH public key"
               },
               "GroupOnSystemType#GROUP_GLOBAL_SECURITY": "group (global security)",
+              "ProvisionedLDAPDirectory#gid": {
+                "label": "Primaire Group ID (gid)",
+                "description": "De primaire groep van aangemaakte gebruikers"
+              },
+              "ProvisionedLDAPDirectory#gidNumbering": {
+                "description": "Kies een bestaande nummerreeks voor GID-nummering of start een nieuwe reeks.",
+                "label": "Group ID (gid) nummerreeks"
+              },
               "AbstractProvisionedLDAP#userDN": {
                 "description": "De RDN onder base DN waaronder users aangemaakt worden.",
                 "label": "User-RDN"
@@ -1493,7 +1510,6 @@
                 "description": "De RDN onder base DN waaronder groepen te vinden zijn,",
                 "label": "Group-RDN"
               },
-              "DeprovisionAction#NONE": "Geen, laat alles actief",
               "ProvisionedAzureOIDCDirectory#tenant": {
                 "label": "Azure tenant"
               },
@@ -1509,7 +1525,6 @@
                 "label": "Failover host",
                 "description": "Als de primaire host niet bereikbaar is, wordt teruggevallen op deze host op dezelfde port."
               },
-              "DeprovisionAction#DESTROY_ACCOUNTS": "Alle accounts en serviceaccounts permanent verwijderen",
               "AbstractProvisionedLDAP#bindPassword": {
                 "description": "Het wachtwoord waarmee gebind wordt op de directory.",
                 "label": "Bind wachtwoord"
@@ -1539,9 +1554,6 @@
                 "label": "TLS"
               },
               "GroupOnSystemType#GROUP_OF_UNIQUE_NAMES": "groupOfUniqueNames",
-              "ProvisionNumberSequence#nextUID": {
-                "label": "Volgende UID"
-              },
               "ProvisionedSystemType#INTERNAL_LDAP": "Interne LDAP",
               "ProvisionedSystemType#LDAP": "LDAP",
               "ProvisionedSystem#contentAdministrator": {
@@ -1552,6 +1564,21 @@
                 "description": "Managers uit de gekozen groep zijn verantwoordelijk voor het regelen van toegang tot en beheer van dit gekoppelde systeem.",
                 "placeholder": "Kies een groep...",
                 "label": "Verantwoordelijke groep"
+              },
+              "DeprovisionAction": {
+                "NONE": {
+                  "unwritableaccounts": "Geen, laat alles actief",
+                  "main": "Geen, laat alles actief"
+                },
+                "DESTROY_ALL": {
+                  "unwritableaccounts": "Alle groepen permanent verwijderen",
+                  "main": "Alle accounts, serviceaccounts en groepen permanent verwijderen"
+                },
+                "DEPROVISION_ACCOUNTS": {
+                  "unwritableaccounts": "Alle groepen uitschakelen",
+                  "main": "Alle accounts en serviceaccounts uitschakelen"
+                },
+                "DESTROY_ACCOUNTS": "Alle accounts en serviceaccounts permanent verwijderen"
               },
               "GroupOnSystem#owner": {
                 "label": "Verantwoordelijke groep",
@@ -1579,7 +1606,7 @@
               },
               "ProvisionedLDAP#gid": {
                 "description": "De primaire groep van aangemaakte gebruikers",
-                "label": "Group ID (gid)"
+                "label": "Primaire Group ID (gid)"
               },
               "GroupOnSystemProvisioning#PROVISIONED_BY_DEFAULT_CAN_ONLY_BE_ENABLED": "Standaard ingeschakeld, niet te deactiveren - Beheer van groepen door KeyHub staat standaard aan en kan alleen ingeschakeld worden.",
               "AbstractProvisionedLDAP#failoverTrustedCertificate": {
@@ -1624,8 +1651,8 @@
                 "description": "De organisatie-eenheid waar deze koppeling toe behoort. Deze koppeling is ook zichtbaar voor organisatie-eenheden onder deze eenheid."
               },
               "ProvisionedLDAP#numbering": {
-                "label": "User ID (uid)",
-                "description": "Kies een bestaande nummerreeks voor uid-nummering of start een nieuwe reeks."
+                "label": "User ID (uid) nummerreeks",
+                "description": "Kies een bestaande nummerreeks voor UID-nummering of start een nieuwe reeks."
               },
               "ProvisionedSystem#cleanupPeriod": {
                 "description": "Geef aan na welke periode accounts opgeruimd moeten worden. Gebruik 'd' voor dagen, 'w' voor weken', 'm' voor maanden en 'y' voor jaren, bijvoorbeeld '2w'.",
@@ -1644,7 +1671,6 @@
                 "label": "Clientcertificaat"
               },
               "GroupOnSystemProvisioning#NOT_PROVISIONED_BY_DEFAULT_CAN_ONLY_BE_ENABLED": "Standaard uitgeschakeld, niet te deactiveren - Beheer van groepen door KeyHub staat standaard uit en kan alleen ingeschakeld worden.",
-              "DeprovisionAction#DEPROVISION_ACCOUNTS": "Alle accounts en serviceaccounts uitschakelen",
               "ProvisionedAzureSyncLDAPDirectory#directory": {
                 "description": "Op deze Active Directory dient Azure AD Connect geactiveerd te zijn welke synchroniseert met de gekozen Azure tenant.",
                 "label": "LDAP-directory"
@@ -1680,6 +1706,10 @@
                 "description": "Kies hoe Topicus KeyHub de groepen binnen dit systeem moet beheren.",
                 "label": "Provisioning van groepen"
               },
+              "ProvisionedLDAPDirectory#numbering": {
+                "description": "Kies een bestaande nummerreeks voor UID-nummering of start een nieuwe reeks.",
+                "label": "User ID (uid) nummerreeks"
+              },
               "ProvisionedSystemType#SOURCE_LDAP_DIRECTORY": "LDAP-brondirectory",
               "ProvisionedAzureTenant#idpDomain": {
                 "label": "Identity-provider-domein",
@@ -1691,6 +1721,9 @@
                 "description": "De RDN onder base DN waaronder serviceaccounts aangemaakt worden."
               },
               "GroupOnSystemType#GROUP_UNKNOWN": "group (overig)",
+              "ProvisionNumberSequence#nextID": {
+                "label": "Volgende ID"
+              },
               "ADSamAccountNameScheme#USERNAME": "Gebruikersnaam - Gebruik de gebruikersnaam, indien deze past.",
               "ProvisionedSystemType#AZURE_TENANT": "Azure tenant",
               "ProvisionedSystem#status": {
@@ -1726,7 +1759,6 @@
                 "label": "Fouten/waarschuwingen"
               },
               "ADSamAccountNameScheme#TRUNCATE": "Gebruikersnaam inkorten - De gebruikersnaam wordt ingekort tot maximaal 20 tekens.",
-              "DeprovisionAction#DESTROY_ALL": "Alle accounts, serviceaccounts en groepen permanent verwijderen",
               "ProvisionedAzureSyncLDAPDirectory#clientId": {
                 "label": "Client identifier"
               }
@@ -2694,7 +2726,8 @@
             },
             "AuthenticationChangeType": {
               "WEBAUTHN_KEY_ADDED": "Een WebAuthn-security key is toegevoegd",
-              "ACCOUNT_EMAIL_CHANGED": "Het e-mailadres van je account is gewijzigd in {0}",
+              "ACCOUNT_USERNAME_CHANGED": "De gebruikersnaam van je account is gewijzigd naar {username}",
+              "ACCOUNT_EMAIL_CHANGED": "Het e-mailadres van je account is gewijzigd naar {email}",
               "TOTP_DISABLED": "TOTP is uitgeschakeld",
               "REREGISTRATION_DISABLED": "De verplaatsing of hernoeming van je account is afgebroken",
               "PASSWORD_UPDATED": "Je wachtwoord of de instellingen van je wachtwoord zijn gewijzigd",
@@ -2887,7 +2920,7 @@
       },
       "gaterug": "Terug naar startpagina",
       "403": "U heeft niet genoeg rechten om de gevraagde gegevens in te zien.",
-      "report": "De fout is opgeslagen onder de referentie {0}.",
+      "report": "De fout is opgeslagen onder de referentie {0} op {1}.",
       "klikhieronder": "Er is iets mis gegaan. Klik hieronder om terug te gaan of laat ons weten wat er mis ging.",
       "ietsmis": "Oops looks like we lost connection!"
     },
@@ -3723,7 +3756,7 @@
       "subtitle": "Kies een directory waarvoor het beheer van attributen toegekend moet worden aan het toegangsprofiel {0}.",
       "request": "Directory koppelen"
     },
-    "norights": "Je mag dit verzoek niet afhandelen. Mogelijk ben je al eerder betrokken geweest bij dit verzoek.",
+    "norights": "Je mag dit verzoek niet afhandelen. Mogelijk ben je al eerder betrokken geweest bij dit verzoek of mis je vereiste rechten.",
     "transferapplicationownership": {
       "sent": "Je verzoek om de verantwoordelijkheid over {0} over te dragen aan {1} is verstuurd.",
       "header": "Verantwoordelijkheid overdragen",
@@ -3827,7 +3860,7 @@
     "numbering": {
       "start": "Start nummering",
       "toevoegen": "Nummerreeks toevoegen",
-      "next": "Volgende UID",
+      "next": "Volgende ID",
       "subtitle": "Deze nummerreeks kan gebruikt worden voor het genereren van UIDs bij provisioning van LDAP-systemen.",
       "bewerken": "Nummerreeks bewerken",
       "new": "Start een nieuwe nummerreeks"
@@ -4212,6 +4245,7 @@
       "copytoclipboard": "Kopieer naar klembord",
       "weigeren": "Weigeren",
       "upload": "Upload",
+      "opslaanenvolgende": "Opslaan en volgende",
       "aanvragen": "Aanvragen",
       "restore": "Terugzetten",
       "verstuur": "Verstuur",
@@ -4261,6 +4295,10 @@
       "revoke": "Toegang intrekken",
       "review": "Reviewen",
       "view": "Tonen",
+      "sync": {
+        "now": "Nu synchroniseren",
+        "started": "Synchronisatie is gestart in de achtergrond."
+      },
       "register": "Nu registreren",
       "retry": "Opnieuw",
       "apply": "Toepassen",
@@ -5667,6 +5705,7 @@
     "PROVISIONED_SYSTEM_MODIFIED": "{performedBy} heeft de koppeling {onSystem} aangepast.",
     "CLIENT_ADDED_TO_ACCESS_PROFILE": "{onClient} is toegevoegd aan het toegangsprofiel {onAccessProfile}.",
     "DISABLE_2FA_DECLINED": "Het verzoek om 2FA uit te schakelen voor {onAccount} is afgekeurd door {performedBy}.",
+    "ACCOUNT_PROVISIONING_MOVED": "{onAccount} is verplaatst binnen de koppeling {onSystem} van {parameter1} naar {parameter2}.",
     "EXTENDED_ACCESS_DECLINED": "{performedBy} heeft het verzoek van {onAccount} afgekeurd om verlengde toegang tot {parameter3} te krijgen tot {onGroup}. {reason}",
     "toonEigenRecords": "Toon alleen eigen records",
     "EXTENDED_ACCESS_REQUESTED": "{performedBy} heeft een verzoek ingediend om verlengde toegang tot {parameter3} te krijgen tot {onGroup}. {reason}",
@@ -6059,6 +6098,7 @@
       "ACCOUNT_DISABLED": "Account uitgeschakeld",
       "VAULT_PERSONAL_SETUP": "Kluis ingesteld",
       "PROVISIONED_SYSTEM_UNKNOWN_ACCOUNT_DESTROYED": "Onbekend account verwijderd van gekoppeld systeem",
+      "ACCOUNT_PROVISIONING_MOVED": "Account verplaatst binnen gekoppeld systeem",
       "AUDITOR_EXPORT_GENERATED": "Auditor export gegenereerd",
       "GROUP_MOVED": "Groep verplaatst",
       "VAULT_PERSONAL_RESET": "Persoonlijke kluis gereset",
@@ -6414,6 +6454,11 @@
     "authorizedgroups": {
       "header": "Voert autorisatie uit voor",
       "provisioning": "Activatie",
+      "permission": {
+        "summary": "Toegang tot {0}",
+        "header": "Toegang verleend",
+        "subtitle": "{0} heeft toestemming om de groep te activeren."
+      },
       "membership": "Lidmaatschap",
       "hidden": "{0} verborgen groepen",
       "delegation": "Delegatie",
@@ -7674,10 +7719,6 @@
   "system": {
     "internal": {
       "header": "Interne LDAP - {0}"
-    },
-    "sync": {
-      "started": "Synchronisatie is gestart in de achtergrond.",
-      "now": "Nu synchroniseren"
     },
     "synclog": {
       "header": "Synchronisatielog {0}"

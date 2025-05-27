@@ -3,7 +3,7 @@ import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './put_additional_query_parameter_type.dart';
 
 /// auto generated
-/// Updates the audits for a group identified by the id. Only audits in draft can be updated.
+/// Updates the audit for a group identified by the id. Only audits in draft can be updated.
 class WithAuditItemRequestBuilderPutQueryParameters implements AbstractQueryParameters {
     ///  Request additional information to be returned for every record.
     List<PutAdditionalQueryParameterType>? additional;

@@ -54,7 +54,6 @@ class WithCertificateItemRequestBuilder extends BaseRequestBuilder<WithCertifica
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
     /// Returns the global trusted certificate identified by the id.

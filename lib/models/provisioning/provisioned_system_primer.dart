@@ -66,7 +66,7 @@ class ProvisionedSystemPrimer extends Linkable implements Parsable {
         deserializerMap['name'] = (node) => name = node.getStringValue();
         deserializerMap['organizationalUnit'] = (node) => organizationalUnit = node.getObjectValue<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);
         deserializerMap['ownerPermissions'] = (node) => ownerPermissions = node.getBoolValue();
-        deserializerMap['type'] = (node) => provisionedSystemPrimerType = node.getEnumValue<ProvisionedSystemType>((stringValue) => ProvisionedSystemType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['ProvisionedSystemPrimerType'] = (node) => provisionedSystemPrimerType = node.getEnumValue<ProvisionedSystemType>((stringValue) => ProvisionedSystemType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['uuid'] = (node) => uuid = node.getStringValue();
         return deserializerMap;
     }
@@ -78,6 +78,6 @@ class ProvisionedSystemPrimer extends Linkable implements Parsable {
         writer.writeBoolValue('active', value:active);
         writer.writeStringValue('name', name);
         writer.writeObjectValue<OrganizationalUnitPrimer>('organizationalUnit', organizationalUnit);
-        writer.writeEnumValue<ProvisionedSystemType>('type', provisionedSystemPrimerType, (e) => e?.value);
+        writer.writeEnumValue<ProvisionedSystemType>('ProvisionedSystemPrimerType', provisionedSystemPrimerType, (e) => e?.value);
     }
 }

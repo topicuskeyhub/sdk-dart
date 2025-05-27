@@ -185,14 +185,14 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = <String, void Function(ParseNode)>{};
-        deserializerMap['\$type'] = (node) => type_ = node.getStringValue();
+        deserializerMap['Type'] = (node) => type_ = node.getStringValue();
         return deserializerMap;
     }
     /// Serializes information the current object
     ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
-        writer.writeStringValue('\$type', type_);
+        writer.writeStringValue('Type', type_);
         writer.writeAdditionalData(additionalData);
     }
 }

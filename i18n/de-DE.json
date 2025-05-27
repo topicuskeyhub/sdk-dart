@@ -328,6 +328,7 @@
               "AuditRecordType#EXTENDED_ACCESS_DECLINED": "Verlängerter Zugriff - Abgelehnt",
               "AuditRecordType#GROUP_CREATED": "Gruppe - Erstellt",
               "AuditRecordType#ACCESS_PROFILE_REMOVED": "Zugriffsprofil - Gelöscht",
+              "AuditRecordType#ACCOUNT_PROVISIONING_MOVED": "Konto - Innerhalb des gekoppelten Systems verschoben",
               "AuditRecordType#GROUP_CLASSIFICATION_MODIFIED": "Gruppenklassifizierung - Bearbeitet",
               "AuditRecordType#WEBHOOK_MODIFIED": "Webhook - Bearbeitet",
               "AuditRecordType#ACCOUNT_REMOVED": "Konto - Gelöscht",
@@ -876,7 +877,7 @@
               },
               "AccountDirectoryType#PENDING_ACCOUNTS": "Ausstehende Konten",
               "AccountDirectory#helpdeskGroup": {
-                "description": "Anforderungen zum Zurücksetzen von 2FA für dieses Verzeichnis werden von Mitgliedern der ausgewählten Gruppe bearbeitet.",
+                "description": "Anforderungen zum Zurücksetzen von Passwörtern und 2FA für dieses Verzeichnis werden von Mitgliedern der ausgewählten Gruppe bearbeitet.",
                 "label": "Helpdesk-Gruppe"
               },
               "LDAPDirectory#searchBindDN": {
@@ -1319,6 +1320,10 @@
                 "label": "„Gruppe mit delegierten Rechten“ erforderlich",
                 "description": "Für Gruppen mit dieser Klassifizierung ist die Aktivierung der Option „Gruppe mit delegierten Rechten“ erforderlich."
               },
+              "GroupAccount#provisioningPermissionEndTime": {
+                "label": "Zugang gewährt bis",
+                "description": "Bis zum angezeigten Zeitpunkt hat der Benutzer die Möglichkeit, die Gruppe zu aktivieren."
+              },
               "ProvisioningGroup#group": {
                 "label": "Gruppe"
               },
@@ -1448,6 +1453,10 @@
               "ProvisionedAzureTenant#tenant": {
                 "label": "Azure Tenant"
               },
+              "ProvisionedLDAP#gidNumbering": {
+                "description": "Wählen Sie eine vorhandene Nummernfolge für GIDs oder starten Sie eine neue Nummernfolge.",
+                "label": "Group ID (gid) Nummernfolge"
+              },
               "ProvisionedSystemType#ACTIVE_DIRECTORY": "Aktives Verzeichnis",
               "ProvisionedSCIM#bearerToken": {
                 "label": "Bearer Token"
@@ -1457,6 +1466,14 @@
                 "label": "SSH Public Key"
               },
               "GroupOnSystemType#GROUP_GLOBAL_SECURITY": "group (global security)",
+              "ProvisionedLDAPDirectory#gid": {
+                "label": "Primäre Group ID (gid)",
+                "description": "Die primäre Gruppe für Benutzer"
+              },
+              "ProvisionedLDAPDirectory#gidNumbering": {
+                "description": "Wählen Sie eine vorhandene Nummernfolge für GIDs oder starten Sie eine neue Nummernfolge.",
+                "label": "Group ID (gid) Nummernfolge"
+              },
               "AbstractProvisionedLDAP#userDN": {
                 "description": "Der RDN unter dem Basis-DN, unter dem Benutzer erstellt werden.",
                 "label": "Benutzer-RDN"
@@ -1493,7 +1510,6 @@
                 "description": "Der RDN unter der Basis-DN, die Gruppen beinhaltet.",
                 "label": "Gruppen-RDN"
               },
-              "DeprovisionAction#NONE": "Keine, alles aktiv lassen",
               "ProvisionedAzureOIDCDirectory#tenant": {
                 "label": "Azure Tenant"
               },
@@ -1509,7 +1525,6 @@
                 "label": "Failover Host",
                 "description": "Wenn der primäre Host nicht verfügbar ist, wird auf diesen Host mit dem selben Port zurückgegriffen."
               },
-              "DeprovisionAction#DESTROY_ACCOUNTS": "Alle Konten und Dienstkonten dauerhaft löschen",
               "AbstractProvisionedLDAP#bindPassword": {
                 "description": "Das Passwort, mit dem das Verzeichnis verknüpft ist.",
                 "label": "Bind Passwort"
@@ -1539,9 +1554,6 @@
                 "label": "TLS"
               },
               "GroupOnSystemType#GROUP_OF_UNIQUE_NAMES": "groupOfUniqueNames",
-              "ProvisionNumberSequence#nextUID": {
-                "label": "Nächste UID"
-              },
               "ProvisionedSystemType#INTERNAL_LDAP": "Internes LDAP",
               "ProvisionedSystemType#LDAP": "LDAP",
               "ProvisionedSystem#contentAdministrator": {
@@ -1552,6 +1564,21 @@
                 "description": "Manager der ausgewählten Gruppe sind verantwortlich für den Zugriff und die Verwaltung dieses gekoppelten Systems.",
                 "placeholder": "Wähle eine Gruppe...",
                 "label": "Verantwortliche Gruppe"
+              },
+              "DeprovisionAction": {
+                "NONE": {
+                  "unwritableaccounts": "Keine, alles aktiv lassen",
+                  "main": "Keine, alles aktiv lassen"
+                },
+                "DESTROY_ALL": {
+                  "unwritableaccounts": "Alle Gruppen dauerhaft löschen",
+                  "main": "Alle Konten, Dienstkonten und Gruppen dauerhaft löschen"
+                },
+                "DEPROVISION_ACCOUNTS": {
+                  "unwritableaccounts": "Alle Gruppen deaktivieren",
+                  "main": "Alle Konten und Dienstkonten deaktivieren"
+                },
+                "DESTROY_ACCOUNTS": "Alle Konten und Dienstkonten dauerhaft löschen"
               },
               "GroupOnSystem#owner": {
                 "label": "Verantwortliche Gruppe",
@@ -1579,7 +1606,7 @@
               },
               "ProvisionedLDAP#gid": {
                 "description": "Die primäre Gruppe für Benutzer",
-                "label": "Group ID (gid)"
+                "label": "Primäre Group ID (gid)"
               },
               "GroupOnSystemProvisioning#PROVISIONED_BY_DEFAULT_CAN_ONLY_BE_ENABLED": "Standardmäßig aktiviert, kann nicht deaktiviert werden – Die Verwaltung von Gruppen durch KeyHub ist standardmäßig aktiviert und kann nur aktiviert werden.",
               "AbstractProvisionedLDAP#failoverTrustedCertificate": {
@@ -1624,7 +1651,7 @@
                 "description": "Die Organisationseinheit, zu der dieses gekoppelten Systems gehört. Dieses gekoppelten Systems ist auch für Organisationseinheiten unter dieser Einheit sichtbar."
               },
               "ProvisionedLDAP#numbering": {
-                "label": "User ID (uid)",
+                "label": "User ID (uid) Nummernfolge",
                 "description": "Wählen Sie eine vorhandene Nummernfolge für UIDs oder starten Sie eine neue Nummernfolge."
               },
               "ProvisionedSystem#cleanupPeriod": {
@@ -1644,7 +1671,6 @@
                 "label": "Client-Zertifikat"
               },
               "GroupOnSystemProvisioning#NOT_PROVISIONED_BY_DEFAULT_CAN_ONLY_BE_ENABLED": "Standardmäßig deaktiviert, kann nicht deaktiviert werden – Die Verwaltung von Gruppen durch KeyHub ist standardmäßig deaktiviert und kann nur aktiviert werden.",
-              "DeprovisionAction#DEPROVISION_ACCOUNTS": "Alle Konten und Dienstkonten deaktivieren",
               "ProvisionedAzureSyncLDAPDirectory#directory": {
                 "description": "Azure AD Connect muss auf diesem Active Directory aktiviert werden, das sich mit dem ausgewählten Azure Tenant synchronisiert.",
                 "label": "LDAP-Verzeichnis"
@@ -1680,6 +1706,10 @@
                 "description": "Wählen Sie aus, wie Topicus KeyHub die Gruppen innerhalb dieses Systems verwalten soll.",
                 "label": "Gruppenbereitstellung"
               },
+              "ProvisionedLDAPDirectory#numbering": {
+                "description": "Wählen Sie eine vorhandene Nummernfolge für UIDs oder starten Sie eine neue Nummernfolge.",
+                "label": "User ID (uid) Nummernfolge"
+              },
               "ProvisionedSystemType#SOURCE_LDAP_DIRECTORY": "LDAP-Sourceverzeichnis",
               "ProvisionedAzureTenant#idpDomain": {
                 "label": "Identitätsanbieter-Domain",
@@ -1691,6 +1721,9 @@
                 "description": "Der RDN unter dem Basis-DN, unter dem Dienstkonten erstellt werden."
               },
               "GroupOnSystemType#GROUP_UNKNOWN": "group (andere)",
+              "ProvisionNumberSequence#nextID": {
+                "label": "Nächste ID"
+              },
               "ADSamAccountNameScheme#USERNAME": "Benutzernamen - Verwenden Sie den Benutzernamen, wenn er passt.",
               "ProvisionedSystemType#AZURE_TENANT": "Azure Tenant",
               "ProvisionedSystem#status": {
@@ -1726,7 +1759,6 @@
                 "label": "Fehler/Warnungen"
               },
               "ADSamAccountNameScheme#TRUNCATE": "Benutzernamen abschneiden - Der Benutzername wird auf maximal 20 Zeichen gekürzt.",
-              "DeprovisionAction#DESTROY_ALL": "Alle Konten, Dienstkonten und Gruppen dauerhaft löschen",
               "ProvisionedAzureSyncLDAPDirectory#clientId": {
                 "label": "Client Identifier"
               }
@@ -2694,7 +2726,8 @@
             },
             "AuthenticationChangeType": {
               "WEBAUTHN_KEY_ADDED": "Ein WebAuthn-Sicherheitsschlüssel wurde hinzugefügt",
-              "ACCOUNT_EMAIL_CHANGED": "Die E-Mail-Adresse Ihres Kontos wurde in {0} geändert",
+              "ACCOUNT_USERNAME_CHANGED": "Der Benutzername Ihres Kontos wurde in {username} geändert",
+              "ACCOUNT_EMAIL_CHANGED": "Die E-Mail-Adresse Ihres Kontos wurde in {email} geändert",
               "TOTP_DISABLED": "TOTP wurde deaktiviert",
               "REREGISTRATION_DISABLED": "Das Verschieben oder Umbenennen Ihres Kontos wurde abgebrochen",
               "PASSWORD_UPDATED": "Ihr Passwort oder Ihre Passworteinstellungen wurden geändert",
@@ -2887,7 +2920,7 @@
       },
       "gaterug": "Zurück zur Startseite",
       "403": "Sie haben keine Berechtigung zum Anzeigen der angeforderten Daten.",
-      "report": "Der Fehler wurde in {0} gespeichert.",
+      "report": "Der Fehler wurde in {0} am {1} gespeichert.",
       "klikhieronder": "Ein Fehler ist aufgetreten. Gehen Sie zurück oder lassen Sie uns wissen, was schiefgelaufen ist.",
       "ietsmis": "Oops looks like we lost connection!"
     },
@@ -3723,7 +3756,7 @@
       "subtitle": "Wählen Sie ein Verzeichnis aus, für das die Attributverwaltung dem Zugriffsprofil {0} zugewiesen werden soll.",
       "request": "Verzeichnis verknüpfen"
     },
-    "norights": "Sie dürfen diese Anfrage nicht bearbeiten. Möglicherweise waren Sie bereits an dieser Anfrage beteiligt.",
+    "norights": "Sie dürfen diese Anfrage nicht bearbeiten. Möglicherweise waren Sie bereits an dieser Anfrage beteiligt oder Ihnen fehlen die erforderlichen Berechtigungen.",
     "transferapplicationownership": {
       "sent": "Ihre Anfrage zur übertragung der Verantwortung von {0} auf {1} wurde gesendet.",
       "header": "Verantwortung übertragen",
@@ -3827,7 +3860,7 @@
     "numbering": {
       "start": "Nummern anfangen",
       "toevoegen": "Nummernfolge hinzufügen",
-      "next": "Nächste UID",
+      "next": "Nächste ID",
       "subtitle": "Dieses Zertifikat kann überall in KeyHub als vertrauenswürdiges Zertifikat ausgewählt werden.",
       "bewerken": "Nummernfolge bearbeiten",
       "new": "Neue Nummernfolge anfangen"
@@ -4212,6 +4245,7 @@
       "copytoclipboard": "In die Zwischenablage kopieren",
       "weigeren": "Verweigern",
       "upload": "Hochladen",
+      "opslaanenvolgende": "Speichern und weiter",
       "aanvragen": "Beantragen",
       "restore": "Wiederherstellen",
       "verstuur": "Verschicken",
@@ -4261,6 +4295,10 @@
       "revoke": "Zugang entziehen",
       "review": "Überprüfen",
       "view": "Anzeigen",
+      "sync": {
+        "now": "Jetzt synchronisieren",
+        "started": "Die Synchronisierung wurde im Hintergrund gestartet."
+      },
       "register": "Jetzt registrieren",
       "retry": "Wiederholen",
       "apply": "Anwenden",
@@ -5667,6 +5705,7 @@
     "PROVISIONED_SYSTEM_MODIFIED": "{performedBy} hat das gekoppelte System {onSystem} bearbeitet.",
     "CLIENT_ADDED_TO_ACCESS_PROFILE": "{onClient} wurde zum Zugriffsprofil {onAccessProfile} hinzugefügt.",
     "DISABLE_2FA_DECLINED": "Die Anfrage, die Zwei-Faktor-Authentifizierung für {onAccount} zu deaktivieren, wurde von {performedBy} abgelehnt.",
+    "ACCOUNT_PROVISIONING_MOVED": "{onAccount} wurde innerhalb des gekoppelten Systems {onSystem} von {parameter1} nach {parameter2} verschoben.",
     "EXTENDED_ACCESS_DECLINED": "{performedBy} hat den Antrag von {onAccount}, den Zugriff auf {onGroup} bis {parameter3} zu verlängern, abgelehnt. {reason}",
     "toonEigenRecords": "Nur meine Daten anzeigen",
     "EXTENDED_ACCESS_REQUESTED": "{performedBy} hat beantragt, den Zugriff auf {onGroup} {parameter3} zu verlängern. {reason}",
@@ -6059,6 +6098,7 @@
       "ACCOUNT_DISABLED": "Konto deaktiviert",
       "VAULT_PERSONAL_SETUP": "Safe eingestellt",
       "PROVISIONED_SYSTEM_UNKNOWN_ACCOUNT_DESTROYED": "Unbekanntes Konto aus gekoppeltes System gelöscht",
+      "ACCOUNT_PROVISIONING_MOVED": "Konto innerhalb des gekoppelten Systems verschoben",
       "AUDITOR_EXPORT_GENERATED": "Auditor-Export generiert",
       "GROUP_MOVED": "Gruppe verschoben",
       "VAULT_PERSONAL_RESET": "Persönlichen Safe zurücksetzen",
@@ -6414,6 +6454,11 @@
     "authorizedgroups": {
       "header": "Führt die Autorisierung aus für",
       "provisioning": "Aktivierung",
+      "permission": {
+        "summary": "Zugriff bis {0}",
+        "header": "Zugriff gewährt",
+        "subtitle": "{0} hat die Berechtigung, die Gruppe zu aktivieren."
+      },
       "membership": "Mitgliedschaft",
       "hidden": "{0} ausgeblendete Gruppen",
       "delegation": "Delegation",
@@ -7674,10 +7719,6 @@
   "system": {
     "internal": {
       "header": "Internes LDAP - {0}"
-    },
-    "sync": {
-      "started": "Die Synchronisierung wurde im Hintergrund gestartet.",
-      "now": "Jetzt synchronisieren"
     },
     "synclog": {
       "header": "Synchronisationslog {0}"

@@ -26,7 +26,7 @@ class ItemMarker extends NonLinkable implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
-        deserializerMap['type'] = (node) => itemMarkerType = node.getEnumValue<ItemMarkerType>((stringValue) => ItemMarkerType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['ItemMarkerType'] = (node) => itemMarkerType = node.getEnumValue<ItemMarkerType>((stringValue) => ItemMarkerType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['level'] = (node) => level = node.getEnumValue<ItemMarkerLevel>((stringValue) => ItemMarkerLevel.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['parameters'] = (node) => parameters = node.getObjectValue<ItemMarkerParameters>(ItemMarkerParameters.createFromDiscriminatorValue);
         return deserializerMap;
@@ -36,7 +36,7 @@ class ItemMarker extends NonLinkable implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
-        writer.writeEnumValue<ItemMarkerType>('type', itemMarkerType, (e) => e?.value);
+        writer.writeEnumValue<ItemMarkerType>('ItemMarkerType', itemMarkerType, (e) => e?.value);
         writer.writeEnumValue<ItemMarkerLevel>('level', level, (e) => e?.value);
     }
 }

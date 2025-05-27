@@ -55,7 +55,6 @@ class WithGroupItemRequestBuilder extends BaseRequestBuilder<WithGroupItemReques
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<WithGroupItemRequestBuilderDeleteQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupItemRequestBuilderDeleteQueryParameters>(requestConfiguration, () => WithGroupItemRequestBuilderDeleteQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
     /// Returns the group on system identified by the id.

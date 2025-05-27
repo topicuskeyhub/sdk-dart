@@ -3,7 +3,7 @@ import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './get_additional_query_parameter_type.dart';
 
 /// auto generated
-/// Returns the single audits for the group.
+/// Returns a single audit for the group.
 class WithAuditItemRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Request additional information to be returned for every record.
     List<GetAdditionalQueryParameterType>? additional;

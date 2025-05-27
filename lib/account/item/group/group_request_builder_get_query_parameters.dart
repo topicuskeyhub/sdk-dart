@@ -12,7 +12,7 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     List<GetAdditionalQueryParameterType>? additional;
     ///  Return all or no records. This can be useful when composing parameters.
     List<bool>? any;
-    ///  Only return group memberships that can or cannot be activated.
+    ///  Only return group memberships that can or cannot be activated by the current user.
     List<bool>? applicableForActivation;
     ///  Only return records that have been created after the given instant.
     List<DateTime>? createdAfter;

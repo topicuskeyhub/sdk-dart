@@ -27,7 +27,7 @@ class GroupAuditRequiredNotification extends Notification implements Parsable {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['dueDate'] = (node) => dueDate = node.getDateTimeValue();
         deserializerMap['group'] = (node) => group = node.getObjectValue<Group>(Group.createFromDiscriminatorValue);
-        deserializerMap['type'] = (node) => groupAuditRequiredNotificationType = node.getEnumValue<AuditRequiredSourceType>((stringValue) => AuditRequiredSourceType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['GroupAuditRequiredNotificationType'] = (node) => groupAuditRequiredNotificationType = node.getEnumValue<AuditRequiredSourceType>((stringValue) => AuditRequiredSourceType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -37,6 +37,6 @@ class GroupAuditRequiredNotification extends Notification implements Parsable {
         super.serialize(writer);
         writer.writeDateTimeValue('dueDate', dueDate);
         writer.writeObjectValue<Group>('group', group);
-        writer.writeEnumValue<AuditRequiredSourceType>('type', groupAuditRequiredNotificationType, (e) => e?.value);
+        writer.writeEnumValue<AuditRequiredSourceType>('GroupAuditRequiredNotificationType', groupAuditRequiredNotificationType, (e) => e?.value);
     }
 }

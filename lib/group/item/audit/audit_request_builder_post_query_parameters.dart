@@ -3,7 +3,7 @@ import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import './post_additional_query_parameter_type.dart';
 
 /// auto generated
-/// Creates one or more new new audits for a group and returns the newly created memberships. Fetch a template for an audit via the 'new' resource.
+/// Creates an audit for a group and returns the newly created memberships. Fetch a template for an audit via the 'new' resource.
 class AuditRequestBuilderPostQueryParameters implements AbstractQueryParameters {
     ///  Request additional information to be returned for every record.
     List<PostAdditionalQueryParameterType>? additional;

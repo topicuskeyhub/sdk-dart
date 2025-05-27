@@ -43,7 +43,7 @@ class AccountDirectoryPrimer extends Linkable implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
-        deserializerMap['type'] = (node) => accountDirectoryPrimerType = node.getEnumValue<AccountDirectoryType>((stringValue) => AccountDirectoryType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['AccountDirectoryPrimerType'] = (node) => accountDirectoryPrimerType = node.getEnumValue<AccountDirectoryType>((stringValue) => AccountDirectoryType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['accountValiditySupported'] = (node) => accountValiditySupported = node.getBoolValue();
         deserializerMap['active'] = (node) => active = node.getBoolValue();
         deserializerMap['name'] = (node) => name = node.getStringValue();
@@ -55,7 +55,7 @@ class AccountDirectoryPrimer extends Linkable implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
-        writer.writeEnumValue<AccountDirectoryType>('type', accountDirectoryPrimerType, (e) => e?.value);
+        writer.writeEnumValue<AccountDirectoryType>('AccountDirectoryPrimerType', accountDirectoryPrimerType, (e) => e?.value);
         writer.writeBoolValue('active', value:active);
         writer.writeStringValue('name', name);
     }

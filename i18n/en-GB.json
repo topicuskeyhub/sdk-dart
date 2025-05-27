@@ -328,6 +328,7 @@
               "AuditRecordType#EXTENDED_ACCESS_DECLINED": "Extended access - Declined",
               "AuditRecordType#GROUP_CREATED": "Group - Created",
               "AuditRecordType#ACCESS_PROFILE_REMOVED": "Access profile - Removed",
+              "AuditRecordType#ACCOUNT_PROVISIONING_MOVED": "Account - Moved within linked system",
               "AuditRecordType#GROUP_CLASSIFICATION_MODIFIED": "Group classification - Modified",
               "AuditRecordType#WEBHOOK_MODIFIED": "Webhook - Modified",
               "AuditRecordType#ACCOUNT_REMOVED": "Account - Removed",
@@ -876,7 +877,7 @@
               },
               "AccountDirectoryType#PENDING_ACCOUNTS": "Pending accounts",
               "AccountDirectory#helpdeskGroup": {
-                "description": "Requests for resetting 2FA for this directory are handled by members of the selected group.",
+                "description": "Requests for resetting passwords and 2FA for this directory are handled by members of the selected group.",
                 "label": "Help desk group"
               },
               "LDAPDirectory#searchBindDN": {
@@ -1319,6 +1320,10 @@
                 "label": "Require \"Group with delegated privileges\"",
                 "description": "Require the activation of the option \"Group with delegated privileges\" for groups with this classification."
               },
+              "GroupAccount#provisioningPermissionEndTime": {
+                "label": "Access granted until",
+                "description": "The user has the option to activate the group until the shown time."
+              },
               "ProvisioningGroup#group": {
                 "label": "Group"
               },
@@ -1448,6 +1453,10 @@
               "ProvisionedAzureTenant#tenant": {
                 "label": "Azure tenant"
               },
+              "ProvisionedLDAP#gidNumbering": {
+                "description": "Choose an existing number sequence for GIDs or start a new sequence.",
+                "label": "Group ID (gid) sequence"
+              },
               "ProvisionedSystemType#ACTIVE_DIRECTORY": "Active Directory",
               "ProvisionedSCIM#bearerToken": {
                 "label": "Bearer Token"
@@ -1457,6 +1466,14 @@
                 "label": "SSH public key"
               },
               "GroupOnSystemType#GROUP_GLOBAL_SECURITY": "group (global security)",
+              "ProvisionedLDAPDirectory#gid": {
+                "label": "Primary Group ID (gid)",
+                "description": "The primary group for users"
+              },
+              "ProvisionedLDAPDirectory#gidNumbering": {
+                "description": "Choose an existing number sequence for GIDs or start a new sequence.",
+                "label": "Group ID (gid) sequence"
+              },
               "AbstractProvisionedLDAP#userDN": {
                 "description": "The RDN under base DN under which users are created.",
                 "label": "User RDN"
@@ -1493,7 +1510,6 @@
                 "description": "The RDN under base DN containing groups.",
                 "label": "Group RDN"
               },
-              "DeprovisionAction#NONE": "None, leave everything active",
               "ProvisionedAzureOIDCDirectory#tenant": {
                 "label": "Azure tenant"
               },
@@ -1509,7 +1525,6 @@
                 "label": "Failover host",
                 "description": "This host will be used as failover when primary host is unavailable. Connections are set up on the same port."
               },
-              "DeprovisionAction#DESTROY_ACCOUNTS": "Permanently delete all accounts and service accounts",
               "AbstractProvisionedLDAP#bindPassword": {
                 "description": "The password used to bind with on the directory.",
                 "label": "Bind password"
@@ -1539,9 +1554,6 @@
                 "label": "TLS"
               },
               "GroupOnSystemType#GROUP_OF_UNIQUE_NAMES": "groupOfUniqueNames",
-              "ProvisionNumberSequence#nextUID": {
-                "label": "Next UID"
-              },
               "ProvisionedSystemType#INTERNAL_LDAP": "Internal LDAP",
               "ProvisionedSystemType#LDAP": "LDAP",
               "ProvisionedSystem#contentAdministrator": {
@@ -1552,6 +1564,21 @@
                 "description": "Managers from the selected group control access to and administration of this linked system.",
                 "placeholder": "Select a group...",
                 "label": "Group with ownership"
+              },
+              "DeprovisionAction": {
+                "NONE": {
+                  "unwritableaccounts": "None, leave everything active",
+                  "main": "None, leave everything active"
+                },
+                "DESTROY_ALL": {
+                  "unwritableaccounts": "Permanently delete all groups",
+                  "main": "Permanently delete all accounts, service accounts and groups"
+                },
+                "DEPROVISION_ACCOUNTS": {
+                  "unwritableaccounts": "Deactivate all groups",
+                  "main": "Disable all accounts and service accounts"
+                },
+                "DESTROY_ACCOUNTS": "Permanently delete all accounts and service accounts"
               },
               "GroupOnSystem#owner": {
                 "label": "Group with ownership",
@@ -1579,7 +1606,7 @@
               },
               "ProvisionedLDAP#gid": {
                 "description": "The primary group for users",
-                "label": "Group ID (gid)"
+                "label": "Primary Group ID (gid)"
               },
               "GroupOnSystemProvisioning#PROVISIONED_BY_DEFAULT_CAN_ONLY_BE_ENABLED": "Enabled by default, cannot be disabled - KeyHub management of groups is enabled by default and can only be enabled.",
               "AbstractProvisionedLDAP#failoverTrustedCertificate": {
@@ -1624,8 +1651,8 @@
                 "description": "The organisational unit this linked system belongs to. This linked system is also visible to organisational units under this unit."
               },
               "ProvisionedLDAP#numbering": {
-                "label": "User ID (uid)",
-                "description": "Choose an existing number sequence for uids or start a new sequence."
+                "label": "User ID (uid) sequence",
+                "description": "Choose an existing number sequence for UIDs or start a new sequence."
               },
               "ProvisionedSystem#cleanupPeriod": {
                 "description": "Specify after which period accounts must be cleaned up. Use 'd' for days, 'w' for weeks', 'm' for months and 'y' for years, for example '2w'.",
@@ -1644,7 +1671,6 @@
                 "label": "Client certificate"
               },
               "GroupOnSystemProvisioning#NOT_PROVISIONED_BY_DEFAULT_CAN_ONLY_BE_ENABLED": "Disabled by default, cannot be disabled - KeyHub management of groups is disabled by default and can only be enabled.",
-              "DeprovisionAction#DEPROVISION_ACCOUNTS": "Disable all accounts and service accounts",
               "ProvisionedAzureSyncLDAPDirectory#directory": {
                 "description": "Azure AD Connect must be activated on this Active Directory, which synchronizes with the chosen Azure tenant.",
                 "label": "LDAP directory"
@@ -1680,6 +1706,10 @@
                 "description": "Choose how Topicus KeyHub should manage the groups within this system.",
                 "label": "Group provisioning"
               },
+              "ProvisionedLDAPDirectory#numbering": {
+                "description": "Choose an existing number sequence for UIDs or start a new sequence.",
+                "label": "User ID (uid) sequence"
+              },
               "ProvisionedSystemType#SOURCE_LDAP_DIRECTORY": "LDAP source directory",
               "ProvisionedAzureTenant#idpDomain": {
                 "label": "Identity provider domain",
@@ -1691,6 +1721,9 @@
                 "description": "The RDN under base DN under which service accounts are created."
               },
               "GroupOnSystemType#GROUP_UNKNOWN": "group (other)",
+              "ProvisionNumberSequence#nextID": {
+                "label": "Next ID"
+              },
               "ADSamAccountNameScheme#USERNAME": "Username - Use the username, if it fits.",
               "ProvisionedSystemType#AZURE_TENANT": "Azure tenant",
               "ProvisionedSystem#status": {
@@ -1726,7 +1759,6 @@
                 "label": "Errors/warnings"
               },
               "ADSamAccountNameScheme#TRUNCATE": "Truncate username - The username is shortened to a maximum of 20 characters.",
-              "DeprovisionAction#DESTROY_ALL": "Permanently delete all accounts, service accounts and groups",
               "ProvisionedAzureSyncLDAPDirectory#clientId": {
                 "label": "Client identifier"
               }
@@ -2694,7 +2726,8 @@
             },
             "AuthenticationChangeType": {
               "WEBAUTHN_KEY_ADDED": "A WebAuthn security key has been added",
-              "ACCOUNT_EMAIL_CHANGED": "Your email address for your account has been changed to {0}",
+              "ACCOUNT_USERNAME_CHANGED": "The username for your account has been changed to {username}",
+              "ACCOUNT_EMAIL_CHANGED": "The email address for your account has been changed to {email}",
               "TOTP_DISABLED": "TOTP has been disabled",
               "REREGISTRATION_DISABLED": "Your account relocation or rename has been aborted",
               "PASSWORD_UPDATED": "Your password or your password settings have been changed",
@@ -2887,7 +2920,7 @@
       },
       "gaterug": "Back to home",
       "403": "You don't have permission to view the requested data.",
-      "report": "The error was filed under {0}.",
+      "report": "The error was filed under {0} at {1}.",
       "klikhieronder": "An error occurred. Use the back button to return or let us know what happened.",
       "ietsmis": "Oops looks like we lost connection!"
     },
@@ -3723,7 +3756,7 @@
       "subtitle": "Select a directory for which attribute management should be assigned to the access profile {0}.",
       "request": "Link directory"
     },
-    "norights": "You are not allowed to process this request. You may have been involved in this request before.",
+    "norights": "You are not allowed to process this request. You may have been involved in this request before or you are missing required permissions.",
     "transferapplicationownership": {
       "sent": "Your request to transfer ownership of {0} to {1} has been submitted.",
       "header": "Transfer ownership",
@@ -3827,7 +3860,7 @@
     "numbering": {
       "start": "Start numbering",
       "toevoegen": "Add number sequence",
-      "next": "Next UID",
+      "next": "Next ID",
       "subtitle": "This number sequence can be used to generate UIDs when provisioning LDAP systems.",
       "bewerken": "Edit number sequence",
       "new": "Start a new number sequence"
@@ -4212,6 +4245,7 @@
       "copytoclipboard": "Copy to clipboard",
       "weigeren": "Decline",
       "upload": "Upload",
+      "opslaanenvolgende": "Save and next",
       "aanvragen": "Request",
       "restore": "Restore",
       "verstuur": "Send",
@@ -4261,6 +4295,10 @@
       "revoke": "Revoke access",
       "review": "Review",
       "view": "View",
+      "sync": {
+        "now": "Synchronise now",
+        "started": "Synchronisation has started in the background."
+      },
       "register": "Register now",
       "retry": "Retry",
       "apply": "Apply",
@@ -5667,6 +5705,7 @@
     "PROVISIONED_SYSTEM_MODIFIED": "{performedBy} modified a linked system {onSystem}.",
     "CLIENT_ADDED_TO_ACCESS_PROFILE": "{onClient} was added to the access profile {onAccessProfile}.",
     "DISABLE_2FA_DECLINED": "The request to disable 2FA for {onAccount} was declined by {performedBy}. {reason}",
+    "ACCOUNT_PROVISIONING_MOVED": "{onAccount} was moved within the linked system {onSystem} from {parameter1} to {parameter2}.",
     "EXTENDED_ACCESS_DECLINED": "{performedBy} declined the request by {onAccount} to get extended access to {onGroup} until {parameter3}. {reason}",
     "toonEigenRecords": "Only show my records",
     "EXTENDED_ACCESS_REQUESTED": "{performedBy} requested extended access to the group {onGroup} until {parameter3}. {reason}",
@@ -6059,6 +6098,7 @@
       "ACCOUNT_DISABLED": "Account disabled",
       "VAULT_PERSONAL_SETUP": "Vault setup",
       "PROVISIONED_SYSTEM_UNKNOWN_ACCOUNT_DESTROYED": "Unknown account removed from linked system",
+      "ACCOUNT_PROVISIONING_MOVED": "Account moved within linked system",
       "AUDITOR_EXPORT_GENERATED": "Auditor export generated",
       "GROUP_MOVED": "Group moved",
       "VAULT_PERSONAL_RESET": "Personal vault reset",
@@ -6414,6 +6454,11 @@
     "authorizedgroups": {
       "header": "Performs authorisation for",
       "provisioning": "Activation",
+      "permission": {
+        "summary": "Access until {0}",
+        "header": "Access granted",
+        "subtitle": "{0} has permission to activate the group."
+      },
       "membership": "Membership",
       "hidden": "{0} hidden groups",
       "delegation": "Delegation",
@@ -7674,10 +7719,6 @@
   "system": {
     "internal": {
       "header": "Internal LDAP - {0}"
-    },
-    "sync": {
-      "started": "Synchronisation has started in the background.",
-      "now": "Synchronise now"
     },
     "synclog": {
       "header": "Synchronisation log {0}"

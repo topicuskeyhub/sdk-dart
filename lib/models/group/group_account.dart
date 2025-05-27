@@ -22,6 +22,8 @@ class GroupAccount extends AccountPrimer implements Parsable {
     bool? nested;
     ///  The provisioningEndTime property
     DateTime? provisioningEndTime;
+    ///  The provisioningPermissionEndTime property
+    DateTime? provisioningPermissionEndTime;
     ///  The rights property
     GroupRights? rights;
     ///  The twoFactorStatus property
@@ -48,6 +50,7 @@ class GroupAccount extends AccountPrimer implements Parsable {
         deserializerMap['lastUsed'] = (node) => lastUsed = node.getDateOnlyValue();
         deserializerMap['nested'] = (node) => nested = node.getBoolValue();
         deserializerMap['provisioningEndTime'] = (node) => provisioningEndTime = node.getDateTimeValue();
+        deserializerMap['provisioningPermissionEndTime'] = (node) => provisioningPermissionEndTime = node.getDateTimeValue();
         deserializerMap['rights'] = (node) => rights = node.getEnumValue<GroupRights>((stringValue) => GroupRights.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['twoFactorStatus'] = (node) => twoFactorStatus = node.getEnumValue<TwoFactorAuthenticationStatus>((stringValue) => TwoFactorAuthenticationStatus.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['visibleForProvisioning'] = (node) => visibleForProvisioning = node.getBoolValue();

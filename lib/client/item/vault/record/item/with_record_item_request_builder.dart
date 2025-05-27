@@ -59,7 +59,6 @@ class WithRecordItemRequestBuilder extends BaseRequestBuilder<WithRecordItemRequ
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
     /// Returns the vault record identified by the id. When the 'secret' additonal object is requested, the 'topicus-Vault-session' header must be specified.

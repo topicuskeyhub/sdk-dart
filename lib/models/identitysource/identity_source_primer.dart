@@ -34,7 +34,7 @@ class IdentitySourcePrimer extends Linkable implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['active'] = (node) => active = node.getBoolValue();
-        deserializerMap['type'] = (node) => identitySourcePrimerType = node.getEnumValue<IdentitySourceType>((stringValue) => IdentitySourceType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['IdentitySourcePrimerType'] = (node) => identitySourcePrimerType = node.getEnumValue<IdentitySourceType>((stringValue) => IdentitySourceType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['name'] = (node) => name = node.getStringValue();
         deserializerMap['uuid'] = (node) => uuid = node.getStringValue();
         return deserializerMap;
@@ -45,7 +45,7 @@ class IdentitySourcePrimer extends Linkable implements Parsable {
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeBoolValue('active', value:active);
-        writer.writeEnumValue<IdentitySourceType>('type', identitySourcePrimerType, (e) => e?.value);
+        writer.writeEnumValue<IdentitySourceType>('IdentitySourcePrimerType', identitySourcePrimerType, (e) => e?.value);
         writer.writeStringValue('name', name);
     }
 }

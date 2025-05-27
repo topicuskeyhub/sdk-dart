@@ -65,7 +65,7 @@ class AuditRecord extends Linkable implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<AuditRecordAdditionalObjects>(AuditRecordAdditionalObjects.createFromDiscriminatorValue);
-        deserializerMap['type'] = (node) => auditRecordType = node.getEnumValue<AuditRecordType>((stringValue) => AuditRecordType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['AuditRecordType'] = (node) => auditRecordType = node.getEnumValue<AuditRecordType>((stringValue) => AuditRecordType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['dateTime'] = (node) => dateTime = node.getDateTimeValue();
         deserializerMap['onAccessProfile'] = (node) => onAccessProfile = node.getStringValue();
         deserializerMap['onAccount'] = (node) => onAccount = node.getStringValue();
@@ -94,7 +94,7 @@ class AuditRecord extends Linkable implements Parsable {
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<AuditRecordAdditionalObjects>('additionalObjects', additionalObjects);
-        writer.writeEnumValue<AuditRecordType>('type', auditRecordType, (e) => e?.value);
+        writer.writeEnumValue<AuditRecordType>('AuditRecordType', auditRecordType, (e) => e?.value);
         writer.writeEnumValue<SecurityLevel>('securityLevel', securityLevel, (e) => e?.value);
     }
 }

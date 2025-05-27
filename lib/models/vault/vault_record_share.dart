@@ -23,7 +23,7 @@ class VaultRecordShare extends NonLinkable implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['name'] = (node) => name = node.getStringValue();
-        deserializerMap['type'] = (node) => vaultRecordShareType = node.getEnumValue<VaultHolderType>((stringValue) => VaultHolderType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['VaultRecordShareType'] = (node) => vaultRecordShareType = node.getEnumValue<VaultHolderType>((stringValue) => VaultHolderType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -32,6 +32,6 @@ class VaultRecordShare extends NonLinkable implements Parsable {
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeStringValue('name', name);
-        writer.writeEnumValue<VaultHolderType>('type', vaultRecordShareType, (e) => e?.value);
+        writer.writeEnumValue<VaultHolderType>('VaultRecordShareType', vaultRecordShareType, (e) => e?.value);
     }
 }

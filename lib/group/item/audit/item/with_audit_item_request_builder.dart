@@ -21,7 +21,7 @@ class WithAuditItemRequestBuilder extends BaseRequestBuilder<WithAuditItemReques
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
     WithAuditItemRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/{groupid}/audit/{auditid}{?additional*}", {RequestInformation.rawUrlKey : rawUrl}) ;
-    /// Returns the single audits for the group.
+    /// Returns a single audit for the group.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupAudit?> getAsync([void Function(RequestConfiguration<WithAuditItemRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
@@ -30,7 +30,7 @@ class WithAuditItemRequestBuilder extends BaseRequestBuilder<WithAuditItemReques
         };
         return await requestAdapter.send<GroupAudit>(requestInfo, GroupAudit.createFromDiscriminatorValue, errorMapping);
     }
-    /// Updates the audits for a group identified by the id. Only audits in draft can be updated.
+    /// Updates the audit for a group identified by the id. Only audits in draft can be updated.
     ///  [body] The request body
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupAudit?> putAsync(GroupAudit body, [void Function(RequestConfiguration<WithAuditItemRequestBuilderPutQueryParameters>)? requestConfiguration]) async {
@@ -40,7 +40,7 @@ class WithAuditItemRequestBuilder extends BaseRequestBuilder<WithAuditItemReques
         };
         return await requestAdapter.send<GroupAudit>(requestInfo, GroupAudit.createFromDiscriminatorValue, errorMapping);
     }
-    /// Returns the single audits for the group.
+    /// Returns a single audit for the group.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithAuditItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
@@ -48,7 +48,7 @@ class WithAuditItemRequestBuilder extends BaseRequestBuilder<WithAuditItemReques
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
-    /// Updates the audits for a group identified by the id. Only audits in draft can be updated.
+    /// Updates the audit for a group identified by the id. Only audits in draft can be updated.
     ///  [body] The request body
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     RequestInformation toPutRequestInformation(GroupAudit body, [void Function(RequestConfiguration<WithAuditItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {

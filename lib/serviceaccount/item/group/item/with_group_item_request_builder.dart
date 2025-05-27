@@ -43,7 +43,6 @@ class WithGroupItemRequestBuilder extends BaseRequestBuilder<WithGroupItemReques
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
     /// Returns the group for a service account identified by the id.

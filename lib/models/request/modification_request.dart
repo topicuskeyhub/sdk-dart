@@ -135,7 +135,7 @@ class ModificationRequest extends Linkable implements Parsable {
         deserializerMap['feedback'] = (node) => feedback = node.getStringValue();
         deserializerMap['group'] = (node) => group = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         deserializerMap['mailKey'] = (node) => mailKey = node.getStringValue();
-        deserializerMap['type'] = (node) => modificationRequestType = node.getEnumValue<ModificationRequestType>((stringValue) => ModificationRequestType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['ModificationRequestType'] = (node) => modificationRequestType = node.getEnumValue<ModificationRequestType>((stringValue) => ModificationRequestType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['status'] = (node) => status = node.getEnumValue<ModificationRequestStatus>((stringValue) => ModificationRequestStatus.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         return deserializerMap;
     }
@@ -149,7 +149,7 @@ class ModificationRequest extends Linkable implements Parsable {
         writer.writeStringValue('comment', comment);
         writer.writeStringValue('feedback', feedback);
         writer.writeObjectValue<GroupPrimer>('group', group);
-        writer.writeEnumValue<ModificationRequestType>('type', modificationRequestType, (e) => e?.value);
+        writer.writeEnumValue<ModificationRequestType>('ModificationRequestType', modificationRequestType, (e) => e?.value);
         writer.writeEnumValue<ModificationRequestStatus>('status', status, (e) => e?.value);
     }
 }

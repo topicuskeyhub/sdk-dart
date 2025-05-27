@@ -34,6 +34,8 @@ class AttributevalueRequestBuilderGetQueryParameters implements AbstractQueryPar
     List<String>? sort;
     ///  Filter attribute values on the given source(s).
     List<AccountAttributeSource>? source;
+    ///  Filter attribute values on the given actual value(s).
+    List<String>? value;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
     Map<String, dynamic> toMap() {
@@ -52,6 +54,7 @@ class AttributevalueRequestBuilderGetQueryParameters implements AbstractQueryPar
             'q' : q,
             'sort' : sort,
             'source' : source,
+            'value' : value,
         };
     }
 }

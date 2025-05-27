@@ -31,7 +31,7 @@ class AccountDirectorySummary extends Linkable implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
-        deserializerMap['type'] = (node) => accountDirectorySummaryType = node.getEnumValue<AccountDirectoryType>((stringValue) => AccountDirectoryType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['AccountDirectorySummaryType'] = (node) => accountDirectorySummaryType = node.getEnumValue<AccountDirectoryType>((stringValue) => AccountDirectoryType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['domainRestriction'] = (node) => domainRestriction = node.getStringValue();
         deserializerMap['fullyResolvedIssuer'] = (node) => fullyResolvedIssuer = node.getStringValue();
         deserializerMap['name'] = (node) => name = node.getStringValue();
@@ -44,7 +44,7 @@ class AccountDirectorySummary extends Linkable implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
-        writer.writeEnumValue<AccountDirectoryType>('type', accountDirectorySummaryType, (e) => e?.value);
+        writer.writeEnumValue<AccountDirectoryType>('AccountDirectorySummaryType', accountDirectorySummaryType, (e) => e?.value);
         writer.writeStringValue('domainRestriction', domainRestriction);
         writer.writeStringValue('fullyResolvedIssuer', fullyResolvedIssuer);
         writer.writeStringValue('name', name);

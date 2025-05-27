@@ -43,7 +43,7 @@ class CertificatePrimer extends Linkable implements Parsable {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['alias'] = (node) => alias = node.getStringValue();
         deserializerMap['certificateData'] = (node) => certificateData = node.getCollectionOfPrimitiveValues<int>();
-        deserializerMap['type'] = (node) => certificatePrimerType = node.getEnumValue<CertificateType>((stringValue) => CertificateType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['CertificatePrimerType'] = (node) => certificatePrimerType = node.getEnumValue<CertificateType>((stringValue) => CertificateType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['expiration'] = (node) => expiration = node.getDateTimeValue();
         deserializerMap['fingerprintSha1'] = (node) => fingerprintSha1 = node.getStringValue();
         deserializerMap['fingerprintSha256'] = (node) => fingerprintSha256 = node.getStringValue();
@@ -59,7 +59,7 @@ class CertificatePrimer extends Linkable implements Parsable {
         super.serialize(writer);
         writer.writeStringValue('alias', alias);
         writer.writeCollectionOfPrimitiveValues<int>('certificateData', certificateData);
-        writer.writeEnumValue<CertificateType>('type', certificatePrimerType, (e) => e?.value);
+        writer.writeEnumValue<CertificateType>('CertificatePrimerType', certificatePrimerType, (e) => e?.value);
         writer.writeBoolValue('global', value:global);
     }
 }

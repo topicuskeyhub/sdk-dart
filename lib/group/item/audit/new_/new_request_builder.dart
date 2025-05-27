@@ -19,7 +19,7 @@ class NewRequestBuilder extends BaseRequestBuilder<NewRequestBuilder> {
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
     NewRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/group/{groupid}/audit/new", {RequestInformation.rawUrlKey : rawUrl}) ;
-    /// Returns a template of a complete audit for the group. The template can then be filled in and posted to actually create the audit.
+    /// Returns a template of a complete audit for the group or an earlier saved draft. The template or draft can then be filled in and posted to actually create the audit.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupAudit?> getAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toGetRequestInformation(requestConfiguration);
@@ -28,7 +28,7 @@ class NewRequestBuilder extends BaseRequestBuilder<NewRequestBuilder> {
         };
         return await requestAdapter.send<GroupAudit>(requestInfo, GroupAudit.createFromDiscriminatorValue, errorMapping);
     }
-    /// Returns a template of a complete audit for the group. The template can then be filled in and posted to actually create the audit.
+    /// Returns a template of a complete audit for the group or an earlier saved draft. The template or draft can then be filled in and posted to actually create the audit.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);

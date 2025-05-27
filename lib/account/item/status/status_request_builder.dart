@@ -35,7 +35,6 @@ class StatusRequestBuilder extends BaseRequestBuilder<StatusRequestBuilder> {
     RequestInformation toPutRequestInformation(AccountStatus body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=78', body);
         return requestInfo;
     }

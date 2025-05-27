@@ -5,6 +5,8 @@ import './abstract_organizational_unit_modification_request.dart';
 
 /// auto generated
 class MoveGroupsRequest extends AbstractOrganizationalUnitModificationRequest implements Parsable {
+    ///  The groupCount property
+    int? groupCount;
     ///  The groups property
     Iterable<GroupPrimer>? groups;
     /// Instantiates a new [MoveGroupsRequest] and sets the default values.
@@ -20,6 +22,7 @@ class MoveGroupsRequest extends AbstractOrganizationalUnitModificationRequest im
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['groupCount'] = (node) => groupCount = node.getIntValue();
         deserializerMap['groups'] = (node) => groups = node.getCollectionOfObjectValues<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         return deserializerMap;
     }

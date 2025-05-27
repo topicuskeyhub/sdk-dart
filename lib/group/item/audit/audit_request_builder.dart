@@ -6,6 +6,7 @@ import './audit_request_builder_get_query_parameters.dart';
 import './audit_request_builder_post_query_parameters.dart';
 import './item/with_audit_item_request_builder.dart';
 import './new_/new_request_builder.dart';
+import './nextGroup/next_group_request_builder.dart';
 
 /// auto generated
 /// Builds and executes requests for operations under \group\{groupid}\audit
@@ -13,6 +14,10 @@ class AuditRequestBuilder extends BaseRequestBuilder<AuditRequestBuilder> {
     ///  The new property
     NewRequestBuilder get new_ {
         return NewRequestBuilder(pathParameters, requestAdapter);
+    }
+    ///  The nextGroup property
+    NextGroupRequestBuilder get nextGroup {
+        return NextGroupRequestBuilder(pathParameters, requestAdapter);
     }
     /// Gets an item from the ApiSdk.group.item.audit.item collection
     ///  [auditid] Unique identifier of the item
@@ -43,7 +48,7 @@ class AuditRequestBuilder extends BaseRequestBuilder<AuditRequestBuilder> {
         };
         return await requestAdapter.send<GroupAuditLinkableWrapper>(requestInfo, GroupAuditLinkableWrapper.createFromDiscriminatorValue, errorMapping);
     }
-    /// Creates one or more new new audits for a group and returns the newly created memberships. Fetch a template for an audit via the 'new' resource.
+    /// Creates an audit for a group and returns the newly created memberships. Fetch a template for an audit via the 'new' resource.
     ///  [body] The request body
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupAuditLinkableWrapper?> postAsync(GroupAuditLinkableWrapper body, [void Function(RequestConfiguration<AuditRequestBuilderPostQueryParameters>)? requestConfiguration]) async {
@@ -61,7 +66,7 @@ class AuditRequestBuilder extends BaseRequestBuilder<AuditRequestBuilder> {
         requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
         return requestInfo;
     }
-    /// Creates one or more new new audits for a group and returns the newly created memberships. Fetch a template for an audit via the 'new' resource.
+    /// Creates an audit for a group and returns the newly created memberships. Fetch a template for an audit via the 'new' resource.
     ///  [body] The request body
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     RequestInformation toPostRequestInformation(GroupAuditLinkableWrapper body, [void Function(RequestConfiguration<AuditRequestBuilderPostQueryParameters>)? requestConfiguration]) {

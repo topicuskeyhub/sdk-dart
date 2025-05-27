@@ -299,7 +299,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
         var deserializerMap = <String, void Function(ParseNode)>{};
         deserializerMap['links'] = (node) => links = node.getCollectionOfObjectValues<Link>(Link.createFromDiscriminatorValue);
         deserializerMap['permissions'] = (node) => permissions = node.getCollectionOfObjectValues<Permission>(Permission.createFromDiscriminatorValue);
-        deserializerMap['\$type'] = (node) => type_ = node.getStringValue();
+        deserializerMap['Type'] = (node) => type_ = node.getStringValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -308,7 +308,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
     void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<Link>('links', links);
         writer.writeCollectionOfObjectValues<Permission>('permissions', permissions);
-        writer.writeStringValue('\$type', type_);
+        writer.writeStringValue('Type', type_);
         writer.writeAdditionalData(additionalData);
     }
 }

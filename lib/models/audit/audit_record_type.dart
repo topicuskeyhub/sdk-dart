@@ -28,6 +28,7 @@ enum AuditRecordType {
     accountProvisioned('ACCOUNT_PROVISIONED'),
     accountProvisioningDestroyed('ACCOUNT_PROVISIONING_DESTROYED'),
     accountProvisioningInited('ACCOUNT_PROVISIONING_INITED'),
+    accountProvisioningMoved('ACCOUNT_PROVISIONING_MOVED'),
     accountProvisioningSetup('ACCOUNT_PROVISIONING_SETUP'),
     accountRemoved('ACCOUNT_REMOVED'),
     accountRemovedFromAccessProfile('ACCOUNT_REMOVED_FROM_ACCESS_PROFILE'),

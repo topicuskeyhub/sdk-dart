@@ -2,7 +2,8 @@
 
 mkdir -p tmp
 cd tmp
-wget https://github.com/microsoft/kiota/releases/download/v1.26.1/linux-x64.zip
+# Don't upgrade kiota until https://github.com/microsoft/kiota/issues/6444 has been resolved
+wget https://github.com/microsoft/kiota/releases/download/v1.24.3/linux-x64.zip
 unzip linux-x64.zip
 cd ../lib
 find . -type f -name "*.dart" -print0 | xargs -0 grep -Z -l "auto generated" | xargs -0 rm -f

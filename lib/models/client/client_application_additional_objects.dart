@@ -2,16 +2,16 @@
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../audit_info.dart';
 import '../generated_secret.dart';
-import '../group/group_client_linkable_wrapper.dart';
+import '../group/group_client_linkable_wrapper_with_count.dart';
 import '../group/group_linkable_wrapper.dart';
 import '../launchpad/sso_application_launchpad_tile.dart';
 import '../organization/client_application_organizational_unit_linkable_wrapper.dart';
-import '../profile/access_profile_client_linkable_wrapper.dart';
+import '../profile/access_profile_client_linkable_wrapper_with_count.dart';
 
 /// auto generated
 class ClientApplicationAdditionalObjects implements AdditionalDataHolder, Parsable {
     ///  The accessprofileclients property
-    AccessProfileClientLinkableWrapper? accessprofileclients;
+    AccessProfileClientLinkableWrapperWithCount? accessprofileclients;
     ///  Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     @override
     Map<String, Object?> additionalData;
@@ -20,7 +20,7 @@ class ClientApplicationAdditionalObjects implements AdditionalDataHolder, Parsab
     ///  The deleteTile property
     bool? deleteTile;
     ///  The groupclients property
-    GroupClientLinkableWrapper? groupclients;
+    GroupClientLinkableWrapperWithCount? groupclients;
     ///  The groups property
     GroupLinkableWrapper? groups;
     ///  The organizationalUnits property
@@ -43,10 +43,10 @@ class ClientApplicationAdditionalObjects implements AdditionalDataHolder, Parsab
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = <String, void Function(ParseNode)>{};
-        deserializerMap['accessprofileclients'] = (node) => accessprofileclients = node.getObjectValue<AccessProfileClientLinkableWrapper>(AccessProfileClientLinkableWrapper.createFromDiscriminatorValue);
+        deserializerMap['accessprofileclients'] = (node) => accessprofileclients = node.getObjectValue<AccessProfileClientLinkableWrapperWithCount>(AccessProfileClientLinkableWrapperWithCount.createFromDiscriminatorValue);
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
         deserializerMap['deleteTile'] = (node) => deleteTile = node.getBoolValue();
-        deserializerMap['groupclients'] = (node) => groupclients = node.getObjectValue<GroupClientLinkableWrapper>(GroupClientLinkableWrapper.createFromDiscriminatorValue);
+        deserializerMap['groupclients'] = (node) => groupclients = node.getObjectValue<GroupClientLinkableWrapperWithCount>(GroupClientLinkableWrapperWithCount.createFromDiscriminatorValue);
         deserializerMap['groups'] = (node) => groups = node.getObjectValue<GroupLinkableWrapper>(GroupLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['organizationalUnits'] = (node) => organizationalUnits = node.getObjectValue<ClientApplicationOrganizationalUnitLinkableWrapper>(ClientApplicationOrganizationalUnitLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['secret'] = (node) => secret = node.getObjectValue<GeneratedSecret>(GeneratedSecret.createFromDiscriminatorValue);
@@ -58,10 +58,10 @@ class ClientApplicationAdditionalObjects implements AdditionalDataHolder, Parsab
     ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
-        writer.writeObjectValue<AccessProfileClientLinkableWrapper>('accessprofileclients', accessprofileclients);
+        writer.writeObjectValue<AccessProfileClientLinkableWrapperWithCount>('accessprofileclients', accessprofileclients);
         writer.writeObjectValue<AuditInfo>('audit', audit);
         writer.writeBoolValue('deleteTile', value:deleteTile);
-        writer.writeObjectValue<GroupClientLinkableWrapper>('groupclients', groupclients);
+        writer.writeObjectValue<GroupClientLinkableWrapperWithCount>('groupclients', groupclients);
         writer.writeObjectValue<GroupLinkableWrapper>('groups', groups);
         writer.writeObjectValue<ClientApplicationOrganizationalUnitLinkableWrapper>('organizationalUnits', organizationalUnits);
         writer.writeObjectValue<GeneratedSecret>('secret', secret);

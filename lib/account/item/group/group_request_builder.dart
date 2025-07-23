@@ -42,7 +42,7 @@ class GroupRequestBuilder extends BaseRequestBuilder<GroupRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<GroupRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<GroupRequestBuilderGetQueryParameters>(requestConfiguration, () => GroupRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
 }

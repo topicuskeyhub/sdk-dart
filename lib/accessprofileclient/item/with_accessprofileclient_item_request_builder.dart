@@ -43,6 +43,7 @@ class WithAccessprofileclientItemRequestBuilder extends BaseRequestBuilder<WithA
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
     /// Returns the single client link for the access profile.
@@ -50,7 +51,7 @@ class WithAccessprofileclientItemRequestBuilder extends BaseRequestBuilder<WithA
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithAccessprofileclientItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithAccessprofileclientItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithAccessprofileclientItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
 }

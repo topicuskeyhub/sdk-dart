@@ -11,10 +11,16 @@ class AccountAttributeDefinition extends Linkable implements Parsable {
     AccountAttributeDefinitionAdditionalObjects? additionalObjects;
     ///  The format property
     AccountAttributeFormat? format;
+    ///  The list property
+    bool? list;
     ///  The name property
     String? name;
+    ///  The required property
+    bool? required_;
     ///  The systemDefinition property
     AccountAttributeSystemDefinition? systemDefinition;
+    ///  The unique property
+    bool? unique;
     /// Instantiates a new [AccountAttributeDefinition] and sets the default values.
     AccountAttributeDefinition() : super() {
         type_ = 'identity.AccountAttributeDefinition';
@@ -30,8 +36,11 @@ class AccountAttributeDefinition extends Linkable implements Parsable {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<AccountAttributeDefinitionAdditionalObjects>(AccountAttributeDefinitionAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['format'] = (node) => format = node.getEnumValue<AccountAttributeFormat>((stringValue) => AccountAttributeFormat.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['list'] = (node) => list = node.getBoolValue();
         deserializerMap['name'] = (node) => name = node.getStringValue();
+        deserializerMap['required'] = (node) => required_ = node.getBoolValue();
         deserializerMap['systemDefinition'] = (node) => systemDefinition = node.getEnumValue<AccountAttributeSystemDefinition>((stringValue) => AccountAttributeSystemDefinition.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['unique'] = (node) => unique = node.getBoolValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -41,7 +50,10 @@ class AccountAttributeDefinition extends Linkable implements Parsable {
         super.serialize(writer);
         writer.writeObjectValue<AccountAttributeDefinitionAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeEnumValue<AccountAttributeFormat>('format', format, (e) => e?.value);
+        writer.writeBoolValue('list', value:list);
         writer.writeStringValue('name', name);
+        writer.writeBoolValue('required', value:required_);
         writer.writeEnumValue<AccountAttributeSystemDefinition>('systemDefinition', systemDefinition, (e) => e?.value);
+        writer.writeBoolValue('unique', value:unique);
     }
 }

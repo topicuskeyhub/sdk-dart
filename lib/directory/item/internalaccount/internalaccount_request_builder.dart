@@ -53,7 +53,7 @@ class InternalaccountRequestBuilder extends BaseRequestBuilder<InternalaccountRe
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<InternalaccountRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<InternalaccountRequestBuilderGetQueryParameters>(requestConfiguration, () => InternalaccountRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
     /// Creates one or more new internal accounts within a directory and returns the newly created accounts.
@@ -62,8 +62,8 @@ class InternalaccountRequestBuilder extends BaseRequestBuilder<InternalaccountRe
     RequestInformation toPostRequestInformation(InternalAccountLinkableWrapper body, [void Function(RequestConfiguration<InternalaccountRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<InternalaccountRequestBuilderPostQueryParameters>(requestConfiguration, () => InternalaccountRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=78', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=79', body);
         return requestInfo;
     }
 }

@@ -24,11 +24,11 @@ class AttributedefRequestBuilder extends BaseRequestBuilder<AttributedefRequestB
     /// Instantiates a new [AttributedefRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    AttributedefRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/attributedef{?additional*,any*,createdAfter*,createdBefore*,exclude*,format*,id*,modifiedSince*,noRuleForAccessProfile*,q*,sort*,systemDefinition*}", pathParameters) ;
+    AttributedefRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/attributedef{?additional*,any*,createdAfter*,createdBefore*,exclude*,format*,id*,modifiedSince*,name*,nameContains*,noRuleForAccessProfile*,q*,required*,sort*,systemDefinition*,unique*}", pathParameters) ;
     /// Instantiates a new [AttributedefRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    AttributedefRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/attributedef{?additional*,any*,createdAfter*,createdBefore*,exclude*,format*,id*,modifiedSince*,noRuleForAccessProfile*,q*,sort*,systemDefinition*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    AttributedefRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/attributedef{?additional*,any*,createdAfter*,createdBefore*,exclude*,format*,id*,modifiedSince*,name*,nameContains*,noRuleForAccessProfile*,q*,required*,sort*,systemDefinition*,unique*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for all account attribute definitions in Topicus KeyHub. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AccountAttributeDefinitionLinkableWrapper?> getAsync([void Function(RequestConfiguration<AttributedefRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
@@ -53,7 +53,7 @@ class AttributedefRequestBuilder extends BaseRequestBuilder<AttributedefRequestB
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AttributedefRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AttributedefRequestBuilderGetQueryParameters>(requestConfiguration, () => AttributedefRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
     /// Creates one or more new account attribute definitions and returns the newly created account attribute definitions.
@@ -62,8 +62,8 @@ class AttributedefRequestBuilder extends BaseRequestBuilder<AttributedefRequestB
     RequestInformation toPostRequestInformation(AccountAttributeDefinitionLinkableWrapper body, [void Function(RequestConfiguration<AttributedefRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AttributedefRequestBuilderPostQueryParameters>(requestConfiguration, () => AttributedefRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=78', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=79', body);
         return requestInfo;
     }
 }

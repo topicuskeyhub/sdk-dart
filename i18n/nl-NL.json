@@ -262,7 +262,7 @@
                 "description": "Een script om te bepalen of de accounts binnen de gekoppelde systemen actief moeten zijn. Raadpleeg de handleiding voor meer uitleg."
               },
               "AccessProfile#owner": {
-                "description": "Managers uit de gekozen groep zijn verantwoordelijk voor dit toegangsprofile.",
+                "description": "Managers uit de gekozen groep zijn verantwoordelijk voor dit toegangsprofiel.",
                 "label": "Verantwoordelijke groep",
                 "placeholder": "Kies een groep..."
               },
@@ -327,6 +327,7 @@
               "AuditRecordType#LINK_DIRECTORY_TO_ACCESS_PROFILE_DECLINED": "Koppel directory aan toegangsprofiel - Afgewezen",
               "AuditRecordType#EXTENDED_ACCESS_DECLINED": "Verlengde toegang - Afgewezen",
               "AuditRecordType#GROUP_CREATED": "Groep - Toegevoegd",
+              "AuditRecordType#REMOVE_ACCESS_PROFILE_REQUESTED": "Verwijder toegangsprofiel - Aangevraagd",
               "AuditRecordType#ACCESS_PROFILE_REMOVED": "Toegangsprofiel - Verwijderd",
               "AuditRecordType#ACCOUNT_PROVISIONING_MOVED": "Account - Verplaatst binnen gekoppeld systeem",
               "AuditRecordType#GROUP_CLASSIFICATION_MODIFIED": "Groepsclassificatie - Bewerkt",
@@ -337,6 +338,7 @@
               "AuditRecordType#IDENTITY_SOURCE_REMOVED": "Identiteitsbron - Verwijderd",
               "AuditRecordType#PROVISIONED_SYSTEM_UNKNOWN_ACCOUNT_DESTROYED": "Gekoppeld systeem - Onbekend account verwijderd",
               "AuditNestedGroupAction#MISMATCH": "Niet identiek",
+              "AuditRecordType#REMOVE_ACCESS_PROFILE_DECLINED": "Verwijder toegangsprofiel - Afgewezen",
               "AuditRecordType#GROUP_MODIFIED": "Groep - Bewerkt",
               "AuditRecordType#SETUP_AUTHORIZING_GROUP_CONNECT_ACCEPTED": "Autorisatie instellen - Goedgekeurd",
               "AuditRecordType#INTERNAL_ACCOUNT_ACTIVATED": "Interne account - Geactiveerd",
@@ -376,6 +378,7 @@
               "GroupAuditStatus#UNDER_REVIEW": "In review",
               "AuditRecordType#ORGANIZATIONAL_UNIT_REMOVED": "Organisatie-eenheid - Verwijderd",
               "AuditRecordType#ACCOUNT_CREATED": "Account - Aangemaakt",
+              "AuditRecordType#REMOVE_ACCESS_PROFILE_ACCEPTED": "Verwijder toegangsprofiel - Goedgekeurd",
               "AuditRecordType#DIRECTORY_CREATED": "Directory - Toegevoegd",
               "AuditRecordType#WEBHOOK_REMOVED": "Webhook - Verwijderd",
               "AuditRecordType#ACCOUNT_DEPROVISIONED": "Account - Gedeactiveerd op gekoppeld systeem",
@@ -608,6 +611,7 @@
                 "label": "Recovery private key"
               },
               "GroupNestAccountAction#CONVERT": "Omzetten",
+              "ModificationRequestReportChange#ACCESS_PROFILE_GROUP_REMOVED_OWNER": "Toegangsprofiel {0} verliest de koppeling met groep {1}.",
               "ModificationRequestReportConclusion#OK": "OK",
               "ModificationRequestReportChange#PROVISIONING_GROUP_REMOVED_OUT_OF_SCOPE": "De koppelgroep {0} is na het verplaatsen niet meer zichtbaar. De toegang wordt verwijderd.",
               "SetupNestedGroupRequest#accountAction": {
@@ -634,6 +638,7 @@
               "ModificationRequestReportError#AUDITOR_GROUP_CANNOT_BE_MOVED": "De auditorgroep kan niet worden verplaatst",
               "ModificationRequestType#CREATE_GROUP": "MAAK GROEP",
               "ModificationRequestType#GRANT_ACCESS": "VRAAG TOEGANG",
+              "ModificationRequestReportChange#ACCOUNT_REMOVED_FROM_ACCESS_PROFILE": "Het account {1} zal worden verwijderd uit het toegangsprofiel.",
               "GrantServiceAccountGroupRequest#groupOnSystem": {
                 "label": "Koppelgroep"
               },
@@ -656,6 +661,7 @@
               "ModificationRequest#feedback": {
                 "label": "Reden voor toestemming/weigering"
               },
+              "ModificationRequestReportChange#ACCESS_PROFILE_CLIENT_REMOVED_OWNER": "De applicatie {0} verplaatst mee met deze groep. Daardoor verliest het toegangsprofiel {1} de toegang.",
               "ModificationRequestReportConclusion#CANNOT_BE_EXECUTED": "Verzoek kan niet worden uitgevoerd",
               "ModificationRequestType#TRANSFER_PROVISIONED_SYSTEM_CONTENT_ADMINISTRATION": "INHOUDSBEHEER OVERDRAGEN",
               "ModificationRequestType#ENABLE_TECHNICAL_ADMINISTRATION": "INSCHAKELEN",
@@ -680,6 +686,7 @@
               "ModificationRequestStatus#ALLOWED": "Geaccepteerd",
               "ModificationRequestReportChange#GROUP_AUTHORIZATION_REMOVED": "Alle vormen van extra autorisaties op deze groepen worden verwijderd.",
               "ModificationRequestType#TRANSFER_PROVISIONED_SYSTEM_ADMINISTRATION": "BEHEER OVERDRAGEN",
+              "ModificationRequestReportChange#ACCESS_PROFILE_PROVISIONING_REMOVED_OUT_OF_SCOPE": "De koppelgroep {0} is na de verplaatsing niet meer zichtbaar voor het toegangsprofiel {1} en daarom wordt de toegang verwijderd.",
               "ModificationRequestType#DISABLE_2FA": "SCHAKEL 2FA UIT",
               "ModificationRequestReportChange#ORGANIZATIONAL_UNIT_REMOVED": "Deze organisatie-eenheden zullen verwijderd worden.",
               "ModificationRequestReportChange#SYSTEM_ACCOUNTS_WRITABLE_DISABLED": "'Accounts schrijfbaar' wordt uitgeschakeld voor deze koppelingen.",
@@ -737,8 +744,10 @@
               "ModificationRequestType#UPDATE_LICENSE": "LICENTIE",
               "ModificationRequestReportError#GROUP_TECHADMIN_CLIENTAPP_WITH_OWNER_OTHER_OU": "De groep is de technische beheerder van een applicatie, waarbij de verantwoordelijke groep in een andere organisatie-eenheid zal blijven.",
               "AuthorizingGroupType#PROVISIONING": "Groepsactivatie",
+              "ModificationRequestReportChange#ACCESS_PROFILE_PROVISIONING_REMOVED_OWNER": "De groep op gekoppeld systeem {0} wordt samen met deze groep verplaatst. Als gevolg daarvan verliest het toegangsprofiel {1} de toegang.",
               "ModificationRequestType#CREATE_GROUP_ON_SYSTEM": "MAAK KOPPELGROEP",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_REMOVED": "Deze serviceaccounts zullen verwijderd worden.",
+              "ModificationRequestReportChange#ACCESS_PROFILE_CLIENT_REMOVED_OUT_OF_SCOPE": "De toegewezen applicatie {0} is na de verplaatsing niet meer zichtbaar voor het toegangsprofiel {1} en daarom wordt de toegang verwijderd.",
               "ModificationRequestReportError#GROUP_OWNS_OR_ADMINS_SYSTEM": "De groep heeft een rol voor een koppeling",
               "ModificationRequestReportChange#ORGANIZATIONAL_UNIT_CLIENT_APPLICATION_REMOVED_OUT_OF_SCOPE": "De organisatie-eenheid {1} is na de verplaatsing niet meer zichtbaar voor clientapplicatie {0} en daarom wordt de toegang verwijderd.",
               "ModificationRequestType#TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP": "VERANTWOORDELIJKHEID OVERDRAGEN",
@@ -758,10 +767,12 @@
                 "label": "Toegangsprofiel"
               },
               "AuthorizingGroupType#DELEGATION": "Delegatie van management",
+              "ModificationRequestType#REMOVE_ACCESS_PROFILE": "VERWIJDER TOEGANGSPROFIEL",
               "GroupNestAccountAction#REMOVE": "Verwijderen",
               "ModificationRequestReportChange#GROUP_MADE_PUBLIC": "Deze groepen zullen publiek gemaakt worden.",
               "ModificationRequestType#MOVE_GROUPS": "GROEPEN VERPLAATSEN",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_GROUP_REMOVED_OUT_OF_SCOPE": "De koppelgroep {0} is na het verplaatsen niet meer zichtbaar voor het serviceaccount {1} en daarom wordt de toegang verwijderd.",
+              "ModificationRequestReportChange#ACCESS_PROFILE_GROUP_REMOVED_OUT_OF_SCOPE": "Aangezien groep {1} na het verplaatsen niet langer zichtbaar is voor toegangsprofiel {0}, wordt de koppeling verwijderd.",
               "ModificationRequestReportChange#MODIFICATION_REQUEST_CANCELLED": "Er worden {0} verzoek(en) ingetrokken.",
               "TransferServiceAccountAdministrationRequest#serviceAccount": {
                 "label": "Serviceaccount"
@@ -1525,6 +1536,10 @@
                 "label": "Failover host",
                 "description": "Als de primaire host niet bereikbaar is, wordt teruggevallen op deze host op dezelfde port."
               },
+              "ProvisionedLDAPDirectory#objectClasses": {
+                "label": "Aanvullende object classes",
+                "description": "Geef aanvullende waarden voor het attribuut objectClass van accounts op, gescheiden door spaties."
+              },
               "AbstractProvisionedLDAP#bindPassword": {
                 "description": "Het wachtwoord waarmee gebind wordt op de directory.",
                 "label": "Bind wachtwoord"
@@ -1684,11 +1699,17 @@
                 "label": "Serviceaccount-RDN"
               },
               "GroupOnSystemType#GROUP_OF_NAMES": "groupOfNames",
+              "ProvisionedLDAPDirectory#attributes": {
+                "label": "Custom attributen"
+              },
               "ProvisionedSystemType": "Gekoppeld systeem",
               "ProvisionedAzureSyncLDAPDirectory#tenant": {
                 "label": "Azure tenant"
               },
               "GroupOnSystemType#AZURE_SECURITY_GROUP": "Beveiligingsgroep",
+              "ProvisionedSCIM#attributes": {
+                "label": "Custom attributen"
+              },
               "ProvisionedSystem#usernamePrefix": {
                 "label": "Gebruikersnaamprefix",
                 "description": "De prefix die aan elke gebruikersnaam moet worden toegevoegd als deze wordt aangemaakt op het systeem. Gebruikersnaam en prefix zullen van elkaar worden gescheiden met een koppelteken."
@@ -1771,6 +1792,8 @@
                 "placeholder": "Kies een attribuut..."
               },
               "AccountAttributeSource#SELF_SERVICE": "Selfservice",
+              "AccountAttributeFormat#TEXT": "Tekst",
+              "AccountAttributeFormat#TELEPHONE": "Telefoonnummer",
               "AccountAttributeSystemDefinition#USERNAME": "Gebruikersnaam",
               "AccountAttributeRule#prioritySCIM": {
                 "label": "Prioriteit voor SCIM",
@@ -1785,10 +1808,15 @@
                 "description": "Werk het attribuut automatisch bij als de berekende waarde verandert."
               },
               "AccountAttributeSystemDefinition#TELEPHONE_PRIVATE": "Privé telefoonnummer",
+              "AccountAttributeFormat#BOOLEAN": "Boolean",
+              "AccountAttributeDefinition#unique": {
+                "label": "Uniek"
+              },
               "AccountAttributeValueSelectionStatus#IN_SYNC": "Gesynchroniseerd",
               "AccountAttributeValueSelectionStatus#DUPLICATE": "Duplicaat",
               "AccountAttributeSystemDefinition#DISPLAY_NAME": "Weergavenaam",
               "AccountAttributeSystemDefinition#EMAIL_PRIVATE": "Privé e-mailadres",
+              "AccountAttributeFormat#DATE": "Datum",
               "AccountAttributeRule#priorityFormula": {
                 "label": "Prioriteit voor het script",
                 "description": "De prioriteit (1-5) van een waarde berekend door het script. Een hoger cijfer geeft deze bron prioriteit over andere bronnen. Een ontbrekende waarde schakelt de bron uit voor dit attribuut."
@@ -1821,6 +1849,10 @@
               "Identity#middleName": {
                 "label": "Tweede naam"
               },
+              "AccountAttributeDefinition#format": {
+                "label": "Formaat"
+              },
+              "AccountAttributeFormat#NUMBER": "Nummer",
               "Identity#privateEmail": {
                 "label": "Privé e-mailadres"
               },
@@ -1832,8 +1864,14 @@
               "AccountAttributeSystemDefinition#GIVEN_NAME": "Voornaam",
               "AccountAttributeSource#FORMULA": "Script",
               "AccountAttributeSource#DEFAULT": "Standaardwaarde",
+              "AccountAttributeDefinition#list": {
+                "label": "Lijst"
+              },
               "AccountAttributeValueSelectionStatus#INVALID": "Ongeldig",
               "AccountAttributeSource#OVERRIDE": "Handmatig overschreven",
+              "AccountAttributeDefinition#required": {
+                "label": "Vereist"
+              },
               "AccountAttributeRule#allowOverride": {
                 "description": "Beheerders kunnen de waarde voor dit attribuut overschrijven. Deze waarde heeft altijd prioriteit over alle andere bronnen.",
                 "label": "Handmatig overschrijven toestaan"
@@ -1842,8 +1880,13 @@
               "Identity#familyName": {
                 "label": "Familienaam"
               },
+              "AccountAttributeFormat#EMAIL": "E-mailadres",
               "AccountAttributeValueSelectionStatus#OUT_OF_SYNC": "Niet gesynchroniseerd",
               "AccountAttributeSystemDefinition#EMAIL": "E-mailadres",
+              "AccountAttributeDefinition#name": {
+                "label": "Naam"
+              },
+              "AccountAttributeFormat#DATETIME": "Datum/tijd",
               "AccountAttributeSystemDefinition#LICENSE": "Licentierol",
               "AccountAttributeValueSelectionStatus#MISSING": "Ontbreekt",
               "Identity#telephone": {
@@ -1977,7 +2020,7 @@
                 "CLIENTS_CREATE": {
                   "main": "Nieuwe applicaties aanmaken",
                   "long": "Applicaties - Nieuwe applicaties aanmaken",
-                  "context": "Nieuwe applicaties aanmaken"
+                  "context": "Nieuwe applicaties aanmaken in {group}"
                 },
                 "GROUPS_QUERY": {
                   "main": "Groepen uitlezen en zoeken",
@@ -2794,6 +2837,7 @@
       },
       "oidcdirectory": "OIDC-Directory",
       "auditoraccountauditlog": "Auditlog van een account",
+      "attrdefs": "Accountattribuutdefinities",
       "account": {
         "sessies": "Sessies",
         "consent": "Toestemming gegeven aan applicaties",
@@ -2853,8 +2897,7 @@
       "saml2application": "SAML v2.0-Applicatie",
       "application": {
         "groups": "Groepen",
-        "accessprofiles": "Toegangsprofielen",
-        "permissions": "Rechten"
+        "accessprofiles": "Toegangsprofielen"
       },
       "directories": "Directories",
       "supportdumps": "Support-dumps",
@@ -2880,6 +2923,7 @@
       "settings": "Algemene instellingen",
       "passwordlost": "Wachtwoord vergeten",
       "schedules": "Cron-taken",
+      "attributedefinition": "Accountattribuutdefinitie",
       "vaultrecovery": "Kluisherstel",
       "activationcode": "Activatiecode",
       "vaults": "Kluizen",
@@ -2989,6 +3033,10 @@
         "line1": "Deze pagina toont al het toegangsbeheer op de verschillende groepen.",
         "line2": "Je kan een applicatie of koppeling toevoegen door middel van de knop 'Toevoegen' rechtsboven in het scherm."
       },
+      "attrdefs": {
+        "line2": "Je kunt een nieuwe attribuutdefinitie toevoegen door middel van de knop 'Toevoegen' rechtsboven in het scherm.",
+        "line1": "Op deze pagina worden alle zelfbeheerde accountattribuutdefinities weergegeven."
+      },
       "vaults": {
         "line1": "Deze pagina toont alle wachtwoorden en geheimen waar je toegang tot hebt.",
         "line2": "Er zijn op dit moment geen kluisregels om te tonen. Voeg een regel toe aan een van je kluizen met de knop in de rechterbovenhoek."
@@ -3081,6 +3129,10 @@
           "me": "{accessProfile} tot {system}",
           "main": "{accessProfile} tot {system}"
         }
+      },
+      "removeaccessprofile": {
+        "main": "{accessProfile}",
+        "me": "{accessProfile}"
       },
       "transferaccessprofileownership": {
         "me": "{accessProfile} naar {groupName}",
@@ -3379,8 +3431,8 @@
       },
       "grantclientpermission": {
         "CLIENTS_CREATE": {
-          "me": "Ik wil de applicatie {application} rechten geven om nieuwe applicaties aan te maken.",
-          "main": "{requester} wil de applicatie {application} rechten geven om nieuwe applicaties aan te maken."
+          "me": "Ik wil de applicatie {application} rechten geven om nieuwe applicaties binnen {group} aan te maken.",
+          "main": "{requester} wil de applicatie {application} rechten geven om nieuwe applicaties binnen {group} aan te maken."
         },
         "GROUPS_QUERY": {
           "main": "{requester} wil de applicatie {application} rechten geven om groepen te lezen en zoeken.",
@@ -3562,6 +3614,10 @@
       "enableprofileadministration": {
         "main": "{requester} wil toegangsprofielenbeheer inschakelen op {groupName}.",
         "me": "Ik wil toegangsprofielenbeheer inschakelen op {groupName}."
+      },
+      "removeaccessprofile": {
+        "main": "{requester} wil het toegangsprofiel {accessProfile} verwijderd hebben.",
+        "me": "Ik wil het toegangsprofiel {accessProfile} verwijderd hebben."
       },
       "transfergrouponsystemownership": {
         "main": "{requester} wil de verantwoordelijkheid over {gosType} {gosName} op {system} overdragen aan de groep {groupName}.",
@@ -3817,7 +3873,7 @@
     "addgrouptoaccessprofile": {
       "sent": "Je verzoek om {1} toe te voegen aan {0} is verstuurd.",
       "header": "Groep toevoegen",
-      "subtitle": "Voeg een groep toe aan het toegangsprofile {0}."
+      "subtitle": "Voeg een groep toe aan het toegangsprofiel {0}."
     },
     "grantgrouponsystem": {
       "sent": "Je verzoek om {2} toegang te geven tot {0} op {1} is verstuurd.",
@@ -4115,8 +4171,6 @@
     "application": {
       "details": "Details",
       "profiles": "Toegangsprofielen",
-      "permissions": "Rechten",
-      "auditlog": "Auditlog",
       "groups": "Groepen"
     },
     "settings": {
@@ -4209,6 +4263,7 @@
       "accounts": "Accounts"
     },
     "backups": "Back-ups",
+    "attributedefinitions": "Attribuutdefinities",
     "applications": "Applicaties",
     "support": {
       "main": "Ondersteuning",
@@ -4323,6 +4378,13 @@
       "test": "Testen"
     },
     "all": "Alle",
+    "more": {
+      "load": "Meer laden",
+      "1": "nog 1 element",
+      "n": "nog {0} elementen",
+      "lower": "meer...",
+      "main": "Meer..."
+    },
     "enabled": "Ingeschakeld",
     "none": {
       "placeholder": "<geen>",
@@ -4333,6 +4395,7 @@
     "search": {
       "start": "Begin hier met zoeken...",
       "keywords": "Zoek op keywords...",
+      "main": "Zoeken...",
       "olderthan": "Ouder dan...",
       "inactivesince": "Inactief sinds..."
     },
@@ -4342,15 +4405,11 @@
     "notapplicable": "n.v.t.",
     "disabled": "Uitgeschakeld",
     "hidden": {
-      "n": "<< {0} verborgen elementen >>",
-      "1": "<< 1 verborgen element >>"
+      "n": "{0} verborgen elementen",
+      "1": "1 verborgen element"
     },
     "off": "Uit",
     "filter": "Filter",
-    "more": {
-      "lower": "meer...",
-      "main": "Meer..."
-    },
     "or": "of",
     "on": "Aan",
     "generated": "Beschikbaar na opslaan",
@@ -4645,6 +4704,10 @@
         "label": "Let's Encrypt",
         "description": "Vraag automatisch certificaten aan via Let's Encrypt."
       },
+      "MONITORING_OTLP_HEADER_NAME": {
+        "label": "Aangepaste header-naam",
+        "description": "Naam van een aangepaste header die meegestuurd moet worden, bijvoorbeeld met een API-key."
+      },
       "global": "Clusterbrede configuratie",
       "firewall": "Firewall",
       "BACKUP_FIREWALL_TCPPORTS": {
@@ -4783,6 +4846,10 @@
       "LOGGING_REMOTE_TEMPLATE": {
         "description": "Het formaat voor de verstuurde berichten. Raadpleeg de rsyslog-documentatie voor mogelijke waarden.",
         "label": "Template"
+      },
+      "MONITORING_OTLP_HEADER_VALUE": {
+        "label": "Aangepaste header-waarde",
+        "description": "Waarde van een aangepaste header die meegestuurd moet worden, bijvoorbeeld met een API-key."
       },
       "BACKUP_USER_ENABLED": {
         "label": "Back-up-gebruiker aanmaken",
@@ -5238,7 +5305,8 @@
       "task": {
         "process": "Gegevens samenvoegen tot {0}",
         "gather": "Gegevens verzamelen voor {0}",
-        "cleanup": "Support-dumps opruimen"
+        "cleanup": "Support-dumps opruimen",
+        "stats": "Gebruiksstatistieken verzamelen"
       },
       "create": {
         "subtitle": "Maak een dump met alle logs van een bepaalde dag en de huidige status van de applicatie.",
@@ -5634,6 +5702,7 @@
     "ACCESS_PROFILE_MODIFIED": "{performedBy} heeft het toegangsprofiel {onAccessProfile} aangepast.",
     "LINK_DIRECTORY_TO_ACCESS_PROFILE_REQUESTED": "{performedBy} heeft een verzoek ingediend om het beheer van attributen voor accounts uit {onDirectory} toekennen aan het toegangsprofiel {onAccessProfile}. {reason}",
     "ADD_GROUP_TO_ACCESS_PROFILE_DECLINED": "{performedBy} heeft het verzoek afgekeurd om {onGroup} toe te voegen aan het toegangsprofiel {onAccessProfile}. {reason}",
+    "REMOVE_ACCESS_PROFILE_DECLINED": "Het verzoek om het toegangsprofiel {onAccessProfile} te verwijderen is afgekeurd door {performedBy}. {reason}",
     "SERVICE_ACCOUNT_PROVISIONED": "Het serviceaccount {onServiceAccount} is ingeschakeld op de koppeling {onSystem}.",
     "CREATE_GROUP_DECLINED": "{performedBy} heeft het verzoek van {onAccount} afgekeurd om de groep {parameter3} aan te maken. {reason}",
     "ACCOUNT_GROUP_DEPROVISIONED": "{onAccount} heeft {gosType} {gosName} uitgeschakeld voor {onSystem} via {onGroup}.",
@@ -5677,6 +5746,7 @@
     "GROUP_ON_SYSTEM_CREATED": "{performedBy} heeft {gosType} {gosName} aangemaakt op {onSystem}.",
     "ACCOUNT_2FA_DISABLED": "{performedBy} heeft two-factor authenticatie uitgeschakeld voor {onAccount}.",
     "TRANSFER_PROVISIONED_SYSTEM_OWNERSHIP_DECLINED": "Het verzoek om de verantwoordelijkheid over {onSystem} over te dragen aan {onGroup} is afgekeurd door {performedBy}. {reason}",
+    "REMOVE_ACCESS_PROFILE_ACCEPTED": "Het verzoek om het toegangsprofiel {onAccessProfile} te verwijderen is goedgekeurd door {performedBy}. {reason}",
     "SETUP_AUTHORIZING_GROUP_DISCONNECT_REQUESTED": {
       "AUDITING": "{performedBy} heeft een verzoek ingediend om audits van {onGroup} niet langer te laten reviewen door {onGroup2}. {reason}",
       "DELEGATION": "{performedBy} heeft een verzoek ingediend om delegatie van management van {onGroup} aan {onGroup2} uit te schakelen. {reason}",
@@ -5837,6 +5907,7 @@
     "REMOVE_ORGANIZATIONAL_UNIT_REQUESTED": "{performedBy} heeft een verzoek ingediend om de organisatie-eenheid {onOrganizationalUnit} te verwijderen. {reason}",
     "SERVICE_ACCOUNT_CREATED": "{performedBy} heeft een serviceaccount {onServiceAccount} toegevoegd aan {onSystem}.",
     "ACCOUNT_ACCESS_PROFILE_DEPROVISIONED": "{gosType} {gosName} op {onSystem} vanuit {onAccessProfile} is uitgeschakeld voor {onAccount}.",
+    "REMOVE_ACCESS_PROFILE_REQUESTED": "{performedBy} heeft een verzoek ingediend om het toegangsprofiel {onAccessProfile} te verwijderen. {reason}",
     "ACCOUNT_ENABLED": "Het account van {onAccount} is ingeschakeld {parameter1}.",
     "REMOVE_GROUP_ACCEPTED": "Het verzoek om de groep {onGroup} te verwijderen is goedgekeurd door {performedBy}. {reason}",
     "MOVE_GROUPS_REQUESTED": "{performedBy} heeft een verzoek ingediend om {parameter2} groepen te verplaatsen naar {onOrganizationalUnit}. {reason}",
@@ -5939,6 +6010,10 @@
     "header": {
       "ldap": "LDAP-applicatie",
       "saml2": "SAML v2.0-applicatie",
+      "activationrequired": "Activatie vereist",
+      "groups": "Groepen",
+      "accessprofile": "Toegangsprofiel",
+      "accessprofiles": "Toegangsprofielen",
       "oauth2": "OAuth2/OIDC-applicatie"
     },
     "secret": {
@@ -5964,6 +6039,8 @@
     },
     "attribute": {
       "script": "Script",
+      "definition": "Kies een attribuutdefinitie...",
+      "usescript": "Onderstaand script uitvoeren...",
       "add": "Attribuut toevoegen",
       "name": "Attribuutnaam"
     },
@@ -6010,6 +6087,7 @@
         "GRANT_SERVICE_ACCOUNT_GROUP": "Geef serviceaccount toegang tot groep op gekoppeld systeem",
         "REVIEW_AUDIT": "Review een audit",
         "TRANSFER_PROVISIONED_SYSTEM_OWNERSHIP": "Draag verantwoordelijkheid over gekoppeld systeem over",
+        "REMOVE_ACCESS_PROFILE": "Verwijder toegangsprofiel",
         "DISABLE_2FA": "Schakel 2FA uit",
         "accepted": "Geaccepteerd",
         "UPDATE_GROUP_MEMBERSHIP": "Wijzig een groepslidmaatschap",
@@ -6160,7 +6238,8 @@
       "choose": "Kies specifieke gebeurtenissen",
       "all": "Alle gebeurtenissen"
     },
-    "header": "Webhook - {0}"
+    "header": "Webhook - {0}",
+    "listheader": "Webhooks"
   },
   "prompt": {
     "head": {
@@ -6187,6 +6266,7 @@
           "serviceaccountgroup": "Trek toegang tot de groep <strong>{0}<\/strong> in.",
           "vaultrecovery": "Je hebt de oude private key voor recovery niet opgegeven. Hierdoor wordt recovery voor alle kluizen onmogelijk tot de kluis tenminste éénmaal geopend wordt. Als de vorige key nog beschikbaar is, geef deze dan mee.",
           "system": "Als je <strong>{0}<\/strong> verwijdert, worden alle koppelde accounts en groepen ook verwijderd. Alle toegang tot groepen op dit gekoppelde systeem komt te vervallen.",
+          "attributedefinition": "Als je de attribuutdefinitie <strong>{0}<\/strong> verwijdert, verliezen alle gebruikers de opgeslagen waardes voor dit attribuut.",
           "groupclient": {
             "group": "Als de koppeling tussen <strong>{0}<\/strong> en <strong>{1}<\/strong> wordt verwijdert, verliest iedereen van de groep toegang tot de gekoppelde applicatie.",
             "client": "Als de koppeling tussen <strong>{0}<\/strong> en <strong>{1}<\/strong> wordt verwijdert, verliest iedereen van de groep toegang tot de gekoppelde applicatie."
@@ -6194,6 +6274,7 @@
           "groupsystem": "Met het verwijderen van <strong>{0}<\/strong> verliest iedereen toegang tot de gekoppelde systemen.",
           "organizationalunitclientapplication": "Als je <strong>{0}<\/strong> verwijdert uit de organisatie-eenheid {1}, verliest de applicatie toegang tot groepen en inrichting die tot deze organisatie-eenheid behoren.",
           "accessprofileprov": "Met het verwijderen van <strong>{0}<\/strong> verliezen de leden van het toegangsprofiel toegang tot de koppelgroep.",
+          "profile": "Als je <strong>{0}<\/strong> verwijdert, worden alle gegevens die met dit toegangsprofiel verbonden zijn ook verwijderd. Alle toegang die via dit toegangsprofiel beschikbaar is, wordt ingetrokken.",
           "saml2application": "Als je <strong>{0}<\/strong> verwijdert, worden alle koppelingen met groepen ook verwijderd.",
           "certificate": "Je staat op het punt het certificaat <strong>{0}<\/strong> te verwijderen. Eenmaal verwijderd kan dit certificaat niet worden hersteld zonder de originele bestanden.",
           "organizationalunitaccount": "Als je <strong>{0}<\/strong> verwijdert uit de organisatie-eenheid {1}, verliest de gebruiker toegang tot groepen en inrichting die tot deze organisatie-eenheid behoren.",
@@ -6233,6 +6314,7 @@
             "personal": "Voer ter bevestiging je gebruikersnaam in."
           },
           "tile": "Voer ter bevestiging de naam van de te verwijderen tegel nogmaals in.",
+          "profile": "Voer ter bevestiging de naam van het te verwijderen toegangsprofiel nogmaals in.",
           "organizationalunitaccount": "Voer ter bevestiging de gebruikersnaam van het te verwijderen account nogmaals in.",
           "oauth2application": "Voer ter bevestiging de naam van de te verwijderen OAuth2/OIDC-applicatie nogmaals in.",
           "groupinsystem": "Voer ter bevestiging de naam van de te verwijderen groep nogmaals in.",
@@ -6241,7 +6323,8 @@
           "ldapapplication": "Voer ter bevestiging de naam van de te verwijderen LDAP applicatie nogmaals in.",
           "accessprofileclient": "Voer ter bevestiging voor het verwijderen van de koppeling de naam van het toegangsprofiel nogmaals in.",
           "vaultrecovery": "Als je toch door wilt gaan, voer dan 'Ik weet het zeker' in.",
-          "organizationalunit": "Voer ter bevestiging de naam van de te verwijderen organisatie-eenheid nogmaals in."
+          "organizationalunit": "Voer ter bevestiging de naam van de te verwijderen organisatie-eenheid nogmaals in.",
+          "attributedefinition": "Voer ter bevestiging de naam van de te verwijderen attribuutdefinitie nogmaals in."
         },
         "repeatlabel": {
           "organizationalunit": "Naam",
@@ -6371,7 +6454,7 @@
           "update": "{from} wil {accountToUpdate} aanpassen binnen {group}",
           "add": "{from} wil {accountToUpdate} toevoegen aan {group}"
         },
-        "addgrouptoaccessprofile": "{from} wil de groep {group} toevoegen aan het toegangsprofile {accessProfile}",
+        "addgrouptoaccessprofile": "{from} wil de groep {group} toevoegen aan het toegangsprofiel {accessProfile}",
         "grantgrouponsystemrequest": {
           "group": "{from} wil de gebruikers in de groep {group} toegang geven tot {gosType} {gosName} op {system}",
           "profile": "{from} wil de gebruikers in het toegangsprofiel {accessProfile} toegang geven tot {gosType} {gosName} op {system}"
@@ -6408,6 +6491,7 @@
         "grantclientpermission": "{from} wil extra rechten toekennen aan {application}",
         "movegroups": "{from} wil {groupCount} groepen verplaatsen naar {organizationalUnit}",
         "transferapplicationownership": "{from} wil de verantwoordelijkheid over {application} overdragen aan {group}",
+        "removeaccessprofile": "{from} wil het toegangsprofiel {accessProfile} verwijderen",
         "reviewaudit": "{from} wil een audit van {group} laten reviewen.",
         "disable2fa": "{from} wil 2fa uitgeschakeld hebben",
         "updatelicense": "{from} een wijziging in de licentie doorvoeren",
@@ -6460,7 +6544,10 @@
         "subtitle": "{0} heeft toestemming om de groep te activeren."
       },
       "membership": "Lidmaatschap",
-      "hidden": "{0} verborgen groepen",
+      "hidden": {
+        "1": "1 verborgen groep",
+        "n": "{0} verborgen groepen"
+      },
       "delegation": "Delegatie",
       "auditing": "Audits"
     },
@@ -6778,6 +6865,7 @@
     },
     "SERVICEACCOUNT_IS_ACTIVE": "Om deze actie uit te voeren, moet het serviceaccount eerst worden gedeactiveerd.",
     "OIDC_REFUSED": "Je hebt KeyHub geen toestemming gegeven voor Single Sign-on.",
+    "DUPLICATE_VALUE": "De waarde moet uniek zijn, en '{value}' is al in gebruik.",
     "VAULT_TARGET_DOES_NOT_EXIST": "De gebruiker {username} bestaat niet of heeft nog geen kluiswachtwoord ingesteld.",
     "LICENSE_LIMIT_REACHED": {
       "login": "Helaas zijn de grenzen van de licentie voor deze Topicus KeyHub installatie bereikt en daarom kun je geen account registreren. Neem contact op met je Topicus KeyHub administrators.",
@@ -6805,6 +6893,7 @@
     },
     "ORGANIZATIONAL_UNIT_NOT_UNDER_BASE": "De organisatie-eenheid is geen onderliggende organisatie-eenheid van de basisorganisatie-eenheid van de gebruiker.",
     "VAULT_RECOVERY_KEY_NOT_INITIALIZED": "De kluis heeft geen herstelsleutel.",
+    "ATTRIBUTE_HAS_VALUES": "Er zijn reeds waarden voor deze attribuutdefinitie en deze kan daarom niet uniek worden gemaakt.",
     "CANNOT_REMOVE_LAST_MANAGER": "Het account voor {account} is de laatste manager zonder einddatum van {group} en kan daarom niet verwijderd worden. Kies eerst een vervangende manager voor de groep.",
     "DIRECTORY_CREDENTIALS_EXPECTED": "Je hebt het verkeerde wachtwoord ingevoerd. Voer je {directory}-wachtwoord in.",
     "DIRECTORY_IN_USE": "Een directory kan niet verwijderd worden als nog niet alle bijbehorende accounts verwijderd zijn.",
@@ -6818,11 +6907,13 @@
     "MODIFICATION_AUTHORIZATION_ALREADY_SETUP": "Dit type autorisatie is al ingesteld voor deze groep.",
     "FILE_SIZE_INCORRECT": "Het bestand voor {for_name} heeft de verkeerde grootte.",
     "INVALID_REGISTRATION_CREDENTIALS": "De opgegeven gebruikersnaam- en wachtwoord-combinatie bestaat niet binnen de gekozen directory.",
+    "ATTRIBUTE_IN_USE_BY_PROFILE": "Deze attribuutdefinitie wordt nog gebruikt door het toegangsprofiel {profile} en kan daarom niet worden gewijzigd of verwijderd.",
     "LICENSE_FEATURE_IN_USE": "Je Topicus KeyHub licentie gebruikt functies die niet zijn toegestaan volgens de licentie:",
     "CLIENT_CREDENTIALS_NOT_ALLOWED": "Deze applicatie ondersteunt geen client credentials grant en kan daarom geen toegang tot een kluis krijgen.",
     "USERNAME_ALREADY_IN_USE": "Deze gebruikersnaam bestaat reeds.",
     "KEYHUB_CREDENTIALS_EXPECTED": "Je hebt het verkeerde wachtwoord ingevoerd. Voer je KeyHub-wachtwoord in.",
     "LAUNCHPAD_TILE_IDP_INITIATED_NOT_SUPPORTED": "IdP-initiated login is niet ondersteund door deze applicatie.",
+    "ATTRIBUTE_IN_USE_BY_SYSTEM": "Deze attribuutdefinitie wordt nog gebruikt door het gekoppelde systeem {system} en kan daarom niet worden gewijzigd of verwijderd.",
     "ORGANIZATIONAL_UNIT_CANNOT_REMOVE_CLIENT_BASE": "Kan de basisorganisatie-eenheid van de applicatie niet verwijderen.",
     "MODIFICATION_CIRCULAR_GROUP_NESTING": "{nested} kan niet genest worden binnen {parent} omdat {parent} al direct of indirect genest is binnen {nested}.",
     "VAULT_PUBLIC_KEY_NOT_INITIALIZED": "De doelkluis is nog niet gereed. De kluis moet eerst geopend worden door iemand met toegang.",
@@ -7321,7 +7412,7 @@
         "admin": "Technisch beheer",
         "main": " - {type}: {name} ({role})"
       },
-      "accessprofile": " - Verantwoordelijk voor het toegangsprofile {0}",
+      "accessprofile": " - Verantwoordelijk voor het toegangsprofiel {0}",
       "organizationalunit": " - Verantwoordelijk voor de organisatie-eenheid {0}",
       "main": "{0} verwijderen",
       "msg2": "De groep bevat de volgende onderdelen:",
@@ -7359,7 +7450,7 @@
       "toevoegen": "Manager toevoegen"
     },
     "search": {
-      "mygroups": "Zoek in mijn groepen",
+      "mygroups": "Zoek in mijn groepen...",
       "account": "Groepen met account..."
     },
     "info": {
@@ -7549,6 +7640,14 @@
       "classification": "Classificatie",
       "auditduedate": "Volgende groepsaudit"
     },
+    "bulkmode": {
+      "draft": {
+        "statuschanged": "Dit auditconcept is onlangs ingediend en/of wordt momenteel beoordeeld.",
+        "newlycreated": "De audit kon niet worden opgeslagen. Er bestaat een conceptaudit voor deze groep of een bestaande audit in review."
+      },
+      "skipped": "Groepsaudit voor {0} overgeslagen.",
+      "finished": "Alle openstaande groepsaudits afgerond."
+    },
     "main": "Groepsaudit"
   },
   "identitysource": {
@@ -7593,6 +7692,13 @@
     "header": "Stel two-factor authenticatie in",
     "switchToApp": "Gebruik een 2FA app",
     "switchToSecurityKey": "Gebruik een security key"
+  },
+  "attributedefinition": {
+    "unique": "uniek",
+    "search": "Attribuutdefinities zoeken...",
+    "list": "lijst",
+    "required": "vereist",
+    "header": "Accountattribuutdefinitie - {0}"
   },
   "validatie": {
     "fileTooLarge": "{0} is groter dan {1}Kb",

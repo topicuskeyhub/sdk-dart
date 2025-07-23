@@ -53,7 +53,7 @@ class GroupfolderRequestBuilder extends BaseRequestBuilder<GroupfolderRequestBui
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<GroupfolderRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<GroupfolderRequestBuilderGetQueryParameters>(requestConfiguration, () => GroupfolderRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
     /// Creates one or more new group folders and returns the newly created folders.
@@ -62,8 +62,8 @@ class GroupfolderRequestBuilder extends BaseRequestBuilder<GroupfolderRequestBui
     RequestInformation toPostRequestInformation(GroupFolderLinkableWrapper body, [void Function(RequestConfiguration<GroupfolderRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<GroupfolderRequestBuilderPostQueryParameters>(requestConfiguration, () => GroupfolderRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=78', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=79', body);
         return requestInfo;
     }
 }

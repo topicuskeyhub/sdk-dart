@@ -1,11 +1,14 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../http_authentication_scheme.dart';
+import '../misc/attribute_customization.dart';
 import './provisioned_s_c_i_m_vendor.dart';
 import './provisioned_system.dart';
 
 /// auto generated
 class ProvisionedSCIM extends ProvisionedSystem implements Parsable {
+    ///  The attributes property
+    Iterable<AttributeCustomization>? attributes;
     ///  The authenticationScheme property
     HttpAuthenticationScheme? authenticationScheme;
     ///  The basicAuthPassword property
@@ -35,6 +38,7 @@ class ProvisionedSCIM extends ProvisionedSystem implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['attributes'] = (node) => attributes = node.getCollectionOfObjectValues<AttributeCustomization>(AttributeCustomization.createFromDiscriminatorValue);
         deserializerMap['authenticationScheme'] = (node) => authenticationScheme = node.getEnumValue<HttpAuthenticationScheme>((stringValue) => HttpAuthenticationScheme.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['basicAuthPassword'] = (node) => basicAuthPassword = node.getStringValue();
         deserializerMap['basicAuthUsername'] = (node) => basicAuthUsername = node.getStringValue();
@@ -50,6 +54,7 @@ class ProvisionedSCIM extends ProvisionedSystem implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeCollectionOfObjectValues<AttributeCustomization>('attributes', attributes);
         writer.writeEnumValue<HttpAuthenticationScheme>('authenticationScheme', authenticationScheme, (e) => e?.value);
         writer.writeStringValue('basicAuthPassword', basicAuthPassword);
         writer.writeStringValue('basicAuthUsername', basicAuthUsername);

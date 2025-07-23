@@ -6,6 +6,7 @@ enum AccountAttributeFormat {
     telephone('TELEPHONE'),
     number('NUMBER'),
     date('DATE'),
+    datetime('DATETIME'),
     boolean('BOOLEAN'),
     text('TEXT');
     const AccountAttributeFormat(this.value);

@@ -34,7 +34,7 @@ class WithAttributevalueItemRequestBuilder extends BaseRequestBuilder<WithAttrib
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithAttributevalueItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithAttributevalueItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithAttributevalueItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
 }

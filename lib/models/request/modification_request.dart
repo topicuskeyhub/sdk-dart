@@ -31,6 +31,7 @@ import './modification_request_status.dart';
 import './modification_request_type.dart';
 import './move_groups_request.dart';
 import './password_reset_request.dart';
+import './remove_access_profile_request.dart';
 import './remove_group_request.dart';
 import './remove_organizational_unit_request.dart';
 import './remove_provisioned_system_request.dart';
@@ -103,6 +104,7 @@ class ModificationRequest extends Linkable implements Parsable {
             'request.LinkDirectoryToAccessProfileRequest' => LinkDirectoryToAccessProfileRequest(),
             'request.MoveGroupsRequest' => MoveGroupsRequest(),
             'request.PasswordResetRequest' => PasswordResetRequest(),
+            'request.RemoveAccessProfileRequest' => RemoveAccessProfileRequest(),
             'request.RemoveGroupRequest' => RemoveGroupRequest(),
             'request.RemoveOrganizationalUnitRequest' => RemoveOrganizationalUnitRequest(),
             'request.RemoveProvisionedSystemRequest' => RemoveProvisionedSystemRequest(),
@@ -135,7 +137,7 @@ class ModificationRequest extends Linkable implements Parsable {
         deserializerMap['feedback'] = (node) => feedback = node.getStringValue();
         deserializerMap['group'] = (node) => group = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         deserializerMap['mailKey'] = (node) => mailKey = node.getStringValue();
-        deserializerMap['ModificationRequestType'] = (node) => modificationRequestType = node.getEnumValue<ModificationRequestType>((stringValue) => ModificationRequestType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['type'] = (node) => modificationRequestType = node.getEnumValue<ModificationRequestType>((stringValue) => ModificationRequestType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['status'] = (node) => status = node.getEnumValue<ModificationRequestStatus>((stringValue) => ModificationRequestStatus.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         return deserializerMap;
     }
@@ -149,7 +151,7 @@ class ModificationRequest extends Linkable implements Parsable {
         writer.writeStringValue('comment', comment);
         writer.writeStringValue('feedback', feedback);
         writer.writeObjectValue<GroupPrimer>('group', group);
-        writer.writeEnumValue<ModificationRequestType>('ModificationRequestType', modificationRequestType, (e) => e?.value);
+        writer.writeEnumValue<ModificationRequestType>('type', modificationRequestType, (e) => e?.value);
         writer.writeEnumValue<ModificationRequestStatus>('status', status, (e) => e?.value);
     }
 }

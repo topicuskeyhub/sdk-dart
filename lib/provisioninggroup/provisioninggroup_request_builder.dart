@@ -42,7 +42,7 @@ class ProvisioninggroupRequestBuilder extends BaseRequestBuilder<Provisioninggro
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ProvisioninggroupRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ProvisioninggroupRequestBuilderGetQueryParameters>(requestConfiguration, () => ProvisioninggroupRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
 }

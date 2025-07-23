@@ -8,6 +8,7 @@ import './grant_group_on_system_request_request.dart';
 import './join_group_request.dart';
 import './link_directory_to_access_profile_request.dart';
 import './modification_request.dart';
+import './remove_access_profile_request.dart';
 import './transfer_access_profile_ownership_request.dart';
 
 /// auto generated
@@ -29,6 +30,7 @@ class AbstractAccessProfileModificationRequest extends ModificationRequest imple
             'request.GrantGroupOnSystemRequestRequest' => GrantGroupOnSystemRequestRequest(),
             'request.JoinGroupRequest' => JoinGroupRequest(),
             'request.LinkDirectoryToAccessProfileRequest' => LinkDirectoryToAccessProfileRequest(),
+            'request.RemoveAccessProfileRequest' => RemoveAccessProfileRequest(),
             'request.TransferAccessProfileOwnershipRequest' => TransferAccessProfileOwnershipRequest(),
             _ => AbstractAccessProfileModificationRequest(),
         };

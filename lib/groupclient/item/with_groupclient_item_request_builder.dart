@@ -54,6 +54,7 @@ class WithGroupclientItemRequestBuilder extends BaseRequestBuilder<WithGroupclie
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
     /// Returns the single client link for the group.
@@ -61,7 +62,7 @@ class WithGroupclientItemRequestBuilder extends BaseRequestBuilder<WithGroupclie
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithGroupclientItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupclientItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithGroupclientItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
     /// Updates the client link for a group identified by the id.
@@ -70,8 +71,8 @@ class WithGroupclientItemRequestBuilder extends BaseRequestBuilder<WithGroupclie
     RequestInformation toPutRequestInformation(GroupClient body, [void Function(RequestConfiguration<WithGroupclientItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupclientItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithGroupclientItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=78', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=79', body);
         return requestInfo;
     }
 }

@@ -108,6 +108,7 @@ import './request/link_directory_to_access_profile_request.dart';
 import './request/modification_request.dart';
 import './request/move_groups_request.dart';
 import './request/password_reset_request.dart';
+import './request/remove_access_profile_request.dart';
 import './request/remove_group_request.dart';
 import './request/remove_organizational_unit_request.dart';
 import './request/remove_provisioned_system_request.dart';
@@ -262,6 +263,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'request.ModificationRequest' => ModificationRequest(),
             'request.MoveGroupsRequest' => MoveGroupsRequest(),
             'request.PasswordResetRequest' => PasswordResetRequest(),
+            'request.RemoveAccessProfileRequest' => RemoveAccessProfileRequest(),
             'request.RemoveGroupRequest' => RemoveGroupRequest(),
             'request.RemoveOrganizationalUnitRequest' => RemoveOrganizationalUnitRequest(),
             'request.RemoveProvisionedSystemRequest' => RemoveProvisionedSystemRequest(),
@@ -299,7 +301,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
         var deserializerMap = <String, void Function(ParseNode)>{};
         deserializerMap['links'] = (node) => links = node.getCollectionOfObjectValues<Link>(Link.createFromDiscriminatorValue);
         deserializerMap['permissions'] = (node) => permissions = node.getCollectionOfObjectValues<Permission>(Permission.createFromDiscriminatorValue);
-        deserializerMap['Type'] = (node) => type_ = node.getStringValue();
+        deserializerMap['\$type'] = (node) => type_ = node.getStringValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -308,7 +310,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
     void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<Link>('links', links);
         writer.writeCollectionOfObjectValues<Permission>('permissions', permissions);
-        writer.writeStringValue('Type', type_);
+        writer.writeStringValue('\$type', type_);
         writer.writeAdditionalData(additionalData);
     }
 }

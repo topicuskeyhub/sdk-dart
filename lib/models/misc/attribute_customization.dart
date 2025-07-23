@@ -1,29 +1,32 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
+import '../identity/account_attribute_definition.dart';
 import '../non_linkable.dart';
-import './vault_holder_type.dart';
 
 /// auto generated
-class VaultRecordShare extends NonLinkable implements Parsable {
+class AttributeCustomization extends NonLinkable implements Parsable {
+    ///  The attributeDefinition property
+    AccountAttributeDefinition? attributeDefinition;
     ///  The name property
     String? name;
-    ///  The type property
-    VaultHolderType? vaultRecordShareType;
-    /// Instantiates a new [VaultRecordShare] and sets the default values.
-    VaultRecordShare() : super() {
-        type_ = 'vault.VaultRecordShare';
+    ///  The script property
+    String? script;
+    /// Instantiates a new [AttributeCustomization] and sets the default values.
+    AttributeCustomization() : super() {
+        type_ = 'misc.AttributeCustomization';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     ///  [parseNode] The parse node to use to read the discriminator value and create the object
-    static VaultRecordShare createFromDiscriminatorValue(ParseNode parseNode) {
-        return VaultRecordShare();
+    static AttributeCustomization createFromDiscriminatorValue(ParseNode parseNode) {
+        return AttributeCustomization();
     }
     /// The deserialization information for the current model
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['attributeDefinition'] = (node) => attributeDefinition = node.getObjectValue<AccountAttributeDefinition>(AccountAttributeDefinition.createFromDiscriminatorValue);
         deserializerMap['name'] = (node) => name = node.getStringValue();
-        deserializerMap['type'] = (node) => vaultRecordShareType = node.getEnumValue<VaultHolderType>((stringValue) => VaultHolderType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['script'] = (node) => script = node.getStringValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -31,7 +34,8 @@ class VaultRecordShare extends NonLinkable implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeObjectValue<AccountAttributeDefinition>('attributeDefinition', attributeDefinition);
         writer.writeStringValue('name', name);
-        writer.writeEnumValue<VaultHolderType>('type', vaultRecordShareType, (e) => e?.value);
+        writer.writeStringValue('script', script);
     }
 }

@@ -59,6 +59,7 @@ class WithWebhookItemRequestBuilder extends BaseRequestBuilder<WithWebhookItemRe
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
     /// Returns the single webhook.
@@ -66,7 +67,7 @@ class WithWebhookItemRequestBuilder extends BaseRequestBuilder<WithWebhookItemRe
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithWebhookItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithWebhookItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithWebhookItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
     /// Updates the webhook identified by the id.
@@ -75,8 +76,8 @@ class WithWebhookItemRequestBuilder extends BaseRequestBuilder<WithWebhookItemRe
     RequestInformation toPutRequestInformation(Webhook body, [void Function(RequestConfiguration<WithWebhookItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithWebhookItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithWebhookItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=78', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=79', body);
         return requestInfo;
     }
 }

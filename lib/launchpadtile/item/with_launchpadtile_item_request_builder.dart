@@ -54,6 +54,7 @@ class WithLaunchpadtileItemRequestBuilder extends BaseRequestBuilder<WithLaunchp
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
     /// Returns the single launchpad tile.
@@ -61,7 +62,7 @@ class WithLaunchpadtileItemRequestBuilder extends BaseRequestBuilder<WithLaunchp
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithLaunchpadtileItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithLaunchpadtileItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithLaunchpadtileItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
     /// Updates the launchpad tile identified by the id.
@@ -70,8 +71,8 @@ class WithLaunchpadtileItemRequestBuilder extends BaseRequestBuilder<WithLaunchp
     RequestInformation toPutRequestInformation(LaunchpadTile body, [void Function(RequestConfiguration<WithLaunchpadtileItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithLaunchpadtileItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithLaunchpadtileItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=78', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=79', body);
         return requestInfo;
     }
 }

@@ -14,7 +14,6 @@ import '../provisioning/provisioned_system_linkable_wrapper.dart';
 import '../serviceaccount/service_account_linkable_wrapper.dart';
 import '../vault/vault.dart';
 import '../webhook/webhook_linkable_wrapper.dart';
-import './authorized_groups_wrapper.dart';
 import './group_access_info.dart';
 import './group_account.dart';
 import './group_account_linkable_wrapper.dart';
@@ -22,6 +21,7 @@ import './group_auditing_info.dart';
 import './group_client_linkable_wrapper.dart';
 import './group_global_role_info.dart';
 import './group_info.dart';
+import './group_linkable_wrapper_with_count.dart';
 import './group_primer_linkable_wrapper.dart';
 import './group_request_status.dart';
 import './provisioning_group_linkable_wrapper.dart';
@@ -42,7 +42,7 @@ class GroupAdditionalObjects implements AdditionalDataHolder, Parsable {
     ///  The audit property
     AuditInfo? audit;
     ///  The authorizedGroups property
-    AuthorizedGroupsWrapper? authorizedGroups;
+    GroupLinkableWrapperWithCount? authorizedGroups;
     ///  The clientPermissions property
     OAuth2ClientPermissionWithClientLinkableWrapper? clientPermissions;
     ///  The clients property
@@ -108,7 +108,7 @@ class GroupAdditionalObjects implements AdditionalDataHolder, Parsable {
         deserializerMap['administeredSystems'] = (node) => administeredSystems = node.getObjectValue<ProvisionedSystemLinkableWrapper>(ProvisionedSystemLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['admins'] = (node) => admins = node.getObjectValue<GroupAccountLinkableWrapper>(GroupAccountLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
-        deserializerMap['authorizedGroups'] = (node) => authorizedGroups = node.getObjectValue<AuthorizedGroupsWrapper>(AuthorizedGroupsWrapper.createFromDiscriminatorValue);
+        deserializerMap['authorizedGroups'] = (node) => authorizedGroups = node.getObjectValue<GroupLinkableWrapperWithCount>(GroupLinkableWrapperWithCount.createFromDiscriminatorValue);
         deserializerMap['clientPermissions'] = (node) => clientPermissions = node.getObjectValue<OAuth2ClientPermissionWithClientLinkableWrapper>(OAuth2ClientPermissionWithClientLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['clients'] = (node) => clients = node.getObjectValue<GroupClientLinkableWrapper>(GroupClientLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['contentAdministeredSystems'] = (node) => contentAdministeredSystems = node.getObjectValue<ProvisionedSystemLinkableWrapper>(ProvisionedSystemLinkableWrapper.createFromDiscriminatorValue);
@@ -144,7 +144,7 @@ class GroupAdditionalObjects implements AdditionalDataHolder, Parsable {
         writer.writeObjectValue<ProvisionedSystemLinkableWrapper>('administeredSystems', administeredSystems);
         writer.writeObjectValue<GroupAccountLinkableWrapper>('admins', admins);
         writer.writeObjectValue<AuditInfo>('audit', audit);
-        writer.writeObjectValue<AuthorizedGroupsWrapper>('authorizedGroups', authorizedGroups);
+        writer.writeObjectValue<GroupLinkableWrapperWithCount>('authorizedGroups', authorizedGroups);
         writer.writeObjectValue<OAuth2ClientPermissionWithClientLinkableWrapper>('clientPermissions', clientPermissions);
         writer.writeObjectValue<GroupClientLinkableWrapper>('clients', clients);
         writer.writeObjectValue<ProvisionedSystemLinkableWrapper>('contentAdministeredSystems', contentAdministeredSystems);

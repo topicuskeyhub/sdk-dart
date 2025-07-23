@@ -54,6 +54,7 @@ class WithGroupfolderItemRequestBuilder extends BaseRequestBuilder<WithGroupfold
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
     /// Returns the group folder identified by the id.
@@ -61,7 +62,7 @@ class WithGroupfolderItemRequestBuilder extends BaseRequestBuilder<WithGroupfold
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithGroupfolderItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupfolderItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithGroupfolderItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
     /// Updates the group folder identified by the id.
@@ -70,8 +71,8 @@ class WithGroupfolderItemRequestBuilder extends BaseRequestBuilder<WithGroupfold
     RequestInformation toPutRequestInformation(GroupFolder body, [void Function(RequestConfiguration<WithGroupfolderItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithGroupfolderItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithGroupfolderItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=78', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=79', body);
         return requestInfo;
     }
 }

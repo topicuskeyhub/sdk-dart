@@ -54,6 +54,7 @@ class WithNumberseqItemRequestBuilder extends BaseRequestBuilder<WithNumberseqIt
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
     /// Returns the provision number sequence identified by the id.
@@ -61,7 +62,7 @@ class WithNumberseqItemRequestBuilder extends BaseRequestBuilder<WithNumberseqIt
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithNumberseqItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithNumberseqItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithNumberseqItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
     /// Updates the provision number sequence identified by the id.
@@ -70,8 +71,8 @@ class WithNumberseqItemRequestBuilder extends BaseRequestBuilder<WithNumberseqIt
     RequestInformation toPutRequestInformation(ProvisionNumberSequence body, [void Function(RequestConfiguration<WithNumberseqItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithNumberseqItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithNumberseqItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=78', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=79', body);
         return requestInfo;
     }
 }

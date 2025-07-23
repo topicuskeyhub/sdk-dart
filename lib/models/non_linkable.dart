@@ -29,6 +29,7 @@ import './launchpad/displayed_launchpad_tiles.dart';
 import './license/key_hub_license_info.dart';
 import './mark/item_marker.dart';
 import './mark/item_markers.dart';
+import './misc/attribute_customization.dart';
 import './notification/certificate_expired_notification.dart';
 import './notification/group_audit_required_notification.dart';
 import './notification/group_edit_required_notification.dart';
@@ -126,6 +127,7 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'license.KeyHubLicenseInfo' => KeyHubLicenseInfo(),
             'mark.ItemMarker' => ItemMarker(),
             'mark.ItemMarkers' => ItemMarkers(),
+            'misc.AttributeCustomization' => AttributeCustomization(),
             'notification.CertificateExpiredNotification' => CertificateExpiredNotification(),
             'notification.GroupAuditRequiredNotification' => GroupAuditRequiredNotification(),
             'notification.GroupEditRequiredNotification' => GroupEditRequiredNotification(),
@@ -185,14 +187,14 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = <String, void Function(ParseNode)>{};
-        deserializerMap['Type'] = (node) => type_ = node.getStringValue();
+        deserializerMap['\$type'] = (node) => type_ = node.getStringValue();
         return deserializerMap;
     }
     /// Serializes information the current object
     ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
-        writer.writeStringValue('Type', type_);
+        writer.writeStringValue('\$type', type_);
         writer.writeAdditionalData(additionalData);
     }
 }

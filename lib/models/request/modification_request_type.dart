@@ -21,6 +21,7 @@ enum ModificationRequestType {
     joinVault('JOIN_VAULT'),
     linkDirectoryToAccessProfile('LINK_DIRECTORY_TO_ACCESS_PROFILE'),
     moveGroups('MOVE_GROUPS'),
+    removeAccessProfile('REMOVE_ACCESS_PROFILE'),
     removeGroup('REMOVE_GROUP'),
     removeOrganizationalUnit('REMOVE_ORGANIZATIONAL_UNIT'),
     removeProvisionedSystem('REMOVE_PROVISIONED_SYSTEM'),

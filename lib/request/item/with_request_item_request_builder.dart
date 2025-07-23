@@ -50,7 +50,7 @@ class WithRequestItemRequestBuilder extends BaseRequestBuilder<WithRequestItemRe
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithRequestItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithRequestItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithRequestItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
         return requestInfo;
     }
     /// Updates the modification request identified by the id. Only the status and feedback can be updated and only when the request currently has status 'REQUESTED'.
@@ -59,8 +59,8 @@ class WithRequestItemRequestBuilder extends BaseRequestBuilder<WithRequestItemRe
     RequestInformation toPutRequestInformation(ModificationRequest body, [void Function(RequestConfiguration<WithRequestItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithRequestItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithRequestItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=78');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=78', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=79', body);
         return requestInfo;
     }
 }

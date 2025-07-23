@@ -1,7 +1,7 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../audit_info.dart';
-import '../group/account_groups_wrapper.dart';
+import '../group/account_group_linkable_wrapper_with_count.dart';
 import '../vault/vault.dart';
 import './account_recovery_status.dart';
 import './account_settings.dart';
@@ -17,7 +17,7 @@ class AccountAdditionalObjects implements AdditionalDataHolder, Parsable {
     ///  The audit property
     AuditInfo? audit;
     ///  The groups property
-    AccountGroupsWrapper? groups;
+    AccountGroupLinkableWrapperWithCount? groups;
     ///  The pendingRecoveryRequests property
     AccountRecoveryStatus? pendingRecoveryRequests;
     ///  The settings property
@@ -40,7 +40,7 @@ class AccountAdditionalObjects implements AdditionalDataHolder, Parsable {
         var deserializerMap = <String, void Function(ParseNode)>{};
         deserializerMap['activeLogin'] = (node) => activeLogin = node.getBoolValue();
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
-        deserializerMap['groups'] = (node) => groups = node.getObjectValue<AccountGroupsWrapper>(AccountGroupsWrapper.createFromDiscriminatorValue);
+        deserializerMap['groups'] = (node) => groups = node.getObjectValue<AccountGroupLinkableWrapperWithCount>(AccountGroupLinkableWrapperWithCount.createFromDiscriminatorValue);
         deserializerMap['pendingRecoveryRequests'] = (node) => pendingRecoveryRequests = node.getObjectValue<AccountRecoveryStatus>(AccountRecoveryStatus.createFromDiscriminatorValue);
         deserializerMap['settings'] = (node) => settings = node.getObjectValue<AccountSettings>(AccountSettings.createFromDiscriminatorValue);
         deserializerMap['storedAttributes'] = (node) => storedAttributes = node.getObjectValue<StoredAccountAttributes>(StoredAccountAttributes.createFromDiscriminatorValue);
@@ -52,7 +52,7 @@ class AccountAdditionalObjects implements AdditionalDataHolder, Parsable {
     @override
     void serialize(SerializationWriter writer) {
         writer.writeObjectValue<AuditInfo>('audit', audit);
-        writer.writeObjectValue<AccountGroupsWrapper>('groups', groups);
+        writer.writeObjectValue<AccountGroupLinkableWrapperWithCount>('groups', groups);
         writer.writeObjectValue<AccountRecoveryStatus>('pendingRecoveryRequests', pendingRecoveryRequests);
         writer.writeObjectValue<AccountSettings>('settings', settings);
         writer.writeObjectValue<StoredAccountAttributes>('storedAttributes', storedAttributes);

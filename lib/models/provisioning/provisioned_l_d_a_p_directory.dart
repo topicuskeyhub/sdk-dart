@@ -1,6 +1,7 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../directory/account_directory_primer.dart';
+import '../misc/attribute_customization.dart';
 import './a_d_sam_account_name_scheme.dart';
 import './l_d_a_p_password_hashing_scheme.dart';
 import './l_d_a_p_ssh_public_key_support.dart';
@@ -11,6 +12,8 @@ import './provisioned_system.dart';
 class ProvisionedLDAPDirectory extends ProvisionedSystem implements Parsable {
     ///  The accountsWritable property
     bool? accountsWritable;
+    ///  The attributes property
+    Iterable<AttributeCustomization>? attributes;
     ///  The directory property
     AccountDirectoryPrimer? directory;
     ///  The gid property
@@ -23,6 +26,8 @@ class ProvisionedLDAPDirectory extends ProvisionedSystem implements Parsable {
     LDAPPasswordHashingScheme? hashingScheme;
     ///  The numbering property
     ProvisionNumberSequence? numbering;
+    ///  The objectClasses property
+    String? objectClasses;
     ///  The samAccountNameScheme property
     ADSamAccountNameScheme? samAccountNameScheme;
     ///  The sshPublicKeySupport property
@@ -41,12 +46,14 @@ class ProvisionedLDAPDirectory extends ProvisionedSystem implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['accountsWritable'] = (node) => accountsWritable = node.getBoolValue();
+        deserializerMap['attributes'] = (node) => attributes = node.getCollectionOfObjectValues<AttributeCustomization>(AttributeCustomization.createFromDiscriminatorValue);
         deserializerMap['directory'] = (node) => directory = node.getObjectValue<AccountDirectoryPrimer>(AccountDirectoryPrimer.createFromDiscriminatorValue);
         deserializerMap['gid'] = (node) => gid = node.getIntValue();
         deserializerMap['gidNumbering'] = (node) => gidNumbering = node.getObjectValue<ProvisionNumberSequence>(ProvisionNumberSequence.createFromDiscriminatorValue);
         deserializerMap['groupDN'] = (node) => groupDN = node.getStringValue();
         deserializerMap['hashingScheme'] = (node) => hashingScheme = node.getEnumValue<LDAPPasswordHashingScheme>((stringValue) => LDAPPasswordHashingScheme.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['numbering'] = (node) => numbering = node.getObjectValue<ProvisionNumberSequence>(ProvisionNumberSequence.createFromDiscriminatorValue);
+        deserializerMap['objectClasses'] = (node) => objectClasses = node.getStringValue();
         deserializerMap['samAccountNameScheme'] = (node) => samAccountNameScheme = node.getEnumValue<ADSamAccountNameScheme>((stringValue) => ADSamAccountNameScheme.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['sshPublicKeySupport'] = (node) => sshPublicKeySupport = node.getEnumValue<LDAPSshPublicKeySupport>((stringValue) => LDAPSshPublicKeySupport.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         return deserializerMap;
@@ -57,12 +64,14 @@ class ProvisionedLDAPDirectory extends ProvisionedSystem implements Parsable {
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeBoolValue('accountsWritable', value:accountsWritable);
+        writer.writeCollectionOfObjectValues<AttributeCustomization>('attributes', attributes);
         writer.writeObjectValue<AccountDirectoryPrimer>('directory', directory);
         writer.writeIntValue('gid', gid);
         writer.writeObjectValue<ProvisionNumberSequence>('gidNumbering', gidNumbering);
         writer.writeStringValue('groupDN', groupDN);
         writer.writeEnumValue<LDAPPasswordHashingScheme>('hashingScheme', hashingScheme, (e) => e?.value);
         writer.writeObjectValue<ProvisionNumberSequence>('numbering', numbering);
+        writer.writeStringValue('objectClasses', objectClasses);
         writer.writeEnumValue<ADSamAccountNameScheme>('samAccountNameScheme', samAccountNameScheme, (e) => e?.value);
         writer.writeEnumValue<LDAPSshPublicKeySupport>('sshPublicKeySupport', sshPublicKeySupport, (e) => e?.value);
     }

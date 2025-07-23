@@ -1,8 +1,8 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../certificate/certificate_primer.dart';
+import '../misc/attribute_customization.dart';
 import '../t_l_s_level.dart';
-import './abstract_provisioned_l_d_a_p_attributes.dart';
 import './l_d_a_p_ssh_public_key_support.dart';
 import './provisioned_a_d.dart';
 import './provisioned_l_d_a_p.dart';
@@ -11,7 +11,7 @@ import './provisioned_system.dart';
 /// auto generated
 class AbstractProvisionedLDAP extends ProvisionedSystem implements Parsable {
     ///  The attributes property
-    AbstractProvisionedLDAPAttributes? attributes;
+    Iterable<AttributeCustomization>? attributes;
     ///  The baseDN property
     String? baseDN;
     ///  The bindDN property
@@ -60,7 +60,7 @@ class AbstractProvisionedLDAP extends ProvisionedSystem implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
-        deserializerMap['attributes'] = (node) => attributes = node.getObjectValue<AbstractProvisionedLDAPAttributes>(AbstractProvisionedLDAPAttributes.createFromDiscriminatorValue);
+        deserializerMap['attributes'] = (node) => attributes = node.getCollectionOfObjectValues<AttributeCustomization>(AttributeCustomization.createFromDiscriminatorValue);
         deserializerMap['baseDN'] = (node) => baseDN = node.getStringValue();
         deserializerMap['bindDN'] = (node) => bindDN = node.getStringValue();
         deserializerMap['bindPassword'] = (node) => bindPassword = node.getStringValue();
@@ -83,7 +83,7 @@ class AbstractProvisionedLDAP extends ProvisionedSystem implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
-        writer.writeObjectValue<AbstractProvisionedLDAPAttributes>('attributes', attributes);
+        writer.writeCollectionOfObjectValues<AttributeCustomization>('attributes', attributes);
         writer.writeStringValue('baseDN', baseDN);
         writer.writeStringValue('bindDN', bindDN);
         writer.writeStringValue('bindPassword', bindPassword);

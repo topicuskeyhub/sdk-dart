@@ -28,7 +28,7 @@ class DeletedVaultHolder extends Linkable implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<DeletedVaultHolderAdditionalObjects>(DeletedVaultHolderAdditionalObjects.createFromDiscriminatorValue);
-        deserializerMap['DeletedVaultHolderType'] = (node) => deletedVaultHolderType = node.getEnumValue<VaultHolderType>((stringValue) => VaultHolderType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['type'] = (node) => deletedVaultHolderType = node.getEnumValue<VaultHolderType>((stringValue) => VaultHolderType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['name'] = (node) => name = node.getStringValue();
         deserializerMap['recordCount'] = (node) => recordCount = node.getIntValue();
         return deserializerMap;
@@ -39,7 +39,7 @@ class DeletedVaultHolder extends Linkable implements Parsable {
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<DeletedVaultHolderAdditionalObjects>('additionalObjects', additionalObjects);
-        writer.writeEnumValue<VaultHolderType>('DeletedVaultHolderType', deletedVaultHolderType, (e) => e?.value);
+        writer.writeEnumValue<VaultHolderType>('type', deletedVaultHolderType, (e) => e?.value);
         writer.writeStringValue('name', name);
     }
 }

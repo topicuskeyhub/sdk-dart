@@ -34,7 +34,7 @@ class GroupOnSystemPrimer extends Linkable implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['displayName'] = (node) => displayName = node.getStringValue();
-        deserializerMap['GroupOnSystemPrimerType'] = (node) => groupOnSystemPrimerType = node.getEnumValue<GroupOnSystemType>((stringValue) => GroupOnSystemType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['type'] = (node) => groupOnSystemPrimerType = node.getEnumValue<GroupOnSystemType>((stringValue) => GroupOnSystemType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['nameInSystem'] = (node) => nameInSystem = node.getStringValue();
         deserializerMap['shortNameInSystem'] = (node) => shortNameInSystem = node.getStringValue();
         return deserializerMap;
@@ -44,7 +44,7 @@ class GroupOnSystemPrimer extends Linkable implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
-        writer.writeEnumValue<GroupOnSystemType>('GroupOnSystemPrimerType', groupOnSystemPrimerType, (e) => e?.value);
+        writer.writeEnumValue<GroupOnSystemType>('type', groupOnSystemPrimerType, (e) => e?.value);
         writer.writeStringValue('nameInSystem', nameInSystem);
     }
 }

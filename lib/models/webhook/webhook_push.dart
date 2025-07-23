@@ -88,7 +88,7 @@ class WebhookPush extends NonLinkable implements Parsable {
         deserializerMap['timestamp'] = (node) => timestamp = node.getDateTimeValue();
         deserializerMap['vaultRecord'] = (node) => vaultRecord = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['webhook'] = (node) => webhook = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
-        deserializerMap['WebhookPushType'] = (node) => webhookPushType = node.getEnumValue<AuditRecordType>((stringValue) => AuditRecordType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['type'] = (node) => webhookPushType = node.getEnumValue<AuditRecordType>((stringValue) => AuditRecordType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -118,6 +118,6 @@ class WebhookPush extends NonLinkable implements Parsable {
         writer.writeDateTimeValue('timestamp', timestamp);
         writer.writeObjectValue<WebhookNameUuid>('vaultRecord', vaultRecord);
         writer.writeObjectValue<WebhookNameUuid>('webhook', webhook);
-        writer.writeEnumValue<AuditRecordType>('WebhookPushType', webhookPushType, (e) => e?.value);
+        writer.writeEnumValue<AuditRecordType>('type', webhookPushType, (e) => e?.value);
     }
 }

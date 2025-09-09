@@ -42,7 +42,7 @@ class AccessprofileclientRequestBuilder extends BaseRequestBuilder<Accessprofile
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AccessprofileclientRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AccessprofileclientRequestBuilderGetQueryParameters>(requestConfiguration, () => AccessprofileclientRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
         return requestInfo;
     }
 }

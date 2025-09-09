@@ -42,7 +42,7 @@ class PermissionRequestBuilder extends BaseRequestBuilder<PermissionRequestBuild
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<PermissionRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<PermissionRequestBuilderGetQueryParameters>(requestConfiguration, () => PermissionRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
         return requestInfo;
     }
 }

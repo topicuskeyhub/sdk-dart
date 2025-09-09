@@ -301,6 +301,9 @@
               "AuditRecordType#TRANSFER_SERVICE_ACCOUNT_ADMINISTRATION_ACCEPTED": "Transfer ownership of service account - Approved",
               "AuditRecordType#ENABLE_TECHNICAL_ADMINISTRATION_REQUESTED": "Enable technical administration - Requested",
               "AuditRecordType#TRANSFER_PROVISIONED_SYSTEM_ADMINISTRATION_DECLINED": "Transfer administration of linked system - Declined",
+              "GroupAuditAccount#comment": {
+                "label": "Comments"
+              },
               "AuditRecordType#ACCOUNT_GROUP_ACTIVATED": "Account - Group activated",
               "AuditRecordType#CLIENT_ADDED_TO_ORGANIZATIONAL_UNIT": "Application - Added to an organisational unit",
               "AuditRecordType#CREATE_PROVISIONED_NAMESPACE_DECLINED": "Create namespace - Declined",
@@ -319,8 +322,11 @@
               "AuditRecordType#DISABLE_2FA_ACCEPTED": "Disable 2FA - Approved",
               "AuditAccountAction": {
                 "executed#CHANGE_TO_MANAGER": "Granted management privileges",
+                "executed#ADDED": "Added",
                 "executed#REMOVE": "Removed from group",
+                "executed#ADD_AS_MANAGER": "Added as manager",
                 "executed#CONNECT_NESTED": "Converted to nested",
+                "executed#ADD_AS_NORMAL": "Added as member",
                 "executed#CHANGE_TO_NORMAL": "Revoked management privileges",
                 "executed#APPROVE": "Approved"
               },
@@ -382,6 +388,9 @@
               "AuditRecordType#DIRECTORY_CREATED": "Directory - Created",
               "AuditRecordType#WEBHOOK_REMOVED": "Webhook - Removed",
               "AuditRecordType#ACCOUNT_DEPROVISIONED": "Account - Disabled on linked system",
+              "GroupAuditAccount#account": {
+                "label": "Account"
+              },
               "AuditRecordType#UPDATE_LICENSE_ACCEPTED": "Update the license - Approved",
               "AuditRecordType#VAULT_ACCESS_RESTORED": "Vault - Access restored",
               "AuditRecordType#ACCOUNT_ADDED_TO_ORGANIZATIONAL_UNIT": "Account - Added to an organisational unit",
@@ -413,6 +422,7 @@
               "AuditRequiredSourceType#REQUESTED": "Requested",
               "AuditRecordType#TRANSFER_PROVISIONED_SYSTEM_OWNERSHIP_ACCEPTED": "Transfer ownership of linked system - Approved",
               "AuditRecordType#CREATE_GROUP_ON_SYSTEM_DECLINED": "Create group on system - Declined",
+              "AuditAccountAction#ADD_AS_NORMAL": "Add member",
               "AuditRecordType#GRANT_GROUP_ON_SYSTEM_REQUEST_DECLINED": "Request access to group on linked system - Declined",
               "AuditRecordType#REMOVE_ORGANIZATIONAL_UNIT_REQUESTED": "Remove organisational unit - Requested",
               "AuditRecordType#CREATE_GROUP_ON_SYSTEM_REQUESTED": "Create group on System - Requested",
@@ -438,6 +448,7 @@
               "AuditRecordType#GROUP_AUDIT_REQUESTED": "Group Audit - Requested",
               "AuditRecordType#ACCESS_PROFILE_MODIFIED": "Access profile - Modified",
               "AuditAccountAction#CONNECT_NESTED": "Convert to nested",
+              "AuditAccountAction#ADD_AS_MANAGER": "Add manager",
               "AuditRecordType#INTERNAL_ACCOUNT_REMOVED": "Internal account - Removed",
               "AuditRecordType#CREATE_GROUP_ACCEPTED": "Create group - Approved",
               "AuditRecordType#ACCOUNT_TOTP_OFFSET_CHANGED": "Account - TOTP offset changed",
@@ -514,6 +525,9 @@
               "AuditRecordType#ACCOUNT_MODIFIED_FOR_ACCESS_PROFILE": "Account - Membership of access profile modified",
               "AuditRecordType#ADD_GROUP_ADMIN_ACCEPTED": "Add group manager - Approved",
               "AuditRecordType#RESET_PASSWORD_REQUESTED": "Recover password - Requested",
+              "GroupAuditAccount#rights": {
+                "label": "Privileges"
+              },
               "AuditRequiredSourceType#CONFORM": "Conform",
               "AuditRecordType#ENABLE_PROFILE_ADMINISTRATION_REQUESTED": "Enable access profile administration - Requested",
               "AuditRecordType#VAULT_RECORD_CREATED": "Vault - Record created",
@@ -688,6 +702,9 @@
               "ModificationRequestType#TRANSFER_PROVISIONED_SYSTEM_ADMINISTRATION": "TRANSFER ADMIN",
               "ModificationRequestReportChange#ACCESS_PROFILE_PROVISIONING_REMOVED_OUT_OF_SCOPE": "The group on system {0} is no longer visible for the access profile {1} after being moved, and therefore access is being removed.",
               "ModificationRequestType#DISABLE_2FA": "DISABLE 2FA",
+              "ModificationRequestReport#conclusion": {
+                "label": "Conclusion"
+              },
               "ModificationRequestReportChange#ORGANIZATIONAL_UNIT_REMOVED": "These organisational units will be removed.",
               "ModificationRequestReportChange#SYSTEM_ACCOUNTS_WRITABLE_DISABLED": "'Accounts writable' will be disabled for these linked systems.",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_GROUP_REMOVED_OWNER": "The group on system {0} moves with this group and therefore the service account {1} loses access.",
@@ -1669,6 +1686,9 @@
                 "label": "User ID (uid) sequence",
                 "description": "Choose an existing number sequence for UIDs or start a new sequence."
               },
+              "ProvisionedSCIM#customHeaderValue": {
+                "label": "Header value"
+              },
               "ProvisionedSystem#cleanupPeriod": {
                 "description": "Specify after which period accounts must be cleaned up. Use 'd' for days, 'w' for weeks', 'm' for months and 'y' for years, for example '2w'.",
                 "label": "Remove accounts after"
@@ -1764,6 +1784,9 @@
               "ProvisionedSCIMVendor#KEYSTONE": "Keystone",
               "ProvisionedNamespace#baseSystem": {
                 "label": "Base system"
+              },
+              "ProvisionedSCIM#customHeaderName": {
+                "label": "Header name"
               },
               "ADSamAccountNameScheme#OMIT": "Omit - The AD chooses a random value.",
               "GroupOnSystemType#GROUP_UNIVERSAL_SECURITY": "group (universal security)",
@@ -2186,7 +2209,7 @@
               "VaultRecord#holder": {
                 "label": "Vault"
               },
-              "MoveVaultRecordAction#SHARE": "Share",
+              "MoveVaultRecordAction#SHARE": "Share with",
               "VaultRecordWarningPeriod#AT_EXPIRATION": "Don't remind me in advance",
               "VaultRecord#totp": {
                 "description": "Save a TOTP/2FA key to automatically generate 6 digit codes for 2FA. This key is often shown together with a QR code when pairing 2FA.",
@@ -2195,6 +2218,10 @@
               "VaultRecordPrimer#name": {
                 "placeholder": "(required)",
                 "label": "Name"
+              },
+              "MoveVaultRecord#shareEndDate": {
+                "description": "After this date the vault record is automatically removed from the target vault.",
+                "label": "Share through a specific date"
               },
               "VaultRecordColor#GREEN": "Green",
               "MoveVaultRecord#shareDuration": {
@@ -2209,10 +2236,10 @@
               "VaultRecovery#account": {
                 "label": "User"
               },
-              "MoveVaultRecordAction#MOVE": "Move",
+              "MoveVaultRecordAction#MOVE": "Move to",
               "VaultRecordColor#RED": "Red",
               "MoveVaultRecord#target": {
-                "label": "Target"
+                "label": "Destination"
               },
               "VaultUnlock#password": {
                 "placeholder": "* * *"
@@ -2273,12 +2300,15 @@
               "VaultRecordColor#DARK": "Dark",
               "VaultRecordColor#NONE": "No color",
               "VaultRecordColor#BLUE": "Blue",
-              "MoveVaultRecordAction#COPY": "Copy",
+              "MoveVaultRecordAction#COPY": "Copy to",
               "VaultRecord#username": {
                 "label": "Username"
               },
               "VaultRecord#password": {
                 "label": "Password/secret"
+              },
+              "MoveVaultRecord#useCustomDuration": {
+                "label": "Validity period"
               },
               "MoveVaultRecord#group": {
                 "label": "Group"
@@ -4316,6 +4346,7 @@
       "opslaanmetfouten": "Save with errors",
       "movegroups": "Move groups",
       "search": "Search",
+      "copy": "Copy",
       "approve": "Approve",
       "clear": "Clear",
       "registermanual": "Register manually",
@@ -4348,6 +4379,7 @@
       "share": "Share",
       "toevoegen": "Add",
       "revoke": "Revoke access",
+      "move": "Move",
       "review": "Review",
       "view": "View",
       "sync": {
@@ -6042,7 +6074,8 @@
       "definition": "Choose an attribute definition...",
       "usescript": "Run the script below...",
       "add": "Add attribute",
-      "name": "Attribute name"
+      "name": "Attribute name",
+      "selectname": "Select an attribute..."
     },
     "oauth2": {
       "sso": "Code and implicit grants - Account authentication (SSO)",
@@ -6606,7 +6639,7 @@
       "sent": "E-mail sent"
     },
     "nestedgroups": {
-      "header": "Nested groups",
+      "header": "Nested group",
       "inherited": "This user is inherited from the parent group."
     },
     "segment": {
@@ -7127,6 +7160,10 @@
           "true": "Group",
           "false": "Personal vault"
         },
+        "useCustomDuration": {
+          "true": "Specific date",
+          "false": "Fixed period"
+        },
         "info": "Choose a destination vault for {0}."
       },
       "shared": {
@@ -7459,7 +7496,7 @@
       "nrAccounts": "{0} account(s)",
       "nrClients": "{0} application(s)"
     },
-    "mailadmin": "Mail manager",
+    "mailadmin": "Mail managers",
     "application": {
       "bewerken": {
         "subtitle": "Select the options for accessing the application through this group.",

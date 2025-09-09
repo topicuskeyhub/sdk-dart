@@ -53,7 +53,7 @@ class AttributeruleRequestBuilder extends BaseRequestBuilder<AttributeruleReques
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AttributeruleRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AttributeruleRequestBuilderGetQueryParameters>(requestConfiguration, () => AttributeruleRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
         return requestInfo;
     }
     /// Creates one or more new account attribute rules and returns the newly created account attribute rules.
@@ -62,8 +62,8 @@ class AttributeruleRequestBuilder extends BaseRequestBuilder<AttributeruleReques
     RequestInformation toPostRequestInformation(AccountAttributeRuleLinkableWrapper body, [void Function(RequestConfiguration<AttributeruleRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AttributeruleRequestBuilderPostQueryParameters>(requestConfiguration, () => AttributeruleRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=79', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=80', body);
         return requestInfo;
     }
 }

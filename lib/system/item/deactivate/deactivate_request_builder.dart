@@ -33,7 +33,7 @@ class DeactivateRequestBuilder extends BaseRequestBuilder<DeactivateRequestBuild
     RequestInformation toPostRequestInformation([void Function(RequestConfiguration<DeactivateRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DeactivateRequestBuilderPostQueryParameters>(requestConfiguration, () => DeactivateRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
         return requestInfo;
     }
 }

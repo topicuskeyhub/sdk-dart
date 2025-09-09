@@ -68,7 +68,7 @@ class ServiceaccountRequestBuilder extends BaseRequestBuilder<ServiceaccountRequ
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ServiceaccountRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ServiceaccountRequestBuilderGetQueryParameters>(requestConfiguration, () => ServiceaccountRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
         return requestInfo;
     }
     /// Creates one or more new service accounts and returns the newly created service accounts.
@@ -77,8 +77,8 @@ class ServiceaccountRequestBuilder extends BaseRequestBuilder<ServiceaccountRequ
     RequestInformation toPostRequestInformation(ServiceAccountLinkableWrapper body, [void Function(RequestConfiguration<ServiceaccountRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ServiceaccountRequestBuilderPostQueryParameters>(requestConfiguration, () => ServiceaccountRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=79', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=80', body);
         return requestInfo;
     }
 }

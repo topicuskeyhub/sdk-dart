@@ -21,6 +21,8 @@ class ProvisionedSystemPrimer extends Linkable implements Parsable {
     bool? active;
     ///  The adminPermissions property
     bool? adminPermissions;
+    ///  The canWriteAccounts property
+    bool? canWriteAccounts;
     ///  The contentAdminPermissions property
     bool? contentAdminPermissions;
     ///  The name property
@@ -62,6 +64,7 @@ class ProvisionedSystemPrimer extends Linkable implements Parsable {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['active'] = (node) => active = node.getBoolValue();
         deserializerMap['adminPermissions'] = (node) => adminPermissions = node.getBoolValue();
+        deserializerMap['canWriteAccounts'] = (node) => canWriteAccounts = node.getBoolValue();
         deserializerMap['contentAdminPermissions'] = (node) => contentAdminPermissions = node.getBoolValue();
         deserializerMap['name'] = (node) => name = node.getStringValue();
         deserializerMap['organizationalUnit'] = (node) => organizationalUnit = node.getObjectValue<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);

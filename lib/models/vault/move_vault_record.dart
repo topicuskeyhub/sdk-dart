@@ -15,6 +15,8 @@ class MoveVaultRecord extends NonLinkable implements Parsable {
     GroupPrimer? group;
     ///  The shareDuration property
     Duration? shareDuration;
+    ///  The shareEndDate property
+    DateOnly? shareEndDate;
     /// Instantiates a new [MoveVaultRecord] and sets the default values.
     MoveVaultRecord() : super() {
         type_ = 'vault.MoveVaultRecord';
@@ -32,6 +34,7 @@ class MoveVaultRecord extends NonLinkable implements Parsable {
         deserializerMap['action'] = (node) => action = node.getEnumValue<MoveVaultRecordAction>((stringValue) => MoveVaultRecordAction.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['group'] = (node) => group = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         deserializerMap['shareDuration'] = (node) => shareDuration = node.getDurationValue();
+        deserializerMap['shareEndDate'] = (node) => shareEndDate = node.getDateOnlyValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -43,5 +46,6 @@ class MoveVaultRecord extends NonLinkable implements Parsable {
         writer.writeEnumValue<MoveVaultRecordAction>('action', action, (e) => e?.value);
         writer.writeObjectValue<GroupPrimer>('group', group);
         writer.writeDurationValue('shareDuration', shareDuration);
+        writer.writeDateOnlyValue('shareEndDate', shareEndDate);
     }
 }

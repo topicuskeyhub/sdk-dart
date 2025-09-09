@@ -54,7 +54,7 @@ class WithAttributedefItemRequestBuilder extends BaseRequestBuilder<WithAttribut
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
         return requestInfo;
     }
     /// Returns the account attribute definition identified by the id.
@@ -62,7 +62,7 @@ class WithAttributedefItemRequestBuilder extends BaseRequestBuilder<WithAttribut
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithAttributedefItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithAttributedefItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithAttributedefItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
         return requestInfo;
     }
     /// Updates the account attribute definition identified by the id.
@@ -71,8 +71,8 @@ class WithAttributedefItemRequestBuilder extends BaseRequestBuilder<WithAttribut
     RequestInformation toPutRequestInformation(AccountAttributeDefinition body, [void Function(RequestConfiguration<WithAttributedefItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithAttributedefItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithAttributedefItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=79');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=79', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=80', body);
         return requestInfo;
     }
 }

@@ -292,7 +292,7 @@
               "AccessProfileAccountActivation#FORCE_ACTIVE": "Aktiv (manuell überschrieben)"
             },
             "audit": {
-              "AuditAccountAction#CHANGE_TO_MANAGER": "Verwaltungsprivilegien erteilen",
+              "AuditAccountAction#CHANGE_TO_MANAGER": "Managerrechte erteilen",
               "AuditRecordType#TRANSFER_ACCESS_PROFILE_OWNERSHIP_DECLINED": "Verantwortung der Zugriffsprofil übertragen - Abgelehnt",
               "AuditRecordType#TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP_REQUESTED": "Verantwortung der Gruppe im System übertragen - Beantragt",
               "AuditRecordType#SERVICE_ACCOUNT_MODIFIED": "Dienstkonto - Bearbeitet",
@@ -301,6 +301,9 @@
               "AuditRecordType#TRANSFER_SERVICE_ACCOUNT_ADMINISTRATION_ACCEPTED": "Verwaltung des Dienstkontos übertragen - Genehmigt",
               "AuditRecordType#ENABLE_TECHNICAL_ADMINISTRATION_REQUESTED": "Technische Verwaltung einschalten - Beantragt",
               "AuditRecordType#TRANSFER_PROVISIONED_SYSTEM_ADMINISTRATION_DECLINED": "Verwaltung des gekoppelten Systems übertragen - Abgelehnt",
+              "GroupAuditAccount#comment": {
+                "label": "Anmerkungen"
+              },
               "AuditRecordType#ACCOUNT_GROUP_ACTIVATED": "Konto - Gruppe aktiviert",
               "AuditRecordType#CLIENT_ADDED_TO_ORGANIZATIONAL_UNIT": "Anwendung - Einer Organisationseinheit hinzugefügt",
               "AuditRecordType#CREATE_PROVISIONED_NAMESPACE_DECLINED": "Namespace erstellen - Abgelehnt",
@@ -319,8 +322,11 @@
               "AuditRecordType#DISABLE_2FA_ACCEPTED": "2FA deaktivieren - Genehmigt",
               "AuditAccountAction": {
                 "executed#CHANGE_TO_MANAGER": "Verwaltungsprivilegien erteilt",
+                "executed#ADDED": "Hinzugefügt",
                 "executed#REMOVE": "Aus der Gruppe entfernt",
+                "executed#ADD_AS_MANAGER": "Als Manager hinzugefügt",
                 "executed#CONNECT_NESTED": "Konvertiert in verschachtelt",
+                "executed#ADD_AS_NORMAL": "Als Mitglied hinzugefügt",
                 "executed#CHANGE_TO_NORMAL": "Widerruf von Verwaltungsberechtigungen",
                 "executed#APPROVE": "Genehmigt"
               },
@@ -382,6 +388,9 @@
               "AuditRecordType#DIRECTORY_CREATED": "Verzeichnis - Erstellt",
               "AuditRecordType#WEBHOOK_REMOVED": "Webhook - Gelöscht",
               "AuditRecordType#ACCOUNT_DEPROVISIONED": "Konto – Auf gekoppelten System deaktiviert",
+              "GroupAuditAccount#account": {
+                "label": "Konto"
+              },
               "AuditRecordType#UPDATE_LICENSE_ACCEPTED": "Die Lizenz ändern - Genehmigt",
               "AuditRecordType#VAULT_ACCESS_RESTORED": "Safe - Zugriff wiederhergestellt",
               "AuditRecordType#ACCOUNT_ADDED_TO_ORGANIZATIONAL_UNIT": "Konto - Einer Organisationseinheit hinzugefügt",
@@ -413,6 +422,7 @@
               "AuditRequiredSourceType#REQUESTED": "Beantragt",
               "AuditRecordType#TRANSFER_PROVISIONED_SYSTEM_OWNERSHIP_ACCEPTED": "Verantwortung der gekoppelten Systems übertragen - Genehmigt",
               "AuditRecordType#CREATE_GROUP_ON_SYSTEM_DECLINED": "Gruppe im System erstellen - Abgelehnt",
+              "AuditAccountAction#ADD_AS_NORMAL": "Mitglied hinzufügen",
               "AuditRecordType#GRANT_GROUP_ON_SYSTEM_REQUEST_DECLINED": "Zugriff auf Gruppe im gekoppeltem System beantragen - Abgelehnt",
               "AuditRecordType#REMOVE_ORGANIZATIONAL_UNIT_REQUESTED": "Organisationseinheit löschen - Beantragt",
               "AuditRecordType#CREATE_GROUP_ON_SYSTEM_REQUESTED": "Gruppe im System erstellen - Beantragt",
@@ -438,6 +448,7 @@
               "AuditRecordType#GROUP_AUDIT_REQUESTED": "Gruppenprüfung - Angefordert",
               "AuditRecordType#ACCESS_PROFILE_MODIFIED": "Zugriffsprofil - Bearbeitet",
               "AuditAccountAction#CONNECT_NESTED": "Konvertieren in verschachtelt",
+              "AuditAccountAction#ADD_AS_MANAGER": "Manager hinzufügen",
               "AuditRecordType#INTERNAL_ACCOUNT_REMOVED": "Internes Konto - Gelöscht",
               "AuditRecordType#CREATE_GROUP_ACCEPTED": "Gruppe erstellen - Genehmigt",
               "AuditRecordType#ACCOUNT_TOTP_OFFSET_CHANGED": "Konto - TOTP-Offset geändert",
@@ -499,7 +510,7 @@
               "AuditRecordType#GROUP_NESTING_DISCONNECTED": "Gruppe - Verknüpfte verschachtelte Gruppe aufgehoben",
               "AuditRecordType#VAULT_RECORD_REMOVED": "Safe - Eintrag gelöscht",
               "AuditRecordType#CLIENT_PERMISSION_REVOKED": "Anwendung - Berechtigung widerrufen",
-              "AuditAccountAction#CHANGE_TO_NORMAL": "Verwaltungsprivilegien widerrufen",
+              "AuditAccountAction#CHANGE_TO_NORMAL": "Managerrechte widerrufen",
               "AuditRecordType#PROVISIONED_SYSTEM_REMOVED_FROM_GROUP": "Gekoppeltes System - Aus der Gruppe entfernt",
               "AuditRecordType#ACCESS_PROFILE_CREATED": "Zugriffsprofil - Erstellt",
               "AuditRecordType#ACCOUNT_REMOVED_FROM_GROUP": "Konto - Aus einer Gruppe entfernt",
@@ -514,6 +525,9 @@
               "AuditRecordType#ACCOUNT_MODIFIED_FOR_ACCESS_PROFILE": "Konto - Zugriffsprofilmitgliedschaft bearbeitet",
               "AuditRecordType#ADD_GROUP_ADMIN_ACCEPTED": "Gruppenmanager hinzufügen - Genehmigt",
               "AuditRecordType#RESET_PASSWORD_REQUESTED": "Passwort wiederherstellen - Abgeschlossen",
+              "GroupAuditAccount#rights": {
+                "label": "Rechte"
+              },
               "AuditRequiredSourceType#CONFORM": "Konformieren",
               "AuditRecordType#ENABLE_PROFILE_ADMINISTRATION_REQUESTED": "Zugriffsprofilverwaltung einschalten - Beantragt",
               "AuditRecordType#VAULT_RECORD_CREATED": "Safe - Eintrag erstellt",
@@ -688,6 +702,9 @@
               "ModificationRequestType#TRANSFER_PROVISIONED_SYSTEM_ADMINISTRATION": "VERWALTUNG ÜBERGEBEN",
               "ModificationRequestReportChange#ACCESS_PROFILE_PROVISIONING_REMOVED_OUT_OF_SCOPE": "Nach dem Verschieben ist die Gruppe im System {0} für das Zugriffsprofil {1} nicht mehr sichtbar und daher wird der Zugriff entfernt.",
               "ModificationRequestType#DISABLE_2FA": "DEAKTIVIERE 2FA",
+              "ModificationRequestReport#conclusion": {
+                "label": "Abschluss"
+              },
               "ModificationRequestReportChange#ORGANIZATIONAL_UNIT_REMOVED": "Diese Organisationseinheiten werden gelöscht.",
               "ModificationRequestReportChange#SYSTEM_ACCOUNTS_WRITABLE_DISABLED": "'Konten beschreibbar' wird für diese verknüpften Systeme deaktiviert.",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_GROUP_REMOVED_OWNER": "Die Gruppe im System {0} wird mit dieser Gruppe verschoben und daher verliert das Dienstkonto {1} den Zugriff.",
@@ -1669,6 +1686,9 @@
                 "label": "User ID (uid) Nummernfolge",
                 "description": "Wählen Sie eine vorhandene Nummernfolge für UIDs oder starten Sie eine neue Nummernfolge."
               },
+              "ProvisionedSCIM#customHeaderValue": {
+                "label": "Header-Wert"
+              },
               "ProvisionedSystem#cleanupPeriod": {
                 "description": "Geben Sie an, nach welchem ​​Zeitraum die Konten ausgeglichen werden müssen. Verwenden Sie 'd' für Tage, 'w' für Wochen, 'm' für Monate und 'y' für Jahre, zum Beispiel '2w'.",
                 "label": "Konten entfernen nach"
@@ -1764,6 +1784,9 @@
               "ProvisionedSCIMVendor#KEYSTONE": "Keystone",
               "ProvisionedNamespace#baseSystem": {
                 "label": "Basissystem"
+              },
+              "ProvisionedSCIM#customHeaderName": {
+                "label": "Headername"
               },
               "ADSamAccountNameScheme#OMIT": "Auslassen - Der AD wählt einen zufälligen Wert.",
               "GroupOnSystemType#GROUP_UNIVERSAL_SECURITY": "group (universal security)",
@@ -2186,7 +2209,7 @@
               "VaultRecord#holder": {
                 "label": "Safe"
               },
-              "MoveVaultRecordAction#SHARE": "Teilen",
+              "MoveVaultRecordAction#SHARE": "Teilen mit",
               "VaultRecordWarningPeriod#AT_EXPIRATION": "Erinnere mich nicht im Voraus",
               "VaultRecord#totp": {
                 "description": "Speichern Sie einen TOTP/2FA-Schlüssel, um automatisch 6-stellige Codes für 2FA zu generieren. Dieser Schlüssel wird beim Pairing von 2FA häufig zusammen mit einem QR-Code angezeigt.",
@@ -2195,6 +2218,10 @@
               "VaultRecordPrimer#name": {
                 "placeholder": "(erforderlich)",
                 "label": "Name"
+              },
+              "MoveVaultRecord#shareEndDate": {
+                "description": "Nach diesem Datum wird der Tresordatensatz automatisch aus dem Zieltresor entfernt.",
+                "label": "Teilen bis einschließlich eines bestimmten Datums"
               },
               "VaultRecordColor#GREEN": "Grün",
               "MoveVaultRecord#shareDuration": {
@@ -2209,7 +2236,7 @@
               "VaultRecovery#account": {
                 "label": "Benutzer"
               },
-              "MoveVaultRecordAction#MOVE": "Verschieben",
+              "MoveVaultRecordAction#MOVE": "Verschieben nach",
               "VaultRecordColor#RED": "Rot",
               "MoveVaultRecord#target": {
                 "label": "Ziel"
@@ -2273,12 +2300,15 @@
               "VaultRecordColor#DARK": "Dunkel",
               "VaultRecordColor#NONE": "Keine Farbe",
               "VaultRecordColor#BLUE": "Blau",
-              "MoveVaultRecordAction#COPY": "Kopieren",
+              "MoveVaultRecordAction#COPY": "Kopieren in",
               "VaultRecord#username": {
                 "label": "Benutzername"
               },
               "VaultRecord#password": {
                 "label": "Passwort/Secret"
+              },
+              "MoveVaultRecord#useCustomDuration": {
+                "label": "Gültigkeitsdauer"
               },
               "MoveVaultRecord#group": {
                 "label": "Gruppe"
@@ -4316,6 +4346,7 @@
       "opslaanmetfouten": "Fehlerhaft speichern",
       "movegroups": "Gruppen verschieben",
       "search": "Suchen",
+      "copy": "Kopieren",
       "approve": "Genehmigen",
       "clear": "Löschen",
       "registermanual": "Manuell registrieren",
@@ -4348,6 +4379,7 @@
       "share": "Teilen",
       "toevoegen": "Hinzufügen",
       "revoke": "Zugang entziehen",
+      "move": "Verschieben",
       "review": "Überprüfen",
       "view": "Anzeigen",
       "sync": {
@@ -6042,7 +6074,8 @@
       "definition": "Wählen Sie eine Attributdefinition...",
       "usescript": "Den nachfolgenden Skript ausführen...",
       "add": "Hinzufügen",
-      "name": "Name"
+      "name": "Name",
+      "selectname": "Wählen Sie ein Attribut..."
     },
     "oauth2": {
       "sso": "Code und implict grants - Konto-Authentifizierung (SSO)",
@@ -6606,7 +6639,7 @@
       "sent": "E-Mail gesendet"
     },
     "nestedgroups": {
-      "header": "Verschachtelte Gruppen",
+      "header": "Verschachtelte Gruppe",
       "inherited": "Dieser Benutzer wurde von der übergeordneten Gruppe geerbt."
     },
     "segment": {
@@ -7127,6 +7160,10 @@
           "true": "Gruppe",
           "false": "Persönlicher Safe"
         },
+        "useCustomDuration": {
+          "true": "Spezifisches Datum",
+          "false": "Fester Zeitraum"
+        },
         "info": "Wählen Sie das Zielsafe für {0}."
       },
       "shared": {
@@ -7459,7 +7496,7 @@
       "nrAccounts": "{0} Konto / Konten",
       "nrClients": "{0} Anwendung(en)"
     },
-    "mailadmin": "E-Mail Manager",
+    "mailadmin": "E-Mail die Manager",
     "application": {
       "bewerken": {
         "subtitle": "Wählen Sie die Optionen für den Zugriff auf die Anwendung über diese Gruppe aus.",

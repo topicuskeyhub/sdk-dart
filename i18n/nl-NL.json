@@ -301,6 +301,9 @@
               "AuditRecordType#TRANSFER_SERVICE_ACCOUNT_ADMINISTRATION_ACCEPTED": "Draag beheer van serviceaccount over - Goedgekeurd",
               "AuditRecordType#ENABLE_TECHNICAL_ADMINISTRATION_REQUESTED": "Technisch beheer inschakelen - Aangevraagd",
               "AuditRecordType#TRANSFER_PROVISIONED_SYSTEM_ADMINISTRATION_DECLINED": "Draag beheer van gekoppeld systeem over - Afgewezen",
+              "GroupAuditAccount#comment": {
+                "label": "Opmerkingen"
+              },
               "AuditRecordType#ACCOUNT_GROUP_ACTIVATED": "Account - Groep geactiveerd",
               "AuditRecordType#CLIENT_ADDED_TO_ORGANIZATIONAL_UNIT": "Applicatie - Toegevoegd aan een organisatie-eenheid",
               "AuditRecordType#CREATE_PROVISIONED_NAMESPACE_DECLINED": "Namespace aanmaken - Afgewezen",
@@ -319,8 +322,11 @@
               "AuditRecordType#DISABLE_2FA_ACCEPTED": "2FA uitschakelen - Goedgekeurd",
               "AuditAccountAction": {
                 "executed#CHANGE_TO_MANAGER": "Management rechten gegeven",
+                "executed#ADDED": "Toegevoegd",
                 "executed#REMOVE": "Verwijderd uit groep",
+                "executed#ADD_AS_MANAGER": "Toegevoegd als manager",
                 "executed#CONNECT_NESTED": "Omgezet naar genest",
+                "executed#ADD_AS_NORMAL": "Toegevoegd als lid",
                 "executed#CHANGE_TO_NORMAL": "Management rechten ingetrokken",
                 "executed#APPROVE": "Goedgekeurd"
               },
@@ -382,6 +388,9 @@
               "AuditRecordType#DIRECTORY_CREATED": "Directory - Toegevoegd",
               "AuditRecordType#WEBHOOK_REMOVED": "Webhook - Verwijderd",
               "AuditRecordType#ACCOUNT_DEPROVISIONED": "Account - Gedeactiveerd op gekoppeld systeem",
+              "GroupAuditAccount#account": {
+                "label": "Account"
+              },
               "AuditRecordType#UPDATE_LICENSE_ACCEPTED": "Wijzig de licentie - Goedgekeurd",
               "AuditRecordType#VAULT_ACCESS_RESTORED": "Kluis - Toegang hersteld",
               "AuditRecordType#ACCOUNT_ADDED_TO_ORGANIZATIONAL_UNIT": "Account - Toegevoegd aan een organisatie-eenheid",
@@ -413,6 +422,7 @@
               "AuditRequiredSourceType#REQUESTED": "Aangevraagd",
               "AuditRecordType#TRANSFER_PROVISIONED_SYSTEM_OWNERSHIP_ACCEPTED": "Draag verantwoordelijkheid over gekoppeld systeem over - Goedgekeurd",
               "AuditRecordType#CREATE_GROUP_ON_SYSTEM_DECLINED": "Koppelgroep aanmaken - Afgewezen",
+              "AuditAccountAction#ADD_AS_NORMAL": "Lid toevoegen",
               "AuditRecordType#GRANT_GROUP_ON_SYSTEM_REQUEST_DECLINED": "Verzoek toegang tot groep op gekoppeld systeem - Afgewezen",
               "AuditRecordType#REMOVE_ORGANIZATIONAL_UNIT_REQUESTED": "Verwijder organisatie-eenheid - Aangevraagd",
               "AuditRecordType#CREATE_GROUP_ON_SYSTEM_REQUESTED": "Koppelgroep aanmaken - Aangevraagd",
@@ -438,6 +448,7 @@
               "AuditRecordType#GROUP_AUDIT_REQUESTED": "Groepsaudit - Verzocht",
               "AuditRecordType#ACCESS_PROFILE_MODIFIED": "Toegangsprofiel - Bewerkt",
               "AuditAccountAction#CONNECT_NESTED": "Zet om naar genest",
+              "AuditAccountAction#ADD_AS_MANAGER": "Manager toevoegen",
               "AuditRecordType#INTERNAL_ACCOUNT_REMOVED": "Interne account - Verwijderd",
               "AuditRecordType#CREATE_GROUP_ACCEPTED": "Groep aanmaken - Goedgekeurd",
               "AuditRecordType#ACCOUNT_TOTP_OFFSET_CHANGED": "Account - TOTP-offset gewijzigd",
@@ -514,6 +525,9 @@
               "AuditRecordType#ACCOUNT_MODIFIED_FOR_ACCESS_PROFILE": "Account - Lidmaatschap van toegangsprofiel bewerkt",
               "AuditRecordType#ADD_GROUP_ADMIN_ACCEPTED": "Groepsmanager toevoegen - Goedgekeurd",
               "AuditRecordType#RESET_PASSWORD_REQUESTED": "Herstel wachtwoord - Aangevraagd",
+              "GroupAuditAccount#rights": {
+                "label": "Rechten"
+              },
               "AuditRequiredSourceType#CONFORM": "Voldoen",
               "AuditRecordType#ENABLE_PROFILE_ADMINISTRATION_REQUESTED": "Toegangsprofielenbeheer inschakelen - Aangevraagd",
               "AuditRecordType#VAULT_RECORD_CREATED": "Kluis - Regel aangemaakt",
@@ -688,6 +702,9 @@
               "ModificationRequestType#TRANSFER_PROVISIONED_SYSTEM_ADMINISTRATION": "BEHEER OVERDRAGEN",
               "ModificationRequestReportChange#ACCESS_PROFILE_PROVISIONING_REMOVED_OUT_OF_SCOPE": "De koppelgroep {0} is na de verplaatsing niet meer zichtbaar voor het toegangsprofiel {1} en daarom wordt de toegang verwijderd.",
               "ModificationRequestType#DISABLE_2FA": "SCHAKEL 2FA UIT",
+              "ModificationRequestReport#conclusion": {
+                "label": "Conclusie"
+              },
               "ModificationRequestReportChange#ORGANIZATIONAL_UNIT_REMOVED": "Deze organisatie-eenheden zullen verwijderd worden.",
               "ModificationRequestReportChange#SYSTEM_ACCOUNTS_WRITABLE_DISABLED": "'Accounts schrijfbaar' wordt uitgeschakeld voor deze koppelingen.",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_GROUP_REMOVED_OWNER": "De koppelgroep {0} verplaatst mee met deze groep en daarom verliest het serviceaccount {1} de toegang.",
@@ -1669,6 +1686,9 @@
                 "label": "User ID (uid) nummerreeks",
                 "description": "Kies een bestaande nummerreeks voor UID-nummering of start een nieuwe reeks."
               },
+              "ProvisionedSCIM#customHeaderValue": {
+                "label": "Header-waarde"
+              },
               "ProvisionedSystem#cleanupPeriod": {
                 "description": "Geef aan na welke periode accounts opgeruimd moeten worden. Gebruik 'd' voor dagen, 'w' voor weken', 'm' voor maanden en 'y' voor jaren, bijvoorbeeld '2w'.",
                 "label": "Accounts verwijderen na"
@@ -1764,6 +1784,9 @@
               "ProvisionedSCIMVendor#KEYSTONE": "Keystone",
               "ProvisionedNamespace#baseSystem": {
                 "label": "Basissysteem"
+              },
+              "ProvisionedSCIM#customHeaderName": {
+                "label": "Header-naam"
               },
               "ADSamAccountNameScheme#OMIT": "Weglaten - Het AD kiest een willekeurige waarde.",
               "GroupOnSystemType#GROUP_UNIVERSAL_SECURITY": "group (universal security)",
@@ -2186,7 +2209,7 @@
               "VaultRecord#holder": {
                 "label": "Kluis"
               },
-              "MoveVaultRecordAction#SHARE": "Delen",
+              "MoveVaultRecordAction#SHARE": "Delen met",
               "VaultRecordWarningPeriod#AT_EXPIRATION": "Herinner mij niet van tevoren",
               "VaultRecord#totp": {
                 "description": "Sla een TOTP/2FA-sleutel op om automatisch 6-cijferige codes voor 2FA te genereren. Deze sleutel wordt vaak samen met een QR-code getoond tijdens het koppelen van 2FA.",
@@ -2195,6 +2218,10 @@
               "VaultRecordPrimer#name": {
                 "placeholder": "(vereist)",
                 "label": "Naam"
+              },
+              "MoveVaultRecord#shareEndDate": {
+                "description": "Na deze datum zal de kluisregel automatisch verwijderd worden uit de doelkluis.",
+                "label": "Delen t/m een specifieke datum"
               },
               "VaultRecordColor#GREEN": "Groen",
               "MoveVaultRecord#shareDuration": {
@@ -2209,10 +2236,10 @@
               "VaultRecovery#account": {
                 "label": "Gebruiker"
               },
-              "MoveVaultRecordAction#MOVE": "Verplaatsen",
+              "MoveVaultRecordAction#MOVE": "Verplaatsen naar",
               "VaultRecordColor#RED": "Rood",
               "MoveVaultRecord#target": {
-                "label": "Doel"
+                "label": "Bestemming"
               },
               "VaultUnlock#password": {
                 "placeholder": "* * *"
@@ -2273,12 +2300,15 @@
               "VaultRecordColor#DARK": "Donker",
               "VaultRecordColor#NONE": "Geen kleur",
               "VaultRecordColor#BLUE": "Blauw",
-              "MoveVaultRecordAction#COPY": "Kopiëren",
+              "MoveVaultRecordAction#COPY": "Kopiëren naar",
               "VaultRecord#username": {
                 "label": "Gebruikersnaam"
               },
               "VaultRecord#password": {
                 "label": "Wachtwoord/secret"
+              },
+              "MoveVaultRecord#useCustomDuration": {
+                "label": "Geldigheidsduur"
               },
               "MoveVaultRecord#group": {
                 "label": "Groep"
@@ -4316,6 +4346,7 @@
       "opslaanmetfouten": "Opslaan met fouten",
       "movegroups": "Groepen verplaatsen",
       "search": "Zoeken",
+      "copy": "Kopiëren",
       "approve": "Goedkeuren",
       "clear": "Wissen",
       "registermanual": "Handmatig registreren",
@@ -4348,6 +4379,7 @@
       "share": "Delen",
       "toevoegen": "Toevoegen",
       "revoke": "Toegang intrekken",
+      "move": "Verplaatsen",
       "review": "Reviewen",
       "view": "Tonen",
       "sync": {
@@ -6042,7 +6074,8 @@
       "definition": "Kies een attribuutdefinitie...",
       "usescript": "Onderstaand script uitvoeren...",
       "add": "Attribuut toevoegen",
-      "name": "Attribuutnaam"
+      "name": "Attribuutnaam",
+      "selectname": "Kies een attribuut..."
     },
     "oauth2": {
       "sso": "Code en implicit grants - Account authenticatie (SSO)",
@@ -6606,7 +6639,7 @@
       "sent": "E-mail verzonden"
     },
     "nestedgroups": {
-      "header": "Geneste groepen",
+      "header": "Geneste groep",
       "inherited": "Deze gebruiker is overgenomen van de bovenliggende groep."
     },
     "segment": {
@@ -7127,6 +7160,10 @@
           "true": "Groep",
           "false": "Persoonlijke kluis"
         },
+        "useCustomDuration": {
+          "true": "Specifieke datum",
+          "false": "Vaste periode"
+        },
         "info": "Kies de doelkluis voor {0}."
       },
       "shared": {
@@ -7459,7 +7496,7 @@
       "nrAccounts": "{0} account(s)",
       "nrClients": "{0} applicatie(s)"
     },
-    "mailadmin": "Mail manager",
+    "mailadmin": "Mail managers",
     "application": {
       "bewerken": {
         "subtitle": "Kies de opties voor toegang tot de applicatie via deze groep.",

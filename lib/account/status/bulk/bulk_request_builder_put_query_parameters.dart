@@ -67,7 +67,7 @@ class BulkRequestBuilderPutQueryParameters implements AbstractQueryParameters {
     List<DateTime>? modifiedSince;
     ///  Only return accounts for which the username does not start with one of the given values.
     List<String>? nameDoesNotStartWith;
-    ///  Only return accounts for which the username starts with one of the given values.
+    ///  Only return accounts for which the display name starts with one of the given values.
     List<String>? nameStartsWith;
     ///  Filter the accounts that are not a member of the given access profiles, specified by id. 
     List<int>? notInAccessProfile;

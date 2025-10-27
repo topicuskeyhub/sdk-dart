@@ -9,6 +9,8 @@ import './vault_secret_type.dart';
 class VaultRecord extends VaultRecordPrimer implements Parsable {
     ///  The additionalObjects property
     VaultRecordAdditionalObjects? additionalObjects;
+    ///  The additionalURLs property
+    String? additionalURLs;
     ///  The derived property
     bool? derived;
     ///  The endDate property
@@ -37,6 +39,7 @@ class VaultRecord extends VaultRecordPrimer implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<VaultRecordAdditionalObjects>(VaultRecordAdditionalObjects.createFromDiscriminatorValue);
+        deserializerMap['additionalURLs'] = (node) => additionalURLs = node.getStringValue();
         deserializerMap['derived'] = (node) => derived = node.getBoolValue();
         deserializerMap['endDate'] = (node) => endDate = node.getDateOnlyValue();
         deserializerMap['filename'] = (node) => filename = node.getStringValue();
@@ -52,6 +55,7 @@ class VaultRecord extends VaultRecordPrimer implements Parsable {
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<VaultRecordAdditionalObjects>('additionalObjects', additionalObjects);
+        writer.writeStringValue('additionalURLs', additionalURLs);
         writer.writeDateOnlyValue('endDate', endDate);
         writer.writeStringValue('filename', filename);
         writer.writeStringValue('url', url);

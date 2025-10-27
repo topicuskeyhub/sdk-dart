@@ -35,8 +35,8 @@ class MailRequestBuilder extends BaseRequestBuilder<MailRequestBuilder> {
     RequestInformation toPostRequestInformation(GroupAdminMail body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=80', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=81', body);
         return requestInfo;
     }
 }

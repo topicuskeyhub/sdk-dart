@@ -11,6 +11,8 @@ class AccountAttributeDefinition extends Linkable implements Parsable {
     AccountAttributeDefinitionAdditionalObjects? additionalObjects;
     ///  The format property
     AccountAttributeFormat? format;
+    ///  The freelyUseable property
+    bool? freelyUseable;
     ///  The list property
     bool? list;
     ///  The name property
@@ -36,6 +38,7 @@ class AccountAttributeDefinition extends Linkable implements Parsable {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<AccountAttributeDefinitionAdditionalObjects>(AccountAttributeDefinitionAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['format'] = (node) => format = node.getEnumValue<AccountAttributeFormat>((stringValue) => AccountAttributeFormat.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['freelyUseable'] = (node) => freelyUseable = node.getBoolValue();
         deserializerMap['list'] = (node) => list = node.getBoolValue();
         deserializerMap['name'] = (node) => name = node.getStringValue();
         deserializerMap['required'] = (node) => required_ = node.getBoolValue();
@@ -50,6 +53,7 @@ class AccountAttributeDefinition extends Linkable implements Parsable {
         super.serialize(writer);
         writer.writeObjectValue<AccountAttributeDefinitionAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeEnumValue<AccountAttributeFormat>('format', format, (e) => e?.value);
+        writer.writeBoolValue('freelyUseable', value:freelyUseable);
         writer.writeBoolValue('list', value:list);
         writer.writeStringValue('name', name);
         writer.writeBoolValue('required', value:required_);

@@ -34,7 +34,7 @@ class DisplayRequestBuilder extends BaseRequestBuilder<DisplayRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DisplayRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DisplayRequestBuilderGetQueryParameters>(requestConfiguration, () => DisplayRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
         return requestInfo;
     }
 }

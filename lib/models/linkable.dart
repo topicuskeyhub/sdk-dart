@@ -81,7 +81,8 @@ import './provisioning/provisioned_namespace.dart';
 import './provisioning/provisioned_s_c_i_m.dart';
 import './provisioning/provisioned_system.dart';
 import './provisioning/provisioned_system_primer.dart';
-import './provisioning/provisioned_system_sync_log.dart';
+import './provisioning/provisioning_operation_log.dart';
+import './provisioning/provisioning_operation_log_line.dart';
 import './request/abstract_access_profile_modification_request.dart';
 import './request/abstract_application_modification_request.dart';
 import './request/abstract_organizational_unit_modification_request.dart';
@@ -235,7 +236,8 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'provisioning.ProvisionedSCIM' => ProvisionedSCIM(),
             'provisioning.ProvisionedSystem' => ProvisionedSystem(),
             'provisioning.ProvisionedSystemPrimer' => ProvisionedSystemPrimer(),
-            'provisioning.ProvisionedSystemSyncLog' => ProvisionedSystemSyncLog(),
+            'provisioning.ProvisioningOperationLog' => ProvisioningOperationLog(),
+            'provisioning.ProvisioningOperationLogLine' => ProvisioningOperationLogLine(),
             'provisioning.ProvisionNumberSequence' => ProvisionNumberSequence(),
             'request.AbstractAccessProfileModificationRequest' => AbstractAccessProfileModificationRequest(),
             'request.AbstractApplicationModificationRequest' => AbstractApplicationModificationRequest(),

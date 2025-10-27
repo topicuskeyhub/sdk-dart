@@ -24,11 +24,11 @@ class AttributeruleRequestBuilder extends BaseRequestBuilder<AttributeruleReques
     /// Instantiates a new [AttributeruleRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    AttributeruleRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profile/{accessprofile%2Did}/attributerule{?accessProfile*,accessProfileOwningGroup*,additional*,any*,attribute*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,organizationalUnit*,q*,sort*}", pathParameters) ;
+    AttributeruleRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profile/{accessprofile%2Did}/attributerule{?accessProfile*,accessProfileOwningGroup*,additional*,allowOverride*,any*,attribute*,createdAfter*,createdBefore*,exclude*,exclusive*,id*,modifiedSince*,organizationalUnit*,q*,sort*}", pathParameters) ;
     /// Instantiates a new [AttributeruleRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    AttributeruleRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profile/{accessprofile%2Did}/attributerule{?accessProfile*,accessProfileOwningGroup*,additional*,any*,attribute*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,organizationalUnit*,q*,sort*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    AttributeruleRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profile/{accessprofile%2Did}/attributerule{?accessProfile*,accessProfileOwningGroup*,additional*,allowOverride*,any*,attribute*,createdAfter*,createdBefore*,exclude*,exclusive*,id*,modifiedSince*,organizationalUnit*,q*,sort*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for all account attribute rules in Topicus KeyHub. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AccountAttributeRuleLinkableWrapper?> getAsync([void Function(RequestConfiguration<AttributeruleRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
@@ -53,7 +53,7 @@ class AttributeruleRequestBuilder extends BaseRequestBuilder<AttributeruleReques
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AttributeruleRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AttributeruleRequestBuilderGetQueryParameters>(requestConfiguration, () => AttributeruleRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
         return requestInfo;
     }
     /// Creates one or more new account attribute rules and returns the newly created account attribute rules.
@@ -62,8 +62,8 @@ class AttributeruleRequestBuilder extends BaseRequestBuilder<AttributeruleReques
     RequestInformation toPostRequestInformation(AccountAttributeRuleLinkableWrapper body, [void Function(RequestConfiguration<AttributeruleRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AttributeruleRequestBuilderPostQueryParameters>(requestConfiguration, () => AttributeruleRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=80', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=81', body);
         return requestInfo;
     }
 }

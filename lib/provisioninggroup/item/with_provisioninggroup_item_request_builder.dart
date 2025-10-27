@@ -54,7 +54,7 @@ class WithProvisioninggroupItemRequestBuilder extends BaseRequestBuilder<WithPro
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
         return requestInfo;
     }
     /// Returns the provisioning group identified by the id.
@@ -62,7 +62,7 @@ class WithProvisioninggroupItemRequestBuilder extends BaseRequestBuilder<WithPro
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithProvisioninggroupItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithProvisioninggroupItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithProvisioninggroupItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
         return requestInfo;
     }
     /// Updates the provisioning group identified by the id.
@@ -71,8 +71,8 @@ class WithProvisioninggroupItemRequestBuilder extends BaseRequestBuilder<WithPro
     RequestInformation toPutRequestInformation(ProvisioningGroup body, [void Function(RequestConfiguration<WithProvisioninggroupItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithProvisioninggroupItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithProvisioninggroupItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=80', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=81', body);
         return requestInfo;
     }
 }

@@ -33,7 +33,7 @@ class RotatepwdRequestBuilder extends BaseRequestBuilder<RotatepwdRequestBuilder
     RequestInformation toPostRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
         return requestInfo;
     }
 }

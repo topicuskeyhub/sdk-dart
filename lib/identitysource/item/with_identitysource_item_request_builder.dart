@@ -59,7 +59,7 @@ class WithIdentitysourceItemRequestBuilder extends BaseRequestBuilder<WithIdenti
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
         return requestInfo;
     }
     /// Returns the identity source identified by the id.
@@ -67,7 +67,7 @@ class WithIdentitysourceItemRequestBuilder extends BaseRequestBuilder<WithIdenti
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithIdentitysourceItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithIdentitysourceItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithIdentitysourceItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
         return requestInfo;
     }
     /// Updates the identity source identified by the id.
@@ -76,8 +76,8 @@ class WithIdentitysourceItemRequestBuilder extends BaseRequestBuilder<WithIdenti
     RequestInformation toPutRequestInformation(IdentitySource body, [void Function(RequestConfiguration<WithIdentitysourceItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithIdentitysourceItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithIdentitysourceItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=80', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=81', body);
         return requestInfo;
     }
 }

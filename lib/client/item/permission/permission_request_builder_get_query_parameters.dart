@@ -40,6 +40,8 @@ class PermissionRequestBuilderGetQueryParameters implements AbstractQueryParamet
     List<String>? q;
     ///  Sort the items. Use 'asc-<name>' for ascending and 'desc-<name>' for descending order.
     List<String>? sort;
+    ///  Filter permissions on (part of) the name or uuid of the target.
+    List<String>? targetNameContains;
     ///  Filter permissions on the permission type(s).
     List<OAuth2ClientPermissionType>? value;
     ///  Filter the clients for the permissions with permissions for the given groups, either directly or via provisionedsystem ownership, specified by id.
@@ -67,6 +69,7 @@ class PermissionRequestBuilderGetQueryParameters implements AbstractQueryParamet
             'modifiedSince' : modifiedSince,
             'q' : q,
             'sort' : sort,
+            'targetNameContains' : targetNameContains,
             'value' : value,
             'withPermissionForOwningGroup' : withPermissionForOwningGroup,
             'withRequestedPermissionForOwningGroup' : withRequestedPermissionForOwningGroup,

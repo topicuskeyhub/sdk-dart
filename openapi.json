@@ -7,7 +7,7 @@
     "contact": {
       "email": "keyhub@topicus.nl"
     },
-    "version": "80"
+    "version": "81"
   },
   "servers": [
     {
@@ -89,12 +89,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileClient"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileClient"
                 }
@@ -344,12 +344,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileClientLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileClientLinkableWrapper"
                 }
@@ -405,12 +405,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileGroup"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileGroup"
                 }
@@ -646,12 +646,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileGroupLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileGroupLinkableWrapper"
                 }
@@ -707,12 +707,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileProvisioning"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileProvisioning"
                 }
@@ -1018,12 +1018,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileProvisioningLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileProvisioningLinkableWrapper"
                 }
@@ -1237,12 +1237,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileAccountLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileAccountLinkableWrapper"
                 }
@@ -1294,12 +1294,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/profile.AccessProfileAccountLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/profile.AccessProfileAccountLinkableWrapper"
               }
@@ -1310,12 +1310,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileAccountLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileAccountLinkableWrapper"
                 }
@@ -1380,12 +1380,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileAccount"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileAccount"
                 }
@@ -1446,12 +1446,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/profile.AccessProfileAccount"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/profile.AccessProfileAccount"
               }
@@ -1462,12 +1462,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileAccount"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileAccount"
                 }
@@ -1673,6 +1673,19 @@
             }
           },
           {
+            "name": "allowOverride",
+            "in": "query",
+            "description": "Only return account attribute rules that allow or do not allow manual overriding values.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean"
+              }
+            }
+          },
+          {
             "name": "attribute",
             "in": "query",
             "description": "Filter the attribute rules by attribute definition, specified by id. This parameter supports composition with all parameters from the attribute definition resource.",
@@ -1683,6 +1696,19 @@
               "items": {
                 "type": "integer",
                 "format": "int64"
+              }
+            }
+          },
+          {
+            "name": "exclusive",
+            "in": "query",
+            "description": "Only return account attribute rules that are or are not exclusive.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "boolean"
               }
             }
           },
@@ -1734,12 +1760,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeRuleLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeRuleLinkableWrapper"
                 }
@@ -1790,12 +1816,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/identity.AccountAttributeRuleLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/identity.AccountAttributeRuleLinkableWrapper"
               }
@@ -1806,12 +1832,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeRuleLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeRuleLinkableWrapper"
                 }
@@ -1875,12 +1901,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeRule"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeRule"
                 }
@@ -1940,12 +1966,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/identity.AccountAttributeRule"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/identity.AccountAttributeRule"
               }
@@ -1956,12 +1982,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeRule"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeRule"
                 }
@@ -2315,12 +2341,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileLinkableWrapper"
                 }
@@ -2367,12 +2393,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/profile.AccessProfileLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/profile.AccessProfileLinkableWrapper"
               }
@@ -2383,12 +2409,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfileLinkableWrapper"
                 }
@@ -2448,12 +2474,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfile"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfile"
                 }
@@ -2509,12 +2535,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/profile.AccessProfile"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/profile.AccessProfile"
               }
@@ -2525,12 +2551,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfile"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/profile.AccessProfile"
                 }
@@ -2582,8 +2608,8 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {},
-              "application/vnd.topicus.keyhub+xml;version=80": {}
+              "application/vnd.topicus.keyhub+json;version=81": {},
+              "application/vnd.topicus.keyhub+xml;version=81": {}
             }
           },
           "4XX": {
@@ -2717,6 +2743,20 @@
             }
           },
           {
+            "name": "availableForAccessProfile",
+            "in": "query",
+            "description": "Only return account attributes for which a rule can be created for all of the given access profiles, specified by id. The attribute cannot have a rule for any of the profiles, nor can it be exclusive in any other profile.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          {
             "name": "format",
             "in": "query",
             "description": "Filter account attribute definitions on the given format(s).",
@@ -2752,20 +2792,6 @@
               "type": "array",
               "items": {
                 "type": "string"
-              }
-            }
-          },
-          {
-            "name": "noRuleForAccessProfile",
-            "in": "query",
-            "description": "Only return account attributes for which the given access profiles do not have an attribute rule, specified by id.",
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "integer",
-                "format": "int64"
               }
             }
           },
@@ -2833,12 +2859,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeDefinitionLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeDefinitionLinkableWrapper"
                 }
@@ -2880,12 +2906,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/identity.AccountAttributeDefinitionLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/identity.AccountAttributeDefinitionLinkableWrapper"
               }
@@ -2896,12 +2922,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeDefinitionLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeDefinitionLinkableWrapper"
                 }
@@ -2956,12 +2982,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeDefinition"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeDefinition"
                 }
@@ -3012,12 +3038,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/identity.AccountAttributeDefinition"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/identity.AccountAttributeDefinition"
               }
@@ -3028,12 +3054,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeDefinition"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeDefinition"
                 }
@@ -3439,12 +3465,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/directory.AccountDirectoryLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/directory.AccountDirectoryLinkableWrapper"
                 }
@@ -3488,12 +3514,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/directory.AccountDirectoryLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/directory.AccountDirectoryLinkableWrapper"
               }
@@ -3504,12 +3530,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/directory.AccountDirectoryLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/directory.AccountDirectoryLinkableWrapper"
                 }
@@ -3566,12 +3592,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/directory.AccountDirectory"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/directory.AccountDirectory"
                 }
@@ -3624,12 +3650,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/directory.AccountDirectory"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/directory.AccountDirectory"
               }
@@ -3640,12 +3666,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/directory.AccountDirectory"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/directory.AccountDirectory"
                 }
@@ -3916,12 +3942,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.InternalAccountLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.InternalAccountLinkableWrapper"
                 }
@@ -3973,12 +3999,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/auth.InternalAccountLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/auth.InternalAccountLinkableWrapper"
               }
@@ -3989,12 +4015,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.InternalAccountLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.InternalAccountLinkableWrapper"
                 }
@@ -4059,12 +4085,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.InternalAccount"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.InternalAccount"
                 }
@@ -4125,12 +4151,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/auth.InternalAccount"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/auth.InternalAccount"
               }
@@ -4141,12 +4167,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.InternalAccount"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.InternalAccount"
                 }
@@ -4231,12 +4257,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/auth.MoveInternalAccount"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/auth.MoveInternalAccount"
               }
@@ -4286,12 +4312,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/auth.InternalAccountStatusObject"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/auth.InternalAccountStatusObject"
               }
@@ -4361,12 +4387,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeValue"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeValue"
                 }
@@ -4620,17 +4646,63 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeValueLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.AccountAttributeValueLinkableWrapper"
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          },
+          "5XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/account/{accountid}/attributevalue/override": {
+      "post": {
+        "tags": [
+          "iga"
+        ],
+        "summary": "Manually override an account attribute value",
+        "description": "Manually override the value for an account attribute. A null value will clear the override.",
+        "operationId": "setOverride_account_attributevalue_override",
+        "parameters": [
+          {
+            "name": "accountid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.topicus.keyhub+json;version=81": {
+              "schema": {
+                "$ref": "#/components/schemas/identity.AccountAttributeValueUpdate"
+              }
+            },
+            "application/vnd.topicus.keyhub+xml;version=81": {
+              "schema": {
+                "$ref": "#/components/schemas/identity.AccountAttributeValueUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Value set"
           },
           "4XX": {
             "$ref": "#/components/responses/error"
@@ -4686,12 +4758,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.Account"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.Account"
                 }
@@ -4749,12 +4821,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.StoredUserSessionLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.StoredUserSessionLinkableWrapper"
                 }
@@ -5470,12 +5542,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.AccountLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.AccountLinkableWrapper"
                 }
@@ -5503,12 +5575,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.AccountsAuditStats"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.AccountsAuditStats"
                 }
@@ -5564,12 +5636,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/notification.Notifications"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/notification.Notifications"
                 }
@@ -5606,12 +5678,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.AccountSettings"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.AccountSettings"
                 }
@@ -5639,12 +5711,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.TokenPassword"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.TokenPassword"
                 }
@@ -5710,12 +5782,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.AccountGroup"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.AccountGroup"
                 }
@@ -6063,12 +6135,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.AccountGroupLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.AccountGroupLinkableWrapper"
                 }
@@ -6114,12 +6186,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupAccountStatus"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupAccountStatus"
               }
@@ -6162,12 +6234,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.Identity"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.Identity"
                 }
@@ -6202,12 +6274,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/identity.Identity"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/identity.Identity"
               }
@@ -6218,12 +6290,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.Identity"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identity.Identity"
                 }
@@ -6251,12 +6323,12 @@
           "200": {
             "description": "Authenticated user",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.Account"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.Account"
                 }
@@ -6320,12 +6392,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.AccountOrganizationalUnit"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.AccountOrganizationalUnit"
                 }
@@ -6552,12 +6624,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.AccountOrganizationalUnitLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.AccountOrganizationalUnitLinkableWrapper"
                 }
@@ -6609,12 +6681,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisioningStatus"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisioningStatus"
                 }
@@ -6647,12 +6719,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/provisioning.ProvisioningStatus"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/provisioning.ProvisioningStatus"
               }
@@ -6663,12 +6735,12 @@
           "200": {
             "description": "Status updated",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisioningStatus"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisioningStatus"
                 }
@@ -6696,12 +6768,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.AccountProvisioningStatusReport"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.AccountProvisioningStatusReport"
                 }
@@ -6727,12 +6799,12 @@
         "operationId": "setLocale_account_me_settings_locale",
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/auth.AccountChangeLocale"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/auth.AccountChangeLocale"
               }
@@ -7392,12 +7464,12 @@
         "operationId": "unlockVault_account_vault_unlock",
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultUnlock"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultUnlock"
               }
@@ -7408,12 +7480,12 @@
           "200": {
             "description": "Vault unlocked",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultUnlockResponse"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultUnlockResponse"
                 }
@@ -7450,12 +7522,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/auth.AccountStatus"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/auth.AccountStatus"
               }
@@ -8094,12 +8166,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/auth.AccountBulkUpdate"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/auth.AccountBulkUpdate"
               }
@@ -8142,12 +8214,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.Account"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/auth.Account"
                 }
@@ -8186,12 +8258,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.Vault"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.Vault"
                 }
@@ -8267,12 +8339,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
@@ -8321,12 +8393,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
@@ -8804,12 +8876,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
@@ -8869,12 +8941,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
               }
@@ -8885,12 +8957,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
@@ -8963,12 +9035,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
@@ -9037,12 +9109,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecord"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecord"
               }
@@ -9053,12 +9125,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
@@ -9143,12 +9215,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.MoveVaultRecord"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.MoveVaultRecord"
               }
@@ -9628,12 +9700,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecovery"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecovery"
               }
@@ -9692,12 +9764,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/audit.AuditRecord"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/audit.AuditRecord"
                 }
@@ -10036,12 +10108,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/audit.AuditRecordLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/audit.AuditRecordLinkableWrapper"
                 }
@@ -10565,12 +10637,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/certificate.CertificateLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/certificate.CertificateLinkableWrapper"
                 }
@@ -10612,12 +10684,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/certificate.CertificateLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/certificate.CertificateLinkableWrapper"
               }
@@ -10628,12 +10700,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/certificate.CertificateLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/certificate.CertificateLinkableWrapper"
                 }
@@ -10688,12 +10760,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/certificate.Certificate"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/certificate.Certificate"
                 }
@@ -10744,12 +10816,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/certificate.Certificate"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/certificate.Certificate"
               }
@@ -10760,12 +10832,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/certificate.Certificate"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/certificate.Certificate"
                 }
@@ -11306,12 +11378,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/client.ClientApplicationLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/client.ClientApplicationLinkableWrapper"
                 }
@@ -11361,12 +11433,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/client.ClientApplicationLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/client.ClientApplicationLinkableWrapper"
               }
@@ -11377,12 +11449,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/client.ClientApplicationLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/client.ClientApplicationLinkableWrapper"
                 }
@@ -11445,12 +11517,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/client.ClientApplication"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/client.ClientApplication"
                 }
@@ -11509,12 +11581,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/client.ClientApplication"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/client.ClientApplication"
               }
@@ -11525,12 +11597,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/client.ClientApplication"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/client.ClientApplication"
                 }
@@ -11586,12 +11658,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/client.OAuth2Client"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/client.OAuth2Client"
                 }
@@ -11655,12 +11727,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/client.OAuth2ClientPermission"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/client.OAuth2ClientPermission"
                 }
@@ -11949,6 +12021,19 @@
             }
           },
           {
+            "name": "targetNameContains",
+            "in": "query",
+            "description": "Filter permissions on (part of) the name or uuid of the target.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
             "name": "value",
             "in": "query",
             "description": "Filter permissions on the permission type(s).",
@@ -12023,12 +12108,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/client.OAuth2ClientPermissionLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/client.OAuth2ClientPermissionLinkableWrapper"
                 }
@@ -12054,12 +12139,12 @@
         "operationId": "rotateSecret_client_me_secret",
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/GeneratedSecret"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/GeneratedSecret"
               }
@@ -12089,12 +12174,12 @@
         "operationId": "unlockVault_client_vault_unlock",
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultUnlock"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultUnlock"
               }
@@ -12105,12 +12190,12 @@
           "200": {
             "description": "Vault unlocked",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultUnlockResponse"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultUnlockResponse"
                 }
@@ -12149,12 +12234,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.Vault"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.Vault"
                 }
@@ -12230,12 +12315,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
@@ -12284,12 +12369,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
@@ -12767,12 +12852,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
@@ -12832,12 +12917,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
               }
@@ -12848,12 +12933,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
@@ -12926,12 +13011,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
@@ -13000,12 +13085,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecord"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecord"
               }
@@ -13016,12 +13101,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
@@ -13106,12 +13191,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.MoveVaultRecord"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.MoveVaultRecord"
               }
@@ -13591,12 +13676,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecovery"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecovery"
               }
@@ -13656,12 +13741,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.DeletedVaultHolder"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.DeletedVaultHolder"
                 }
@@ -13868,12 +13953,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.DeletedVaultHolderLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.DeletedVaultHolderLinkableWrapper"
                 }
@@ -13910,12 +13995,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.DeletedVaultRecovery"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.DeletedVaultRecovery"
               }
@@ -13958,12 +14043,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.Vault"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.Vault"
                 }
@@ -14039,12 +14124,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
@@ -14093,12 +14178,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
@@ -14576,12 +14661,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
@@ -14641,12 +14726,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
               }
@@ -14657,12 +14742,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
@@ -14735,12 +14820,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
@@ -14809,12 +14894,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecord"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecord"
               }
@@ -14825,12 +14910,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
@@ -14915,12 +15000,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.MoveVaultRecord"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.MoveVaultRecord"
               }
@@ -15400,12 +15485,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecovery"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecovery"
               }
@@ -15657,12 +15742,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupClassificationLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupClassificationLinkableWrapper"
                 }
@@ -15705,12 +15790,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupClassificationLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupClassificationLinkableWrapper"
               }
@@ -15721,12 +15806,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupClassificationLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupClassificationLinkableWrapper"
                 }
@@ -15782,12 +15867,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupClassification"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupClassification"
                 }
@@ -15839,12 +15924,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupClassification"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupClassification"
               }
@@ -15855,12 +15940,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupClassification"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupClassification"
                 }
@@ -15946,12 +16031,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupClient"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupClient"
                 }
@@ -16003,12 +16088,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupClient"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupClient"
               }
@@ -16019,12 +16104,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupClient"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupClient"
                 }
@@ -16301,12 +16386,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupClientLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupClientLinkableWrapper"
                 }
@@ -16495,12 +16580,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupFolderLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupFolderLinkableWrapper"
                 }
@@ -16542,12 +16627,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupFolderLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupFolderLinkableWrapper"
               }
@@ -16558,12 +16643,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupFolderLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupFolderLinkableWrapper"
                 }
@@ -16618,12 +16703,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupFolder"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupFolder"
                 }
@@ -16674,12 +16759,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupFolder"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupFolder"
               }
@@ -16690,12 +16775,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupFolder"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupFolder"
                 }
@@ -17032,12 +17117,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupAccountLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupAccountLinkableWrapper"
                 }
@@ -17089,12 +17174,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupAccountLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupAccountLinkableWrapper"
               }
@@ -17105,12 +17190,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupAccountLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupAccountLinkableWrapper"
                 }
@@ -17175,12 +17260,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupAccount"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupAccount"
                 }
@@ -17241,12 +17326,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupAccount"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupAccount"
               }
@@ -17257,12 +17342,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupAccount"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupAccount"
                 }
@@ -17389,12 +17474,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupAccountNesting"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupAccountNesting"
               }
@@ -17624,12 +17709,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/audit.GroupAuditLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/audit.GroupAuditLinkableWrapper"
                 }
@@ -17680,12 +17765,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/audit.GroupAuditLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/audit.GroupAuditLinkableWrapper"
               }
@@ -17696,12 +17781,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/audit.GroupAuditLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/audit.GroupAuditLinkableWrapper"
                 }
@@ -17765,12 +17850,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/audit.GroupAudit"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/audit.GroupAudit"
                 }
@@ -17830,12 +17915,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/audit.GroupAudit"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/audit.GroupAudit"
               }
@@ -17846,12 +17931,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/audit.GroupAudit"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/audit.GroupAudit"
                 }
@@ -17890,12 +17975,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/audit.GroupAudit"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/audit.GroupAudit"
                 }
@@ -17934,8 +18019,8 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {},
-              "application/vnd.topicus.keyhub+xml;version=80": {}
+              "application/vnd.topicus.keyhub+json;version=81": {},
+              "application/vnd.topicus.keyhub+xml;version=81": {}
             }
           },
           "4XX": {
@@ -18900,12 +18985,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupLinkableWrapper"
                 }
@@ -18977,12 +19062,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupLinkableWrapper"
               }
@@ -18993,12 +19078,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupLinkableWrapper"
                 }
@@ -19083,12 +19168,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.Group"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.Group"
                 }
@@ -19169,12 +19254,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.Group"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.Group"
               }
@@ -19185,12 +19270,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.Group"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.Group"
                 }
@@ -19218,12 +19303,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupsAuditStats"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupsAuditStats"
                 }
@@ -19260,12 +19345,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupAdminMail"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupAdminMail"
               }
@@ -19329,12 +19414,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupSegmentedLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.GroupSegmentedLinkableWrapper"
                 }
@@ -21191,12 +21276,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.Vault"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.Vault"
                 }
@@ -21272,12 +21357,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
@@ -21326,12 +21411,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.StringValue"
                 }
@@ -21809,12 +21894,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
@@ -21874,12 +21959,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
               }
@@ -21890,12 +21975,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
@@ -21968,12 +22053,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
@@ -22042,12 +22127,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecord"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecord"
               }
@@ -22058,12 +22143,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
@@ -22148,12 +22233,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.MoveVaultRecord"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.MoveVaultRecord"
               }
@@ -22633,12 +22718,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecovery"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/vault.VaultRecovery"
               }
@@ -22679,12 +22764,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupClassificationUpdate"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.GroupClassificationUpdate"
               }
@@ -22903,12 +22988,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identitysource.IdentitySourceLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identitysource.IdentitySourceLinkableWrapper"
                 }
@@ -22950,12 +23035,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/identitysource.IdentitySourceLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/identitysource.IdentitySourceLinkableWrapper"
               }
@@ -22966,12 +23051,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identitysource.IdentitySourceLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identitysource.IdentitySourceLinkableWrapper"
                 }
@@ -23026,12 +23111,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identitysource.IdentitySource"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identitysource.IdentitySource"
                 }
@@ -23082,12 +23167,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/identitysource.IdentitySource"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/identitysource.IdentitySource"
               }
@@ -23098,12 +23183,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identitysource.IdentitySource"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/identitysource.IdentitySource"
                 }
@@ -23193,12 +23278,12 @@
           "200": {
             "description": "Version info",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.VersionInfo"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/simple.VersionInfo"
                 }
@@ -23415,12 +23500,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/launchpad.LaunchpadTileLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/launchpad.LaunchpadTileLinkableWrapper"
                 }
@@ -23462,12 +23547,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/launchpad.LaunchpadTileLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/launchpad.LaunchpadTileLinkableWrapper"
               }
@@ -23478,12 +23563,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/launchpad.LaunchpadTileLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/launchpad.LaunchpadTileLinkableWrapper"
                 }
@@ -23538,12 +23623,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/launchpad.LaunchpadTile"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/launchpad.LaunchpadTile"
                 }
@@ -23594,12 +23679,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/launchpad.LaunchpadTile"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/launchpad.LaunchpadTile"
               }
@@ -23610,12 +23695,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/launchpad.LaunchpadTile"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/launchpad.LaunchpadTile"
                 }
@@ -23704,12 +23789,12 @@
           "2XX": {
             "description": "The tiles",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/launchpad.DisplayedLaunchpadTiles"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/launchpad.DisplayedLaunchpadTiles"
                 }
@@ -24366,12 +24451,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/request.ModificationRequestLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/request.ModificationRequestLinkableWrapper"
                 }
@@ -24415,12 +24500,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/request.ModificationRequestLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/request.ModificationRequestLinkableWrapper"
               }
@@ -24431,12 +24516,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/request.ModificationRequestLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/request.ModificationRequestLinkableWrapper"
                 }
@@ -24493,12 +24578,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/request.ModificationRequest"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/request.ModificationRequest"
                 }
@@ -24551,12 +24636,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/request.ModificationRequest"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/request.ModificationRequest"
               }
@@ -24567,12 +24652,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/request.ModificationRequest"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/request.ModificationRequest"
                 }
@@ -24596,12 +24681,12 @@
         "operationId": "report_request_report",
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/request.ModificationRequest"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/request.ModificationRequest"
               }
@@ -24612,12 +24697,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/request.ModificationRequestReport"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/request.ModificationRequestReport"
                 }
@@ -24845,12 +24930,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitAccountLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitAccountLinkableWrapper"
                 }
@@ -24902,12 +24987,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/organization.OrganizationalUnitAccountLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/organization.OrganizationalUnitAccountLinkableWrapper"
               }
@@ -24918,12 +25003,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitAccountLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitAccountLinkableWrapper"
                 }
@@ -24988,12 +25073,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitAccount"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitAccount"
                 }
@@ -25275,12 +25360,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplicationLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplicationLinkableWrapper"
                 }
@@ -25332,12 +25417,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplicationLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplicationLinkableWrapper"
               }
@@ -25348,12 +25433,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplicationLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplicationLinkableWrapper"
                 }
@@ -25418,12 +25503,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplication"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitClientApplication"
                 }
@@ -25833,12 +25918,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitLinkableWrapper"
                 }
@@ -25882,12 +25967,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/organization.OrganizationalUnitLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/organization.OrganizationalUnitLinkableWrapper"
               }
@@ -25898,12 +25983,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnitLinkableWrapper"
                 }
@@ -25960,12 +26045,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnit"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnit"
                 }
@@ -26018,12 +26103,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/organization.OrganizationalUnit"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/organization.OrganizationalUnit"
               }
@@ -26034,12 +26119,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnit"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/organization.OrganizationalUnit"
                 }
@@ -26215,12 +26300,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionNumberSequenceLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionNumberSequenceLinkableWrapper"
                 }
@@ -26263,12 +26348,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/provisioning.ProvisionNumberSequenceLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/provisioning.ProvisionNumberSequenceLinkableWrapper"
               }
@@ -26279,12 +26364,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionNumberSequenceLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionNumberSequenceLinkableWrapper"
                 }
@@ -26340,12 +26425,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionNumberSequence"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionNumberSequence"
                 }
@@ -26397,12 +26482,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/provisioning.ProvisionNumberSequence"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/provisioning.ProvisionNumberSequence"
               }
@@ -26413,12 +26498,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionNumberSequence"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionNumberSequence"
                 }
@@ -26512,12 +26597,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionedAccount"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionedAccount"
                 }
@@ -26729,12 +26814,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionedAccountLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionedAccountLinkableWrapper"
                 }
@@ -27351,12 +27436,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionedSystemLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionedSystemLinkableWrapper"
                 }
@@ -27405,12 +27490,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/provisioning.ProvisionedSystemLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/provisioning.ProvisionedSystemLinkableWrapper"
               }
@@ -27421,12 +27506,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionedSystemLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionedSystemLinkableWrapper"
                 }
@@ -27527,12 +27612,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionedSystem"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionedSystem"
                 }
@@ -27590,12 +27675,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/provisioning.ProvisionedSystem"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/provisioning.ProvisionedSystem"
               }
@@ -27606,12 +27691,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionedSystem"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.ProvisionedSystem"
                 }
@@ -28006,12 +28091,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.GroupOnSystemLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.GroupOnSystemLinkableWrapper"
                 }
@@ -28065,12 +28150,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/provisioning.GroupOnSystemLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/provisioning.GroupOnSystemLinkableWrapper"
               }
@@ -28081,12 +28166,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.GroupOnSystemLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.GroupOnSystemLinkableWrapper"
                 }
@@ -28153,12 +28238,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.GroupOnSystem"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.GroupOnSystem"
                 }
@@ -28221,12 +28306,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/provisioning.GroupOnSystem"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/provisioning.GroupOnSystem"
               }
@@ -28237,12 +28322,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.GroupOnSystem"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/provisioning.GroupOnSystem"
                 }
@@ -28337,265 +28422,6 @@
         }
       }
     },
-    "/system/{systemid}/synclog/{synclogid}": {
-      "get": {
-        "tags": [
-          "provisioning"
-        ],
-        "summary": "Read a single sync log for a provisioned system by id",
-        "description": "Returns the sync log for a provisioned system.",
-        "operationId": "get_system_synclog",
-        "parameters": [
-          {
-            "name": "additional",
-            "in": "query",
-            "description": "Request additional information to be returned for every record.",
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "audit"
-                ]
-              }
-            }
-          },
-          {
-            "name": "synclogid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          {
-            "name": "systemid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "default response",
-            "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
-                "schema": {
-                  "$ref": "#/components/schemas/provisioning.ProvisionedSystemSyncLog"
-                }
-              },
-              "application/vnd.topicus.keyhub+xml;version=80": {
-                "schema": {
-                  "$ref": "#/components/schemas/provisioning.ProvisionedSystemSyncLog"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/error"
-          }
-        }
-      }
-    },
-    "/system/{systemid}/synclog": {
-      "get": {
-        "tags": [
-          "provisioning"
-        ],
-        "summary": "Query for sync logs for a provisioned system",
-        "description": "Query for sync logs for a provisioned system. The various query parameters can be used to filter the response.",
-        "operationId": "list_system_synclog",
-        "parameters": [
-          {
-            "name": "additional",
-            "in": "query",
-            "description": "Request additional information to be returned for every record.",
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "audit"
-                ]
-              }
-            }
-          },
-          {
-            "name": "any",
-            "in": "query",
-            "description": "Return all or no records. This can be useful when composing parameters.",
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "boolean"
-              }
-            }
-          },
-          {
-            "name": "createdAfter",
-            "in": "query",
-            "description": "Only return records that have been created after the given instant.",
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "format": "date-time"
-              }
-            }
-          },
-          {
-            "name": "createdBefore",
-            "in": "query",
-            "description": "Only return records that have been created before the given instant.",
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "format": "date-time"
-              }
-            }
-          },
-          {
-            "name": "exclude",
-            "in": "query",
-            "description": "Filter the results to exclude the given ids.",
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          },
-          {
-            "name": "id",
-            "in": "query",
-            "description": "Filter the results on the given ids.",
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          },
-          {
-            "name": "modifiedSince",
-            "in": "query",
-            "description": "Only return records that have been modified since the given instant.",
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "format": "date-time"
-              }
-            }
-          },
-          {
-            "name": "q",
-            "in": "query",
-            "description": "Filter records on a complex CQL query.",
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          {
-            "name": "system",
-            "in": "query",
-            "description": "Only return logs for the given systems, specified by id. This parameter supports composition with all parameters from the systems resource.",
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          },
-          {
-            "name": "sort",
-            "in": "query",
-            "description": "Sort the items. Use 'asc-<name>' for ascending and 'desc-<name>' for descending order.",
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          {
-            "name": "Range",
-            "in": "header",
-            "schema": {
-              "$ref": "#/components/schemas/RequestRange"
-            }
-          },
-          {
-            "name": "systemid",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int64"
-            }
-          }
-        ],
-        "responses": {
-          "2XX": {
-            "description": "default response",
-            "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
-                "schema": {
-                  "$ref": "#/components/schemas/provisioning.ProvisionedSystemSyncLogLinkableWrapper"
-                }
-              },
-              "application/vnd.topicus.keyhub+xml;version=80": {
-                "schema": {
-                  "$ref": "#/components/schemas/provisioning.ProvisionedSystemSyncLogLinkableWrapper"
-                }
-              }
-            }
-          },
-          "4XX": {
-            "$ref": "#/components/responses/error"
-          },
-          "5XX": {
-            "$ref": "#/components/responses/error"
-          }
-        }
-      }
-    },
     "/provisioninggroup/{provisioninggroupid}": {
       "get": {
         "tags": [
@@ -28635,12 +28461,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.ProvisioningGroup"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.ProvisioningGroup"
                 }
@@ -28691,12 +28517,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.ProvisioningGroup"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/group.ProvisioningGroup"
               }
@@ -28707,12 +28533,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.ProvisioningGroup"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.ProvisioningGroup"
                 }
@@ -29029,12 +28855,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.ProvisioningGroupLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/group.ProvisioningGroupLinkableWrapper"
                 }
@@ -29443,12 +29269,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/serviceaccount.ServiceAccountLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/serviceaccount.ServiceAccountLinkableWrapper"
                 }
@@ -29493,12 +29319,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/serviceaccount.ServiceAccountLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/serviceaccount.ServiceAccountLinkableWrapper"
               }
@@ -29509,12 +29335,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/serviceaccount.ServiceAccountLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/serviceaccount.ServiceAccountLinkableWrapper"
                 }
@@ -29604,12 +29430,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/serviceaccount.ServiceAccount"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/serviceaccount.ServiceAccount"
                 }
@@ -29663,12 +29489,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/serviceaccount.ServiceAccount"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/serviceaccount.ServiceAccount"
               }
@@ -29679,12 +29505,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/serviceaccount.ServiceAccount"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/serviceaccount.ServiceAccount"
                 }
@@ -29740,12 +29566,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/serviceaccount.ServiceAccountsAuditStats"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/serviceaccount.ServiceAccountsAuditStats"
                 }
@@ -29809,12 +29635,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/serviceaccount.ServiceAccountGroup"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/serviceaccount.ServiceAccountGroup"
                 }
@@ -30052,12 +29878,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/serviceaccount.ServiceAccountGroupLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/serviceaccount.ServiceAccountGroupLinkableWrapper"
                 }
@@ -30846,12 +30672,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/serviceaccount.ServiceAccountStatus"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/serviceaccount.ServiceAccountStatus"
               }
@@ -30918,12 +30744,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecord"
                 }
@@ -31391,12 +31217,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/vault.VaultRecordLinkableWrapper"
                 }
@@ -31845,12 +31671,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/webhook.WebhookLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/webhook.WebhookLinkableWrapper"
                 }
@@ -31892,12 +31718,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/webhook.WebhookLinkableWrapper"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/webhook.WebhookLinkableWrapper"
               }
@@ -31908,12 +31734,12 @@
           "201": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/webhook.WebhookLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/webhook.WebhookLinkableWrapper"
                 }
@@ -31968,12 +31794,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/webhook.Webhook"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/webhook.Webhook"
                 }
@@ -32024,12 +31850,12 @@
         ],
         "requestBody": {
           "content": {
-            "application/vnd.topicus.keyhub+json;version=80": {
+            "application/vnd.topicus.keyhub+json;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/webhook.Webhook"
               }
             },
-            "application/vnd.topicus.keyhub+xml;version=80": {
+            "application/vnd.topicus.keyhub+xml;version=81": {
               "schema": {
                 "$ref": "#/components/schemas/webhook.Webhook"
               }
@@ -32040,12 +31866,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/webhook.Webhook"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/webhook.Webhook"
                 }
@@ -32139,12 +31965,12 @@
           "200": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/webhook.WebhookDelivery"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/webhook.WebhookDelivery"
                 }
@@ -32329,12 +32155,12 @@
           "2XX": {
             "description": "default response",
             "content": {
-              "application/vnd.topicus.keyhub+json;version=80": {
+              "application/vnd.topicus.keyhub+json;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/webhook.WebhookDeliveryLinkableWrapper"
                 }
               },
-              "application/vnd.topicus.keyhub+xml;version=80": {
+              "application/vnd.topicus.keyhub+xml;version=81": {
                 "schema": {
                   "$ref": "#/components/schemas/webhook.WebhookDeliveryLinkableWrapper"
                 }
@@ -32655,7 +32481,8 @@
             "provisioning.ProvisionedSCIM": "#/components/schemas/provisioning.ProvisionedSCIM",
             "provisioning.ProvisionedSystem": "#/components/schemas/provisioning.ProvisionedSystem",
             "provisioning.ProvisionedSystemPrimer": "#/components/schemas/provisioning.ProvisionedSystemPrimer",
-            "provisioning.ProvisionedSystemSyncLog": "#/components/schemas/provisioning.ProvisionedSystemSyncLog",
+            "provisioning.ProvisioningOperationLog": "#/components/schemas/provisioning.ProvisioningOperationLog",
+            "provisioning.ProvisioningOperationLogLine": "#/components/schemas/provisioning.ProvisioningOperationLogLine",
             "request.AbstractAccessProfileModificationRequest": "#/components/schemas/request.AbstractAccessProfileModificationRequest",
             "request.AbstractApplicationModificationRequest": "#/components/schemas/request.AbstractApplicationModificationRequest",
             "request.AbstractOrganizationalUnitModificationRequest": "#/components/schemas/request.AbstractOrganizationalUnitModificationRequest",
@@ -32772,6 +32599,7 @@
             "group.GroupsAuditStats": "#/components/schemas/group.GroupsAuditStats",
             "identity.AccountAttributeValueSelection": "#/components/schemas/identity.AccountAttributeValueSelection",
             "identity.AccountAttributeValueSummary": "#/components/schemas/identity.AccountAttributeValueSummary",
+            "identity.AccountAttributeValueUpdate": "#/components/schemas/identity.AccountAttributeValueUpdate",
             "launchpad.DisplayedLaunchpadTiles": "#/components/schemas/launchpad.DisplayedLaunchpadTiles",
             "license.KeyHubLicenseInfo": "#/components/schemas/license.KeyHubLicenseInfo",
             "mark.ItemMarker": "#/components/schemas/mark.ItemMarker",
@@ -37677,6 +37505,7 @@
             "required": [
               "$type",
               "format",
+              "freelyUseable",
               "list",
               "name",
               "required",
@@ -37710,6 +37539,10 @@
                 "x-tkh-default": false
               },
               "unique": {
+                "type": "boolean",
+                "x-tkh-default": false
+              },
+              "freelyUseable": {
                 "type": "boolean",
                 "x-tkh-default": false
               },
@@ -37775,6 +37608,7 @@
               "$type",
               "allowOverride",
               "allowSelfService",
+              "exclusive",
               "updateAutomatically"
             ],
             "type": "object",
@@ -37788,6 +37622,10 @@
                     "x-tkh-create-only": true
                   }
                 ]
+              },
+              "exclusive": {
+                "type": "boolean",
+                "x-tkh-default": false
               },
               "updateAutomatically": {
                 "type": "boolean",
@@ -38089,6 +37927,34 @@
           }
         ]
       },
+      "identity.AccountAttributeValueUpdate": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/NonLinkable"
+          },
+          {
+            "title": "AccountAttributeValueUpdate",
+            "required": [
+              "$type",
+              "attribute"
+            ],
+            "type": "object",
+            "properties": {
+              "attribute": {
+                "$ref": "#/components/schemas/identity.AccountAttributeDefinition"
+              },
+              "value": {
+                "type": "string"
+              },
+              "$type": {
+                "type": "string",
+                "default": "identity.AccountAttributeValueUpdate"
+              }
+            },
+            "x-tkh-discriminator": "identity.AccountAttributeValueUpdate"
+          }
+        ]
+      },
       "identity.Identity": {
         "allOf": [
           {
@@ -38155,6 +38021,7 @@
             "required": [
               "$type",
               "name",
+              "schedule",
               "token",
               "url"
             ],
@@ -38193,10 +38060,16 @@
             "title": "IdentitySource",
             "required": [
               "$type",
-              "name"
+              "name",
+              "schedule"
             ],
             "type": "object",
             "properties": {
+              "schedule": {
+                "maxLength": 255,
+                "minLength": 0,
+                "type": "string"
+              },
               "$type": {
                 "type": "string",
                 "default": "identitysource.IdentitySource"
@@ -41815,85 +41688,6 @@
         },
         "x-tkh-discriminator": "LinkableWrapper"
       },
-      "provisioning.ProvisionedSystemSyncLog": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Linkable"
-          },
-          {
-            "title": "ProvisionedSystemSyncLog",
-            "required": [
-              "$type",
-              "errors",
-              "log",
-              "modifications"
-            ],
-            "type": "object",
-            "properties": {
-              "createdAt": {
-                "type": "string",
-                "format": "date-time",
-                "readOnly": true,
-                "x-tkh-immutable": true
-              },
-              "log": {
-                "type": "string",
-                "readOnly": true,
-                "x-tkh-immutable": true
-              },
-              "modifications": {
-                "type": "integer",
-                "format": "int32",
-                "readOnly": true,
-                "x-tkh-default": 0,
-                "x-tkh-immutable": true
-              },
-              "errors": {
-                "type": "integer",
-                "format": "int32",
-                "readOnly": true,
-                "x-tkh-default": 0,
-                "x-tkh-immutable": true
-              },
-              "$type": {
-                "type": "string",
-                "default": "provisioning.ProvisionedSystemSyncLog"
-              },
-              "additionalObjects": {
-                "type": "object",
-                "properties": {
-                  "audit": {
-                    "allOf": [
-                      {
-                        "$ref": "#/components/schemas/AuditInfo"
-                      },
-                      {
-                        "readOnly": true
-                      }
-                    ]
-                  }
-                }
-              }
-            },
-            "x-tkh-writescope": {
-              "provisioning.ProvisionedSystemSyncLog": true
-            },
-            "x-tkh-discriminator": "provisioning.ProvisionedSystemSyncLog"
-          }
-        ]
-      },
-      "provisioning.ProvisionedSystemSyncLogLinkableWrapper": {
-        "type": "object",
-        "properties": {
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/provisioning.ProvisionedSystemSyncLog"
-            }
-          }
-        },
-        "x-tkh-discriminator": "LinkableWrapper"
-      },
       "provisioning.ProvisionedSystemType": {
         "type": "string",
         "enum": [
@@ -41945,6 +41739,200 @@
             },
             "x-tkh-discriminator": "provisioning.ProvisioningManagementPermissions"
           }
+        ]
+      },
+      "provisioning.ProvisioningOperationAction": {
+        "type": "string",
+        "enum": [
+          "LOG",
+          "READ",
+          "WRITE"
+        ]
+      },
+      "provisioning.ProvisioningOperationLog": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Linkable"
+          },
+          {
+            "title": "ProvisioningOperationLog",
+            "required": [
+              "$type",
+              "endTime",
+              "startTime",
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "startTime": {
+                "type": "string",
+                "format": "date-time",
+                "readOnly": true,
+                "x-tkh-immutable": true
+              },
+              "endTime": {
+                "type": "string",
+                "format": "date-time",
+                "readOnly": true,
+                "x-tkh-immutable": true
+              },
+              "type": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/provisioning.ProvisioningOperationType"
+                  },
+                  {
+                    "readOnly": true,
+                    "x-tkh-immutable": true
+                  }
+                ]
+              },
+              "context": {
+                "type": "string",
+                "readOnly": true,
+                "x-tkh-immutable": true
+              },
+              "$type": {
+                "type": "string",
+                "default": "provisioning.ProvisioningOperationLog"
+              }
+            },
+            "x-tkh-writescope": {
+              "provisioning.ProvisioningOperationLog": true
+            },
+            "x-tkh-discriminator": "provisioning.ProvisioningOperationLog"
+          }
+        ]
+      },
+      "provisioning.ProvisioningOperationLogLevel": {
+        "type": "string",
+        "enum": [
+          "ERROR",
+          "WARNING",
+          "INFO",
+          "TRACE"
+        ]
+      },
+      "provisioning.ProvisioningOperationLogLine": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Linkable"
+          },
+          {
+            "title": "ProvisioningOperationLogLine",
+            "required": [
+              "$type",
+              "action",
+              "level",
+              "message",
+              "thread",
+              "time"
+            ],
+            "type": "object",
+            "properties": {
+              "time": {
+                "type": "string",
+                "format": "date-time",
+                "readOnly": true,
+                "x-tkh-immutable": true
+              },
+              "level": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/provisioning.ProvisioningOperationLogLevel"
+                  },
+                  {
+                    "readOnly": true,
+                    "x-tkh-immutable": true
+                  }
+                ]
+              },
+              "action": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/provisioning.ProvisioningOperationAction"
+                  },
+                  {
+                    "readOnly": true,
+                    "x-tkh-immutable": true
+                  }
+                ]
+              },
+              "message": {
+                "type": "string",
+                "readOnly": true,
+                "x-tkh-immutable": true
+              },
+              "thread": {
+                "type": "string",
+                "readOnly": true,
+                "x-tkh-immutable": true
+              },
+              "account": {
+                "type": "string",
+                "readOnly": true,
+                "x-tkh-immutable": true
+              },
+              "system": {
+                "type": "string",
+                "readOnly": true,
+                "x-tkh-immutable": true
+              },
+              "group": {
+                "type": "string",
+                "readOnly": true,
+                "x-tkh-immutable": true
+              },
+              "accessProfile": {
+                "type": "string",
+                "readOnly": true,
+                "x-tkh-immutable": true
+              },
+              "groupOnSystem": {
+                "type": "string",
+                "readOnly": true,
+                "x-tkh-immutable": true
+              },
+              "serviceAccount": {
+                "type": "string",
+                "readOnly": true,
+                "x-tkh-immutable": true
+              },
+              "$type": {
+                "type": "string",
+                "default": "provisioning.ProvisioningOperationLogLine"
+              }
+            },
+            "x-tkh-writescope": {
+              "provisioning.ProvisioningOperationLogLine": true
+            },
+            "x-tkh-discriminator": "provisioning.ProvisioningOperationLogLine"
+          }
+        ]
+      },
+      "provisioning.ProvisioningOperationType": {
+        "type": "string",
+        "enum": [
+          "INIT_ACCOUNT",
+          "CHANGE_PASSWORD",
+          "ROTATE_PASSWORDS",
+          "UPDATE_ACCOUNT_ATTRIBUTES",
+          "PRE_PROVISIONING_CHECK",
+          "SYNC_MEMBERSHIP",
+          "SYNC_COLLECTION",
+          "SYNC_ACCOUNT",
+          "SYNC_SERVICE_ACCOUNT",
+          "SYNC_INCREMENTAL",
+          "SYNC_METADATA",
+          "SYNC_FULL",
+          "DEACTIVATE_SYSTEM",
+          "UPDATE_SYSTEM",
+          "CREATE_GROUP_ON_SYSTEM",
+          "REMOVE_GROUP_ON_SYSTEM",
+          "UNLINK_GROUP_ON_SYSTEM",
+          "DESTROY_ACCOUNT",
+          "DESTROY_SERVICE_ACCOUNT",
+          "CLEANUP_OLD_ACCOUNTS"
         ]
       },
       "provisioning.ProvisioningStatus": {
@@ -44900,6 +44888,9 @@
               "url": {
                 "type": "string"
               },
+              "additionalURLs": {
+                "type": "string"
+              },
               "username": {
                 "maxLength": 255,
                 "minLength": 0,
@@ -45687,12 +45678,12 @@
       "error": {
         "description": "error",
         "content": {
-          "application/vnd.topicus.keyhub+json;version=80": {
+          "application/vnd.topicus.keyhub+json;version=81": {
             "schema": {
               "$ref": "#/components/schemas/ErrorReport"
             }
           },
-          "application/vnd.topicus.keyhub+xml;version=80": {
+          "application/vnd.topicus.keyhub+xml;version=81": {
             "schema": {
               "$ref": "#/components/schemas/ErrorReport"
             }

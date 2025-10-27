@@ -25,6 +25,7 @@ import './group/group_info.dart';
 import './group/groups_audit_stats.dart';
 import './identity/account_attribute_value_selection.dart';
 import './identity/account_attribute_value_summary.dart';
+import './identity/account_attribute_value_update.dart';
 import './launchpad/displayed_launchpad_tiles.dart';
 import './license/key_hub_license_info.dart';
 import './mark/item_marker.dart';
@@ -123,6 +124,7 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'group.GroupsAuditStats' => GroupsAuditStats(),
             'identity.AccountAttributeValueSelection' => AccountAttributeValueSelection(),
             'identity.AccountAttributeValueSummary' => AccountAttributeValueSummary(),
+            'identity.AccountAttributeValueUpdate' => AccountAttributeValueUpdate(),
             'launchpad.DisplayedLaunchpadTiles' => DisplayedLaunchpadTiles(),
             'license.KeyHubLicenseInfo' => KeyHubLicenseInfo(),
             'mark.ItemMarker' => ItemMarker(),

@@ -53,7 +53,7 @@ class IdentitysourceRequestBuilder extends BaseRequestBuilder<IdentitysourceRequ
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<IdentitysourceRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<IdentitysourceRequestBuilderGetQueryParameters>(requestConfiguration, () => IdentitysourceRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
         return requestInfo;
     }
     /// Creates one or more new identity sources and returns the newly created sources.
@@ -62,8 +62,8 @@ class IdentitysourceRequestBuilder extends BaseRequestBuilder<IdentitysourceRequ
     RequestInformation toPostRequestInformation(IdentitySourceLinkableWrapper body, [void Function(RequestConfiguration<IdentitysourceRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<IdentitysourceRequestBuilderPostQueryParameters>(requestConfiguration, () => IdentitysourceRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=80', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=81', body);
         return requestInfo;
     }
 }

@@ -34,7 +34,7 @@ class RandomRequestBuilder extends BaseRequestBuilder<RandomRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<RandomRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<RandomRequestBuilderGetQueryParameters>(requestConfiguration, () => RandomRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
         return requestInfo;
     }
 }

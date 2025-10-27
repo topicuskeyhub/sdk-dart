@@ -11,6 +11,8 @@ class AttributedefRequestBuilderGetQueryParameters implements AbstractQueryParam
     List<GetAdditionalQueryParameterType>? additional;
     ///  Return all or no records. This can be useful when composing parameters.
     List<bool>? any;
+    ///  Only return account attributes for which a rule can be created for all of the given access profiles, specified by id. The attribute cannot have a rule for any of the profiles, nor can it be exclusive in any other profile.
+    List<int>? availableForAccessProfile;
     ///  Only return records that have been created after the given instant.
     List<DateTime>? createdAfter;
     ///  Only return records that have been created before the given instant.
@@ -27,8 +29,6 @@ class AttributedefRequestBuilderGetQueryParameters implements AbstractQueryParam
     List<String>? name;
     ///  Filter account attribute definitions on (part of) the name.
     List<String>? nameContains;
-    ///  Only return account attributes for which the given access profiles do not have an attribute rule, specified by id.
-    List<int>? noRuleForAccessProfile;
     ///  Filter records on a complex CQL query.
     List<String>? q;
     ///  Only return account attribute definitions that are or are not required.
@@ -45,6 +45,7 @@ class AttributedefRequestBuilderGetQueryParameters implements AbstractQueryParam
         return {
             'additional' : additional,
             'any' : any,
+            'availableForAccessProfile' : availableForAccessProfile,
             'createdAfter' : createdAfter,
             'createdBefore' : createdBefore,
             'exclude' : exclude,
@@ -53,7 +54,6 @@ class AttributedefRequestBuilderGetQueryParameters implements AbstractQueryParam
             'modifiedSince' : modifiedSince,
             'name' : name,
             'nameContains' : nameContains,
-            'noRuleForAccessProfile' : noRuleForAccessProfile,
             'q' : q,
             'required_' : required_,
             'sort' : sort,

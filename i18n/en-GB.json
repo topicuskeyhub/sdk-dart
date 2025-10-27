@@ -20,8 +20,6 @@
               "label": "Report issue"
             },
             "systems": {
-              "ProvisioningSelfServiceOptions#EXISTING_GROUPS": "Choose existing groups",
-              "ProvisioningSelfServiceOptions#SERVICE_ACCOUNTS": "Request new service accounts",
               "ProvisioningGroupAddPage$ProvisioningGroupAddBean#owner": {
                 "description": "Managers from the selected group control access to this group on the linked system.",
                 "label": "Group with ownership"
@@ -47,14 +45,15 @@
               "ProvisioningGroupAddPage$ProvisioningGroupAddBean#group": {
                 "label": "Group in KeyHub"
               },
-              "ProvisioningSelfServiceOptions#NEW_NAMESPACES": "Request new namespaces",
               "ProvisioningGroupAddPage$ProvisioningGroupAddBean#newGroupOnSystemType": {
                 "label": "Type of the new group"
               },
+              "ProvisioningGroupAddPage$ProvisioningGroupAddBean#showGroup": {
+                "label": "Grant access to"
+              },
               "ProvisioningGroupAddPage$ProvisioningGroupAddBean#system": {
                 "label": "Linked system"
-              },
-              "ProvisioningSelfServiceOptions#NEW_GROUPS": "Request new groups"
+              }
             },
             "AboutPage$AboutBean#version": {
               "label": "Version"
@@ -232,6 +231,12 @@
               "SecretPromptPanel$SecretPromptBean#secretLost": {
                 "description": "When the secret is lost, the vault can be reset with this option. WARNING! All records in the vault will be lost.",
                 "label": "Secret is lost"
+              },
+              "provisioning": {
+                "ProvisioningSelfServiceOptions#NEW_NAMESPACES": "Request new namespaces",
+                "ProvisioningSelfServiceOptions#EXISTING_GROUPS": "Choose existing groups",
+                "ProvisioningSelfServiceOptions#NEW_GROUPS": "Request new groups",
+                "ProvisioningSelfServiceOptions#SERVICE_ACCOUNTS": "Request new service accounts"
               },
               "AbstractConfirmationPanel$Confirmation#deprovisionAction": {
                 "description": "Specify which actions should be performed upon deactivation.",
@@ -1489,6 +1494,7 @@
               "ProvisionedSCIM#bearerToken": {
                 "label": "Bearer Token"
               },
+              "ProvisioningOperationType#SYNC_ACCOUNT": "Sync account",
               "ProvisionedLDAPDirectory#sshPublicKeySupport": {
                 "description": "Choose how an SSH public key should be placed on an account.",
                 "label": "SSH public key"
@@ -1526,6 +1532,7 @@
                 "label": "Bind DN",
                 "placeholder": "CN=User Name,OU=group,DC=company,DC=local"
               },
+              "ProvisioningOperationType#ROTATE_PASSWORDS": "Rotate passwords",
               "ProvisionedSystem#externalUuid": {
                 "label": "External UUID"
               },
@@ -1538,6 +1545,8 @@
                 "description": "The RDN under base DN containing groups.",
                 "label": "Group RDN"
               },
+              "ProvisioningOperationType#UPDATE_SYSTEM": "Update system",
+              "ProvisioningOperationType#CLEANUP_OLD_ACCOUNTS": "Cleanup old accounts",
               "ProvisionedAzureOIDCDirectory#tenant": {
                 "label": "Azure tenant"
               },
@@ -1557,6 +1566,7 @@
                 "label": "Additional object classes",
                 "description": "Specify additional values for the objectClass attribute for accounts, separated by spaces."
               },
+              "ProvisioningOperationType#DESTROY_SERVICE_ACCOUNT": "Destroy service account",
               "AbstractProvisionedLDAP#bindPassword": {
                 "description": "The password used to bind with on the directory.",
                 "label": "Bind password"
@@ -1565,6 +1575,8 @@
                 "description": "When enabled, KeyHub will manage this group and its memberships on the linked system.",
                 "label": "Provisioning enabled"
               },
+              "ProvisioningOperationType#UNLINK_GROUP_ON_SYSTEM": "Unlink group on system",
+              "ProvisioningOperationType#INIT_ACCOUNT": "Init account",
               "ProvisionedLDAP#hashingScheme": {
                 "label": "Password hashing",
                 "description": "WARNING! Changing the hashing scheme will force all users to reconfigure their password for this system. SSHA stands for 'salted-SHA1', a weak algorithm supported by all LDAP servers. PBKDF2 is a strong hashing algorithm using 64k iterations of SHA512 but may require an additional module on OpenLDAP."
@@ -1586,12 +1598,14 @@
                 "label": "TLS"
               },
               "GroupOnSystemType#GROUP_OF_UNIQUE_NAMES": "groupOfUniqueNames",
+              "ProvisioningOperationType#PRE_PROVISIONING_CHECK": "Pre-provisioning check",
               "ProvisionedSystemType#INTERNAL_LDAP": "Internal LDAP",
               "ProvisionedSystemType#LDAP": "LDAP",
               "ProvisionedSystem#contentAdministrator": {
                 "description": "The contents of this linked system is administered by members of the selected group.",
                 "label": "Content administrators group"
               },
+              "ProvisioningOperationType#SYNC_INCREMENTAL": "Sync incremental",
               "ProvisionedSystem#owner": {
                 "description": "Managers from the selected group control access to and administration of this linked system.",
                 "placeholder": "Select a group...",
@@ -1622,6 +1636,7 @@
               "ProvisionedAzureTenant#clientSecret": {
                 "label": "Client secret"
               },
+              "ProvisioningOperationType#SYNC_FULL": "Sync full",
               "AbstractProvisionedLDAP#trustedCertificate": {
                 "description": "The certificate of the server that must be trusted. This can also be one of the certificates used to sign that particular certificate.",
                 "label": "Trusted certificate"
@@ -1645,6 +1660,7 @@
                 "label": "Trusted certificate for failover",
                 "description": "The certificate of the failover server that must be trusted. This can also be one of the certificates used to sign that particular certificate."
               },
+              "ProvisioningOperationType#CHANGE_PASSWORD": "Change password",
               "GroupOnSystem#system": {
                 "label": "Linked system"
               },
@@ -1696,6 +1712,7 @@
               "AbstractProvisionedLDAP#attributes": {
                 "label": "Custom attributes"
               },
+              "ProvisioningOperationType#CREATE_GROUP_ON_SYSTEM": "Create group on system",
               "AbstractProvisionedLDAP#objectClasses": {
                 "label": "Additional object classes",
                 "description": "Specify additional values for the objectClass attribute for accounts, separated by spaces."
@@ -1710,6 +1727,7 @@
                 "description": "Azure AD Connect must be activated on this Active Directory, which synchronizes with the chosen Azure tenant.",
                 "label": "LDAP directory"
               },
+              "ProvisioningOperationType#SYNC_COLLECTION": "Sync collection",
               "ProvisionedNamespace#groupDN": {
                 "label": "Group RDN",
                 "description": "The RDN under base DN containing groups."
@@ -1723,10 +1741,12 @@
                 "label": "Custom attributes"
               },
               "ProvisionedSystemType": "Linked system",
+              "ProvisioningOperationType#SYNC_METADATA": "Sync metadata",
               "ProvisionedAzureSyncLDAPDirectory#tenant": {
                 "label": "Azure tenant"
               },
               "GroupOnSystemType#AZURE_SECURITY_GROUP": "Security group",
+              "ProvisioningOperationType#SYNC_MEMBERSHIP": "Sync membership",
               "ProvisionedSCIM#attributes": {
                 "label": "Custom attributes"
               },
@@ -1734,6 +1754,7 @@
                 "label": "Username prefix",
                 "description": "The prefix to apply to every username when it is created on the system. A dash will be used as separator."
               },
+              "ProvisioningOperationType#UPDATE_ACCOUNT_ATTRIBUTES": "Update account attributes",
               "ProvisionedLDAPDirectory#groupDN": {
                 "label": "Group DN",
                 "description": "The DN of the selected directory containing groups."
@@ -1756,6 +1777,7 @@
                 "label": "Identity provider domain",
                 "description": "With an identity provider domain set, users will be invited via that domain and log in via SSO."
               },
+              "ProvisioningOperationType#REMOVE_GROUP_ON_SYSTEM": "Remove group on system",
               "ADSamAccountNameScheme#TRANSFER": "Transfer value - Take the value from the sAMAccountName attribute on the account.",
               "ProvisionedNamespace#serviceAccountDN": {
                 "label": "Service account RDN",
@@ -1772,6 +1794,7 @@
               },
               "LDAPSshPublicKeySupport#DISABLED": "Disabled",
               "ProvisionedSCIMVendor#DEFAULT": "Default",
+              "ProvisioningOperationType#DEACTIVATE_SYSTEM": "Deactivate system",
               "GroupOnSystemType#POSIX_GROUP": "posixGroup",
               "ProvisionedSystemPrimer#active": {
                 "label": "Enabled"
@@ -1788,6 +1811,7 @@
               "ProvisionedSCIM#customHeaderName": {
                 "label": "Header name"
               },
+              "ProvisioningOperationType#SYNC_SERVICE_ACCOUNT": "Sync service account",
               "ADSamAccountNameScheme#OMIT": "Omit - The AD chooses a random value.",
               "GroupOnSystemType#GROUP_UNIVERSAL_SECURITY": "group (universal security)",
               "ProvisionedLDAPDirectory#directory": {
@@ -1802,12 +1826,17 @@
               "ProvisionedSystemSyncLog#errors": {
                 "label": "Errors/warnings"
               },
+              "ProvisioningOperationType#DESTROY_ACCOUNT": "Destroy account",
               "ADSamAccountNameScheme#TRUNCATE": "Truncate username - The username is shortened to a maximum of 20 characters.",
               "ProvisionedAzureSyncLDAPDirectory#clientId": {
                 "label": "Client identifier"
               }
             },
             "identity": {
+              "AccountAttributeValueUpdate#expectedValue": {
+                "label": "Expected value",
+                "description": "The current value of the attribute does not match the expected value."
+              },
               "AccountAttributeSource#EXTERNAL": "External source",
               "AccountAttributeSystemDefinition#MIDDLE_NAME": "Middle name",
               "AccountAttributeRule#attribute": {
@@ -1831,15 +1860,25 @@
                 "description": "Automatically update the attribute when the calculated value changes."
               },
               "AccountAttributeSystemDefinition#TELEPHONE_PRIVATE": "Private phone number",
+              "AccountAttributeRule#exclusive": {
+                "description": "No rules can be defined for this attribute in other access profiles.",
+                "label": "Exclusive"
+              },
               "AccountAttributeFormat#BOOLEAN": "Boolean",
               "AccountAttributeDefinition#unique": {
                 "label": "Unique"
+              },
+              "AccountAttributeValueUpdate#currentValue": {
+                "label": "Current value"
               },
               "AccountAttributeValueSelectionStatus#IN_SYNC": "Synchronised",
               "AccountAttributeValueSelectionStatus#DUPLICATE": "Duplicate",
               "AccountAttributeSystemDefinition#DISPLAY_NAME": "Display name",
               "AccountAttributeSystemDefinition#EMAIL_PRIVATE": "Private email address",
               "AccountAttributeFormat#DATE": "Date",
+              "AccountAttributeDefinition#freelyUseable": {
+                "label": "Freely useable"
+              },
               "AccountAttributeRule#priorityFormula": {
                 "label": "Priority for the script",
                 "description": "The priority (1-5) of a value calculated by the script. A higher number gives this source priority over other sources. A missing value disables the source for this attribute."
@@ -1868,6 +1907,10 @@
               "AccountAttributeRule#defaultValue": {
                 "description": "This value is used if no value is available from any of the other sources.",
                 "label": "Default value"
+              },
+              "AccountAttributeValueUpdate#value": {
+                "description": "Specify a custom value or clear the value to fall back to a value from another source.",
+                "label": "Value"
               },
               "Identity#middleName": {
                 "label": "Middle name"
@@ -2238,6 +2281,10 @@
               },
               "MoveVaultRecordAction#MOVE": "Move to",
               "VaultRecordColor#RED": "Red",
+              "VaultRecord#additionalURLs": {
+                "description": "Additional URLs to which this rule applies (one per line).",
+                "label": "Additional links"
+              },
               "MoveVaultRecord#target": {
                 "label": "Destination"
               },
@@ -2443,6 +2490,10 @@
               },
               "IdentitySourcePrimer#name": {
                 "label": "Name"
+              },
+              "IdentitySource#schedule": {
+                "description": "A schedule to sync the identity source, expressed as a cron expression.",
+                "label": "Schedule"
               },
               "AFASIdentitySource#url": {
                 "label": "URL"
@@ -2885,10 +2936,8 @@
       },
       "system": {
         "namespaces": "Namespaces",
-        "groups": "Groups",
         "groupsinsystem": "Groups on system",
         "synclogs": "Synchronisations",
-        "accessprofiles": "Access profiles",
         "permissions": "Issued permissions"
       },
       "provisionedad": "Linked Active Directory",
@@ -3800,6 +3849,7 @@
     },
     "createserviceaccount": {
       "subtitle": "Specify the username of the new service account and explain what it is needed for.",
+      "accepted": "Because you are content administrator of {1}, your request to create the service account {0} on {1} has been automatically accepted.",
       "sent": "Your request to create the service account {0} on {1} has been submitted.",
       "accept": {
         "options": "Change the username",
@@ -3951,6 +4001,33 @@
       "bewerken": "Edit number sequence",
       "new": "Start a new number sequence"
     },
+    "header": {
+      "scim": "Linked SCIM server",
+      "gos": "Groups on system",
+      "azuresyncdirectory": "Linked Azure tenant with AD Connect",
+      "ad": "Linked Active Directory",
+      "internal": "Internal LDAP",
+      "synclogs": "Synchronisations",
+      "ldap": "Linked LDAP",
+      "permissions": "Issued permissions",
+      "azure": "Linked Azure tenant",
+      "serviceaccounts": "Service accounts",
+      "ldapdirectory": "Linked source directory",
+      "namespace": "Provisioned namespace",
+      "azureoidcdirectory": "Linked Azure OIDC source directory",
+      "namespaces": "Namespaces"
+    },
+    "gos": {
+      "access": {
+        "count": "{0} items",
+        "serviceaccount": "Service account: {0}",
+        "groups": "{0} groups",
+        "accessprofile": "Access profile: {0}",
+        "group": "Group: {0}",
+        "accessprofiles": "{0} access profiles",
+        "serviceaccounts": "{0} service accounts"
+      }
+    },
     "showtoken": "Your temporary password",
     "reason": {
       "label": "Reason",
@@ -3982,6 +4059,10 @@
       "loginname": "Login name"
     },
     "showall": "Show all groups",
+    "show": {
+      "accessprofile": "Access profile",
+      "group": "Group"
+    },
     "newgroup": "Create a new group",
     "extend": "Extend access",
     "system": {
@@ -4082,6 +4163,9 @@
       "placeholder": "Password",
       "confirmchange": "Confirm your password change"
     },
+    "SAML_ERROR": {
+      "header": "Login failed"
+    },
     "header": {
       "main": "Sign in",
       "as": {
@@ -4178,152 +4262,6 @@
     },
     "directoryoffline": "Due to an outage, it is currently not possible to sign in with {0}. Please contact your KeyHub administrator when you are having trouble signing in."
   },
-  "menu": {
-    "system": {
-      "syncs": "Synchronisations",
-      "details": "Details",
-      "profiles": "Access profiles",
-      "groups": "Groups",
-      "serviceaccounts": "Service accounts",
-      "namespaces": "Namespaces",
-      "groupsinsystem": "Groups on system",
-      "permissions": "Issued permissions"
-    },
-    "auditor": {
-      "dashboard": {
-        "groups": "Groups",
-        "serviceaccounts": "Service accounts",
-        "main": "Dashboard",
-        "accounts": "Accounts"
-      },
-      "classifications": "Classifications"
-    },
-    "application": {
-      "details": "Details",
-      "profiles": "Access profiles",
-      "groups": "Groups"
-    },
-    "settings": {
-      "webhooks": "Webhooks",
-      "main": "Settings",
-      "vaultrecovery": "Vault recovery",
-      "notificationcentre": "Notifications",
-      "about": "About",
-      "sequences": "Number sequences",
-      "algemeen": "General",
-      "certificates": "Certificates"
-    },
-    "deployment": {
-      "disk": "Disk management",
-      "main": "Deployment",
-      "replication": "Replication"
-    },
-    "organizationalunit": {
-      "settings": "Settings",
-      "accounts": "Accounts",
-      "clients": "Applications",
-      "details": "Details"
-    },
-    "group": {
-      "applications": "Applications",
-      "accounts": "Accounts",
-      "koppelingen": "Linked systems",
-      "details": "Details"
-    },
-    "mygroups": {
-      "main": "My groups",
-      "managed": "Manager dashboard"
-    },
-    "config": {
-      "application": "Application",
-      "authentication": "Authentication",
-      "backup": "Backups",
-      "mail": "E-mail",
-      "firewall": "Firewall",
-      "monitoring": "Monitoring",
-      "logging": "Logging",
-      "time": "Time",
-      "certificate": "Certificates",
-      "network": "Network"
-    },
-    "install": {
-      "step4a": "Authentication",
-      "step4b": "Backup",
-      "step41": "Directory",
-      "step42": "Initial account",
-      "step21": "Time",
-      "step23": "Certificates",
-      "step22": "Network",
-      "step24": "Apply",
-      "step5": "Completed",
-      "step3": "Start KeyHub",
-      "step2": "Configuration",
-      "step1": "Password",
-      "step0": "Welcome"
-    },
-    "profile": {
-      "account": "Account",
-      "folders": "Dashboard layout",
-      "sessions": "Sessions",
-      "consent": "Applications",
-      "main": "Profile"
-    },
-    "schedules": "Cron jobs",
-    "account": {
-      "auditlog": "Audit log",
-      "attributes": "Attributes",
-      "details": "Details"
-    },
-    "accounts": {
-      "main": "Accounts",
-      "cleanup": "Clean up",
-      "bulkedit": "Bulk edit",
-      "overview": "User accounts",
-      "service": "Service accounts"
-    },
-    "systems": "Linked systems",
-    "administration": "Administration",
-    "serviceaccount": {
-      "details": "Details",
-      "groupsonsystem": "Groups on system"
-    },
-    "uitloggen": "Logout",
-    "directory": {
-      "details": "Details",
-      "accounts": "Accounts"
-    },
-    "backups": "Backups",
-    "attributedefinitions": "Attribute definitions",
-    "applications": "Applications",
-    "support": {
-      "main": "Support",
-      "logs": "Logs",
-      "supportdumps": "Support dumps"
-    },
-    "dashboard": "Dashboard",
-    "access": "Manage access",
-    "directories": "Directories",
-    "help": "Help",
-    "replication": {
-      "step1": "Setup link",
-      "step2": "Configuration",
-      "step3": "Start replication",
-      "step0": "Welcome",
-      "step23": "Apply",
-      "step21": "Network",
-      "step22": "Certificates"
-    },
-    "auditing": "Auditing",
-    "launchpad": "Launchpad",
-    "vault": "Vaults",
-    "identitysources": "Identity sources",
-    "actions": "Actions",
-    "groups": "Groups",
-    "audit": "Audit log",
-    "configuration": "Configuration",
-    "organizationalunits": "Organisation",
-    "accessprofiles": "Access profiles"
-  },
   "base": {
     "actie": {
       "toestaan": "Approve",
@@ -4398,6 +4336,7 @@
       "volgende": "Next",
       "select": "Select",
       "repair": "Repair",
+      "showall": "Show all...",
       "wijzigen": "Change",
       "openen": "Open",
       "reload": "Reload",
@@ -4441,6 +4380,7 @@
       "1": "1 hidden element"
     },
     "off": "Off",
+    "blocked": "This field is shielded.",
     "filter": "Filter",
     "or": "or",
     "on": "On",
@@ -4544,10 +4484,6 @@
     },
     "warn": {
       "business": "Provisioning in this group is not available for its members with a Business license."
-    },
-    "filter": {
-      "group": "Select a group...",
-      "type": "Filter on type..."
     },
     "transfer": "Transfer"
   },
@@ -4760,6 +4696,10 @@
       },
       "MONITORING_OTLP_TLS_LEVEL": {
         "label": "TLS"
+      },
+      "SELINUX": {
+        "label": "SELinux enforcing mode",
+        "description": "Toggle between SELinux enforcement or permissive mode. Only disable this option if there are specific problems with SELinux, and always report these problems to Topicus KeyHub support."
       },
       "SSH_PASSWORD_AUTHENTICATION": {
         "label": "SSH password authentication"
@@ -5168,6 +5108,7 @@
         "upgrade_db": "Updating PostgreSQL",
         "setunavailable": "Removing the node from the cluster",
         "performosupgrade": "Updating the operating system",
+        "backupkeys": "Generating the backup encryption keypair",
         "checkosupgrade": "Preparing the operating system upgrade",
         "create_snapshot": "Creating a snapshot of the system",
         "reboot": "Rebooting",
@@ -5186,6 +5127,7 @@
         "upgrade_docker": "Updating Docker",
         "shutdown": "Shutting down",
         "cleanup": "Cleaning up update files",
+        "download": "Downloading update package",
         "check_updates": "Checking for available updates",
         "remove_snapshot": "Cleaning up",
         "refresh_node_state": "Refreshing the state of the node",
@@ -5235,7 +5177,8 @@
       "noofflinelicense": "Your license does not allow offline updating.",
       "updateavailable": "Topicus KeyHub <strong>{0}<\/strong> is available",
       "diskfull": "There is not enough disk space to perform the update. Provide at least 5GB of free space in /.",
-      "osupgradeavailable": "An update to <strong>AlmaLinux 8<\/strong> is available",
+      "inhibitors": "A previous upgrade attempt failed due to one or more inhibitors. Correct the problems below and try again:",
+      "osupgradeavailable": "An update to <strong>AlmaLinux {0}<\/strong> is available",
       "dbupgradeavailable": "An update to <strong>PostgreSQL {0}<\/strong> is available"
     },
     "install": {
@@ -5955,11 +5898,15 @@
       "value": "Value",
       "type": "Type",
       "modifications": "# Modifications",
+      "owner": "Owner",
       "organizationalunits": "Organisational units",
+      "access": "Access",
       "filedate": "File date",
       "subjectdn": "Subject DN",
       "groups": "Groups",
       "directory": "Directory",
+      "readwrites": "Reads/writes",
+      "datetime": "Time",
       "group": "Group",
       "username": "Username",
       "used": "Used",
@@ -5970,13 +5917,16 @@
       "nameInSystem": "Group on system",
       "lastActive": "Last sign in",
       "system": "Linked system",
-      "provisioningEnabled": "Provisioning enabled",
+      "provisioningEnabled": "Provisioning",
       "mountpoint": "Mount point",
       "encrypted": "Encrypted",
       "records": "Number of records",
+      "thread": "Thread",
+      "errorwarnings": "Errors/warnings",
       "clientId": "Client ID",
       "available": "Available",
-      "errorswarns": "# Errors/warnings",
+      "writes": "Writes",
+      "completedAt": "Completed at",
       "email": "E-mail",
       "minionid": "Identifier",
       "accessProfileInKeyHub": "Access profiles",
@@ -5985,12 +5935,14 @@
       "2fa": "2FA",
       "company": "Company",
       "rights": "Privileges",
+      "warnings": "Warnings",
       "removedat": "Removed at",
       "nrAccounts": "# Accounts",
       "active": "Enabled",
       "expiresat": "Expires at",
       "application": "Application",
       "middleName": "Middle name",
+      "message": "Message",
       "givenName": "Given name",
       "familyName": "Family name",
       "infrastructureFeatures": "Infrastructure",
@@ -5998,13 +5950,19 @@
       "reden": "Reason",
       "groupLastUsed": "Group last used",
       "url": "URL",
+      "startedAt": "Started at",
+      "reads": "Reads",
       "ip": "IP address",
+      "context": "Context",
       "validity": "Validity",
       "systems": "Linked system",
       "groupInKeyHub": "Groups in KeyHub",
       "name": "Name",
+      "action": "Action",
       "displayName": "Display name",
+      "errors": "Errors",
       "version": "Version",
+      "level": "Log level",
       "description": "Description"
     }
   },
@@ -6067,7 +6025,8 @@
     },
     "clientpermissions": {
       "subtitle": "Details for the permissions for the application {0}.",
-      "header": "Granted permissions"
+      "header": "Granted permissions",
+      "filter": "Filter on type..."
     },
     "attribute": {
       "script": "Script",
@@ -6084,6 +6043,145 @@
     "organizationalunits": {
       "header": "Organisational units"
     }
+  },
+  "menu": {
+    "auditor": {
+      "dashboard": {
+        "groups": "Groups",
+        "serviceaccounts": "Service accounts",
+        "main": "Dashboard",
+        "accounts": "Accounts"
+      },
+      "classifications": "Classifications"
+    },
+    "system": {
+      "details": "Details"
+    },
+    "application": {
+      "details": "Details",
+      "profiles": "Access profiles",
+      "groups": "Groups"
+    },
+    "settings": {
+      "webhooks": "Webhooks",
+      "main": "Settings",
+      "vaultrecovery": "Vault recovery",
+      "notificationcentre": "Notifications",
+      "about": "About",
+      "sequences": "Number sequences",
+      "algemeen": "General",
+      "certificates": "Certificates"
+    },
+    "deployment": {
+      "disk": "Disk management",
+      "main": "Deployment",
+      "replication": "Replication"
+    },
+    "organizationalunit": {
+      "settings": "Settings",
+      "accounts": "Accounts",
+      "clients": "Applications",
+      "details": "Details"
+    },
+    "group": {
+      "applications": "Applications",
+      "accounts": "Accounts",
+      "koppelingen": "Linked systems",
+      "details": "Details"
+    },
+    "mygroups": {
+      "main": "My groups",
+      "managed": "Manager dashboard"
+    },
+    "config": {
+      "application": "Application",
+      "authentication": "Authentication",
+      "backup": "Backups",
+      "mail": "E-mail",
+      "firewall": "Firewall",
+      "monitoring": "Monitoring",
+      "logging": "Logging",
+      "time": "Time",
+      "certificate": "Certificates",
+      "network": "Network"
+    },
+    "install": {
+      "step4a": "Authentication",
+      "step4b": "Backup",
+      "step41": "Directory",
+      "step42": "Initial account",
+      "step21": "Time",
+      "step23": "Certificates",
+      "step22": "Network",
+      "step24": "Apply",
+      "step5": "Completed",
+      "step3": "Start KeyHub",
+      "step2": "Configuration",
+      "step1": "Password",
+      "step0": "Welcome"
+    },
+    "profile": {
+      "account": "Account",
+      "folders": "Dashboard layout",
+      "sessions": "Sessions",
+      "consent": "Applications",
+      "main": "Profile"
+    },
+    "schedules": "Cron jobs",
+    "account": {
+      "auditlog": "Audit log",
+      "attributes": "Attributes",
+      "details": "Details"
+    },
+    "accounts": {
+      "main": "Accounts",
+      "cleanup": "Clean up",
+      "bulkedit": "Bulk edit",
+      "overview": "User accounts",
+      "service": "Service accounts"
+    },
+    "systems": "Linked systems",
+    "administration": "Administration",
+    "serviceaccount": {
+      "details": "Details",
+      "groupsonsystem": "Groups on system"
+    },
+    "uitloggen": "Logout",
+    "directory": {
+      "details": "Details",
+      "accounts": "Accounts"
+    },
+    "backups": "Backups",
+    "attributedefinitions": "Attribute definitions",
+    "applications": "Applications",
+    "support": {
+      "main": "Support",
+      "logs": "Logs",
+      "supportdumps": "Support dumps"
+    },
+    "dashboard": "Dashboard",
+    "access": "Manage access",
+    "directories": "Directories",
+    "help": "Help",
+    "replication": {
+      "step1": "Setup link",
+      "step2": "Configuration",
+      "step3": "Start replication",
+      "step0": "Welcome",
+      "step23": "Apply",
+      "step21": "Network",
+      "step22": "Certificates"
+    },
+    "auditing": "Auditing",
+    "launchpad": "Launchpad",
+    "vault": "Vaults",
+    "identitysources": "Identity sources",
+    "actions": "Actions",
+    "groups": "Groups",
+    "audit": "Audit log",
+    "configuration": "Configuration",
+    "organizationalunits": "Organisation",
+    "accessprofiles": "Access profiles"
   },
   "webhook": {
     "category": {
@@ -6267,11 +6365,14 @@
       "verbosepayloads": "Webhooks with verbose payloads can only be used over a secure connection.",
       "mismatch": "Choose 'No' for http or one of the other options for https."
     },
+    "header": {
+      "list": "Webhooks",
+      "main": "Webhook - {0}"
+    },
     "select": {
       "choose": "Choose specific events",
       "all": "All events"
     },
-    "header": "Webhook - {0}",
     "listheader": "Webhooks"
   },
   "prompt": {
@@ -6887,6 +6988,7 @@
     "PROVISIONED_SYSTEM_HAS_NAMESPACE": "This linked system cannot be deleted because it still contains namespaces. First delete the namespaces.",
     "VAULT_RECOVERY_KEY_MISSING": "A recovery key must be configured before vaults can be created. This must be done by a KeyHub administrator.",
     "NO_CHANGE_REQUIRED": "The action has been cancelled because no changes were made.",
+    "SAML_ERROR": "It is currently not possible to login on this SAML2-application. Contact an administrator of the application.",
     "PROVISIONED_SYSTEM_TESTED": "{system} was tested with the following outcome: {message}",
     "ID_IN_DIRECTORY_ALREADY_EXISTS": "You already have a KeyHub account",
     "INVALID_ACTIVATION": "The given code is incorrect or not fit for purpose.",
@@ -6972,6 +7074,7 @@
     "ORGANIZATIONAL_UNIT_TOO_DEEP": "Organizational units can only be nested up to 5 deep.",
     "GROUP_CANNOT_BE_MOVED": "One or more groups cannot be moved.",
     "PROVISIONED_SYSTEM_ERROR": "The operation on {system} could not be completed. The system reports: {message}",
+    "INVALID_ATTRIBUTE_VALUE": "The value {value} is invalid.",
     "PASSWORD_ROTATING_REQUIRED": "Rotating password is required for this action. This can be enabled on your profile page.",
     "LICENSE_BUSINESS_LIMIT_REACHED": "You've reached the limits of your Topicus KeyHub license and can add no more 'Business' accounts.",
     "PASSWORD_CHANGE_REJECTED": "Your new password does not meet the requirements set by {directory}. Please try a different password.",
@@ -7558,6 +7661,10 @@
       },
       "DUPLICATE": "Duplicate value: {0}",
       "head": "{1} for {0}",
+      "update": {
+        "subtitle": "Change the value of the attribute {0} for {1}.",
+        "head": "Change value"
+      },
       "INVALID": "Invalid value: {0}",
       "ERROR": "{0}",
       "VALID": "{0}"
@@ -7651,6 +7758,17 @@
       "cap": " "
     }
   },
+  "filter": {
+    "loglevel": "Filter on log level...",
+    "system": "System",
+    "group": "Select a group...",
+    "type": "Filter on type...",
+    "overig": "Other",
+    "keyhub": "KeyHub",
+    "account": "Select an account...",
+    "action": "Filter on action...",
+    "alles": "All"
+  },
   "serviceaccount": {
     "group": {
       "header": "Group on a service account",
@@ -7735,7 +7853,8 @@
     "search": "Search attribute definitions...",
     "list": "list",
     "required": "required",
-    "header": "Account attribute definition - {0}"
+    "header": "Account attribute definition - {0}",
+    "freelyuseable": "freely useable"
   },
   "validatie": {
     "fileTooLarge": "{0} is larger than {1}Kb",
@@ -7859,38 +7978,6 @@
       "placeholder": "Comments for this account"
     }
   },
-  "system": {
-    "internal": {
-      "header": "Internal LDAP - {0}"
-    },
-    "synclog": {
-      "header": "Synchronisation log {0}"
-    },
-    "azure": {
-      "header": "Linked Azure tenant - {0}"
-    },
-    "azuresyncdirectory": {
-      "header": "Linked Azure tenant with AD Connect - {0}"
-    },
-    "ad": {
-      "header": "Linked Active Directory - {0}"
-    },
-    "ldap": {
-      "header": "Linked LDAP - {0}"
-    },
-    "namespace": {
-      "header": "Provisioned namespace - {0}"
-    },
-    "ldapdirectory": {
-      "header": "Linked source directory - {0}"
-    },
-    "scim": {
-      "header": "Linked SCIM server - {0}"
-    },
-    "azureoidcdirectory": {
-      "header": "Linked Azure OIDC source directory - {0}"
-    }
-  },
   "javax": {
     "validation": {
       "constraints": {
@@ -7961,12 +8048,6 @@
     "concat": "{0} at {1}",
     "gisteren": "yesterday",
     "morgen": "tomorrow"
-  },
-  "filter": {
-    "system": "System",
-    "overig": "Other",
-    "keyhub": "KeyHub",
-    "alles": "All"
   },
   "profiles": {
     "selected": "# scope(s) selected",

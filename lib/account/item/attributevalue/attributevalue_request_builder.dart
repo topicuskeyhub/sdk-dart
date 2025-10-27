@@ -4,10 +4,15 @@ import '../../../models/error_report.dart';
 import '../../../models/identity/account_attribute_value_linkable_wrapper.dart';
 import './attributevalue_request_builder_get_query_parameters.dart';
 import './item/with_attributevalue_item_request_builder.dart';
+import './override/override_request_builder.dart';
 
 /// auto generated
 /// Builds and executes requests for operations under \account\{accountid}\attributevalue
 class AttributevalueRequestBuilder extends BaseRequestBuilder<AttributevalueRequestBuilder> {
+    ///  The override property
+    OverrideRequestBuilder get override {
+        return OverrideRequestBuilder(pathParameters, requestAdapter);
+    }
     /// Gets an item from the ApiSdk.account.item.attributevalue.item collection
     ///  [attributevalueid] Unique identifier of the item
     WithAttributevalueItemRequestBuilder byAttributevalueid(int attributevalueid) {
@@ -42,7 +47,7 @@ class AttributevalueRequestBuilder extends BaseRequestBuilder<AttributevalueRequ
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AttributevalueRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AttributevalueRequestBuilderGetQueryParameters>(requestConfiguration, () => AttributevalueRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
         return requestInfo;
     }
 }

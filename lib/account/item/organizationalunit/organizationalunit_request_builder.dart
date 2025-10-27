@@ -42,7 +42,7 @@ class OrganizationalunitRequestBuilder extends BaseRequestBuilder<Organizational
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<OrganizationalunitRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<OrganizationalunitRequestBuilderGetQueryParameters>(requestConfiguration, () => OrganizationalunitRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
         return requestInfo;
     }
 }

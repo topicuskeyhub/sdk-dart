@@ -31,7 +31,7 @@ class SyncRequestBuilder extends BaseRequestBuilder<SyncRequestBuilder> {
     RequestInformation toPostRequestInformation([void Function(RequestConfiguration<SyncRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<SyncRequestBuilderPostQueryParameters>(requestConfiguration, () => SyncRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json, application/vnd.topicus.keyhub+xml, application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json, application/vnd.topicus.keyhub+xml, application/vnd.topicus.keyhub+json;version=81');
         return requestInfo;
     }
 }

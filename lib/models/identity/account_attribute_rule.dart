@@ -16,6 +16,8 @@ class AccountAttributeRule extends Linkable implements Parsable {
     AccountAttributeDefinition? attribute;
     ///  The defaultValue property
     String? defaultValue;
+    ///  The exclusive property
+    bool? exclusive;
     ///  The priorityDirectory property
     int? priorityDirectory;
     ///  The priorityExternalSource property
@@ -46,6 +48,7 @@ class AccountAttributeRule extends Linkable implements Parsable {
         deserializerMap['allowSelfService'] = (node) => allowSelfService = node.getBoolValue();
         deserializerMap['attribute'] = (node) => attribute = node.getObjectValue<AccountAttributeDefinition>(AccountAttributeDefinition.createFromDiscriminatorValue);
         deserializerMap['defaultValue'] = (node) => defaultValue = node.getStringValue();
+        deserializerMap['exclusive'] = (node) => exclusive = node.getBoolValue();
         deserializerMap['priorityDirectory'] = (node) => priorityDirectory = node.getIntValue();
         deserializerMap['priorityExternalSource'] = (node) => priorityExternalSource = node.getIntValue();
         deserializerMap['priorityFormula'] = (node) => priorityFormula = node.getIntValue();
@@ -64,6 +67,7 @@ class AccountAttributeRule extends Linkable implements Parsable {
         writer.writeBoolValue('allowSelfService', value:allowSelfService);
         writer.writeObjectValue<AccountAttributeDefinition>('attribute', attribute);
         writer.writeStringValue('defaultValue', defaultValue);
+        writer.writeBoolValue('exclusive', value:exclusive);
         writer.writeIntValue('priorityDirectory', priorityDirectory);
         writer.writeIntValue('priorityExternalSource', priorityExternalSource);
         writer.writeIntValue('priorityFormula', priorityFormula);

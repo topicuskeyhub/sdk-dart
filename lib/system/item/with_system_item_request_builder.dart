@@ -6,7 +6,6 @@ import './account/account_request_builder.dart';
 import './deactivate/deactivate_request_builder.dart';
 import './group/group_request_builder.dart';
 import './sync_/sync_request_builder.dart';
-import './synclog/synclog_request_builder.dart';
 import './with_system_item_request_builder_get_query_parameters.dart';
 import './with_system_item_request_builder_put_query_parameters.dart';
 
@@ -28,10 +27,6 @@ class WithSystemItemRequestBuilder extends BaseRequestBuilder<WithSystemItemRequ
     ///  The sync property
     SyncRequestBuilder get sync_ {
         return SyncRequestBuilder(pathParameters, requestAdapter);
-    }
-    ///  The synclog property
-    SynclogRequestBuilder get synclog {
-        return SynclogRequestBuilder(pathParameters, requestAdapter);
     }
     /// Clones the requestbuilder.
     @override
@@ -70,7 +65,7 @@ class WithSystemItemRequestBuilder extends BaseRequestBuilder<WithSystemItemRequ
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithSystemItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithSystemItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithSystemItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
         return requestInfo;
     }
     /// Updates the provisioned system identified by the id.
@@ -79,8 +74,8 @@ class WithSystemItemRequestBuilder extends BaseRequestBuilder<WithSystemItemRequ
     RequestInformation toPutRequestInformation(ProvisionedSystem body, [void Function(RequestConfiguration<WithSystemItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithSystemItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithSystemItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=80');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=80', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=81', body);
         return requestInfo;
     }
 }

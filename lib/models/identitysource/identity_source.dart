@@ -8,6 +8,8 @@ import './identity_source_primer.dart';
 class IdentitySource extends IdentitySourcePrimer implements Parsable {
     ///  The additionalObjects property
     IdentitySourceAdditionalObjects? additionalObjects;
+    ///  The schedule property
+    String? schedule;
     /// Instantiates a new [IdentitySource] and sets the default values.
     IdentitySource() : super() {
         type_ = 'identitysource.IdentitySource';
@@ -26,6 +28,7 @@ class IdentitySource extends IdentitySourcePrimer implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<IdentitySourceAdditionalObjects>(IdentitySourceAdditionalObjects.createFromDiscriminatorValue);
+        deserializerMap['schedule'] = (node) => schedule = node.getStringValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -34,5 +37,6 @@ class IdentitySource extends IdentitySourcePrimer implements Parsable {
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<IdentitySourceAdditionalObjects>('additionalObjects', additionalObjects);
+        writer.writeStringValue('schedule', schedule);
     }
 }

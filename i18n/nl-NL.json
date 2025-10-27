@@ -20,8 +20,6 @@
               "label": "Probleem melden"
             },
             "systems": {
-              "ProvisioningSelfServiceOptions#EXISTING_GROUPS": "Bestaande groepen kiezen",
-              "ProvisioningSelfServiceOptions#SERVICE_ACCOUNTS": "Nieuwe serviceaccounts aanvragen",
               "ProvisioningGroupAddPage$ProvisioningGroupAddBean#owner": {
                 "description": "Managers uit de gekozen groep zijn verantwoordelijk voor het regelen van toegang tot deze groep op het gekoppelde systeem.",
                 "label": "Verantwoordelijke groep"
@@ -47,14 +45,15 @@
               "ProvisioningGroupAddPage$ProvisioningGroupAddBean#group": {
                 "label": "Groep in KeyHub"
               },
-              "ProvisioningSelfServiceOptions#NEW_NAMESPACES": "Nieuwe namespaces aanvragen",
               "ProvisioningGroupAddPage$ProvisioningGroupAddBean#newGroupOnSystemType": {
                 "label": "Type van de nieuwe koppelgroep"
               },
+              "ProvisioningGroupAddPage$ProvisioningGroupAddBean#showGroup": {
+                "label": "Toegang geven aan"
+              },
               "ProvisioningGroupAddPage$ProvisioningGroupAddBean#system": {
                 "label": "Koppeling"
-              },
-              "ProvisioningSelfServiceOptions#NEW_GROUPS": "Nieuwe groepen aanvragen"
+              }
             },
             "AboutPage$AboutBean#version": {
               "label": "Versie"
@@ -232,6 +231,12 @@
               "SecretPromptPanel$SecretPromptBean#secretLost": {
                 "description": "Als de secret verloren is, kan hiermee de kluis van de client verwijderd worden. LET OP! Hiermee gaan alle wachtwoorden in de kluis verloren.",
                 "label": "Secret is verloren"
+              },
+              "provisioning": {
+                "ProvisioningSelfServiceOptions#NEW_NAMESPACES": "Nieuwe namespaces aanvragen",
+                "ProvisioningSelfServiceOptions#EXISTING_GROUPS": "Bestaande groepen kiezen",
+                "ProvisioningSelfServiceOptions#NEW_GROUPS": "Nieuwe groepen aanvragen",
+                "ProvisioningSelfServiceOptions#SERVICE_ACCOUNTS": "Nieuwe serviceaccounts aanvragen"
               },
               "AbstractConfirmationPanel$Confirmation#deprovisionAction": {
                 "description": "Specifier welke acties uitgevoerd moeten worden bij het deactiveren.",
@@ -1489,6 +1494,7 @@
               "ProvisionedSCIM#bearerToken": {
                 "label": "Bearer Token"
               },
+              "ProvisioningOperationType#SYNC_ACCOUNT": "Sync account",
               "ProvisionedLDAPDirectory#sshPublicKeySupport": {
                 "description": "Kies de manier waarop een SSH public key op een account geplaatst moet worden.",
                 "label": "SSH public key"
@@ -1526,6 +1532,7 @@
                 "label": "Bind DN",
                 "placeholder": "CN=User Name,OU=group,DC=company,DC=local"
               },
+              "ProvisioningOperationType#ROTATE_PASSWORDS": "Rotate passwords",
               "ProvisionedSystem#externalUuid": {
                 "label": "Externe UUID"
               },
@@ -1538,6 +1545,8 @@
                 "description": "De RDN onder base DN waaronder groepen te vinden zijn,",
                 "label": "Group-RDN"
               },
+              "ProvisioningOperationType#UPDATE_SYSTEM": "Update system",
+              "ProvisioningOperationType#CLEANUP_OLD_ACCOUNTS": "Cleanup old accounts",
               "ProvisionedAzureOIDCDirectory#tenant": {
                 "label": "Azure tenant"
               },
@@ -1557,6 +1566,7 @@
                 "label": "Aanvullende object classes",
                 "description": "Geef aanvullende waarden voor het attribuut objectClass van accounts op, gescheiden door spaties."
               },
+              "ProvisioningOperationType#DESTROY_SERVICE_ACCOUNT": "Destroy service account",
               "AbstractProvisionedLDAP#bindPassword": {
                 "description": "Het wachtwoord waarmee gebind wordt op de directory.",
                 "label": "Bind wachtwoord"
@@ -1565,6 +1575,8 @@
                 "description": "Wanneer ingeschakeld, beheert KeyHub deze groep en de bijbehorende lidmaatschappen op het gekoppelde systeem.",
                 "label": "Provisioning ingeschakeld"
               },
+              "ProvisioningOperationType#UNLINK_GROUP_ON_SYSTEM": "Unlink group on system",
+              "ProvisioningOperationType#INIT_ACCOUNT": "Init account",
               "ProvisionedLDAP#hashingScheme": {
                 "label": "Wachtwoord hashing",
                 "description": "LET OP! Een wijziging van het hashing-schema dwingt alle gebruikers opnieuw hun wachtwoord in te stellen. SSHA is 'salted-SHA1', een zwak algoritme dat door alle LDAP servers ondersteund wordt. PBKDF2 is een 64k-iteratie SHA512 hashing, zeer sterk, maar hiervoor kan een extra OpenLDAP module nodig zijn."
@@ -1586,12 +1598,14 @@
                 "label": "TLS"
               },
               "GroupOnSystemType#GROUP_OF_UNIQUE_NAMES": "groupOfUniqueNames",
+              "ProvisioningOperationType#PRE_PROVISIONING_CHECK": "Pre-provisioning check",
               "ProvisionedSystemType#INTERNAL_LDAP": "Interne LDAP",
               "ProvisionedSystemType#LDAP": "LDAP",
               "ProvisionedSystem#contentAdministrator": {
                 "description": "De inhoud van dit gekoppelde systeem wordt beheerd door leden van de gekozen groep.",
                 "label": "Inhoudsbeheerdersgroep"
               },
+              "ProvisioningOperationType#SYNC_INCREMENTAL": "Sync incremental",
               "ProvisionedSystem#owner": {
                 "description": "Managers uit de gekozen groep zijn verantwoordelijk voor het regelen van toegang tot en beheer van dit gekoppelde systeem.",
                 "placeholder": "Kies een groep...",
@@ -1622,6 +1636,7 @@
               "ProvisionedAzureTenant#clientSecret": {
                 "label": "Client secret"
               },
+              "ProvisioningOperationType#SYNC_FULL": "Sync full",
               "AbstractProvisionedLDAP#trustedCertificate": {
                 "description": "Het certificaat van de server dat vertrouwd moet worden. Dit kan ook één van de certificaten zijn waarmee dat certificaat ondertekend is.",
                 "label": "Vertrouwd certificaat"
@@ -1645,6 +1660,7 @@
                 "label": "Vertrouwd certificaat voor failover",
                 "description": "Het certificaat van de failover server dat vertrouwd moet worden. Dit kan ook één van de certificaten zijn waarmee dat certificaat ondertekend is."
               },
+              "ProvisioningOperationType#CHANGE_PASSWORD": "Change password",
               "GroupOnSystem#system": {
                 "label": "Koppeling"
               },
@@ -1696,6 +1712,7 @@
               "AbstractProvisionedLDAP#attributes": {
                 "label": "Custom attributen"
               },
+              "ProvisioningOperationType#CREATE_GROUP_ON_SYSTEM": "Create group on system",
               "AbstractProvisionedLDAP#objectClasses": {
                 "label": "Aanvullende object classes",
                 "description": "Geef aanvullende waarden voor het attribuut objectClass van accounts op, gescheiden door spaties."
@@ -1710,6 +1727,7 @@
                 "description": "Op deze Active Directory dient Azure AD Connect geactiveerd te zijn welke synchroniseert met de gekozen Azure tenant.",
                 "label": "LDAP-directory"
               },
+              "ProvisioningOperationType#SYNC_COLLECTION": "Sync collection",
               "ProvisionedNamespace#groupDN": {
                 "label": "Group-RDN",
                 "description": "De RDN onder base DN waaronder groepen te vinden zijn,"
@@ -1723,10 +1741,12 @@
                 "label": "Custom attributen"
               },
               "ProvisionedSystemType": "Gekoppeld systeem",
+              "ProvisioningOperationType#SYNC_METADATA": "Sync metadata",
               "ProvisionedAzureSyncLDAPDirectory#tenant": {
                 "label": "Azure tenant"
               },
               "GroupOnSystemType#AZURE_SECURITY_GROUP": "Beveiligingsgroep",
+              "ProvisioningOperationType#SYNC_MEMBERSHIP": "Sync membership",
               "ProvisionedSCIM#attributes": {
                 "label": "Custom attributen"
               },
@@ -1734,6 +1754,7 @@
                 "label": "Gebruikersnaamprefix",
                 "description": "De prefix die aan elke gebruikersnaam moet worden toegevoegd als deze wordt aangemaakt op het systeem. Gebruikersnaam en prefix zullen van elkaar worden gescheiden met een koppelteken."
               },
+              "ProvisioningOperationType#UPDATE_ACCOUNT_ATTRIBUTES": "Update account attributes",
               "ProvisionedLDAPDirectory#groupDN": {
                 "label": "Group-DN",
                 "description": "De DN van de gekozen directory waaronder groepen te vinden zijn."
@@ -1756,6 +1777,7 @@
                 "label": "Identity-provider-domein",
                 "description": "Bij een ingesteld identity-provider-domein zullen gebruikers via dat domein uitgenodigd worden en inloggen via SSO."
               },
+              "ProvisioningOperationType#REMOVE_GROUP_ON_SYSTEM": "Remove group on system",
               "ADSamAccountNameScheme#TRANSFER": "Waarde overnemen - Neem de waarde over uit het sAMAccountName-attribuut bij het account.",
               "ProvisionedNamespace#serviceAccountDN": {
                 "label": "Serviceaccount-RDN",
@@ -1772,6 +1794,7 @@
               },
               "LDAPSshPublicKeySupport#DISABLED": "Uitgeschakeld",
               "ProvisionedSCIMVendor#DEFAULT": "Standaard",
+              "ProvisioningOperationType#DEACTIVATE_SYSTEM": "Deactivate system",
               "GroupOnSystemType#POSIX_GROUP": "posixGroup",
               "ProvisionedSystemPrimer#active": {
                 "label": "Actief"
@@ -1788,6 +1811,7 @@
               "ProvisionedSCIM#customHeaderName": {
                 "label": "Header-naam"
               },
+              "ProvisioningOperationType#SYNC_SERVICE_ACCOUNT": "Sync service account",
               "ADSamAccountNameScheme#OMIT": "Weglaten - Het AD kiest een willekeurige waarde.",
               "GroupOnSystemType#GROUP_UNIVERSAL_SECURITY": "group (universal security)",
               "ProvisionedLDAPDirectory#directory": {
@@ -1802,12 +1826,17 @@
               "ProvisionedSystemSyncLog#errors": {
                 "label": "Fouten/waarschuwingen"
               },
+              "ProvisioningOperationType#DESTROY_ACCOUNT": "Destroy account",
               "ADSamAccountNameScheme#TRUNCATE": "Gebruikersnaam inkorten - De gebruikersnaam wordt ingekort tot maximaal 20 tekens.",
               "ProvisionedAzureSyncLDAPDirectory#clientId": {
                 "label": "Client identifier"
               }
             },
             "identity": {
+              "AccountAttributeValueUpdate#expectedValue": {
+                "label": "Verwachte waarde",
+                "description": "De huidige waarde van het attribuut komt niet overeen met de verwachte waarde."
+              },
               "AccountAttributeSource#EXTERNAL": "Externe bron",
               "AccountAttributeSystemDefinition#MIDDLE_NAME": "Tweede naam",
               "AccountAttributeRule#attribute": {
@@ -1831,15 +1860,25 @@
                 "description": "Werk het attribuut automatisch bij als de berekende waarde verandert."
               },
               "AccountAttributeSystemDefinition#TELEPHONE_PRIVATE": "Privé telefoonnummer",
+              "AccountAttributeRule#exclusive": {
+                "description": "Voor dit attribuut kunnen geen regels opgesteld worden bij andere toegangsprofielen.",
+                "label": "Exclusief"
+              },
               "AccountAttributeFormat#BOOLEAN": "Boolean",
               "AccountAttributeDefinition#unique": {
                 "label": "Uniek"
+              },
+              "AccountAttributeValueUpdate#currentValue": {
+                "label": "Huidige waarde"
               },
               "AccountAttributeValueSelectionStatus#IN_SYNC": "Gesynchroniseerd",
               "AccountAttributeValueSelectionStatus#DUPLICATE": "Duplicaat",
               "AccountAttributeSystemDefinition#DISPLAY_NAME": "Weergavenaam",
               "AccountAttributeSystemDefinition#EMAIL_PRIVATE": "Privé e-mailadres",
               "AccountAttributeFormat#DATE": "Datum",
+              "AccountAttributeDefinition#freelyUseable": {
+                "label": "Vrij bruikbaar"
+              },
               "AccountAttributeRule#priorityFormula": {
                 "label": "Prioriteit voor het script",
                 "description": "De prioriteit (1-5) van een waarde berekend door het script. Een hoger cijfer geeft deze bron prioriteit over andere bronnen. Een ontbrekende waarde schakelt de bron uit voor dit attribuut."
@@ -1868,6 +1907,10 @@
               "AccountAttributeRule#defaultValue": {
                 "description": "Deze waarde wordt gebruikt als er geen waarde beschikbaar is uit één van de andere bronnen.",
                 "label": "Standaardwaarde"
+              },
+              "AccountAttributeValueUpdate#value": {
+                "description": "Geef een aangepaste waarde of wis de waarde om terug te vallen op een waarde uit een andere bron.",
+                "label": "Waarde"
               },
               "Identity#middleName": {
                 "label": "Tweede naam"
@@ -2238,6 +2281,10 @@
               },
               "MoveVaultRecordAction#MOVE": "Verplaatsen naar",
               "VaultRecordColor#RED": "Rood",
+              "VaultRecord#additionalURLs": {
+                "description": "Aanvullende URL’s waarvoor deze regel geldt (één per regel).",
+                "label": "Aanvullende links"
+              },
               "MoveVaultRecord#target": {
                 "label": "Bestemming"
               },
@@ -2443,6 +2490,10 @@
               },
               "IdentitySourcePrimer#name": {
                 "label": "Naam"
+              },
+              "IdentitySource#schedule": {
+                "description": "Een schema om de identiteitsbron te synchroniseren, uitgedrukt als een cron-expressie.",
+                "label": "Schedule"
               },
               "AFASIdentitySource#url": {
                 "label": "URL"
@@ -2885,10 +2936,8 @@
       },
       "system": {
         "namespaces": "Namespaces",
-        "groups": "Groepen",
         "groupsinsystem": "Groepen op systeem",
         "synclogs": "Synchronisaties",
-        "accessprofiles": "Toegangsprofielen",
         "permissions": "Verleende rechten"
       },
       "provisionedad": "Gekoppelde Active Directory",
@@ -3800,6 +3849,7 @@
     },
     "createserviceaccount": {
       "subtitle": "Geef de gebruikersnaam van het nieuwe serviceaccount aan en leg uit waar het voor nodig is.",
+      "accepted": "Omdat je inhoudsverantwoordelijke bent van {1} is je verzoek om het serviceaccount {0} aan te maken op {1} automatisch geaccepteerd.",
       "sent": "Je verzoek om het serviceaccount {0} aan te maken op {1} is verstuurd.",
       "accept": {
         "options": "De gebruikersnaam aanpassen",
@@ -3951,6 +4001,33 @@
       "bewerken": "Nummerreeks bewerken",
       "new": "Start een nieuwe nummerreeks"
     },
+    "header": {
+      "scim": "Gekoppelde SCIM-server",
+      "gos": "Koppelgroepen",
+      "azuresyncdirectory": "Gekoppelde Azure tenant met AD Connect",
+      "ad": "Gekoppelde Active Directory",
+      "internal": "Interne LDAP",
+      "synclogs": "Synchronisaties",
+      "ldap": "Gekoppelde LDAP",
+      "permissions": "Verleende rechten",
+      "azure": "Gekoppelde Azure tenant",
+      "serviceaccounts": "Serviceaccounts",
+      "ldapdirectory": "Gekoppelde brondirectory",
+      "namespace": "Gekoppelde namespace",
+      "azureoidcdirectory": "Gekoppelde Azure OIDC-brondirectory",
+      "namespaces": "Namespaces"
+    },
+    "gos": {
+      "access": {
+        "count": "{0} elementen",
+        "serviceaccount": "Serviceaccount: {0}",
+        "groups": "{0} groepen",
+        "accessprofile": "Toegangsprofiel: {0}",
+        "group": "Groep: {0}",
+        "accessprofiles": "{0} toegangsprofielen",
+        "serviceaccounts": "{0} serviceaccounts"
+      }
+    },
     "showtoken": "Je tijdelijke wachtwoord",
     "reason": {
       "label": "Reden",
@@ -3982,6 +4059,10 @@
       "loginname": "Loginnaam"
     },
     "showall": "Toon alle groepen",
+    "show": {
+      "accessprofile": "Toegangsprofiel",
+      "group": "Groep"
+    },
     "newgroup": "Maak nieuwe groep aan",
     "extend": "Verleng toegang",
     "system": {
@@ -4082,6 +4163,9 @@
       "placeholder": "Wachtwoord",
       "confirmchange": "Bevestig het wijzigen van je wachtwoord"
     },
+    "SAML_ERROR": {
+      "header": "Inloggen mislukt"
+    },
     "header": {
       "main": "Inloggen",
       "as": {
@@ -4178,152 +4262,6 @@
     },
     "directoryoffline": "Door een storing is het niet mogelijk in te loggen met {0}. Neem contact op met een KeyHub-administrator als je niet kunt inloggen."
   },
-  "menu": {
-    "system": {
-      "syncs": "Synchronisaties",
-      "details": "Details",
-      "profiles": "Toegangsprofielen",
-      "groups": "Groepen",
-      "serviceaccounts": "Serviceaccounts",
-      "namespaces": "Namespaces",
-      "groupsinsystem": "Groepen op systeem",
-      "permissions": "Verleende rechten"
-    },
-    "auditor": {
-      "dashboard": {
-        "groups": "Groepen",
-        "serviceaccounts": "Serviceaccounts",
-        "main": "Dashboard",
-        "accounts": "Accounts"
-      },
-      "classifications": "Classificaties"
-    },
-    "application": {
-      "details": "Details",
-      "profiles": "Toegangsprofielen",
-      "groups": "Groepen"
-    },
-    "settings": {
-      "webhooks": "Webhooks",
-      "main": "Instellingen",
-      "vaultrecovery": "Kluisherstel",
-      "notificationcentre": "Notificaties",
-      "about": "Over",
-      "sequences": "Nummerreeksen",
-      "algemeen": "Algemeen",
-      "certificates": "Certificaten"
-    },
-    "deployment": {
-      "disk": "Schijfbeheer",
-      "main": "Uitrol",
-      "replication": "Replicatie"
-    },
-    "organizationalunit": {
-      "settings": "Instellingen",
-      "accounts": "Accounts",
-      "clients": "Applicaties",
-      "details": "Details"
-    },
-    "group": {
-      "applications": "Applicaties",
-      "accounts": "Accounts",
-      "koppelingen": "Koppelingen",
-      "details": "Details"
-    },
-    "mygroups": {
-      "main": "Mijn groepen",
-      "managed": "Managerdashboard"
-    },
-    "config": {
-      "application": "Applicatie",
-      "authentication": "Authenticatie",
-      "backup": "Back-ups",
-      "mail": "E-mail",
-      "firewall": "Firewall",
-      "monitoring": "Monitoring",
-      "logging": "Logging",
-      "time": "Tijd",
-      "certificate": "Certificaten",
-      "network": "Netwerk"
-    },
-    "install": {
-      "step4a": "Authenticatie",
-      "step4b": "Back-up",
-      "step41": "Directory",
-      "step42": "Eerste account",
-      "step21": "Tijd",
-      "step23": "Certificaten",
-      "step22": "Netwerk",
-      "step24": "Doorvoeren",
-      "step5": "Afgerond",
-      "step3": "Start KeyHub",
-      "step2": "Configuratie",
-      "step1": "Wachtwoord",
-      "step0": "Welkom"
-    },
-    "profile": {
-      "account": "Account",
-      "folders": "Dashboardindeling",
-      "sessions": "Sessies",
-      "consent": "Applicaties",
-      "main": "Profiel"
-    },
-    "schedules": "Cron-taken",
-    "account": {
-      "auditlog": "Auditlog",
-      "attributes": "Attributen",
-      "details": "Details"
-    },
-    "accounts": {
-      "main": "Accounts",
-      "cleanup": "Opruimen",
-      "bulkedit": "Bulk wijzigen",
-      "overview": "Gebruikersaccounts",
-      "service": "Serviceaccounts"
-    },
-    "systems": "Koppelingen",
-    "administration": "Beheer",
-    "serviceaccount": {
-      "details": "Details",
-      "groupsonsystem": "Groepen op systeem"
-    },
-    "uitloggen": "Uitloggen",
-    "directory": {
-      "details": "Details",
-      "accounts": "Accounts"
-    },
-    "backups": "Back-ups",
-    "attributedefinitions": "Attribuutdefinities",
-    "applications": "Applicaties",
-    "support": {
-      "main": "Ondersteuning",
-      "logs": "Logs",
-      "supportdumps": "Support-dumps"
-    },
-    "dashboard": "Dashboard",
-    "access": "Beheer toegang",
-    "directories": "Directories",
-    "help": "Help",
-    "replication": {
-      "step1": "Link opzetten",
-      "step2": "Configuratie",
-      "step3": "Start replicatie",
-      "step0": "Welkom",
-      "step23": "Doorvoeren",
-      "step21": "Netwerk",
-      "step22": "Certificaten"
-    },
-    "auditing": "Auditing",
-    "launchpad": "Launchpad",
-    "vault": "Kluizen",
-    "identitysources": "Identiteitsbronnen",
-    "actions": "Acties",
-    "groups": "Groepen",
-    "audit": "Auditlog",
-    "configuration": "Configuratie",
-    "organizationalunits": "Organisatie",
-    "accessprofiles": "Toegangsprofielen"
-  },
   "base": {
     "actie": {
       "toestaan": "Toestaan",
@@ -4398,6 +4336,7 @@
       "volgende": "Volgende",
       "select": "Selecteren",
       "repair": "Repareren",
+      "showall": "Toon alles...",
       "wijzigen": "Wijzigen",
       "openen": "Openen",
       "reload": "Opnieuw laden",
@@ -4441,6 +4380,7 @@
       "1": "1 verborgen element"
     },
     "off": "Uit",
+    "blocked": "Dit veld is afgeschermd.",
     "filter": "Filter",
     "or": "of",
     "on": "Aan",
@@ -4544,10 +4484,6 @@
     },
     "warn": {
       "business": "Provisioning in deze groep is niet beschikbaar voor de leden met een Business-licentie."
-    },
-    "filter": {
-      "group": "Selecteer een groep...",
-      "type": "Filter op type..."
     },
     "transfer": "Overdragen"
   },
@@ -4760,6 +4696,10 @@
       },
       "MONITORING_OTLP_TLS_LEVEL": {
         "label": "TLS"
+      },
+      "SELINUX": {
+        "label": "SELinux enforcing-modus",
+        "description": "Schakel tussen SELinux enforcing- of permissive-modus. Schakel deze optie alleen uit als er concrete problemen zijn met SELinux en meldt deze problemen altijd bij de Topicus KeyHub-support."
       },
       "SSH_PASSWORD_AUTHENTICATION": {
         "label": "SSH-wachtwoordauthenticatie"
@@ -5168,6 +5108,7 @@
         "upgrade_db": "PostgreSQL updaten",
         "setunavailable": "Node uit het cluster halen",
         "performosupgrade": "Besturingssysteem bijwerken",
+        "backupkeys": "Het back-up-sleutelpaar genereren",
         "checkosupgrade": "Besturingssysteem-upgrade voorbereiden",
         "create_snapshot": "Snapshot van het systeem maken",
         "reboot": "Opnieuw opstarten",
@@ -5186,6 +5127,7 @@
         "upgrade_docker": "Docker updaten",
         "shutdown": "Afsluiten",
         "cleanup": "Update-bestanden opruimen",
+        "download": "Update-package downloaden",
         "check_updates": "Controleren op beschikbare updates",
         "remove_snapshot": "Opruimen",
         "refresh_node_state": "Status van de node bijwerken",
@@ -5235,7 +5177,8 @@
       "noofflinelicense": "Jouw licentie staat offline updaten niet toe.",
       "updateavailable": "Topicus KeyHub <strong>{0}<\/strong> is beschikbaar",
       "diskfull": "Er is niet voldoende schijfruimte om de update uit te voeren. Zorg voor tenminste 5GB vrije ruimte in /.",
-      "osupgradeavailable": "Een update naar <strong>AlmaLinux 8<\/strong> is beschikbaar",
+      "inhibitors": "Een eerdere upgradepoging is mislukt vanwege een of meer belemmeringen. Corrigeer de onderstaande problemen en probeer het opnieuw:",
+      "osupgradeavailable": "Een update naar <strong>AlmaLinux {0}<\/strong> is beschikbaar",
       "dbupgradeavailable": "Een update naar <strong>PostgreSQL {0}<\/strong> is beschikbaar"
     },
     "install": {
@@ -5955,11 +5898,15 @@
       "value": "Waarde",
       "type": "Type",
       "modifications": "# Wijzigingen",
+      "owner": "Verantwoordelijke",
       "organizationalunits": "Organisatie-eenheden",
+      "access": "Toegang",
       "filedate": "Bestandsdatum",
       "subjectdn": "Subject DN",
       "groups": "Groepen",
       "directory": "Directory",
+      "readwrites": "Lees-/schrijfacties",
+      "datetime": "Tijd",
       "group": "Groep",
       "username": "Gebruikersnaam",
       "used": "Gebruikt",
@@ -5970,13 +5917,16 @@
       "nameInSystem": "Groep op systeem",
       "lastActive": "Laatste inlog",
       "system": "Koppeling",
-      "provisioningEnabled": "Provisioning ingeschakeld",
+      "provisioningEnabled": "Provisioning",
       "mountpoint": "Aankoppelpunt",
       "encrypted": "Versleuteld",
       "records": "Aantal regels",
+      "thread": "Thread",
+      "errorwarnings": "Fouten/waarsch.",
       "clientId": "Client ID",
       "available": "Beschikbaar",
-      "errorswarns": "# Fouten/waarschuwingen",
+      "writes": "Schrijfacties",
+      "completedAt": "Afgerond om",
       "email": "E-mail",
       "minionid": "Identifier",
       "accessProfileInKeyHub": "Toegangsprofielen",
@@ -5985,12 +5935,14 @@
       "2fa": "2FA",
       "company": "Bedrijf",
       "rights": "Rechten",
+      "warnings": "Waarschuwingen",
       "removedat": "Verwijderd op",
       "nrAccounts": "# Accounts",
       "active": "Actief",
       "expiresat": "Verloopt op",
       "application": "Applicatie",
       "middleName": "Tweede naam",
+      "message": "Bericht",
       "givenName": "Voornaam",
       "familyName": "Familienaam",
       "infrastructureFeatures": "Infrastructuur",
@@ -5998,13 +5950,19 @@
       "reden": "Reden",
       "groupLastUsed": "Groep laatst gebruikt",
       "url": "URL",
+      "startedAt": "Gestart om",
+      "reads": "Leesacties",
       "ip": "IP-adres",
+      "context": "Context",
       "validity": "Geldigheid",
       "systems": "Koppeling",
       "groupInKeyHub": "Groepen in KeyHub",
       "name": "Naam",
+      "action": "Actie",
       "displayName": "Weergavenaam",
+      "errors": "Fouten",
       "version": "Versie",
+      "level": "Log level",
       "description": "Omschrijving"
     }
   },
@@ -6067,7 +6025,8 @@
     },
     "clientpermissions": {
       "subtitle": "Details voor de rechten voor de applicatie {0}.",
-      "header": "Toegekende rechten"
+      "header": "Toegekende rechten",
+      "filter": "Filter op type..."
     },
     "attribute": {
       "script": "Script",
@@ -6084,6 +6043,145 @@
     "organizationalunits": {
       "header": "Organisatie-eenheden"
     }
+  },
+  "menu": {
+    "auditor": {
+      "dashboard": {
+        "groups": "Groepen",
+        "serviceaccounts": "Serviceaccounts",
+        "main": "Dashboard",
+        "accounts": "Accounts"
+      },
+      "classifications": "Classificaties"
+    },
+    "system": {
+      "details": "Details"
+    },
+    "application": {
+      "details": "Details",
+      "profiles": "Toegangsprofielen",
+      "groups": "Groepen"
+    },
+    "settings": {
+      "webhooks": "Webhooks",
+      "main": "Instellingen",
+      "vaultrecovery": "Kluisherstel",
+      "notificationcentre": "Notificaties",
+      "about": "Over",
+      "sequences": "Nummerreeksen",
+      "algemeen": "Algemeen",
+      "certificates": "Certificaten"
+    },
+    "deployment": {
+      "disk": "Schijfbeheer",
+      "main": "Uitrol",
+      "replication": "Replicatie"
+    },
+    "organizationalunit": {
+      "settings": "Instellingen",
+      "accounts": "Accounts",
+      "clients": "Applicaties",
+      "details": "Details"
+    },
+    "group": {
+      "applications": "Applicaties",
+      "accounts": "Accounts",
+      "koppelingen": "Koppelingen",
+      "details": "Details"
+    },
+    "mygroups": {
+      "main": "Mijn groepen",
+      "managed": "Managerdashboard"
+    },
+    "config": {
+      "application": "Applicatie",
+      "authentication": "Authenticatie",
+      "backup": "Back-ups",
+      "mail": "E-mail",
+      "firewall": "Firewall",
+      "monitoring": "Monitoring",
+      "logging": "Logging",
+      "time": "Tijd",
+      "certificate": "Certificaten",
+      "network": "Netwerk"
+    },
+    "install": {
+      "step4a": "Authenticatie",
+      "step4b": "Back-up",
+      "step41": "Directory",
+      "step42": "Eerste account",
+      "step21": "Tijd",
+      "step23": "Certificaten",
+      "step22": "Netwerk",
+      "step24": "Doorvoeren",
+      "step5": "Afgerond",
+      "step3": "Start KeyHub",
+      "step2": "Configuratie",
+      "step1": "Wachtwoord",
+      "step0": "Welkom"
+    },
+    "profile": {
+      "account": "Account",
+      "folders": "Dashboardindeling",
+      "sessions": "Sessies",
+      "consent": "Applicaties",
+      "main": "Profiel"
+    },
+    "schedules": "Cron-taken",
+    "account": {
+      "auditlog": "Auditlog",
+      "attributes": "Attributen",
+      "details": "Details"
+    },
+    "accounts": {
+      "main": "Accounts",
+      "cleanup": "Opruimen",
+      "bulkedit": "Bulk wijzigen",
+      "overview": "Gebruikersaccounts",
+      "service": "Serviceaccounts"
+    },
+    "systems": "Koppelingen",
+    "administration": "Beheer",
+    "serviceaccount": {
+      "details": "Details",
+      "groupsonsystem": "Groepen op systeem"
+    },
+    "uitloggen": "Uitloggen",
+    "directory": {
+      "details": "Details",
+      "accounts": "Accounts"
+    },
+    "backups": "Back-ups",
+    "attributedefinitions": "Attribuutdefinities",
+    "applications": "Applicaties",
+    "support": {
+      "main": "Ondersteuning",
+      "logs": "Logs",
+      "supportdumps": "Support-dumps"
+    },
+    "dashboard": "Dashboard",
+    "access": "Beheer toegang",
+    "directories": "Directories",
+    "help": "Help",
+    "replication": {
+      "step1": "Link opzetten",
+      "step2": "Configuratie",
+      "step3": "Start replicatie",
+      "step0": "Welkom",
+      "step23": "Doorvoeren",
+      "step21": "Netwerk",
+      "step22": "Certificaten"
+    },
+    "auditing": "Auditing",
+    "launchpad": "Launchpad",
+    "vault": "Kluizen",
+    "identitysources": "Identiteitsbronnen",
+    "actions": "Acties",
+    "groups": "Groepen",
+    "audit": "Auditlog",
+    "configuration": "Configuratie",
+    "organizationalunits": "Organisatie",
+    "accessprofiles": "Toegangsprofielen"
   },
   "webhook": {
     "category": {
@@ -6267,11 +6365,14 @@
       "verbosepayloads": "Webhooks met uitgebreide inhoud kunnen alleen gebruikt worden over een beveiligde verbinding.",
       "mismatch": "Kies 'Nee' voor http of één van de andere opties voor https. "
     },
+    "header": {
+      "list": "Webhooks",
+      "main": "Webhook - {0}"
+    },
     "select": {
       "choose": "Kies specifieke gebeurtenissen",
       "all": "Alle gebeurtenissen"
     },
-    "header": "Webhook - {0}",
     "listheader": "Webhooks"
   },
   "prompt": {
@@ -6887,6 +6988,7 @@
     "PROVISIONED_SYSTEM_HAS_NAMESPACE": "Dit gekoppelde systeem kan niet verwijderd worden omdat er nog namespaces binnen bestaan. Verwijder eerst de namespaces.",
     "VAULT_RECOVERY_KEY_MISSING": "Er moet een recovery key ingesteld worden om kluizen te kunnen maken. Vraag een KeyHub-administrator om dit te doen.",
     "NO_CHANGE_REQUIRED": "De actie is geannuleerd omdat er geen wijzigingen zijn aangebracht.",
+    "SAML_ERROR": "Het is op dit moment niet mogelijk op deze SAML2-applicatie in te loggen. Neem contact op met een beheerder van de applicatie.",
     "PROVISIONED_SYSTEM_TESTED": "{system} is getest met als uitkomst: {message}",
     "ID_IN_DIRECTORY_ALREADY_EXISTS": "Je hebt al een account binnen KeyHub.",
     "INVALID_ACTIVATION": "De opgegeven code is onjuist of niet geschikt voor het doel.",
@@ -6972,6 +7074,7 @@
     "ORGANIZATIONAL_UNIT_TOO_DEEP": "Organisatie-eenheden kunnen maximaal tot 5 diep genest worden.",
     "GROUP_CANNOT_BE_MOVED": "Één of meer groepen kunnen niet verplaatst worden.",
     "PROVISIONED_SYSTEM_ERROR": "De bewerking op {system} kon niet doorgevoerd worden. Het systeem rapporteert: {message}",
+    "INVALID_ATTRIBUTE_VALUE": "De waarde {value} is ongeldig.",
     "PASSWORD_ROTATING_REQUIRED": "Roterend wachtwoord is vereist voor deze actie. Dit kan worden ingeschakeld op je profielpagina.",
     "LICENSE_BUSINESS_LIMIT_REACHED": "Je hebt de grenzen van je Topicus KeyHub licentie bereikt en kunt geen 'Business' accounts meer toevoegen.",
     "PASSWORD_CHANGE_REJECTED": "Je nieuwe wachtwoord voldoet niet aan de eisen van {directory}, probeer een ander wachtwoord.",
@@ -7558,6 +7661,10 @@
       },
       "DUPLICATE": "Dubbele waarde: {0}",
       "head": "{1} voor {0}",
+      "update": {
+        "subtitle": "Pas de waarde van het attribuut {0} aan voor {1}.",
+        "head": "Waarde aanpassen"
+      },
       "INVALID": "Ongeldige waarde: {0}",
       "ERROR": "{0}",
       "VALID": "{0}"
@@ -7651,6 +7758,17 @@
       "cap": " "
     }
   },
+  "filter": {
+    "loglevel": "Filter op log level...",
+    "system": "Systeem",
+    "group": "Selecteer een groep...",
+    "type": "Filter op type...",
+    "overig": "Overig",
+    "keyhub": "KeyHub",
+    "account": "Selecteer een account...",
+    "action": "Filter op actie...",
+    "alles": "Alles"
+  },
   "serviceaccount": {
     "group": {
       "header": "Groep van een serviceaccount",
@@ -7735,7 +7853,8 @@
     "search": "Attribuutdefinities zoeken...",
     "list": "lijst",
     "required": "vereist",
-    "header": "Accountattribuutdefinitie - {0}"
+    "header": "Accountattribuutdefinitie - {0}",
+    "freelyuseable": "vrij bruikbaar"
   },
   "validatie": {
     "fileTooLarge": "{0} is groter dan {1}Kb",
@@ -7859,38 +7978,6 @@
       "placeholder": "Opmerkingen voor dit account"
     }
   },
-  "system": {
-    "internal": {
-      "header": "Interne LDAP - {0}"
-    },
-    "synclog": {
-      "header": "Synchronisatielog {0}"
-    },
-    "azure": {
-      "header": "Gekoppelde Azure tenant - {0}"
-    },
-    "azuresyncdirectory": {
-      "header": "Gekoppelde Azure tenant met AD Connect - {0}"
-    },
-    "ad": {
-      "header": "Gekoppelde Active Directory - {0}"
-    },
-    "ldap": {
-      "header": "Gekoppelde LDAP - {0}"
-    },
-    "namespace": {
-      "header": "Gekoppelde namespace - {0}"
-    },
-    "ldapdirectory": {
-      "header": "Gekoppelde brondirectory - {0}"
-    },
-    "scim": {
-      "header": "Gekoppelde SCIM-server - {0}"
-    },
-    "azureoidcdirectory": {
-      "header": "Gekoppelde Azure OIDC-brondirectory - {0}"
-    }
-  },
   "javax": {
     "validation": {
       "constraints": {
@@ -7961,12 +8048,6 @@
     "concat": "{0} om {1}",
     "gisteren": "gisteren",
     "morgen": "morgen"
-  },
-  "filter": {
-    "system": "Systeem",
-    "overig": "Overig",
-    "keyhub": "KeyHub",
-    "alles": "Alles"
   },
   "profiles": {
     "selected": "# scope(s) geselecteerd",

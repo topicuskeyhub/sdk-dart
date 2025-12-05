@@ -4,6 +4,7 @@ enum PutAdditionalQueryParameterType {
     accessprofileclients('accessprofileclients'),
     audit('audit'),
     deleteTile('deleteTile'),
+    generateSecret('generateSecret'),
     groupclients('groupclients'),
     groups('groups'),
     organizationalUnits('organizationalUnits'),

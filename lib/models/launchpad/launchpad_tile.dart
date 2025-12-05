@@ -1,8 +1,5 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
-import '../client/client_application_primer.dart';
-import '../group/group_primer.dart';
-import '../vault/vault_record_primer.dart';
 import './launchpad_tile_additional_objects.dart';
 import './launchpad_tile_primer.dart';
 import './launchpad_tile_type.dart';
@@ -14,18 +11,12 @@ import './vault_record_launchpad_tile.dart';
 class LaunchpadTile extends LaunchpadTilePrimer implements Parsable {
     ///  The additionalObjects property
     LaunchpadTileAdditionalObjects? additionalObjects;
-    ///  The application property
-    ClientApplicationPrimer? application;
-    ///  The group property
-    GroupPrimer? group;
     ///  The identiconCode property
     int? identiconCode;
     ///  The type property
     LaunchpadTileType? launchpadTileType;
     ///  The logo property
     Iterable<int>? logo;
-    ///  The vaultRecord property
-    VaultRecordPrimer? vaultRecord;
     /// Instantiates a new [LaunchpadTile] and sets the default values.
     LaunchpadTile() : super() {
         type_ = 'launchpad.LaunchpadTile';
@@ -46,12 +37,9 @@ class LaunchpadTile extends LaunchpadTilePrimer implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<LaunchpadTileAdditionalObjects>(LaunchpadTileAdditionalObjects.createFromDiscriminatorValue);
-        deserializerMap['application'] = (node) => application = node.getObjectValue<ClientApplicationPrimer>(ClientApplicationPrimer.createFromDiscriminatorValue);
-        deserializerMap['group'] = (node) => group = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         deserializerMap['identiconCode'] = (node) => identiconCode = node.getIntValue();
         deserializerMap['type'] = (node) => launchpadTileType = node.getEnumValue<LaunchpadTileType>((stringValue) => LaunchpadTileType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['logo'] = (node) => logo = node.getCollectionOfPrimitiveValues<int>();
-        deserializerMap['vaultRecord'] = (node) => vaultRecord = node.getObjectValue<VaultRecordPrimer>(VaultRecordPrimer.createFromDiscriminatorValue);
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -60,11 +48,8 @@ class LaunchpadTile extends LaunchpadTilePrimer implements Parsable {
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<LaunchpadTileAdditionalObjects>('additionalObjects', additionalObjects);
-        writer.writeObjectValue<ClientApplicationPrimer>('application', application);
-        writer.writeObjectValue<GroupPrimer>('group', group);
         writer.writeIntValue('identiconCode', identiconCode);
         writer.writeEnumValue<LaunchpadTileType>('type', launchpadTileType, (e) => e?.value);
         writer.writeCollectionOfPrimitiveValues<int>('logo', logo);
-        writer.writeObjectValue<VaultRecordPrimer>('vaultRecord', vaultRecord);
     }
 }

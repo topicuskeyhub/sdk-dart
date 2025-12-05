@@ -12,7 +12,7 @@ import './auth/move_internal_account.dart';
 import './auth/stored_account_attribute.dart';
 import './auth/stored_account_attributes.dart';
 import './directory/account_directory_status_report.dart';
-import './generated_secret.dart';
+import './generate_secret.dart';
 import './group/group_access_info.dart';
 import './group/group_account_nesting.dart';
 import './group/group_account_status.dart';
@@ -61,10 +61,11 @@ import './request/accept_grant_access_request_parameters.dart';
 import './request/accept_join_group_request_parameters.dart';
 import './request/accept_modification_request_parameters.dart';
 import './request/modification_request_report.dart';
+import './request/modification_request_report_change_description.dart';
 import './request/modification_request_report_change_details.dart';
-import './request/modification_request_report_error_details.dart';
 import './request/modification_request_report_object_change_details.dart';
 import './request/password_reset_request_status.dart';
+import './secret.dart';
 import './segment_count.dart';
 import './serviceaccount/service_account_status.dart';
 import './serviceaccount/service_account_supported_features.dart';
@@ -111,7 +112,7 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'auth.StoredAccountAttribute' => StoredAccountAttribute(),
             'auth.StoredAccountAttributes' => StoredAccountAttributes(),
             'directory.AccountDirectoryStatusReport' => AccountDirectoryStatusReport(),
-            'GeneratedSecret' => GeneratedSecret(),
+            'GenerateSecret' => GenerateSecret(),
             'group.GroupAccessInfo' => GroupAccessInfo(),
             'group.GroupAccountNesting' => GroupAccountNesting(),
             'group.GroupAccountStatus' => GroupAccountStatus(),
@@ -160,10 +161,11 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'request.AcceptJoinGroupRequestParameters' => AcceptJoinGroupRequestParameters(),
             'request.AcceptModificationRequestParameters' => AcceptModificationRequestParameters(),
             'request.ModificationRequestReport' => ModificationRequestReport(),
+            'request.ModificationRequestReportChangeDescription' => ModificationRequestReportChangeDescription(),
             'request.ModificationRequestReportChangeDetails' => ModificationRequestReportChangeDetails(),
-            'request.ModificationRequestReportErrorDetails' => ModificationRequestReportErrorDetails(),
             'request.ModificationRequestReportObjectChangeDetails' => ModificationRequestReportObjectChangeDetails(),
             'request.PasswordResetRequestStatus' => PasswordResetRequestStatus(),
+            'Secret' => Secret(),
             'SegmentCount' => SegmentCount(),
             'serviceaccount.ServiceAccountsAuditStats' => ServiceAccountsAuditStats(),
             'serviceaccount.ServiceAccountStatus' => ServiceAccountStatus(),

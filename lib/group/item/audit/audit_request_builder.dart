@@ -63,7 +63,7 @@ class AuditRequestBuilder extends BaseRequestBuilder<AuditRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AuditRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AuditRequestBuilderGetQueryParameters>(requestConfiguration, () => AuditRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
         return requestInfo;
     }
     /// Creates an audit for a group and returns the newly created memberships. Fetch a template for an audit via the 'new' resource.
@@ -72,8 +72,8 @@ class AuditRequestBuilder extends BaseRequestBuilder<AuditRequestBuilder> {
     RequestInformation toPostRequestInformation(GroupAuditLinkableWrapper body, [void Function(RequestConfiguration<AuditRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AuditRequestBuilderPostQueryParameters>(requestConfiguration, () => AuditRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=81', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=82', body);
         return requestInfo;
     }
 }

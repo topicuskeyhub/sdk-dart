@@ -1,7 +1,7 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../../models/error_report.dart';
-import '../../../models/generated_secret.dart';
+import '../../../models/generate_secret.dart';
 
 /// auto generated
 /// Builds and executes requests for operations under \client\me\secret
@@ -22,7 +22,7 @@ class SecretRequestBuilder extends BaseRequestBuilder<SecretRequestBuilder> {
     /// The given secret will be verified and a new secret generated and returned.
     ///  [body] The request body
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
-    Future<Iterable<int>?> postAsync(GeneratedSecret body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
+    Future<Iterable<int>?> postAsync(GenerateSecret body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
         var requestInfo = toPostRequestInformation(body, requestConfiguration);
         final errorMapping = <String, ParsableFactory<Parsable>>{
             'XXX' :  ErrorReport.createFromDiscriminatorValue,
@@ -32,11 +32,11 @@ class SecretRequestBuilder extends BaseRequestBuilder<SecretRequestBuilder> {
     /// The given secret will be verified and a new secret generated and returned.
     ///  [body] The request body
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
-    RequestInformation toPostRequestInformation(GeneratedSecret body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
+    RequestInformation toPostRequestInformation(GenerateSecret body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=81', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=82', body);
         return requestInfo;
     }
 }

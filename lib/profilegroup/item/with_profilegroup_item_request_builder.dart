@@ -43,7 +43,7 @@ class WithProfilegroupItemRequestBuilder extends BaseRequestBuilder<WithProfileg
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
         return requestInfo;
     }
     /// Returns the access profile group link identified by the id.
@@ -51,7 +51,7 @@ class WithProfilegroupItemRequestBuilder extends BaseRequestBuilder<WithProfileg
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithProfilegroupItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithProfilegroupItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithProfilegroupItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
         return requestInfo;
     }
 }

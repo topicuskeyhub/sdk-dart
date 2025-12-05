@@ -29,7 +29,14 @@ enum ModificationRequestReportChange {
     systemAccountsWritableDisabled('SYSTEM_ACCOUNTS_WRITABLE_DISABLED'),
     groupActivationForVaultDisabled('GROUP_ACTIVATION_FOR_VAULT_DISABLED'),
     groupActivationForSsoDisabled('GROUP_ACTIVATION_FOR_SSO_DISABLED'),
-    groupActivationForProvisioningDisabled('GROUP_ACTIVATION_FOR_PROVISIONING_DISABLED');
+    groupActivationForProvisioningDisabled('GROUP_ACTIVATION_FOR_PROVISIONING_DISABLED'),
+    vaultRecordsWillBeRemoved('VAULT_RECORDS_WILL_BE_REMOVED'),
+    vaultRecordsWillBeRemovedUnrecoverable('VAULT_RECORDS_WILL_BE_REMOVED_UNRECOVERABLE'),
+    applicationWillBeRemoved('APPLICATION_WILL_BE_REMOVED'),
+    systemWillBeRemoved('SYSTEM_WILL_BE_REMOVED'),
+    groupOnSystemWillBeRemoved('GROUP_ON_SYSTEM_WILL_BE_REMOVED'),
+    serviceAccountWillBeRemoved('SERVICE_ACCOUNT_WILL_BE_REMOVED'),
+    helpdeskWillBeRemoved('HELPDESK_WILL_BE_REMOVED');
     const ModificationRequestReportChange(this.value);
     final String value;
 }

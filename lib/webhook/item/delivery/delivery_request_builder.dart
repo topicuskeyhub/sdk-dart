@@ -42,7 +42,7 @@ class DeliveryRequestBuilder extends BaseRequestBuilder<DeliveryRequestBuilder> 
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DeliveryRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DeliveryRequestBuilderGetQueryParameters>(requestConfiguration, () => DeliveryRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
         return requestInfo;
     }
 }

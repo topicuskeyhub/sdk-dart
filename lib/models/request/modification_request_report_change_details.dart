@@ -2,11 +2,17 @@
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../non_linkable.dart';
 import './modification_request_report_change.dart';
+import './modification_request_report_change_description.dart';
+import './modification_request_report_error.dart';
 
 /// auto generated
 class ModificationRequestReportChangeDetails extends NonLinkable implements Parsable {
+    ///  The additionalDescriptions property
+    Iterable<ModificationRequestReportChangeDescription>? additionalDescriptions;
     ///  The change property
     ModificationRequestReportChange? change;
+    ///  The error property
+    ModificationRequestReportError? error;
     ///  The objectName property
     String? objectName;
     ///  The subjectName property
@@ -24,7 +30,9 @@ class ModificationRequestReportChangeDetails extends NonLinkable implements Pars
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['additionalDescriptions'] = (node) => additionalDescriptions = node.getCollectionOfObjectValues<ModificationRequestReportChangeDescription>(ModificationRequestReportChangeDescription.createFromDiscriminatorValue);
         deserializerMap['change'] = (node) => change = node.getEnumValue<ModificationRequestReportChange>((stringValue) => ModificationRequestReportChange.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['error'] = (node) => error = node.getEnumValue<ModificationRequestReportError>((stringValue) => ModificationRequestReportError.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['objectName'] = (node) => objectName = node.getStringValue();
         deserializerMap['subjectName'] = (node) => subjectName = node.getStringValue();
         return deserializerMap;
@@ -34,7 +42,9 @@ class ModificationRequestReportChangeDetails extends NonLinkable implements Pars
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeCollectionOfObjectValues<ModificationRequestReportChangeDescription>('additionalDescriptions', additionalDescriptions);
         writer.writeEnumValue<ModificationRequestReportChange>('change', change, (e) => e?.value);
+        writer.writeEnumValue<ModificationRequestReportError>('error', error, (e) => e?.value);
         writer.writeStringValue('objectName', objectName);
         writer.writeStringValue('subjectName', subjectName);
     }

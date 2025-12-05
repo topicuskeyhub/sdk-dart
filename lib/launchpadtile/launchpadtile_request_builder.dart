@@ -58,7 +58,7 @@ class LaunchpadtileRequestBuilder extends BaseRequestBuilder<LaunchpadtileReques
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<LaunchpadtileRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<LaunchpadtileRequestBuilderGetQueryParameters>(requestConfiguration, () => LaunchpadtileRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
         return requestInfo;
     }
     /// Creates one or more new launchpad tiles and returns the newly created tiles.
@@ -67,8 +67,8 @@ class LaunchpadtileRequestBuilder extends BaseRequestBuilder<LaunchpadtileReques
     RequestInformation toPostRequestInformation(LaunchpadTileLinkableWrapper body, [void Function(RequestConfiguration<LaunchpadtileRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<LaunchpadtileRequestBuilderPostQueryParameters>(requestConfiguration, () => LaunchpadtileRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=81', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=82', body);
         return requestInfo;
     }
 }

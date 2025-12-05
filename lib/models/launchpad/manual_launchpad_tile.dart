@@ -1,9 +1,12 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
+import '../group/group_primer.dart';
 import './launchpad_tile.dart';
 
 /// auto generated
 class ManualLaunchpadTile extends LaunchpadTile implements Parsable {
+    ///  The group property
+    GroupPrimer? group;
     ///  The title property
     String? title;
     ///  The uri property
@@ -21,6 +24,7 @@ class ManualLaunchpadTile extends LaunchpadTile implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['group'] = (node) => group = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         deserializerMap['title'] = (node) => title = node.getStringValue();
         deserializerMap['uri'] = (node) => uri = node.getStringValue();
         return deserializerMap;
@@ -30,6 +34,7 @@ class ManualLaunchpadTile extends LaunchpadTile implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeObjectValue<GroupPrimer>('group', group);
         writer.writeStringValue('title', title);
         writer.writeStringValue('uri', uri);
     }

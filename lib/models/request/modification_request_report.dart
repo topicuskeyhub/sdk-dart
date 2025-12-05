@@ -2,7 +2,6 @@
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../non_linkable.dart';
 import './modification_request_report_conclusion.dart';
-import './modification_request_report_error_details.dart';
 import './modification_request_report_object_change_details.dart';
 
 /// auto generated
@@ -11,8 +10,6 @@ class ModificationRequestReport extends NonLinkable implements Parsable {
     Iterable<ModificationRequestReportObjectChangeDetails>? changeDetails;
     ///  The conclusion property
     ModificationRequestReportConclusion? conclusion;
-    ///  The errorDetails property
-    Iterable<ModificationRequestReportErrorDetails>? errorDetails;
     /// Instantiates a new [ModificationRequestReport] and sets the default values.
     ModificationRequestReport() : super() {
         type_ = 'request.ModificationRequestReport';
@@ -28,7 +25,6 @@ class ModificationRequestReport extends NonLinkable implements Parsable {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['changeDetails'] = (node) => changeDetails = node.getCollectionOfObjectValues<ModificationRequestReportObjectChangeDetails>(ModificationRequestReportObjectChangeDetails.createFromDiscriminatorValue);
         deserializerMap['conclusion'] = (node) => conclusion = node.getEnumValue<ModificationRequestReportConclusion>((stringValue) => ModificationRequestReportConclusion.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
-        deserializerMap['errorDetails'] = (node) => errorDetails = node.getCollectionOfObjectValues<ModificationRequestReportErrorDetails>(ModificationRequestReportErrorDetails.createFromDiscriminatorValue);
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -38,6 +34,5 @@ class ModificationRequestReport extends NonLinkable implements Parsable {
         super.serialize(writer);
         writer.writeCollectionOfObjectValues<ModificationRequestReportObjectChangeDetails>('changeDetails', changeDetails);
         writer.writeEnumValue<ModificationRequestReportConclusion>('conclusion', conclusion, (e) => e?.value);
-        writer.writeCollectionOfObjectValues<ModificationRequestReportErrorDetails>('errorDetails', errorDetails);
     }
 }

@@ -56,6 +56,8 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     List<int>? tier2OwnedBy;
     ///  Filter groups on system on the type.
     List<GroupOnSystemType>? type_;
+    ///  Filter results on one or more UUIDs.
+    List<String>? uuid;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
     Map<String, dynamic> toMap() {
@@ -85,6 +87,7 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
             'systemOwnedBy' : systemOwnedBy,
             'tier2OwnedBy' : tier2OwnedBy,
             'type_' : type_,
+            'uuid' : uuid,
         };
     }
 }

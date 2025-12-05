@@ -1,7 +1,8 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../audit_info.dart';
-import '../generated_secret.dart';
+import '../generate_secret.dart';
+import '../secret.dart';
 import './service_account_group_linkable_wrapper.dart';
 import './service_account_supported_features.dart';
 
@@ -12,10 +13,12 @@ class ServiceAccountAdditionalObjects implements AdditionalDataHolder, Parsable 
     Map<String, Object?> additionalData;
     ///  The audit property
     AuditInfo? audit;
+    ///  The generateSecret property
+    GenerateSecret? generateSecret;
     ///  The groups property
     ServiceAccountGroupLinkableWrapper? groups;
     ///  The secret property
-    GeneratedSecret? secret;
+    Secret? secret;
     ///  The supportedFeatures property
     ServiceAccountSupportedFeatures? supportedFeatures;
     /// Instantiates a new [ServiceAccountAdditionalObjects] and sets the default values.
@@ -31,8 +34,9 @@ class ServiceAccountAdditionalObjects implements AdditionalDataHolder, Parsable 
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = <String, void Function(ParseNode)>{};
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
+        deserializerMap['generateSecret'] = (node) => generateSecret = node.getObjectValue<GenerateSecret>(GenerateSecret.createFromDiscriminatorValue);
         deserializerMap['groups'] = (node) => groups = node.getObjectValue<ServiceAccountGroupLinkableWrapper>(ServiceAccountGroupLinkableWrapper.createFromDiscriminatorValue);
-        deserializerMap['secret'] = (node) => secret = node.getObjectValue<GeneratedSecret>(GeneratedSecret.createFromDiscriminatorValue);
+        deserializerMap['secret'] = (node) => secret = node.getObjectValue<Secret>(Secret.createFromDiscriminatorValue);
         deserializerMap['supportedFeatures'] = (node) => supportedFeatures = node.getObjectValue<ServiceAccountSupportedFeatures>(ServiceAccountSupportedFeatures.createFromDiscriminatorValue);
         return deserializerMap;
     }
@@ -41,8 +45,9 @@ class ServiceAccountAdditionalObjects implements AdditionalDataHolder, Parsable 
     @override
     void serialize(SerializationWriter writer) {
         writer.writeObjectValue<AuditInfo>('audit', audit);
+        writer.writeObjectValue<GenerateSecret>('generateSecret', generateSecret);
         writer.writeObjectValue<ServiceAccountGroupLinkableWrapper>('groups', groups);
-        writer.writeObjectValue<GeneratedSecret>('secret', secret);
+        writer.writeObjectValue<Secret>('secret', secret);
         writer.writeObjectValue<ServiceAccountSupportedFeatures>('supportedFeatures', supportedFeatures);
         writer.writeAdditionalData(additionalData);
     }

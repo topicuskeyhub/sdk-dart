@@ -53,7 +53,7 @@ class SystemRequestBuilder extends BaseRequestBuilder<SystemRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<SystemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<SystemRequestBuilderGetQueryParameters>(requestConfiguration, () => SystemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
         return requestInfo;
     }
     /// Creates one or more new provisioned systems and returns the newly created systems.
@@ -62,8 +62,8 @@ class SystemRequestBuilder extends BaseRequestBuilder<SystemRequestBuilder> {
     RequestInformation toPostRequestInformation(ProvisionedSystemLinkableWrapper body, [void Function(RequestConfiguration<SystemRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<SystemRequestBuilderPostQueryParameters>(requestConfiguration, () => SystemRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=81');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=81', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=82', body);
         return requestInfo;
     }
 }

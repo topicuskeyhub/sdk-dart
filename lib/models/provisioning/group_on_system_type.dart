@@ -11,6 +11,8 @@ enum GroupOnSystemType {
     azureRole('AZURE_ROLE'),
     azureUnifiedGroup('AZURE_UNIFIED_GROUP'),
     azureSecurityGroup('AZURE_SECURITY_GROUP'),
+    azureDynamicUnifiedGroup('AZURE_DYNAMIC_UNIFIED_GROUP'),
+    azureDynamicSecurityGroup('AZURE_DYNAMIC_SECURITY_GROUP'),
     scim('SCIM'),
     accountOnly('ACCOUNT_ONLY');
     const GroupOnSystemType(this.value);

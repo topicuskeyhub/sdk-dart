@@ -2,6 +2,7 @@
 /// auto generated
 enum PutAdditionalQueryParameterType {
     audit('audit'),
+    generateSecret('generateSecret'),
     groups('groups'),
     secret('secret'),
     supportedFeatures('supportedFeatures');

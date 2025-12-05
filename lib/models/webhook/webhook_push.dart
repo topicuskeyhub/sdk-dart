@@ -25,6 +25,8 @@ class WebhookPush extends NonLinkable implements Parsable {
     WebhookNameUuid? group2;
     ///  The groupClassification property
     WebhookNameUuid? groupClassification;
+    ///  The groupOnSystem property
+    WebhookNameUuid? groupOnSystem;
     ///  The identitySource property
     WebhookNameUuid? identitySource;
     ///  The modificationRequest property
@@ -75,6 +77,7 @@ class WebhookPush extends NonLinkable implements Parsable {
         deserializerMap['group'] = (node) => group = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['group2'] = (node) => group2 = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['groupClassification'] = (node) => groupClassification = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
+        deserializerMap['groupOnSystem'] = (node) => groupOnSystem = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['identitySource'] = (node) => identitySource = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['modificationRequest'] = (node) => modificationRequest = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['organizationalUnit'] = (node) => organizationalUnit = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
@@ -105,6 +108,7 @@ class WebhookPush extends NonLinkable implements Parsable {
         writer.writeObjectValue<WebhookNameUuid>('group', group);
         writer.writeObjectValue<WebhookNameUuid>('group2', group2);
         writer.writeObjectValue<WebhookNameUuid>('groupClassification', groupClassification);
+        writer.writeObjectValue<WebhookNameUuid>('groupOnSystem', groupOnSystem);
         writer.writeObjectValue<WebhookNameUuid>('identitySource', identitySource);
         writer.writeObjectValue<WebhookNameUuid>('modificationRequest', modificationRequest);
         writer.writeObjectValue<WebhookNameUuid>('organizationalUnit', organizationalUnit);

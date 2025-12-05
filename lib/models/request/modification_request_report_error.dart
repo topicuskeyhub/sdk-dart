@@ -13,7 +13,14 @@ enum ModificationRequestReportError {
     oneMoveableVaultAccessOfMultipleMembers('ONE_MOVEABLE_VAULT_ACCESS_OF_MULTIPLE_MEMBERS'),
     zeroMoveableVaultAccessMembers('ZERO_MOVEABLE_VAULT_ACCESS_MEMBERS'),
     groupOwnerClientappWithTechadminOtherOu('GROUP_OWNER_CLIENTAPP_WITH_TECHADMIN_OTHER_OU'),
-    groupTechadminClientappWithOwnerOtherOu('GROUP_TECHADMIN_CLIENTAPP_WITH_OWNER_OTHER_OU');
+    groupTechadminClientappWithOwnerOtherOu('GROUP_TECHADMIN_CLIENTAPP_WITH_OWNER_OTHER_OU'),
+    authorizedGroupCannotBeRemoved('AUTHORIZED_GROUP_CANNOT_BE_REMOVED'),
+    hasNestedGroupCannotBeRemoved('HAS_NESTED_GROUP_CANNOT_BE_REMOVED'),
+    serviceAccountCannotBeRemoved('SERVICE_ACCOUNT_CANNOT_BE_REMOVED'),
+    applicationCannotBeRemoved('APPLICATION_CANNOT_BE_REMOVED'),
+    systemCannotBeRemoved('SYSTEM_CANNOT_BE_REMOVED'),
+    groupOnSystemCannotBeRemoved('GROUP_ON_SYSTEM_CANNOT_BE_REMOVED'),
+    groupOwnsAccessProfile('GROUP_OWNS_ACCESS_PROFILE');
     const ModificationRequestReportError(this.value);
     final String value;
 }

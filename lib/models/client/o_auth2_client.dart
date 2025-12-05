@@ -1,9 +1,9 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../auth/permission.dart';
+import '../misc/attribute_customization.dart';
 import '../vault/vault_record_primer.dart';
 import './client_application.dart';
-import './o_auth2_client_attributes.dart';
 import './o_auth2_client_profile.dart';
 
 /// auto generated
@@ -11,7 +11,7 @@ class OAuth2Client extends ClientApplication implements Parsable {
     ///  The accountPermissions property
     Iterable<Permission>? accountPermissions;
     ///  The attributes property
-    OAuth2ClientAttributes? attributes;
+    Iterable<AttributeCustomization>? attributes;
     ///  The callbackURI property
     String? callbackURI;
     ///  The debugMode property
@@ -48,7 +48,7 @@ class OAuth2Client extends ClientApplication implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['accountPermissions'] = (node) => accountPermissions = node.getCollectionOfObjectValues<Permission>(Permission.createFromDiscriminatorValue);
-        deserializerMap['attributes'] = (node) => attributes = node.getObjectValue<OAuth2ClientAttributes>(OAuth2ClientAttributes.createFromDiscriminatorValue);
+        deserializerMap['attributes'] = (node) => attributes = node.getCollectionOfObjectValues<AttributeCustomization>(AttributeCustomization.createFromDiscriminatorValue);
         deserializerMap['callbackURI'] = (node) => callbackURI = node.getStringValue();
         deserializerMap['debugMode'] = (node) => debugMode = node.getBoolValue();
         deserializerMap['forIdentitySource'] = (node) => forIdentitySource = node.getBoolValue();
@@ -67,7 +67,7 @@ class OAuth2Client extends ClientApplication implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
-        writer.writeObjectValue<OAuth2ClientAttributes>('attributes', attributes);
+        writer.writeCollectionOfObjectValues<AttributeCustomization>('attributes', attributes);
         writer.writeStringValue('callbackURI', callbackURI);
         writer.writeBoolValue('debugMode', value:debugMode);
         writer.writeStringValue('idTokenClaims', idTokenClaims);

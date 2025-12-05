@@ -4,6 +4,8 @@ import './abstract_access_profile_modification_request.dart';
 
 /// auto generated
 class JoinGroupRequest extends AbstractAccessProfileModificationRequest implements Parsable {
+    ///  The endDate property
+    DateOnly? endDate;
     /// Instantiates a new [JoinGroupRequest] and sets the default values.
     JoinGroupRequest() : super() {
         type_ = 'request.JoinGroupRequest';
@@ -17,6 +19,7 @@ class JoinGroupRequest extends AbstractAccessProfileModificationRequest implemen
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['endDate'] = (node) => endDate = node.getDateOnlyValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -24,5 +27,6 @@ class JoinGroupRequest extends AbstractAccessProfileModificationRequest implemen
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeDateOnlyValue('endDate', endDate);
     }
 }

@@ -15,6 +15,8 @@ class GroupOnSystemPrimer extends Linkable implements Parsable {
     String? nameInSystem;
     ///  The shortNameInSystem property
     String? shortNameInSystem;
+    ///  The uuid property
+    String? uuid;
     /// Instantiates a new [GroupOnSystemPrimer] and sets the default values.
     GroupOnSystemPrimer() : super() {
         type_ = 'provisioning.GroupOnSystemPrimer';
@@ -37,6 +39,7 @@ class GroupOnSystemPrimer extends Linkable implements Parsable {
         deserializerMap['type'] = (node) => groupOnSystemPrimerType = node.getEnumValue<GroupOnSystemType>((stringValue) => GroupOnSystemType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['nameInSystem'] = (node) => nameInSystem = node.getStringValue();
         deserializerMap['shortNameInSystem'] = (node) => shortNameInSystem = node.getStringValue();
+        deserializerMap['uuid'] = (node) => uuid = node.getStringValue();
         return deserializerMap;
     }
     /// Serializes information the current object

@@ -14,8 +14,6 @@ class LdapClient extends ClientApplication implements Parsable {
     VaultRecordPrimer? sharedSecret;
     ///  The shareSecretInVault property
     bool? shareSecretInVault;
-    ///  The usedForProvisioning property
-    bool? usedForProvisioning;
     /// Instantiates a new [LdapClient] and sets the default values.
     LdapClient() : super() {
         type_ = 'client.LdapClient';
@@ -33,7 +31,6 @@ class LdapClient extends ClientApplication implements Parsable {
         deserializerMap['clientCertificate'] = (node) => clientCertificate = node.getObjectValue<CertificatePrimer>(CertificatePrimer.createFromDiscriminatorValue);
         deserializerMap['sharedSecret'] = (node) => sharedSecret = node.getObjectValue<VaultRecordPrimer>(VaultRecordPrimer.createFromDiscriminatorValue);
         deserializerMap['shareSecretInVault'] = (node) => shareSecretInVault = node.getBoolValue();
-        deserializerMap['usedForProvisioning'] = (node) => usedForProvisioning = node.getBoolValue();
         return deserializerMap;
     }
     /// Serializes information the current object

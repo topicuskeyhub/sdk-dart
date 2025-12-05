@@ -1,9 +1,12 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
+import '../client/client_application_primer.dart';
 import './launchpad_tile.dart';
 
 /// auto generated
 class SsoApplicationLaunchpadTile extends LaunchpadTile implements Parsable {
+    ///  The application property
+    ClientApplicationPrimer? application;
     ///  The uri property
     String? uri;
     /// Instantiates a new [SsoApplicationLaunchpadTile] and sets the default values.
@@ -19,6 +22,7 @@ class SsoApplicationLaunchpadTile extends LaunchpadTile implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['application'] = (node) => application = node.getObjectValue<ClientApplicationPrimer>(ClientApplicationPrimer.createFromDiscriminatorValue);
         deserializerMap['uri'] = (node) => uri = node.getStringValue();
         return deserializerMap;
     }
@@ -27,6 +31,7 @@ class SsoApplicationLaunchpadTile extends LaunchpadTile implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeObjectValue<ClientApplicationPrimer>('application', application);
         writer.writeStringValue('uri', uri);
     }
 }

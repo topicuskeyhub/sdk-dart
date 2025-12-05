@@ -1,13 +1,13 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
+import '../misc/attribute_customization.dart';
 import './client_application.dart';
-import './saml2_client_attributes.dart';
 import './subject_format.dart';
 
 /// auto generated
 class Saml2Client extends ClientApplication implements Parsable {
     ///  The attributes property
-    Saml2ClientAttributes? attributes;
+    Iterable<AttributeCustomization>? attributes;
     ///  The metadata property
     String? metadata;
     ///  The metadataUrl property
@@ -27,7 +27,7 @@ class Saml2Client extends ClientApplication implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
-        deserializerMap['attributes'] = (node) => attributes = node.getObjectValue<Saml2ClientAttributes>(Saml2ClientAttributes.createFromDiscriminatorValue);
+        deserializerMap['attributes'] = (node) => attributes = node.getCollectionOfObjectValues<AttributeCustomization>(AttributeCustomization.createFromDiscriminatorValue);
         deserializerMap['metadata'] = (node) => metadata = node.getStringValue();
         deserializerMap['metadataUrl'] = (node) => metadataUrl = node.getStringValue();
         deserializerMap['subjectFormat'] = (node) => subjectFormat = node.getEnumValue<SubjectFormat>((stringValue) => SubjectFormat.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
@@ -38,7 +38,7 @@ class Saml2Client extends ClientApplication implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
-        writer.writeObjectValue<Saml2ClientAttributes>('attributes', attributes);
+        writer.writeCollectionOfObjectValues<AttributeCustomization>('attributes', attributes);
         writer.writeStringValue('metadata', metadata);
         writer.writeStringValue('metadataUrl', metadataUrl);
         writer.writeEnumValue<SubjectFormat>('subjectFormat', subjectFormat, (e) => e?.value);

@@ -1,11 +1,16 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
+import '../group/group_primer.dart';
 import './modification_request.dart';
 
 /// auto generated
 class RemoveGroupRequest extends ModificationRequest implements Parsable {
-    ///  The groupName property
-    String? groupName;
+    ///  The groupCount property
+    int? groupCount;
+    ///  The groupNames property
+    Iterable<String>? groupNames;
+    ///  The groups property
+    Iterable<GroupPrimer>? groups;
     /// Instantiates a new [RemoveGroupRequest] and sets the default values.
     RemoveGroupRequest() : super() {
         type_ = 'request.RemoveGroupRequest';
@@ -19,7 +24,9 @@ class RemoveGroupRequest extends ModificationRequest implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
-        deserializerMap['groupName'] = (node) => groupName = node.getStringValue();
+        deserializerMap['groupCount'] = (node) => groupCount = node.getIntValue();
+        deserializerMap['groupNames'] = (node) => groupNames = node.getCollectionOfPrimitiveValues<String>();
+        deserializerMap['groups'] = (node) => groups = node.getCollectionOfObjectValues<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -27,6 +34,7 @@ class RemoveGroupRequest extends ModificationRequest implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
-        writer.writeStringValue('groupName', groupName);
+        writer.writeCollectionOfPrimitiveValues<String?>('groupNames', groupNames);
+        writer.writeCollectionOfObjectValues<GroupPrimer>('groups', groups);
     }
 }

@@ -4,6 +4,7 @@ enum HttpAuthenticationScheme {
     none('NONE'),
     basic('BASIC'),
     bearer('BEARER'),
+    keyhub('KEYHUB'),
     custom('CUSTOM');
     const HttpAuthenticationScheme(this.value);
     final String value;

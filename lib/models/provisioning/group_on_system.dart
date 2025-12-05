@@ -3,16 +3,17 @@ import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../group/group_primer.dart';
 import './group_on_system_additional_objects.dart';
 import './group_on_system_primer.dart';
+import './group_on_system_provisioning_status.dart';
 import './provisioned_system_primer.dart';
 
 /// auto generated
 class GroupOnSystem extends GroupOnSystemPrimer implements Parsable {
+    ///  The accountProvisioning property
+    GroupOnSystemProvisioningStatus? accountProvisioning;
     ///  The additionalObjects property
     GroupOnSystemAdditionalObjects? additionalObjects;
     ///  The owner property
     GroupPrimer? owner;
-    ///  The provisioningEnabled property
-    bool? provisioningEnabled;
     ///  The system property
     ProvisionedSystemPrimer? system;
     /// Instantiates a new [GroupOnSystem] and sets the default values.
@@ -28,9 +29,9 @@ class GroupOnSystem extends GroupOnSystemPrimer implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['accountProvisioning'] = (node) => accountProvisioning = node.getEnumValue<GroupOnSystemProvisioningStatus>((stringValue) => GroupOnSystemProvisioningStatus.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<GroupOnSystemAdditionalObjects>(GroupOnSystemAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['owner'] = (node) => owner = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
-        deserializerMap['provisioningEnabled'] = (node) => provisioningEnabled = node.getBoolValue();
         deserializerMap['system'] = (node) => system = node.getObjectValue<ProvisionedSystemPrimer>(ProvisionedSystemPrimer.createFromDiscriminatorValue);
         return deserializerMap;
     }
@@ -39,9 +40,9 @@ class GroupOnSystem extends GroupOnSystemPrimer implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeEnumValue<GroupOnSystemProvisioningStatus>('accountProvisioning', accountProvisioning, (e) => e?.value);
         writer.writeObjectValue<GroupOnSystemAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeObjectValue<GroupPrimer>('owner', owner);
-        writer.writeBoolValue('provisioningEnabled', value:provisioningEnabled);
         writer.writeObjectValue<ProvisionedSystemPrimer>('system', system);
     }
 }

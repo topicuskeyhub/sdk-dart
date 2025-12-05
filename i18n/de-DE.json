@@ -311,6 +311,7 @@
               },
               "AuditRecordType#ACCOUNT_GROUP_ACTIVATED": "Konto - Gruppe aktiviert",
               "AuditRecordType#CLIENT_ADDED_TO_ORGANIZATIONAL_UNIT": "Anwendung - Einer Organisationseinheit hinzugefügt",
+              "AuditRecordType#ACCOUNT_GROUP_ACTIVATION_GRANT_REVOKED": "Konto - Zugriff widerrufen",
               "AuditRecordType#CREATE_PROVISIONED_NAMESPACE_DECLINED": "Namespace erstellen - Abgelehnt",
               "AuditRecordType#JOIN_GROUP_REQUESTED": "Zugriff zur Gruppe - Beantragt",
               "AuditRecordType#CLIENT_REMOVED_FROM_GROUP": "Anwendung - Aus der Gruppe entfernt",
@@ -484,7 +485,7 @@
               "AuditRecordType#REMOVE_PROVISIONED_SYSTEM_REQUESTED": "Gekoppeltes System löschen - Beantragt",
               "AuditRecordType#GRANT_SERVICE_ACCOUNT_GROUP_REQUESTED": "Dem Dienstkonto Zugriff auf die Gruppe im gekoppeltem System gewähren - Beantragt",
               "AuditRecordType#TRANSFER_APPLICATION_OWNERSHIP_ACCEPTED": "Verantwortung der Anwendung übertragen - Genehmigt",
-              "AuditRecordType#REMOVE_GROUP_ACCEPTED": "Gruppe löschen - Genehmigt",
+              "AuditRecordType#REMOVE_GROUP_ACCEPTED": "Gruppe(n) löschen - Genehmigt",
               "AuditRecordType#JOIN_GROUP_ACCEPTED": "Zugriff zur Gruppe - Genehmigt",
               "AuditRecordType#ACCOUNT_ADDED_TO_ACCESS_PROFILE": "Konto - Zu einem Zugriffsprofil hinzugefügt",
               "AuditRecordType#REMOVE_PROVISIONED_SYSTEM_DECLINED": "Gekoppeltes System löschen - Abgelehnt",
@@ -503,7 +504,7 @@
               "AuditRecordType#RESET_PASSWORD_DECLINED": "Passwort wiederherstellen - Abgelehnt",
               "AuditRecordType#SERVICE_ACCOUNT_PROVISIONING_DESTROYED": "Dienstkonto - Vom gekoppelten System gelöscht ",
               "AuditRecordType#TRANSFER_APPLICATION_OWNERSHIP_DECLINED": "Verantwortung der Anwendung übertragen - Abgelehnt",
-              "AuditRecordType#REMOVE_GROUP_REQUESTED": "Gruppe löschen - Beantragt",
+              "AuditRecordType#REMOVE_GROUP_REQUESTED": "Gruppe(n) löschen - Beantragt",
               "AuditRecordType#SERVICE_ACCOUNT_ADDED_TO_GROUP": "Dienstkonto - Einer Gruppe hinzugefügt",
               "GroupAudit#submittedAt": {
                 "label": "Eingereicht am"
@@ -560,7 +561,7 @@
               "GroupAudit#nameOnAudit": {
                 "label": "Gruppenname bei Prüfung"
               },
-              "AuditRecordType#REMOVE_GROUP_DECLINED": "Gruppe löschen - Abgelehnt",
+              "AuditRecordType#REMOVE_GROUP_DECLINED": "Gruppe(n) löschen - Abgelehnt",
               "AuditAccountAction#APPROVE": "Genehmigen",
               "AuditRecordType#GRANT_CLIENT_PERMISSION_ACCEPTED": "Berechtigung zur Anwendung erteilen - Genehmigt",
               "AuditRecordType#SERVICE_ACCOUNT_REMOVED": "Dienstkonto - Gelöscht",
@@ -654,7 +655,7 @@
                 "description": "Das zuvor gewählte Passwort entspricht nicht den Anforderungen. Wählen Sie ein stärkeres neues Passwort.",
                 "label": "Neues Passwort"
               },
-              "ModificationRequestReportError#AUDITOR_GROUP_CANNOT_BE_MOVED": "Die Auditorgruppe kann nicht verschoben werden",
+              "ModificationRequestReportError#AUDITOR_GROUP_CANNOT_BE_MOVED": "Die Auditorgruppe kann nicht verschoben werden.",
               "ModificationRequestType#CREATE_GROUP": "ERSTELLE GRUPPE",
               "ModificationRequestType#GRANT_ACCESS": "ZUGRIFF ANFORDERN",
               "ModificationRequestReportChange#ACCOUNT_REMOVED_FROM_ACCESS_PROFILE": "Das Konto {1} wird aus dem Zugriffsprofil entfernt.",
@@ -681,7 +682,7 @@
                 "label": "Grund für die Genehmigung/Ablehnung"
               },
               "ModificationRequestReportChange#ACCESS_PROFILE_CLIENT_REMOVED_OWNER": "Das Zugriffsprofil {1} wird mit dieser Gruppe verschoben und daher verliert es den Zugriff auf die Anwendung {0}.",
-              "ModificationRequestReportConclusion#CANNOT_BE_EXECUTED": "Anfrage kann nicht erfüllt werden",
+              "ModificationRequestReportConclusion#CANNOT_BE_EXECUTED": "Anfrage kann nicht erfüllt werden.",
               "ModificationRequestType#TRANSFER_PROVISIONED_SYSTEM_CONTENT_ADMINISTRATION": "INHALTSVERWALTUNG ÜBERGEBEN",
               "ModificationRequestType#ENABLE_TECHNICAL_ADMINISTRATION": "EINSCHALTEN",
               "ModificationRequestType#VERIFY_INTERNAL_ACCOUNT": "GENEHMIGE KONTO",
@@ -689,8 +690,9 @@
                 "label": "Gruppe",
                 "placeholder": "Geben Sie hier einen Gruppennamen ein..."
               },
-              "ModificationRequestReportError#MANAGER_CANNOT_BE_MOVED": "Die Gruppe hat einen Manager, der nicht verschoben werden kann",
+              "ModificationRequestReportError#MANAGER_CANNOT_BE_MOVED": "Die Gruppe hat einen Manager, der nicht verschoben werden kann.",
               "ModificationRequestType#REMOVE_ORGANIZATIONAL_UNIT": "ORGANISATION LÖSCHEN",
+              "ModificationRequestReportError#GROUP_ON_SYSTEM_CANNOT_BE_REMOVED": "Keine Berechtigung, {2}: {1} ({3}) zu löschen.",
               "ModificationRequestReportChange#GROUP_CLIENT_REMOVED_OWNER": "Die Anwendung {0} wird mit dieser Gruppe verschoben. Die KeyHub-Gruppe {1} verliert den Zugriff.",
               "CreateProvisionedNamespaceRequest#namespaceName": {
                 "label": "Name",
@@ -698,6 +700,7 @@
               },
               "ModificationRequestType#JOIN_GROUP": "DER GRUPPE BEITRETEN",
               "ModificationRequestType#GRANT_GROUP_ON_SYSTEM": "ZUGRIFF AUF GRUPPE",
+              "ModificationRequestReportChange#HELPDESK_WILL_BE_REMOVED": "Der Helpdesk: {1} wird entfernt.",
               "ExtendAccessRequest#extendUntil": {
                 "label": "Verlängerter Zugriff bis einschließlich"
               },
@@ -710,18 +713,20 @@
               "ModificationRequestReport#conclusion": {
                 "label": "Abschluss"
               },
+              "ModificationRequestReportError#SYSTEM_CANNOT_BE_REMOVED": "Das {2}: {1} kann nicht entfernt werden ({3}).",
               "ModificationRequestReportChange#ORGANIZATIONAL_UNIT_REMOVED": "Diese Organisationseinheiten werden gelöscht.",
               "ModificationRequestReportChange#SYSTEM_ACCOUNTS_WRITABLE_DISABLED": "'Konten beschreibbar' wird für diese verknüpften Systeme deaktiviert.",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_GROUP_REMOVED_OWNER": "Die Gruppe im System {0} wird mit dieser Gruppe verschoben und daher verliert das Dienstkonto {1} den Zugriff.",
               "ModificationRequestType#TRANSFER_PROVISIONED_SYSTEM_OWNERSHIP": "VERANTWORTUNG ÜBERGEBEN",
               "ModificationRequestReportChange#ACCESS_PROFILE_REMOVED": "Diese Zugriffsprofile werden gelöscht.",
               "ModificationRequestType#REVIEW_AUDIT": "AUDIT ÜBERPRÜFEN",
-              "ModificationRequestReportError#ADMIN_GROUP_CANNOT_BE_MOVED": "Die KeyHub-Administratorgruppe kann nicht verschoben werden",
+              "ModificationRequestReportError#ADMIN_GROUP_CANNOT_BE_MOVED": "Die KeyHub-Administratorgruppe kann nicht verschoben werden.",
               "ModificationRequestType#GRANT_SERVICE_ACCOUNT_GROUP": "ZUGRIFF AUF GRUPPE",
               "ModificationRequestStatus#DISALLOWED": "Verweigert",
               "ModificationRequestType#TRANSFER_SERVICE_ACCOUNT_ADMINISTRATION": "VERWALTUNG ÜBERGEBEN",
               "ModificationRequestReportChange#GROUP_NESTING_REMOVED": "Die Verschachtelung dieser Gruppen wird entfernt.",
               "AuthorizingGroupType#MEMBERSHIP": "Änderungen in der Gruppenmitgliedschaft",
+              "ModificationRequestReportError#APPLICATION_CANNOT_BE_REMOVED": "Keine Berechtigung, {2}: {1} ({3}) zu löschen.",
               "ModificationRequestReportChange#PROVISIONING_GROUP_REMOVED_OWNER": "Die Gruppe im System {0} wird mit dieser Gruppe verschoben. Die KeyHub-Gruppe {1} verliert den Zugriff.",
               "ModificationRequestType#RESET_PASSWORD": "PASSWORT WIEDERHERSTELLEN",
               "GrantClientPermissionRequest#permissionType": {
@@ -730,24 +735,29 @@
               "RevokeAdminRequest#admin": {
                 "label": "KeyHub-Administrator"
               },
-              "ModificationRequestReportError#GROUP_PART_OF_NESTING_TREE": "Die Gruppe ist Teil einer verschachtelten Gruppenstruktur",
+              "ModificationRequestReportError#GROUP_PART_OF_NESTING_TREE": "Die Gruppe ist Teil einer verschachtelten Gruppenstruktur.",
               "SetupAuthorizingGroupRequest#authorizingGroupType": {
                 "label": "Autorisierungstyp"
               },
               "ModificationRequestReportChange#GROUP_VAULT_RECOVERY_RESET": "Die Safe-wiederherstellung für diese Gruppen wird auf 'Vollständig verfügbar' gesetzt.",
-              "ModificationRequestReportError#GROUP_FULFILLS_GLOBAL_ROLE": "Die Gruppe erfüllt eine globale Rolle in KeyHub",
+              "ModificationRequestReportError#GROUP_FULFILLS_GLOBAL_ROLE": "Die Gruppe erfüllt eine globale Rolle in KeyHub.",
               "CreateServiceAccountRequest#username": {
                 "label": "Benutzername",
                 "description": "Wählen Sie einen Benutzernamen für das Dienstkonto aus."
               },
+              "ModificationRequestReportError#SERVICE_ACCOUNT_CANNOT_BE_REMOVED": "Keine Berechtigung, {2}: {1} ({3}) zu löschen.",
+              "ModificationRequestReportChange#VAULT_RECORDS_WILL_BE_REMOVED_UNRECOVERABLE": "Der Safe wird zusammen mit den {1} Safe-Eintrag/Einträgen entfernt. Diese Safe-Einträge können nach dem Entfernen nicht wiederhergestellt werden.",
               "ModificationRequestType#SETUP_NESTED_GROUP": "VERSCHACHTELUNG",
-              "ModificationRequestReportError#GROUP_OWNS_OU": "Die Gruppe erfüllt eine Rolle für ein Organisationseinheit",
-              "ModificationRequestReportError#ONE_MOVEABLE_VAULT_ACCESS_OF_MULTIPLE_MEMBERS": "Die Gruppe hat nur ein Mitglied mit Vaultzugriff, das verschoben werden kann",
+              "ModificationRequestReportError#GROUP_OWNS_OU": "Ist Eigentümer der Organisationseinheit {1}.",
+              "ModificationRequestReportError#ONE_MOVEABLE_VAULT_ACCESS_OF_MULTIPLE_MEMBERS": "Die Gruppe hat nur ein Mitglied mit Vaultzugriff, das verschoben werden kann.",
+              "ModificationRequestReportError#GROUP_OWNS_ACCESS_PROFILE": "Ist Eigentümer des Zugriffsprofils {1}.",
+              "ModificationRequestReportChange#SERVICE_ACCOUNT_WILL_BE_REMOVED": "Die {2}: {1} wird entfernt ({3}).",
+              "ModificationRequestReportChange#VAULT_RECORDS_WILL_BE_REMOVED": "Der Safe wird zusammen mit den {1} Safe-Eintrag/Einträgen entfernt.",
               "ModificationRequestType#REMOVE_PROVISIONED_SYSTEM": "GEKOPPELTES SYSTEM LÖSCHEN",
               "GrantApplicationRequest#application": {
                 "label": "Anwendung"
               },
-              "ModificationRequestReportError#ZERO_MOVEABLE_VAULT_ACCESS_MEMBERS": "Die Gruppe hat kein Mitglied mit Vaultzugriff, das verschoben werden kann",
+              "ModificationRequestReportError#ZERO_MOVEABLE_VAULT_ACCESS_MEMBERS": "Die Gruppe hat kein Mitglied mit Vaultzugriff, das verschoben werden kann.",
               "AddGroupAdminRequest#newAdmin": {
                 "label": "Benutzer"
               },
@@ -755,8 +765,10 @@
               "ModificationRequestType#SETUP_AUTHORIZING_GROUP": "AUTORISATION",
               "ModificationRequestReportChange#GROUP_ACTIVATION_FOR_PROVISIONING_DISABLED": "'Aktivierung erforderlich' wird für diese Gruppen auf Systemen deaktiviert.",
               "ModificationRequestType#GRANT_GROUP_ON_SYSTEM_REQUEST": "ZUGRIFF AUF GRUPPE",
-              "ModificationRequestReportError#MULTIPLE_OUS": "Die Anfrage enthält Gruppen mit mehr als einer Organisationseinheit",
+              "ModificationRequestReportError#MULTIPLE_OUS": "Die Anfrage enthält Gruppen mit mehr als einer Organisationseinheit.",
               "ModificationRequestReportChange#GROUP_ACTIVATION_FOR_VAULT_DISABLED": "'Aktivierung für Safezugriff erforderlich' wird für diese Gruppen deaktiviert.",
+              "ModificationRequestReportError#AUTHORIZED_GROUP_CANNOT_BE_REMOVED": "Führt die Autorisierung für {1} durch.",
+              "ModificationRequestReportError#HAS_NESTED_GROUP_CANNOT_BE_REMOVED": "Hat {2} verschachtelte Gruppe(n).",
               "ModificationRequestStatus#CANCELLED": "Verworfen",
               "ModificationRequestStatus#REQUESTED": "Beantragt",
               "ModificationRequestType#JOIN_VAULT": "SAFE BEITRETEN",
@@ -770,13 +782,14 @@
               "ModificationRequestType#CREATE_GROUP_ON_SYSTEM": "ERSTELLE GRUPPE IM SYSTEM",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_REMOVED": "Diese Dienstkonten werden gelöscht.",
               "ModificationRequestReportChange#ACCESS_PROFILE_CLIENT_REMOVED_OUT_OF_SCOPE": "Nach dem Verschieben ist die Anwendung {0} für das Zugriffsprofil {1} nicht mehr sichtbar und daher wird der Zugriff entfernt.",
-              "ModificationRequestReportError#GROUP_OWNS_OR_ADMINS_SYSTEM": "Die Gruppe erfüllt eine Rolle für ein Gekoppeltes System",
+              "ModificationRequestReportError#GROUP_OWNS_OR_ADMINS_SYSTEM": "Die Gruppe erfüllt eine Rolle für ein Gekoppeltes System.",
               "ModificationRequestReportChange#ORGANIZATIONAL_UNIT_CLIENT_APPLICATION_REMOVED_OUT_OF_SCOPE": "Die Organisationseinheit {1} ist nach der Verschiebung für der Client-Anwendung {0} nicht mehr sichtbar und daher wird der Zugriff entfernt.",
               "ModificationRequestType#TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP": "VERANTWORTUNG ÜBERGEBEN",
               "LinkDirectoryToAccessProfileRequest#directory": {
                 "label": "Verzeichnis"
               },
               "ModificationRequestType#UPDATE_GROUP_MEMBERSHIP": "MITGLIEDSCHAFT",
+              "ModificationRequestReportChange#SYSTEM_WILL_BE_REMOVED": "Die {2}: {1} wird entfernt ({3}).",
               "ModificationRequestReportError#GROUP_OWNER_CLIENTAPP_WITH_TECHADMIN_OTHER_OU": "Die Gruppe ist der verantwortliche Gruppe einer Anwendung, wobei die Gruppe der technische Verwaltung in einer anderen Organisationseinheit bleiben wird.",
               "GrantServiceAccountGroupRequest#serviceAccount": {
                 "label": "Dienstkonto"
@@ -792,8 +805,10 @@
               "ModificationRequestType#REMOVE_ACCESS_PROFILE": "ZUGRIFFSPROFIL LÖSCHEN",
               "GroupNestAccountAction#REMOVE": "Löschen",
               "ModificationRequestReportChange#GROUP_MADE_PUBLIC": "Diese Gruppen werden veröffentlicht.",
+              "ModificationRequestReportChange#GROUP_ON_SYSTEM_WILL_BE_REMOVED": "Die {2}: {1} wird entfernt ({3}).",
               "ModificationRequestType#MOVE_GROUPS": "GRUPPEN VERSCHIEBEN",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_GROUP_REMOVED_OUT_OF_SCOPE": "Nach dem Verschieben ist die Gruppe im System {0} für das Dienstkonto {1} nicht mehr sichtbar und daher wird der Zugriff entfernt.",
+              "ModificationRequestReportChange#APPLICATION_WILL_BE_REMOVED": "Die {2}: {1} wird entfernt ({3}).",
               "ModificationRequestReportChange#ACCESS_PROFILE_GROUP_REMOVED_OUT_OF_SCOPE": "Nach dem verschieben ist die Gruppe {1} ist für das Zugriffsprofil {0} nicht mehr sichtbar und daher wird die Verknüpfung entfernt.",
               "ModificationRequestReportChange#MODIFICATION_REQUEST_CANCELLED": "{0} Anfrage(n) werden zurückgezogen.",
               "TransferServiceAccountAdministrationRequest#serviceAccount": {
@@ -811,6 +826,9 @@
               "ModificationRequestReportChange#GROUP_CLASSIFICATION_REMOVED": "Diese Gruppenklassifizierungen werden gelöscht.",
               "ModificationRequestType#ADD_GROUP_TO_ACCESS_PROFILE": "GRUPPE HINZUFÜGEN",
               "ModificationRequestType#TRANSFER_ORGANIZATIONAL_UNIT_OWNERSHIP": "VERANTWORTUNG ÜBERGEBEN",
+              "JoinGroupRequest#endDate": {
+                "label": "Enddatum"
+              },
               "PasswordResetRequest#newVaultAndDirectoryPasswordCheck": {
                 "label": "Passwort wiederholen"
               },
@@ -1495,6 +1513,10 @@
                 "label": "Bearer Token"
               },
               "ProvisioningOperationType#SYNC_ACCOUNT": "Sync account",
+              "GroupOnSystem#accountProvisioning": {
+                "description": "Wenn aktiviert, verwaltet KeyHub diese Gruppe und ihre Mitgliedschaften auf dem gekoppelten System.",
+                "label": "Kontobereitstellung"
+              },
               "ProvisionedLDAPDirectory#sshPublicKeySupport": {
                 "description": "Wählen Sie aus, wie ein öffentlicher SSH-Schlüssel auf einem Konto platziert werden soll.",
                 "label": "SSH Public Key"
@@ -1521,6 +1543,15 @@
                 "description": "Konten, die innerhalb von Topicus KeyHub nicht bekannt sind, werden während einer Synchronisierung entfernt."
               },
               "GroupOnSystemType#ACCOUNT_ONLY": "Nur-Konto-Bereitstellung",
+              "ProvisionedSCIM#externalIdSupported": {
+                "label": "Unterstützt die externalId-Eigenschaft"
+              },
+              "ProvisionedSCIMVendor#CUSTOM": "Manuell eingestellt",
+              "ProvisionedSystem#contentAdministrator": {
+                "placeholder": "Wähle eine Gruppe...",
+                "description": "Die Inhalt dieses gekoppelten Systems wird von Mitgliedern der ausgewählten Gruppe verwaltet.",
+                "label": "Inhaltsverwaltungsgruppe"
+              },
               "ProvisionedSystemPrimer#uuid": {
                 "label": "UUID"
               },
@@ -1545,6 +1576,7 @@
                 "description": "Der RDN unter der Basis-DN, die Gruppen beinhaltet.",
                 "label": "Gruppen-RDN"
               },
+              "ProvisionedSCIMVendor#TOPICUS_KEYHUB_CONNECTOR": "Topicus KeyHub Connector",
               "ProvisioningOperationType#UPDATE_SYSTEM": "Update system",
               "ProvisioningOperationType#CLEANUP_OLD_ACCOUNTS": "Cleanup old accounts",
               "ProvisionedAzureOIDCDirectory#tenant": {
@@ -1562,20 +1594,26 @@
                 "label": "Failover Host",
                 "description": "Wenn der primäre Host nicht verfügbar ist, wird auf diesen Host mit dem selben Port zurückgegriffen."
               },
+              "ProvisionedSystem#technicalAdministrator": {
+                "placeholder": "Wähle eine Gruppe...",
+                "label": "Technische Verwaltungsgruppe",
+                "description": "Die Konfiguration dieses gekoppelten Systems wird von Mitgliedern der ausgewählten Gruppe verwaltet."
+              },
               "ProvisionedLDAPDirectory#objectClasses": {
                 "label": "Zusätzliche Objektklassen",
                 "description": "Geben Sie zusätzliche Werte für das objectClass-Attribut für Konten an, getrennt durch Leerzeichen."
               },
               "ProvisioningOperationType#DESTROY_SERVICE_ACCOUNT": "Destroy service account",
+              "GroupOnSystemProvisioningStatus#DISABLED_KEEP_ACCOUNT_ACTIVE": "Deaktiviert (Konto bleibt aktiv)",
               "AbstractProvisionedLDAP#bindPassword": {
                 "description": "Das Passwort, mit dem das Verzeichnis verknüpft ist.",
                 "label": "Bind Passwort"
               },
-              "GroupOnSystem#provisioningEnabled": {
-                "description": "Wenn aktiviert, verwaltet KeyHub diese Gruppe und ihre Mitgliedschaften auf dem gekoppelten System.",
-                "label": "Bereitstellung aktiviert"
-              },
               "ProvisioningOperationType#UNLINK_GROUP_ON_SYSTEM": "Unlink group on system",
+              "ProvisionedSCIM#pageSize": {
+                "label": "Page-Größe",
+                "description": "Die Anzahl der pro Anfrage abgerufenen Elemente. Verwenden Sie -1, wenn der Dienst keine Paginierung unterstützt."
+              },
               "ProvisioningOperationType#INIT_ACCOUNT": "Init account",
               "ProvisionedLDAP#hashingScheme": {
                 "label": "Passwort Hashing",
@@ -1601,10 +1639,6 @@
               "ProvisioningOperationType#PRE_PROVISIONING_CHECK": "Pre-provisioning check",
               "ProvisionedSystemType#INTERNAL_LDAP": "Internes LDAP",
               "ProvisionedSystemType#LDAP": "LDAP",
-              "ProvisionedSystem#contentAdministrator": {
-                "description": "Die Inhalt dieses gekoppelten Systems wird von Mitgliedern der ausgewählten Gruppe verwaltet.",
-                "label": "Inhaltsverwaltungsgruppe"
-              },
               "ProvisioningOperationType#SYNC_INCREMENTAL": "Sync incremental",
               "ProvisionedSystem#owner": {
                 "description": "Manager der ausgewählten Gruppe sind verantwortlich für den Zugriff und die Verwaltung dieses gekoppelten Systems.",
@@ -1673,10 +1707,8 @@
                 "description": "Der Basis-DN in der sich im Verzeichnis die Benutzer- und Gruppen-DNs befinden.",
                 "label": "Basis-DN"
               },
-              "ProvisionedSystem#technicalAdministrator": {
-                "label": "Technische Verwaltungsgruppe",
-                "description": "Die Konfiguration dieses gekoppelten Systems wird von Mitgliedern der ausgewählten Gruppe verwaltet."
-              },
+              "GroupOnSystemProvisioningStatus#DISABLED": "Deaktiviert",
+              "SCIMUpdateStrategy#PATCH": "PATCH",
               "GroupOnSystemProvisioning#NOT_PROVISIONED_BY_DEFAULT": "Standardmäßig deaktiviert – Die Verwaltung von Gruppen durch KeyHub ist standardmäßig deaktiviert.",
               "AbstractProvisionedLDAP#port": {
                 "label": "Port"
@@ -1688,6 +1720,7 @@
                 "description": "Wählen Sie aus, wie ein öffentlicher SSH-Schlüssel auf einem Konto platziert werden soll.",
                 "label": "SSH Public Key"
               },
+              "GroupOnSystemType#AZURE_DYNAMIC_SECURITY_GROUP": "Sicherheitsgruppe (dynamische Mitgliedschaft)",
               "ProvisionedSCIMVendor#AWS": "AWS",
               "ProvisionedSCIM#vendor": {
                 "description": "Wählen Sie den Anbieter für den richtigen SCIM-Dialekt aus.",
@@ -1713,6 +1746,9 @@
                 "label": "Custom Attribute"
               },
               "ProvisioningOperationType#CREATE_GROUP_ON_SYSTEM": "Create group on system",
+              "ProvisionedSystem#fullSyncInterval": {
+                "label": "Synchronisationsintervall"
+              },
               "AbstractProvisionedLDAP#objectClasses": {
                 "label": "Zusätzliche Objektklassen",
                 "description": "Geben Sie zusätzliche Werte für das objectClass-Attribut für Konten an, getrennt durch Leerzeichen."
@@ -1745,6 +1781,7 @@
               "ProvisionedAzureSyncLDAPDirectory#tenant": {
                 "label": "Azure Tenant"
               },
+              "GroupOnSystemType#AZURE_DYNAMIC_UNIFIED_GROUP": "Microsoft 365 (dynamische Mitgliedschaft)",
               "GroupOnSystemType#AZURE_SECURITY_GROUP": "Sicherheitsgruppe",
               "ProvisioningOperationType#SYNC_MEMBERSHIP": "Sync membership",
               "ProvisionedSCIM#attributes": {
@@ -1754,12 +1791,21 @@
                 "label": "Benutzername-Präfix",
                 "description": "Das Präfix, das jedem Benutzernamen hinzugefügt wird, wenn er auf dem System erstellt wird. Ein Gedankenstrich wird als Trennzeichen verwendet."
               },
+              "ProvisionedSCIM#useScimJsonMimetype": {
+                "label": "application/json+scim MIME-Typ verwenden",
+                "description": "Einige Dienste verwenden den nicht standardmäßigen MIME-Typ application/json. Deaktivieren Sie in diesem Fall diese Option."
+              },
+              "GroupOnSystemProvisioningStatus#ENABLED": "Aktiviert",
               "ProvisioningOperationType#UPDATE_ACCOUNT_ATTRIBUTES": "Update account attributes",
+              "ProvisionedSCIM#passwordSupported": {
+                "label": "Unterstützt Passwörter"
+              },
               "ProvisionedLDAPDirectory#groupDN": {
                 "label": "Gruppen-DN",
                 "description": "Der DN von dem Verzeichnis, der Gruppen beinhaltet."
               },
               "GroupOnSystemType#AZURE_ROLE": "Verzeichnisrolle",
+              "SCIMUpdateStrategy#DELETE_POST": "DELETE + POST",
               "GroupOnSystemPrimer#displayName": {
                 "label": "Anzeigename"
               },
@@ -1778,7 +1824,14 @@
                 "description": "Wenn eine Identitätsanbieter-Domain festgelegt ist, werden Benutzer über diese Domain eingeladen und melden sich über SSO an."
               },
               "ProvisioningOperationType#REMOVE_GROUP_ON_SYSTEM": "Remove group on system",
+              "ProvisionedSystem#traceLoggingEnabled": {
+                "description": "Aktivieren Sie die erweiterte Bereitstellungsprotokollierung für dieses System, um Probleme bei der Kontobereitstellung zu beheben.",
+                "label": "Trace-Protokollierung aktivieren"
+              },
               "ADSamAccountNameScheme#TRANSFER": "Wert übernehmen - Nehmen Sie den Wert aus dem Attribut sAMAccountName des Kontos.",
+              "ProvisionedSCIM#connectorConfiguration": {
+                "label": "Connector-Konfiguration"
+              },
               "ProvisionedNamespace#serviceAccountDN": {
                 "label": "Dienstkonsto-RDN",
                 "description": "Der RDN unter dem Basis-DN, unter dem Dienstkonten erstellt werden."
@@ -1789,6 +1842,9 @@
               },
               "ADSamAccountNameScheme#USERNAME": "Benutzernamen - Verwenden Sie den Benutzernamen, wenn er passt.",
               "ProvisionedSystemType#AZURE_TENANT": "Azure Tenant",
+              "ProvisionedSCIM#groupsSupported": {
+                "label": "Unterstützt Gruppen"
+              },
               "ProvisionedSystem#status": {
                 "label": "Status"
               },
@@ -1805,6 +1861,7 @@
                 "label": "Erstellt am"
               },
               "ProvisionedSCIMVendor#KEYSTONE": "Keystone",
+              "SCIMUpdateStrategy#PUT": "PUT",
               "ProvisionedNamespace#baseSystem": {
                 "label": "Basissystem"
               },
@@ -1823,6 +1880,9 @@
               "GroupOnSystemPrimer#nameInSystem": {
                 "label": "Name in System"
               },
+              "ProvisionedSCIM#filterActiveUsersSupported": {
+                "label": "Unterstützt das Filtern nach aktiven Benutzern"
+              },
               "ProvisionedSystemSyncLog#errors": {
                 "label": "Fehler/Warnungen"
               },
@@ -1830,6 +1890,9 @@
               "ADSamAccountNameScheme#TRUNCATE": "Benutzernamen abschneiden - Der Benutzername wird auf maximal 20 Zeichen gekürzt.",
               "ProvisionedAzureSyncLDAPDirectory#clientId": {
                 "label": "Client Identifier"
+              },
+              "ProvisionedSCIM#updateStrategy": {
+                "label": "Updatestrategie"
               }
             },
             "identity": {
@@ -2263,7 +2326,7 @@
                 "label": "Name"
               },
               "MoveVaultRecord#shareEndDate": {
-                "description": "Nach diesem Datum wird der Tresordatensatz automatisch aus dem Zieltresor entfernt.",
+                "description": "Nach diesem Datum wird der Safe-Eintrag automatisch aus dem Ziel-Safe entfernt.",
                 "label": "Teilen bis einschließlich eines bestimmten Datums"
               },
               "VaultRecordColor#GREEN": "Grün",
@@ -2391,7 +2454,7 @@
               },
               "Settings#provisioningTracing": {
                 "label": "Ausführliche Protokollierung der Kontobereitstellung",
-                "description": "Aktivieren Sie die Protokollierung der ausführlichen Kontobereitstellung, um Probleme mit der Kontobereitstellung zu beheben."
+                "description": "Aktivieren Sie die ausführliche Protokollierung der Kontobereitstellung, um Probleme bei der Kontobereitstellung zu beheben."
               },
               "Settings#enableTechAdminApproval": {
                 "description": "Anfragen zur Aktivierung der technischen Verwaltung für Gruppen werden von der ausgewählten Gruppe bearbeitet.",
@@ -2507,6 +2570,9 @@
               "SsoApplicationLaunchpadTile#uri": {
                 "label": "Link"
               },
+              "ManualLaunchpadTile#group": {
+                "label": "Gruppe"
+              },
               "ManualLaunchpadTile#uri": {
                 "label": "Link"
               },
@@ -2519,9 +2585,6 @@
               },
               "SsoApplicationLaunchpadTile#ssoIdpInitiatedFlow": {
                 "label": "Verwenden Sie eine von IdP initiierte Anmeldung"
-              },
-              "LaunchpadTile#group": {
-                "label": "Gruppe"
               }
             },
             "HttpAuthenticationScheme#BASIC": "Basic Authentication",
@@ -2578,6 +2641,7 @@
                 "placeholder": "Wählen Sie eine Private Key Datei (PEM)"
               }
             },
+            "HttpAuthenticationScheme#KEYHUB": "Veröffentlicht von Topicus KeyHub",
             "TLSLevel#ENCRYPTED": "TLS ohne Validierung (unsicher)",
             "TLSLevel#VERIFIED_PINNED": "Client-Authentifizierung - Fixiertes Zertifikat",
             "HttpAuthenticationScheme#CUSTOM": "Benutzerdefiniert",
@@ -2795,6 +2859,9 @@
           "HotfixMetadata#letsencrypt": {
             "label": "Für Let's Encrypt"
           },
+          "HotfixMetadata#reusable": {
+            "label": "Mehrfach verwendbar"
+          },
           "ApplianceStatus#keyhubVersion": {
             "label": "Topicus KeyHub-Version"
           },
@@ -2896,6 +2963,15 @@
       "internaldirectory": "Internes Verzeichnis",
       "login": "Anmelden",
       "auditorgroupauditlog": "Audit-Log der Gruppe",
+      "group": {
+        "removegroups": {
+          "confirm": "Löschung bestätigen"
+        },
+        "accounts": "Konten",
+        "main": "Gruppe",
+        "koppelingen": "Gekoppelte Systeme",
+        "applications": "Anwendungen"
+      },
       "registreer": {
         "resync": "Aktualisieren Sie Ihr Passwort",
         "pwd": "Wählen Sie Ihr Passwort",
@@ -2928,12 +3004,6 @@
       },
       "authorizedgroupsdashboard": "Dashboard für autorisierte Gruppen",
       "accessprofiles": "Zugriffsprofile",
-      "group": {
-        "accounts": "Konten",
-        "main": "Gruppe",
-        "koppelingen": "Gekoppelte Systeme",
-        "applications": "Anwendungen"
-      },
       "system": {
         "namespaces": "Namespaces",
         "groupsinsystem": "Gruppen im System",
@@ -3058,6 +3128,7 @@
       "attributes": "Attribute",
       "mygroups": "Meine Gruppen",
       "serviceaccounts": "Dienstkonten",
+      "removegroups": "Löschen",
       "auditordashboard": {
         "accounts": "Auditor-Dashboard Konten",
         "serviceaccounts": "Auditor-Dashboard Dienstkonten",
@@ -3232,8 +3303,12 @@
         "main": "{groupName}"
       },
       "removegroup": {
-        "me": "{groupName}",
-        "main": "{groupName}"
+        "me": {
+          "main": "{groupName}",
+          "n": "{groupCount} Gruppen"
+        },
+        "main": "{groupName}",
+        "n": "{groupCount} Gruppen"
       },
       "setupnestedgroup": {
         "disconnect": {
@@ -3601,7 +3676,11 @@
         }
       },
       "removegroup": {
-        "me": "Ich möchte die Gruppe {groupName} löschen.",
+        "me": {
+          "main": "Ich möchte die Gruppe {groupName} löschen.",
+          "n": "Ich möchte {groupCount} Gruppen entfernen lassen."
+        },
+        "n": "{requester} möchte die {groupCount} Gruppen entfernen lassen.",
         "main": "{requester} möchte die Gruppe {groupName} löschen."
       },
       "creategroup": {
@@ -3802,6 +3881,9 @@
       "newmember": "{0} ist noch kein Mitglied dieser Gruppe. Um {0} Zugriff auf den Safe zu gewähren, ist der Wiederherstellungsschlüssel erforderlich.",
       "sent": "Ihre Anfrage, {0} Manager von {1} zu machen, wurde gesendet."
     },
+    "removegroupsrequest": {
+      "sent": "Ihre Anfrage, {0} Gruppen zu löschen wurde gesendet."
+    },
     "transferorganizationalunitownership": {
       "header": "Verantwortung übertragen",
       "sent": "Ihre Anfrage zur übertragung der Verantwortung von {0} auf {1} wurde gesendet.",
@@ -3893,6 +3975,9 @@
       "request": "Verzeichnis verknüpfen"
     },
     "norights": "Sie dürfen diese Anfrage nicht bearbeiten. Möglicherweise waren Sie bereits an dieser Anfrage beteiligt oder Ihnen fehlen die erforderlichen Berechtigungen.",
+    "removegrouprequest": {
+      "sent": "Ihre Anfrage, Gruppe {0} zu löschen wurde gesendet."
+    },
     "transferapplicationownership": {
       "sent": "Ihre Anfrage zur übertragung der Verantwortung von {0} auf {1} wurde gesendet.",
       "header": "Verantwortung übertragen",
@@ -3977,6 +4062,7 @@
     "revokeadmin": {
       "sent": "Ihre Anfrage, {0} von KeyHub-Administratoren zu entfernen wurde gesendet."
     },
+    "errorcount": "{0} Fehler",
     "nocomment": "Keinen Grund angegeben",
     "updategroupmembership": {
       "sent": "Ihre Mitgliedschaftsanfrage für {0} für {1} wurde gesendet."
@@ -4002,7 +4088,10 @@
       "new": "Neue Nummernfolge anfangen"
     },
     "header": {
-      "scim": "Gekoppeltes SCIM",
+      "scim": {
+        "main": "Gekoppeltes SCIM",
+        "quirks": "Implementierungsbesonderheiten"
+      },
       "gos": "Gruppen im System",
       "azuresyncdirectory": "Gekoppeltes Azure Tenant mit AD Connect",
       "ad": "Gekoppeltes AD",
@@ -4067,6 +4156,11 @@
     "extend": "Zugriff verlängern",
     "system": {
       "type": "Typ"
+    },
+    "syncinterval": {
+      "0": "Schlau",
+      "1": "1 Stunde",
+      "n": "{0} Stunden"
     },
     "existinggroup": "Eine existierende Gruppe benutzen",
     "requestgos": "Gruppe im System anfordern",
@@ -5652,6 +5746,10 @@
       "PROVISIONING": "{performedBy} hat beantragt, dass die Aktivierung von {onGroup} von {onGroup2} genehmigt wird. {reason}",
       "MEMBERSHIP": "{performedBy} hat beantragt, die Verwaltung der Mitgliedschaft bei {onGroup} von {onGroup2} genehmigen zu lassen. {reason}"
     },
+    "REMOVE_GROUP_REQUESTED": {
+      "groups": "{performedBy} hat beantragt, {parameter2} Gruppen zu löschen. {reason}",
+      "main": "{performedBy} hat beantragt, die Gruppe {onGroup} zu löschen. {reason}"
+    },
     "CERTIFICATE_REMOVED": "{performedBy} hat das Zertifikat {onCertificate} gelöscht.",
     "REMOVE_PROVISIONED_SYSTEM_DECLINED": "Der Antrag, das gekoppelte System {onSystem} zu löschen, wurde von {performedBy} abgelehnt. {reason}",
     "WEBHOOK_MODIFIED": "{performedBy} hat das Webhook {onWebhook} bearbeitet.",
@@ -5681,6 +5779,10 @@
     "SERVICE_ACCOUNT_PROVISIONED": "Das Dienstkonto {onServiceAccount} ist auf dem gekoppelten System {onSystem} aktiviert.",
     "CREATE_GROUP_DECLINED": "{performedBy} hat die Anfrage von {onAccount}, die Gruppe {parameter3} zu erstellen, abgelehnt. {reason}",
     "ACCOUNT_GROUP_DEPROVISIONED": "{onAccount} hat {gosType} {gosName} für {onSystem} durch {onGroup} deaktiviert.",
+    "REMOVE_GROUP_ACCEPTED": {
+      "groups": "Die Anfrage, {parameter2} Gruppen zu entfernen, wurde von {performedBy} genehmigt. {reason}",
+      "main": "Der Antrag, die Gruppe {onGroup} zu löschen, wurde von {performedBy} genehmigt. {reason}"
+    },
     "TRANSFER_ORGANIZATIONAL_UNIT_OWNERSHIP_DECLINED": "Der Antrag zur übertragung der Verantwortung für {onOrganizationalUnit} auf {onGroup} wurde von {performedBy} abgelehnt. {reason}",
     "TRANSFER_PROVISIONED_SYSTEM_ADMINISTRATION_ACCEPTED": "Der Antrag, die Verwaltung von {onSystem} auf {onGroup} zu übertragen wurde von {performedBy} genehmigt. {reason}",
     "PROVISIONED_SYSTEM_ADDED_TO_ACCESS_PROFILE": "{gosTypeCap} {gosName} im {onSystem} wurde dem Zugriffsprofil {onGroup} hinzugefügt.",
@@ -5780,6 +5882,7 @@
     "ACCOUNT_PROVISIONING_DESTROYED": "{onAccount} wurde aus dem gekoppelte System {onSystem} entfernt.",
     "CREATE_PROVISIONED_NAMESPACE_DECLINED": "{performedBy} hat die Anfrage von {onAccount} abgelehnt, der Namespace {parameter3}, basiert auf {onSystem}, zu erstellen. {reason}",
     "TRANSFER_PROVISIONED_SYSTEM_CONTENT_ADMINISTRATION_DECLINED": "Der Antrag, die Inhaltsverwaltung von {onSystem} auf {onGroup} zu übertragen wurde von {performedBy} abgelehnt. {reason}",
+    "REMOVE_GROUPS_REQUESTED": "Der Antrag, die Organisationseinheit {onOrganizationalUnit} zu löschen, wurde von {performedBy} genehmigt. {reason}",
     "TRANSFER_SERVICE_ACCOUNT_ADMINISTRATION_REQUESTED": "{performedBy} hat die übertragung der Verwaltung von {onServiceAccount} auf {onSystem} auf {onGroup} beantragt. {reason}",
     "GROUP_AUDIT_CREATED": "{performedBy} hat die Gruppe {onGroup} auditiert.",
     "ENABLE_TECHNICAL_ADMINISTRATION_REQUESTED": "{performedBy} hat beantragt, technische Verwaltung für {onGroup} ein zu schalten. {reason}",
@@ -5794,12 +5897,17 @@
       "group": "Der Antrag, den Benutzern in der Gruppe {onGroup} Zugriff auf {gosType} {gosName} in {onSystem} zu gewähren, wurde von {performedBy} abgelehnt. {reason}"
     },
     "GROUP_MOVED": "{performedBy} hat die Gruppe {onGroup} nach {onOrganizationalUnit} verschoben.",
+    "ACCOUNT_GROUP_ACTIVATION_GRANT_REVOKED": "{performedBy} hat den Zugriff von {onAccount} auf die Gruppe {onGroup} widerrufen.",
     "ACCOUNT_ACCESS_PROFILE_PROVISIONED": "{gosType} {gosName} auf {onSystem} von {onAccessProfile} ist für {onAccount} aktiviert.",
     "CLIENT_SECRET_ROTATED": "{performedBy} hat das Client-Secret von {onClient} rotiert.",
     "TRANSFER_SERVICE_ACCOUNT_ADMINISTRATION_DECLINED": "Der Antrag, die Verwaltung von {onServiceAccount} auf {onSystem} auf {onGroup} zu übertragen wurde von {performedBy} abgelehnt. {reason}",
     "CLIENT_REMOVED_FROM_ORGANIZATIONAL_UNIT": "{performedBy} hat {onClient} aus der Organisationseinheit {onOrganizationalUnit} entfernt.",
     "REMOVE_PROVISIONED_SYSTEM_ACCEPTED": "Der Antrag, das gekoppelte System {onSystem} zu löschen, wurde von {performedBy} genehmigt. {reason}",
     "ACCOUNT_REMOVED_FROM_ORGANIZATIONAL_UNIT": "{performedBy} hat {onAccount} aus der Organisationseinheit {onOrganizationalUnit} entfernt.",
+    "REMOVE_GROUP_DECLINED": {
+      "groups": "Der Antrag, {parameter2} Gruppe(n) zu löschen, wurde von {performedBy} abgelehnt. {reason}",
+      "main": "Der Antrag, die Gruppe {onGroup} zu löschen, wurde von {performedBy} abgelehnt. {reason}"
+    },
     "TRANSFER_APPLICATION_ADMINISTRATION_ACCEPTED": "Der Antrag, die Verwaltung von {onClient} auf {onGroup} zu übertragen, wurde von {performedBy} genehmigt. {reason}",
     "TRANSFER_PROVISIONED_SYSTEM_OWNERSHIP_REQUESTED": "{performedBy} hat die übertragung der Verantwortung für {onSystem} auf {onGroup} beantragt. {reason}",
     "REMOVE_ORGANIZATIONAL_UNIT_ACCEPTED": "Der Antrag, die Organisationseinheit {onOrganizationalUnit} zu löschen, wurde von {performedBy} genehmigt. {reason}",
@@ -5839,7 +5947,6 @@
     },
     "GRANT_ACCESS_DECLINED": "{performedBy} hat den Antrag von {onAccount} für Zugriff zu {onGroup2} abgelehnt. {reason}",
     "REVIEW_AUDIT_ACCEPTED": "{performedBy} hat ein Audit von {onGroup2} genehmigt. {reason}",
-    "REMOVE_GROUP_REQUESTED": "{performedBy} hat beantragt, die Gruppe {onGroup} zu löschen. {reason}",
     "TRANSFER_APPLICATION_ADMINISTRATION_REQUESTED": "{performedBy} hat die übertragung von der Verwaltung von {onClient} auf {onGroup} beantragt. {reason}",
     "REVOKE_ADMIN_REQUESTED": "{performedBy} hat beantragt, {onAccount} von KeyHub-Administratoren zu entfernen. {reason}",
     "SETUP_NESTED_GROUP_CONNECT_REQUESTED": "{performedBy} hat beantragt, {onGroup} innerhalb von {onGroup2} zu verschachteln. {reason}",
@@ -5852,7 +5959,6 @@
     "GROUP_ADDED_TO_ACCESS_PROFILE": "{onGroup} wurde dem Zugriffsprofil {onGroup} hinzugefügt.",
     "DISABLE_2FA_REQUESTED": "{performedBy} hat beantragt, die Zwei-Faktor-Authentifizierung zu deaktivieren.",
     "RESET_PASSWORD_REQUESTED": "{performedBy} hat beantragt, das Passwort wiederherzustellen. {reason}",
-    "REMOVE_GROUP_DECLINED": "Der Antrag, die Gruppe {onGroup} zu löschen, wurde von {performedBy} abgelehnt. {reason}",
     "TRANSFER_ACCESS_PROFILE_OWNERSHIP_DECLINED": "Der Antrag zur übertragung der Verantwortung für {onAccessProfile} auf {onGroup} wurde von {performedBy} abgelehnt. {reason}",
     "ACCOUNT_PROVISIONED": "{onAccount} ist auf dem gekoppelten System {onSystem} aktiviert.",
     "CLIENT_REMOVED_FROM_GROUP": "Die Anwendung {onClient} in der Gruppe {onGroup} wurde gelöscht.",
@@ -5884,7 +5990,6 @@
     "ACCOUNT_ACCESS_PROFILE_DEPROVISIONED": "{gosType} {gosName} auf {onSystem} von {onAccessProfile} ist für {onAccount} deaktiviert.",
     "REMOVE_ACCESS_PROFILE_REQUESTED": "{performedBy} hat beantragt, das Zugriffsprofil {onAccessProfile} zu löschen. {reason}",
     "ACCOUNT_ENABLED": "Das Konto von {onAccount} wurde aktiviert {parameter1}.",
-    "REMOVE_GROUP_ACCEPTED": "Der Antrag, die Gruppe {onGroup} zu löschen, wurde von {performedBy} genehmigt. {reason}",
     "MOVE_GROUPS_REQUESTED": "{performedBy} hat beantragt, {parameter2} Gruppen nach {onOrganizationalUnit} zu verschieben. {reason}",
     "INTERNAL_ACCOUNT_REMOVED": "{performedBy} hat das interne Konto {onAccount} gelöscht.",
     "SERVICE_ACCOUNT_REMOVED": "{performedBy} hat das Dienstkonto {onServiceAccount} von {onSystem} gelöscht.",
@@ -5917,7 +6022,6 @@
       "nameInSystem": "Gruppe im System",
       "lastActive": "Letzte Anmeldung",
       "system": "Gekoppeltes System",
-      "provisioningEnabled": "Provisioning",
       "mountpoint": "Einhängepunkt",
       "encrypted": "Verschlüsselt",
       "records": "Anzahl Einträge",
@@ -5959,6 +6063,7 @@
       "groupInKeyHub": "Gruppe in KeyHub",
       "name": "Name",
       "action": "Aktion",
+      "accountProvisioning": "Provisioning",
       "displayName": "Anzeigename",
       "errors": "Fehler",
       "version": "Version",
@@ -6297,6 +6402,7 @@
       "ACCOUNT_GROUP_PROVISIONED": "Gruppe für Konto im gekoppelten System aktiviert",
       "GROUP_AUDIT_CREATED": "Ein Audit auf eine Gruppe wurde ausgeführt",
       "SERVICE_ACCOUNT_PASSWORD_ROTATED": "Dienstkontopasswort rotiert",
+      "ACCOUNT_GROUP_ACTIVATION_GRANT_REVOKED": "Zugriff widerrufen",
       "INVALID_SIGNATURE_DETECTED": "Ungültige Signatur erkannt",
       "ACCOUNT_ACCESS_PROFILE_PROVISIONED": "Zugriffsprofil für Konto im gekoppelten System aktiviert",
       "ACCOUNT_PROVISIONING_SETUP": "Konto im gekoppelten System eingerichtet",
@@ -6595,6 +6701,7 @@
         },
         "transferaccessprofileownership": "{from} möchte die Verantwortung für {accessProfile} auf {group} übertragen",
         "createserviceaccount": "{from} beantragt ein neues Dienstkonto {username} auf {system}",
+        "removegroups": "{from} möchte {count} Gruppen entfernen",
         "grantgrouponsystem": {
           "group": "{originalRequester} (via {from}) möchte den Benutzern in der Gruppe {group} Zugriff auf {gosType} {gosName} in {system} geben",
           "profile": "{originalRequester} (via {from}) möchte den Benutzern im Zugriffsprofil {accessProfile} Zugriff auf {gosType} {gosName} in {system} geben"
@@ -7009,6 +7116,7 @@
     "CERTIFICATE_IN_USE": "Dieses Zertifikat wird verwendet und kann daher nicht geändert oder entfernt werden.",
     "VAULT_INVALID_RECOVERY_KEY": "Der Private Key ist ungültig oder gehört nicht zum aktuellen Public Key.",
     "TOTP_OFFSET_CHANGE_TOKENS_ERROR": "Die eingegebenen Codes sind ungültig. Stellen Sie sicher, dass Sie zwei aufeinanderfolgende Codes eingeben.",
+    "VAULT_RECORD_SHARE_DATE_TIME_BOTH_FILLED": "Das Enddatum und die Dauer des Teilens können nicht beide ausgefüllt werden.",
     "MODIFICATION_ALREADY_REQUESTED": "Sie haben bereits eine ähnliche Anfrage gestellt. Bitte warten Sie, bis sie von einem Manager oder Administrator bearbeitet wurde.",
     "CERTIFICATE_FETCH_ERROR": "Beim Herunterladen ist ein Fehler aufgetreten: {reason}",
     "CLIENT_ID_ALREADY_IN_USE": "Der Client-Bezeichner muss einzigartig sein,'{clientid}' wird bereits verwendet.",
@@ -7034,6 +7142,7 @@
     "DIRECTORY_IN_USE": "Ein Verzeichnis kann nicht gelöscht werden, solange nicht alle darin gekoppelten Konten gelöscht wurden.",
     "MODIFICATION_STATUS_INVALID": "Dieser Antrag wurde bereits bearbeitet oder annulliert.",
     "VAULT_KEY_MISSING": "Für diese Aktion wird Zugriff zum Safe von {holder} benötigt. Versuchen Sie es erneut nachdem Sie Zugriff auf den Safe angefragt haben.",
+    "VAULT_RECORD_DERIVED_SHARE_ONLY": "Abgeleitete Safe-Einträge können nur mit anderen Safes geteilt werden.",
     "PASSWORD_INCORRECT": "Das Passwort ist nicht korrekt.",
     "ILLEGAL_BRANDINGLOGO": "Das Branding-Logo entspricht nicht den Anforderungen. Es ist nur eine PNG-Datei mit einer Größe von 540 x 280 Pixel zulässig.",
     "ORGANIZATIONAL_UNIT_GROUP_NOT_UNDER_NEW_OU": "Die Gruppe {group} gehört nicht zur neuen Organisationseinheit und ist direkt oder indirekt mit dieser Gruppe in gekoppeltem System verknüpft.",
@@ -7054,6 +7163,7 @@
     "VAULT_PUBLIC_KEY_NOT_INITIALIZED": "Der Zielsafe ist noch nicht bereit. Der Safe muss zuerst von einem Person mit Zugang geöffnet werden.",
     "ORGANIZATIONAL_UNIT_MISMATCH": "Es besteht ein Missverhältnis zwischen den beteiligten Organisationseinheiten.",
     "PROVISIONED_SYSTEM_INACTIVE": "Das gekoppelte System ist inaktiv.",
+    "VAULT_RECORD_SHARE_DATE_IN_PAST": "Ein Safe-Eintrag mit einem Enddatum in der Vergangenheit kann nicht geteilt werden.",
     "OIDC_GENERAL_ERROR": "Bei der Authentifizierung ist ein Fehler aufgetreten: {cause}",
     "SAML_UNRESOLVABLE_SUBJECT": "Es ist nicht möglich, das Subjekt für diesen SAML2-Antrag für Ihr Konto zu bestimmen. Wenden Sie sich an einen Administrator der Anwendung.",
     "ACCESS_PROFILE_DIRECTORY_MISMATCH": "Das Zugriffsprofil enthält bereits Konten aus einem anderen Verzeichnis, beispielsweise {account}.",
@@ -7062,15 +7172,18 @@
       "1": "Um sich bei {client} anzumelden, muss zunächst die Gruppe {group} aktiviert werden.",
       "n": "Um sich bei {client} anzumelden, muss zunächst eine der folgenden Gruppen aktiviert werden: {groups} oder {lastGroup}."
     },
+    "ATTRIBUTE_IN_USE_BY_CLIENT": "Diese Attributdefinition wird noch von der Anwendung {client} verwendet und kann daher nicht geändert oder gelöscht werden.",
     "VAULT_RECORD_ALREADY_SHARED": "Der Safe-Eintrag ist bereits mit dem ausgewählten Safe geteilt.",
     "INVALID_CREDENTIALS": "Das Passwort ist nicht korrekt.",
     "MODIFICATION_DELEGATION_ADMIN_NOT_ALLOWED": "Das Delegieren des Management ist für KeyHub Administrators nicht möglich.",
     "NUMBER_SEQUENCE_IN_USE": "Diese Nummernfolge wird noch verwendet.",
+    "PROVISIONED_SYSTEM_INVALID_TENANT": "Der eingegebene Azure Tenant ist ungültig.",
     "MODIFICATION_RESET_NO_TARGETS": "Es sind nicht genügend Benutzer vorhanden, um Ihre Anfrage zu bearbeiten.",
     "CANNOT_REMOVE_LAST_2FA_METHOD": "Ihre letzte 2FA-Methode kann nicht entfernt werden. Fügen Sie zuerst eine andere Methode hinzu, um diese Methode anschließend zu entfernen.",
     "ORGANIZATIONAL_UNIT_USER_NO_ACCESS": "Der Benutzer hat keinen Zugriff auf die ausgewählte Organisationseinheit.",
     "VAULT_FOR_ACCOUNT_NOT_CREATED": "Ihr Konto ist nicht richtig konfiguriert. Gehen Sie zu Ihrem Profil und setzen Sie Ihr Passwort zurück, um dies zu korrigieren.",
     "PROVISIONED_SYSTEM_IN_USE": "{system} wird bereits als {otherSystem} verwendet",
+    "VAULT_RECORD_CANNOT_RESHARE": "Gemeinsam genutzte Safe-Einträge können nicht in andere Safes verschoben oder mit diesen geteilt werden.",
     "ORGANIZATIONAL_UNIT_TOO_DEEP": "Organisationseinheiten können nur bis zu 5 tief verschachtelt werden.",
     "GROUP_CANNOT_BE_MOVED": "Eine oder mehrere Gruppen können nicht verschoben werden.",
     "PROVISIONED_SYSTEM_ERROR": "Der Vorgang auf {system} konnte nicht durchgeführt werden. Das System meldet: {message}",
@@ -7103,6 +7216,7 @@
     "DIRECTORY_TESTED": "{directory} wurde mit folgendem Ergebnis getestet: {message}",
     "INVALID_TOTP_TOKEN": "Der eingegebene Code ist ungültig. Ist die Zeit auf Ihrem Handy korrekt?",
     "MODIFICATION_NESTED_MEMBERSHIP_AUTH_NOT_ALLOWED": "Eine verschachtelte Gruppe kann keine Autorisierung für die Mitgliedschaft erhalten.",
+    "GROUP_CANNOT_BE_REMOVED": "Eine oder mehrere Gruppen können nicht entfernt werden.",
     "LAUNCHPAD_TILE_VAULT_RECORD_URL_REQUIRED": "Für eine Launchpad-Kachel ist ein Link erforderlich.",
     "DIRECTORY_SEARCHFILTER_INCORRECT": "Das Suchfilter für das Verzeichnis ist falsch.",
     "PASSWORD_RESET_PERMANENT_LOSS": "Nach dem Zurücksetzen des Passworts gehen einige Zugriffe verloren. Eine Wiederherstellung ist dann nur über ein Notfallverfahren möglich, das von einem KeyHub-Administrator eingeleitet wird. Drücken Sie erneut Speichern, um das Passwort trotzdem zurückzusetzen.",
@@ -7513,6 +7627,11 @@
     },
     "groupsetting": "Wählen Sie eine Gruppe...",
     "header": "Organisationseinheit - {0}",
+    "removegroups": {
+      "report": {
+        "title": "Gruppenlöschbericht"
+      }
+    },
     "inheritedgroupsetting": "{0} geerbt von {1}...",
     "settings": {
       "header": "Einstellungen"
@@ -7556,7 +7675,10 @@
       "organizationalunit": " - Verantwortlich für die Organisationseinheit {0}",
       "main": "{0} löschen",
       "msg2": "Die Gruppe enthält die folgenden Teile:",
-      "msg1": "Sie sind dabei, die Gruppe '{0}' einschließlich aller unter diese Gruppe fallenden Daten zu löschen. Bitte überprüfen Sie die Teileliste sorgfältig, bevor Sie fortfahren. Alle genannten Teile werden gelöscht.\n\n"
+      "msg1": "Sie sind dabei, die Gruppe '{0}' einschließlich aller unter diese Gruppe fallenden Daten zu löschen. Bitte überprüfen Sie die Teileliste sorgfältig, bevor Sie fortfahren. Alle genannten Teile werden gelöscht.\n\n",
+      "report": {
+        "title": "Report"
+      }
     },
     "addadmin": {
       "header": "Manager hinzufügen",
@@ -7877,6 +7999,16 @@
     "dns": "{line} ist keine gültige IPv4 Addresse.",
     "main": "{input} ist keine gültige IPv4 Addresse."
   },
+  "groups": {
+    "remove": {
+      "vault": "{0} Safe-Einträge werden gelöscht.",
+      "request": {
+        "groupCount": {
+          "label": "Anzahl der Gruppen"
+        }
+      }
+    }
+  },
   "launchpad": {
     "tile": {
       "title": "Launchpad-Kachel",
@@ -8121,5 +8253,6 @@
   "ExposedPortsAndSourcesValidator": {
     "ipmissing": "Diese Porte sind nicht verfügbar ohne IP-Whitelist"
   },
-  "FirewallWhitelistValidator": "{line} ist keinen gültigen IP Bereich in CIDR Notation (A.B.C.D/R)."
+  "FirewallWhitelistValidator": "{line} ist keinen gültigen IP Bereich in CIDR Notation (A.B.C.D/R).",
+  "LocalDateNotInPastValidator": "Das eingegebene Datum liegt in der Vergangenheit, bitte wählen Sie ein anderes Datum."
 }

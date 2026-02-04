@@ -3,7 +3,7 @@ import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../../models/error_report.dart';
 
 /// auto generated
-/// Builds and executes requests for operations under \identitysource\{identitysourceid}\sync
+/// Builds and executes requests for operations under \identitysource\{identitysource-id}\sync
 class SyncRequestBuilder extends BaseRequestBuilder<SyncRequestBuilder> {
     /// Clones the requestbuilder.
     @override
@@ -13,11 +13,11 @@ class SyncRequestBuilder extends BaseRequestBuilder<SyncRequestBuilder> {
     /// Instantiates a new [SyncRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    SyncRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/identitysource/{identitysourceid}/sync", pathParameters) ;
+    SyncRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/identitysource/{identitysource%2Did}/sync", pathParameters) ;
     /// Instantiates a new [SyncRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    SyncRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/identitysource/{identitysourceid}/sync", {RequestInformation.rawUrlKey : rawUrl}) ;
+    SyncRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/identitysource/{identitysource%2Did}/sync", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Perform a full synchronization of the identity source specified by the given id. The synchronization runs in the background.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<void> postAsync([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) async {
@@ -32,7 +32,7 @@ class SyncRequestBuilder extends BaseRequestBuilder<SyncRequestBuilder> {
     RequestInformation toPostRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
         return requestInfo;
     }
 }

@@ -16,16 +16,18 @@ import './generate_secret.dart';
 import './group/group_access_info.dart';
 import './group/group_account_nesting.dart';
 import './group/group_account_status.dart';
-import './group/group_admin_mail.dart';
 import './group/group_auditing_info.dart';
 import './group/group_classification_info.dart';
 import './group/group_classification_update.dart';
 import './group/group_global_role_info.dart';
 import './group/group_info.dart';
+import './group/group_mail.dart';
 import './group/groups_audit_stats.dart';
+import './identity/account_attribute_definition_property.dart';
 import './identity/account_attribute_value_selection.dart';
 import './identity/account_attribute_value_summary.dart';
 import './identity/account_attribute_value_update.dart';
+import './identitysource/identity_source_attribute_mapping.dart';
 import './launchpad/displayed_launchpad_tiles.dart';
 import './license/key_hub_license_info.dart';
 import './mark/item_marker.dart';
@@ -116,16 +118,18 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'group.GroupAccessInfo' => GroupAccessInfo(),
             'group.GroupAccountNesting' => GroupAccountNesting(),
             'group.GroupAccountStatus' => GroupAccountStatus(),
-            'group.GroupAdminMail' => GroupAdminMail(),
             'group.GroupAuditingInfo' => GroupAuditingInfo(),
             'group.GroupClassificationInfo' => GroupClassificationInfo(),
             'group.GroupClassificationUpdate' => GroupClassificationUpdate(),
             'group.GroupGlobalRoleInfo' => GroupGlobalRoleInfo(),
             'group.GroupInfo' => GroupInfo(),
+            'group.GroupMail' => GroupMail(),
             'group.GroupsAuditStats' => GroupsAuditStats(),
+            'identity.AccountAttributeDefinitionProperty' => AccountAttributeDefinitionProperty(),
             'identity.AccountAttributeValueSelection' => AccountAttributeValueSelection(),
             'identity.AccountAttributeValueSummary' => AccountAttributeValueSummary(),
             'identity.AccountAttributeValueUpdate' => AccountAttributeValueUpdate(),
+            'identitysource.IdentitySourceAttributeMapping' => IdentitySourceAttributeMapping(),
             'launchpad.DisplayedLaunchpadTiles' => DisplayedLaunchpadTiles(),
             'license.KeyHubLicenseInfo' => KeyHubLicenseInfo(),
             'mark.ItemMarker' => ItemMarker(),

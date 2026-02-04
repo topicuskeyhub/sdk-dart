@@ -24,11 +24,11 @@ class WebhookRequestBuilder extends BaseRequestBuilder<WebhookRequestBuilder> {
     /// Instantiates a new [WebhookRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    WebhookRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/webhook{?account*,active*,additional*,any*,appAdminGroup*,appOwnerGroup*,client*,contentAdminGroup*,createdAfter*,createdBefore*,directory*,directoryOwnerGroup*,exclude*,expiredCertificate*,global*,group*,id*,modifiedSince*,nameContains*,q*,serviceAccount*,serviceAccountNotNull*,sort*,system*,systemAdminGroup*,systemOwnerGroup*,tls*,type*,url*,uuid*}", pathParameters) ;
+    WebhookRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/webhook{?active*,additional*,any*,appAdminGroup*,appOwnerGroup*,client*,contentAdminGroup*,createdAfter*,createdBefore*,directory*,directoryOwnerGroup*,exclude*,expiredCertificate*,global*,globalForPermissions*,group*,id*,modifiedSince*,nameContains*,q*,serviceAccount*,serviceAccountNotNull*,sort*,system*,systemAdminGroup*,systemOwnerGroup*,tls*,type*,url*,uuid*}", pathParameters) ;
     /// Instantiates a new [WebhookRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    WebhookRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/webhook{?account*,active*,additional*,any*,appAdminGroup*,appOwnerGroup*,client*,contentAdminGroup*,createdAfter*,createdBefore*,directory*,directoryOwnerGroup*,exclude*,expiredCertificate*,global*,group*,id*,modifiedSince*,nameContains*,q*,serviceAccount*,serviceAccountNotNull*,sort*,system*,systemAdminGroup*,systemOwnerGroup*,tls*,type*,url*,uuid*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    WebhookRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/webhook{?active*,additional*,any*,appAdminGroup*,appOwnerGroup*,client*,contentAdminGroup*,createdAfter*,createdBefore*,directory*,directoryOwnerGroup*,exclude*,expiredCertificate*,global*,globalForPermissions*,group*,id*,modifiedSince*,nameContains*,q*,serviceAccount*,serviceAccountNotNull*,sort*,system*,systemAdminGroup*,systemOwnerGroup*,tls*,type*,url*,uuid*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Queries over all webhooks. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<WebhookLinkableWrapper?> getAsync([void Function(RequestConfiguration<WebhookRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
@@ -53,7 +53,7 @@ class WebhookRequestBuilder extends BaseRequestBuilder<WebhookRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WebhookRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WebhookRequestBuilderGetQueryParameters>(requestConfiguration, () => WebhookRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
         return requestInfo;
     }
     /// Creates one or more new webhooks and returns the newly created webhooks.
@@ -62,8 +62,8 @@ class WebhookRequestBuilder extends BaseRequestBuilder<WebhookRequestBuilder> {
     RequestInformation toPostRequestInformation(WebhookLinkableWrapper body, [void Function(RequestConfiguration<WebhookRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WebhookRequestBuilderPostQueryParameters>(requestConfiguration, () => WebhookRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=82', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=83', body);
         return requestInfo;
     }
 }

@@ -1,12 +1,15 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../linkable.dart';
+import '../organization/organizational_unit_primer.dart';
 import './group_classification.dart';
 
 /// auto generated
 class GroupClassificationPrimer extends Linkable implements Parsable {
     ///  The name property
     String? name;
+    ///  The organizationalUnit property
+    OrganizationalUnitPrimer? organizationalUnit;
     ///  The uuid property
     String? uuid;
     /// Instantiates a new [GroupClassificationPrimer] and sets the default values.
@@ -27,6 +30,7 @@ class GroupClassificationPrimer extends Linkable implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['name'] = (node) => name = node.getStringValue();
+        deserializerMap['organizationalUnit'] = (node) => organizationalUnit = node.getObjectValue<OrganizationalUnitPrimer>(OrganizationalUnitPrimer.createFromDiscriminatorValue);
         deserializerMap['uuid'] = (node) => uuid = node.getStringValue();
         return deserializerMap;
     }
@@ -36,5 +40,6 @@ class GroupClassificationPrimer extends Linkable implements Parsable {
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeStringValue('name', name);
+        writer.writeObjectValue<OrganizationalUnitPrimer>('organizationalUnit', organizationalUnit);
     }
 }

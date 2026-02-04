@@ -20,6 +20,7 @@ class ProvisionedSystemAdditionalObjects implements AdditionalDataHolder, Parsab
     ///  The issuedPermissions property
     OAuth2ClientPermissionWithClientLinkableWrapper? issuedPermissions;
     ///  The loginName property
+    @Deprecated("")
     String? loginName;
     ///  The managementPermissions property
     ProvisioningManagementPermissions? managementPermissions;

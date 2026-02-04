@@ -33,12 +33,16 @@ class WebhookPush extends NonLinkable implements Parsable {
     WebhookNameUuid? modificationRequest;
     ///  The organizationalUnit property
     WebhookNameUuid? organizationalUnit;
+    ///  The origin property
+    String? origin;
     ///  The parameter1 property
     String? parameter1;
     ///  The parameter2 property
     String? parameter2;
     ///  The parameter3 property
     String? parameter3;
+    ///  The product property
+    String? product;
     ///  The securityLevel property
     SecurityLevel? securityLevel;
     ///  The seq property
@@ -81,9 +85,11 @@ class WebhookPush extends NonLinkable implements Parsable {
         deserializerMap['identitySource'] = (node) => identitySource = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['modificationRequest'] = (node) => modificationRequest = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['organizationalUnit'] = (node) => organizationalUnit = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
+        deserializerMap['origin'] = (node) => origin = node.getStringValue();
         deserializerMap['parameter1'] = (node) => parameter1 = node.getStringValue();
         deserializerMap['parameter2'] = (node) => parameter2 = node.getStringValue();
         deserializerMap['parameter3'] = (node) => parameter3 = node.getStringValue();
+        deserializerMap['product'] = (node) => product = node.getStringValue();
         deserializerMap['securityLevel'] = (node) => securityLevel = node.getEnumValue<SecurityLevel>((stringValue) => SecurityLevel.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['seq'] = (node) => seq = node.getIntValue();
         deserializerMap['serviceAccount'] = (node) => serviceAccount = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
@@ -112,9 +118,11 @@ class WebhookPush extends NonLinkable implements Parsable {
         writer.writeObjectValue<WebhookNameUuid>('identitySource', identitySource);
         writer.writeObjectValue<WebhookNameUuid>('modificationRequest', modificationRequest);
         writer.writeObjectValue<WebhookNameUuid>('organizationalUnit', organizationalUnit);
+        writer.writeStringValue('origin', origin);
         writer.writeStringValue('parameter1', parameter1);
         writer.writeStringValue('parameter2', parameter2);
         writer.writeStringValue('parameter3', parameter3);
+        writer.writeStringValue('product', product);
         writer.writeEnumValue<SecurityLevel>('securityLevel', securityLevel, (e) => e?.value);
         writer.writeIntValue('seq', seq);
         writer.writeObjectValue<WebhookNameUuid>('serviceAccount', serviceAccount);

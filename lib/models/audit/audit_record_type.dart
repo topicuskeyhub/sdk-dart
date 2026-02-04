@@ -18,6 +18,7 @@ enum AuditRecordType {
     accountEnabled('ACCOUNT_ENABLED'),
     accountGroupActivated('ACCOUNT_GROUP_ACTIVATED'),
     accountGroupActivationReason('ACCOUNT_GROUP_ACTIVATION_REASON'),
+    accountGroupActivationGrantRevoked('ACCOUNT_GROUP_ACTIVATION_GRANT_REVOKED'),
     accountGroupDeprovisioned('ACCOUNT_GROUP_DEPROVISIONED'),
     accountGroupProvisioned('ACCOUNT_GROUP_PROVISIONED'),
     accountLogin('ACCOUNT_LOGIN'),

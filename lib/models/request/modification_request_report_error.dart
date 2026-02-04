@@ -16,11 +16,10 @@ enum ModificationRequestReportError {
     groupTechadminClientappWithOwnerOtherOu('GROUP_TECHADMIN_CLIENTAPP_WITH_OWNER_OTHER_OU'),
     authorizedGroupCannotBeRemoved('AUTHORIZED_GROUP_CANNOT_BE_REMOVED'),
     hasNestedGroupCannotBeRemoved('HAS_NESTED_GROUP_CANNOT_BE_REMOVED'),
-    serviceAccountCannotBeRemoved('SERVICE_ACCOUNT_CANNOT_BE_REMOVED'),
     applicationCannotBeRemoved('APPLICATION_CANNOT_BE_REMOVED'),
     systemCannotBeRemoved('SYSTEM_CANNOT_BE_REMOVED'),
-    groupOnSystemCannotBeRemoved('GROUP_ON_SYSTEM_CANNOT_BE_REMOVED'),
-    groupOwnsAccessProfile('GROUP_OWNS_ACCESS_PROFILE');
+    groupOwnsAccessProfile('GROUP_OWNS_ACCESS_PROFILE'),
+    groupClassificationOutOfScope('GROUP_CLASSIFICATION_OUT_OF_SCOPE');
     const ModificationRequestReportError(this.value);
     final String value;
 }

@@ -13,6 +13,8 @@ class AttributeruleRequestBuilderGetQueryParameters implements AbstractQueryPara
     List<GetAdditionalQueryParameterType>? additional;
     ///  Only return account attribute rules that allow or do not allow manual overriding values.
     List<bool>? allowOverride;
+    ///  Only return account attribute rules that allow or do not allow selfservice by the user.
+    List<bool>? allowSelfService;
     ///  Return all or no records. This can be useful when composing parameters.
     List<bool>? any;
     ///  Filter the attribute rules by attribute definition, specified by id. This parameter supports composition with all parameters from the attribute definition resource.
@@ -43,6 +45,7 @@ class AttributeruleRequestBuilderGetQueryParameters implements AbstractQueryPara
             'accessProfileOwningGroup' : accessProfileOwningGroup,
             'additional' : additional,
             'allowOverride' : allowOverride,
+            'allowSelfService' : allowSelfService,
             'any' : any,
             'attribute' : attribute,
             'createdAfter' : createdAfter,

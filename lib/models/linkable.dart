@@ -43,8 +43,11 @@ import './identity/account_attribute_rule.dart';
 import './identity/account_attribute_value.dart';
 import './identity/identity.dart';
 import './identitysource/a_f_a_s_identity_source.dart';
+import './identitysource/c_s_v_import_identity_source.dart';
 import './identitysource/identity_source.dart';
 import './identitysource/identity_source_primer.dart';
+import './identitysource/imported_document.dart';
+import './identitysource/imported_row.dart';
 import './launchpad/displayed_launchpad_tile.dart';
 import './launchpad/launchpad_tile.dart';
 import './launchpad/launchpad_tile_primer.dart';
@@ -200,8 +203,11 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'identity.AccountAttributeValue' => AccountAttributeValue(),
             'identity.Identity' => Identity(),
             'identitysource.AFASIdentitySource' => AFASIdentitySource(),
+            'identitysource.CSVImportIdentitySource' => CSVImportIdentitySource(),
             'identitysource.IdentitySource' => IdentitySource(),
             'identitysource.IdentitySourcePrimer' => IdentitySourcePrimer(),
+            'identitysource.ImportedDocument' => ImportedDocument(),
+            'identitysource.ImportedRow' => ImportedRow(),
             'launchpad.DisplayedLaunchpadTile' => DisplayedLaunchpadTile(),
             'launchpad.LaunchpadTile' => LaunchpadTile(),
             'launchpad.LaunchpadTilePrimer' => LaunchpadTilePrimer(),

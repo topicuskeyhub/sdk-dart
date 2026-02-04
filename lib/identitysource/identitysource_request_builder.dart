@@ -4,17 +4,17 @@ import '../models/error_report.dart';
 import '../models/identitysource/identity_source_linkable_wrapper.dart';
 import './identitysource_request_builder_get_query_parameters.dart';
 import './identitysource_request_builder_post_query_parameters.dart';
-import './item/with_identitysource_item_request_builder.dart';
+import './item/identitysource_item_request_builder.dart';
 
 /// auto generated
 /// Builds and executes requests for operations under \identitysource
 class IdentitysourceRequestBuilder extends BaseRequestBuilder<IdentitysourceRequestBuilder> {
     /// Gets an item from the ApiSdk.identitysource.item collection
-    ///  [identitysourceid] Unique identifier of the item
-    WithIdentitysourceItemRequestBuilder byIdentitysourceid(int identitysourceid) {
+    ///  [identitysourceId] Unique identifier of the item
+    IdentitysourceItemRequestBuilder byIdentitysourceId(int identitysourceId) {
         var urlTplParams = Map.of(pathParameters);
-        urlTplParams.putIfAbsent('identitysourceid', () => identitysourceid);
-        return WithIdentitysourceItemRequestBuilder(urlTplParams, requestAdapter);
+        urlTplParams.putIfAbsent('identitysource%2Did', () => identitysourceId);
+        return IdentitysourceItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /// Clones the requestbuilder.
     @override
@@ -24,11 +24,11 @@ class IdentitysourceRequestBuilder extends BaseRequestBuilder<IdentitysourceRequ
     /// Instantiates a new [IdentitysourceRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    IdentitysourceRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/identitysource{?additional*,any*,client*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,name*,nameContains*,q*,sort*,uuid*}", pathParameters) ;
+    IdentitysourceRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/identitysource{?additional*,any*,client*,createdAfter*,createdBefore*,exclude*,hasMappingForAttribute*,id*,identifier*,modifiedSince*,name*,nameContains*,q*,sort*,uuid*}", pathParameters) ;
     /// Instantiates a new [IdentitysourceRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    IdentitysourceRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/identitysource{?additional*,any*,client*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,name*,nameContains*,q*,sort*,uuid*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    IdentitysourceRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/identitysource{?additional*,any*,client*,createdAfter*,createdBefore*,exclude*,hasMappingForAttribute*,id*,identifier*,modifiedSince*,name*,nameContains*,q*,sort*,uuid*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for all identity sources in Topicus KeyHub. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<IdentitySourceLinkableWrapper?> getAsync([void Function(RequestConfiguration<IdentitysourceRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
@@ -53,7 +53,7 @@ class IdentitysourceRequestBuilder extends BaseRequestBuilder<IdentitysourceRequ
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<IdentitysourceRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<IdentitysourceRequestBuilderGetQueryParameters>(requestConfiguration, () => IdentitysourceRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
         return requestInfo;
     }
     /// Creates one or more new identity sources and returns the newly created sources.
@@ -62,8 +62,8 @@ class IdentitysourceRequestBuilder extends BaseRequestBuilder<IdentitysourceRequ
     RequestInformation toPostRequestInformation(IdentitySourceLinkableWrapper body, [void Function(RequestConfiguration<IdentitysourceRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<IdentitysourceRequestBuilderPostQueryParameters>(requestConfiguration, () => IdentitysourceRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=82', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=83', body);
         return requestInfo;
     }
 }

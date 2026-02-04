@@ -24,11 +24,11 @@ class GroupclassificationRequestBuilder extends BaseRequestBuilder<Groupclassifi
     /// Instantiates a new [GroupclassificationRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    GroupclassificationRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/groupclassification{?additional*,any*,createdAfter*,createdBefore*,defaultClassification*,exclude*,id*,modifiedSince*,name*,nameContains*,q*,sort*,uuid*}", pathParameters) ;
+    GroupclassificationRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/groupclassification{?additional*,any*,availableForOrganizationalUnit*,createdAfter*,createdBefore*,defaultClassification*,exclude*,id*,modifiedSince*,name*,nameContains*,organizationalUnit*,q*,sort*,uuid*}", pathParameters) ;
     /// Instantiates a new [GroupclassificationRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    GroupclassificationRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/groupclassification{?additional*,any*,createdAfter*,createdBefore*,defaultClassification*,exclude*,id*,modifiedSince*,name*,nameContains*,q*,sort*,uuid*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    GroupclassificationRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/groupclassification{?additional*,any*,availableForOrganizationalUnit*,createdAfter*,createdBefore*,defaultClassification*,exclude*,id*,modifiedSince*,name*,nameContains*,organizationalUnit*,q*,sort*,uuid*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for all group classifications in Topicus KeyHub. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<GroupClassificationLinkableWrapper?> getAsync([void Function(RequestConfiguration<GroupclassificationRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
@@ -53,7 +53,7 @@ class GroupclassificationRequestBuilder extends BaseRequestBuilder<Groupclassifi
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<GroupclassificationRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<GroupclassificationRequestBuilderGetQueryParameters>(requestConfiguration, () => GroupclassificationRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
         return requestInfo;
     }
     /// Creates one or more new group classifications and returns the newly created classifications.
@@ -62,8 +62,8 @@ class GroupclassificationRequestBuilder extends BaseRequestBuilder<Groupclassifi
     RequestInformation toPostRequestInformation(GroupClassificationLinkableWrapper body, [void Function(RequestConfiguration<GroupclassificationRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<GroupclassificationRequestBuilderPostQueryParameters>(requestConfiguration, () => GroupclassificationRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=82', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=83', body);
         return requestInfo;
     }
 }

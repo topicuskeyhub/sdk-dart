@@ -8,8 +8,6 @@ import './get_additional_query_parameter_type.dart';
 /// auto generated
 /// Queries over all webhooks. The various query parameters can be used to filter the response.
 class WebhookRequestBuilderGetQueryParameters implements AbstractQueryParameters {
-    ///  Filter webhooks on the given accounts, specified by id.
-    List<int>? account;
     ///  Only return active or inactive webhooks.
     List<BooleanEnum>? active;
     ///  Request additional information to be returned for every record.
@@ -38,6 +36,8 @@ class WebhookRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<DateTime>? expiredCertificate;
     ///  Only return webhooks that are or are not global.
     List<bool>? global;
+    ///  Only return webhooks that are or are not global concerning permissions. This includes all global webhooks and webhooks for a directory.
+    List<bool>? globalForPermissions;
     ///  Filter webhooks on the given groups, specified by id.
     List<int>? group;
     ///  Filter the results on the given ids.
@@ -72,7 +72,6 @@ class WebhookRequestBuilderGetQueryParameters implements AbstractQueryParameters
     @override
     Map<String, dynamic> toMap() {
         return {
-            'account' : account,
             'active' : active,
             'additional' : additional,
             'any' : any,
@@ -87,6 +86,7 @@ class WebhookRequestBuilderGetQueryParameters implements AbstractQueryParameters
             'exclude' : exclude,
             'expiredCertificate' : expiredCertificate,
             'global' : global,
+            'globalForPermissions' : globalForPermissions,
             'group' : group,
             'id' : id,
             'modifiedSince' : modifiedSince,

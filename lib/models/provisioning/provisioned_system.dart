@@ -27,8 +27,12 @@ class ProvisionedSystem extends ProvisionedSystemPrimer implements Parsable {
     ProvisionedSystemCleanupPeriod? cleanupPeriod;
     ///  The contentAdministrator property
     GroupPrimer? contentAdministrator;
+    ///  The effectiveFullSyncInterval property
+    int? effectiveFullSyncInterval;
     ///  The externalUuid property
     UuidValue? externalUuid;
+    ///  The fullSyncInterval property
+    int? fullSyncInterval;
     ///  The groupOnSystemProvisioning property
     GroupOnSystemProvisioning? groupOnSystemProvisioning;
     ///  The owner property
@@ -45,6 +49,8 @@ class ProvisionedSystem extends ProvisionedSystemPrimer implements Parsable {
     bool? shouldDestroyUnknownAccounts;
     ///  The technicalAdministrator property
     GroupPrimer? technicalAdministrator;
+    ///  The traceLoggingEnabled property
+    bool? traceLoggingEnabled;
     ///  The usernamePrefix property
     String? usernamePrefix;
     /// Instantiates a new [ProvisionedSystem] and sets the default values.
@@ -77,7 +83,9 @@ class ProvisionedSystem extends ProvisionedSystemPrimer implements Parsable {
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<ProvisionedSystemAdditionalObjects>(ProvisionedSystemAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['cleanupPeriod'] = (node) => cleanupPeriod = node.getObjectValue<ProvisionedSystemCleanupPeriod>(ProvisionedSystemCleanupPeriod.createFromDiscriminatorValue);
         deserializerMap['contentAdministrator'] = (node) => contentAdministrator = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
+        deserializerMap['effectiveFullSyncInterval'] = (node) => effectiveFullSyncInterval = node.getIntValue();
         deserializerMap['externalUuid'] = (node) => externalUuid = node.getGuidValue();
+        deserializerMap['fullSyncInterval'] = (node) => fullSyncInterval = node.getIntValue();
         deserializerMap['groupOnSystemProvisioning'] = (node) => groupOnSystemProvisioning = node.getEnumValue<GroupOnSystemProvisioning>((stringValue) => GroupOnSystemProvisioning.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['owner'] = (node) => owner = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         deserializerMap['selfServiceExistingGroups'] = (node) => selfServiceExistingGroups = node.getBoolValue();
@@ -86,6 +94,7 @@ class ProvisionedSystem extends ProvisionedSystemPrimer implements Parsable {
         deserializerMap['selfServiceServiceAccounts'] = (node) => selfServiceServiceAccounts = node.getBoolValue();
         deserializerMap['shouldDestroyUnknownAccounts'] = (node) => shouldDestroyUnknownAccounts = node.getBoolValue();
         deserializerMap['technicalAdministrator'] = (node) => technicalAdministrator = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
+        deserializerMap['traceLoggingEnabled'] = (node) => traceLoggingEnabled = node.getBoolValue();
         deserializerMap['usernamePrefix'] = (node) => usernamePrefix = node.getStringValue();
         return deserializerMap;
     }
@@ -97,6 +106,7 @@ class ProvisionedSystem extends ProvisionedSystemPrimer implements Parsable {
         writer.writeObjectValue<ProvisionedSystemAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeObjectValue<ProvisionedSystemCleanupPeriod>('cleanupPeriod', cleanupPeriod);
         writer.writeObjectValue<GroupPrimer>('contentAdministrator', contentAdministrator);
+        writer.writeIntValue('fullSyncInterval', fullSyncInterval);
         writer.writeEnumValue<GroupOnSystemProvisioning>('groupOnSystemProvisioning', groupOnSystemProvisioning, (e) => e?.value);
         writer.writeObjectValue<GroupPrimer>('owner', owner);
         writer.writeBoolValue('selfServiceExistingGroups', value:selfServiceExistingGroups);
@@ -105,6 +115,7 @@ class ProvisionedSystem extends ProvisionedSystemPrimer implements Parsable {
         writer.writeBoolValue('selfServiceServiceAccounts', value:selfServiceServiceAccounts);
         writer.writeBoolValue('shouldDestroyUnknownAccounts', value:shouldDestroyUnknownAccounts);
         writer.writeObjectValue<GroupPrimer>('technicalAdministrator', technicalAdministrator);
+        writer.writeBoolValue('traceLoggingEnabled', value:traceLoggingEnabled);
         writer.writeStringValue('usernamePrefix', usernamePrefix);
     }
 }

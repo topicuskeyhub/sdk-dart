@@ -16,8 +16,13 @@
                 }
               }
             },
-            "AboutPage$AboutBean#reportIssue": {
-              "label": "Report issue"
+            "settings": {
+              "AbstractAboutPage$AboutBean#reportIssue": {
+                "label": "Report issue"
+              },
+              "AbstractAboutPage$AboutBean#version": {
+                "label": "Version"
+              }
             },
             "systems": {
               "ProvisioningGroupAddPage$ProvisioningGroupAddBean#owner": {
@@ -55,9 +60,6 @@
                 "label": "Linked system"
               }
             },
-            "AboutPage$AboutBean#version": {
-              "label": "Version"
-            },
             "VerifyUserCodePage$DeviceVerifyInfo#usercode": {
               "label": "User code"
             },
@@ -73,6 +75,14 @@
               },
               "AssignUnallocatedDiskSpacePanel$SpaceAllocationBean#remaining": {
                 "label": "MiBs remaining"
+              },
+              "RestoreBackupPanel$RestoreBackupBean#encrypted": {
+                "label": "Encrypted"
+              },
+              "IdentitySourceImportCSVPanel$CSVImportBean#csv": {
+                "description": "The maximum size is 10mb.",
+                "label": "CSV file",
+                "placeholder": "Choose a file"
               },
               "AssignUnallocatedDiskSpacePanel$SpaceAllocationBean#docker": {
                 "label": "/var/lib/docker in MiB"
@@ -132,9 +142,6 @@
                 "label": "Backup decryption key",
                 "placeholder": "Backup decryption key"
               },
-              "GroupAccountEditPanel$AccountEditBean#activation": {
-                "label": "Activation"
-              },
               "OrganizationalUnitAccountPanel$AccountEditBean#account": {
                 "label": "Account"
               },
@@ -146,6 +153,9 @@
                 "label": "Type"
               },
               "ExportAuditorGroupsPanel$AuditorExportType#GROUPS": "Groups",
+              "AccessProfileAccountEditPanel$AccountEditBean#activation": {
+                "label": "Activation"
+              },
               "CreateSupportDumpPanel$NewSupportDump#name": {
                 "label": "Name",
                 "description": "Give the support dump a name."
@@ -183,6 +193,9 @@
               },
               "ApplicationOrSystemAddToAccessProfilePanel$AccessType#APPLICATION": "SSO application",
               "RestoreBackupPanel$BackupSettings#RESTORE": "Restore appliance configuration and database",
+              "IdentitySourceAddPanel$IdentitySourceTypeBean#type": {
+                "label": "Type"
+              },
               "ExportAuditorServiceAccountsPanel$AuditorExportType#SERVICEACCOUNTS": "Service accounts",
               "AssignUnallocatedDiskSpacePanel$SpaceAllocationBean#log": {
                 "label": "/var/log in MiB"
@@ -223,6 +236,10 @@
                 "ChangeApplicationBean$ReleaseChannel#ACCEPTANCE": "acceptance - The version currently being tested for acceptance."
               }
             },
+            "filter": {
+              "VaultRecordFilterBarPanel$VaultRecordOrdering#VAULT": "Sort on vault",
+              "VaultRecordFilterBarPanel$VaultRecordOrdering#NAME": "Sort on name"
+            },
             "panel": {
               "AbstractConfirmationPanel$Confirmation#removeFromSystem": {
                 "description": "Also remove the group from the system",
@@ -241,10 +258,6 @@
               "AbstractConfirmationPanel$Confirmation#deprovisionAction": {
                 "description": "Specify which actions should be performed upon deactivation.",
                 "label": "Action on deactivation"
-              },
-              "vault": {
-                "VaultRecordFilterBarPanel$VaultRecordOrdering#VAULT": "Sort on vault",
-                "VaultRecordFilterBarPanel$VaultRecordOrdering#NAME": "Sort on name"
               },
               "AbstractConfirmationPanel$Confirmation#comment": {
                 "label": "Reason"
@@ -275,11 +288,17 @@
                 "label": "Linked directory",
                 "description": "The directory for which this access profile can manage account attributes."
               },
+              "AccessProfileProvisioning#groupOnSystem": {
+                "label": "Group on system"
+              },
               "AccessProfileClient#accessProfile": {
                 "label": "Access profile"
               },
               "AccessProfileAccountActivation#ACTIVE": "Active (business rules apply)",
               "AccessProfileAccountActivation#INACTIVE": "Inactive (business rules apply)",
+              "AccessProfileProvisioning#groupOnSystemDisplayName": {
+                "label": "Display name"
+              },
               "AccessProfile#matchRuleScript": {
                 "description": "A script to determine whether an account should be automatically added to the access profile. Please refer to the manual for further explanation.",
                 "label": "Rule for automatic assignment"
@@ -287,9 +306,15 @@
               "AccessProfilePrimer#name": {
                 "label": "Name"
               },
+              "AccessProfileProvisioning#system": {
+                "label": "Linked system"
+              },
               "AccessProfileAccountActivation#FORCE_INACTIVE": "Inactive (manually overridden)",
               "AccessProfile#description": {
                 "label": "Description"
+              },
+              "AccessProfileProvisioning#accessProfile": {
+                "label": "Access profile"
               },
               "AccessProfilePrimer#uuid": {
                 "label": "UUID"
@@ -418,7 +443,7 @@
               },
               "AuditRecordType#TRANSFER_PROVISIONED_SYSTEM_CONTENT_ADMINISTRATION_ACCEPTED": "Transfer content administration of linked system - Approved",
               "AuditRecordType#ACCOUNT_SSH_PUBLIC_KEY_MODIFIED": "Account - SSH public key set",
-              "AuditRecordType#ACCOUNT_2FA_DISABLED": "Account - 2FA enabled",
+              "AuditRecordType#ACCOUNT_2FA_DISABLED": "Account - 2FA disabled",
               "AuditRecordType#CREATE_SERVICE_ACCOUNT_DECLINED": "Create service account - Declined",
               "AuditRecordType#VERIFY_INTERNAL_ACCOUNT_ACCEPTED": "Verify internal account - Approved",
               "AuditRecordType#GROUP_CLASSIFICATION_CREATED": "Group classification - Created",
@@ -512,7 +537,7 @@
               "AuditRecordType#TRANSFER_ORGANIZATIONAL_UNIT_OWNERSHIP_REQUESTED": "Transfer ownership of organisational unit - Requested",
               "AuditRecordType#TRANSFER_APPLICATION_ADMINISTRATION_ACCEPTED": "Transfer administration of application - Approved",
               "AuditRecordType#TRANSFER_APPLICATION_ADMINISTRATION_REQUESTED": "Transfer administration of application - Requested",
-              "AuditRecordType#ACCOUNT_2FA_ENABLED": "Account - 2FA disabled",
+              "AuditRecordType#ACCOUNT_2FA_ENABLED": "Account - 2FA enabled",
               "AuditRecordType#GROUP_NESTING_DISCONNECTED": "Group - Nested group unlinked",
               "AuditRecordType#VAULT_RECORD_REMOVED": "Vault - Record removed",
               "AuditRecordType#CLIENT_PERMISSION_REVOKED": "Application - Permission revoked",
@@ -537,6 +562,9 @@
               "AuditRequiredSourceType#CONFORM": "Conform",
               "AuditRecordType#ENABLE_PROFILE_ADMINISTRATION_REQUESTED": "Enable access profile administration - Requested",
               "AuditRecordType#VAULT_RECORD_CREATED": "Vault - Record created",
+              "GroupAudit#status": {
+                "label": "Status"
+              },
               "AuditRecordType#ACCOUNT_PROVISIONING_DESTROYED": "Account - Removed from linked system",
               "AuditRecordType#REVIEW_AUDIT_ACCEPTED": "Review an audit - Approved",
               "AuditRecordType#GRANT_GROUP_ON_SYSTEM_REQUESTED": "Grant access to group on linked system - Requested",
@@ -649,6 +677,9 @@
                 "label": "Linked system",
                 "placeholder": "Type a linked system name here..."
               },
+              "TransferGroupOnSystemOwnershipRequest#groupOnSystem": {
+                "label": "Group on system"
+              },
               "GroupNestAccountAction#RETAIN": "Retain",
               "ModificationRequestType#CREATE_SERVICE_ACCOUNT": "CREATE SERVICE ACCOUNT",
               "PasswordResetRequest#newVaultAndDirectoryPassword": {
@@ -683,6 +714,7 @@
               },
               "ModificationRequestReportChange#ACCESS_PROFILE_CLIENT_REMOVED_OWNER": "The application {0} is moved along with this group. As a result, the access profile {1} loses access.",
               "ModificationRequestReportConclusion#CANNOT_BE_EXECUTED": "Request can not be fulfilled.",
+              "ModificationRequestReportError#GROUP_CLASSIFICATION_OUT_OF_SCOPE": "The group falls under a classification that is not available within the new organisational unit.",
               "ModificationRequestType#TRANSFER_PROVISIONED_SYSTEM_CONTENT_ADMINISTRATION": "TRANSFER CONTENT ADMIN",
               "ModificationRequestType#ENABLE_TECHNICAL_ADMINISTRATION": "ENABLE",
               "ModificationRequestType#VERIFY_INTERNAL_ACCOUNT": "APPROVE ACCOUNT",
@@ -692,7 +724,6 @@
               },
               "ModificationRequestReportError#MANAGER_CANNOT_BE_MOVED": "The group has a manager that cannot be moved.",
               "ModificationRequestType#REMOVE_ORGANIZATIONAL_UNIT": "REMOVE ORGANISATION",
-              "ModificationRequestReportError#GROUP_ON_SYSTEM_CANNOT_BE_REMOVED": "No permissions to delete {2}: {1} ({3}).",
               "ModificationRequestReportChange#GROUP_CLIENT_REMOVED_OWNER": "The application {0} moves with this group. The KeyHub group {1} loses access.",
               "CreateProvisionedNamespaceRequest#namespaceName": {
                 "label": "Name",
@@ -713,13 +744,16 @@
               "ModificationRequestReport#conclusion": {
                 "label": "Conclusion"
               },
+              "ModificationRequestReportChange#ORGANIZATIONALUNIT_RECOVERYFALLBACKGROUP_WILL_BE_REMOVED": "Set as Password recovery reserve group on organizational unit {1}, this will be deleted.",
               "ModificationRequestReportError#SYSTEM_CANNOT_BE_REMOVED": "The {2}: {1} cannot be removed ({3}).",
+              "ModificationRequestReportChange#ORGANIZATIONALUNIT_REMOVEGROUPAPPROVEGROUP_WILL_BE_REMOVED": "Set as approver for 'Group deletion' on organizational unit {1}, this will be deleted.",
               "ModificationRequestReportChange#ORGANIZATIONAL_UNIT_REMOVED": "These organisational units will be removed.",
               "ModificationRequestReportChange#SYSTEM_ACCOUNTS_WRITABLE_DISABLED": "'Accounts writable' will be disabled for these linked systems.",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_GROUP_REMOVED_OWNER": "The group on system {0} moves with this group and therefore the service account {1} loses access.",
               "ModificationRequestType#TRANSFER_PROVISIONED_SYSTEM_OWNERSHIP": "TRANSFER OWNERSHIP",
-              "ModificationRequestReportChange#ACCESS_PROFILE_REMOVED": "These access profiles will be removed.",
+              "ModificationRequestReportChange#ACCESS_PROFILE_PROVISIONING_REMOVED": "These groups on systems will be removed from access profiles.",
               "ModificationRequestType#REVIEW_AUDIT": "REVIEW AUDIT",
+              "ModificationRequestReportChange#ORGANIZATIONALUNIT_CREATEGROUPAPPROVEGROUP_WILL_BE_REMOVED": "Set as approver for 'Group creation' on organizational unit {1}, this will be deleted.",
               "ModificationRequestReportError#ADMIN_GROUP_CANNOT_BE_MOVED": "The KeyHub administrators group cannot be moved.",
               "ModificationRequestType#GRANT_SERVICE_ACCOUNT_GROUP": "ACCESS TO GROUP",
               "ModificationRequestStatus#DISALLOWED": "Declined",
@@ -745,10 +779,10 @@
                 "label": "Username",
                 "description": "Choose a username for the service account."
               },
-              "ModificationRequestReportError#SERVICE_ACCOUNT_CANNOT_BE_REMOVED": "No permissions to delete {2}: {1} ({3}).",
               "ModificationRequestReportChange#VAULT_RECORDS_WILL_BE_REMOVED_UNRECOVERABLE": "The vault together with the {1} vault record(s) will be removed. These vault records cannot be restored after removal.",
               "ModificationRequestType#SETUP_NESTED_GROUP": "NESTING",
               "ModificationRequestReportError#GROUP_OWNS_OU": "Is the owner of organisational unit {1}.",
+              "ModificationRequestReportChange#ORGANIZATIONALUNIT_AUDITORGROUP_WILL_BE_REMOVED": "Set as Auditor Group on organizational unit {1}, this will be deleted.",
               "ModificationRequestReportError#ONE_MOVEABLE_VAULT_ACCESS_OF_MULTIPLE_MEMBERS": "The group has only one member with vault access that can be moved.",
               "ModificationRequestReportError#GROUP_OWNS_ACCESS_PROFILE": "Is owner of access profile {1}.",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_WILL_BE_REMOVED": "The {2}: {1} wil be removed ({3}).",
@@ -769,6 +803,7 @@
               "ModificationRequestReportChange#GROUP_ACTIVATION_FOR_VAULT_DISABLED": "'Activation required for vault access' will be disabled on these groups.",
               "ModificationRequestReportError#AUTHORIZED_GROUP_CANNOT_BE_REMOVED": "Performs authorization for {1}.",
               "ModificationRequestReportError#HAS_NESTED_GROUP_CANNOT_BE_REMOVED": "Has {2} nested group(s).",
+              "ModificationRequestReportChange#ORGANIZATIONALUNIT_ENABLETECHADMINAPPROVEGROUP_WILL_BE_REMOVED": "Set as approver for 'Enable Technical Management' on organizational unit {1}, this will be deleted.",
               "ModificationRequestStatus#CANCELLED": "Withdrawn",
               "ModificationRequestStatus#REQUESTED": "Requested",
               "ModificationRequestType#JOIN_VAULT": "JOIN VAULT",
@@ -778,6 +813,9 @@
               "ModificationRequestType#UPDATE_LICENSE": "LICENSE",
               "ModificationRequestReportError#GROUP_TECHADMIN_CLIENTAPP_WITH_OWNER_OTHER_OU": "The group is the technical administrator of an application where the owner group will remain in another organisational unit.",
               "AuthorizingGroupType#PROVISIONING": "Group activation",
+              "TransferGroupOnSystemOwnershipRequest#system": {
+                "label": "Linked system"
+              },
               "ModificationRequestReportChange#ACCESS_PROFILE_PROVISIONING_REMOVED_OWNER": "The group on system {0} is moved along with this group. As a result, the access profile {1} loses access.",
               "ModificationRequestType#CREATE_GROUP_ON_SYSTEM": "CREATE GROUP ON SYSTEM",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_REMOVED": "These service accounts will be removed.",
@@ -802,6 +840,7 @@
                 "label": "Access profile"
               },
               "AuthorizingGroupType#DELEGATION": "Delegation of management",
+              "ModificationRequestReportChange#IDENTITY_SOURCE_REMOVED": "These identity sources will be removed.",
               "ModificationRequestType#REMOVE_ACCESS_PROFILE": "REMOVE ACCESS PROFILE",
               "GroupNestAccountAction#REMOVE": "Remove",
               "ModificationRequestReportChange#GROUP_MADE_PUBLIC": "These groups will be made public.",
@@ -1039,6 +1078,141 @@
                 "label": "UUID"
               }
             },
+            "identity": {
+              "ComplexAccountAttributeHandling#ERROR_ON_UNKNOWN": "Unknown properties will result in an error",
+              "ComplexAccountAttributeHandling#DROP_UNKNOWN": "Drop unknown properties",
+              "AccountAttributeValueUpdate#expectedValue": {
+                "label": "Expected value",
+                "description": "The current value of the attribute does not match the expected value."
+              },
+              "AccountAttributeSource#EXTERNAL": "External source",
+              "AccountAttributeSystemDefinition#MIDDLE_NAME": "Middle name",
+              "AccountAttributeRule#attribute": {
+                "label": "Attribute",
+                "placeholder": "Select an attribute..."
+              },
+              "AccountAttributeSource#SELF_SERVICE": "Self-service",
+              "AccountAttributeFormat#TEXT": "Text",
+              "AccountAttributeFormat#TELEPHONE": "Phone number",
+              "AccountAttributeSystemDefinition#USERNAME": "Username",
+              "AccountAttributeRule#prioritySCIM": {
+                "label": "Priority for SCIM",
+                "description": "The priority (1-5) of a value provided via SCIM. A higher number gives this source priority over other sources. A missing value disables the source for this attribute."
+              },
+              "Identity#displayName": {
+                "label": "Display name"
+              },
+              "AccountAttributeSource#SCIM": "SCIM",
+              "AccountAttributeRule#updateAutomatically": {
+                "label": "Update automatically",
+                "description": "Automatically update the attribute when the calculated value changes."
+              },
+              "AccountAttributeSystemDefinition#TELEPHONE_PRIVATE": "Private phone number",
+              "AccountAttributeRule#exclusive": {
+                "description": "No rules can be defined for this attribute in other access profiles.",
+                "label": "Exclusive"
+              },
+              "AccountAttributeFormat#BOOLEAN": "Boolean",
+              "AccountAttributeDefinition#unique": {
+                "label": "Unique"
+              },
+              "AccountAttributeValueUpdate#currentValue": {
+                "label": "Current value"
+              },
+              "AccountAttributeValueSelectionStatus#IN_SYNC": "Synchronised",
+              "AccountAttributeDefinition#propertyHandling": {
+                "label": "Handling of unknown properties"
+              },
+              "AccountAttributeValueSelectionStatus#DUPLICATE": "Duplicate",
+              "AccountAttributeSystemDefinition#DISPLAY_NAME": "Display name",
+              "AccountAttributeSystemDefinition#EMAIL_PRIVATE": "Private email address",
+              "AccountAttributeFormat#DATE": "Date",
+              "AccountAttributeDefinition#freelyUseable": {
+                "label": "Freely useable"
+              },
+              "AccountAttributeFormat#COMPLEX": "Complex (JSON)",
+              "AccountAttributeRule#priorityFormula": {
+                "label": "Priority for the script",
+                "description": "The priority (1-5) of a value calculated by the script. A higher number gives this source priority over other sources. A missing value disables the source for this attribute."
+              },
+              "Identity#givenName": {
+                "label": "Given name"
+              },
+              "Identity#privateTelephone": {
+                "label": "Private phone number"
+              },
+              "ComplexAccountAttributeHandling#KEEP_UNKNOWN": "Keep unknown properties",
+              "AccountAttributeRule#priorityExternalSource": {
+                "description": "The priority (1-5) of a value provided by an external source. A higher number gives this source priority over other sources. A missing value disables the source for this attribute.",
+                "label": "Priority for external sources"
+              },
+              "AccountAttributeRule#script": {
+                "label": "Script",
+                "description": "A script to calculate a value dynamically. Please refer to the manual for further explanation."
+              },
+              "AccountAttributeRule#allowSelfService": {
+                "label": "Allow self-service",
+                "description": "Users can provide a value for this attribute themselves. This value has priority over the other sources."
+              },
+              "AccountAttributeSystemDefinition#CAN_REQUEST_GROUPS": "Can request groups",
+              "AccountAttributeSystemDefinition#FAMILY_NAME": "Family name",
+              "AccountAttributeValueSelectionStatus#ERROR": "Error",
+              "AccountAttributeRule#defaultValue": {
+                "description": "This value is used if no value is available from any of the other sources.",
+                "label": "Default value"
+              },
+              "AccountAttributeValueUpdate#value": {
+                "description": "Specify a custom value or clear the value to fall back to a value from another source.",
+                "label": "Value"
+              },
+              "Identity#middleName": {
+                "label": "Middle name"
+              },
+              "AccountAttributeDefinition#format": {
+                "label": "Format"
+              },
+              "AccountAttributeFormat#NUMBER": "Number",
+              "Identity#privateEmail": {
+                "label": "Private email address"
+              },
+              "AccountAttributeSystemDefinition#TELEPHONE": "Phone number",
+              "AccountAttributeRule#priorityDirectory": {
+                "label": "Priority for the directory",
+                "description": "The priority (1-5) of a value read from the directory. A higher number gives this source priority over other sources. A missing value disables the source for this attribute."
+              },
+              "AccountAttributeSystemDefinition#GIVEN_NAME": "Given name",
+              "AccountAttributeSource#FORMULA": "Script",
+              "AccountAttributeSource#DEFAULT": "Default value",
+              "AccountAttributeDefinition#list": {
+                "label": "List"
+              },
+              "AccountAttributeValueSelectionStatus#INVALID": "Invalid",
+              "AccountAttributeSource#OVERRIDE": "Manual override",
+              "AccountAttributeDefinition#required": {
+                "label": "Required"
+              },
+              "AccountAttributeRule#allowOverride": {
+                "description": "Administrators can override the value for this attribute. This value always has priority over all other sources.",
+                "label": "Allow manual override"
+              },
+              "AccountAttributeValueSelectionStatus#UNKNOWN": "Unknown",
+              "Identity#familyName": {
+                "label": "Family name"
+              },
+              "AccountAttributeFormat#EMAIL": "E-mail address",
+              "AccountAttributeValueSelectionStatus#OUT_OF_SYNC": "Unsynchronised",
+              "AccountAttributeSystemDefinition#EMAIL": "Email address",
+              "AccountAttributeDefinition#name": {
+                "label": "Name"
+              },
+              "AccountAttributeFormat#DATETIME": "Date/time",
+              "AccountAttributeSystemDefinition#LICENSE": "License role",
+              "AccountAttributeValueSelectionStatus#MISSING": "Missing",
+              "Identity#telephone": {
+                "label": "Phone number"
+              },
+              "AccountAttributeSource#DIRECTORY": "Directory"
+            },
             "auth": {
               "Account#validInDirectory": {
                 "label": "Valid in directory"
@@ -1125,7 +1299,7 @@
                 "label": "New password"
               },
               "TwoFactorAuthenticationStatus#DISABLED": "2FA disabled",
-              "AccountPrimer#directory": {
+              "Account#directory": {
                 "label": "Directory"
               },
               "UnregisteredAccount#reregisteredAccountName": {
@@ -1192,6 +1366,9 @@
               "UnregisteredAccount#directory": {
                 "label": "Directory"
               },
+              "WebAuthnKey#displayName": {
+                "label": "Display name"
+              },
               "AccountValidity#VALID": "Valid",
               "InternalAccountStatus#ACTIVATION_EXPIRED": "Activation code expired",
               "PasswordMode#ONE_PASSWORD_UNSYNCED": "use {0} password for KeyHub also (synchronisation required)",
@@ -1206,6 +1383,9 @@
               "AccountValidity#REREGISTRATION_REQUIRED": "Re-registration required",
               "AccountLicenseRole#BUSINESS": "Business",
               "AccountBulkUpdateAction#CHANGE_LICENSE_ROLE_TO_IGA": "Change license to IGA",
+              "InternalAccount#directory": {
+                "label": "Directory"
+              },
               "TwoFactorAuthenticationStatus#MIXED": "2FA enabled",
               "Account#recoveryStatus": {
                 "label": "Password and 2FA recovery status"
@@ -1250,6 +1430,9 @@
               "GroupEditRequiredReason#ONE_MANAGER": {
                 "long": "Group {groupName} requires an audit because it currently only has one manager"
               },
+              "GroupClient#type": {
+                "label": "Type"
+              },
               "GroupExtendedAccess#NOT_ALLOWED": "Not allowed",
               "Group#authorizingGroupDelegation": {
                 "description": "Members of this group may perform management of the group and its members.",
@@ -1259,6 +1442,9 @@
                 "label": "Extend access period"
               },
               "GroupRights#NORMAL": "Normal privileges",
+              "GroupMail#subject": {
+                "label": "Subject"
+              },
               "GroupClassification#authorizingGroupProvisioningRequired": {
                 "label": "Require \"Authorising group for activation\"",
                 "description": "Require the activation of the option \"Authorising group for activation\" for groups with this classification."
@@ -1305,6 +1491,9 @@
                 "label": "Require \"Activation required for vault access\"",
                 "description": "Require the activation of the option \"Activation required for vault access\" for groups with this classification."
               },
+              "GroupMail#body": {
+                "label": "Body"
+              },
               "Group#profileAdministration": {
                 "description": "If enabled, members of this group can administer access profiles.",
                 "label": "Access profile administration"
@@ -1313,10 +1502,6 @@
               "GroupGlobalRoleInfo#auditorGroupFor": {
                 "description": "This group has the auditor role for the organization(s) above.",
                 "label": "Auditor group for"
-              },
-              "GroupClient#vaultAccess": {
-                "label": "Access to the vault",
-                "description": "Give this application access to the vault of this group."
               },
               "GroupAuditConfig#months": {
                 "description": "The months where every second tuesday a periodic group audit should be performed.",
@@ -1361,6 +1546,10 @@
                 "label": "Password recovery fallback group for",
                 "description": "Password recovery requests for users with insufficient group managers are also sent to users in this group for the organization(s) above."
               },
+              "GroupClassificationPrimer#organizationalUnit": {
+                "label": "Organisational unit"
+              },
+              "GroupMailRecipient#MANAGERS": "Managers",
               "GroupFolder#name": {
                 "label": "Folder name"
               },
@@ -1385,25 +1574,11 @@
               "Group#description": {
                 "label": "Description"
               },
-              "GroupAdminMail#body": {
-                "label": "Body"
-              },
               "GroupRights": {
                 "MANAGER": "Management privileges",
                 "NORMAL": "Normal privileges"
               },
               "VaultRecoveryAvailability#NONE": "Not available",
-              "Group#auditinginfo": {
-                "nrManagers": {
-                  "label": "Managers"
-                },
-                "nrExpiredVaultRecords": {
-                  "label": "Expired vault records"
-                },
-                "auditDueDate": {
-                  "label": "Next audit"
-                }
-              },
               "GroupClassification#recordTrailRequired": {
                 "label": "Require \"Record audit trail\"",
                 "description": "Require the activation of the option \"Record audit trail\" for groups with this classification."
@@ -1415,10 +1590,14 @@
               "GroupClient#client": {
                 "label": "Application"
               },
+              "GroupMail#recipients": {
+                "label": "Recipients"
+              },
               "Group#classification": {
                 "label": "Classification",
                 "description": "The classification of this group, as set by a member of the auditor group."
               },
+              "GroupMailRecipient#ALL_MEMBERS": "All members",
               "GroupClassification#authorizingGroupAuditingRequired": {
                 "description": "Require the activation of the option \"Authorising group for audits\" for groups with this classification.",
                 "label": "Require \"Authorising group for audits\""
@@ -1513,6 +1692,9 @@
                 "label": "Bearer Token"
               },
               "ProvisioningOperationType#SYNC_ACCOUNT": "Sync account",
+              "ProvisionedSCIM#basicAuthPassword": {
+                "label": "Password"
+              },
               "GroupOnSystem#accountProvisioning": {
                 "description": "When enabled, KeyHub will manage this group and its memberships on the linked system.",
                 "label": "Account provisioning"
@@ -1664,8 +1846,8 @@
                 "label": "Group with ownership",
                 "description": "Managers from the selected group control access to this group on the linked system."
               },
-              "ProvisionedSystemSyncLog#modifications": {
-                "label": "Applied modifications"
+              "ChangeProvisionedSystemStatus#newActiveStatus": {
+                "label": "Status"
               },
               "ProvisionedAzureTenant#clientSecret": {
                 "label": "Client secret"
@@ -1701,6 +1883,14 @@
               "ProvisionedAD#samAccountNameScheme": {
                 "description": "Choose an option for filling in the SAM-Account-Name attribute. This may be used by legacy systems.",
                 "label": "SAM-Account-Name"
+              },
+              "ChangeProvisionedSystemStatus#deprovisionAction": {
+                "description": "Specify which actions should be performed upon deactivation.",
+                "label": "Action on deactivation"
+              },
+              "ProvisionedAzureOIDCDirectory#accountsWritable": {
+                "label": "Accounts writable",
+                "description": "If checked, KeyHub also manages the accounts on the directory."
               },
               "AbstractProvisionedLDAP#baseDN": {
                 "placeholder": "OU=department,DC=company,DC=local",
@@ -1764,6 +1954,9 @@
                 "label": "LDAP directory"
               },
               "ProvisioningOperationType#SYNC_COLLECTION": "Sync collection",
+              "ProvisionedSystemPrimer#activeStatus": {
+                "label": "Status"
+              },
               "ProvisionedNamespace#groupDN": {
                 "label": "Group RDN",
                 "description": "The RDN under base DN containing groups."
@@ -1796,6 +1989,9 @@
                 "description": "Some services use the non-standard MIME type application/json. In that case, deselect this option."
               },
               "GroupOnSystemProvisioningStatus#ENABLED": "Enabled",
+              "ProvisionedSCIM#basicAuthUsername": {
+                "label": "Username"
+              },
               "ProvisioningOperationType#UPDATE_ACCOUNT_ATTRIBUTES": "Update account attributes",
               "ProvisionedSCIM#passwordSupported": {
                 "label": "Supports passwords"
@@ -1852,14 +2048,8 @@
               "ProvisionedSCIMVendor#DEFAULT": "Default",
               "ProvisioningOperationType#DEACTIVATE_SYSTEM": "Deactivate system",
               "GroupOnSystemType#POSIX_GROUP": "posixGroup",
-              "ProvisionedSystemPrimer#active": {
-                "label": "Enabled"
-              },
               "ProvisionedSystemType#SOURCE_AZURE_OIDC_DIRECTORY": "Azure OIDC source directory",
               "ADSamAccountNameScheme#TRANSFER_TRUNCATE": "Transfer value and truncate - Take the value from the sAMAccountName attribute on the account and truncate if the result is too long.",
-              "ProvisionedSystemSyncLog#createdAt": {
-                "label": "Created at"
-              },
               "ProvisionedSCIMVendor#KEYSTONE": "Keystone",
               "SCIMUpdateStrategy#PUT": "PUT",
               "ProvisionedNamespace#baseSystem": {
@@ -1883,9 +2073,6 @@
               "ProvisionedSCIM#filterActiveUsersSupported": {
                 "label": "Supports filtering by active users"
               },
-              "ProvisionedSystemSyncLog#errors": {
-                "label": "Errors/warnings"
-              },
               "ProvisioningOperationType#DESTROY_ACCOUNT": "Destroy account",
               "ADSamAccountNameScheme#TRUNCATE": "Truncate username - The username is shortened to a maximum of 20 characters.",
               "ProvisionedAzureSyncLDAPDirectory#clientId": {
@@ -1894,134 +2081,6 @@
               "ProvisionedSCIM#updateStrategy": {
                 "label": "Update strategy"
               }
-            },
-            "identity": {
-              "AccountAttributeValueUpdate#expectedValue": {
-                "label": "Expected value",
-                "description": "The current value of the attribute does not match the expected value."
-              },
-              "AccountAttributeSource#EXTERNAL": "External source",
-              "AccountAttributeSystemDefinition#MIDDLE_NAME": "Middle name",
-              "AccountAttributeRule#attribute": {
-                "label": "Attribute",
-                "placeholder": "Select an attribute..."
-              },
-              "AccountAttributeSource#SELF_SERVICE": "Self-service",
-              "AccountAttributeFormat#TEXT": "Text",
-              "AccountAttributeFormat#TELEPHONE": "Phone number",
-              "AccountAttributeSystemDefinition#USERNAME": "Username",
-              "AccountAttributeRule#prioritySCIM": {
-                "label": "Priority for SCIM",
-                "description": "The priority (1-5) of a value provided via SCIM. A higher number gives this source priority over other sources. A missing value disables the source for this attribute."
-              },
-              "Identity#displayName": {
-                "label": "Display name"
-              },
-              "AccountAttributeSource#SCIM": "SCIM",
-              "AccountAttributeRule#updateAutomatically": {
-                "label": "Update automatically",
-                "description": "Automatically update the attribute when the calculated value changes."
-              },
-              "AccountAttributeSystemDefinition#TELEPHONE_PRIVATE": "Private phone number",
-              "AccountAttributeRule#exclusive": {
-                "description": "No rules can be defined for this attribute in other access profiles.",
-                "label": "Exclusive"
-              },
-              "AccountAttributeFormat#BOOLEAN": "Boolean",
-              "AccountAttributeDefinition#unique": {
-                "label": "Unique"
-              },
-              "AccountAttributeValueUpdate#currentValue": {
-                "label": "Current value"
-              },
-              "AccountAttributeValueSelectionStatus#IN_SYNC": "Synchronised",
-              "AccountAttributeValueSelectionStatus#DUPLICATE": "Duplicate",
-              "AccountAttributeSystemDefinition#DISPLAY_NAME": "Display name",
-              "AccountAttributeSystemDefinition#EMAIL_PRIVATE": "Private email address",
-              "AccountAttributeFormat#DATE": "Date",
-              "AccountAttributeDefinition#freelyUseable": {
-                "label": "Freely useable"
-              },
-              "AccountAttributeRule#priorityFormula": {
-                "label": "Priority for the script",
-                "description": "The priority (1-5) of a value calculated by the script. A higher number gives this source priority over other sources. A missing value disables the source for this attribute."
-              },
-              "Identity#givenName": {
-                "label": "Given name"
-              },
-              "Identity#privateTelephone": {
-                "label": "Private phone number"
-              },
-              "AccountAttributeRule#priorityExternalSource": {
-                "description": "The priority (1-5) of a value provided by an external source. A higher number gives this source priority over other sources. A missing value disables the source for this attribute.",
-                "label": "Priority for external sources"
-              },
-              "AccountAttributeRule#script": {
-                "label": "Script",
-                "description": "A script to calculate a value dynamically. Please refer to the manual for further explanation."
-              },
-              "AccountAttributeRule#allowSelfService": {
-                "label": "Allow self-service",
-                "description": "Users can provide a value for this attribute themselves. This value has priority over the other sources."
-              },
-              "AccountAttributeSystemDefinition#CAN_REQUEST_GROUPS": "Can request groups",
-              "AccountAttributeSystemDefinition#FAMILY_NAME": "Family name",
-              "AccountAttributeValueSelectionStatus#ERROR": "Error",
-              "AccountAttributeRule#defaultValue": {
-                "description": "This value is used if no value is available from any of the other sources.",
-                "label": "Default value"
-              },
-              "AccountAttributeValueUpdate#value": {
-                "description": "Specify a custom value or clear the value to fall back to a value from another source.",
-                "label": "Value"
-              },
-              "Identity#middleName": {
-                "label": "Middle name"
-              },
-              "AccountAttributeDefinition#format": {
-                "label": "Format"
-              },
-              "AccountAttributeFormat#NUMBER": "Number",
-              "Identity#privateEmail": {
-                "label": "Private email address"
-              },
-              "AccountAttributeSystemDefinition#TELEPHONE": "Phone number",
-              "AccountAttributeRule#priorityDirectory": {
-                "label": "Priority for the directory",
-                "description": "The priority (1-5) of a value read from the directory. A higher number gives this source priority over other sources. A missing value disables the source for this attribute."
-              },
-              "AccountAttributeSystemDefinition#GIVEN_NAME": "Given name",
-              "AccountAttributeSource#FORMULA": "Script",
-              "AccountAttributeSource#DEFAULT": "Default value",
-              "AccountAttributeDefinition#list": {
-                "label": "List"
-              },
-              "AccountAttributeValueSelectionStatus#INVALID": "Invalid",
-              "AccountAttributeSource#OVERRIDE": "Manual override",
-              "AccountAttributeDefinition#required": {
-                "label": "Required"
-              },
-              "AccountAttributeRule#allowOverride": {
-                "description": "Administrators can override the value for this attribute. This value always has priority over all other sources.",
-                "label": "Allow manual override"
-              },
-              "AccountAttributeValueSelectionStatus#UNKNOWN": "Unknown",
-              "Identity#familyName": {
-                "label": "Family name"
-              },
-              "AccountAttributeFormat#EMAIL": "E-mail address",
-              "AccountAttributeValueSelectionStatus#OUT_OF_SYNC": "Unsynchronised",
-              "AccountAttributeSystemDefinition#EMAIL": "Email address",
-              "AccountAttributeDefinition#name": {
-                "label": "Name"
-              },
-              "AccountAttributeFormat#DATETIME": "Date/time",
-              "AccountAttributeSystemDefinition#LICENSE": "License role",
-              "AccountAttributeValueSelectionStatus#MISSING": "Missing",
-              "Identity#telephone": {
-                "label": "Phone number"
-              },
-              "AccountAttributeSource#DIRECTORY": "Directory"
             },
             "webhook": {
               "Webhook#trustedCertificate": {
@@ -2040,6 +2099,9 @@
               },
               "Webhook#bearerToken": {
                 "label": "Bearer Token"
+              },
+              "Webhook#serviceAccount": {
+                "label": "Service account"
               },
               "Webhook#authenticationScheme": {
                 "label": "Authentication scheme"
@@ -2062,9 +2124,6 @@
               "Webhook#verbosePayloads": {
                 "description": "If enabled, the full contents of the objects is added to the deliveries.",
                 "label": "Verbose payloads"
-              },
-              "Webhook#account": {
-                "label": "Account"
               },
               "Webhook#uuid": {
                 "label": "UUID"
@@ -2548,22 +2607,32 @@
               "IdentitySourcePrimer#uuid": {
                 "label": "UUID"
               },
+              "ImportedRowStatus#PROCESSING": "Processing",
+              "AFASIdentitySource#schedule": {
+                "label": "Schedule",
+                "description": "A schedule to sync the identity source, expressed as a cron expression."
+              },
               "AFASIdentitySource#token": {
                 "label": "Token"
               },
               "IdentitySourcePrimer#name": {
                 "label": "Name"
               },
-              "IdentitySource#schedule": {
-                "description": "A schedule to sync the identity source, expressed as a cron expression.",
-                "label": "Schedule"
-              },
+              "ImportedRowStatus#DONE": "Processed",
+              "ImportedRowStatus#INCORRECT_CELL_COUNT": "Incorrect cell count",
               "AFASIdentitySource#url": {
                 "label": "URL"
               },
+              "IdentitySourceType#AFAS": "AFAS",
+              "CSVImportIdentitySource#identifier": {
+                "description": "The attribute used to look up the account. The first column of the CSV file is used for this.",
+                "label": "Account identifier"
+              },
               "IdentitySourcePrimer#active": {
                 "label": "Enabled"
-              }
+              },
+              "ImportedRowStatus#UNMATCHED": "Account not matched",
+              "IdentitySourceType#CSV_IMPORT": "CSV Import"
             },
             "TLSLevel#UNSECURE": "No",
             "launchpad": {
@@ -2757,9 +2826,6 @@
               "label": "Topicus KeyHub version"
             },
             "ReplicationProblem#DATABASE_INCONSISTENT": "The database on this cluster node is not replicating correctly.",
-            "ReplicationNodeInfo#status": {
-              "label": "Status"
-            },
             "NodeHealthStatus#DOWN": "Unavailable",
             "PgpoolQuorumStatus#QUORUM_IS_ON_THE_EDGE": "Quorum is on the edge",
             "PgpoolBackendNodeInfo#replicationStateAbbr": {
@@ -3038,6 +3104,11 @@
       "inloggen": "Sign in",
       "oauth2application": "OAuth2/OIDC Application",
       "auditoraccountsdashboard": "Auditor dashboard accounts",
+      "identitysource": {
+        "csvimport": "CSV import identity source",
+        "import": "CSV import",
+        "afas": "AFAS identity source"
+      },
       "identitysources": "Identity sources",
       "device": "Login on another device",
       "ldapdirectory": "LDAP Directory",
@@ -3056,7 +3127,12 @@
       "classification": "Classification",
       "provisionednamespace": "Namespace",
       "auditorgroupsdashboard": "Auditor dashboard groups",
-      "mygroups": "My groups",
+      "mygroups": {
+        "main": "My groups",
+        "removegroups": {
+          "select": "Select groups to remove"
+        }
+      },
       "provisionedazuretenant": "Linked Azure tenant",
       "classifications": "Classifications",
       "groupaudit": "Group audit",
@@ -3094,9 +3170,6 @@
       "serviceaccount": {
         "groupsonsystem": "Groups on system",
         "main": "Service account"
-      },
-      "identitysource": {
-        "afas": "AFAS identity source"
       },
       "grouponsystem": "Group on system",
       "auditorserviceaccountdetails": "Service account details",
@@ -4427,6 +4500,7 @@
       "assign": "Assign",
       "toggleall": "(de)select all",
       "create": "Create",
+      "importcsv": "Import CSV",
       "volgende": "Next",
       "select": "Select",
       "repair": "Repair",
@@ -6026,6 +6100,7 @@
       "encrypted": "Encrypted",
       "records": "Number of records",
       "thread": "Thread",
+      "index": "#",
       "errorwarnings": "Errors/warnings",
       "clientId": "Client ID",
       "available": "Available",
@@ -6487,7 +6562,8 @@
         "warn": {
           "ldapapplication": "When <strong>{0}<\/strong> is removed, its credentials for the LDAP will become invalid.",
           "identitysource": {
-            "afas": "When <strong>{0}<\/strong> is removed, no more users will be synced."
+            "afas": "When <strong>{0}<\/strong> is removed, no more users will be synced.",
+            "csvimport": "When <strong>{0}<\/strong> is removed, no new imports can be performed using this definition. Existing imported values ​​will be preserved."
           },
           "account": {
             "internal": "When <strong>{0}<\/strong> is removed, all configuration for linked systems, including passwords, group memberships and keys is also removed.",
@@ -6539,7 +6615,8 @@
           },
           "groupsystem": "Confirm the removal of the group by entering the name shown.",
           "identitysource": {
-            "afas": "Confirm the removal of the AFAS identity source by entering the name."
+            "afas": "Confirm the removal of the AFAS identity source by entering the name.",
+            "csvimport": "Confirm the removal of the CSV import by entering the name."
           },
           "accessprofileprov": "Confirm the removal of the group by entering the name shown.",
           "certificate": "Confirm the removal of the certificate by entering the name.",
@@ -6699,9 +6776,12 @@
           "group": "{from} requests to grant the users in the group {group} access to {gosType} {gosName} on {system}",
           "profile": "{from} requests to grant the users in the access profile {accessProfile} access to {gosType} {gosName} on {system}"
         },
+        "removegroup": {
+          "1": "{from} wants to remove the group {group}",
+          "n": "{from} wants to remove {groupCount} groups"
+        },
         "transferaccessprofileownership": "{from} requests to transfer ownership of {accessProfile} to {group}",
         "createserviceaccount": "{from} requests a new service account {username} on {system}",
-        "removegroups": "{from} wants to remove {count} groups",
         "grantgrouponsystem": {
           "group": "{originalRequester} (via {from}) requests to grant the users in the group {group} access to {gosType} {gosName} on {system}",
           "profile": "{originalRequester} (via {from}) requests to grant the users in the access profile {accessProfile} access to {gosType} {gosName} on {system}"
@@ -6710,7 +6790,6 @@
         "enabletechnicaladministration": "{from} requests to enable technical administration on {group}",
         "creategrouponsystem": "{from} requests {gosTypeNew} {gosName} on {system}",
         "removeprovisionedsystem": "{from} wants to remove the linked system {system}",
-        "removegroup": "{from} wants to remove the group {group}",
         "grantapplication": {
           "profile": "{from} requests to grant the users in the access profile {accessProfile} access to {application}",
           "group": "{from} requests to grant the users in {group} access to {application}"
@@ -6753,13 +6832,13 @@
       "license-expired": "Topicus KeyHub license expired",
       "request-audit": "{from} requests an audit of the group {group}",
       "passwordrecovery-notice": "A request to recovery your password has been submitted",
-      "admin-mail": "{from} has a question about {group}",
       "license-registration-failed": "Registration failed: Topicus KeyHub license limit reached",
       "processed": {
         "CANCELLED": "Cancelled: {0}",
         "DISALLOWED": "Declined: {0}",
         "ALLOWED": "Approved: {0}"
       },
+      "group-mail": "{from} has a question about {group}: {subject}",
       "account-activation": "Activate your KeyHub account",
       "authentication-changed-notice": "Your login details have been changed",
       "disable2fa-notice": "A request to disable your 2FA has been submitted",
@@ -6841,9 +6920,9 @@
       "subtitle": "Enter a name for your folder.",
       "leeg": "This folder is empty"
     },
-    "adminmail": {
-      "header": "Mail managers",
-      "info": "Send an e-mail to the managers of {0}",
+    "mail": {
+      "info": "Send an e-mail to the managers or all members of {0}",
+      "header": "Mail group",
       "sent": "E-mail sent"
     },
     "nestedgroups": {
@@ -6857,6 +6936,19 @@
         "count1": "Show the group you are already member of"
       },
       "count": "{0} groups"
+    },
+    "removegroups": {
+      "report": {
+        "title": "Remove groups report"
+      },
+      "request": {
+        "title": "Remove groups",
+        "groups": {
+          "error": {
+            "nogroups": "You need to select at least one group."
+          }
+        }
+      }
     },
     "los": "Groups displayed separately",
     "verborgen": "Hidden groups",
@@ -6990,6 +7082,15 @@
       "notinstalled": "Browser extension not installed",
       "notlinked": "Browser extension not connected"
     },
+    "selfserviceattributes": {
+      "title": "Attributes",
+      "table": {
+        "head": {
+          "selfservicevalue": "Overridden",
+          "currentvalue": "Current"
+        }
+      }
+    },
     "2fa": {
       "reset": {
         "instruction": "When you've got a new mobile phone and the old phone is still available, use 'Reconfigure' under 'Authenticator app' and do not request a reset.",
@@ -7105,6 +7206,7 @@
       "login": "Unfortunately, the license for this Topicus KeyHub installation seems to be invalid and therefore you are unable to login. Contact your Topicus KeyHub administrators for assistance.",
       "main": "Your Topicus KeyHub license is terminated."
     },
+    "CANNOT_EDIT_OWN_PRIVILEGES": "You cannot edit your own privileges.",
     "SERVICEACCOUNT_IS_ACTIVE": "To perform this action, the service account must first be deactivated.",
     "OIDC_REFUSED": "You did not give KeyHub permission for Single Sign-on.",
     "DUPLICATE_VALUE": "The value must be unique, '{value}' is already in use.",
@@ -7167,6 +7269,7 @@
     "OIDC_GENERAL_ERROR": "An error occurred during authentication: {cause}",
     "SAML_UNRESOLVABLE_SUBJECT": "It is not possible to determine the subject for this SAML2 application for your account. Contact an administrator of the application.",
     "ACCESS_PROFILE_DIRECTORY_MISMATCH": "The access profile already contains accounts from another directory, like {account}.",
+    "ATTRIBUTE_IN_USE_BY_IDENTITY_SOURCE": "This attribute definition is still in use by the identity source {identitySource} and can therefore not be modified or removed.",
     "MODIFICATION_GROUP_ALREADY_NESTED": "The chosen group is already nested.",
     "CLIENT_ACTIVATION_REQUIRED": {
       "1": "To log in to {client}, the group {group} must first be activated.",
@@ -7381,6 +7484,7 @@
           "true": "Specific date",
           "false": "Fixed period"
         },
+        "sharewarning": "<strong>This vault requires activation<\/strong> <br>The target vault may have less strict access requirements.",
         "info": "Choose a destination vault for {0}."
       },
       "shared": {
@@ -7627,11 +7731,6 @@
     },
     "groupsetting": "Select a group...",
     "header": "Organisational unit - {0}",
-    "removegroups": {
-      "report": {
-        "title": "Remove groups report"
-      }
-    },
     "inheritedgroupsetting": "{0} inherited from {1}...",
     "settings": {
       "header": "Settings"
@@ -7663,6 +7762,7 @@
         "admin": "Technical administration",
         "owner": "Owner",
         "main": " - {type}: {name} ({role})",
+        "contentadmin": "Content administrator",
         "none": "No linked systems"
       },
       "nestedgroups": " - Nested groups",
@@ -7721,7 +7821,6 @@
       "nrAccounts": "{0} account(s)",
       "nrClients": "{0} application(s)"
     },
-    "mailadmin": "Mail managers",
     "application": {
       "bewerken": {
         "subtitle": "Select the options for accessing the application through this group.",
@@ -7731,6 +7830,7 @@
     "private": "(hidden)",
     "header": "Group - {0}",
     "opsystem": "{0} on {1}",
+    "mail": "Mail group",
     "revokeadmin": {
       "header": "Remove account from KeyHub Administrators",
       "explain": "Submit a request to remove {0} from the KeyHub Administrators group."
@@ -7927,9 +8027,41 @@
     },
     "main": "Group audit"
   },
+  "attributedefinition": {
+    "prop": {
+      "duplicate": "There are multiple properties named {0}.",
+      "name": "Name",
+      "format": "Format",
+      "required": "Required",
+      "list": "List"
+    },
+    "unique": "unique",
+    "search": "Search attribute definitions...",
+    "properties": "Properties",
+    "list": "list",
+    "required": "required",
+    "header": "Account attribute definition - {0}",
+    "freelyuseable": "freely useable"
+  },
   "identitysource": {
     "header": {
-      "afas": "AFAS identity source"
+      "afas": "AFAS identity source",
+      "csvimport": "CSV import identity source"
+    },
+    "add": {
+      "subtitle": "Choose the type for the new identity source.",
+      "main": "Add identity source"
+    },
+    "attributemapping": {
+      "multivalued": "Multi-valued",
+      "identifier": "Account identifier",
+      "attribute": "Attribute",
+      "main": "Attribute mapping"
+    },
+    "importcsv": {
+      "last": "Last import",
+      "explain": "Upload a CSV file to import.",
+      "header": "Import CSV"
     }
   },
   "notificationcentre": {
@@ -7969,14 +8101,6 @@
     "header": "Configure two-factor authentication",
     "switchToApp": "Use a 2FA app",
     "switchToSecurityKey": "Use a security key"
-  },
-  "attributedefinition": {
-    "unique": "unique",
-    "search": "Search attribute definitions...",
-    "list": "list",
-    "required": "required",
-    "header": "Account attribute definition - {0}",
-    "freelyuseable": "freely useable"
   },
   "validatie": {
     "fileTooLarge": "{0} is larger than {1}Kb",
@@ -8045,6 +8169,13 @@
       "confirm": "I am sure"
     },
     "header": "Global settings"
+  },
+  "system": {
+    "switchActiveStatus": {
+      "subtitle": "Choose the new status for {0}.",
+      "main": "Switch status",
+      "title": "Switch status"
+    }
   },
   "IConverter": {
     "ScheduleExpression": "'{value}' is not a valid cron expression.",

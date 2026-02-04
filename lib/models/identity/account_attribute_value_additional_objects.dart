@@ -11,6 +11,8 @@ class AccountAttributeValueAdditionalObjects implements AdditionalDataHolder, Pa
     Map<String, Object?> additionalData;
     ///  The audit property
     AuditInfo? audit;
+    ///  The latest_selfservice property
+    AccountAttributeValue? latestSelfservice;
     ///  The previous property
     AccountAttributeValue? previous;
     ///  The selection property
@@ -28,6 +30,7 @@ class AccountAttributeValueAdditionalObjects implements AdditionalDataHolder, Pa
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = <String, void Function(ParseNode)>{};
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
+        deserializerMap['latest_selfservice'] = (node) => latestSelfservice = node.getObjectValue<AccountAttributeValue>(AccountAttributeValue.createFromDiscriminatorValue);
         deserializerMap['previous'] = (node) => previous = node.getObjectValue<AccountAttributeValue>(AccountAttributeValue.createFromDiscriminatorValue);
         deserializerMap['selection'] = (node) => selection = node.getObjectValue<AccountAttributeValueSelection>(AccountAttributeValueSelection.createFromDiscriminatorValue);
         return deserializerMap;
@@ -37,6 +40,7 @@ class AccountAttributeValueAdditionalObjects implements AdditionalDataHolder, Pa
     @override
     void serialize(SerializationWriter writer) {
         writer.writeObjectValue<AuditInfo>('audit', audit);
+        writer.writeObjectValue<AccountAttributeValue>('latest_selfservice', latestSelfservice);
         writer.writeObjectValue<AccountAttributeValue>('previous', previous);
         writer.writeObjectValue<AccountAttributeValueSelection>('selection', selection);
         writer.writeAdditionalData(additionalData);

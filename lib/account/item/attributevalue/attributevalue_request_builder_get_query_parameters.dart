@@ -30,6 +30,8 @@ class AttributevalueRequestBuilderGetQueryParameters implements AbstractQueryPar
     List<DateTime>? modifiedSince;
     ///  Filter records on a complex CQL query.
     List<String>? q;
+    ///  Filter attribute values on being the currently selected value for their respective attributes and accounts.
+    List<bool>? selected;
     ///  Sort the items. Use 'asc-<name>' for ascending and 'desc-<name>' for descending order.
     List<String>? sort;
     ///  Filter attribute values on the given source(s).
@@ -52,6 +54,7 @@ class AttributevalueRequestBuilderGetQueryParameters implements AbstractQueryPar
             'latestForSource' : latestForSource,
             'modifiedSince' : modifiedSince,
             'q' : q,
+            'selected' : selected,
             'sort' : sort,
             'source' : source,
             'value' : value,

@@ -10,7 +10,6 @@ enum LicenseFeature {
     offlineMode('OFFLINE_MODE'),
     serviceAccounts('SERVICE_ACCOUNTS'),
     ilm('ILM'),
-    scim('SCIM'),
     groupActivation('GROUP_ACTIVATION');
     const LicenseFeature(this.value);
     final String value;

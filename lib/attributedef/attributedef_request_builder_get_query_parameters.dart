@@ -33,6 +33,8 @@ class AttributedefRequestBuilderGetQueryParameters implements AbstractQueryParam
     List<String>? q;
     ///  Only return account attribute definitions that are or are not required.
     List<bool>? required_;
+    ///  Only return account attributes which are available for self-service to all of the provided accounts.
+    List<int>? selfServiceableByAccount;
     ///  Sort the items. Use 'asc-<name>' for ascending and 'desc-<name>' for descending order.
     List<String>? sort;
     ///  Filter account attribute definitions on the given system definition(s).
@@ -56,6 +58,7 @@ class AttributedefRequestBuilderGetQueryParameters implements AbstractQueryParam
             'nameContains' : nameContains,
             'q' : q,
             'required_' : required_,
+            'selfServiceableByAccount' : selfServiceableByAccount,
             'sort' : sort,
             'systemDefinition' : systemDefinition,
             'unique' : unique,

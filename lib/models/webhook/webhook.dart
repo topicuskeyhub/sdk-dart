@@ -1,7 +1,6 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../audit/audit_record_type.dart';
-import '../auth/account_primer.dart';
 import '../certificate/certificate_primer.dart';
 import '../client/client_application_primer.dart';
 import '../directory/account_directory_primer.dart';
@@ -9,13 +8,12 @@ import '../group/group_primer.dart';
 import '../http_authentication_scheme.dart';
 import '../linkable.dart';
 import '../provisioning/provisioned_system_primer.dart';
+import '../serviceaccount/service_account_primer.dart';
 import '../t_l_s_level.dart';
 import './webhook_additional_objects.dart';
 
 /// auto generated
 class Webhook extends Linkable implements Parsable {
-    ///  The account property
-    AccountPrimer? account;
     ///  The active property
     bool? active;
     ///  The additionalObjects property
@@ -44,6 +42,8 @@ class Webhook extends Linkable implements Parsable {
     GroupPrimer? group;
     ///  The name property
     String? name;
+    ///  The serviceAccount property
+    ServiceAccountPrimer? serviceAccount;
     ///  The system property
     ProvisionedSystemPrimer? system;
     ///  The tls property
@@ -71,7 +71,6 @@ class Webhook extends Linkable implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
-        deserializerMap['account'] = (node) => account = node.getObjectValue<AccountPrimer>(AccountPrimer.createFromDiscriminatorValue);
         deserializerMap['active'] = (node) => active = node.getBoolValue();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<WebhookAdditionalObjects>(WebhookAdditionalObjects.createFromDiscriminatorValue);
         deserializerMap['allTypes'] = (node) => allTypes = node.getBoolValue();
@@ -86,6 +85,7 @@ class Webhook extends Linkable implements Parsable {
         deserializerMap['directory'] = (node) => directory = node.getObjectValue<AccountDirectoryPrimer>(AccountDirectoryPrimer.createFromDiscriminatorValue);
         deserializerMap['group'] = (node) => group = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         deserializerMap['name'] = (node) => name = node.getStringValue();
+        deserializerMap['serviceAccount'] = (node) => serviceAccount = node.getObjectValue<ServiceAccountPrimer>(ServiceAccountPrimer.createFromDiscriminatorValue);
         deserializerMap['system'] = (node) => system = node.getObjectValue<ProvisionedSystemPrimer>(ProvisionedSystemPrimer.createFromDiscriminatorValue);
         deserializerMap['tls'] = (node) => tls = node.getEnumValue<TLSLevel>((stringValue) => TLSLevel.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['trustedCertificate'] = (node) => trustedCertificate = node.getObjectValue<CertificatePrimer>(CertificatePrimer.createFromDiscriminatorValue);
@@ -100,7 +100,6 @@ class Webhook extends Linkable implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
-        writer.writeObjectValue<AccountPrimer>('account', account);
         writer.writeBoolValue('active', value:active);
         writer.writeObjectValue<WebhookAdditionalObjects>('additionalObjects', additionalObjects);
         writer.writeBoolValue('allTypes', value:allTypes);
@@ -115,6 +114,7 @@ class Webhook extends Linkable implements Parsable {
         writer.writeObjectValue<AccountDirectoryPrimer>('directory', directory);
         writer.writeObjectValue<GroupPrimer>('group', group);
         writer.writeStringValue('name', name);
+        writer.writeObjectValue<ServiceAccountPrimer>('serviceAccount', serviceAccount);
         writer.writeObjectValue<ProvisionedSystemPrimer>('system', system);
         writer.writeEnumValue<TLSLevel>('tls', tls, (e) => e?.value);
         writer.writeObjectValue<CertificatePrimer>('trustedCertificate', trustedCertificate);

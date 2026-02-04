@@ -1,29 +1,30 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
+import 'package:uuid/uuid.dart';
 import '../linkable.dart';
 import './provisioning_operation_action.dart';
 import './provisioning_operation_log_level.dart';
 
 /// auto generated
 class ProvisioningOperationLogLine extends Linkable implements Parsable {
-    ///  The accessProfile property
-    String? accessProfile;
-    ///  The account property
-    String? account;
+    ///  The accessProfileUuid property
+    UuidValue? accessProfileUuid;
+    ///  The accountUuid property
+    UuidValue? accountUuid;
     ///  The action property
     ProvisioningOperationAction? action;
-    ///  The group property
-    String? group;
-    ///  The groupOnSystem property
-    String? groupOnSystem;
+    ///  The groupOnSystemUuid property
+    UuidValue? groupOnSystemUuid;
+    ///  The groupUuid property
+    UuidValue? groupUuid;
     ///  The level property
     ProvisioningOperationLogLevel? level;
     ///  The message property
     String? message;
-    ///  The serviceAccount property
-    String? serviceAccount;
-    ///  The system property
-    String? system;
+    ///  The serviceAccountUuid property
+    UuidValue? serviceAccountUuid;
+    ///  The systemUuid property
+    UuidValue? systemUuid;
     ///  The thread property
     String? thread;
     ///  The time property
@@ -41,15 +42,15 @@ class ProvisioningOperationLogLine extends Linkable implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
-        deserializerMap['accessProfile'] = (node) => accessProfile = node.getStringValue();
-        deserializerMap['account'] = (node) => account = node.getStringValue();
+        deserializerMap['accessProfileUuid'] = (node) => accessProfileUuid = node.getGuidValue();
+        deserializerMap['accountUuid'] = (node) => accountUuid = node.getGuidValue();
         deserializerMap['action'] = (node) => action = node.getEnumValue<ProvisioningOperationAction>((stringValue) => ProvisioningOperationAction.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
-        deserializerMap['group'] = (node) => group = node.getStringValue();
-        deserializerMap['groupOnSystem'] = (node) => groupOnSystem = node.getStringValue();
+        deserializerMap['groupOnSystemUuid'] = (node) => groupOnSystemUuid = node.getGuidValue();
+        deserializerMap['groupUuid'] = (node) => groupUuid = node.getGuidValue();
         deserializerMap['level'] = (node) => level = node.getEnumValue<ProvisioningOperationLogLevel>((stringValue) => ProvisioningOperationLogLevel.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['message'] = (node) => message = node.getStringValue();
-        deserializerMap['serviceAccount'] = (node) => serviceAccount = node.getStringValue();
-        deserializerMap['system'] = (node) => system = node.getStringValue();
+        deserializerMap['serviceAccountUuid'] = (node) => serviceAccountUuid = node.getGuidValue();
+        deserializerMap['systemUuid'] = (node) => systemUuid = node.getGuidValue();
         deserializerMap['thread'] = (node) => thread = node.getStringValue();
         deserializerMap['time'] = (node) => time = node.getDateTimeValue();
         return deserializerMap;

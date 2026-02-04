@@ -2,8 +2,10 @@
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../linkable.dart';
 import './account_attribute_definition_additional_objects.dart';
+import './account_attribute_definition_property.dart';
 import './account_attribute_format.dart';
 import './account_attribute_system_definition.dart';
+import './complex_account_attribute_handling.dart';
 
 /// auto generated
 class AccountAttributeDefinition extends Linkable implements Parsable {
@@ -17,6 +19,10 @@ class AccountAttributeDefinition extends Linkable implements Parsable {
     bool? list;
     ///  The name property
     String? name;
+    ///  The properties property
+    Iterable<AccountAttributeDefinitionProperty>? properties;
+    ///  The propertyHandling property
+    ComplexAccountAttributeHandling? propertyHandling;
     ///  The required property
     bool? required_;
     ///  The systemDefinition property
@@ -41,6 +47,8 @@ class AccountAttributeDefinition extends Linkable implements Parsable {
         deserializerMap['freelyUseable'] = (node) => freelyUseable = node.getBoolValue();
         deserializerMap['list'] = (node) => list = node.getBoolValue();
         deserializerMap['name'] = (node) => name = node.getStringValue();
+        deserializerMap['properties'] = (node) => properties = node.getCollectionOfObjectValues<AccountAttributeDefinitionProperty>(AccountAttributeDefinitionProperty.createFromDiscriminatorValue);
+        deserializerMap['propertyHandling'] = (node) => propertyHandling = node.getEnumValue<ComplexAccountAttributeHandling>((stringValue) => ComplexAccountAttributeHandling.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['required'] = (node) => required_ = node.getBoolValue();
         deserializerMap['systemDefinition'] = (node) => systemDefinition = node.getEnumValue<AccountAttributeSystemDefinition>((stringValue) => AccountAttributeSystemDefinition.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['unique'] = (node) => unique = node.getBoolValue();
@@ -56,6 +64,8 @@ class AccountAttributeDefinition extends Linkable implements Parsable {
         writer.writeBoolValue('freelyUseable', value:freelyUseable);
         writer.writeBoolValue('list', value:list);
         writer.writeStringValue('name', name);
+        writer.writeCollectionOfObjectValues<AccountAttributeDefinitionProperty>('properties', properties);
+        writer.writeEnumValue<ComplexAccountAttributeHandling>('propertyHandling', propertyHandling, (e) => e?.value);
         writer.writeBoolValue('required', value:required_);
         writer.writeEnumValue<AccountAttributeSystemDefinition>('systemDefinition', systemDefinition, (e) => e?.value);
         writer.writeBoolValue('unique', value:unique);

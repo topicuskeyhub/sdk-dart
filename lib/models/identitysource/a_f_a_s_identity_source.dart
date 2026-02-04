@@ -4,6 +4,8 @@ import './identity_source.dart';
 
 /// auto generated
 class AFASIdentitySource extends IdentitySource implements Parsable {
+    ///  The schedule property
+    String? schedule;
     ///  The token property
     String? token;
     ///  The url property
@@ -21,6 +23,7 @@ class AFASIdentitySource extends IdentitySource implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['schedule'] = (node) => schedule = node.getStringValue();
         deserializerMap['token'] = (node) => token = node.getStringValue();
         deserializerMap['url'] = (node) => url = node.getStringValue();
         return deserializerMap;
@@ -30,6 +33,7 @@ class AFASIdentitySource extends IdentitySource implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeStringValue('schedule', schedule);
         writer.writeStringValue('token', token);
         writer.writeStringValue('url', url);
     }

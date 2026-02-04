@@ -1,12 +1,12 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
-import './get_additional_query_parameter_type.dart';
+import './post_additional_query_parameter_type.dart';
 
 /// auto generated
-/// Returns the identity source identified by the id.
-class WithIdentitysourceItemRequestBuilderGetQueryParameters implements AbstractQueryParameters {
+/// Creates one or more new imported documents and returns the newly created documentes.
+class DocumentRequestBuilderPostQueryParameters implements AbstractQueryParameters {
     ///  Request additional information to be returned for every record.
-    List<GetAdditionalQueryParameterType>? additional;
+    List<PostAdditionalQueryParameterType>? additional;
     /// Extracts the query parameters into a map for the URI template parsing.
     @override
     Map<String, dynamic> toMap() {

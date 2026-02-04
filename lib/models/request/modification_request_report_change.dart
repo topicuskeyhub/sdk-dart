@@ -25,18 +25,24 @@ enum ModificationRequestReportChange {
     groupNestingRemoved('GROUP_NESTING_REMOVED'),
     serviceAccountRemoved('SERVICE_ACCOUNT_REMOVED'),
     organizationalUnitRemoved('ORGANIZATIONAL_UNIT_REMOVED'),
-    accessProfileRemoved('ACCESS_PROFILE_REMOVED'),
+    accessProfileProvisioningRemoved('ACCESS_PROFILE_PROVISIONING_REMOVED'),
     systemAccountsWritableDisabled('SYSTEM_ACCOUNTS_WRITABLE_DISABLED'),
     groupActivationForVaultDisabled('GROUP_ACTIVATION_FOR_VAULT_DISABLED'),
     groupActivationForSsoDisabled('GROUP_ACTIVATION_FOR_SSO_DISABLED'),
     groupActivationForProvisioningDisabled('GROUP_ACTIVATION_FOR_PROVISIONING_DISABLED'),
+    identitySourceRemoved('IDENTITY_SOURCE_REMOVED'),
     vaultRecordsWillBeRemoved('VAULT_RECORDS_WILL_BE_REMOVED'),
     vaultRecordsWillBeRemovedUnrecoverable('VAULT_RECORDS_WILL_BE_REMOVED_UNRECOVERABLE'),
     applicationWillBeRemoved('APPLICATION_WILL_BE_REMOVED'),
     systemWillBeRemoved('SYSTEM_WILL_BE_REMOVED'),
     groupOnSystemWillBeRemoved('GROUP_ON_SYSTEM_WILL_BE_REMOVED'),
     serviceAccountWillBeRemoved('SERVICE_ACCOUNT_WILL_BE_REMOVED'),
-    helpdeskWillBeRemoved('HELPDESK_WILL_BE_REMOVED');
+    helpdeskWillBeRemoved('HELPDESK_WILL_BE_REMOVED'),
+    organizationalunitCreategroupapprovegroupWillBeRemoved('ORGANIZATIONALUNIT_CREATEGROUPAPPROVEGROUP_WILL_BE_REMOVED'),
+    organizationalunitRemovegroupapprovegroupWillBeRemoved('ORGANIZATIONALUNIT_REMOVEGROUPAPPROVEGROUP_WILL_BE_REMOVED'),
+    organizationalunitEnabletechadminapprovegroupWillBeRemoved('ORGANIZATIONALUNIT_ENABLETECHADMINAPPROVEGROUP_WILL_BE_REMOVED'),
+    organizationalunitRecoveryfallbackgroupWillBeRemoved('ORGANIZATIONALUNIT_RECOVERYFALLBACKGROUP_WILL_BE_REMOVED'),
+    organizationalunitAuditorgroupWillBeRemoved('ORGANIZATIONALUNIT_AUDITORGROUP_WILL_BE_REMOVED');
     const ModificationRequestReportChange(this.value);
     final String value;
 }

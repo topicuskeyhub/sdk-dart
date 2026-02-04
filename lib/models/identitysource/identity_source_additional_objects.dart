@@ -1,6 +1,7 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../audit_info.dart';
+import './imported_document.dart';
 
 /// auto generated
 class IdentitySourceAdditionalObjects implements AdditionalDataHolder, Parsable {
@@ -9,6 +10,8 @@ class IdentitySourceAdditionalObjects implements AdditionalDataHolder, Parsable 
     Map<String, Object?> additionalData;
     ///  The audit property
     AuditInfo? audit;
+    ///  The lastImport property
+    ImportedDocument? lastImport;
     /// Instantiates a new [IdentitySourceAdditionalObjects] and sets the default values.
     IdentitySourceAdditionalObjects() :  
         additionalData = {};
@@ -22,6 +25,7 @@ class IdentitySourceAdditionalObjects implements AdditionalDataHolder, Parsable 
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = <String, void Function(ParseNode)>{};
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
+        deserializerMap['lastImport'] = (node) => lastImport = node.getObjectValue<ImportedDocument>(ImportedDocument.createFromDiscriminatorValue);
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -29,6 +33,7 @@ class IdentitySourceAdditionalObjects implements AdditionalDataHolder, Parsable 
     @override
     void serialize(SerializationWriter writer) {
         writer.writeObjectValue<AuditInfo>('audit', audit);
+        writer.writeObjectValue<ImportedDocument>('lastImport', lastImport);
         writer.writeAdditionalData(additionalData);
     }
 }

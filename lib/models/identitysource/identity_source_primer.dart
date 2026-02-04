@@ -2,6 +2,7 @@
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../linkable.dart';
 import './a_f_a_s_identity_source.dart';
+import './c_s_v_import_identity_source.dart';
 import './identity_source.dart';
 import './identity_source_type.dart';
 
@@ -25,6 +26,7 @@ class IdentitySourcePrimer extends Linkable implements Parsable {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'identitysource.AFASIdentitySource' => AFASIdentitySource(),
+            'identitysource.CSVImportIdentitySource' => CSVImportIdentitySource(),
             'identitysource.IdentitySource' => IdentitySource(),
             _ => IdentitySourcePrimer(),
         };

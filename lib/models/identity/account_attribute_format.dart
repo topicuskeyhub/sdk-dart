@@ -8,7 +8,8 @@ enum AccountAttributeFormat {
     date('DATE'),
     datetime('DATETIME'),
     boolean('BOOLEAN'),
-    text('TEXT');
+    text('TEXT'),
+    complex('COMPLEX');
     const AccountAttributeFormat(this.value);
     final String value;
 }

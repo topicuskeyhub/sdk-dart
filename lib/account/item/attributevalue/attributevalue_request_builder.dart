@@ -5,6 +5,7 @@ import '../../../models/identity/account_attribute_value_linkable_wrapper.dart';
 import './attributevalue_request_builder_get_query_parameters.dart';
 import './item/with_attributevalue_item_request_builder.dart';
 import './override/override_request_builder.dart';
+import './selfservice/selfservice_request_builder.dart';
 
 /// auto generated
 /// Builds and executes requests for operations under \account\{accountid}\attributevalue
@@ -12,6 +13,10 @@ class AttributevalueRequestBuilder extends BaseRequestBuilder<AttributevalueRequ
     ///  The override property
     OverrideRequestBuilder get override {
         return OverrideRequestBuilder(pathParameters, requestAdapter);
+    }
+    ///  The selfservice property
+    SelfserviceRequestBuilder get selfservice {
+        return SelfserviceRequestBuilder(pathParameters, requestAdapter);
     }
     /// Gets an item from the ApiSdk.account.item.attributevalue.item collection
     ///  [attributevalueid] Unique identifier of the item
@@ -28,11 +33,11 @@ class AttributevalueRequestBuilder extends BaseRequestBuilder<AttributevalueRequ
     /// Instantiates a new [AttributevalueRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    AttributevalueRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/{accountid}/attributevalue{?account*,additional*,any*,attribute*,createdAfter*,createdBefore*,directory*,exclude*,id*,latestForSource*,modifiedSince*,q*,sort*,source*,value*}", pathParameters) ;
+    AttributevalueRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/{accountid}/attributevalue{?account*,additional*,any*,attribute*,createdAfter*,createdBefore*,directory*,exclude*,id*,latestForSource*,modifiedSince*,q*,selected*,sort*,source*,value*}", pathParameters) ;
     /// Instantiates a new [AttributevalueRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    AttributevalueRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/{accountid}/attributevalue{?account*,additional*,any*,attribute*,createdAfter*,createdBefore*,directory*,exclude*,id*,latestForSource*,modifiedSince*,q*,sort*,source*,value*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    AttributevalueRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/{accountid}/attributevalue{?account*,additional*,any*,attribute*,createdAfter*,createdBefore*,directory*,exclude*,id*,latestForSource*,modifiedSince*,q*,selected*,sort*,source*,value*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for account attribute values for a specific account. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AccountAttributeValueLinkableWrapper?> getAsync([void Function(RequestConfiguration<AttributevalueRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
@@ -47,7 +52,7 @@ class AttributevalueRequestBuilder extends BaseRequestBuilder<AttributevalueRequ
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AttributevalueRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AttributevalueRequestBuilderGetQueryParameters>(requestConfiguration, () => AttributevalueRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=82');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
         return requestInfo;
     }
 }

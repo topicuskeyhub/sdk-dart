@@ -29,6 +29,8 @@ class OrganizationalunitRequestBuilderGetQueryParameters implements AbstractQuer
     List<int>? enableTechAdminApproveGroup;
     ///  Filter the results to exclude the given ids.
     List<int>? exclude;
+    ///  Filter organizational units for which the given groups perform some form of functional role, specified by id.
+    List<int>? functionalRole;
     ///  Filter the results on the given ids.
     List<int>? id;
     ///  Only return records that have been modified since the given instant.
@@ -69,6 +71,7 @@ class OrganizationalunitRequestBuilderGetQueryParameters implements AbstractQuer
             'descendantOfOrEqualTo' : descendantOfOrEqualTo,
             'enableTechAdminApproveGroup' : enableTechAdminApproveGroup,
             'exclude' : exclude,
+            'functionalRole' : functionalRole,
             'id' : id,
             'modifiedSince' : modifiedSince,
             'name' : name,

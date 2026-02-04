@@ -16,8 +16,13 @@
                 }
               }
             },
-            "AboutPage$AboutBean#reportIssue": {
-              "label": "Probleem melden"
+            "settings": {
+              "AbstractAboutPage$AboutBean#reportIssue": {
+                "label": "Probleem melden"
+              },
+              "AbstractAboutPage$AboutBean#version": {
+                "label": "Versie"
+              }
             },
             "systems": {
               "ProvisioningGroupAddPage$ProvisioningGroupAddBean#owner": {
@@ -55,9 +60,6 @@
                 "label": "Koppeling"
               }
             },
-            "AboutPage$AboutBean#version": {
-              "label": "Versie"
-            },
             "VerifyUserCodePage$DeviceVerifyInfo#usercode": {
               "label": "Gebruikerscode"
             },
@@ -73,6 +75,14 @@
               },
               "AssignUnallocatedDiskSpacePanel$SpaceAllocationBean#remaining": {
                 "label": "MiBs resterend"
+              },
+              "RestoreBackupPanel$RestoreBackupBean#encrypted": {
+                "label": "Versleuteld"
+              },
+              "IdentitySourceImportCSVPanel$CSVImportBean#csv": {
+                "description": "De maximum grootte is 10mb.",
+                "label": "CSV-bestand",
+                "placeholder": "Kies een bestand"
               },
               "AssignUnallocatedDiskSpacePanel$SpaceAllocationBean#docker": {
                 "label": "/var/lib/docker in MiB"
@@ -132,9 +142,6 @@
                 "label": "Back-up-decoderingssleutel",
                 "placeholder": "Back-up-decoderingssleutel"
               },
-              "GroupAccountEditPanel$AccountEditBean#activation": {
-                "label": "Activatie"
-              },
               "OrganizationalUnitAccountPanel$AccountEditBean#account": {
                 "label": "Account"
               },
@@ -146,6 +153,9 @@
                 "label": "Type"
               },
               "ExportAuditorGroupsPanel$AuditorExportType#GROUPS": "Groepen",
+              "AccessProfileAccountEditPanel$AccountEditBean#activation": {
+                "label": "Activatie"
+              },
               "CreateSupportDumpPanel$NewSupportDump#name": {
                 "label": "Naam",
                 "description": "Geef de support-dump een naam."
@@ -183,6 +193,9 @@
               },
               "ApplicationOrSystemAddToAccessProfilePanel$AccessType#APPLICATION": "SSO-applicatie",
               "RestoreBackupPanel$BackupSettings#RESTORE": "Appliance-configuratie en database terugzetten",
+              "IdentitySourceAddPanel$IdentitySourceTypeBean#type": {
+                "label": "Type"
+              },
               "ExportAuditorServiceAccountsPanel$AuditorExportType#SERVICEACCOUNTS": "Serviceaccounts",
               "AssignUnallocatedDiskSpacePanel$SpaceAllocationBean#log": {
                 "label": "/var/log in MiB"
@@ -223,6 +236,10 @@
                 "ChangeApplicationBean$ReleaseChannel#ACCEPTANCE": "acceptance - De versie die getest wordt voor acceptatie."
               }
             },
+            "filter": {
+              "VaultRecordFilterBarPanel$VaultRecordOrdering#VAULT": "Sorteer op kluis",
+              "VaultRecordFilterBarPanel$VaultRecordOrdering#NAME": "Sorteer op naam"
+            },
             "panel": {
               "AbstractConfirmationPanel$Confirmation#removeFromSystem": {
                 "description": "Verwijder de groep ook van het systeem",
@@ -241,10 +258,6 @@
               "AbstractConfirmationPanel$Confirmation#deprovisionAction": {
                 "description": "Specifier welke acties uitgevoerd moeten worden bij het deactiveren.",
                 "label": "Actie bij deactiveren"
-              },
-              "vault": {
-                "VaultRecordFilterBarPanel$VaultRecordOrdering#VAULT": "Sorteer op kluis",
-                "VaultRecordFilterBarPanel$VaultRecordOrdering#NAME": "Sorteer op naam"
               },
               "AbstractConfirmationPanel$Confirmation#comment": {
                 "label": "Reden"
@@ -275,11 +288,17 @@
                 "label": "Gekoppelde directory",
                 "description": "De directory waarvoor dit toegangsprofiel account-attributen kan beheren."
               },
+              "AccessProfileProvisioning#groupOnSystem": {
+                "label": "Koppelgroep"
+              },
               "AccessProfileClient#accessProfile": {
                 "label": "Toegangsprofiel"
               },
               "AccessProfileAccountActivation#ACTIVE": "Actief (business rules zijn van toepassing)",
               "AccessProfileAccountActivation#INACTIVE": "Inactief (business rules zijn van toepassing)",
+              "AccessProfileProvisioning#groupOnSystemDisplayName": {
+                "label": "Weergavenaam"
+              },
               "AccessProfile#matchRuleScript": {
                 "description": "Een script om te bepalen of een account automatisch aan het toegangsprofiel toegevoegd moet worden. Raadpleeg de handleiding voor meer uitleg.",
                 "label": "Regel voor automatisch toekennen"
@@ -287,9 +306,15 @@
               "AccessProfilePrimer#name": {
                 "label": "Naam"
               },
+              "AccessProfileProvisioning#system": {
+                "label": "Koppeling"
+              },
               "AccessProfileAccountActivation#FORCE_INACTIVE": "Inactief (handmatig overschreven)",
               "AccessProfile#description": {
                 "label": "Omschrijving"
+              },
+              "AccessProfileProvisioning#accessProfile": {
+                "label": "Toegangsprofiel"
               },
               "AccessProfilePrimer#uuid": {
                 "label": "UUID"
@@ -418,7 +443,7 @@
               },
               "AuditRecordType#TRANSFER_PROVISIONED_SYSTEM_CONTENT_ADMINISTRATION_ACCEPTED": "Draag inhoudsbeheer van gekoppeld systeem over - Goedgekeurd",
               "AuditRecordType#ACCOUNT_SSH_PUBLIC_KEY_MODIFIED": "Account - SSH public key ingesteld",
-              "AuditRecordType#ACCOUNT_2FA_DISABLED": "Account - 2FA ingeschakeld",
+              "AuditRecordType#ACCOUNT_2FA_DISABLED": "Account - 2FA uitgeschakeld",
               "AuditRecordType#CREATE_SERVICE_ACCOUNT_DECLINED": "Serviceaccount aanmaken - Afgewezen",
               "AuditRecordType#VERIFY_INTERNAL_ACCOUNT_ACCEPTED": "Verifieer intern account - Goedgekeurd",
               "AuditRecordType#GROUP_CLASSIFICATION_CREATED": "Groepsclassificatie - Toegevoegd",
@@ -512,7 +537,7 @@
               "AuditRecordType#TRANSFER_ORGANIZATIONAL_UNIT_OWNERSHIP_REQUESTED": "Draag verantwoordelijkheid over organisatie-eenheid over - Aangevraagd",
               "AuditRecordType#TRANSFER_APPLICATION_ADMINISTRATION_ACCEPTED": "Draag beheer van applicatie over - Goedgekeurd",
               "AuditRecordType#TRANSFER_APPLICATION_ADMINISTRATION_REQUESTED": "Draag beheer van applicatie over - Aangevraagd",
-              "AuditRecordType#ACCOUNT_2FA_ENABLED": "Account - 2FA uitgeschakeld",
+              "AuditRecordType#ACCOUNT_2FA_ENABLED": "Account - 2FA ingeschakeld",
               "AuditRecordType#GROUP_NESTING_DISCONNECTED": "Groep - Geneste groep ontkoppeld",
               "AuditRecordType#VAULT_RECORD_REMOVED": "Kluis - Regel verwijderd",
               "AuditRecordType#CLIENT_PERMISSION_REVOKED": "Applicatie - Recht ingetrokken",
@@ -537,6 +562,9 @@
               "AuditRequiredSourceType#CONFORM": "Voldoen",
               "AuditRecordType#ENABLE_PROFILE_ADMINISTRATION_REQUESTED": "Toegangsprofielenbeheer inschakelen - Aangevraagd",
               "AuditRecordType#VAULT_RECORD_CREATED": "Kluis - Regel aangemaakt",
+              "GroupAudit#status": {
+                "label": "Status"
+              },
               "AuditRecordType#ACCOUNT_PROVISIONING_DESTROYED": "Account - Verwijderd van gekoppeld systeem",
               "AuditRecordType#REVIEW_AUDIT_ACCEPTED": "Review een audit - Goedgekeurd",
               "AuditRecordType#GRANT_GROUP_ON_SYSTEM_REQUESTED": "Geef toegang tot groep op gekoppeld systeem - Aangevraagd",
@@ -649,6 +677,9 @@
                 "label": "Koppeling",
                 "placeholder": "Typ hier een koppelingsnaam..."
               },
+              "TransferGroupOnSystemOwnershipRequest#groupOnSystem": {
+                "label": "Koppelgroep"
+              },
               "GroupNestAccountAction#RETAIN": "Behouden",
               "ModificationRequestType#CREATE_SERVICE_ACCOUNT": "MAAK SERVICEACCOUNT",
               "PasswordResetRequest#newVaultAndDirectoryPassword": {
@@ -683,6 +714,7 @@
               },
               "ModificationRequestReportChange#ACCESS_PROFILE_CLIENT_REMOVED_OWNER": "De applicatie {0} verplaatst mee met deze groep. Daardoor verliest het toegangsprofiel {1} de toegang.",
               "ModificationRequestReportConclusion#CANNOT_BE_EXECUTED": "Verzoek kan niet worden uitgevoerd.",
+              "ModificationRequestReportError#GROUP_CLASSIFICATION_OUT_OF_SCOPE": "De groep valt onder een classificatie die niet beschikbaar is binnen de nieuwe organisatie-eenheid.",
               "ModificationRequestType#TRANSFER_PROVISIONED_SYSTEM_CONTENT_ADMINISTRATION": "INHOUDSBEHEER OVERDRAGEN",
               "ModificationRequestType#ENABLE_TECHNICAL_ADMINISTRATION": "INSCHAKELEN",
               "ModificationRequestType#VERIFY_INTERNAL_ACCOUNT": "ACCORDEER ACCOUNT",
@@ -692,7 +724,6 @@
               },
               "ModificationRequestReportError#MANAGER_CANNOT_BE_MOVED": "De groep heeft een manager die niet verplaatst kan worden.",
               "ModificationRequestType#REMOVE_ORGANIZATIONAL_UNIT": "VERWIJDER ORGANISATIE",
-              "ModificationRequestReportError#GROUP_ON_SYSTEM_CANNOT_BE_REMOVED": "Geen rechten om {2}: {1} ({3}) te verwijderen.",
               "ModificationRequestReportChange#GROUP_CLIENT_REMOVED_OWNER": "De applicatie {0} verplaatst mee met deze groep. De KeyHub-groep {1} verliest toegang.",
               "CreateProvisionedNamespaceRequest#namespaceName": {
                 "label": "Naam",
@@ -713,13 +744,16 @@
               "ModificationRequestReport#conclusion": {
                 "label": "Conclusie"
               },
+              "ModificationRequestReportChange#ORGANIZATIONALUNIT_RECOVERYFALLBACKGROUP_WILL_BE_REMOVED": "Ingesteld als Wachtwoordherstel-reservegroep op organisatie-eenheid {1}, dit wordt verwijderd.",
               "ModificationRequestReportError#SYSTEM_CANNOT_BE_REMOVED": "De {2}: {1} kan niet worden verwijderd ({3}).",
+              "ModificationRequestReportChange#ORGANIZATIONALUNIT_REMOVEGROUPAPPROVEGROUP_WILL_BE_REMOVED": "Ingesteld als goedkeurder voor 'Groep verwijderen' op organisatie-eenheid {1}, dit wordt verwijderd.",
               "ModificationRequestReportChange#ORGANIZATIONAL_UNIT_REMOVED": "Deze organisatie-eenheden zullen verwijderd worden.",
               "ModificationRequestReportChange#SYSTEM_ACCOUNTS_WRITABLE_DISABLED": "'Accounts schrijfbaar' wordt uitgeschakeld voor deze koppelingen.",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_GROUP_REMOVED_OWNER": "De koppelgroep {0} verplaatst mee met deze groep en daarom verliest het serviceaccount {1} de toegang.",
               "ModificationRequestType#TRANSFER_PROVISIONED_SYSTEM_OWNERSHIP": "VERANTWOORDELIJKHEID OVERDRAGEN",
-              "ModificationRequestReportChange#ACCESS_PROFILE_REMOVED": "Deze toegangsprofielen zullen verwijderd worden.",
+              "ModificationRequestReportChange#ACCESS_PROFILE_PROVISIONING_REMOVED": "Deze koppelgroepen worden verwijderd bij toegangsprofielen.",
               "ModificationRequestType#REVIEW_AUDIT": "REVIEW AUDIT",
+              "ModificationRequestReportChange#ORGANIZATIONALUNIT_CREATEGROUPAPPROVEGROUP_WILL_BE_REMOVED": "Ingesteld als goedkeurder voor 'Groep aanmaken' op organisatie-eenheid {1}, dit wordt verwijderd.",
               "ModificationRequestReportError#ADMIN_GROUP_CANNOT_BE_MOVED": "De KeyHub administrators-groep kan niet worden verplaatst.",
               "ModificationRequestType#GRANT_SERVICE_ACCOUNT_GROUP": "TOEGANG TOT GROEP",
               "ModificationRequestStatus#DISALLOWED": "Geweigerd",
@@ -745,10 +779,10 @@
                 "label": "Gebruikersnaam",
                 "description": "Kies een gebruikersnaam voor het serviceaccount."
               },
-              "ModificationRequestReportError#SERVICE_ACCOUNT_CANNOT_BE_REMOVED": "Geen rechten om {2}: {1} ({3}) te verwijderen.",
               "ModificationRequestReportChange#VAULT_RECORDS_WILL_BE_REMOVED_UNRECOVERABLE": "De kluis zal samen met de {1} kluisregel(s) worden verwijderd. Deze kluisregels kunnen na verwijdering niet hersteld worden.",
               "ModificationRequestType#SETUP_NESTED_GROUP": "NESTEN",
               "ModificationRequestReportError#GROUP_OWNS_OU": "Is de eigenaar van organisatie-eenheid {1}.",
+              "ModificationRequestReportChange#ORGANIZATIONALUNIT_AUDITORGROUP_WILL_BE_REMOVED": "Ingesteld als Auditorgroep op organisatie-eenheid {1}, dit wordt verwijderd.",
               "ModificationRequestReportError#ONE_MOVEABLE_VAULT_ACCESS_OF_MULTIPLE_MEMBERS": "De groep heeft slechts één lid met kluistoegang dat verplaatst kan worden.",
               "ModificationRequestReportError#GROUP_OWNS_ACCESS_PROFILE": "Is eigenaar van toegangsprofiel {1}.",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_WILL_BE_REMOVED": "Het {2}: {1} wordt verwijderd ({3}).",
@@ -769,6 +803,7 @@
               "ModificationRequestReportChange#GROUP_ACTIVATION_FOR_VAULT_DISABLED": "'Activatie verplicht voor kluistoegang' wordt uitgeschakeld op deze groepen.",
               "ModificationRequestReportError#AUTHORIZED_GROUP_CANNOT_BE_REMOVED": "Voert autorisatie uit voor {1}.",
               "ModificationRequestReportError#HAS_NESTED_GROUP_CANNOT_BE_REMOVED": "Heeft {2} geneste groep(en).",
+              "ModificationRequestReportChange#ORGANIZATIONALUNIT_ENABLETECHADMINAPPROVEGROUP_WILL_BE_REMOVED": "Ingesteld als goedkeurder voor 'Technisch beheer inschakelen' op organisatie-eenheid {1}, dit wordt verwijderd.",
               "ModificationRequestStatus#CANCELLED": "Geannuleerd",
               "ModificationRequestStatus#REQUESTED": "Aangevraagd",
               "ModificationRequestType#JOIN_VAULT": "KLUIS BETREDEN",
@@ -778,6 +813,9 @@
               "ModificationRequestType#UPDATE_LICENSE": "LICENTIE",
               "ModificationRequestReportError#GROUP_TECHADMIN_CLIENTAPP_WITH_OWNER_OTHER_OU": "De groep is de technische beheerder van een applicatie, waarbij de verantwoordelijke groep in een andere organisatie-eenheid zal blijven.",
               "AuthorizingGroupType#PROVISIONING": "Groepsactivatie",
+              "TransferGroupOnSystemOwnershipRequest#system": {
+                "label": "Koppeling"
+              },
               "ModificationRequestReportChange#ACCESS_PROFILE_PROVISIONING_REMOVED_OWNER": "De groep op gekoppeld systeem {0} wordt samen met deze groep verplaatst. Als gevolg daarvan verliest het toegangsprofiel {1} de toegang.",
               "ModificationRequestType#CREATE_GROUP_ON_SYSTEM": "MAAK KOPPELGROEP",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_REMOVED": "Deze serviceaccounts zullen verwijderd worden.",
@@ -802,6 +840,7 @@
                 "label": "Toegangsprofiel"
               },
               "AuthorizingGroupType#DELEGATION": "Delegatie van management",
+              "ModificationRequestReportChange#IDENTITY_SOURCE_REMOVED": "Deze identiteitsbronnen zullen verwijderd worden.",
               "ModificationRequestType#REMOVE_ACCESS_PROFILE": "VERWIJDER TOEGANGSPROFIEL",
               "GroupNestAccountAction#REMOVE": "Verwijderen",
               "ModificationRequestReportChange#GROUP_MADE_PUBLIC": "Deze groepen zullen publiek gemaakt worden.",
@@ -1039,6 +1078,141 @@
                 "label": "UUID"
               }
             },
+            "identity": {
+              "ComplexAccountAttributeHandling#ERROR_ON_UNKNOWN": "Onbekende eigenschappen zullen een fout veroorzaken",
+              "ComplexAccountAttributeHandling#DROP_UNKNOWN": "Onbekende eigenschappen verwijderen",
+              "AccountAttributeValueUpdate#expectedValue": {
+                "label": "Verwachte waarde",
+                "description": "De huidige waarde van het attribuut komt niet overeen met de verwachte waarde."
+              },
+              "AccountAttributeSource#EXTERNAL": "Externe bron",
+              "AccountAttributeSystemDefinition#MIDDLE_NAME": "Tweede naam",
+              "AccountAttributeRule#attribute": {
+                "label": "Attribuut",
+                "placeholder": "Kies een attribuut..."
+              },
+              "AccountAttributeSource#SELF_SERVICE": "Selfservice",
+              "AccountAttributeFormat#TEXT": "Tekst",
+              "AccountAttributeFormat#TELEPHONE": "Telefoonnummer",
+              "AccountAttributeSystemDefinition#USERNAME": "Gebruikersnaam",
+              "AccountAttributeRule#prioritySCIM": {
+                "label": "Prioriteit voor SCIM",
+                "description": "De prioriteit (1-5) van een waarde aangeleverd via SCIM. Een hoger cijfer geeft deze bron prioriteit over andere bronnen. Een ontbrekende waarde schakelt de bron uit voor dit attribuut."
+              },
+              "Identity#displayName": {
+                "label": "Weergavenaam"
+              },
+              "AccountAttributeSource#SCIM": "SCIM",
+              "AccountAttributeRule#updateAutomatically": {
+                "label": "Automatisch bijwerken",
+                "description": "Werk het attribuut automatisch bij als de berekende waarde verandert."
+              },
+              "AccountAttributeSystemDefinition#TELEPHONE_PRIVATE": "Privé telefoonnummer",
+              "AccountAttributeRule#exclusive": {
+                "description": "Voor dit attribuut kunnen geen regels opgesteld worden bij andere toegangsprofielen.",
+                "label": "Exclusief"
+              },
+              "AccountAttributeFormat#BOOLEAN": "Boolean",
+              "AccountAttributeDefinition#unique": {
+                "label": "Uniek"
+              },
+              "AccountAttributeValueUpdate#currentValue": {
+                "label": "Huidige waarde"
+              },
+              "AccountAttributeValueSelectionStatus#IN_SYNC": "Gesynchroniseerd",
+              "AccountAttributeDefinition#propertyHandling": {
+                "label": "Omgang met onbekende eigenschappen"
+              },
+              "AccountAttributeValueSelectionStatus#DUPLICATE": "Duplicaat",
+              "AccountAttributeSystemDefinition#DISPLAY_NAME": "Weergavenaam",
+              "AccountAttributeSystemDefinition#EMAIL_PRIVATE": "Privé e-mailadres",
+              "AccountAttributeFormat#DATE": "Datum",
+              "AccountAttributeDefinition#freelyUseable": {
+                "label": "Vrij bruikbaar"
+              },
+              "AccountAttributeFormat#COMPLEX": "Complex (JSON)",
+              "AccountAttributeRule#priorityFormula": {
+                "label": "Prioriteit voor het script",
+                "description": "De prioriteit (1-5) van een waarde berekend door het script. Een hoger cijfer geeft deze bron prioriteit over andere bronnen. Een ontbrekende waarde schakelt de bron uit voor dit attribuut."
+              },
+              "Identity#givenName": {
+                "label": "Voornaam"
+              },
+              "Identity#privateTelephone": {
+                "label": "Privé telefoonnummer"
+              },
+              "ComplexAccountAttributeHandling#KEEP_UNKNOWN": "Onbekende eigenschappen behouden",
+              "AccountAttributeRule#priorityExternalSource": {
+                "description": "De prioriteit (1-5) van een waarde aangeleverd door een externe bron. Een hoger cijfer geeft deze bron prioriteit over andere bronnen. Een ontbrekende waarde schakelt de bron uit voor dit attribuut.",
+                "label": "Prioriteit voor externe bronnen"
+              },
+              "AccountAttributeRule#script": {
+                "label": "Script",
+                "description": "Een script om een waarde dynamisch te berekenen. Raadpleeg de handleiding voor meer uitleg."
+              },
+              "AccountAttributeRule#allowSelfService": {
+                "label": "Selfservice toestaan",
+                "description": "Gebruikers kunnen zelf een waarde voor dit attribuut aanleveren. Deze waarde heeft prioriteit over de andere bronnen."
+              },
+              "AccountAttributeSystemDefinition#CAN_REQUEST_GROUPS": "Mag groepen aanvragen",
+              "AccountAttributeSystemDefinition#FAMILY_NAME": "Familienaam",
+              "AccountAttributeValueSelectionStatus#ERROR": "Fout",
+              "AccountAttributeRule#defaultValue": {
+                "description": "Deze waarde wordt gebruikt als er geen waarde beschikbaar is uit één van de andere bronnen.",
+                "label": "Standaardwaarde"
+              },
+              "AccountAttributeValueUpdate#value": {
+                "description": "Geef een aangepaste waarde of wis de waarde om terug te vallen op een waarde uit een andere bron.",
+                "label": "Waarde"
+              },
+              "Identity#middleName": {
+                "label": "Tweede naam"
+              },
+              "AccountAttributeDefinition#format": {
+                "label": "Formaat"
+              },
+              "AccountAttributeFormat#NUMBER": "Nummer",
+              "Identity#privateEmail": {
+                "label": "Privé e-mailadres"
+              },
+              "AccountAttributeSystemDefinition#TELEPHONE": "Telefoonnummer",
+              "AccountAttributeRule#priorityDirectory": {
+                "label": "Prioriteit voor de directory",
+                "description": "De prioriteit (1-5) van een waarde uitgelezen uit de directory. Een hoger cijfer geeft deze bron prioriteit over andere bronnen. Een ontbrekende waarde schakelt de bron uit voor dit attribuut."
+              },
+              "AccountAttributeSystemDefinition#GIVEN_NAME": "Voornaam",
+              "AccountAttributeSource#FORMULA": "Script",
+              "AccountAttributeSource#DEFAULT": "Standaardwaarde",
+              "AccountAttributeDefinition#list": {
+                "label": "Lijst"
+              },
+              "AccountAttributeValueSelectionStatus#INVALID": "Ongeldig",
+              "AccountAttributeSource#OVERRIDE": "Handmatig overschreven",
+              "AccountAttributeDefinition#required": {
+                "label": "Vereist"
+              },
+              "AccountAttributeRule#allowOverride": {
+                "description": "Beheerders kunnen de waarde voor dit attribuut overschrijven. Deze waarde heeft altijd prioriteit over alle andere bronnen.",
+                "label": "Handmatig overschrijven toestaan"
+              },
+              "AccountAttributeValueSelectionStatus#UNKNOWN": "Onbekend",
+              "Identity#familyName": {
+                "label": "Familienaam"
+              },
+              "AccountAttributeFormat#EMAIL": "E-mailadres",
+              "AccountAttributeValueSelectionStatus#OUT_OF_SYNC": "Niet gesynchroniseerd",
+              "AccountAttributeSystemDefinition#EMAIL": "E-mailadres",
+              "AccountAttributeDefinition#name": {
+                "label": "Naam"
+              },
+              "AccountAttributeFormat#DATETIME": "Datum/tijd",
+              "AccountAttributeSystemDefinition#LICENSE": "Licentierol",
+              "AccountAttributeValueSelectionStatus#MISSING": "Ontbreekt",
+              "Identity#telephone": {
+                "label": "Telefoonnummer"
+              },
+              "AccountAttributeSource#DIRECTORY": "Directory"
+            },
             "auth": {
               "Account#validInDirectory": {
                 "label": "Geldig in directory"
@@ -1125,7 +1299,7 @@
                 "label": "Nieuw wachtwoord"
               },
               "TwoFactorAuthenticationStatus#DISABLED": "2FA niet ingeschakeld",
-              "AccountPrimer#directory": {
+              "Account#directory": {
                 "label": "Directory"
               },
               "UnregisteredAccount#reregisteredAccountName": {
@@ -1192,6 +1366,9 @@
               "UnregisteredAccount#directory": {
                 "label": "Directory"
               },
+              "WebAuthnKey#displayName": {
+                "label": "Weergavenaam"
+              },
               "AccountValidity#VALID": "Geldig",
               "InternalAccountStatus#ACTIVATION_EXPIRED": "Activatiecode verlopen",
               "PasswordMode#ONE_PASSWORD_UNSYNCED": "{0}-wachtwoord ook voor KeyHub gebruiken (synchronizatie vereist)",
@@ -1206,6 +1383,9 @@
               "AccountValidity#REREGISTRATION_REQUIRED": "Herregistratie vereist",
               "AccountLicenseRole#BUSINESS": "Business",
               "AccountBulkUpdateAction#CHANGE_LICENSE_ROLE_TO_IGA": "Licentie aanpassen naar IGA",
+              "InternalAccount#directory": {
+                "label": "Directory"
+              },
               "TwoFactorAuthenticationStatus#MIXED": "2FA ingeschakeld",
               "Account#recoveryStatus": {
                 "label": "Wachtwoord- en 2FA-herstelstatus"
@@ -1250,6 +1430,9 @@
               "GroupEditRequiredReason#ONE_MANAGER": {
                 "long": "Groep {groupName} vereist een audit omdat deze momenteel slechts één manager heeft"
               },
+              "GroupClient#type": {
+                "label": "Type"
+              },
               "GroupExtendedAccess#NOT_ALLOWED": "Niet toegestaan",
               "Group#authorizingGroupDelegation": {
                 "description": "Leden van deze groep mogen management van de groep en zijn leden uitvoeren.",
@@ -1259,6 +1442,9 @@
                 "label": "Verleng toegangsperiode"
               },
               "GroupRights#NORMAL": "Normale gebruiker",
+              "GroupMail#subject": {
+                "label": "Onderwerp"
+              },
               "GroupClassification#authorizingGroupProvisioningRequired": {
                 "label": "\"Autoriserende groep voor activatie\" vereisen",
                 "description": "Voor groepen met deze classificatie is activatie van de optie \"Autoriserende groep voor activatie\" verplicht."
@@ -1305,6 +1491,9 @@
                 "label": "\"Activatie verplicht voor kluistoegang\" vereisen",
                 "description": "Voor groepen met deze classificatie is activatie van de optie \"Activatie verplicht voor kluistoegang\" verplicht."
               },
+              "GroupMail#body": {
+                "label": "Inhoud"
+              },
               "Group#profileAdministration": {
                 "description": "Indien ingeschakeld, mogen leden van deze groep toegangsprofielen beheren.",
                 "label": "Toegangsprofielenbeheer"
@@ -1313,10 +1502,6 @@
               "GroupGlobalRoleInfo#auditorGroupFor": {
                 "description": "Deze groep heeft de auditorrol voor de bovenstaande organisatie(s).",
                 "label": "Auditorgroep voor"
-              },
-              "GroupClient#vaultAccess": {
-                "label": "Toegang tot de kluis",
-                "description": "Geef de applicatie toegang tot de kluis van deze groep."
               },
               "GroupAuditConfig#months": {
                 "description": "De maanden waarin elke tweede dinsdag een periodieke groepsaudit moet worden uitgevoerd.",
@@ -1361,6 +1546,10 @@
                 "label": "Wachtwoordherstel-reservegroep voor",
                 "description": "Wachtwoordherstelverzoeken voor gebruikers met onvoldoende groepsmanagers worden ook gestuurd naar gebruikers in deze  groep voor de bovengenoemde organisatie(s)."
               },
+              "GroupClassificationPrimer#organizationalUnit": {
+                "label": "Organisatie-eenheid"
+              },
+              "GroupMailRecipient#MANAGERS": "Managers",
               "GroupFolder#name": {
                 "label": "Naam van de map"
               },
@@ -1385,25 +1574,11 @@
               "Group#description": {
                 "label": "Omschrijving"
               },
-              "GroupAdminMail#body": {
-                "label": "Inhoud"
-              },
               "GroupRights": {
                 "MANAGER": "Manager",
                 "NORMAL": "Normale gebruiker"
               },
               "VaultRecoveryAvailability#NONE": "Niet beschikbaar",
-              "Group#auditinginfo": {
-                "nrManagers": {
-                  "label": "Managers"
-                },
-                "nrExpiredVaultRecords": {
-                  "label": "Verlopen kluisregels"
-                },
-                "auditDueDate": {
-                  "label": "Volgende audit"
-                }
-              },
               "GroupClassification#recordTrailRequired": {
                 "label": "\"Leg audit-trail vast\" vereisen",
                 "description": "Voor groepen met deze classificatie is activatie van de optie \"Leg audit-trail vast\" verplicht."
@@ -1415,10 +1590,14 @@
               "GroupClient#client": {
                 "label": "Applicatie"
               },
+              "GroupMail#recipients": {
+                "label": "Ontvangers"
+              },
               "Group#classification": {
                 "label": "Classificatie",
                 "description": "De classificatie van deze groep, zoals bepaald door een lid van de auditor groep."
               },
+              "GroupMailRecipient#ALL_MEMBERS": "Alle leden",
               "GroupClassification#authorizingGroupAuditingRequired": {
                 "description": "Voor groepen met deze classificatie is activatie van de optie \"Autoriserende groep voor audits\" verplicht.",
                 "label": "\"Autoriserende groep voor audits\" vereisen"
@@ -1513,6 +1692,9 @@
                 "label": "Bearer Token"
               },
               "ProvisioningOperationType#SYNC_ACCOUNT": "Sync account",
+              "ProvisionedSCIM#basicAuthPassword": {
+                "label": "Wachtwoord"
+              },
               "GroupOnSystem#accountProvisioning": {
                 "description": "Wanneer ingeschakeld, beheert KeyHub deze groep en de bijbehorende lidmaatschappen op het gekoppelde systeem.",
                 "label": "Accountprovisioning"
@@ -1664,8 +1846,8 @@
                 "label": "Verantwoordelijke groep",
                 "description": "Managers uit de gekozen groep zijn verantwoordelijk voor het regelen van toegang tot deze groep op het gekoppelde systeem."
               },
-              "ProvisionedSystemSyncLog#modifications": {
-                "label": "Doorgevoerde wijzigingen"
+              "ChangeProvisionedSystemStatus#newActiveStatus": {
+                "label": "Status"
               },
               "ProvisionedAzureTenant#clientSecret": {
                 "label": "Client secret"
@@ -1701,6 +1883,14 @@
               "ProvisionedAD#samAccountNameScheme": {
                 "description": "Kies een optie voor het invullen van het SAM-Account-Name-attribuut. Dit wordt mogelijk gebruikt door legacy-systemen.",
                 "label": "SAM-Account-Name"
+              },
+              "ChangeProvisionedSystemStatus#deprovisionAction": {
+                "description": "Specifier welke acties uitgevoerd moeten worden bij het deactiveren.",
+                "label": "Actie bij deactiveren"
+              },
+              "ProvisionedAzureOIDCDirectory#accountsWritable": {
+                "label": "Accounts schrijfbaar",
+                "description": "Indien aangevinkt beheert KeyHub ook de accounts op de directory."
               },
               "AbstractProvisionedLDAP#baseDN": {
                 "placeholder": "OU=department,DC=company,DC=local",
@@ -1764,6 +1954,9 @@
                 "label": "LDAP-directory"
               },
               "ProvisioningOperationType#SYNC_COLLECTION": "Sync collection",
+              "ProvisionedSystemPrimer#activeStatus": {
+                "label": "Status"
+              },
               "ProvisionedNamespace#groupDN": {
                 "label": "Group-RDN",
                 "description": "De RDN onder base DN waaronder groepen te vinden zijn,"
@@ -1796,6 +1989,9 @@
                 "description": "Sommige diensten gebruiken het niet-stanaard MIME-type application/json. Deselecteer in dat geval deze optie."
               },
               "GroupOnSystemProvisioningStatus#ENABLED": "Ingeschakeld",
+              "ProvisionedSCIM#basicAuthUsername": {
+                "label": "Gebruikersnaam"
+              },
               "ProvisioningOperationType#UPDATE_ACCOUNT_ATTRIBUTES": "Update account attributes",
               "ProvisionedSCIM#passwordSupported": {
                 "label": "Ondersteunt wachtwoorden"
@@ -1852,14 +2048,8 @@
               "ProvisionedSCIMVendor#DEFAULT": "Standaard",
               "ProvisioningOperationType#DEACTIVATE_SYSTEM": "Deactivate system",
               "GroupOnSystemType#POSIX_GROUP": "posixGroup",
-              "ProvisionedSystemPrimer#active": {
-                "label": "Actief"
-              },
               "ProvisionedSystemType#SOURCE_AZURE_OIDC_DIRECTORY": "Azure OIDC-brondirectory",
               "ADSamAccountNameScheme#TRANSFER_TRUNCATE": "Waarde overnemen en inkorten - Neem de waarde over uit het sAMAccountName-attribuut bij het account en kort in als het resultaat te lang is.",
-              "ProvisionedSystemSyncLog#createdAt": {
-                "label": "Aangemaakt op"
-              },
               "ProvisionedSCIMVendor#KEYSTONE": "Keystone",
               "SCIMUpdateStrategy#PUT": "PUT",
               "ProvisionedNamespace#baseSystem": {
@@ -1883,9 +2073,6 @@
               "ProvisionedSCIM#filterActiveUsersSupported": {
                 "label": "Ondersteunt filteren op actieve gebruikers"
               },
-              "ProvisionedSystemSyncLog#errors": {
-                "label": "Fouten/waarschuwingen"
-              },
               "ProvisioningOperationType#DESTROY_ACCOUNT": "Destroy account",
               "ADSamAccountNameScheme#TRUNCATE": "Gebruikersnaam inkorten - De gebruikersnaam wordt ingekort tot maximaal 20 tekens.",
               "ProvisionedAzureSyncLDAPDirectory#clientId": {
@@ -1894,134 +2081,6 @@
               "ProvisionedSCIM#updateStrategy": {
                 "label": "Update-strategie"
               }
-            },
-            "identity": {
-              "AccountAttributeValueUpdate#expectedValue": {
-                "label": "Verwachte waarde",
-                "description": "De huidige waarde van het attribuut komt niet overeen met de verwachte waarde."
-              },
-              "AccountAttributeSource#EXTERNAL": "Externe bron",
-              "AccountAttributeSystemDefinition#MIDDLE_NAME": "Tweede naam",
-              "AccountAttributeRule#attribute": {
-                "label": "Attribuut",
-                "placeholder": "Kies een attribuut..."
-              },
-              "AccountAttributeSource#SELF_SERVICE": "Selfservice",
-              "AccountAttributeFormat#TEXT": "Tekst",
-              "AccountAttributeFormat#TELEPHONE": "Telefoonnummer",
-              "AccountAttributeSystemDefinition#USERNAME": "Gebruikersnaam",
-              "AccountAttributeRule#prioritySCIM": {
-                "label": "Prioriteit voor SCIM",
-                "description": "De prioriteit (1-5) van een waarde aangeleverd via SCIM. Een hoger cijfer geeft deze bron prioriteit over andere bronnen. Een ontbrekende waarde schakelt de bron uit voor dit attribuut."
-              },
-              "Identity#displayName": {
-                "label": "Weergavenaam"
-              },
-              "AccountAttributeSource#SCIM": "SCIM",
-              "AccountAttributeRule#updateAutomatically": {
-                "label": "Automatisch bijwerken",
-                "description": "Werk het attribuut automatisch bij als de berekende waarde verandert."
-              },
-              "AccountAttributeSystemDefinition#TELEPHONE_PRIVATE": "Privé telefoonnummer",
-              "AccountAttributeRule#exclusive": {
-                "description": "Voor dit attribuut kunnen geen regels opgesteld worden bij andere toegangsprofielen.",
-                "label": "Exclusief"
-              },
-              "AccountAttributeFormat#BOOLEAN": "Boolean",
-              "AccountAttributeDefinition#unique": {
-                "label": "Uniek"
-              },
-              "AccountAttributeValueUpdate#currentValue": {
-                "label": "Huidige waarde"
-              },
-              "AccountAttributeValueSelectionStatus#IN_SYNC": "Gesynchroniseerd",
-              "AccountAttributeValueSelectionStatus#DUPLICATE": "Duplicaat",
-              "AccountAttributeSystemDefinition#DISPLAY_NAME": "Weergavenaam",
-              "AccountAttributeSystemDefinition#EMAIL_PRIVATE": "Privé e-mailadres",
-              "AccountAttributeFormat#DATE": "Datum",
-              "AccountAttributeDefinition#freelyUseable": {
-                "label": "Vrij bruikbaar"
-              },
-              "AccountAttributeRule#priorityFormula": {
-                "label": "Prioriteit voor het script",
-                "description": "De prioriteit (1-5) van een waarde berekend door het script. Een hoger cijfer geeft deze bron prioriteit over andere bronnen. Een ontbrekende waarde schakelt de bron uit voor dit attribuut."
-              },
-              "Identity#givenName": {
-                "label": "Voornaam"
-              },
-              "Identity#privateTelephone": {
-                "label": "Privé telefoonnummer"
-              },
-              "AccountAttributeRule#priorityExternalSource": {
-                "description": "De prioriteit (1-5) van een waarde aangeleverd door een externe bron. Een hoger cijfer geeft deze bron prioriteit over andere bronnen. Een ontbrekende waarde schakelt de bron uit voor dit attribuut.",
-                "label": "Prioriteit voor externe bronnen"
-              },
-              "AccountAttributeRule#script": {
-                "label": "Script",
-                "description": "Een script om een waarde dynamisch te berekenen. Raadpleeg de handleiding voor meer uitleg."
-              },
-              "AccountAttributeRule#allowSelfService": {
-                "label": "Selfservice toestaan",
-                "description": "Gebruikers kunnen zelf een waarde voor dit attribuut aanleveren. Deze waarde heeft prioriteit over de andere bronnen."
-              },
-              "AccountAttributeSystemDefinition#CAN_REQUEST_GROUPS": "Mag groepen aanvragen",
-              "AccountAttributeSystemDefinition#FAMILY_NAME": "Familienaam",
-              "AccountAttributeValueSelectionStatus#ERROR": "Fout",
-              "AccountAttributeRule#defaultValue": {
-                "description": "Deze waarde wordt gebruikt als er geen waarde beschikbaar is uit één van de andere bronnen.",
-                "label": "Standaardwaarde"
-              },
-              "AccountAttributeValueUpdate#value": {
-                "description": "Geef een aangepaste waarde of wis de waarde om terug te vallen op een waarde uit een andere bron.",
-                "label": "Waarde"
-              },
-              "Identity#middleName": {
-                "label": "Tweede naam"
-              },
-              "AccountAttributeDefinition#format": {
-                "label": "Formaat"
-              },
-              "AccountAttributeFormat#NUMBER": "Nummer",
-              "Identity#privateEmail": {
-                "label": "Privé e-mailadres"
-              },
-              "AccountAttributeSystemDefinition#TELEPHONE": "Telefoonnummer",
-              "AccountAttributeRule#priorityDirectory": {
-                "label": "Prioriteit voor de directory",
-                "description": "De prioriteit (1-5) van een waarde uitgelezen uit de directory. Een hoger cijfer geeft deze bron prioriteit over andere bronnen. Een ontbrekende waarde schakelt de bron uit voor dit attribuut."
-              },
-              "AccountAttributeSystemDefinition#GIVEN_NAME": "Voornaam",
-              "AccountAttributeSource#FORMULA": "Script",
-              "AccountAttributeSource#DEFAULT": "Standaardwaarde",
-              "AccountAttributeDefinition#list": {
-                "label": "Lijst"
-              },
-              "AccountAttributeValueSelectionStatus#INVALID": "Ongeldig",
-              "AccountAttributeSource#OVERRIDE": "Handmatig overschreven",
-              "AccountAttributeDefinition#required": {
-                "label": "Vereist"
-              },
-              "AccountAttributeRule#allowOverride": {
-                "description": "Beheerders kunnen de waarde voor dit attribuut overschrijven. Deze waarde heeft altijd prioriteit over alle andere bronnen.",
-                "label": "Handmatig overschrijven toestaan"
-              },
-              "AccountAttributeValueSelectionStatus#UNKNOWN": "Onbekend",
-              "Identity#familyName": {
-                "label": "Familienaam"
-              },
-              "AccountAttributeFormat#EMAIL": "E-mailadres",
-              "AccountAttributeValueSelectionStatus#OUT_OF_SYNC": "Niet gesynchroniseerd",
-              "AccountAttributeSystemDefinition#EMAIL": "E-mailadres",
-              "AccountAttributeDefinition#name": {
-                "label": "Naam"
-              },
-              "AccountAttributeFormat#DATETIME": "Datum/tijd",
-              "AccountAttributeSystemDefinition#LICENSE": "Licentierol",
-              "AccountAttributeValueSelectionStatus#MISSING": "Ontbreekt",
-              "Identity#telephone": {
-                "label": "Telefoonnummer"
-              },
-              "AccountAttributeSource#DIRECTORY": "Directory"
             },
             "webhook": {
               "Webhook#trustedCertificate": {
@@ -2040,6 +2099,9 @@
               },
               "Webhook#bearerToken": {
                 "label": "Bearer Token"
+              },
+              "Webhook#serviceAccount": {
+                "label": "Serviceaccount"
               },
               "Webhook#authenticationScheme": {
                 "label": "Authenticatieschema"
@@ -2062,9 +2124,6 @@
               "Webhook#verbosePayloads": {
                 "description": "Indien ingeschakeld, wordt de volledige inhoud van de objecten toegevoegd aan de afleveringen.",
                 "label": "Uitgebreide inhoud"
-              },
-              "Webhook#account": {
-                "label": "Account"
               },
               "Webhook#uuid": {
                 "label": "UUID"
@@ -2548,22 +2607,32 @@
               "IdentitySourcePrimer#uuid": {
                 "label": "UUID"
               },
+              "ImportedRowStatus#PROCESSING": "Verwerken",
+              "AFASIdentitySource#schedule": {
+                "label": "Schedule",
+                "description": "Een schema om de identiteitsbron te synchroniseren, uitgedrukt als een cron-expressie."
+              },
               "AFASIdentitySource#token": {
                 "label": "Token"
               },
               "IdentitySourcePrimer#name": {
                 "label": "Naam"
               },
-              "IdentitySource#schedule": {
-                "description": "Een schema om de identiteitsbron te synchroniseren, uitgedrukt als een cron-expressie.",
-                "label": "Schedule"
-              },
+              "ImportedRowStatus#DONE": "Verwerkt",
+              "ImportedRowStatus#INCORRECT_CELL_COUNT": "Onjuist aantal cellen",
               "AFASIdentitySource#url": {
                 "label": "URL"
               },
+              "IdentitySourceType#AFAS": "AFAS",
+              "CSVImportIdentitySource#identifier": {
+                "description": "Het attribuut waarmee het account opgezocht wordt. De eerst kolom van het CSV-bestand wordt hiervoor gebruikt.",
+                "label": "Accountidentificatie"
+              },
               "IdentitySourcePrimer#active": {
                 "label": "Actief"
-              }
+              },
+              "ImportedRowStatus#UNMATCHED": "Account niet gevonden",
+              "IdentitySourceType#CSV_IMPORT": "CSV-import"
             },
             "TLSLevel#UNSECURE": "Nee",
             "launchpad": {
@@ -2757,9 +2826,6 @@
               "label": "Topicus KeyHub-versie"
             },
             "ReplicationProblem#DATABASE_INCONSISTENT": "De database op deze clusternode wordt niet correct gerepliceerd.",
-            "ReplicationNodeInfo#status": {
-              "label": "Status"
-            },
             "NodeHealthStatus#DOWN": "Niet beschikbaar",
             "PgpoolQuorumStatus#QUORUM_IS_ON_THE_EDGE": "Quorum is on the edge",
             "PgpoolBackendNodeInfo#replicationStateAbbr": {
@@ -3038,6 +3104,11 @@
       "inloggen": "Inloggen",
       "oauth2application": "OAuth2/OIDC-Applicatie",
       "auditoraccountsdashboard": "Auditor-dashboard accounts",
+      "identitysource": {
+        "csvimport": "CSV-import-identiteitsbron",
+        "import": "CSV-import",
+        "afas": "AFAS-identiteitsbron"
+      },
       "identitysources": "Identiteitsbronnen",
       "device": "Inloggen op een ander apparaat",
       "ldapdirectory": "LDAP Directory",
@@ -3056,7 +3127,12 @@
       "classification": "Classificatie",
       "provisionednamespace": "Namespace",
       "auditorgroupsdashboard": "Auditor-dashboard groepen",
-      "mygroups": "Mijn groepen",
+      "mygroups": {
+        "main": "Mijn groepen",
+        "removegroups": {
+          "select": "Selecteer groepen om te verwijderen"
+        }
+      },
       "provisionedazuretenant": "Gekoppelde Azure tenant",
       "classifications": "Classificaties",
       "groupaudit": "Groepsaudit",
@@ -3094,9 +3170,6 @@
       "serviceaccount": {
         "groupsonsystem": "Groepen op systeem",
         "main": "Serviceaccount"
-      },
-      "identitysource": {
-        "afas": "AFAS-identiteitsbron"
       },
       "grouponsystem": "Koppelgroep",
       "auditorserviceaccountdetails": "Serviceaccountdetails",
@@ -4427,6 +4500,7 @@
       "assign": "Toekennen",
       "toggleall": "(de)selecteer alles",
       "create": "Maken",
+      "importcsv": "CSV importeren",
       "volgende": "Volgende",
       "select": "Selecteren",
       "repair": "Repareren",
@@ -5478,7 +5552,7 @@
         "empty": "De groep voor goedkeuring van verzoeken voor het aanmaken van groepen werd geleegd.",
         "main": "De groep voor goedkeuring van 'Groep aanmaken'-verzoeken; ingesteld op '{0}'."
       },
-      "RESPONSIBLE_DISCLOSURE": "De inhoude van de responsible disclosure.",
+      "RESPONSIBLE_DISCLOSURE": "De inhoud van de responsible disclosure.",
       "AUDIT_RECORD_PSEUDONYMIZATION": "De auditlogpseudonimisatieperiode; ingesteld op '{0}'.",
       "PERFORMANCE_LOGGING": {
         "true": "Uitgebreide performance-logging ingeschakeld.",
@@ -6026,6 +6100,7 @@
       "encrypted": "Versleuteld",
       "records": "Aantal regels",
       "thread": "Thread",
+      "index": "#",
       "errorwarnings": "Fouten/waarsch.",
       "clientId": "Client ID",
       "available": "Beschikbaar",
@@ -6487,7 +6562,8 @@
         "warn": {
           "ldapapplication": "Als je <strong>{0}<\/strong> verwijdert, vervallen de bijbehorende credentials voor de LDAP.",
           "identitysource": {
-            "afas": "Als je <strong>{0}<\/strong> verwijdert, worden er geen gebruikers meer gesynchroniseerd."
+            "afas": "Als je <strong>{0}<\/strong> verwijdert, worden er geen gebruikers meer gesynchroniseerd.",
+            "csvimport": "Als je <strong>{0}<\/strong> verwijdert, kunnen er geen nieuwe imports gedaan worden met deze definitie. Bestaande geïmporteerde waarden blijven behouden."
           },
           "account": {
             "internal": "Als je <strong>{0}<\/strong> verwijdert, wordt het KeyHub-account, alle gekoppelde systemen, inclusief wachtwoorden en keys en koppelingen met groepen ook verwijderd.",
@@ -6539,7 +6615,8 @@
           },
           "groupsystem": "Voer ter bevestiging de getoonde naam van de te verwijderen groep nogmaals in.",
           "identitysource": {
-            "afas": "Voer ter bevestiging de naam van de te verwijderen AFAS-identiteitsbron nogmaals in."
+            "afas": "Voer ter bevestiging de naam van de te verwijderen AFAS-identiteitsbron nogmaals in.",
+            "csvimport": "Voer ter bevestiging de naam van de te verwijderen CSV-import nogmaals in."
           },
           "accessprofileprov": "Voer ter bevestiging de getoonde naam van de te verwijderen groep nogmaals in.",
           "certificate": "Voer ter bevestiging de naam van het te verwijderen certificaat nogmaals in.",
@@ -6699,9 +6776,12 @@
           "group": "{from} wil de gebruikers in de groep {group} toegang geven tot {gosType} {gosName} op {system}",
           "profile": "{from} wil de gebruikers in het toegangsprofiel {accessProfile} toegang geven tot {gosType} {gosName} op {system}"
         },
+        "removegroup": {
+          "1": "{from} wil de groep {group} verwijderen",
+          "n": "{from} wil {groupCount} groepen verwijderen"
+        },
         "transferaccessprofileownership": "{from} wil de verantwoordelijkheid over {accessProfile} overdragen aan {group}",
         "createserviceaccount": "{from} vraagt een nieuw serviceaccount {username} op {system} aan",
-        "removegroups": "{from} wil {count} groepen verwijderen",
         "grantgrouponsystem": {
           "group": "{originalRequester} (via {from}) wil de gebruikers in de groep {group} toegang geven tot {gosType} {gosName} op {system}",
           "profile": "{originalRequester} (via {from}) wil de gebruikers in het toegangsprofiel {accessProfile} toegang geven tot {gosType} {gosName} op {system}"
@@ -6710,7 +6790,6 @@
         "enabletechnicaladministration": "{from} wil technisch beheer inschakelen op {group}",
         "creategrouponsystem": "{from} vraagt {gosTypeNew} {gosName} op {system} aan",
         "removeprovisionedsystem": "{from} wil het gekoppelde systeem {system} verwijderen",
-        "removegroup": "{from} wil de groep {group} verwijderen",
         "grantapplication": {
           "profile": "{from} wil de gebruikers in het toegangsprofiel {accessProfile} toegang geven tot {application}",
           "group": "{from} wil de gebruikers in {group} toegang geven tot {application}"
@@ -6753,13 +6832,13 @@
       "license-expired": "Topicus KeyHub licentie verlopen",
       "request-audit": "{from} verzoekt een audit van de groep {group}",
       "passwordrecovery-notice": "Een herstel van je wachtwoord is aangevraagd",
-      "admin-mail": "{from} heeft een vraag over {group}",
       "license-registration-failed": "Registratie mislukt: Topicus KeyHub licentie limiet bereikt",
       "processed": {
         "CANCELLED": "Geannuleerd: {0}",
         "DISALLOWED": "Geweigerd: {0}",
         "ALLOWED": "Geaccepteerd: {0}"
       },
+      "group-mail": "{from} heeft een vraag over {group}: {subject}",
       "account-activation": "Activeer je KeyHub-account",
       "authentication-changed-notice": "Je logingegevens zijn gewijzigd",
       "disable2fa-notice": "Het uitschakelen van je 2FA is aangevraagd",
@@ -6841,9 +6920,9 @@
       "subtitle": "Geef je map een naam.",
       "leeg": "Er zitten geen groepen in deze map"
     },
-    "adminmail": {
-      "header": "Mail managers",
-      "info": "Stuur een e-mail naar de managers van {0}",
+    "mail": {
+      "info": "Stuur een e-mail naar de managers of alle leden van {0}",
+      "header": "Mail groep",
       "sent": "E-mail verzonden"
     },
     "nestedgroups": {
@@ -6857,6 +6936,19 @@
         "count1": "Toon de groep waar je al lid van bent"
       },
       "count": "{0} groepen"
+    },
+    "removegroups": {
+      "report": {
+        "title": "Verwijder groepen rapport"
+      },
+      "request": {
+        "title": "Verwijderen groepen",
+        "groups": {
+          "error": {
+            "nogroups": "Je moet tenminste één groep selecteren."
+          }
+        }
+      }
     },
     "los": "Groepen die los getoond worden",
     "verborgen": "Verborgen groepen",
@@ -6990,6 +7082,15 @@
       "notinstalled": "Browser-extensie niet geïnstalleerd",
       "notlinked": "Browser-extensie niet gekoppeld"
     },
+    "selfserviceattributes": {
+      "title": "Attributen",
+      "table": {
+        "head": {
+          "selfservicevalue": "Overschreven",
+          "currentvalue": "Huidig"
+        }
+      }
+    },
     "2fa": {
       "reset": {
         "instruction": "Heb je een nieuwe mobiel en werkt de oude nog, kies dan voor 'Opnieuw instellen' onder 'Authenticator app' en vraag geen reset aan.",
@@ -7105,6 +7206,7 @@
       "login": "Helaas is de licentie voor deze Topicus KeyHub installatie ongeldig en daarom kun je je niet aanmelden. Neem contact op met je Topicus KeyHub administrators.",
       "main": "Je Topicus KeyHub licentie is beëindigd."
     },
+    "CANNOT_EDIT_OWN_PRIVILEGES": "Je kunt je eigen rechten niet wijzigen.",
     "SERVICEACCOUNT_IS_ACTIVE": "Om deze actie uit te voeren, moet het serviceaccount eerst worden gedeactiveerd.",
     "OIDC_REFUSED": "Je hebt KeyHub geen toestemming gegeven voor Single Sign-on.",
     "DUPLICATE_VALUE": "De waarde moet uniek zijn, en '{value}' is al in gebruik.",
@@ -7167,6 +7269,7 @@
     "OIDC_GENERAL_ERROR": "Er is een fout opgetreden tijdens de authenticatie: {cause}",
     "SAML_UNRESOLVABLE_SUBJECT": "Het is niet mogelijk om het subject te bepalen voor deze SAML2-applicatie voor jouw account. Neem contact op met een beheerder van de applicatie.",
     "ACCESS_PROFILE_DIRECTORY_MISMATCH": "Het toegangsprofiel bevat al accounts uit een andere directory, zoals {account}.",
+    "ATTRIBUTE_IN_USE_BY_IDENTITY_SOURCE": "Deze attribuutdefinitie wordt nog gebruikt door de identiteitsbron {identitySource} en kan daarom niet worden gewijzigd of verwijderd.",
     "MODIFICATION_GROUP_ALREADY_NESTED": "De gekozen groep is al genest.",
     "CLIENT_ACTIVATION_REQUIRED": {
       "1": "Om in te loggen op {client}, moet eerst de groep {group} geactiveerd worden.",
@@ -7381,6 +7484,7 @@
           "true": "Specifieke datum",
           "false": "Vaste periode"
         },
+        "sharewarning": "<strong>Deze kluis vereist activatie<\/strong> <br>De doel-kluis heeft mogelijk minder stricte toegangseisen.",
         "info": "Kies de doelkluis voor {0}."
       },
       "shared": {
@@ -7627,11 +7731,6 @@
     },
     "groupsetting": "Selecteer een groep...",
     "header": "Organisatie-eenheid - {0}",
-    "removegroups": {
-      "report": {
-        "title": "Verwijder groepen rapport"
-      }
-    },
     "inheritedgroupsetting": "{0} overgenomen van {1}...",
     "settings": {
       "header": "Instellingen"
@@ -7663,6 +7762,7 @@
         "admin": "Technisch beheer",
         "owner": "Verantwoordelijke",
         "main": " - {type}: {name} ({role})",
+        "contentadmin": "Inhoudsbeheerder",
         "none": "Geen gekoppelde systemen"
       },
       "nestedgroups": " - Geneste groepen",
@@ -7721,7 +7821,6 @@
       "nrAccounts": "{0} account(s)",
       "nrClients": "{0} applicatie(s)"
     },
-    "mailadmin": "Mail managers",
     "application": {
       "bewerken": {
         "subtitle": "Kies de opties voor toegang tot de applicatie via deze groep.",
@@ -7731,6 +7830,7 @@
     "private": "(verborgen)",
     "header": "Groep - {0}",
     "opsystem": "{0} op {1}",
+    "mail": "Mail groep",
     "revokeadmin": {
       "header": "Verwijder account uit KeyHub Administrators",
       "explain": "Verstuur een verzoek om {0} te verwijderen uit de KeyHub Administrators groep."
@@ -7927,9 +8027,41 @@
     },
     "main": "Groepsaudit"
   },
+  "attributedefinition": {
+    "prop": {
+      "duplicate": "Er zijn meerdere eigenschappen met de naam {0}.",
+      "name": "Naam",
+      "format": "Formaat",
+      "required": "Vereist",
+      "list": "Lijst"
+    },
+    "unique": "uniek",
+    "search": "Attribuutdefinities zoeken...",
+    "properties": "Eigenschappen",
+    "list": "lijst",
+    "required": "vereist",
+    "header": "Accountattribuutdefinitie - {0}",
+    "freelyuseable": "vrij bruikbaar"
+  },
   "identitysource": {
     "header": {
-      "afas": "AFAS-identiteitsbron"
+      "afas": "AFAS-identiteitsbron",
+      "csvimport": "CSV-import-identiteitsbron"
+    },
+    "add": {
+      "subtitle": "Kies het type van de nieuwe identiteitsbron.",
+      "main": "Identiteitsbron toevoegen"
+    },
+    "attributemapping": {
+      "multivalued": "Meervoudig",
+      "identifier": "Accountidentificatie",
+      "attribute": "Attribuut",
+      "main": "Attribuuttoewijzing"
+    },
+    "importcsv": {
+      "last": "Laatste import",
+      "explain": "Upload een CSV-bestand om te importeren.",
+      "header": "CSV importeren"
     }
   },
   "notificationcentre": {
@@ -7969,14 +8101,6 @@
     "header": "Stel two-factor authenticatie in",
     "switchToApp": "Gebruik een 2FA app",
     "switchToSecurityKey": "Gebruik een security key"
-  },
-  "attributedefinition": {
-    "unique": "uniek",
-    "search": "Attribuutdefinities zoeken...",
-    "list": "lijst",
-    "required": "vereist",
-    "header": "Accountattribuutdefinitie - {0}",
-    "freelyuseable": "vrij bruikbaar"
   },
   "validatie": {
     "fileTooLarge": "{0} is groter dan {1}Kb",
@@ -8045,6 +8169,13 @@
       "confirm": "Ik weet het zeker"
     },
     "header": "Algemene instellingen"
+  },
+  "system": {
+    "switchActiveStatus": {
+      "subtitle": "Kies de nieuwe status voor {0}.",
+      "main": "Status aanpassen",
+      "title": "Status aanpassen"
+    }
   },
   "IConverter": {
     "ScheduleExpression": "'{value}' is geen geldige cron-expressie.",

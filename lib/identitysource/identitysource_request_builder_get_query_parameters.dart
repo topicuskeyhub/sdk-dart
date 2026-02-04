@@ -9,7 +9,7 @@ class IdentitysourceRequestBuilderGetQueryParameters implements AbstractQueryPar
     List<GetAdditionalQueryParameterType>? additional;
     ///  Return all or no records. This can be useful when composing parameters.
     List<bool>? any;
-    ///  Filter identity sources on the OAuth2 client used on the SCIM interface. This parameter supports composition with all parameters from the client resource.
+    ///  Filter synced identity sources on the OAuth2 client used on the SCIM interface. This parameter supports composition with all parameters from the client resource.
     List<int>? client;
     ///  Only return records that have been created after the given instant.
     List<DateTime>? createdAfter;
@@ -17,8 +17,12 @@ class IdentitysourceRequestBuilderGetQueryParameters implements AbstractQueryPar
     List<DateTime>? createdBefore;
     ///  Filter the results to exclude the given ids.
     List<int>? exclude;
+    ///  Filter identity sources on having a mapping for the given attribute, specified by id. This parameter supports composition with all parameters from the attribute definition resource.
+    List<int>? hasMappingForAttribute;
     ///  Filter the results on the given ids.
     List<int>? id;
+    ///  Filter identity sources on using the given attribute as identifier for accounts, specified by id. This parameter supports composition with all parameters from the attribute definition resource.
+    List<int>? identifier;
     ///  Only return records that have been modified since the given instant.
     List<DateTime>? modifiedSince;
     ///  Filter identity sources on the exact name.
@@ -41,7 +45,9 @@ class IdentitysourceRequestBuilderGetQueryParameters implements AbstractQueryPar
             'createdAfter' : createdAfter,
             'createdBefore' : createdBefore,
             'exclude' : exclude,
+            'hasMappingForAttribute' : hasMappingForAttribute,
             'id' : id,
+            'identifier' : identifier,
             'modifiedSince' : modifiedSince,
             'name' : name,
             'nameContains' : nameContains,

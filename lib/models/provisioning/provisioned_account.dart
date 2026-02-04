@@ -7,6 +7,8 @@ import './provisioned_account_additional_objects.dart';
 class ProvisionedAccount extends AccountPrimer implements Parsable {
     ///  The additionalObjects property
     ProvisionedAccountAdditionalObjects? additionalObjects;
+    ///  The loginName property
+    String? loginName;
     ///  The uid property
     int? uid;
     /// Instantiates a new [ProvisionedAccount] and sets the default values.
@@ -23,6 +25,7 @@ class ProvisionedAccount extends AccountPrimer implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<ProvisionedAccountAdditionalObjects>(ProvisionedAccountAdditionalObjects.createFromDiscriminatorValue);
+        deserializerMap['loginName'] = (node) => loginName = node.getStringValue();
         deserializerMap['uid'] = (node) => uid = node.getIntValue();
         return deserializerMap;
     }

@@ -48,7 +48,7 @@ class WithDocumentItemRequestBuilder extends BaseRequestBuilder<WithDocumentItem
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
         return requestInfo;
     }
     /// Returns the imported document identified by the id.
@@ -56,7 +56,7 @@ class WithDocumentItemRequestBuilder extends BaseRequestBuilder<WithDocumentItem
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithDocumentItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithDocumentItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithDocumentItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
         return requestInfo;
     }
 }

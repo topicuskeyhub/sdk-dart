@@ -1,6 +1,7 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../certificate/certificate_primer.dart';
+import '../misc/attribute_customization.dart';
 import '../t_l_s_level.dart';
 import './account_directory.dart';
 import './l_d_a_p_dialect.dart';
@@ -8,8 +9,8 @@ import './l_d_a_p_directory_password_recovery.dart';
 
 /// auto generated
 class LDAPDirectory extends AccountDirectory implements Parsable {
-    ///  The attributesToStore property
-    String? attributesToStore;
+    ///  The attributes property
+    Iterable<AttributeCustomization>? attributes;
     ///  The baseDN property
     String? baseDN;
     ///  The clientCertificate property
@@ -49,7 +50,7 @@ class LDAPDirectory extends AccountDirectory implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
-        deserializerMap['attributesToStore'] = (node) => attributesToStore = node.getStringValue();
+        deserializerMap['attributes'] = (node) => attributes = node.getCollectionOfObjectValues<AttributeCustomization>(AttributeCustomization.createFromDiscriminatorValue);
         deserializerMap['baseDN'] = (node) => baseDN = node.getStringValue();
         deserializerMap['clientCertificate'] = (node) => clientCertificate = node.getObjectValue<CertificatePrimer>(CertificatePrimer.createFromDiscriminatorValue);
         deserializerMap['dialect'] = (node) => dialect = node.getEnumValue<LDAPDialect>((stringValue) => LDAPDialect.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
@@ -70,7 +71,7 @@ class LDAPDirectory extends AccountDirectory implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
-        writer.writeStringValue('attributesToStore', attributesToStore);
+        writer.writeCollectionOfObjectValues<AttributeCustomization>('attributes', attributes);
         writer.writeStringValue('baseDN', baseDN);
         writer.writeObjectValue<CertificatePrimer>('clientCertificate', clientCertificate);
         writer.writeEnumValue<LDAPDialect>('dialect', dialect, (e) => e?.value);

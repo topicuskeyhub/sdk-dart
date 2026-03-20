@@ -2,10 +2,11 @@
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../audit_info.dart';
 import '../group/account_group_linkable_wrapper_with_count.dart';
+import '../item_count.dart';
 import '../vault/vault.dart';
 import './account_recovery_status.dart';
 import './account_settings.dart';
-import './stored_account_attributes.dart';
+import './effective_account_permissions.dart';
 
 /// auto generated
 class AccountAdditionalObjects implements AdditionalDataHolder, Parsable {
@@ -16,14 +17,16 @@ class AccountAdditionalObjects implements AdditionalDataHolder, Parsable {
     Map<String, Object?> additionalData;
     ///  The audit property
     AuditInfo? audit;
+    ///  The effectivePermissions property
+    EffectiveAccountPermissions? effectivePermissions;
     ///  The groups property
     AccountGroupLinkableWrapperWithCount? groups;
     ///  The pendingRecoveryRequests property
     AccountRecoveryStatus? pendingRecoveryRequests;
     ///  The settings property
     AccountSettings? settings;
-    ///  The storedAttributes property
-    StoredAccountAttributes? storedAttributes;
+    ///  The totalGroupCount property
+    ItemCount? totalGroupCount;
     ///  The vault property
     Vault? vault;
     /// Instantiates a new [AccountAdditionalObjects] and sets the default values.
@@ -40,10 +43,11 @@ class AccountAdditionalObjects implements AdditionalDataHolder, Parsable {
         var deserializerMap = <String, void Function(ParseNode)>{};
         deserializerMap['activeLogin'] = (node) => activeLogin = node.getBoolValue();
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
+        deserializerMap['effectivePermissions'] = (node) => effectivePermissions = node.getObjectValue<EffectiveAccountPermissions>(EffectiveAccountPermissions.createFromDiscriminatorValue);
         deserializerMap['groups'] = (node) => groups = node.getObjectValue<AccountGroupLinkableWrapperWithCount>(AccountGroupLinkableWrapperWithCount.createFromDiscriminatorValue);
         deserializerMap['pendingRecoveryRequests'] = (node) => pendingRecoveryRequests = node.getObjectValue<AccountRecoveryStatus>(AccountRecoveryStatus.createFromDiscriminatorValue);
         deserializerMap['settings'] = (node) => settings = node.getObjectValue<AccountSettings>(AccountSettings.createFromDiscriminatorValue);
-        deserializerMap['storedAttributes'] = (node) => storedAttributes = node.getObjectValue<StoredAccountAttributes>(StoredAccountAttributes.createFromDiscriminatorValue);
+        deserializerMap['totalGroupCount'] = (node) => totalGroupCount = node.getObjectValue<ItemCount>(ItemCount.createFromDiscriminatorValue);
         deserializerMap['vault'] = (node) => vault = node.getObjectValue<Vault>(Vault.createFromDiscriminatorValue);
         return deserializerMap;
     }
@@ -52,10 +56,11 @@ class AccountAdditionalObjects implements AdditionalDataHolder, Parsable {
     @override
     void serialize(SerializationWriter writer) {
         writer.writeObjectValue<AuditInfo>('audit', audit);
+        writer.writeObjectValue<EffectiveAccountPermissions>('effectivePermissions', effectivePermissions);
         writer.writeObjectValue<AccountGroupLinkableWrapperWithCount>('groups', groups);
         writer.writeObjectValue<AccountRecoveryStatus>('pendingRecoveryRequests', pendingRecoveryRequests);
         writer.writeObjectValue<AccountSettings>('settings', settings);
-        writer.writeObjectValue<StoredAccountAttributes>('storedAttributes', storedAttributes);
+        writer.writeObjectValue<ItemCount>('totalGroupCount', totalGroupCount);
         writer.writeObjectValue<Vault>('vault', vault);
         writer.writeAdditionalData(additionalData);
     }

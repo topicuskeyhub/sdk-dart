@@ -10,6 +10,7 @@ enum PutAdditionalQueryParameterType {
     clientPermissions('clientPermissions'),
     clients('clients'),
     contentAdministeredSystems('contentAdministeredSystems'),
+    excludedGroups('excludedGroups'),
     globalRoles('globalRoles'),
     groupAccessInfo('groupAccessInfo'),
     groupauditinginfo('groupauditinginfo'),

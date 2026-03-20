@@ -57,6 +57,8 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     List<int>? exclude;
     ///  Filter groups by auditing configuration.
     List<int>? groupAuditConfig;
+    ///  Filter groups with which the given group has an excluding relation, specified by id.
+    List<int>? groupExclusionWith;
     ///  Only return groups that have, or do not have, any authorizing group set.
     List<bool>? hasAnyAuthorizingGroupSet;
     ///  Only return groups that have or do not have periodic auditing setup.
@@ -69,6 +71,8 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     List<bool>? hasClients;
     ///  Only return groups that have or do not have 2 or more managers.
     List<bool>? hasMoreThanOneManager;
+    ///  Filter groups with which the given group does not have an excluding relation, specified by id.
+    List<int>? hasNoGroupExclusionWith;
     ///  Only return groups that have or do not have dynamic provisioning of linked systems.
     List<bool>? hasSystems;
     ///  Only return groups that have or do not have a vault.
@@ -79,6 +83,8 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     List<int>? id;
     ///  Only return groups for which the given account is manager, specified by id.
     List<int>? isManager;
+    ///  Only return groups for which the given account is manager or delegated manager, specified by id.
+    List<int>? isManagerOrDelegatedManager;
     ///  Only return the KeyHub administrator group or all other groups.
     List<bool>? keyHubAdmin;
     ///  Only return groups that do or do not meet the various criteria set in the classification (if any).
@@ -171,17 +177,20 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
             'doesNotContainClient' : doesNotContainClient,
             'exclude' : exclude,
             'groupAuditConfig' : groupAuditConfig,
+            'groupExclusionWith' : groupExclusionWith,
             'hasAnyAuthorizingGroupSet' : hasAnyAuthorizingGroupSet,
             'hasAuditing' : hasAuditing,
             'hasAuditUnderReview' : hasAuditUnderReview,
             'hasClientPermissions' : hasClientPermissions,
             'hasClients' : hasClients,
             'hasMoreThanOneManager' : hasMoreThanOneManager,
+            'hasNoGroupExclusionWith' : hasNoGroupExclusionWith,
             'hasSystems' : hasSystems,
             'hasVault' : hasVault,
             'hasWebhooks' : hasWebhooks,
             'id' : id,
             'isManager' : isManager,
+            'isManagerOrDelegatedManager' : isManagerOrDelegatedManager,
             'keyHubAdmin' : keyHubAdmin,
             'meetsClassificationCriteria' : meetsClassificationCriteria,
             'membershipAuthorizedBy' : membershipAuthorizedBy,

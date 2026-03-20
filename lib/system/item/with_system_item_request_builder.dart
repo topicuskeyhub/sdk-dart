@@ -3,7 +3,7 @@ import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../models/error_report.dart';
 import '../../models/provisioning/provisioned_system.dart';
 import './account/account_request_builder.dart';
-import './deactivate/deactivate_request_builder.dart';
+import './changestatus/changestatus_request_builder.dart';
 import './group/group_request_builder.dart';
 import './sync_/sync_request_builder.dart';
 import './with_system_item_request_builder_get_query_parameters.dart';
@@ -16,9 +16,9 @@ class WithSystemItemRequestBuilder extends BaseRequestBuilder<WithSystemItemRequ
     AccountRequestBuilder get account {
         return AccountRequestBuilder(pathParameters, requestAdapter);
     }
-    ///  The deactivate property
-    DeactivateRequestBuilder get deactivate {
-        return DeactivateRequestBuilder(pathParameters, requestAdapter);
+    ///  The changestatus property
+    ChangestatusRequestBuilder get changestatus {
+        return ChangestatusRequestBuilder(pathParameters, requestAdapter);
     }
     ///  The group property
     GroupRequestBuilder get group {
@@ -65,7 +65,7 @@ class WithSystemItemRequestBuilder extends BaseRequestBuilder<WithSystemItemRequ
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithSystemItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithSystemItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithSystemItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
         return requestInfo;
     }
     /// Updates the provisioned system identified by the id.
@@ -74,8 +74,8 @@ class WithSystemItemRequestBuilder extends BaseRequestBuilder<WithSystemItemRequ
     RequestInformation toPutRequestInformation(ProvisionedSystem body, [void Function(RequestConfiguration<WithSystemItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithSystemItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithSystemItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=83', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=84', body);
         return requestInfo;
     }
 }

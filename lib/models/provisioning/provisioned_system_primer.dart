@@ -13,12 +13,13 @@ import './provisioned_l_d_a_p_directory.dart';
 import './provisioned_namespace.dart';
 import './provisioned_s_c_i_m.dart';
 import './provisioned_system.dart';
+import './provisioned_system_status.dart';
 import './provisioned_system_type.dart';
 
 /// auto generated
 class ProvisionedSystemPrimer extends Linkable implements Parsable {
-    ///  The active property
-    bool? active;
+    ///  The activeStatus property
+    ProvisionedSystemStatus? activeStatus;
     ///  The adminPermissions property
     bool? adminPermissions;
     ///  The canWriteAccounts property
@@ -62,7 +63,7 @@ class ProvisionedSystemPrimer extends Linkable implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
-        deserializerMap['active'] = (node) => active = node.getBoolValue();
+        deserializerMap['activeStatus'] = (node) => activeStatus = node.getEnumValue<ProvisionedSystemStatus>((stringValue) => ProvisionedSystemStatus.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['adminPermissions'] = (node) => adminPermissions = node.getBoolValue();
         deserializerMap['canWriteAccounts'] = (node) => canWriteAccounts = node.getBoolValue();
         deserializerMap['contentAdminPermissions'] = (node) => contentAdminPermissions = node.getBoolValue();
@@ -78,7 +79,7 @@ class ProvisionedSystemPrimer extends Linkable implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
-        writer.writeBoolValue('active', value:active);
+        writer.writeEnumValue<ProvisionedSystemStatus>('activeStatus', activeStatus, (e) => e?.value);
         writer.writeStringValue('name', name);
         writer.writeObjectValue<OrganizationalUnitPrimer>('organizationalUnit', organizationalUnit);
         writer.writeEnumValue<ProvisionedSystemType>('type', provisionedSystemPrimerType, (e) => e?.value);

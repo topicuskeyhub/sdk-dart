@@ -29,6 +29,7 @@ enum ModificationRequestType {
     reviewAudit('REVIEW_AUDIT'),
     revokeAdmin('REVOKE_ADMIN'),
     setupAuthorizingGroup('SETUP_AUTHORIZING_GROUP'),
+    setupGroupExclusion('SETUP_GROUP_EXCLUSION'),
     setupNestedGroup('SETUP_NESTED_GROUP'),
     transferAccessProfileOwnership('TRANSFER_ACCESS_PROFILE_OWNERSHIP'),
     transferApplicationAdministration('TRANSFER_APPLICATION_ADMINISTRATION'),

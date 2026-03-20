@@ -28,6 +28,8 @@ class AttributevalueRequestBuilderGetQueryParameters implements AbstractQueryPar
     List<bool>? latestForSource;
     ///  Only return records that have been modified since the given instant.
     List<DateTime>? modifiedSince;
+    ///  Filter the attribute values by organizational unit of the account, specified by id. This parameter supports composition with all parameters from the organizational unit resource.
+    List<int>? organizationalUnit;
     ///  Filter records on a complex CQL query.
     List<String>? q;
     ///  Filter attribute values on being the currently selected value for their respective attributes and accounts.
@@ -53,6 +55,7 @@ class AttributevalueRequestBuilderGetQueryParameters implements AbstractQueryPar
             'id' : id,
             'latestForSource' : latestForSource,
             'modifiedSince' : modifiedSince,
+            'organizationalUnit' : organizationalUnit,
             'q' : q,
             'selected' : selected,
             'sort' : sort,

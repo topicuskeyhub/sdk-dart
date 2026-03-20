@@ -3,10 +3,11 @@
 enum GetAdditionalQueryParameterType {
     activeLogin('activeLogin'),
     audit('audit'),
+    effectivePermissions('effectivePermissions'),
     groups('groups'),
     pendingRecoveryRequests('pendingRecoveryRequests'),
     settings('settings'),
-    storedAttributes('storedAttributes'),
+    totalGroupCount('totalGroupCount'),
     vault('vault');
     const GetAdditionalQueryParameterType(this.value);
     final String value;

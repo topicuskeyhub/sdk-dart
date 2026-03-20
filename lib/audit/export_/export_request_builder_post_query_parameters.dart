@@ -25,6 +25,8 @@ class ExportRequestBuilderPostQueryParameters implements AbstractQueryParameters
     List<bool>? includeDaily;
     ///  Only return records that have been modified since the given instant.
     List<DateTime>? modifiedSince;
+    ///  Only return audit records targeting the given directory, specified by id.
+    List<int>? onDirectory;
     ///  Only return audit records targeting the given group either via onGroup1 or onGroup2, specified by id.
     List<int>? onGroup;
     ///  Only return audit records targeting the given group specifically as onGroup1, specified by id.
@@ -61,6 +63,7 @@ class ExportRequestBuilderPostQueryParameters implements AbstractQueryParameters
             'id' : id,
             'includeDaily' : includeDaily,
             'modifiedSince' : modifiedSince,
+            'onDirectory' : onDirectory,
             'onGroup' : onGroup,
             'onGroup1' : onGroup1,
             'onOrByAccount' : onOrByAccount,

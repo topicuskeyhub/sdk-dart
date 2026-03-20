@@ -7,10 +7,9 @@ import './auth/account_recovery_status.dart';
 import './auth/account_settings.dart';
 import './auth/account_status.dart';
 import './auth/accounts_audit_stats.dart';
+import './auth/effective_account_permissions.dart';
 import './auth/internal_account_status_object.dart';
 import './auth/move_internal_account.dart';
-import './auth/stored_account_attribute.dart';
-import './auth/stored_account_attributes.dart';
 import './directory/account_directory_status_report.dart';
 import './generate_secret.dart';
 import './group/group_access_info.dart';
@@ -28,6 +27,7 @@ import './identity/account_attribute_value_selection.dart';
 import './identity/account_attribute_value_summary.dart';
 import './identity/account_attribute_value_update.dart';
 import './identitysource/identity_source_attribute_mapping.dart';
+import './item_count.dart';
 import './launchpad/displayed_launchpad_tiles.dart';
 import './license/key_hub_license_info.dart';
 import './mark/item_marker.dart';
@@ -49,6 +49,7 @@ import './notification/vault_record_expired_notification.dart';
 import './organization/organizational_unit_settings.dart';
 import './provisioning/account_provisioning_status.dart';
 import './provisioning/account_provisioning_status_report.dart';
+import './provisioning/change_provisioned_system_status.dart';
 import './provisioning/circuit_breaker_statistics.dart';
 import './provisioning/group_on_system_types.dart';
 import './provisioning/group_provisioning_status.dart';
@@ -109,10 +110,9 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'auth.AccountsAuditStats' => AccountsAuditStats(),
             'auth.AccountSettings' => AccountSettings(),
             'auth.AccountStatus' => AccountStatus(),
+            'auth.EffectiveAccountPermissions' => EffectiveAccountPermissions(),
             'auth.InternalAccountStatusObject' => InternalAccountStatusObject(),
             'auth.MoveInternalAccount' => MoveInternalAccount(),
-            'auth.StoredAccountAttribute' => StoredAccountAttribute(),
-            'auth.StoredAccountAttributes' => StoredAccountAttributes(),
             'directory.AccountDirectoryStatusReport' => AccountDirectoryStatusReport(),
             'GenerateSecret' => GenerateSecret(),
             'group.GroupAccessInfo' => GroupAccessInfo(),
@@ -130,6 +130,7 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'identity.AccountAttributeValueSummary' => AccountAttributeValueSummary(),
             'identity.AccountAttributeValueUpdate' => AccountAttributeValueUpdate(),
             'identitysource.IdentitySourceAttributeMapping' => IdentitySourceAttributeMapping(),
+            'ItemCount' => ItemCount(),
             'launchpad.DisplayedLaunchpadTiles' => DisplayedLaunchpadTiles(),
             'license.KeyHubLicenseInfo' => KeyHubLicenseInfo(),
             'mark.ItemMarker' => ItemMarker(),
@@ -151,6 +152,7 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'organization.OrganizationalUnitSettings' => OrganizationalUnitSettings(),
             'provisioning.AccountProvisioningStatus' => AccountProvisioningStatus(),
             'provisioning.AccountProvisioningStatusReport' => AccountProvisioningStatusReport(),
+            'provisioning.ChangeProvisionedSystemStatus' => ChangeProvisionedSystemStatus(),
             'provisioning.CircuitBreakerStatistics' => CircuitBreakerStatistics(),
             'provisioning.GroupOnSystemTypes' => GroupOnSystemTypes(),
             'provisioning.GroupProvisioningStatus' => GroupProvisioningStatus(),

@@ -23,6 +23,7 @@ import './group_global_role_info.dart';
 import './group_info.dart';
 import './group_linkable_wrapper_with_count.dart';
 import './group_primer_linkable_wrapper.dart';
+import './group_primer_linkable_wrapper_with_count.dart';
 import './group_request_status.dart';
 import './provisioning_group_linkable_wrapper.dart';
 
@@ -49,6 +50,8 @@ class GroupAdditionalObjects implements AdditionalDataHolder, Parsable {
     GroupClientLinkableWrapper? clients;
     ///  The contentAdministeredSystems property
     ProvisionedSystemLinkableWrapper? contentAdministeredSystems;
+    ///  The excludedGroups property
+    GroupPrimerLinkableWrapperWithCount? excludedGroups;
     ///  The globalRoles property
     GroupGlobalRoleInfo? globalRoles;
     ///  The groupAccessInfo property
@@ -112,6 +115,7 @@ class GroupAdditionalObjects implements AdditionalDataHolder, Parsable {
         deserializerMap['clientPermissions'] = (node) => clientPermissions = node.getObjectValue<OAuth2ClientPermissionWithClientLinkableWrapper>(OAuth2ClientPermissionWithClientLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['clients'] = (node) => clients = node.getObjectValue<GroupClientLinkableWrapper>(GroupClientLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['contentAdministeredSystems'] = (node) => contentAdministeredSystems = node.getObjectValue<ProvisionedSystemLinkableWrapper>(ProvisionedSystemLinkableWrapper.createFromDiscriminatorValue);
+        deserializerMap['excludedGroups'] = (node) => excludedGroups = node.getObjectValue<GroupPrimerLinkableWrapperWithCount>(GroupPrimerLinkableWrapperWithCount.createFromDiscriminatorValue);
         deserializerMap['globalRoles'] = (node) => globalRoles = node.getObjectValue<GroupGlobalRoleInfo>(GroupGlobalRoleInfo.createFromDiscriminatorValue);
         deserializerMap['groupAccessInfo'] = (node) => groupAccessInfo = node.getObjectValue<GroupAccessInfo>(GroupAccessInfo.createFromDiscriminatorValue);
         deserializerMap['groupauditinginfo'] = (node) => groupauditinginfo = node.getObjectValue<GroupAuditingInfo>(GroupAuditingInfo.createFromDiscriminatorValue);
@@ -148,6 +152,7 @@ class GroupAdditionalObjects implements AdditionalDataHolder, Parsable {
         writer.writeObjectValue<OAuth2ClientPermissionWithClientLinkableWrapper>('clientPermissions', clientPermissions);
         writer.writeObjectValue<GroupClientLinkableWrapper>('clients', clients);
         writer.writeObjectValue<ProvisionedSystemLinkableWrapper>('contentAdministeredSystems', contentAdministeredSystems);
+        writer.writeObjectValue<GroupPrimerLinkableWrapperWithCount>('excludedGroups', excludedGroups);
         writer.writeObjectValue<GroupGlobalRoleInfo>('globalRoles', globalRoles);
         writer.writeObjectValue<GroupAccessInfo>('groupAccessInfo', groupAccessInfo);
         writer.writeObjectValue<GroupAuditingInfo>('groupauditinginfo', groupauditinginfo);

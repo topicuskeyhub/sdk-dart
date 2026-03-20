@@ -42,7 +42,7 @@ class RowRequestBuilder extends BaseRequestBuilder<RowRequestBuilder> {
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<RowRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<RowRequestBuilderGetQueryParameters>(requestConfiguration, () => RowRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
         return requestInfo;
     }
 }

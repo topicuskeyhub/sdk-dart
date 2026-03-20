@@ -69,6 +69,8 @@ class ExportRequestBuilderPostQueryParameters implements AbstractQueryParameters
     List<String>? nameDoesNotStartWith;
     ///  Only return accounts for which the display name starts with one of the given values.
     List<String>? nameStartsWith;
+    ///  Filter the accounts on not being a member of any group excluded by any of the given groups, specified by id. 
+    List<int>? notExcludedForGroup;
     ///  Filter the accounts that are not a member of the given access profiles, specified by id. 
     List<int>? notInAccessProfile;
     ///  Filter the accounts that are not a member of the given groups, specified by id. 
@@ -132,6 +134,7 @@ class ExportRequestBuilderPostQueryParameters implements AbstractQueryParameters
             'modifiedSince' : modifiedSince,
             'nameDoesNotStartWith' : nameDoesNotStartWith,
             'nameStartsWith' : nameStartsWith,
+            'notExcludedForGroup' : notExcludedForGroup,
             'notInAccessProfile' : notInAccessProfile,
             'notInGroup' : notInGroup,
             'owningClient' : owningClient,

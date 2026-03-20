@@ -12,6 +12,8 @@ enum AccountAttributeSystemDefinition {
     telephonePrivate('TELEPHONE_PRIVATE'),
     license('LICENSE'),
     canRequestGroups('CAN_REQUEST_GROUPS'),
+    userPrincipalName('USER_PRINCIPAL_NAME'),
+    samAccountName('SAM_ACCOUNT_NAME'),
     custom('CUSTOM');
     const AccountAttributeSystemDefinition(this.value);
     final String value;

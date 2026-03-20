@@ -58,7 +58,7 @@ class DocumentRequestBuilder extends BaseRequestBuilder<DocumentRequestBuilder> 
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<DocumentRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DocumentRequestBuilderGetQueryParameters>(requestConfiguration, () => DocumentRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
         return requestInfo;
     }
     /// Creates one or more new imported documents and returns the newly created documentes.
@@ -67,8 +67,8 @@ class DocumentRequestBuilder extends BaseRequestBuilder<DocumentRequestBuilder> 
     RequestInformation toPostRequestInformation(ImportedDocumentLinkableWrapper body, [void Function(RequestConfiguration<DocumentRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DocumentRequestBuilderPostQueryParameters>(requestConfiguration, () => DocumentRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=83', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=84', body);
         return requestInfo;
     }
 }

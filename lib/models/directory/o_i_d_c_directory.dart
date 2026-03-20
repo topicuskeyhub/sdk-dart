@@ -1,5 +1,6 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
+import '../misc/attribute_customization.dart';
 import './account_directory.dart';
 import './o_i_d_c_vendor.dart';
 
@@ -7,8 +8,8 @@ import './o_i_d_c_vendor.dart';
 class OIDCDirectory extends AccountDirectory implements Parsable {
     ///  The acrValues property
     String? acrValues;
-    ///  The attributesToStore property
-    String? attributesToStore;
+    ///  The attributes property
+    Iterable<AttributeCustomization>? attributes;
     ///  The clientId property
     String? clientId;
     ///  The clientSecret property
@@ -41,7 +42,7 @@ class OIDCDirectory extends AccountDirectory implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['acrValues'] = (node) => acrValues = node.getStringValue();
-        deserializerMap['attributesToStore'] = (node) => attributesToStore = node.getStringValue();
+        deserializerMap['attributes'] = (node) => attributes = node.getCollectionOfObjectValues<AttributeCustomization>(AttributeCustomization.createFromDiscriminatorValue);
         deserializerMap['clientId'] = (node) => clientId = node.getStringValue();
         deserializerMap['clientSecret'] = (node) => clientSecret = node.getStringValue();
         deserializerMap['domainRestriction'] = (node) => domainRestriction = node.getStringValue();
@@ -59,7 +60,7 @@ class OIDCDirectory extends AccountDirectory implements Parsable {
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeStringValue('acrValues', acrValues);
-        writer.writeStringValue('attributesToStore', attributesToStore);
+        writer.writeCollectionOfObjectValues<AttributeCustomization>('attributes', attributes);
         writer.writeStringValue('clientId', clientId);
         writer.writeStringValue('clientSecret', clientSecret);
         writer.writeStringValue('domainRestriction', domainRestriction);

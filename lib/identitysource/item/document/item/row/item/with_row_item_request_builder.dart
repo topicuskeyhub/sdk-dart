@@ -34,7 +34,7 @@ class WithRowItemRequestBuilder extends BaseRequestBuilder<WithRowItemRequestBui
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithRowItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithRowItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithRowItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
         return requestInfo;
     }
 }

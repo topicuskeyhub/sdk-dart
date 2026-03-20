@@ -1,7 +1,7 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import 'package:uuid/uuid.dart';
-import '../models/boolean_enum.dart';
+import '../models/provisioning/provisioned_system_status.dart';
 import '../models/t_l_s_level.dart';
 import './get_additional_query_parameter_type.dart';
 
@@ -16,8 +16,8 @@ class SystemRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     List<int>? account;
     ///  Only return source directory provisioning systems for which accounts are writable.
     List<bool>? accountsWritable;
-    ///  Only return active or inactive systems.
-    List<BooleanEnum>? active;
+    ///  Only return systems whose active status matches any of the provided values.
+    List<ProvisionedSystemStatus>? activeStatus;
     ///  Request additional information to be returned for every record.
     List<GetAdditionalQueryParameterType>? additional;
     ///  Return all or no records. This can be useful when composing parameters.
@@ -100,7 +100,7 @@ class SystemRequestBuilderGetQueryParameters implements AbstractQueryParameters 
             'accessProfileProvisioning' : accessProfileProvisioning,
             'account' : account,
             'accountsWritable' : accountsWritable,
-            'active' : active,
+            'activeStatus' : activeStatus,
             'additional' : additional,
             'any' : any,
             'contentAdministrator' : contentAdministrator,

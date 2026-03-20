@@ -38,6 +38,7 @@ import './remove_provisioned_system_request.dart';
 import './review_audit_request.dart';
 import './revoke_admin_request.dart';
 import './setup_authorizing_group_request.dart';
+import './setup_group_exclusion_request.dart';
 import './setup_nested_group_request.dart';
 import './transfer_access_profile_ownership_request.dart';
 import './transfer_application_administration_request.dart';
@@ -111,6 +112,7 @@ class ModificationRequest extends Linkable implements Parsable {
             'request.ReviewAuditRequest' => ReviewAuditRequest(),
             'request.RevokeAdminRequest' => RevokeAdminRequest(),
             'request.SetupAuthorizingGroupRequest' => SetupAuthorizingGroupRequest(),
+            'request.SetupGroupExclusionRequest' => SetupGroupExclusionRequest(),
             'request.SetupNestedGroupRequest' => SetupNestedGroupRequest(),
             'request.TransferAccessProfileOwnershipRequest' => TransferAccessProfileOwnershipRequest(),
             'request.TransferApplicationAdministrationRequest' => TransferApplicationAdministrationRequest(),

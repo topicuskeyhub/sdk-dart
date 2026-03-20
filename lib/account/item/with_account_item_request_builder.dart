@@ -6,6 +6,7 @@ import './attributevalue/attributevalue_request_builder.dart';
 import './group/group_request_builder.dart';
 import './identity/identity_request_builder.dart';
 import './organizationalunit/organizationalunit_request_builder.dart';
+import './profile/profile_request_builder.dart';
 import './status/status_request_builder.dart';
 import './validate/validate_request_builder.dart';
 import './vault/vault_request_builder.dart';
@@ -29,6 +30,10 @@ class WithAccountItemRequestBuilder extends BaseRequestBuilder<WithAccountItemRe
     ///  The organizationalunit property
     OrganizationalunitRequestBuilder get organizationalunit {
         return OrganizationalunitRequestBuilder(pathParameters, requestAdapter);
+    }
+    ///  The profile property
+    ProfileRequestBuilder get profile {
+        return ProfileRequestBuilder(pathParameters, requestAdapter);
     }
     ///  The status property
     StatusRequestBuilder get status {
@@ -78,7 +83,7 @@ class WithAccountItemRequestBuilder extends BaseRequestBuilder<WithAccountItemRe
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
         return requestInfo;
     }
     /// Returns the account identified by the id.
@@ -86,7 +91,7 @@ class WithAccountItemRequestBuilder extends BaseRequestBuilder<WithAccountItemRe
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithAccountItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithAccountItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithAccountItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
         return requestInfo;
     }
 }

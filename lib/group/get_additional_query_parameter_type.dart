@@ -10,6 +10,7 @@ enum GetAdditionalQueryParameterType {
     clientPermissions('clientPermissions'),
     clients('clients'),
     contentAdministeredSystems('contentAdministeredSystems'),
+    excludedGroups('excludedGroups'),
     globalRoles('globalRoles'),
     groupAccessInfo('groupAccessInfo'),
     groupauditinginfo('groupauditinginfo'),

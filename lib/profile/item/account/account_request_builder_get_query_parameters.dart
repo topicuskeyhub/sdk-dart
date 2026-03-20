@@ -23,6 +23,8 @@ class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<int>? id;
     ///  Only return records that have been modified since the given instant.
     List<DateTime>? modifiedSince;
+    ///  Filter access profile memberships on the given organizational units, specified by id. This parameter supports composition with all parameters from the access profile resource.
+    List<int>? organizationalUnit;
     ///  Filter access profile memberships for which the given group is owner, specified by id. This parameter supports composition with all parameters from the group resource.
     List<int>? ownedBy;
     ///  Filter records on a complex CQL query.
@@ -42,6 +44,7 @@ class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters
             'exclude' : exclude,
             'id' : id,
             'modifiedSince' : modifiedSince,
+            'organizationalUnit' : organizationalUnit,
             'ownedBy' : ownedBy,
             'q' : q,
             'sort' : sort,

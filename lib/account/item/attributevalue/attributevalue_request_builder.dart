@@ -33,11 +33,11 @@ class AttributevalueRequestBuilder extends BaseRequestBuilder<AttributevalueRequ
     /// Instantiates a new [AttributevalueRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    AttributevalueRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/{accountid}/attributevalue{?account*,additional*,any*,attribute*,createdAfter*,createdBefore*,directory*,exclude*,id*,latestForSource*,modifiedSince*,q*,selected*,sort*,source*,value*}", pathParameters) ;
+    AttributevalueRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/{accountid}/attributevalue{?account*,additional*,any*,attribute*,createdAfter*,createdBefore*,directory*,exclude*,id*,latestForSource*,modifiedSince*,organizationalUnit*,q*,selected*,sort*,source*,value*}", pathParameters) ;
     /// Instantiates a new [AttributevalueRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    AttributevalueRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/{accountid}/attributevalue{?account*,additional*,any*,attribute*,createdAfter*,createdBefore*,directory*,exclude*,id*,latestForSource*,modifiedSince*,q*,selected*,sort*,source*,value*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    AttributevalueRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/account/{accountid}/attributevalue{?account*,additional*,any*,attribute*,createdAfter*,createdBefore*,directory*,exclude*,id*,latestForSource*,modifiedSince*,organizationalUnit*,q*,selected*,sort*,source*,value*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for account attribute values for a specific account. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AccountAttributeValueLinkableWrapper?> getAsync([void Function(RequestConfiguration<AttributevalueRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
@@ -52,7 +52,7 @@ class AttributevalueRequestBuilder extends BaseRequestBuilder<AttributevalueRequ
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AttributevalueRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AttributevalueRequestBuilderGetQueryParameters>(requestConfiguration, () => AttributevalueRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
         return requestInfo;
     }
 }

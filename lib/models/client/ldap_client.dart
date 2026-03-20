@@ -1,11 +1,14 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../certificate/certificate_primer.dart';
+import '../misc/attribute_customization.dart';
 import '../vault/vault_record_primer.dart';
 import './client_application.dart';
 
 /// auto generated
 class LdapClient extends ClientApplication implements Parsable {
+    ///  The attributes property
+    Iterable<AttributeCustomization>? attributes;
     ///  The bindDn property
     String? bindDn;
     ///  The clientCertificate property
@@ -27,6 +30,7 @@ class LdapClient extends ClientApplication implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['attributes'] = (node) => attributes = node.getCollectionOfObjectValues<AttributeCustomization>(AttributeCustomization.createFromDiscriminatorValue);
         deserializerMap['bindDn'] = (node) => bindDn = node.getStringValue();
         deserializerMap['clientCertificate'] = (node) => clientCertificate = node.getObjectValue<CertificatePrimer>(CertificatePrimer.createFromDiscriminatorValue);
         deserializerMap['sharedSecret'] = (node) => sharedSecret = node.getObjectValue<VaultRecordPrimer>(VaultRecordPrimer.createFromDiscriminatorValue);
@@ -38,6 +42,7 @@ class LdapClient extends ClientApplication implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeCollectionOfObjectValues<AttributeCustomization>('attributes', attributes);
         writer.writeObjectValue<CertificatePrimer>('clientCertificate', clientCertificate);
         writer.writeObjectValue<VaultRecordPrimer>('sharedSecret', sharedSecret);
         writer.writeBoolValue('shareSecretInVault', value:shareSecretInVault);

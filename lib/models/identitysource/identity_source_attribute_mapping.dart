@@ -7,10 +7,14 @@ import '../non_linkable.dart';
 class IdentitySourceAttributeMapping extends NonLinkable implements Parsable {
     ///  The attribute property
     AccountAttributeDefinition? attribute;
+    ///  The fetchSeparately property
+    bool? fetchSeparately;
     ///  The index property
     int? index_;
     ///  The multiValued property
     bool? multiValued;
+    ///  The selector property
+    String? selector;
     /// Instantiates a new [IdentitySourceAttributeMapping] and sets the default values.
     IdentitySourceAttributeMapping() : super() {
         type_ = 'identitysource.IdentitySourceAttributeMapping';
@@ -25,8 +29,10 @@ class IdentitySourceAttributeMapping extends NonLinkable implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['attribute'] = (node) => attribute = node.getObjectValue<AccountAttributeDefinition>(AccountAttributeDefinition.createFromDiscriminatorValue);
+        deserializerMap['fetchSeparately'] = (node) => fetchSeparately = node.getBoolValue();
         deserializerMap['index'] = (node) => index_ = node.getIntValue();
         deserializerMap['multiValued'] = (node) => multiValued = node.getBoolValue();
+        deserializerMap['selector'] = (node) => selector = node.getStringValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -35,7 +41,9 @@ class IdentitySourceAttributeMapping extends NonLinkable implements Parsable {
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<AccountAttributeDefinition>('attribute', attribute);
+        writer.writeBoolValue('fetchSeparately', value:fetchSeparately);
         writer.writeIntValue('index', index_);
         writer.writeBoolValue('multiValued', value:multiValued);
+        writer.writeStringValue('selector', selector);
     }
 }

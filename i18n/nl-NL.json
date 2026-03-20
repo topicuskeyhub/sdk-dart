@@ -375,6 +375,7 @@
               "AuditRecordType#IDENTITY_SOURCE_REMOVED": "Identiteitsbron - Verwijderd",
               "AuditRecordType#PROVISIONED_SYSTEM_UNKNOWN_ACCOUNT_DESTROYED": "Gekoppeld systeem - Onbekend account verwijderd",
               "AuditNestedGroupAction#MISMATCH": "Niet identiek",
+              "AuditRecordType#SETUP_GROUP_EXCLUSION_CONNECT_REQUESTED": "Groepsuitsluiting instellen - Aangevraagd",
               "AuditRecordType#REMOVE_ACCESS_PROFILE_DECLINED": "Verwijder toegangsprofiel - Afgewezen",
               "AuditRecordType#GROUP_MODIFIED": "Groep - Bewerkt",
               "AuditRecordType#SETUP_AUTHORIZING_GROUP_CONNECT_ACCEPTED": "Autorisatie instellen - Goedgekeurd",
@@ -393,6 +394,8 @@
               "AuditRecordType#CLIENT_REMOVED": "Applicatie - Verwijderd",
               "AuditRecordType#JOIN_VAULT_DECLINED": "Toegang tot kluis - Afgewezen",
               "AuditRecordType#MOVE_GROUPS_REQUESTED": "Groepen verplaatsen - Aangevraagd",
+              "AuditRecordType#SETUP_GROUP_EXCLUSION_CONNECT_DECLINED": "Groepsuitsluiting instellen - Afgewezen",
+              "AuditRecordType#SETUP_GROUP_EXCLUSION_CONNECT_ACCEPTED": "Groepsuitsluiting instellen - Goedgekeurd",
               "GroupAudit#createdAt": {
                 "label": {
                   "started": "Gestart op",
@@ -403,6 +406,7 @@
               "AuditRecordType#GRANT_SERVICE_ACCOUNT_GROUP_ACCEPTED": "Geef serviceaccount toegang tot groep op gekoppeld systeem - Goedgekeurd",
               "AuditRecordType#SETUP_AUTHORIZING_GROUP_CONNECT_DECLINED": "Autorisatie instellen - Afgewezen",
               "AuditRecordType#SERVICE_ACCOUNT_PASSWORD_ROTATED": "Serviceaccount - Wachtwoord geroteerd",
+              "AuditRecordType#SETUP_GROUP_EXCLUSION_DISCONNECT_REQUESTED": "Groepsuitsluiting verwijderen - Aangevraagd",
               "AuditRecordType#CLIENT_REMOVED_FROM_ORGANIZATIONAL_UNIT": "Applicatie - Verwijderd uit een organisatie-eenheid",
               "AuditRecordType#INVALID_SIGNATURE_DETECTED": "Ongeldige ondertekening gedetecteerd",
               "AuditRecordType#LINK_DIRECTORY_TO_ACCESS_PROFILE_ACCEPTED": "Koppel directory aan toegangsprofiel - Goedgekeurd",
@@ -497,6 +501,7 @@
               "AuditRecordType#CREATE_GROUP_REQUESTED": "Groep aanmaken - Aangevraagd",
               "AuditRecordType#PROVISIONED_SYSTEM_ADDED_TO_ACCESS_PROFILE": "Gekoppeld systeem - Toegevoegd aan toegangsprofiel",
               "AuditRecordType#PROVISIONED_SYSTEM_REMOVED_FROM_ACCESS_PROFILE": "Gekoppeld systeem - Verwijderd uit toegangsprofiel",
+              "AuditRecordType#GROUP_EXCLUSION_CREATED": "Groepsuitsluiting - Toegevoegd",
               "GroupAuditStatus#DRAFT": "Concept",
               "AuditRecordType#ACCOUNT_ENABLED": "Account - Ingeschakeld",
               "AuditRecordType#ADD_GROUP_ADMIN_REQUESTED": "Groepsmanager toevoegen - Aangevraagd",
@@ -597,6 +602,7 @@
               "AuditRecordType#TRANSFER_ORGANIZATIONAL_UNIT_OWNERSHIP_ACCEPTED": "Draag verantwoordelijkheid over organisatie-eenheid over - Goedgekeurd",
               "AuditAccountAction#REMOVE": "Verwijder uit groep",
               "AuditRecordType#ACCOUNT_PASSWORD_CHANGED": "Account - Wachtwoord gewijzigd",
+              "AuditRecordType#GROUP_EXCLUSION_REMOVED": "Groepsuitsluiting - Verwijderd",
               "AuditRecordType#VAULT_PERSONAL_SETUP": "Kluis - Ingesteld",
               "AuditRecordType#TRANSFER_PROVISIONED_SYSTEM_CONTENT_ADMINISTRATION_REQUESTED": "Draag inhoudsbeheer van gekoppeld systeem over - Aangevraagd",
               "AuditRecordType#ACCOUNT_ADDED_TO_GROUP": "Account - Toegevoegd aan een groep",
@@ -633,6 +639,7 @@
               "AuditRecordType#TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP_DECLINED": "Draag verantwoordelijkheid over groep op systeem over - Afgewezen",
               "AuditRecordType#VAULT_RECORD_MOVED_COPIED_SHARED": "Kluis - Regel verplaatst/gekopieerd/gedeeld",
               "AuditRecordType#MOVE_GROUPS_DECLINED": "Groepen verplaatsen - Afgewezen",
+              "AuditRecordType#SETUP_GROUP_EXCLUSION_DISCONNECT_DECLINED": "Groepsuitsluiting verwijderen - Afgewezen",
               "AuditRecordType#ACCOUNT_VAULT_UNLOCKED": "Account - Kluis geopend",
               "AuditRecordType#UPDATE_GROUP_MEMBERSHIP_DECLINED": "Wijzig een groepslidmaatschap - Afgewezen",
               "AuditRecordType#SETUP_AUTHORIZING_GROUP_DISCONNECT_ACCEPTED": "Autorisatie uitschakelen - Goedgekeurd",
@@ -651,7 +658,8 @@
               },
               "AuditRecordType#SERVICE_ACCOUNT_PROVISIONED": "Serviceaccount - Geactiveerd op gekoppeld systeem",
               "AuditRecordType#ACCOUNT_ACCESS_PROFILE_PROVISIONED": "Account - Toegangsprofiel ingeschakeld op gekoppeld systeem",
-              "AuditRecordType#GRANT_ACCESS_DECLINED": "Vraag toegang - Afgewezen"
+              "AuditRecordType#GRANT_ACCESS_DECLINED": "Vraag toegang - Afgewezen",
+              "AuditRecordType#SETUP_GROUP_EXCLUSION_DISCONNECT_ACCEPTED": "Groepsuitsluiting verwijderen - Goedgekeurd"
             },
             "request": {
               "AddGroupAdminRequest#privateKey": {
@@ -762,6 +770,7 @@
               "AuthorizingGroupType#MEMBERSHIP": "Wijzigingen in groepslidmaatschap",
               "ModificationRequestReportError#APPLICATION_CANNOT_BE_REMOVED": "Geen rechten om {2}: {1} ({3}) te verwijderen.",
               "ModificationRequestReportChange#PROVISIONING_GROUP_REMOVED_OWNER": "De koppelgroep {0} verplaatst mee met deze groep. De KeyHub-groep {1} verliest toegang.",
+              "ModificationRequestType#SETUP_GROUP_EXCLUSION": "UITSLUITING",
               "ModificationRequestType#RESET_PASSWORD": "HERSTEL WACHTWOORD",
               "GrantClientPermissionRequest#permissionType": {
                 "label": "Recht"
@@ -779,6 +788,7 @@
                 "label": "Gebruikersnaam",
                 "description": "Kies een gebruikersnaam voor het serviceaccount."
               },
+              "ModificationRequestReportChange#GROUP_EXCLUSIONS_REMOVED_ALL": "De groepsuitsluitingen van deze groepen zullen verwijderd worden.",
               "ModificationRequestReportChange#VAULT_RECORDS_WILL_BE_REMOVED_UNRECOVERABLE": "De kluis zal samen met de {1} kluisregel(s) worden verwijderd. Deze kluisregels kunnen na verwijdering niet hersteld worden.",
               "ModificationRequestType#SETUP_NESTED_GROUP": "NESTEN",
               "ModificationRequestReportError#GROUP_OWNS_OU": "Is de eigenaar van organisatie-eenheid {1}.",
@@ -799,6 +809,7 @@
               "ModificationRequestType#SETUP_AUTHORIZING_GROUP": "AUTORISATIE",
               "ModificationRequestReportChange#GROUP_ACTIVATION_FOR_PROVISIONING_DISABLED": "'Activatie vereist' wordt uitgeschakeld voor deze koppelgroepen.",
               "ModificationRequestType#GRANT_GROUP_ON_SYSTEM_REQUEST": "TOEGANG TOT GROEP",
+              "ModificationRequestReportChange#GROUP_EXCLUSION_WILL_BE_REMOVED": "De groepsuitsluiting met {1} zal worden verwijderd.",
               "ModificationRequestReportError#MULTIPLE_OUS": "Het verzoek bevat groepen van meer dan één organisatie-eenheid.",
               "ModificationRequestReportChange#GROUP_ACTIVATION_FOR_VAULT_DISABLED": "'Activatie verplicht voor kluistoegang' wordt uitgeschakeld op deze groepen.",
               "ModificationRequestReportError#AUTHORIZED_GROUP_CANNOT_BE_REMOVED": "Voert autorisatie uit voor {1}.",
@@ -892,6 +903,10 @@
               "OIDCDirectory#clientSecret": {
                 "label": "Client secret"
               },
+              "LDAPDirectory#attributes": {
+                "label": "Attributen",
+                "description": "Een lijst met attributen die uit de directory worden gelezen en bij het account worden opgeslagen. Deze attributen kunnen vervolgens worden gebruikt in scripts voor custom attributen."
+              },
               "OIDCVendor#GENERIC": "Standaard OIDC",
               "InternalDirectory#owner": {
                 "placeholder": "Kies een groep...",
@@ -913,10 +928,6 @@
               "LDAPDirectory#passwordRecovery": {
                 "label": "Wachtwoordherstel in de directory",
                 "description": "Schrijf bij wachtwoordherstel het wachtwoord terug in de directory met de gekozen eisen voor herauthenticatie van de gebruiker. De gebruiker met het bind DN moet hiervoor voldoende rechten hebben."
-              },
-              "OIDCDirectory#attributesToStore": {
-                "label": "Attributen",
-                "description": "Een door spaties gescheiden lijst met attributen die uit de directory worden gelezen en bij het account worden opgeslagen. Deze attributen kunnen vervolgens worden gebruikt in scripts voor custom attributen."
               },
               "OIDCDirectory#domainRestriction": {
                 "description": "Het domein waarbinnen gebruikers moeten vallen. Dit komt meestal overeen met het deel achter het @-teken in de gebruikersnaam of het e-mailadres. Voor Google kunnen extra domeinen worden gegeven, gescheiden door spaties.",
@@ -947,10 +958,6 @@
               "OIDCDirectory#issuer": {
                 "label": "OIDC Issuer identifier",
                 "description": "Een OIDC Issuer identifier is een hoofdlettergevoelige https-URL. Deze bevat tenminste een schema en host en mogelijk een poortnummer en/of pad. De URL mag geen query of fragment bevatten."
-              },
-              "LDAPDirectory#attributesToStore": {
-                "label": "Attributen",
-                "description": "Een door spaties gescheiden lijst met attributen die uit de directory worden gelezen en bij het account worden opgeslagen. Deze attributen kunnen vervolgens worden gebruikt in scripts voor custom attributen."
               },
               "LDAPDirectory#searchFilter": {
                 "description": "Het filter om gebruikers mee te zoeken in de directory. Er wordt gezocht onder de base DN. Gebruik {} als placeholder van de zoekterm. Let er op dat alleen actieve gebruikers gevonden worden.",
@@ -991,6 +998,10 @@
               "AccountDirectory#defaultDirectory": {
                 "label": "Standaarddirectory",
                 "description": "Indien ingeschakeld, zal voor een gebruiker die nog niet bestaat in Topicus KeyHub automatisch een registratie gestart worden voor deze directory."
+              },
+              "OIDCDirectory#attributes": {
+                "label": "Attributen",
+                "description": "Een lijst met attributen die uit de directory worden gelezen en bij het account worden opgeslagen. Deze attributen kunnen vervolgens worden gebruikt in scripts voor custom attributen."
               },
               "DirectoryRotatingPassword#ALWAYS_ON": "Altijd aan",
               "LDAPDirectory#trustedCertificate": {
@@ -1094,6 +1105,7 @@
               "AccountAttributeSource#SELF_SERVICE": "Selfservice",
               "AccountAttributeFormat#TEXT": "Tekst",
               "AccountAttributeFormat#TELEPHONE": "Telefoonnummer",
+              "AccountAttributeSystemDefinition#SAM_ACCOUNT_NAME": "SAMAccountName",
               "AccountAttributeSystemDefinition#USERNAME": "Gebruikersnaam",
               "AccountAttributeRule#prioritySCIM": {
                 "label": "Prioriteit voor SCIM",
@@ -1120,6 +1132,7 @@
                 "label": "Huidige waarde"
               },
               "AccountAttributeValueSelectionStatus#IN_SYNC": "Gesynchroniseerd",
+              "AccountAttributeSystemDefinition#USER_PRINCIPAL_NAME": "UserPrincipalName",
               "AccountAttributeDefinition#propertyHandling": {
                 "label": "Omgang met onbekende eigenschappen"
               },
@@ -1911,6 +1924,7 @@
                 "label": "SSH public key"
               },
               "GroupOnSystemType#AZURE_DYNAMIC_SECURITY_GROUP": "Beveiligingsgroep (dynamisch lidmaatschap)",
+              "ProvisionedSystemStatus#READ_ONLY": "Alleen-lezen",
               "ProvisionedSCIMVendor#AWS": "AWS",
               "ProvisionedSCIM#vendor": {
                 "description": "Selecteer de leverancier voor het juiste SCIM dialect.",
@@ -1943,6 +1957,7 @@
                 "label": "Aanvullende object classes",
                 "description": "Geef aanvullende waarden voor het attribuut objectClass van accounts op, gescheiden door spaties."
               },
+              "ProvisionedSystemStatus#DISABLED": "Uitgeschakeld",
               "GroupOnSystemProvisioning#ALWAYS_PROVISIONED": "Altijd ingeschakeld - Alle groepen worden volledig door KeyHub beheerd.",
               "AbstractProvisionedLDAP#clientCertificate": {
                 "description": "Het certificaat waarmee geauthenticeerd moet worden tegen de server. Een clientcertificaat bestaat uit het certificaat en de bijbehorende private key.",
@@ -2024,6 +2039,7 @@
                 "description": "Schakel uitgebreide provisioning-logging voor dit systeem in om problemen met accountprovisioning op te lossen.",
                 "label": "Trace-logging inschakelen"
               },
+              "ProvisionedSystemStatus#ACTIVE": "Actief",
               "ADSamAccountNameScheme#TRANSFER": "Waarde overnemen - Neem de waarde over uit het sAMAccountName-attribuut bij het account.",
               "ProvisionedSCIM#connectorConfiguration": {
                 "label": "Connector-configuratie"
@@ -2269,6 +2285,9 @@
               },
               "OAuth2ClientPermission#application": {
                 "label": "Applicatie"
+              },
+              "LdapClient#attributes": {
+                "label": "Custom attributen"
               },
               "ClientApplicationType#SAML2": "SAML v2.0",
               "SubjectFormat#ID": "Primaire identifier",
@@ -2625,7 +2644,7 @@
               },
               "IdentitySourceType#AFAS": "AFAS",
               "CSVImportIdentitySource#identifier": {
-                "description": "Het attribuut waarmee het account opgezocht wordt. De eerst kolom van het CSV-bestand wordt hiervoor gebruikt.",
+                "description": "Het attribuut waarmee het account opgezocht wordt. De eerste kolom van het CSV-bestand wordt hiervoor gebruikt.",
                 "label": "Accountidentificatie"
               },
               "IdentitySourcePrimer#active": {
@@ -3033,10 +3052,7 @@
         "removegroups": {
           "confirm": "Bevestig verwijdering"
         },
-        "accounts": "Accounts",
-        "main": "Groep",
-        "koppelingen": "Koppelingen",
-        "applications": "Applicaties"
+        "main": "Groep"
       },
       "registreer": {
         "resync": "Werk je wachtwoord bij",
@@ -3080,7 +3096,6 @@
       "provisionedinternalldap": "Interne LDAP",
       "accounts": {
         "overview": "Gebruikersaccounts",
-        "attributes": "Attributen",
         "bulkedit": "Accounts bulk wijzigen",
         "cleanup": "Accounts opruimen",
         "service": "Serviceaccounts"
@@ -3329,6 +3344,16 @@
             "me": "{groupName} door {requestingGroup}",
             "main": "{groupName} door {requestingGroup}"
           }
+        }
+      },
+      "setupgroupexclusion": {
+        "connect": {
+          "main": "{groupName} en {requestingGroup}",
+          "me": "{groupName} en {requestingGroup}"
+        },
+        "disconnect": {
+          "main": "{groupName} en {requestingGroup}",
+          "me": "{groupName} en {requestingGroup}"
         }
       },
       "movegroups": {
@@ -3798,6 +3823,16 @@
         "main": "{requester} wil technisch beheer inschakelen op {groupName}.",
         "me": "Ik wil technisch beheer inschakelen op {groupName}."
       },
+      "setupgroupexclusion": {
+        "disconnect": {
+          "main": "{requester} wil de groepsuitsluiting tussen {groupName} en {requestingGroup} verwijderen.",
+          "me": "Ik wil de groepsuitsluiting tussen {groupName} en {requestingGroup} verwijderen."
+        },
+        "connect": {
+          "main": "{requester} wil een groepsuitsluiting tussen {groupName} en {requestingGroup} opzetten. Conflicterende accounts worden verwijderd uit {groupName}.",
+          "me": "Ik wil een groepsuitsluiting tussen {groupName} en {requestingGroup} opzetten. Conflicterende accounts worden verwijderd uit {groupName}."
+        }
+      },
       "transferserviceaccountadministration": {
         "main": "{requester} wil het technisch beheer van het serviceaccount {serviceAccount} op {system} overdragen aan de groep {groupName}.",
         "me": "Ik wil het technisch beheer van het serviceaccount {serviceAccount} op {system} overdragen aan de groep {groupName}."
@@ -4001,6 +4036,18 @@
       },
       "main": "Dit verzoek kan worden behandeld door {0}",
       "requester": "Dit verzoek wordt behandeld door {0}"
+    },
+    "setupgroupexclusion": {
+      "disconnect": {
+        "subtitle": "Verzoek opheffing van de uitsluiting met de onderstaande groep.",
+        "sent": "Je verzoek om de groepsuitsluiting te verwijderen is verzonden.",
+        "header": "Groepsuitsluiting verwijderen"
+      },
+      "connect": {
+        "sent": "Je verzoek voor de groepsuitsluiting is verzonden.",
+        "header": "Groepsuitsluiting instellen",
+        "subtitle": "Kies een groep die een wederzijdse uitsluiting zal krijgen met deze groep."
+      }
     },
     "createserviceaccount": {
       "subtitle": "Geef de gebruikersnaam van het nieuwe serviceaccount aan en leg uit waar het voor nodig is.",
@@ -4735,10 +4782,6 @@
             "description": "De Management Console (poort 50443), SSH (poort 50022) en interne LDAP (poort 389) worden ontsloten via de management-zone."
           }
         },
-        "loadlistener": {
-          "memrequired": "De instelling van de overbelastingsbescherming vereist minimaal {0} MB geheugen voor de Topicus KeyHub applicatie.",
-          "cpurequired": "De instelling van de overbelastingsbescherming vereist minimaal {0} CPU-cores."
-        },
         "logging": {
           "description": "Topicus KeyHub kan logging naar een externe server streamen. Het is aan te raden hiervoor een met TLS beveiligde verbinding te gebruiken. Upload het CA-certificaat dat gebruikt is voor de externe server en, indien gebruik wordt gemaakt van client authenticatie, het client certificaat dat KeyHub moet gebruiken.",
           "info": "Informatie over het certificaat",
@@ -5194,6 +5237,7 @@
         "initdb": "Database initialiseren",
         "setuplink": "Link tot stand brengen",
         "linkupwait": "Wachten op de clusterlink",
+        "configurenewnode": "Nieuwe node configureren",
         "promotedb": "Database promoveren",
         "refresh": "Verversen",
         "shutdownnode": "Instantie stoppen",
@@ -5294,6 +5338,7 @@
         "check_cluster": "Het cluster controleren op problemen",
         "upgrade_docker": "Docker updaten",
         "shutdown": "Afsluiten",
+        "migrate_multimaster": "Migreren naar multi-master Salt",
         "cleanup": "Update-bestanden opruimen",
         "download": "Update-package downloaden",
         "check_updates": "Controleren op beschikbare updates",
@@ -5632,6 +5677,7 @@
       "subtitle": "Geef een bereik voor de te exporteren auditlog.",
       "title": "Exporteren"
     },
+    "SETUP_GROUP_EXCLUSION_DISCONNECT_ACCEPTED": "{performedBy} heeft het verzoek goedgekeurd om de groepsuitsluiting tussen {onGroup2} en {onGroup} te verwijderen. {reason}",
     "MOVE_GROUPS_ACCEPTED": "{performedBy} heeft het verzoek van {onAccount} goedgekeurd om {parameter2} groepen te verplaatsen naar {onOrganizationalUnit}. {reason}",
     "updaterequest": {
       "NORMAL": {
@@ -5713,6 +5759,10 @@
       }
     },
     "UPDATE_GROUP_MEMBERSHIP_REQUESTED": "{performedBy} heeft een verzoek ingediend om {onAccount} de volgende toegang te geven op {onGroup2}: {parameter3} {reason}",
+    "REMOVE_GROUP_ACCEPTED": {
+      "1": "Het verzoek om de groep {onGroup} te verwijderen is goedgekeurd door {performedBy}. {reason}",
+      "n": "Het verzoek om {parameter2} groepen te verwijderen is goedgekeurd door {performedBy}. {reason}"
+    },
     "ACCOUNT_PROVISIONING_SETUP": {
       "uid": "{onAccount} is ingesteld op de koppeling {onSystem} en heeft UID {parameter1} toegewezen gekregen.",
       "main": "{onAccount} is ingesteld op de koppeling {onSystem}."
@@ -5814,15 +5864,12 @@
       "personal": "{performedBy} heeft voor {onParty} toegang hersteld tot de persoonlijke kluis.",
       "main": "{performedBy} heeft voor {onParty} toegang hersteld tot de kluis van {onGroup}."
     },
+    "SETUP_GROUP_EXCLUSION_CONNECT_REQUESTED": "{performedBy} heeft een verzoek ingediend voor een groepsuitsluiting tussen {onGroup} en {onGroup2}. {reason}",
     "SETUP_AUTHORIZING_GROUP_CONNECT_REQUESTED": {
       "DELEGATION": "{performedBy} heeft een verzoek ingediend om delegatie van management van {onGroup} aan {onGroup2} toe te kennen. {reason}",
       "AUDITING": "{performedBy} heeft een verzoek ingediend om audits van {onGroup} te laten reviewen door {onGroup2}. {reason}",
       "PROVISIONING": "{performedBy} heeft een verzoek ingediend om activatie van {onGroup} goed te laten keuren door {onGroup2}. {reason}",
       "MEMBERSHIP": "{performedBy} heeft een verzoek ingediend om beheer van lidmaatschap van {onGroup} goed te laten keuren door {onGroup2}. {reason}"
-    },
-    "REMOVE_GROUP_REQUESTED": {
-      "groups": "{performedBy} heeft een verzoek ingediend om {parameter2} groepen te verwijderen. {reason}",
-      "main": "{performedBy} heeft een verzoek ingediend om de groep {onGroup} te verwijderen. {reason}"
     },
     "CERTIFICATE_REMOVED": "{performedBy} heeft het certificaat {onCertificate} verwijderd.",
     "REMOVE_PROVISIONED_SYSTEM_DECLINED": "Het verzoek om het gekoppelde systeem {onSystem} te verwijderen is afgekeurd door {performedBy}. {reason}",
@@ -5853,11 +5900,9 @@
     "SERVICE_ACCOUNT_PROVISIONED": "Het serviceaccount {onServiceAccount} is ingeschakeld op de koppeling {onSystem}.",
     "CREATE_GROUP_DECLINED": "{performedBy} heeft het verzoek van {onAccount} afgekeurd om de groep {parameter3} aan te maken. {reason}",
     "ACCOUNT_GROUP_DEPROVISIONED": "{onAccount} heeft {gosType} {gosName} uitgeschakeld voor {onSystem} via {onGroup}.",
-    "REMOVE_GROUP_ACCEPTED": {
-      "groups": "Het verzoek om {parameter2} groepen te verwijderen is goedgekeurd door {performedBy}. {reason}",
-      "main": "Het verzoek om de groep {onGroup} te verwijderen is goedgekeurd door {performedBy}. {reason}"
-    },
+    "SETUP_GROUP_EXCLUSION_CONNECT_ACCEPTED": "{performedBy} heeft het verzoek goedgekeurd voor een groepsuitsluiting tussen {onGroup} en {onGroup2}. {reason}",
     "TRANSFER_ORGANIZATIONAL_UNIT_OWNERSHIP_DECLINED": "Het verzoek om de verantwoordelijkheid over {onOrganizationalUnit} over te dragen aan {onGroup} is afgekeurd door {performedBy}. {reason}",
+    "SETUP_GROUP_EXCLUSION_DISCONNECT_DECLINED": "{performedBy} heeft het verzoek afgekeurd om de groepsuitsluiting tussen {onGroup2} en {onGroup} te verwijderen. {reason}",
     "TRANSFER_PROVISIONED_SYSTEM_ADMINISTRATION_ACCEPTED": "Het verzoek om het technisch beheer van {onSystem} over te dragen aan {onGroup} is goedgekeurd door {performedBy}. {reason}",
     "PROVISIONED_SYSTEM_ADDED_TO_ACCESS_PROFILE": "{gosTypeCap} {gosName} op {onSystem} is toegevoegd aan het toegangsprofiel {onAccessProfile}.",
     "LINK_DIRECTORY_TO_ACCESS_PROFILE_ACCEPTED": "Het verzoek om het beheer van attributen voor accounts uit {onDirectory} toekennen aan het toegangsprofiel {onAccessProfile} is goedgekeurd door {performedBy}. {reason}",
@@ -5908,6 +5953,7 @@
     "CREATE_SERVICE_ACCOUNT_ACCEPTED": "{performedBy} heeft het verzoek van {onAccount} goedgekeurd om het serviceaccount {parameter3} aan te maken op {onSystem}. {reason}",
     "ACCOUNT_TOKEN_SIGNED": "{performedBy} heeft toegang gekregen tot de applicatie {onClient}.",
     "EXTENDED_ACCESS_ACCEPTED": "{performedBy} heeft het verzoek van {onAccount} goedgekeurd om verlengde toegang tot {parameter3} te krijgen tot {onGroup}. {reason}",
+    "SETUP_GROUP_EXCLUSION_CONNECT_DECLINED": "{performedBy} heeft het verzoek afgekeurd voor een groepsuitsluiting tussen {onGroup} en {onGroup2}. {reason}",
     "ACCOUNT_MODIFIED_FOR_ACCESS_PROFILE": {
       "MANUAL": "{performedBy} heeft het lidmaatschap van {onAccount} van het toegangsprofiel {onAccessProfile} aangepast. Lidmaatschap wordt nu bepaald door business rules.",
       "BUSINESS_RULE": "{performedBy} heeft het lidmaatschap van {onAccount} van het toegangsprofiel {onAccessProfile} aangepast. {onAccount} is nu geforceerd lid."
@@ -5944,6 +5990,10 @@
     "ACCOUNT_PROVISIONING_INITED": "{onAccount} is aangemaakt op de koppeling {onSystem}.",
     "CREATE_GROUP_ON_SYSTEM_REQUESTED": "{performedBy} heeft een verzoek ingediend om {parameter3} op {parameter2} aan te maken. {reason}",
     "GROUP_AUDIT_REQUESTED": "{performedBy} heeft een audit van de groep {onGroup} verzocht.",
+    "REMOVE_GROUP_DECLINED": {
+      "1": "Het verzoek om de groep {onGroup} te verwijderen is afgekeurd door {performedBy}. {reason}",
+      "n": "Het verzoek om {parameter2} groepen te verwijderen is afgekeurd door {performedBy}. {reason}"
+    },
     "REVOKE_ADMIN_DECLINED": "{performedBy} heeft het verzoek afgekeurd om {onAccount} te verwijderen uit KeyHub Administrators. {reason}",
     "ACCOUNT_PASSWORD_CHANGED": "{performedBy} heeft zijn/haar wachtwoord gewijzigd.",
     "SETUP_NESTED_GROUP_CONNECT_ACCEPTED": "{performedBy} heeft het verzoek goedgekeurd om {onGroup} te nesten binnen {onGroup2}. {reason}",
@@ -5956,7 +6006,6 @@
     "ACCOUNT_PROVISIONING_DESTROYED": "{onAccount} is verwijderd van de koppeling {onSystem}.",
     "CREATE_PROVISIONED_NAMESPACE_DECLINED": "{performedBy} heeft het verzoek van {onAccount} afgekeurd om de namespace {parameter3} aan te maken, gebaseerd op {onSystem}. {reason}",
     "TRANSFER_PROVISIONED_SYSTEM_CONTENT_ADMINISTRATION_DECLINED": "Het verzoek om het inhoudsbeheer van {onSystem} over te dragen aan {onGroup} is afgekeurd door {performedBy}. {reason}",
-    "REMOVE_GROUPS_REQUESTED": "{performedBy} heeft een verzoek ingediend om de groep {onGroup} te verwijderen. {reason}",
     "TRANSFER_SERVICE_ACCOUNT_ADMINISTRATION_REQUESTED": "{performedBy} heeft een verzoek ingediend om het technisch beheer van {onServiceAccount} op {onSystem} over te dragen aan {onGroup}. {reason}",
     "GROUP_AUDIT_CREATED": "{performedBy} heeft de groep {onGroup} geaudit.",
     "ENABLE_TECHNICAL_ADMINISTRATION_REQUESTED": "{performedBy} heeft een verzoek ingediend om technisch beheer in te schakelen op {onGroup}. {reason}",
@@ -5978,10 +6027,6 @@
     "CLIENT_REMOVED_FROM_ORGANIZATIONAL_UNIT": "{performedBy} heeft {onClient} verwijderd uit de organisatie-eenheid {onOrganizationalUnit}.",
     "REMOVE_PROVISIONED_SYSTEM_ACCEPTED": "Het verzoek om het gekoppelde systeem {onSystem} te verwijderen is goedgekeurd door {performedBy}. {reason}",
     "ACCOUNT_REMOVED_FROM_ORGANIZATIONAL_UNIT": "{performedBy} heeft {onAccount} verwijderd uit de organisatie-eenheid {onOrganizationalUnit}.",
-    "REMOVE_GROUP_DECLINED": {
-      "groups": "Het verzoek om {parameter2} groepen te verwijderen is afgekeurd door {performedBy}. {reason}",
-      "main": "Het verzoek om de groep {onGroup} te verwijderen is afgekeurd door {performedBy}. {reason}"
-    },
     "TRANSFER_APPLICATION_ADMINISTRATION_ACCEPTED": "Het verzoek om het technisch beheer van {onClient} over te dragen aan {onGroup} is goedgekeurd door {performedBy}. {reason}",
     "TRANSFER_PROVISIONED_SYSTEM_OWNERSHIP_REQUESTED": "{performedBy} heeft een verzoek ingediend om de verantwoordelijkheid over {onSystem} over te dragen aan {onGroup}. {reason}",
     "REMOVE_ORGANIZATIONAL_UNIT_ACCEPTED": "Het verzoek om de organisatie-eenheid {onOrganizationalUnit} te verwijderen is goedgekeurd door {performedBy}. {reason}",
@@ -6013,8 +6058,13 @@
     "IDENTITY_SOURCE_CREATED": "{performedBy} heeft een nieuwe identiteitsbron {onIdentitySource} toegevoegd.",
     "CLIENT_MODIFIED": "{performedBy} heeft de applicatie {onClient} aangepast.",
     "GROUP_ON_SYSTEM_DEPROVISIONED": "{gosTypeCap} {gosName} is verwijderd van het systeem {onSystem}.",
+    "SETUP_GROUP_EXCLUSION_DISCONNECT_REQUESTED": "{performedBy} heeft een verzoek ingediend om de groepsuitsluiting tussen {onGroup2} en {onGroup} te verwijderen. {reason}",
     "TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP_DECLINED": "Het verzoek om de verantwoordelijkheid over {gosType} {gosName} op {onSystem} over te dragen aan {onGroup} is afgekeurd door {performedBy}. {reason}",
     "GROUP_NESTING_CONNECTED": "{performedBy} heeft de groep {onGroup} genest binnen {onGroup2}.",
+    "REMOVE_GROUP_REQUESTED": {
+      "n": "{performedBy} heeft een verzoek ingediend om {parameter2} groepen te verwijderen. {reason}",
+      "1": "{performedBy} heeft een verzoek ingediend om groep {onGroup} te verwijderen. {reason}"
+    },
     "DIRECTORY_HELPDESK_MODIFIED": {
       "unset": "{performedBy} heeft de helpdeskfunctie van {onGroup} voor de directory {onDirectory} ingetrokken.",
       "set": "{performedBy} heeft {onGroup} als helpdesk ingesteld voor de directory {onDirectory}."
@@ -6030,6 +6080,7 @@
       "main": "{performedBy} heeft de inhoud van de kluis van {parameter1} hersteld in de kluis van {onGroup}."
     },
     "PROVISIONED_SYSTEM_REMOVED": "{performedBy} heeft de koppeling {onSystem} verwijderd.",
+    "GROUP_EXCLUSION_CREATED": "{performedBy} heeft een groepsuitsluiting ingericht tussen {onGroup} en {onGroup2}.",
     "GROUP_ADDED_TO_ACCESS_PROFILE": "{onGroup} is toegevoegd aan het toegangsprofiel {onAccessProfile}.",
     "DISABLE_2FA_REQUESTED": "{performedBy} heeft een verzoek om 2FA uit te schakelen ingediend.",
     "RESET_PASSWORD_REQUESTED": "{performedBy} heeft een verzoek om zijn/haar wachtwoord te herstellen ingediend. {reason}",
@@ -6068,6 +6119,7 @@
     "INTERNAL_ACCOUNT_REMOVED": "{performedBy} heeft het intern account {onAccount} verwijderd.",
     "SERVICE_ACCOUNT_REMOVED": "{performedBy} heeft het serviceaccount {onServiceAccount} van {onSystem} verwijderd.",
     "CLIENT_PERMISSION_REVOKED": "Het recht '{parameter3}' van {onClient} is ingetrokken.",
+    "GROUP_EXCLUSION_REMOVED": "{performedBy} heeft een groepsuitsluiting verwijderd tussen {onGroup} en {onGroup2}.",
     "SERVICE_ACCOUNT_GROUP_DEPROVISIONED": "{gosTypeCap} {gosName} op {onSystem} is uitgeschakeld voor het serviceaccount {onServiceAccount}.",
     "MOVE_GROUPS_DECLINED": "{performedBy} heeft het verzoek van {onAccount} afgekeurd om {parameter2} groepen te verplaatsen naar {onOrganizationalUnit}. {reason}"
   },
@@ -6086,6 +6138,7 @@
       "directory": "Directory",
       "readwrites": "Lees-/schrijfacties",
       "datetime": "Tijd",
+      "accessProfile": "Toegangsprofiel",
       "group": "Groep",
       "username": "Gebruikersnaam",
       "used": "Gebruikt",
@@ -6263,12 +6316,6 @@
       "clients": "Applicaties",
       "details": "Details"
     },
-    "group": {
-      "applications": "Applicaties",
-      "accounts": "Accounts",
-      "koppelingen": "Koppelingen",
-      "details": "Details"
-    },
     "mygroups": {
       "main": "Mijn groepen",
       "managed": "Managerdashboard"
@@ -6309,9 +6356,7 @@
     },
     "schedules": "Cron-taken",
     "account": {
-      "auditlog": "Auditlog",
-      "attributes": "Attributen",
-      "details": "Details"
+      "auditlog": "Auditlog"
     },
     "accounts": {
       "main": "Accounts",
@@ -6402,6 +6447,10 @@
         "DISABLE_2FA": "Schakel 2FA uit",
         "accepted": "Geaccepteerd",
         "UPDATE_GROUP_MEMBERSHIP": "Wijzig een groepslidmaatschap",
+        "SETUP_GROUP_EXCLUSION": {
+          "disconnect": "Groepsuitsluiting verwijderen",
+          "connect": "Groepsuitsluiting instellen"
+        },
         "CREATE_PROVISIONED_NAMESPACE": "Maak nieuwe namespace",
         "UPDATE_LICENSE": "Wijzig de licentie",
         "REMOVE_PROVISIONED_SYSTEM": "Verwijder gekoppeld systeem",
@@ -6436,6 +6485,7 @@
         "client": "Applicatie",
         "accessprofileprov": "Koppelgroep binnen toegangsprofiel",
         "vaultrecord": "Kluisregel",
+        "groupexclusion": "Groepsuitsluiting",
         "systemgroup": "Koppelgroep",
         "update": "Gewijzigd",
         "accessprofilegroup": "Groep binnen toegangsprofiel",
@@ -6809,6 +6859,10 @@
         },
         "transferserviceaccountadministration": "{from} wil het technisch beheer van {serviceAccount} op {system} overdragen aan {group}",
         "grantclientpermission": "{from} wil extra rechten toekennen aan {application}",
+        "setupgroupexclusion": {
+          "connect": "{from} vraagt een groepsuitsluiting aan tussen {requestingGroup} en {group}",
+          "disconnect": "{from} wil een groepsuitsluiting voor {group} verwijderen"
+        },
         "movegroups": "{from} wil {groupCount} groepen verplaatsen naar {organizationalUnit}",
         "transferapplicationownership": "{from} wil de verantwoordelijkheid over {application} overdragen aan {group}",
         "removeaccessprofile": "{from} wil het toegangsprofiel {accessProfile} verwijderen",
@@ -6864,10 +6918,6 @@
         "subtitle": "{0} heeft toestemming om de groep te activeren."
       },
       "membership": "Lidmaatschap",
-      "hidden": {
-        "1": "1 verborgen groep",
-        "n": "{0} verborgen groepen"
-      },
       "delegation": "Delegatie",
       "auditing": "Audits"
     },
@@ -6950,6 +7000,15 @@
         }
       }
     },
+    "groups": {
+      "hidden": {
+        "1": "1 verborgen groep",
+        "n": "{0} verborgen groepen"
+      }
+    },
+    "groupexclusions": {
+      "header": "Uitgesloten groepen"
+    },
     "los": "Groepen die los getoond worden",
     "verborgen": "Verborgen groepen",
     "mappen": {
@@ -6957,9 +7016,6 @@
     },
     "verlaten": {
       "succes": "Je hebt de groep {0} verlaten."
-    },
-    "groups": {
-      "hidden": "{0} verborgen groepen"
     }
   },
   "profile": {
@@ -7180,6 +7236,7 @@
   },
   "error": {
     "GROUP_HAS_APPS": "Deze groep is verantwoordelijk of doet het technisch beheer voor één of meer applicaties en kan daarom niet verwijderd worden.",
+    "GROUP_EXCLUSION_WITH_NESTING_NOT_ALLOWED": "Groepsuitsluitingen zijn niet mogelijk voor groepen die betrokken zijn bij nesten.",
     "LICENSE_WRONG_DOMAIN": {
       "login": "Helaas is de licentie voor deze Topicus KeyHub installatie ongeldig en daarom kun je je niet aanmelden. Neem contact op met je Topicus KeyHub administrators.",
       "main": "Je Topicus KeyHub licentie is voor een ander domein."
@@ -7253,10 +7310,12 @@
     "MODIFICATION_AUTHORIZATION_ALREADY_SETUP": "Dit type autorisatie is al ingesteld voor deze groep.",
     "FILE_SIZE_INCORRECT": "Het bestand voor {for_name} heeft de verkeerde grootte.",
     "INVALID_REGISTRATION_CREDENTIALS": "De opgegeven gebruikersnaam- en wachtwoord-combinatie bestaat niet binnen de gekozen directory.",
+    "ATTRIBUTE_IN_USE_BY_DIRECTORY": "Deze attribuutdefinitie wordt nog gebruikt door de directory {directory} en kan daarom niet worden gewijzigd of verwijderd.",
     "ATTRIBUTE_IN_USE_BY_PROFILE": "Deze attribuutdefinitie wordt nog gebruikt door het toegangsprofiel {profile} en kan daarom niet worden gewijzigd of verwijderd.",
     "LICENSE_FEATURE_IN_USE": "Je Topicus KeyHub licentie gebruikt functies die niet zijn toegestaan volgens de licentie:",
     "CLIENT_CREDENTIALS_NOT_ALLOWED": "Deze applicatie ondersteunt geen client credentials grant en kan daarom geen toegang tot een kluis krijgen.",
     "USERNAME_ALREADY_IN_USE": "Deze gebruikersnaam bestaat reeds.",
+    "GROUP_EXCLUSION_CONFLICT": "{account} is lid van een uitgesloten groep.",
     "KEYHUB_CREDENTIALS_EXPECTED": "Je hebt het verkeerde wachtwoord ingevoerd. Voer je KeyHub-wachtwoord in.",
     "LAUNCHPAD_TILE_IDP_INITIATED_NOT_SUPPORTED": "IdP-initiated login is niet ondersteund door deze applicatie.",
     "ATTRIBUTE_IN_USE_BY_SYSTEM": "Deze attribuutdefinitie wordt nog gebruikt door het gekoppelde systeem {system} en kan daarom niet worden gewijzigd of verwijderd.",
@@ -7276,6 +7335,7 @@
       "n": "Om in te loggen op {client}, moet eerst één van de volgende groepen geactiveerd worden: {groups} of {lastGroup}."
     },
     "ATTRIBUTE_IN_USE_BY_CLIENT": "Deze attribuutdefinitie wordt nog gebruikt door de applicatie {client} en kan daarom niet worden gewijzigd of verwijderd.",
+    "INVALID_CSV": "Het CSV-bestand is ongeldig: {error}",
     "VAULT_RECORD_ALREADY_SHARED": "De kluisregel is al gedeeld met de gekozen kluis.",
     "INVALID_CREDENTIALS": "Het wachtwoord is incorrect.",
     "MODIFICATION_DELEGATION_ADMIN_NOT_ALLOWED": "Het delegeren van management is niet mogelijk voor KeyHub Administrators.",
@@ -7308,6 +7368,7 @@
     "PROVISIONING_MISSING_PERMISSION": "De toepassing mist een vereist recht: {role}",
     "PROVISIONED_SYSTEM_NO_UUID": "{system} geeft geen correcte UUID terug",
     "LICENSE_AT_LEAST_BUSINESS_REQUIRED": "Er is minimaal een Business-licentie vereist voor {username} om groepslidmaatschappen of een persoonlijke kluis toe te staan.",
+    "GROUP_EXCLUSION_ALREADY_SETUP": "Er bestaat al een groepsuitsluiting tussen deze groepen.",
     "MODIFICATION_GROUPACCOUNT_STATUS_CONFLICT": "Dit groepslidmaatschap bevindt zich in een onverwachte toestand.",
     "GROUP_ACCOUNT_HAS_LAST_SECRET": "{account} is de laatste gebruiker met toegang tot de kluis van {group} en kan daarom niet uit de groep verwijderd worden.",
     "CANNOT_REMOVE_ADMIN": "Kan KeyHub Administrator niet verwijderen.",
@@ -7323,8 +7384,8 @@
     "LAUNCHPAD_TILE_VAULT_RECORD_URL_REQUIRED": "Voor een launchpad-tegel is een link vereist.",
     "DIRECTORY_SEARCHFILTER_INCORRECT": "Het zoekfilter voor de directory is incorrect.",
     "PASSWORD_RESET_PERMANENT_LOSS": "Na de wachtwoordreset zal bepaalde toegang verloren gaan. Herstel is dan slechts nog mogelijk via een noodprocedure, gestart door een KeyHub administrator. Druk nogmaals op opslaan om toch het wachtwoord te resetten.",
-    "PROVISIONING_MISSING_DIRECTORY_ATTRIBUTE": "De directory mist een vereist account-attribuut: {attribute}",
     "GROUP_AUDIT_DRAFT_EXISTS": "Er is al een conceptaudit opgeslagen voor deze groep. Open dit concept in plaats van een nieuwe aan te maken.",
+    "IDENTITY_SOURCE_COMPLEX_ATTRIBUTE_FETCH_SEPARATELY": "Het attribuut {attribute} is complex en moet daarom los opgehaald worden.",
     "NO_VAULT_TO_RESTORE": "De gebruiker {username} heeft geen kluis om te herstellen."
   },
   "DerRSAPublicKeyValidator": {
@@ -7399,6 +7460,9 @@
     "joinGroups": {
       "link": "Vraag om toegang onder 'Mijn groepen'.",
       "msg": "Je zit nog niet in een groep."
+    },
+    "attributes": {
+      "header": "Attributen"
     },
     "cancelreregister": "Hernoeming intrekken",
     "reregister": "Hernoemen/verhuizen",
@@ -8054,8 +8118,11 @@
     },
     "attributemapping": {
       "multivalued": "Meervoudig",
+      "extra": "Toewijzing voor aanvullende attributen",
+      "fetchseparately": "Apart ophalen",
       "identifier": "Accountidentificatie",
-      "attribute": "Attribuut",
+      "selector": "Bronattribuut",
+      "attribute": "Doelattribuut",
       "main": "Attribuuttoewijzing"
     },
     "importcsv": {
@@ -8122,6 +8189,18 @@
   "IpAdresValidator": {
     "dns": "{line} is geen geldig IPv4-adres.",
     "main": "{input} is geen geldig IPv4-adres."
+  },
+  "request": {
+    "popup": {
+      "subtitle": {
+        "ALLOWED": "Wil je dit verzoek goedkeuren?",
+        "DISALLOWED": "Wil je dit verzoek weigeren?"
+      },
+      "title": {
+        "DISALLOWED": "Verzoek weigeren",
+        "ALLOWED": "Verzoek goedkeuren"
+      }
+    }
   },
   "groups": {
     "remove": {
@@ -8341,17 +8420,15 @@
   },
   "en": "en",
   "ja": "Ja",
+  "LoadListenerFactorValidator": {
+    "memrequired": "De instelling van de overbelastingsbescherming vereist minimaal {required} MB geheugen voor de Topicus KeyHub applicatie.",
+    "cpurequired": "De instelling van de overbelastingsbescherming vereist minimaal {required} CPU-cores."
+  },
   "KeyValuePairValidator": "{line} is geen sleutel/waarde-paar in de vorm 'key=value'.",
   "BlocklistedValuesValidator": "De waarde {value} is niet toegestaan voor {label}.",
   "auditLogType": {
     "selected": "# type(s) geselecteerd",
     "noneSelected": "(Alle recordtypes)"
-  },
-  "request": {
-    "confirmpopup": {
-      "title": "Verzoek goedkeuren",
-      "subtitle": "Wil je dit verzoek goedkeuren?"
-    }
   },
   "DerRSAPrivateKeyValidator": {
     "invalidkey": "Ongeldige RSA private key. Gebruik een RSA private key in DER-encoding."

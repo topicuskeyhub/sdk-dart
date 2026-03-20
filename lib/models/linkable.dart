@@ -68,6 +68,7 @@ import './profile/access_profile_client.dart';
 import './profile/access_profile_group.dart';
 import './profile/access_profile_primer.dart';
 import './profile/access_profile_provisioning.dart';
+import './profile/account_access_profile.dart';
 import './provisioning/abstract_provisioned_l_d_a_p.dart';
 import './provisioning/group_on_system.dart';
 import './provisioning/group_on_system_primer.dart';
@@ -119,6 +120,7 @@ import './request/remove_provisioned_system_request.dart';
 import './request/review_audit_request.dart';
 import './request/revoke_admin_request.dart';
 import './request/setup_authorizing_group_request.dart';
+import './request/setup_group_exclusion_request.dart';
 import './request/setup_nested_group_request.dart';
 import './request/transfer_access_profile_ownership_request.dart';
 import './request/transfer_application_administration_request.dart';
@@ -227,6 +229,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'profile.AccessProfileGroup' => AccessProfileGroup(),
             'profile.AccessProfilePrimer' => AccessProfilePrimer(),
             'profile.AccessProfileProvisioning' => AccessProfileProvisioning(),
+            'profile.AccountAccessProfile' => AccountAccessProfile(),
             'provisioning.AbstractProvisionedLDAP' => AbstractProvisionedLDAP(),
             'provisioning.GroupOnSystem' => GroupOnSystem(),
             'provisioning.GroupOnSystemPrimer' => GroupOnSystemPrimer(),
@@ -278,6 +281,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'request.ReviewAuditRequest' => ReviewAuditRequest(),
             'request.RevokeAdminRequest' => RevokeAdminRequest(),
             'request.SetupAuthorizingGroupRequest' => SetupAuthorizingGroupRequest(),
+            'request.SetupGroupExclusionRequest' => SetupGroupExclusionRequest(),
             'request.SetupNestedGroupRequest' => SetupNestedGroupRequest(),
             'request.TransferAccessProfileOwnershipRequest' => TransferAccessProfileOwnershipRequest(),
             'request.TransferApplicationAdministrationRequest' => TransferApplicationAdministrationRequest(),

@@ -34,7 +34,7 @@ class ImportRequestBuilder extends BaseRequestBuilder<ImportRequestBuilder> {
     RequestInformation toPostRequestInformation(Iterable<int> body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=83');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
         requestInfo.setContentFromScalar(requestAdapter, 'text/csv', body);
         return requestInfo;
     }

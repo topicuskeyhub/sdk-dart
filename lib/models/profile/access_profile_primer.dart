@@ -2,6 +2,7 @@
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../linkable.dart';
 import './access_profile.dart';
+import './account_access_profile.dart';
 
 /// auto generated
 class AccessProfilePrimer extends Linkable implements Parsable {
@@ -19,6 +20,7 @@ class AccessProfilePrimer extends Linkable implements Parsable {
         var mappingValue = parseNode.getChildNode('\$type')?.getStringValue();
         return switch(mappingValue) {
             'profile.AccessProfile' => AccessProfile(),
+            'profile.AccountAccessProfile' => AccountAccessProfile(),
             _ => AccessProfilePrimer(),
         };
     }

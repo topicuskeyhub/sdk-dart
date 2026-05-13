@@ -1,12 +1,15 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../audit_info.dart';
+import '../non_linkable_wrapper.dart';
 
 /// auto generated
 class AccessProfileAccountAdditionalObjects implements AdditionalDataHolder, Parsable {
     ///  Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     @override
     Map<String, Object?> additionalData;
+    ///  The attributeSummaries property
+    NonLinkableWrapper? attributeSummaries;
     ///  The audit property
     AuditInfo? audit;
     /// Instantiates a new [AccessProfileAccountAdditionalObjects] and sets the default values.
@@ -21,6 +24,7 @@ class AccessProfileAccountAdditionalObjects implements AdditionalDataHolder, Par
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = <String, void Function(ParseNode)>{};
+        deserializerMap['attributeSummaries'] = (node) => attributeSummaries = node.getObjectValue<NonLinkableWrapper>(NonLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
         return deserializerMap;
     }
@@ -28,6 +32,7 @@ class AccessProfileAccountAdditionalObjects implements AdditionalDataHolder, Par
     ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
+        writer.writeObjectValue<NonLinkableWrapper>('attributeSummaries', attributeSummaries);
         writer.writeObjectValue<AuditInfo>('audit', audit);
         writer.writeAdditionalData(additionalData);
     }

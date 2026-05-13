@@ -52,7 +52,7 @@ class AttributevalueRequestBuilder extends BaseRequestBuilder<AttributevalueRequ
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AttributevalueRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AttributevalueRequestBuilderGetQueryParameters>(requestConfiguration, () => AttributevalueRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
         return requestInfo;
     }
 }

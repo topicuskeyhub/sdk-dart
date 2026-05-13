@@ -19,7 +19,9 @@ enum ModificationRequestReportError {
     applicationCannotBeRemoved('APPLICATION_CANNOT_BE_REMOVED'),
     systemCannotBeRemoved('SYSTEM_CANNOT_BE_REMOVED'),
     groupOwnsAccessProfile('GROUP_OWNS_ACCESS_PROFILE'),
-    groupClassificationOutOfScope('GROUP_CLASSIFICATION_OUT_OF_SCOPE');
+    groupClassificationOutOfScope('GROUP_CLASSIFICATION_OUT_OF_SCOPE'),
+    wouldRemoveLastManager('WOULD_REMOVE_LAST_MANAGER'),
+    wouldRemoveLastVaultAccess('WOULD_REMOVE_LAST_VAULT_ACCESS');
     const ModificationRequestReportError(this.value);
     final String value;
 }

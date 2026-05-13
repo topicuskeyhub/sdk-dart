@@ -1,9 +1,12 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
+import '../misc/attribute_customization.dart';
 import './provisioned_system.dart';
 
 /// auto generated
 class ProvisionedAzureTenant extends ProvisionedSystem implements Parsable {
+    ///  The attributes property
+    Iterable<AttributeCustomization>? attributes;
     ///  The clientId property
     String? clientId;
     ///  The clientSecret property
@@ -25,6 +28,7 @@ class ProvisionedAzureTenant extends ProvisionedSystem implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['attributes'] = (node) => attributes = node.getCollectionOfObjectValues<AttributeCustomization>(AttributeCustomization.createFromDiscriminatorValue);
         deserializerMap['clientId'] = (node) => clientId = node.getStringValue();
         deserializerMap['clientSecret'] = (node) => clientSecret = node.getStringValue();
         deserializerMap['idpDomain'] = (node) => idpDomain = node.getStringValue();
@@ -36,6 +40,7 @@ class ProvisionedAzureTenant extends ProvisionedSystem implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeCollectionOfObjectValues<AttributeCustomization>('attributes', attributes);
         writer.writeStringValue('clientId', clientId);
         writer.writeStringValue('clientSecret', clientSecret);
         writer.writeStringValue('idpDomain', idpDomain);

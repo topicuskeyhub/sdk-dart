@@ -23,6 +23,8 @@ class AttributedefRequestBuilderGetQueryParameters implements AbstractQueryParam
     List<AccountAttributeFormat>? format;
     ///  Filter the results on the given ids.
     List<int>? id;
+    ///  Only return account attribute definitions that are or are not a list.
+    List<bool>? list;
     ///  Only return records that have been modified since the given instant.
     List<DateTime>? modifiedSince;
     ///  Filter account attribute definitions on the exact name.
@@ -53,6 +55,7 @@ class AttributedefRequestBuilderGetQueryParameters implements AbstractQueryParam
             'exclude' : exclude,
             'format' : format,
             'id' : id,
+            'list' : list,
             'modifiedSince' : modifiedSince,
             'name' : name,
             'nameContains' : nameContains,

@@ -10,6 +10,8 @@ import './o_auth2_client_profile.dart';
 class OAuth2Client extends ClientApplication implements Parsable {
     ///  The accountPermissions property
     Iterable<Permission>? accountPermissions;
+    ///  The allowDeviceGrant property
+    bool? allowDeviceGrant;
     ///  The attributes property
     Iterable<AttributeCustomization>? attributes;
     ///  The callbackURI property
@@ -48,6 +50,7 @@ class OAuth2Client extends ClientApplication implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['accountPermissions'] = (node) => accountPermissions = node.getCollectionOfObjectValues<Permission>(Permission.createFromDiscriminatorValue);
+        deserializerMap['allowDeviceGrant'] = (node) => allowDeviceGrant = node.getBoolValue();
         deserializerMap['attributes'] = (node) => attributes = node.getCollectionOfObjectValues<AttributeCustomization>(AttributeCustomization.createFromDiscriminatorValue);
         deserializerMap['callbackURI'] = (node) => callbackURI = node.getStringValue();
         deserializerMap['debugMode'] = (node) => debugMode = node.getBoolValue();
@@ -67,6 +70,7 @@ class OAuth2Client extends ClientApplication implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeBoolValue('allowDeviceGrant', value:allowDeviceGrant);
         writer.writeCollectionOfObjectValues<AttributeCustomization>('attributes', attributes);
         writer.writeStringValue('callbackURI', callbackURI);
         writer.writeBoolValue('debugMode', value:debugMode);

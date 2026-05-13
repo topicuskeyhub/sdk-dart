@@ -59,7 +59,7 @@ class WithWebhookItemRequestBuilder extends BaseRequestBuilder<WithWebhookItemRe
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
         return requestInfo;
     }
     /// Returns the single webhook.
@@ -67,7 +67,7 @@ class WithWebhookItemRequestBuilder extends BaseRequestBuilder<WithWebhookItemRe
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithWebhookItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithWebhookItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithWebhookItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
         return requestInfo;
     }
     /// Updates the webhook identified by the id.
@@ -76,8 +76,8 @@ class WithWebhookItemRequestBuilder extends BaseRequestBuilder<WithWebhookItemRe
     RequestInformation toPutRequestInformation(Webhook body, [void Function(RequestConfiguration<WithWebhookItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithWebhookItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithWebhookItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=84', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=85', body);
         return requestInfo;
     }
 }

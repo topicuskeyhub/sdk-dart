@@ -63,7 +63,6 @@ import './organization/organizational_unit_client_application.dart';
 import './organization/organizational_unit_primer.dart';
 import './profile/access_profile.dart';
 import './profile/access_profile_account.dart';
-import './profile/access_profile_account_with_attributes.dart';
 import './profile/access_profile_client.dart';
 import './profile/access_profile_group.dart';
 import './profile/access_profile_primer.dart';
@@ -224,7 +223,6 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'organization.OrganizationalUnitPrimer' => OrganizationalUnitPrimer(),
             'profile.AccessProfile' => AccessProfile(),
             'profile.AccessProfileAccount' => AccessProfileAccount(),
-            'profile.AccessProfileAccountWithAttributes' => AccessProfileAccountWithAttributes(),
             'profile.AccessProfileClient' => AccessProfileClient(),
             'profile.AccessProfileGroup' => AccessProfileGroup(),
             'profile.AccessProfilePrimer' => AccessProfilePrimer(),
@@ -313,7 +311,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
         var deserializerMap = <String, void Function(ParseNode)>{};
         deserializerMap['links'] = (node) => links = node.getCollectionOfObjectValues<Link>(Link.createFromDiscriminatorValue);
         deserializerMap['permissions'] = (node) => permissions = node.getCollectionOfObjectValues<Permission>(Permission.createFromDiscriminatorValue);
-        deserializerMap['\$type'] = (node) => type_ = node.getStringValue();
+        deserializerMap['\\\$type'] = (node) => type_ = node.getStringValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -322,7 +320,7 @@ class Linkable implements AdditionalDataHolder, Parsable {
     void serialize(SerializationWriter writer) {
         writer.writeCollectionOfObjectValues<Link>('links', links);
         writer.writeCollectionOfObjectValues<Permission>('permissions', permissions);
-        writer.writeStringValue('\$type', type_);
+        writer.writeStringValue('\\\$type', type_);
         writer.writeAdditionalData(additionalData);
     }
 }

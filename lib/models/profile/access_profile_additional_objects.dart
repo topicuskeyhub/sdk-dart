@@ -2,15 +2,12 @@
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../audit_info.dart';
 import '../identity/account_attribute_rule_linkable_wrapper.dart';
-import './access_profile_account_with_attributes_linkable_wrapper.dart';
 import './access_profile_client_linkable_wrapper.dart';
 import './access_profile_group_linkable_wrapper.dart';
 import './access_profile_provisioning_linkable_wrapper.dart';
 
 /// auto generated
 class AccessProfileAdditionalObjects implements AdditionalDataHolder, Parsable {
-    ///  The accountsWithAttributes property
-    AccessProfileAccountWithAttributesLinkableWrapper? accountsWithAttributes;
     ///  Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     @override
     Map<String, Object?> additionalData;
@@ -36,7 +33,6 @@ class AccessProfileAdditionalObjects implements AdditionalDataHolder, Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = <String, void Function(ParseNode)>{};
-        deserializerMap['accountsWithAttributes'] = (node) => accountsWithAttributes = node.getObjectValue<AccessProfileAccountWithAttributesLinkableWrapper>(AccessProfileAccountWithAttributesLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['attributeRules'] = (node) => attributeRules = node.getObjectValue<AccountAttributeRuleLinkableWrapper>(AccountAttributeRuleLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
         deserializerMap['clients'] = (node) => clients = node.getObjectValue<AccessProfileClientLinkableWrapper>(AccessProfileClientLinkableWrapper.createFromDiscriminatorValue);
@@ -48,7 +44,6 @@ class AccessProfileAdditionalObjects implements AdditionalDataHolder, Parsable {
     ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
-        writer.writeObjectValue<AccessProfileAccountWithAttributesLinkableWrapper>('accountsWithAttributes', accountsWithAttributes);
         writer.writeObjectValue<AccountAttributeRuleLinkableWrapper>('attributeRules', attributeRules);
         writer.writeObjectValue<AuditInfo>('audit', audit);
         writer.writeObjectValue<AccessProfileClientLinkableWrapper>('clients', clients);

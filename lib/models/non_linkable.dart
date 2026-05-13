@@ -24,7 +24,6 @@ import './group/group_mail.dart';
 import './group/groups_audit_stats.dart';
 import './identity/account_attribute_definition_property.dart';
 import './identity/account_attribute_value_selection.dart';
-import './identity/account_attribute_value_summary.dart';
 import './identity/account_attribute_value_update.dart';
 import './identitysource/identity_source_attribute_mapping.dart';
 import './item_count.dart';
@@ -127,7 +126,6 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'group.GroupsAuditStats' => GroupsAuditStats(),
             'identity.AccountAttributeDefinitionProperty' => AccountAttributeDefinitionProperty(),
             'identity.AccountAttributeValueSelection' => AccountAttributeValueSelection(),
-            'identity.AccountAttributeValueSummary' => AccountAttributeValueSummary(),
             'identity.AccountAttributeValueUpdate' => AccountAttributeValueUpdate(),
             'identitysource.IdentitySourceAttributeMapping' => IdentitySourceAttributeMapping(),
             'ItemCount' => ItemCount(),
@@ -197,14 +195,14 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = <String, void Function(ParseNode)>{};
-        deserializerMap['\$type'] = (node) => type_ = node.getStringValue();
+        deserializerMap['\\\$type'] = (node) => type_ = node.getStringValue();
         return deserializerMap;
     }
     /// Serializes information the current object
     ///  [writer] Serialization writer to use to serialize this model
     @override
     void serialize(SerializationWriter writer) {
-        writer.writeStringValue('\$type', type_);
+        writer.writeStringValue('\\\$type', type_);
         writer.writeAdditionalData(additionalData);
     }
 }

@@ -1,6 +1,7 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../directory/account_directory_primer.dart';
+import '../identity/account_attribute_definition.dart';
 import '../misc/attribute_customization.dart';
 import './a_d_sam_account_name_scheme.dart';
 import './l_d_a_p_password_hashing_scheme.dart';
@@ -10,6 +11,10 @@ import './provisioned_system.dart';
 
 /// auto generated
 class ProvisionedLDAPDirectory extends ProvisionedSystem implements Parsable {
+    ///  The accountMatchingAttribute property
+    AccountAttributeDefinition? accountMatchingAttribute;
+    ///  The accountMatchingAttributeName property
+    String? accountMatchingAttributeName;
     ///  The accountsWritable property
     bool? accountsWritable;
     ///  The attributes property
@@ -45,6 +50,8 @@ class ProvisionedLDAPDirectory extends ProvisionedSystem implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['accountMatchingAttribute'] = (node) => accountMatchingAttribute = node.getObjectValue<AccountAttributeDefinition>(AccountAttributeDefinition.createFromDiscriminatorValue);
+        deserializerMap['accountMatchingAttributeName'] = (node) => accountMatchingAttributeName = node.getStringValue();
         deserializerMap['accountsWritable'] = (node) => accountsWritable = node.getBoolValue();
         deserializerMap['attributes'] = (node) => attributes = node.getCollectionOfObjectValues<AttributeCustomization>(AttributeCustomization.createFromDiscriminatorValue);
         deserializerMap['directory'] = (node) => directory = node.getObjectValue<AccountDirectoryPrimer>(AccountDirectoryPrimer.createFromDiscriminatorValue);
@@ -63,6 +70,8 @@ class ProvisionedLDAPDirectory extends ProvisionedSystem implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeObjectValue<AccountAttributeDefinition>('accountMatchingAttribute', accountMatchingAttribute);
+        writer.writeStringValue('accountMatchingAttributeName', accountMatchingAttributeName);
         writer.writeBoolValue('accountsWritable', value:accountsWritable);
         writer.writeCollectionOfObjectValues<AttributeCustomization>('attributes', attributes);
         writer.writeObjectValue<AccountDirectoryPrimer>('directory', directory);

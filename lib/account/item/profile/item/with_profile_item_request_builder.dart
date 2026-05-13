@@ -34,7 +34,7 @@ class WithProfileItemRequestBuilder extends BaseRequestBuilder<WithProfileItemRe
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithProfileItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithProfileItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithProfileItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
         return requestInfo;
     }
 }

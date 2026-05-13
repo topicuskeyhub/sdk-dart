@@ -34,11 +34,11 @@
               },
               "ProvisioningGroupAddPage$ProvisioningGroupAddBean#newGroupOnSystem": {
                 "label": "New group on system",
-                "description": "Tip: KeyHub will automatically complete the name to a valid name in the linked system"
+                "description": "Tip: KeyHub will automatically complete the name to a valid name in the linked system."
               },
               "ProvisioningGroupAddPage$ProvisioningGroupAddBean#reason": {
                 "label": "Reason",
-                "description": "This group on {0} is owned by {1}. Give a reason to give the chosen group access to this group on {0}"
+                "description": "This group on {0} is owned by {1}. Give a reason to give the chosen group access to this group on {0}."
               },
               "ProvisioningGroupAddPage$ProvisioningGroupAddBean#accessProfile": {
                 "label": "Access profile"
@@ -59,12 +59,6 @@
               "ProvisioningGroupAddPage$ProvisioningGroupAddBean#system": {
                 "label": "Linked system"
               }
-            },
-            "VerifyUserCodePage$DeviceVerifyInfo#usercode": {
-              "label": "User code"
-            },
-            "VerifyUserCodePage$DeviceVerifyInfo#client": {
-              "label": "Application"
             }
           },
           "components": {
@@ -80,7 +74,7 @@
                 "label": "Encrypted"
               },
               "IdentitySourceImportCSVPanel$CSVImportBean#csv": {
-                "description": "The maximum size is 10mb.",
+                "description": "The maximum size is 10 MB.",
                 "label": "CSV file",
                 "placeholder": "Choose a file"
               },
@@ -348,7 +342,7 @@
               "AuditRecordType#SETUP_AUTHORIZING_GROUP_DISCONNECT_REQUESTED": "Remove authorisation - Requested",
               "AuditRecordType#GROUP_MOVED": "Group - Moved",
               "AuditRecordType#GRANT_APPLICATION_ACCEPTED": "Grant access to application - Approved",
-              "AuditRecordType#UPDATE_LICENSE_DECLINED": "Update the license - Declined",
+              "AuditRecordType#UPDATE_LICENSE_DECLINED": "Update the licence - Declined",
               "AuditRecordType#ADD_GROUP_TO_ACCESS_PROFILE_ACCEPTED": "Add group to access profile - Approved",
               "AuditRecordType#DISABLE_2FA_ACCEPTED": "Disable 2FA - Approved",
               "AuditAccountAction": {
@@ -375,6 +369,7 @@
               "AuditRecordType#IDENTITY_SOURCE_REMOVED": "Identity source - Removed",
               "AuditRecordType#PROVISIONED_SYSTEM_UNKNOWN_ACCOUNT_DESTROYED": "Linked system - Unknown account removed",
               "AuditNestedGroupAction#MISMATCH": "Not identical",
+              "AuditRecordType#DEVICE_CODE_ISSUED": "Device - Code issued",
               "AuditRecordType#SETUP_GROUP_EXCLUSION_CONNECT_REQUESTED": "Setup group exclusion - Requested",
               "AuditRecordType#REMOVE_ACCESS_PROFILE_DECLINED": "Remove access profile - Declined",
               "AuditRecordType#GROUP_MODIFIED": "Group - Modified",
@@ -426,7 +421,7 @@
               "GroupAuditAccount#account": {
                 "label": "Account"
               },
-              "AuditRecordType#UPDATE_LICENSE_ACCEPTED": "Update the license - Approved",
+              "AuditRecordType#UPDATE_LICENSE_ACCEPTED": "Update the licence - Approved",
               "AuditRecordType#VAULT_ACCESS_RESTORED": "Vault - Access restored",
               "AuditRecordType#ACCOUNT_ADDED_TO_ORGANIZATIONAL_UNIT": "Account - Added to an organisational unit",
               "AuditRecordType#PROVISIONED_SYSTEM_REMOVED": "Linked system - Removed",
@@ -460,7 +455,7 @@
               "AuditAccountAction#ADD_AS_NORMAL": "Add member",
               "AuditRecordType#GRANT_GROUP_ON_SYSTEM_REQUEST_DECLINED": "Request access to group on linked system - Declined",
               "AuditRecordType#REMOVE_ORGANIZATIONAL_UNIT_REQUESTED": "Remove organisational unit - Requested",
-              "AuditRecordType#CREATE_GROUP_ON_SYSTEM_REQUESTED": "Create group on System - Requested",
+              "AuditRecordType#CREATE_GROUP_ON_SYSTEM_REQUESTED": "Create group on system - Requested",
               "AuditNestedGroupAction#INCLUDE": "Include",
               "AuditRecordType#ACCOUNT_ACCESS_PROFILE_DEPROVISIONED": "Account - Access profile disabled on linked system",
               "AuditRecordType#GROUP_CLASSIFICATION_REMOVED": "Group classification - Removed",
@@ -499,6 +494,7 @@
               "AuditRecordType#IDENTITY_SOURCE_CREATED": "Identity source - Created",
               "AuditRecordType#GRANT_GROUP_ON_SYSTEM_ACCEPTED": "Grant access to group on linked system - Approved",
               "AuditRecordType#CREATE_GROUP_REQUESTED": "Create group - Requested",
+              "AuditRecordType#DEVICE_CODE_REJECTED": "Device - Code rejected",
               "AuditRecordType#PROVISIONED_SYSTEM_ADDED_TO_ACCESS_PROFILE": "Linked system - Added access profile",
               "AuditRecordType#PROVISIONED_SYSTEM_REMOVED_FROM_ACCESS_PROFILE": "Linked system - Removed from access profile",
               "AuditRecordType#GROUP_EXCLUSION_CREATED": "Group exclusion - Created",
@@ -525,7 +521,7 @@
               "AuditRecordType#GROUP_AUTHORIZATION_DISCONNECTED": "Group - Authorisation removed",
               "AuditRecordType#ACCOUNT_PROVISIONING_INITED": "Account - Added to linked system",
               "AuditRecordType#CREATE_SERVICE_ACCOUNT_REQUESTED": "Create service account - Requested",
-              "AuditRecordType#LICENSE_KEY_UPLOADED": "License key uploaded",
+              "AuditRecordType#LICENSE_KEY_UPLOADED": "Licence key uploaded",
               "AuditRecordType#GROUP_AUDIT_CREATED": "Group Audit - Created",
               "AuditRecordType#GRANT_ACCESS_REQUESTED": "Request access - Requested",
               "AuditRecordType#REVOKE_ADMIN_REQUESTED": "Remove KeyHub Administrator - Requested",
@@ -551,6 +547,7 @@
               "AuditRecordType#ACCESS_PROFILE_CREATED": "Access profile - Created",
               "AuditRecordType#ACCOUNT_REMOVED_FROM_GROUP": "Account - Removed from a group",
               "AuditRequiredSourceType#PERIODIC": "Periodic",
+              "AuditRecordType#DEVICE_CODE_VERIFIED": "Device - Code verified",
               "AuditRecordType#SETUP_AUTHORIZING_GROUP_CONNECT_REQUESTED": "Setup authorisation - Requested",
               "AuditRecordType#TRANSFER_APPLICATION_ADMINISTRATION_DECLINED": "Transfer administration of application - Declined",
               "AuditRecordType#GROUP_ON_SYSTEM_CREATED": "Group on system - Created",
@@ -585,7 +582,7 @@
               "AuditRecordType#VERIFY_INTERNAL_ACCOUNT_REQUESTED": "Verify internal account - Requested",
               "AuditRecordType#REVOKE_ADMIN_ACCEPTED": "Remove KeyHub Administrator - Approved",
               "AuditRecordType#REMOVE_ORGANIZATIONAL_UNIT_DECLINED": "Remove organisational unit - Declined",
-              "AuditRecordType#UPDATE_LICENSE_REQUESTED": "Update the license - Requested",
+              "AuditRecordType#UPDATE_LICENSE_REQUESTED": "Update the licence - Requested",
               "AuditRecordType#TRANSFER_PROVISIONED_SYSTEM_OWNERSHIP_REQUESTED": "Transfer ownership of linked system - Requested",
               "AuditRecordType#GRANT_SERVICE_ACCOUNT_GROUP_DECLINED": "Grant service account access to group on linked system - Declined",
               "AuditRecordType#UPDATE_GROUP_MEMBERSHIP_ACCEPTED": "Update a group membership - Approved",
@@ -715,16 +712,17 @@
               },
               "ModificationRequestType#ENABLE_PROFILE_ADMINISTRATION": "ENABLE",
               "UpdateLicenseRequest#licenseKey": {
-                "label": "License file"
+                "label": "Licence file"
               },
               "ModificationRequest#feedback": {
                 "label": "Reason for approval/refusal"
               },
               "ModificationRequestReportChange#ACCESS_PROFILE_CLIENT_REMOVED_OWNER": "The application {0} is moved along with this group. As a result, the access profile {1} loses access.",
-              "ModificationRequestReportConclusion#CANNOT_BE_EXECUTED": "Request can not be fulfilled.",
+              "ModificationRequestReportConclusion#CANNOT_BE_EXECUTED": "Request cannot be fulfilled.",
               "ModificationRequestReportError#GROUP_CLASSIFICATION_OUT_OF_SCOPE": "The group falls under a classification that is not available within the new organisational unit.",
               "ModificationRequestType#TRANSFER_PROVISIONED_SYSTEM_CONTENT_ADMINISTRATION": "TRANSFER CONTENT ADMIN",
               "ModificationRequestType#ENABLE_TECHNICAL_ADMINISTRATION": "ENABLE",
+              "ModificationRequestReportError#WOULD_REMOVE_LAST_MANAGER": "The group would be left without a manager.",
               "ModificationRequestType#VERIFY_INTERNAL_ACCOUNT": "APPROVE ACCOUNT",
               "ModificationRequest#group": {
                 "label": "Group",
@@ -745,23 +743,23 @@
               },
               "ModificationRequestReportChange#GROUP_CLIENT_REMOVED_OUT_OF_SCOPE": "After moving, the application {0} is no longer visible. Access will be removed.",
               "ModificationRequestStatus#ALLOWED": "Approved",
-              "ModificationRequestReportChange#GROUP_AUTHORIZATION_REMOVED": "All forms of additional authorizations on these groups will be removed.",
+              "ModificationRequestReportChange#GROUP_AUTHORIZATION_REMOVED": "All forms of additional authorisations on these groups will be removed.",
               "ModificationRequestType#TRANSFER_PROVISIONED_SYSTEM_ADMINISTRATION": "TRANSFER ADMIN",
               "ModificationRequestReportChange#ACCESS_PROFILE_PROVISIONING_REMOVED_OUT_OF_SCOPE": "The group on system {0} is no longer visible for the access profile {1} after being moved, and therefore access is being removed.",
               "ModificationRequestType#DISABLE_2FA": "DISABLE 2FA",
               "ModificationRequestReport#conclusion": {
                 "label": "Conclusion"
               },
-              "ModificationRequestReportChange#ORGANIZATIONALUNIT_RECOVERYFALLBACKGROUP_WILL_BE_REMOVED": "Set as Password recovery reserve group on organizational unit {1}, this will be deleted.",
+              "ModificationRequestReportChange#ORGANIZATIONALUNIT_RECOVERYFALLBACKGROUP_WILL_BE_REMOVED": "Set as Password recovery reserve group on organisational unit {1}, this will be deleted.",
               "ModificationRequestReportError#SYSTEM_CANNOT_BE_REMOVED": "The {2}: {1} cannot be removed ({3}).",
-              "ModificationRequestReportChange#ORGANIZATIONALUNIT_REMOVEGROUPAPPROVEGROUP_WILL_BE_REMOVED": "Set as approver for 'Group deletion' on organizational unit {1}, this will be deleted.",
+              "ModificationRequestReportChange#ORGANIZATIONALUNIT_REMOVEGROUPAPPROVEGROUP_WILL_BE_REMOVED": "Set as approver for 'Group deletion' on organisational unit {1}, this will be deleted.",
               "ModificationRequestReportChange#ORGANIZATIONAL_UNIT_REMOVED": "These organisational units will be removed.",
               "ModificationRequestReportChange#SYSTEM_ACCOUNTS_WRITABLE_DISABLED": "'Accounts writable' will be disabled for these linked systems.",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_GROUP_REMOVED_OWNER": "The group on system {0} moves with this group and therefore the service account {1} loses access.",
               "ModificationRequestType#TRANSFER_PROVISIONED_SYSTEM_OWNERSHIP": "TRANSFER OWNERSHIP",
               "ModificationRequestReportChange#ACCESS_PROFILE_PROVISIONING_REMOVED": "These groups on systems will be removed from access profiles.",
               "ModificationRequestType#REVIEW_AUDIT": "REVIEW AUDIT",
-              "ModificationRequestReportChange#ORGANIZATIONALUNIT_CREATEGROUPAPPROVEGROUP_WILL_BE_REMOVED": "Set as approver for 'Group creation' on organizational unit {1}, this will be deleted.",
+              "ModificationRequestReportChange#ORGANIZATIONALUNIT_CREATEGROUPAPPROVEGROUP_WILL_BE_REMOVED": "Set as approver for 'Group creation' on organisational unit {1}, this will be deleted.",
               "ModificationRequestReportError#ADMIN_GROUP_CANNOT_BE_MOVED": "The KeyHub administrators group cannot be moved.",
               "ModificationRequestType#GRANT_SERVICE_ACCOUNT_GROUP": "ACCESS TO GROUP",
               "ModificationRequestStatus#DISALLOWED": "Declined",
@@ -771,7 +769,9 @@
               "ModificationRequestReportError#APPLICATION_CANNOT_BE_REMOVED": "No permissions to delete {2}: {1} ({3}).",
               "ModificationRequestReportChange#PROVISIONING_GROUP_REMOVED_OWNER": "The group on system {0} moves with this group. The KeyHub group {1} loses access.",
               "ModificationRequestType#SETUP_GROUP_EXCLUSION": "EXCLUSION",
+              "ModificationRequestReportChange#PROVISIONING_GROUP_WILL_BE_REMOVED": "The group {1} will lose access to the group on system {2}.",
               "ModificationRequestType#RESET_PASSWORD": "RECOVER PASSWORD",
+              "ModificationRequestReportChange#ACCESS_PROFILE_PROVISIONING_WILL_BE_REMOVED": "The access profile {1} will lose access to the group on system {2}.",
               "GrantClientPermissionRequest#permissionType": {
                 "label": "Permission"
               },
@@ -792,7 +792,7 @@
               "ModificationRequestReportChange#VAULT_RECORDS_WILL_BE_REMOVED_UNRECOVERABLE": "The vault together with the {1} vault record(s) will be removed. These vault records cannot be restored after removal.",
               "ModificationRequestType#SETUP_NESTED_GROUP": "NESTING",
               "ModificationRequestReportError#GROUP_OWNS_OU": "Is the owner of organisational unit {1}.",
-              "ModificationRequestReportChange#ORGANIZATIONALUNIT_AUDITORGROUP_WILL_BE_REMOVED": "Set as Auditor Group on organizational unit {1}, this will be deleted.",
+              "ModificationRequestReportChange#ORGANIZATIONALUNIT_AUDITORGROUP_WILL_BE_REMOVED": "Set as Auditor Group on organisational unit {1}, this will be deleted.",
               "ModificationRequestReportError#ONE_MOVEABLE_VAULT_ACCESS_OF_MULTIPLE_MEMBERS": "The group has only one member with vault access that can be moved.",
               "ModificationRequestReportError#GROUP_OWNS_ACCESS_PROFILE": "Is owner of access profile {1}.",
               "ModificationRequestReportChange#SERVICE_ACCOUNT_WILL_BE_REMOVED": "The {2}: {1} will be removed ({3}).",
@@ -806,15 +806,21 @@
                 "label": "User"
               },
               "ModificationRequestType#TRANSFER_APPLICATION_ADMINISTRATION": "TRANSFER ADMIN",
-              "ModificationRequestType#SETUP_AUTHORIZING_GROUP": "AUTHORIZATION",
+              "ModificationRequestType#SETUP_AUTHORIZING_GROUP": "AUTHORISATION",
               "ModificationRequestReportChange#GROUP_ACTIVATION_FOR_PROVISIONING_DISABLED": "'Activation required' will be disabled for these groups on systems.",
               "ModificationRequestType#GRANT_GROUP_ON_SYSTEM_REQUEST": "ACCESS TO GROUP",
               "ModificationRequestReportChange#GROUP_EXCLUSION_WILL_BE_REMOVED": "The group exclusion with {1} will be removed.",
               "ModificationRequestReportError#MULTIPLE_OUS": "The request contains groups from more than one organisational unit.",
               "ModificationRequestReportChange#GROUP_ACTIVATION_FOR_VAULT_DISABLED": "'Activation required for vault access' will be disabled on these groups.",
-              "ModificationRequestReportError#AUTHORIZED_GROUP_CANNOT_BE_REMOVED": "Performs authorization for {1}.",
+              "ModificationRequestReportError#AUTHORIZED_GROUP_CANNOT_BE_REMOVED": "Performs authorisation for {1}.",
+              "SetupGroupExclusionRequest#requestingGroup": {
+                "label": "Requesting group"
+              },
               "ModificationRequestReportError#HAS_NESTED_GROUP_CANNOT_BE_REMOVED": "Has {2} nested group(s).",
-              "ModificationRequestReportChange#ORGANIZATIONALUNIT_ENABLETECHADMINAPPROVEGROUP_WILL_BE_REMOVED": "Set as approver for 'Enable Technical Management' on organizational unit {1}, this will be deleted.",
+              "ModificationRequestReportChange#ORGANIZATIONALUNIT_ENABLETECHADMINAPPROVEGROUP_WILL_BE_REMOVED": "Set as approver for 'Enable Technical Management' on organisational unit {1}, this will be deleted.",
+              "ModificationRequestReportChange#ACCESS_PROFILE_CLIENT_WILL_BE_REMOVED": "The access profile {1} will lose access to the application {2}.",
+              "ModificationRequestReportChange#GROUP_CLIENT_WILL_BE_REMOVED": "The group {1} will lose access to the application {2}.",
+              "ModificationRequestReportError#WOULD_REMOVE_LAST_VAULT_ACCESS": "The group would be left without a member with vault access.",
               "ModificationRequestStatus#CANCELLED": "Withdrawn",
               "ModificationRequestStatus#REQUESTED": "Requested",
               "ModificationRequestType#JOIN_VAULT": "JOIN VAULT",
@@ -832,7 +838,7 @@
               "ModificationRequestReportChange#SERVICE_ACCOUNT_REMOVED": "These service accounts will be removed.",
               "ModificationRequestReportChange#ACCESS_PROFILE_CLIENT_REMOVED_OUT_OF_SCOPE": "The assigned application {0} is no longer visible for the access profile {1} after being moved, and therefore access is being removed.",
               "ModificationRequestReportError#GROUP_OWNS_OR_ADMINS_SYSTEM": "The group has a role for a linked system.",
-              "ModificationRequestReportChange#ORGANIZATIONAL_UNIT_CLIENT_APPLICATION_REMOVED_OUT_OF_SCOPE": "The organizational unit {1} is no longer visible to client application {0} after being moved, and therefore access is being removed.",
+              "ModificationRequestReportChange#ORGANIZATIONAL_UNIT_CLIENT_APPLICATION_REMOVED_OUT_OF_SCOPE": "The organisational unit {1} is no longer visible to client application {0} after being moved, and therefore access is being removed.",
               "ModificationRequestType#TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP": "TRANSFER OWNERSHIP",
               "LinkDirectoryToAccessProfileRequest#directory": {
                 "label": "Directory"
@@ -935,7 +941,7 @@
               },
               "AccountDirectory#restrict2fa": {
                 "label": "Restrict 2FA setup",
-                "description": "If enabled, a user can only setup 2FA after it has been disabled via a request. It is then not allowed to configure other 2FA options yourself."
+                "description": "If enabled, a user can only set up 2FA after it has been disabled via a request. It is then not allowed to configure other 2FA options themselves."
               },
               "LDAPDirectory#port": {
                 "label": "Port"
@@ -945,7 +951,7 @@
                 "label": "Enforces 2FA",
                 "description": "If enabled, Topicus KeyHub will not prompt the user for 2FA. This is enforced by the directory itself."
               },
-              "AccountDirectoryStatus#INIT_REQUIRED": "Uninitialized",
+              "AccountDirectoryStatus#INIT_REQUIRED": "Uninitialised",
               "OIDCDirectory#sendLoginHint": {
                 "label": "Send login_hint",
                 "description": "If enabled, Topicus KeyHub will send a login_hint parameter to the IDP. This hint can help the IDP automatically select the correct account."
@@ -1138,7 +1144,7 @@
               },
               "AccountAttributeValueSelectionStatus#DUPLICATE": "Duplicate",
               "AccountAttributeSystemDefinition#DISPLAY_NAME": "Display name",
-              "AccountAttributeSystemDefinition#EMAIL_PRIVATE": "Private email address",
+              "AccountAttributeSystemDefinition#EMAIL_PRIVATE": "Private e-mail address",
               "AccountAttributeFormat#DATE": "Date",
               "AccountAttributeDefinition#freelyUseable": {
                 "label": "Freely useable"
@@ -1186,7 +1192,7 @@
               },
               "AccountAttributeFormat#NUMBER": "Number",
               "Identity#privateEmail": {
-                "label": "Private email address"
+                "label": "Private e-mail address"
               },
               "AccountAttributeSystemDefinition#TELEPHONE": "Phone number",
               "AccountAttributeRule#priorityDirectory": {
@@ -1214,12 +1220,12 @@
               },
               "AccountAttributeFormat#EMAIL": "E-mail address",
               "AccountAttributeValueSelectionStatus#OUT_OF_SYNC": "Unsynchronised",
-              "AccountAttributeSystemDefinition#EMAIL": "Email address",
+              "AccountAttributeSystemDefinition#EMAIL": "E-mail address",
               "AccountAttributeDefinition#name": {
                 "label": "Name"
               },
               "AccountAttributeFormat#DATETIME": "Date/time",
-              "AccountAttributeSystemDefinition#LICENSE": "License role",
+              "AccountAttributeSystemDefinition#LICENSE": "Licence role",
               "AccountAttributeValueSelectionStatus#MISSING": "Missing",
               "Identity#telephone": {
                 "label": "Phone number"
@@ -1234,7 +1240,7 @@
               "InternalAccountStatus#ACTIVATED": "Activated",
               "UnregisteredAccount#keyHubUsername": {
                 "description": {
-                  "changed": "Note: your username in Topicus KeyHub has been changed. From now on you can only login with this new username.",
+                  "changed": "Note: your username in Topicus KeyHub has been changed. From now on you can only log in with this new username.",
                   "readonly": "This is the username with which your account will be created in KeyHub.",
                   "main": "If desired, you can choose a different username for KeyHub. This username will be used throughout KeyHub.",
                   "unchanged": "Your username in Topicus KeyHub remains unchanged."
@@ -1248,7 +1254,7 @@
                 "label": "Enabled"
               },
               "TwoFactorAuthenticationStatus#WEBAUTHN": "2FA via WebAuthn",
-              "AccountBulkUpdateAction#CHANGE_LICENSE_ROLE_TO_PRO": "Change license to Pro",
+              "AccountBulkUpdateAction#CHANGE_LICENSE_ROLE_TO_PRO": "Change licence to Pro",
               "Account#twoFactorStatus": {
                 "label": "Two-factor authentication"
               },
@@ -1261,13 +1267,13 @@
               },
               "TwoFactorAuthenticationStatus#TOTP": "2FA enabled",
               "Account#licenseRole": {
-                "label": "License role"
+                "label": "Licence role"
               },
               "InternalAccountStatus#NOT_ACTIVATED": "Activation code sent, not yet activated",
               "AccountLicenseRole#PRO": "Pro",
               "AccountChangePassword#logoutOtherSessions": {
-                "label": "Logout all sessions",
-                "description": "Logout all sessions but the current."
+                "label": "Log out all sessions",
+                "description": "Log out all sessions but the current."
               },
               "AccountChangePublicKey#publicKey": {
                 "label": "SSH Public key",
@@ -1279,7 +1285,7 @@
                 "label": "Use rotating password"
               },
               "AccountStatus#licenseRole": {
-                "label": "License role"
+                "label": "Licence role"
               },
               "AccountBulkUpdateAction#MARK_FOR_RENAME": "Rename or move",
               "Account#idInDirectory": {
@@ -1322,7 +1328,7 @@
                 "placeholder": "Verification code",
                 "label": "Current code"
               },
-              "AccountBulkUpdateAction#CHANGE_LICENSE_ROLE_TO_BUSINESS": "Change license to Business",
+              "AccountBulkUpdateAction#CHANGE_LICENSE_ROLE_TO_BUSINESS": "Change licence to Business",
               "AccountChangePassword#oldDirectoryPassword": {
                 "label": "Current password"
               },
@@ -1395,7 +1401,7 @@
               "TwoFactorAuthenticationStatus#EXTERNAL": "2FA managed externally",
               "AccountValidity#REREGISTRATION_REQUIRED": "Re-registration required",
               "AccountLicenseRole#BUSINESS": "Business",
-              "AccountBulkUpdateAction#CHANGE_LICENSE_ROLE_TO_IGA": "Change license to IGA",
+              "AccountBulkUpdateAction#CHANGE_LICENSE_ROLE_TO_IGA": "Change licence to IGA",
               "InternalAccount#directory": {
                 "label": "Directory"
               },
@@ -1421,7 +1427,7 @@
               },
               "GroupExtendedAccess#ONE_WEEK": "Up to 1 week",
               "GroupGlobalRoleInfo#removeGroupApproveGroupFor": {
-                "description": "Requests to remove groups are handled by this group for the organization(s) above.",
+                "description": "Requests to remove groups are handled by this group for the organisation(s) above.",
                 "label": "Approve 'Remove group' for"
               },
               "GroupClassification#maximumAuditInterval": {
@@ -1513,11 +1519,11 @@
               },
               "GroupExtendedAccess#TWO_WEEKS": "Up to 2 weeks",
               "GroupGlobalRoleInfo#auditorGroupFor": {
-                "description": "This group has the auditor role for the organization(s) above.",
+                "description": "This group has the auditor role for the organisation(s) above.",
                 "label": "Auditor group for"
               },
               "GroupAuditConfig#months": {
-                "description": "The months where every second tuesday a periodic group audit should be performed.",
+                "description": "The months where every second Tuesday a periodic group audit should be performed.",
                 "label": "Periodic audit months"
               },
               "Group#recordTrail": {
@@ -1528,7 +1534,7 @@
                 "label": "UUID"
               },
               "GroupGlobalRoleInfo#createGroupApproveGroupFor": {
-                "description": "Requests to create new groups are handled by this group for the organization(s) above.",
+                "description": "Requests to create new groups are handled by this group for the organisation(s) above.",
                 "label": "Approve 'Create group' for"
               },
               "GroupClassificationPrimer#name": {
@@ -1536,7 +1542,7 @@
               },
               "GroupRights#MANAGER": "Management privileges",
               "GroupClient#activationRequired": {
-                "description": "Activation of the group is required to login.",
+                "description": "Activation of the group is required to log in.",
                 "label": "Activation required"
               },
               "GroupClassification#authorizingGroupMembershipRequired": {
@@ -1545,7 +1551,7 @@
               },
               "GroupGlobalRoleInfo#enableTechAdminApproveGroupFor": {
                 "label": "Approve 'Enable technical administration' for",
-                "description": "Requests to enable technical administration on groups are handled by this group for the organization(s) above."
+                "description": "Requests to enable technical administration on groups are handled by this group for the organisation(s) above."
               },
               "Group#helpdesk": {
                 "label": "Helpdesk for",
@@ -1557,7 +1563,7 @@
               },
               "GroupGlobalRoleInfo#recoveryFallbackGroupFor": {
                 "label": "Password recovery fallback group for",
-                "description": "Password recovery requests for users with insufficient group managers are also sent to users in this group for the organization(s) above."
+                "description": "Password recovery requests for users with insufficient group managers are also sent to users in this group for the organisation(s) above."
               },
               "GroupClassificationPrimer#organizationalUnit": {
                 "label": "Organisational unit"
@@ -1636,7 +1642,7 @@
               },
               "KeyHubStatistics#activeProAccounts": {
                 "label": "Active Pro accounts",
-                "description": "Pro accounts also use a business license."
+                "description": "Pro accounts also use a business licence."
               },
               "LicenseFeature#GROUP_ACTIVATION": "Group activation",
               "KeyHubLicenseInfo#usersProLimit": {
@@ -1673,7 +1679,7 @@
               },
               "LicenseFeature#ENTERPRISE_ORGANISATION": "Enterprise organisation",
               "KeyHubLicenseInfo#licenseKey": {
-                "label": "License key"
+                "label": "Licence key"
               },
               "LicenseFeature#WORKFLOWS": "Workflows",
               "KeyHubLicenseInfo#uuid": {
@@ -1704,7 +1710,6 @@
               "ProvisionedSCIM#bearerToken": {
                 "label": "Bearer Token"
               },
-              "ProvisioningOperationType#SYNC_ACCOUNT": "Sync account",
               "ProvisionedSCIM#basicAuthPassword": {
                 "label": "Password"
               },
@@ -1735,7 +1740,7 @@
               },
               "ProvisionedSystem#shouldDestroyUnknownAccounts": {
                 "label": "Remove unknown accounts",
-                "description": "Accounts that are not known within Topicus KeyHub will be removed during a synchronization."
+                "description": "Accounts that are not known within Topicus KeyHub will be removed during a synchronisation."
               },
               "GroupOnSystemType#ACCOUNT_ONLY": "Account-only provisioning",
               "ProvisionedSCIM#externalIdSupported": {
@@ -1744,7 +1749,7 @@
               "ProvisionedSCIMVendor#CUSTOM": "Customised",
               "ProvisionedSystem#contentAdministrator": {
                 "placeholder": "Select a group...",
-                "description": "The contents of this linked system is administered by members of the selected group.",
+                "description": "The contents of this linked system are administered by members of the selected group.",
                 "label": "Content administrators group"
               },
               "ProvisionedSystemPrimer#uuid": {
@@ -1758,7 +1763,6 @@
                 "label": "Bind DN",
                 "placeholder": "CN=User Name,OU=group,DC=company,DC=local"
               },
-              "ProvisioningOperationType#ROTATE_PASSWORDS": "Rotate passwords",
               "ProvisionedSystem#externalUuid": {
                 "label": "External UUID"
               },
@@ -1767,13 +1771,14 @@
               "ProvisionedAzureTenant#clientId": {
                 "label": "Client identifier"
               },
+              "ProvisionedAzureTenant#attributes": {
+                "label": "Custom attributes"
+              },
               "AbstractProvisionedLDAP#groupDN": {
                 "description": "The RDN under base DN containing groups.",
                 "label": "Group RDN"
               },
               "ProvisionedSCIMVendor#TOPICUS_KEYHUB_CONNECTOR": "Topicus KeyHub Connector",
-              "ProvisioningOperationType#UPDATE_SYSTEM": "Update system",
-              "ProvisioningOperationType#CLEANUP_OLD_ACCOUNTS": "Cleanup old accounts",
               "ProvisionedAzureOIDCDirectory#tenant": {
                 "label": "Azure tenant"
               },
@@ -1798,21 +1803,18 @@
                 "label": "Additional object classes",
                 "description": "Specify additional values for the objectClass attribute for accounts, separated by spaces."
               },
-              "ProvisioningOperationType#DESTROY_SERVICE_ACCOUNT": "Destroy service account",
               "GroupOnSystemProvisioningStatus#DISABLED_KEEP_ACCOUNT_ACTIVE": "Disabled (keep account active)",
               "AbstractProvisionedLDAP#bindPassword": {
                 "description": "The password used to bind with on the directory.",
                 "label": "Bind password"
               },
-              "ProvisioningOperationType#UNLINK_GROUP_ON_SYSTEM": "Unlink group on system",
               "ProvisionedSCIM#pageSize": {
                 "label": "Page size",
                 "description": "The number of elements retrieved per request. Use -1 if the service doesn't support pagination."
               },
-              "ProvisioningOperationType#INIT_ACCOUNT": "Init account",
               "ProvisionedLDAP#hashingScheme": {
                 "label": "Password hashing",
-                "description": "WARNING! Changing the hashing scheme will force all users to reconfigure their password for this system. SSHA stands for 'salted-SHA1', a weak algorithm supported by all LDAP servers. PBKDF2 is a strong hashing algorithm using 64k iterations of SHA512 but may require an additional module on OpenLDAP."
+                "description": "WARNING! Changing the hashing scheme will force all users to reconfigure their password for this system. Argon2id is the strongest option and is recommended when the LDAP server supports it (OpenLDAP requires the argon2 module to be loaded). PBKDF2 is a strong hashing algorithm using 64k iterations of SHA512 and is supported by modern LDAP servers out of the box. SSHA is 'salted-SHA1', a weak and deprecated algorithm that should only be selected for compatibility with legacy LDAP servers."
               },
               "ProvisionNumberSequence#name": {
                 "label": "Name"
@@ -1831,10 +1833,8 @@
                 "label": "TLS"
               },
               "GroupOnSystemType#GROUP_OF_UNIQUE_NAMES": "groupOfUniqueNames",
-              "ProvisioningOperationType#PRE_PROVISIONING_CHECK": "Pre-provisioning check",
               "ProvisionedSystemType#INTERNAL_LDAP": "Internal LDAP",
               "ProvisionedSystemType#LDAP": "LDAP",
-              "ProvisioningOperationType#SYNC_INCREMENTAL": "Sync incremental",
               "ProvisionedSystem#owner": {
                 "description": "Managers from the selected group control access to and administration of this linked system.",
                 "placeholder": "Select a group...",
@@ -1865,7 +1865,6 @@
               "ProvisionedAzureTenant#clientSecret": {
                 "label": "Client secret"
               },
-              "ProvisioningOperationType#SYNC_FULL": "Sync full",
               "AbstractProvisionedLDAP#trustedCertificate": {
                 "description": "The certificate of the server that must be trusted. This can also be one of the certificates used to sign that particular certificate.",
                 "label": "Trusted certificate"
@@ -1889,7 +1888,6 @@
                 "label": "Trusted certificate for failover",
                 "description": "The certificate of the failover server that must be trusted. This can also be one of the certificates used to sign that particular certificate."
               },
-              "ProvisioningOperationType#CHANGE_PASSWORD": "Change password",
               "GroupOnSystem#system": {
                 "label": "Linked system"
               },
@@ -1910,6 +1908,7 @@
                 "description": "The base DN under which the user and group DNs are located in the directory.",
                 "label": "Base DN"
               },
+              "LDAPPasswordHashingScheme#SSHA": "Salted SHA1 (SSHA, weak)",
               "GroupOnSystemProvisioningStatus#DISABLED": "Disabled",
               "SCIMUpdateStrategy#PATCH": "PATCH",
               "GroupOnSystemProvisioning#NOT_PROVISIONED_BY_DEFAULT": "Disabled by default - KeyHub management of groups is disabled by default.",
@@ -1943,13 +1942,12 @@
                 "label": "Header value"
               },
               "ProvisionedSystem#cleanupPeriod": {
-                "description": "Specify after which period accounts must be cleaned up. Use 'd' for days, 'w' for weeks', 'm' for months and 'y' for years, for example '2w'.",
+                "description": "Specify after which period accounts must be cleaned up. Use 'd' for days, 'w' for weeks, 'm' for months and 'y' for years, for example '2w'.",
                 "label": "Remove accounts after"
               },
               "AbstractProvisionedLDAP#attributes": {
                 "label": "Custom attributes"
               },
-              "ProvisioningOperationType#CREATE_GROUP_ON_SYSTEM": "Create group on system",
               "ProvisionedSystem#fullSyncInterval": {
                 "label": "Synchronisation interval"
               },
@@ -1959,6 +1957,7 @@
               },
               "ProvisionedSystemStatus#DISABLED": "Disabled",
               "GroupOnSystemProvisioning#ALWAYS_PROVISIONED": "Always Enabled - All groups are fully managed by KeyHub.",
+              "LDAPPasswordHashingScheme#ARGON2ID": "Argon2id (strongest)",
               "AbstractProvisionedLDAP#clientCertificate": {
                 "description": "The certificate that must be used to authenticate to the server. A client certificate consists of the certificate itself and a corresponding private key.",
                 "label": "Client certificate"
@@ -1968,9 +1967,8 @@
                 "description": "Azure AD Connect must be activated on this Active Directory, which synchronizes with the chosen Azure tenant.",
                 "label": "LDAP directory"
               },
-              "ProvisioningOperationType#SYNC_COLLECTION": "Sync collection",
               "ProvisionedSystemPrimer#activeStatus": {
-                "label": "Status"
+                "label": "Link status"
               },
               "ProvisionedNamespace#groupDN": {
                 "label": "Group RDN",
@@ -1981,17 +1979,18 @@
                 "label": "Service account RDN"
               },
               "GroupOnSystemType#GROUP_OF_NAMES": "groupOfNames",
+              "ProvisionedLDAPDirectory#accountMatchingAttribute": {
+                "label": "Account matching attribute"
+              },
               "ProvisionedLDAPDirectory#attributes": {
                 "label": "Custom attributes"
               },
               "ProvisionedSystemType": "Linked system",
-              "ProvisioningOperationType#SYNC_METADATA": "Sync metadata",
               "ProvisionedAzureSyncLDAPDirectory#tenant": {
                 "label": "Azure tenant"
               },
               "GroupOnSystemType#AZURE_DYNAMIC_UNIFIED_GROUP": "Microsoft 365 (dynamic membership)",
               "GroupOnSystemType#AZURE_SECURITY_GROUP": "Security group",
-              "ProvisioningOperationType#SYNC_MEMBERSHIP": "Sync membership",
               "ProvisionedSCIM#attributes": {
                 "label": "Custom attributes"
               },
@@ -2007,7 +2006,6 @@
               "ProvisionedSCIM#basicAuthUsername": {
                 "label": "Username"
               },
-              "ProvisioningOperationType#UPDATE_ACCOUNT_ATTRIBUTES": "Update account attributes",
               "ProvisionedSCIM#passwordSupported": {
                 "label": "Supports passwords"
               },
@@ -2034,7 +2032,6 @@
                 "label": "Identity provider domain",
                 "description": "With an identity provider domain set, users will be invited via that domain and log in via SSO."
               },
-              "ProvisioningOperationType#REMOVE_GROUP_ON_SYSTEM": "Remove group on system",
               "ProvisionedSystem#traceLoggingEnabled": {
                 "description": "Enable verbose provisioning logging for this system to troubleshoot issues with account provisioning.",
                 "label": "Enable trace logging"
@@ -2058,11 +2055,10 @@
                 "label": "Supports groups"
               },
               "ProvisionedSystem#status": {
-                "label": "Status"
+                "label": "Operational status"
               },
               "LDAPSshPublicKeySupport#DISABLED": "Disabled",
               "ProvisionedSCIMVendor#DEFAULT": "Default",
-              "ProvisioningOperationType#DEACTIVATE_SYSTEM": "Deactivate system",
               "GroupOnSystemType#POSIX_GROUP": "posixGroup",
               "ProvisionedSystemType#SOURCE_AZURE_OIDC_DIRECTORY": "Azure OIDC source directory",
               "ADSamAccountNameScheme#TRANSFER_TRUNCATE": "Transfer value and truncate - Take the value from the sAMAccountName attribute on the account and truncate if the result is too long.",
@@ -2074,7 +2070,6 @@
               "ProvisionedSCIM#customHeaderName": {
                 "label": "Header name"
               },
-              "ProvisioningOperationType#SYNC_SERVICE_ACCOUNT": "Sync service account",
               "ADSamAccountNameScheme#OMIT": "Omit - The AD chooses a random value.",
               "GroupOnSystemType#GROUP_UNIVERSAL_SECURITY": "group (universal security)",
               "ProvisionedLDAPDirectory#directory": {
@@ -2089,8 +2084,8 @@
               "ProvisionedSCIM#filterActiveUsersSupported": {
                 "label": "Supports filtering by active users"
               },
-              "ProvisioningOperationType#DESTROY_ACCOUNT": "Destroy account",
               "ADSamAccountNameScheme#TRUNCATE": "Truncate username - The username is shortened to a maximum of 20 characters.",
+              "LDAPPasswordHashingScheme#PBKDF2": "PBKDF2-SHA512 (strong)",
               "ProvisionedAzureSyncLDAPDirectory#clientId": {
                 "label": "Client identifier"
               },
@@ -2285,6 +2280,10 @@
               },
               "OAuth2ClientPermission#application": {
                 "label": "Application"
+              },
+              "OAuth2Client#allowDeviceGrant": {
+                "description": "If enabled, this application supports the device authorization grant (RFC 8628). This allows input-constrained devices to obtain user authorization.",
+                "label": "Allow device authorization grant"
               },
               "LdapClient#attributes": {
                 "label": "Custom attributes"
@@ -2486,7 +2485,7 @@
                 "label": "Action"
               },
               "VaultRecordColor#DARK": "Dark",
-              "VaultRecordColor#NONE": "No color",
+              "VaultRecordColor#NONE": "No colour",
               "VaultRecordColor#BLUE": "Blue",
               "MoveVaultRecordAction#COPY": "Copy to",
               "VaultRecord#username": {
@@ -2505,9 +2504,43 @@
                 "label": "Launchpad tile"
               }
             },
+            "identitysource": {
+              "AFASIdentitySource#attributes": {
+                "label": "Write-back attributes"
+              },
+              "IdentitySourcePrimer#uuid": {
+                "label": "UUID"
+              },
+              "ImportedRowStatus#PROCESSING": "Processing",
+              "AFASIdentitySource#schedule": {
+                "label": "Schedule",
+                "description": "A schedule to sync the identity source, expressed as a cron expression."
+              },
+              "AFASIdentitySource#token": {
+                "label": "Token"
+              },
+              "IdentitySourcePrimer#name": {
+                "label": "Name"
+              },
+              "ImportedRowStatus#DONE": "Processed",
+              "ImportedRowStatus#INCORRECT_CELL_COUNT": "Incorrect cell count",
+              "AFASIdentitySource#url": {
+                "label": "URL"
+              },
+              "IdentitySourceType#AFAS": "AFAS",
+              "CSVImportIdentitySource#identifier": {
+                "description": "The attribute used to look up the account. The first column of the CSV file is used for this.",
+                "label": "Account identifier"
+              },
+              "IdentitySourcePrimer#active": {
+                "label": "Enabled"
+              },
+              "ImportedRowStatus#UNMATCHED": "Account not matched",
+              "IdentitySourceType#CSV_IMPORT": "CSV Import"
+            },
             "config": {
               "Settings#responsibleDisclosure": {
-                "description": "Provide the responsible disclosure, as it is used by your company. This responsible disclosure will be accessible via KeyHubs login page. It is allowed to use HTML in this field.",
+                "description": "Provide the responsible disclosure, as it is used by your company. This responsible disclosure will be accessible via KeyHub's login page. It is allowed to use HTML in this field.",
                 "label": "Responsible disclosure"
               },
               "Settings#auditorGroup": {
@@ -2519,8 +2552,8 @@
                 "description": "Choose a password generation strategy. 'KEYHUB' is a strong generator, consult the manual for other options."
               },
               "NotificationCentreSettings#hideLinksInEmails": {
-                "description": "Removes the links to KeyHub from emails sent by Topicus KeyHub.",
-                "label": "No links in emails"
+                "description": "Removes the links to KeyHub from e-mails sent by Topicus KeyHub.",
+                "label": "No links in e-mails"
               },
               "Settings#removeGroupApproval": {
                 "description": "Requests to remove groups are handled by the chosen group.",
@@ -2576,7 +2609,7 @@
               },
               "NotificationCentreSettings#licenseUserWarning": {
                 "label": "User reserve",
-                "description": "The number of users to be kept in reserve. A warning will be sent as soon as less than this number of users are available within the license."
+                "description": "The number of users to be kept in reserve. A warning will be sent as soon as fewer than this number of users are available within the licence."
               },
               "Settings#ldapServerCertificate": {
                 "description": "This certificate is used for the internal LDAP server. This server only allows secure connections and cannot be used without a certificate.",
@@ -2587,7 +2620,7 @@
                 "description": "If set, Topicus KeyHub will send e-mails with this sender address. If this is left blank, the e-mail address of the user will be used as the sender."
               },
               "VaultRecoveryKey#publicKey": {
-                "description": "This key is used to recover access to vaults. Without a recover key, vaults cannot be used.",
+                "description": "This key is used to recover access to vaults. Without a recovery key, vaults cannot be used.",
                 "placeholder": "Choose a public key file"
               },
               "Settings#createGroupPlaceholder": {
@@ -2595,8 +2628,8 @@
                 "description": "This hint is shown to users when requesting new groups."
               },
               "NotificationCentreSettings#emailSignature": {
-                "label": "Email signature",
-                "description": "The signature under every email sent by Topicus KeyHub."
+                "label": "E-mail signature",
+                "description": "The signature under every e-mail sent by Topicus KeyHub."
               },
               "Settings#passwordMinLength": {
                 "description": "Choose a value between 8 and 20. For optimum security, it is recommended to choose a value of 12 or higher.",
@@ -2614,46 +2647,107 @@
                 "label": "Password authentication timeout"
               },
               "Settings#defaultLicenseRole": {
-                "label": "Default license role",
-                "description": "New accounts will get this license role."
+                "label": "Default licence role",
+                "description": "New accounts will get this licence role."
               },
               "Settings#webSessionTimeout": {
                 "label": "Web session timeout",
-                "description": "Set the validity period of web session. Use 'm' for minutes and 'h' for hours, for example '4h'."
+                "description": "Set the validity period of the web session. Use 'm' for minutes and 'h' for hours, for example '4h'."
               }
             },
-            "identitysource": {
-              "IdentitySourcePrimer#uuid": {
-                "label": "UUID"
-              },
-              "ImportedRowStatus#PROCESSING": "Processing",
-              "AFASIdentitySource#schedule": {
-                "label": "Schedule",
-                "description": "A schedule to sync the identity source, expressed as a cron expression."
-              },
-              "AFASIdentitySource#token": {
-                "label": "Token"
-              },
-              "IdentitySourcePrimer#name": {
-                "label": "Name"
-              },
-              "ImportedRowStatus#DONE": "Processed",
-              "ImportedRowStatus#INCORRECT_CELL_COUNT": "Incorrect cell count",
-              "AFASIdentitySource#url": {
-                "label": "URL"
-              },
-              "IdentitySourceType#AFAS": "AFAS",
-              "CSVImportIdentitySource#identifier": {
-                "description": "The attribute used to look up the account. The first column of the CSV file is used for this.",
-                "label": "Account identifier"
-              },
-              "IdentitySourcePrimer#active": {
-                "label": "Enabled"
-              },
-              "ImportedRowStatus#UNMATCHED": "Account not matched",
-              "IdentitySourceType#CSV_IMPORT": "CSV Import"
-            },
             "TLSLevel#UNSECURE": "No",
+            "log": {
+              "OperationType": {
+                "PROVISIONING_SYNC_METADATA": {
+                  "short": "Sync metadata",
+                  "main": "Provisioning - Sync metadata"
+                },
+                "PROVISIONING_SYNC_INCREMENTAL": {
+                  "main": "Provisioning - Sync incremental",
+                  "short": "Sync incremental"
+                },
+                "PROVISIONING_CREATE_GROUP_ON_SYSTEM": {
+                  "main": "Provisioning - Create group on system",
+                  "short": "Create group on system"
+                },
+                "PROVISIONING_ROTATE_PASSWORDS": {
+                  "short": "Rotate passwords",
+                  "main": "Provisioning - Rotate passwords"
+                },
+                "PROVISIONING_SYNC_MEMBERSHIP": {
+                  "short": "Sync membership",
+                  "main": "Provisioning - Sync membership"
+                },
+                "PROVISIONING_REMOVE_GROUP_ON_SYSTEM": {
+                  "main": "Provisioning - Remove group on system",
+                  "short": "Remove group on system"
+                },
+                "IDENTITY_SOURCE_FULL_SYNC": {
+                  "short": "Full sync",
+                  "main": "Identity source - Full sync"
+                },
+                "PROVISIONING_UNLINK_GROUP_ON_SYSTEM": {
+                  "short": "Unlink group on system",
+                  "main": "Provisioning - Unlink group on system"
+                },
+                "PROVISIONING_CLEANUP_OLD_ACCOUNTS": {
+                  "short": "Cleanup old accounts",
+                  "main": "Provisioning - Cleanup old accounts"
+                },
+                "PROVISIONING_PRE_PROVISIONING_CHECK": {
+                  "short": "Pre-provisioning check",
+                  "main": "Provisioning - Pre-provisioning check"
+                },
+                "PROVISIONING_DESTROY_SERVICE_ACCOUNT": {
+                  "short": "Destroy service account",
+                  "main": "Provisioning - Destroy service account"
+                },
+                "IDENTITY_SOURCE_INCREMENTAL_SYNC": {
+                  "short": "Incremental sync",
+                  "main": "Identity source - Incremental sync"
+                },
+                "PROVISIONING_SYNC_ACCOUNT": {
+                  "main": "Provisioning - Sync account",
+                  "short": "Sync account"
+                },
+                "PROVISIONING_SYNC_SERVICE_ACCOUNT": {
+                  "main": "Provisioning - Sync service account",
+                  "short": "Sync service account"
+                },
+                "PROVISIONING_SYNC_FULL": {
+                  "short": "Sync full",
+                  "main": "Provisioning - Sync full"
+                },
+                "PROVISIONING_DESTROY_ACCOUNT": {
+                  "short": "Destroy account",
+                  "main": "Provisioning - Destroy account"
+                },
+                "PROVISIONING_DEACTIVATE_SYSTEM": {
+                  "short": "Deactivate system",
+                  "main": "Provisioning - Deactivate system"
+                },
+                "PROVISIONING_CHANGE_PASSWORD": {
+                  "main": "Provisioning - Change password",
+                  "short": "Change password"
+                },
+                "PROVISIONING_UPDATE_SYSTEM": {
+                  "main": "Provisioning - Update system",
+                  "short": "Update system"
+                },
+                "PROVISIONING_SYNC_COLLECTION": {
+                  "main": "Provisioning - Sync collection",
+                  "short": "Sync collection"
+                },
+                "PROVISIONING_UPDATE_ACCOUNT_ATTRIBUTES": {
+                  "main": "Provisioning - Update account attributes",
+                  "short": "Update account attributes"
+                },
+                "PROVISIONING_INIT_ACCOUNT": {
+                  "short": "Init account",
+                  "main": "Provisioning - Init account"
+                }
+              }
+            },
             "launchpad": {
               "SsoApplicationLaunchpadTile#uri": {
                 "label": "Link"
@@ -2730,7 +2824,7 @@
               }
             },
             "HttpAuthenticationScheme#KEYHUB": "Issued by Topicus KeyHub",
-            "TLSLevel#ENCRYPTED": "TLS without validation (unsecure)",
+            "TLSLevel#ENCRYPTED": "TLS without validation (insecure)",
             "TLSLevel#VERIFIED_PINNED": "Client authentication - Pinned certificate",
             "HttpAuthenticationScheme#CUSTOM": "Custom",
             "HttpAuthenticationScheme#NONE": "None",
@@ -2761,7 +2855,7 @@
               "label": "Status"
             },
             "PgpoolQuorumStatus#QUORUM_ABSENT": "Quorum absent",
-            "ReplicationProblem#APPLICATION_NOT_READY": "The application on this node is unvailable.",
+            "ReplicationProblem#APPLICATION_NOT_READY": "The application on this node is unavailable.",
             "PgpoolBackendNodeInfo#primary": {
               "label": "Primary database"
             },
@@ -2788,7 +2882,7 @@
               "label": "Primary database"
             },
             "ReplicationNodeInfo#readyStatus": {
-              "label": "Availabilty"
+              "label": "Availability"
             },
             "ReplicationInfo#checkedAt": {
               "label": "Refreshed at"
@@ -2804,7 +2898,7 @@
               "label": "Last audit record at"
             },
             "ReplicationNodeInfo#reachable": {
-              "label": "Cluster link adres reachable"
+              "label": "Cluster link address reachable"
             },
             "PgpoolWatchdogNodeInfo#status": {
               "label": "Status"
@@ -2863,7 +2957,7 @@
               "label": "Replication delay"
             },
             "PgpoolBackendStatus#DOWN": "Down",
-            "PgpoolQuorumStatus#QUORUM_EXIST": "Quorum exist",
+            "PgpoolQuorumStatus#QUORUM_EXIST": "Quorum exists",
             "PgpoolBackendStatus#UNUSED": "Unused",
             "PgpoolWatchdogNodeInfo#nodeName": {
               "label": "Name"
@@ -3052,12 +3146,15 @@
         "removegroups": {
           "confirm": "Confirm deletion"
         },
-        "main": "Group"
+        "main": "Group",
+        "setupgroupexclusion": {
+          "confirm": "Confirm group exclusion"
+        }
       },
       "registreer": {
         "resync": "Update your password",
         "pwd": "Choose your password",
-        "2fa": "Setup Two-factor authentication",
+        "2fa": "Set up two-factor authentication",
         "group": "Request groups",
         "account": "Register a new account",
         "resetpwd": "Reset password"
@@ -3106,7 +3203,7 @@
       "provisionedazureoidcdirectory": "Linked Azure OIDC source directory",
       "auditorgroupdetails": "Group details",
       "tokenprompt": "Verification code",
-      "mygroupfolders": "Dashboard layout",
+      "mygroupfolders": "Dashboard group folders",
       "webhook": "Webhook",
       "ldapapplication": "LDAP Application",
       "requestgroup": "Request access to a group",
@@ -3122,6 +3219,7 @@
       "identitysource": {
         "csvimport": "CSV import identity source",
         "import": "CSV import",
+        "synclogs": "Synchronisations",
         "afas": "AFAS identity source"
       },
       "identitysources": "Identity sources",
@@ -3169,7 +3267,7 @@
       "vaults": "Vaults",
       "access": "Manage access",
       "about": {
-        "updatelicense": "Update license",
+        "updatelicense": "Confirm licence update",
         "main": "About"
       },
       "provisionedscim": "Linked SCIM server",
@@ -3203,12 +3301,13 @@
       "403": "You don't have permission to view the requested data.",
       "report": "The error was filed under {0} at {1}.",
       "klikhieronder": "An error occurred. Use the back button to return or let us know what happened.",
-      "ietsmis": "Oops looks like we lost connection!"
+      "ietsmis": "Oops, looks like we lost connection!"
     },
     "breadcrumb": {
       "namespaces": "Namespaces",
       "request": "Request join",
       "sessions": "Sessions",
+      "setupgroupexclusion": "Group exclusion",
       "accounts": "Accounts",
       "permissions": "Permissions",
       "directories": "Directories",
@@ -3723,7 +3822,7 @@
           "me": "I want to give the application {application} permission to read and query service accounts."
         },
         "GROUP_LAUNCHPADTILES": {
-          "me": "O want to give the application {application} permission to manage launchpad tiles for {groupName}.",
+          "me": "I want to give the application {application} permission to manage launchpad tiles for {groupName}.",
           "main": "{requester} wants to give the application {application} permission to manage launchpad tiles for {groupName}."
         },
         "GROUP_READ_CONTENTS": {
@@ -3798,7 +3897,7 @@
         "me": "I requested extended access to {groupName} until the end of {extendUntil}."
       },
       "resetpassword": {
-        "main": "{requester} wants to have his/her password recovered.",
+        "main": "{requester} wants to have their password recovered.",
         "me": "I want to have my password recovered."
       },
       "creategrouponsystem": {
@@ -3967,7 +4066,7 @@
       "connect": {
         "header": "Add nested group",
         "sent": "Your request to add a nested group has been sent.",
-        "accepted": "Your request to add a nested group has been been automatically accepted.",
+        "accepted": "Your request to add a nested group has been automatically accepted.",
         "subtitle": "Choose a group to nest within this group."
       }
     },
@@ -4153,7 +4252,7 @@
       "subtitle": "Give the members of a group access to {0}.",
       "sent": "Your request to give {1} access to {0} has been submitted.",
       "header": "Give a group access",
-      "accepted": "Because you are owner of {0}, your request to give {0} access to {1} has accepted automatically."
+      "accepted": "Because you are owner of {0}, your request to give {0} access to {1} has been accepted automatically."
     },
     "addgrouptoaccessprofile": {
       "sent": "Your request to add {1} to {0} has been submitted.",
@@ -4216,7 +4315,6 @@
       "azuresyncdirectory": "Linked Azure tenant with AD Connect",
       "ad": "Linked Active Directory",
       "internal": "Internal LDAP",
-      "synclogs": "Synchronisations",
       "ldap": "Linked LDAP",
       "permissions": "Issued permissions",
       "azure": "Linked Azure tenant",
@@ -4294,13 +4392,13 @@
         "cancel": "Password"
       },
       "finish": "Complete request",
-      "cancelled": "Your request has been cancelled, your account has been unlocked and you can login again with your original password.",
+      "cancelled": "Your request has been cancelled, your account has been unlocked and you can log in again with your original password.",
       "pwdhint": {
         "main": "To complete the request, you must enter your new password. Cancellation is also possible with your old password.",
         "cancel": "If you want to cancel this request you can use either your current password or the new password you chose earlier."
       },
       "cancel": "Cancel request",
-      "completed": "You request has been completed, your account has been unlocked and you can login again with your new password.",
+      "completed": "Your request has been completed, your account has been unlocked and you can log in again with your new password.",
       "header": "Account locked for recovery",
       "loginheader": "Confirm your password recovery request",
       "message": {
@@ -4323,16 +4421,37 @@
       "console": "Open the KeyHub Console"
     },
     "LICENSE_WRONG_DOMAIN": {
-      "header": "Invalid license"
+      "header": "Invalid licence"
     },
     "passwordrequired": "Your password is required to sign in.",
     "device": {
       "help": "Enter the user code displayed to you. The code is case insensitive and the dashes can be omitted.",
+      "challenge": {
+        "select": "Select the code shown on your device:",
+        "display": "Authorizing device with code:"
+      },
+      "badge": {
+        "different_location": "Different location",
+        "same_location": "Different IP address, same area",
+        "unknown_client": "New application",
+        "trusted": "Trusted device"
+      },
       "warn": "Never grant access if you have received the link or code from someone else or if you do not trust the displayed application.",
+      "incorrectcode": "The incorrect code has been selected.",
       "header": "Login on another device",
+      "location": {
+        "browser": "YOU",
+        "previouslyconfirmed": "previously confirmed",
+        "device": "DEVICE",
+        "privateaddress": "private address",
+        "match": "your own system",
+        "localnetwork": "Local network device"
+      },
       "invalidcode": "The given code is incorrect, expired or already used.",
       "placeholder": "Code",
-      "verify": "You are about to give another system or device access to your data in Topicus KeyHub. Check the details below before continuing."
+      "scopes": {
+        "header": "This application is requesting access to:"
+      }
     },
     "registreer": {
       "header": {
@@ -4358,7 +4477,7 @@
       "step": {
         "groups": "Request groups",
         "pwd": "Choose password",
-        "2fa": "Setup 2FA"
+        "2fa": "Set up 2FA"
       },
       "2fa": {
         "main": "Two-factor authentication (or 2FA) greatly enhances the security of your account and is required for many parts of KeyHub. To use 2FA, you'll need to install an app on your mobile phone. KeyHub supports the TOTP-system, for which multiple apps are available, such as Google Authenticator, Duo Mobile or Microsoft Authenticator. However, for the best experience, it is recommended to use the KeyHub 2FA app. This app uses a push notification to perform the verification, so you do not have to enter the 6-digit code.",
@@ -4399,7 +4518,7 @@
       }
     },
     "LICENSE_TERMINATED": {
-      "header": "Invalid license"
+      "header": "Invalid licence"
     },
     "lostmobile": {
       "message": "When you've lost your mobile phone or security key, performed a factory reset or bought a new device and are unable to sign in, submit a request to reset your two-factor authentication. A KeyHub administrator will process your request.",
@@ -4440,7 +4559,7 @@
       "header": "Activate your account"
     },
     "2fa": {
-      "webauthn": "Use your security key to login to KeyHub.",
+      "webauthn": "Use your security key to log in to KeyHub.",
       "totp": "Open the app for two-factor authentication on your mobile phone or take your hard token and enter the verification code for KeyHub."
     },
     "CLIENT_ACTIVATION_REQUIRED": {
@@ -4449,12 +4568,12 @@
     "responsibledisclosure": "Responsible disclosure",
     "rememberme": "Keep me signed in on this system",
     "LICENSE_NOT_YET_ACTIVE": {
-      "header": "Invalid license"
+      "header": "Invalid licence"
     },
     "accountgeblokkeerd": "Your account has been temporarily blocked. Try again in {0}.",
     "verifypow": "Your browser is being verified",
     "LICENSE_LIMIT_REACHED": {
-      "header": "License limit reached"
+      "header": "Licence limit reached"
     },
     "resetpassword": "Reset password and wipe associated data",
     "systeemnietbeschikbaar": "KeyHub is currently unavailable. Please try again later.",
@@ -4466,7 +4585,7 @@
       "explanation": "The clock of your 2FA device seems to have drifted. Please enter 2 consecutive codes to verify your device."
     },
     "LICENSE_KEY_MALFORMED": {
-      "header": "Invalid license"
+      "header": "Invalid licence"
     },
     "directorydegraded": "Due to a partial outage, it may not be possible to sign in with {0}. Please contact your KeyHub administrator when you are having trouble signing in.",
     "powinvalid": "Your browser did not perform a valid verification. Try logging in again or use a different browser.",
@@ -4556,6 +4675,7 @@
       "openen": "Open",
       "reload": "Reload",
       "refreshall": "Refresh all",
+      "trust_approve": "Trust and authorize",
       "audit": "Audit",
       "overslaan": "Skip",
       "ok": "OK",
@@ -4698,7 +4818,7 @@
       "owner": "Owner"
     },
     "warn": {
-      "business": "Provisioning in this group is not available for its members with a Business license."
+      "business": "Provisioning in this group is not available for its members with a Business licence."
     },
     "transfer": "Transfer"
   },
@@ -4752,7 +4872,7 @@
       "panel": {
         "applyconfig": {
           "description": "The configuration will be applied, and a number of tests will be executed. If the new configuration turns out to be incorrect, the old settings will be restored.",
-          "6final": "Finalizing configuration",
+          "6final": "Finalising configuration",
           "head": "Apply the given configuration",
           "1certs": "Testing certificate validity",
           "revert": "Reverting configuration to previous settings",
@@ -4766,7 +4886,7 @@
           "head": "Configure the e-mail delivery",
           "test": "Send test e-mail",
           "description": "Choose the e-mail server for Topicus KeyHub. E-mail is required for account registration during installation and normal use and for notifications.",
-          "sent": "An email has been sent to {0}."
+          "sent": "An e-mail has been sent to {0}."
         },
         "firewall": {
           "monitoring": {
@@ -4791,7 +4911,6 @@
         "start": {
           "2start": "Starting the application",
           "description": "The configuration is completed. It is now time to start Topicus KeyHub. This will take about five minutes.",
-          "1pull": "Fetching container images",
           "head": "Start Topicus KeyHub",
           "start": "Start the application"
         },
@@ -4810,7 +4929,7 @@
         },
         "authentication": {
           "head": "Change the authentication information for maintenance",
-          "description": "Choose a password for the maintenance login on Topicus KeyHub. This password can be used to logon to the Topicus KeyHub maintenance application, even if Topicus KeyHub itself is not running. Choose a strong password and store it in a safe location. A public key can be specified for logging in via SSH."
+          "description": "Choose a password for the maintenance login on Topicus KeyHub. This password can be used to log on to the Topicus KeyHub maintenance application, even if Topicus KeyHub itself is not running. Choose a strong password and store it in a safe location. A public key can be specified for logging in via SSH."
         },
         "otlp": {
           "head": "Configure OTLP"
@@ -4828,7 +4947,7 @@
           "head": "Restore the backup"
         },
         "backup": {
-          "description": "Create a user to access the backups or open ports in the firewall for specialized backup software.",
+          "description": "Create a user to access the backups or open ports in the firewall for specialised backup software.",
           "head": "Configure backup software"
         },
         "network": {
@@ -4854,11 +4973,11 @@
         "label": "Sampling interval"
       },
       "MONITORING_FIREWALL_TCPPORTS": {
-        "description": "Specify ports between 1 and 65535 separated by commas. A range can be specified as 'start-end'. This list always contains port 9443 (metics and health).",
+        "description": "Specify ports between 1 and 65535 separated by commas. A range can be specified as 'start-end'. This list always contains port 9443 (metrics and health).",
         "label": "Exposed TCP ports for monitoring"
       },
       "task": {
-        "idpkeys": "Regenerating IdP signing certifcate",
+        "idpkeys": "Regenerating IdP signing certificate",
         "renewletsencrypt": "Renewing web certificates",
         "writeconfig": "Writing configuration"
       },
@@ -4931,7 +5050,7 @@
       },
       "MANAGEMENT_FIREWALL_TCPPORTS": {
         "label": "Exposed TCP ports for management",
-        "description": "Specify ports between 1 and 65535 separated by commas. A range can be specified as 'start-end'. This list always contains port 389, 50022 en 50443 (LDAP, SSH and the Management Console)."
+        "description": "Specify ports between 1 and 65535 separated by commas. A range can be specified as 'start-end'. This list always contains port 389, 50022 and 50443 (LDAP, SSH and the Management Console)."
       },
       "BACKUP_SSH_KEY": {
         "label": "SSH key for backup user"
@@ -4979,7 +5098,7 @@
       },
       "MAIL_SENDER": {
         "label": "Sender address for E-mail",
-        "description": "This email address is only used for mail sent by the Topicus KeyHub appliance manager."
+        "description": "This e-mail address is only used for mail sent by the Topicus KeyHub appliance manager."
       },
       "MONITORING_OTLP_TLS_CLIENT_CERT": {
         "label": "Client certificate",
@@ -5036,7 +5155,7 @@
       },
       "BACKUP_USER_ENABLED": {
         "label": "Create backup user",
-        "description": "Create a user named 'keyhub-backup' with read permissions on the backups. This user does not have a shell and therefore cannot login via SSH."
+        "description": "Create a user named 'keyhub-backup' with read permissions on the backups. This user does not have a shell and therefore cannot log in via SSH."
       },
       "KEYHUB_USER_SSH_KEY": {
         "label": "SSH key for keyhub user"
@@ -5075,7 +5194,7 @@
       },
       "MAINTENANCE_MODE": {
         "label": "Maintenance mode",
-        "description": "When the application runs in maintenance mode, you can only logon with the admin account and the maintenance password. "
+        "description": "When the application runs in maintenance mode, you can only log on with the admin account and the maintenance password. "
       },
       "EXTERNAL_URL": {
         "label": "External URL"
@@ -5112,7 +5231,7 @@
         "never": "Never",
         "lastbackup": "Last backup:",
         "notconfigured": "Not configured",
-        "checkosupdates": "Check os updates"
+        "checkosupdates": "Check OS updates"
       },
       "disk": {
         "main": "Disk usage",
@@ -5287,14 +5406,14 @@
       "current": "current host",
       "warning": {
         "notproxied": "Clustering is only available in a proxied setup.",
-        "toomanynodes": "You have more cluster nodes than allowed by your license.",
-        "clusternotallowed": "Clustering is not allowed by your license."
+        "toomanynodes": "You have more cluster nodes than allowed by your licence.",
+        "clusternotallowed": "Clustering is not allowed by your licence."
       },
       "head": "Topicus KeyHub cluster",
       "step22": "Configure server certificates"
     },
     "impact": {
-      "URI": "When changing the external URL, always check if this new URL is accepted by the license, has a matching certificate and the DNS record is correct.",
+      "URI": "When changing the external URL, always check if this new URL is accepted by the licence, has a matching certificate and the DNS record is correct.",
       "NETWORK": "Changing the network configuration can make Topicus KeyHub inaccessible. These settings can always be reverted on the terminal.",
       "MAIL": "A test e-mail will be sent to {0}.",
       "KEYHUB_RESTART": "Topicus KeyHub will restart when these changes are applied."
@@ -5326,32 +5445,32 @@
         "reboot": "Rebooting",
         "wait_snapshot": "Waiting until the snapshot can be created",
         "update_os": "Installing operating system updates",
+        "unpack_update_file": "Unpacking update file",
         "uploadrecovery": "Storing vault recovery public key",
         "update_tkh": "Updating Topicus KeyHub",
         "adminrestart": "Restarting appliance manager",
         "failover": "Assign tasks to other nodes in the cluster",
-        "finalize_db": "Finalizing database upgrade",
-        "wait_lb": "Waiting for the loadbalancer to pickup the state change",
+        "decrypt_update_file": "Verifying update file",
+        "finalize_db": "Finalising database upgrade",
+        "wait_lb": "Waiting for the load balancer to pick up the state change",
         "upgrade_salt": "Updating SaltStack",
         "reboot_required": "Checking if reboot is required",
-        "pull": "Fetching updated container images",
         "check_cluster": "Checking the cluster for problems",
         "upgrade_docker": "Updating Docker",
         "shutdown": "Shutting down",
         "migrate_multimaster": "Migrating to multi-master Salt",
         "cleanup": "Cleaning up update files",
-        "download": "Downloading update package",
+        "download": "Downloading update file",
+        "prepare_update_file": "Preparing update",
         "check_updates": "Checking for available updates",
+        "set_pgpool_wd_authkey": "Configuring pgpool watchdog authentication",
         "remove_snapshot": "Cleaning up",
         "refresh_node_state": "Refreshing the state of the node",
-        "prepare_offline": "Preparing offline update",
         "syncconf": "Updating system configuration",
         "waituser1": "Waiting for the first user to be registered",
-        "unpack_offline": "Unpacking offline update file",
         "setavailable": "Putting the node back in the cluster",
         "stoppgpool": "Stopping Pgpool",
         "cleanuposupgrade": "Finishing the operating system upgrade",
-        "decrypt_offline": "Verifying offline update file",
         "syncconflocal": "Updating system configuration (local)",
         "pg_upgrade_available": "Checking if a database upgrade is available",
         "waitstart": "Waiting for the application to become available",
@@ -5387,7 +5506,7 @@
         "task": "Applying hotfix {0}"
       },
       "now": "Update now",
-      "noofflinelicense": "Your license does not allow offline updating.",
+      "noofflinelicense": "Your licence does not allow offline updating.",
       "updateavailable": "Topicus KeyHub <strong>{0}<\/strong> is available",
       "diskfull": "There is not enough disk space to perform the update. Provide at least 5GB of free space in /.",
       "inhibitors": "A previous upgrade attempt failed due to one or more inhibitors. Correct the problems below and try again:",
@@ -5402,7 +5521,7 @@
           "main": "The following items are prerequisites for a smooth installation:",
           "cert": "Server certificate with corresponding private key"
         },
-        "memerror": "The VM has insufficient memory. Make sure that at least 6GB is available.",
+        "memerror": "The VM has insufficient memory. Make sure that at least 8GB is available.",
         "main": "Welcome",
         "header": "Welcome to Topicus KeyHub",
         "info": "This installation wizard will guide you through the steps necessary to install Topicus KeyHub. The complete installation will take around 30 minutes and you can track the progress via the menu on the left."
@@ -5415,7 +5534,7 @@
         "wipeConfirm": "Are you sure you want to clear all fields?",
         "wipe": "Clear all",
         "directoryType": "Directory type",
-        "main": "Setup primary directory"
+        "main": "Set up primary directory"
       },
       "step5": {
         "paragraph2": "Further configuration of the appliance is possible after completing this wizard. Options such as e-mail, backups and monitoring can be set up via the dashboard and the configuration menu.",
@@ -5440,8 +5559,8 @@
     "actions": {
       "shutdown": {
         "main": "Shutdown",
-        "confirm": "Shutdown the Topicus KeyHub appliance?",
-        "description": "Shutdown the Topicus KeyHub virtual appliance."
+        "confirm": "Shut down the Topicus KeyHub appliance?",
+        "description": "Shut down the Topicus KeyHub virtual appliance."
       },
       "syncconfig": {
         "main": "Update configuration",
@@ -5511,7 +5630,7 @@
     "backups": {
       "restore": {
         "confirm": "Are you sure you want to restore the backup '{0}'? All data will be overwritten.",
-        "error": "The backup cannot be decrypted, the key may be invald: {0}",
+        "error": "The backup cannot be decrypted, the key may be invalid: {0}",
         "title": "Restore backup",
         "subtitle": "Restore the backup '{0}'."
       },
@@ -5545,6 +5664,7 @@
       "local": "local",
       "allenabledbutlocal": "all nodes except local"
     },
+    "nocontent": "This data can only be configured cluster-wide. You can switch the mode using the dropdown at the top.",
     "vault": {
       "recovery": {
         "downloadprivate": "Download the vault recovery private key",
@@ -5556,7 +5676,7 @@
   "enum": {
     "setting": {
       "NOTIFICATIONS_EMAIL_SENDER": "The sender address for E-mail; set to '{0}'.",
-      "NOTIFICATIONS_LICENSE_USER_WARN": "The user license reserve; set to '{0}'.",
+      "NOTIFICATIONS_LICENSE_USER_WARN": "The user licence reserve; set to '{0}'.",
       "BRANDING_LOGO": "The branding logo",
       "PROVISIONING_TRACING": {
         "true": "Verbose provisioning logging enabled.",
@@ -5605,18 +5725,18 @@
       },
       "PASSWORD_MIN_LENGTH": "The minimum password length; set to '{0}'.",
       "DOMAIN": "The domain; set to '{0}'.",
-      "MAINTENANCE_MESSAGE": "The Maintenance message; set to '{0}'.",
+      "MAINTENANCE_MESSAGE": "The maintenance message; set to '{0}'.",
       "AUDIT_RECORD_RETENTION": "The audit log retention period; set to '{0}'.",
-      "DEFAULT_LICENSE_ROLE": "The default license role; set to '{0}'."
+      "DEFAULT_LICENSE_ROLE": "The default licence role; set to '{0}'."
     },
     "MANUALLY_DISABLED": "by {0}",
     "DIRECTORY_VERIFICATION_FAILED": "verification with the directory failed",
     "KEYHUB_PASSWORD_VERIFICATION_FAILED": "the supplied KeyHub password is invalid",
-    "TWO_FACTOR_AUTHENTICATION_REJECTED": "2fa was aborted",
-    "TWO_FACTOR_AUTHENTICATION_TOKEN_MISMATCH": "the 2fa code was incorrect",
+    "TWO_FACTOR_AUTHENTICATION_REJECTED": "2FA was aborted",
+    "TWO_FACTOR_AUTHENTICATION_TOKEN_MISMATCH": "the 2FA code was incorrect",
     "INVALID_IN_DIRECTORY": "because it became invalid in its directory",
     "DIRECTORY_AUTHENTICATION_FAILED": "the authentication was rejected by the directory",
-    "TWO_FACTOR_AUTHENTICATION_DISABLED": "2fa was disabled",
+    "TWO_FACTOR_AUTHENTICATION_DISABLED": "2FA was disabled",
     "MANUALLY_ENABLED": "by {0}",
     "VALID_IN_DIRECTORY": "because it became valid (again) in its directory",
     "ABUSE_REPORTED": "because abuse was reported via the KeyHub app"
@@ -5656,19 +5776,20 @@
       "PROVISIONING": "{performedBy} declined the request to remove the authorisation by {onGroup2} on activation of {onGroup}. {reason}"
     },
     "TRANSFER_ORGANIZATIONAL_UNIT_OWNERSHIP_ACCEPTED": "The request to transfer ownership of {onOrganizationalUnit} to {onGroup} was approved by {performedBy}. {reason}",
+    "DEVICE_CODE_ISSUED": "{performedBy} issued a device code for {onClient} from IP {parameter1}.",
     "UPDATE_GROUP_MEMBERSHIP_DECLINED": "{performedBy} declined the request to give {onAccount} the following access to {onGroup2}: {parameter3} {reason}",
     "LICENSE_KEY_UPLOADED": {
-      "bothLimits": "{performedBy} has uploaded a new license key for {parameter2} accounts that expires on {parameter1}. ",
-      "userLimitOnly": "{performedBy} has uploaded a new license key for {parameter2} accounts.",
-      "expirationOnly": "{performedBy} has uploaded a new license key that expires on {parameter1}.",
-      "main": "{performedBy} has uploaded a new license key."
+      "bothLimits": "{performedBy} has uploaded a new licence key for {parameter2} accounts that expires on {parameter1}. ",
+      "userLimitOnly": "{performedBy} has uploaded a new licence key for {parameter2} accounts.",
+      "expirationOnly": "{performedBy} has uploaded a new licence key that expires on {parameter1}.",
+      "main": "{performedBy} has uploaded a new licence key."
     },
-    "UPDATE_LICENSE_ACCEPTED": "{performedBy} approved the request to use the new license. {reason}",
+    "UPDATE_LICENSE_ACCEPTED": "{performedBy} approved the request to use the new licence. {reason}",
     "SETUP_AUTHORIZING_GROUP_CONNECT_ACCEPTED": {
       "AUDITING": "{performedBy} approved the request to have audits for {onGroup} reviewed by {onGroup2}. {reason}",
       "MEMBERSHIP": "{performedBy} approved the request to have management of membership of {onGroup} authorised by {onGroup2}. {reason}",
       "PROVISIONING": "{performedBy} approved the request to have activation of {onGroup} authorised by {onGroup2}. {reason}",
-      "DELEGATION": "{performedBy} approved the request to setup delegation of management of {onGroup} to {onGroup2}. {reason}"
+      "DELEGATION": "{performedBy} approved the request to set up delegation of management of {onGroup} to {onGroup2}. {reason}"
     },
     "SETUP_NESTED_GROUP_DISCONNECT_ACCEPTED": "{performedBy} approved the request to remove the nesting of {onGroup2} within {onGroup}. {reason}",
     "ENABLE_TECHNICAL_ADMINISTRATION_ACCEPTED": "The request to enable technical administration on {onGroup} was approved by {performedBy}. {reason}",
@@ -5677,7 +5798,7 @@
       "subtitle": "Give a range for the audit log to be exported.",
       "title": "Export"
     },
-    "SETUP_GROUP_EXCLUSION_DISCONNECT_ACCEPTED": "{performedBy} approved the request to remove the group exclusion between {onGroup} and {onGroup2}. {reason}",
+    "SETUP_GROUP_EXCLUSION_DISCONNECT_ACCEPTED": "{performedBy} approved the request to remove the group exclusion between {onGroup2} and {onGroup}. {reason}",
     "MOVE_GROUPS_ACCEPTED": "{performedBy} approved the request by {onAccount} to move {parameter2} groups to {onOrganizationalUnit}. {reason}",
     "updaterequest": {
       "NORMAL": {
@@ -5693,7 +5814,7 @@
       "group": "The request to grant the users in the group {onGroup} access to {gosType} {gosName} on {onSystem} was approved by {performedBy}. {reason}",
       "profile": "The request to grant the users in the access profile {onAccessProfile} access to {gosType} {gosName} on {onSystem} was approved by {performedBy}. {reason}"
     },
-    "INTERNAL_ACCOUNT_ACTIVATED": "{onAccount} activated his/her internal account.",
+    "INTERNAL_ACCOUNT_ACTIVATED": "{onAccount} activated their internal account.",
     "VAULT_RECORD_MODIFIED": {
       "personal": "{performedBy} modified {onVaultRecord} in the personal vault of {onVaultHolder}.",
       "main": "{performedBy} modified {onVaultRecord} in the vault for {onGroup}."
@@ -5764,8 +5885,8 @@
       "n": "The request to remove {parameter2} groups was approved by {performedBy}. {reason}"
     },
     "ACCOUNT_PROVISIONING_SETUP": {
-      "uid": "{onAccount} was setup on {onSystem} and was assigned UID {parameter1}.",
-      "main": "{onAccount} was setup on {onSystem}."
+      "uid": "{onAccount} was set up on {onSystem} and was assigned UID {parameter1}.",
+      "main": "{onAccount} was set up on {onSystem}."
     },
     "DIRECTORY_REMOVED": "{performedBy} removed the directory {onDirectory}.",
     "GRANT_GROUP_ON_SYSTEM_REQUESTED": {
@@ -5780,7 +5901,7 @@
     "SETUP_AUTHORIZING_GROUP_CONNECT_DECLINED": {
       "PROVISIONING": "{performedBy} declined the request to have activation of {onGroup} authorised by {onGroup2}. {reason}",
       "MEMBERSHIP": "{performedBy} declined the request to have management of membership of {onGroup} authorised by {onGroup2}. {reason}",
-      "DELEGATION": "{performedBy} declined the request to setup delegation of management of {onGroup} to {onGroup2}. {reason}",
+      "DELEGATION": "{performedBy} declined the request to set up delegation of management of {onGroup} to {onGroup2}. {reason}",
       "AUDITING": "{performedBy} declined the request to have audits for {onGroup} reviewed by {onGroup2}. {reason}"
     },
     "SETUP_AUTHORIZING_GROUP_DISCONNECT_ACCEPTED": {
@@ -5803,7 +5924,7 @@
     },
     "ORGANIZATIONAL_UNIT_REMOVED": "{performedBy} removed the organisational unit {onOrganizationalUnit}.",
     "ACCOUNT_DISABLED": "The account for {onAccount} was disabled {parameter1}.",
-    "UPDATE_LICENSE_DECLINED": "{performedBy} declined the request to use the new license. {reason}",
+    "UPDATE_LICENSE_DECLINED": "{performedBy} declined the request to use the new licence. {reason}",
     "CREATE_GROUP_REQUESTED": "{performedBy} requested to create the group {parameter3}. {reason}",
     "ACCOUNT_ADDED_TO_ORGANIZATIONAL_UNIT": "{performedBy} has added {onAccount} to the organisational unit {onOrganizationalUnit}.",
     "ACCOUNT_ADDED_TO_GROUP": {
@@ -5835,12 +5956,13 @@
       "profile": "The request to grant the users in the access profile {onAccessProfile} access to {onClient} was approved by {performedBy}. {reason}",
       "group": "The request to grant the users in {onGroup} access to {onClient} was approved by {performedBy}. {reason}"
     },
-    "SERVICE_ACCOUNT_PASSWORD_ROTATED": "The password for the service account {onServiceAccount} on the linked system {onSystem} is rotated.",
+    "SERVICE_ACCOUNT_PASSWORD_ROTATED": "The password for the service account {onServiceAccount} on the linked system {onSystem} was rotated.",
     "ACCOUNT_ADDED_TO_ACCESS_PROFILE": {
       "MANUAL": "{performedBy} added {onAccount} to the access profile {onAccessProfile}.",
       "BUSINESS_RULE": "{onAccount} has been added to the access profile {onAccessProfile} via a business rule."
     },
     "ENABLE_TECHNICAL_ADMINISTRATION_DECLINED": "The request to enable technical administration on {onGroup} was rejected by {performedBy}. {reason}",
+    "DEVICE_CODE_VERIFIED": "{performedBy} verified and approved the device authorization for {onClient}. Device IP: {parameter1}, browser IP: {parameter2}.",
     "ACCESS_PROFILE_CREATED": "{performedBy} added a new access profile {onAccessProfile}.",
     "VAULT_RECORD_READ": {
       "main": "{performedBy} accessed the secret '{onVaultRecord}' from the vault for {onGroup}.",
@@ -5864,9 +5986,9 @@
       "personal": "{performedBy} recovered access for {onParty} to the personal vault.",
       "main": "{performedBy} recovered access for {onParty} to the vault for {onGroup}."
     },
-    "SETUP_GROUP_EXCLUSION_CONNECT_REQUESTED": "{performedBy} requests a group exclusion between {onGroup} and {onGroup2}. {reason}",
+    "SETUP_GROUP_EXCLUSION_CONNECT_REQUESTED": "{performedBy} requested a group exclusion between {onGroup} and {onGroup2}. {reason}",
     "SETUP_AUTHORIZING_GROUP_CONNECT_REQUESTED": {
-      "DELEGATION": "{performedBy} requested to setup delegation of management of {onGroup} to {onGroup2}. {reason}",
+      "DELEGATION": "{performedBy} requested to set up delegation of management of {onGroup} to {onGroup2}. {reason}",
       "AUDITING": "{performedBy} requested to have audits for {onGroup} reviewed by {onGroup2}. {reason}",
       "PROVISIONING": "{performedBy} requested to have activation of {onGroup} authorised by {onGroup2}. {reason}",
       "MEMBERSHIP": "{performedBy} requested to have management of membership of {onGroup} authorised by {onGroup2}. {reason}"
@@ -5950,6 +6072,10 @@
       "MEMBERSHIP": "{performedBy} requested to remove the authorisation by {onGroup2} on management of membership of {onGroup}. {reason}"
     },
     "DISABLE_2FA_ACCEPTED": "The request to disable 2FA for {onAccount} was approved by {performedBy}. {reason}",
+    "DEVICE_CODE_REJECTED": {
+      "main": "{performedBy} rejected the device authorization for {onClient}. Device IP: {parameter1}, browser IP: {parameter2}.",
+      "anonymous": "The device authorization for {onClient} was rejected. Device IP: {parameter1}, browser IP: {parameter2}."
+    },
     "CREATE_SERVICE_ACCOUNT_ACCEPTED": "{performedBy} approved the request by {onAccount} to create the service account {parameter3} on {onSystem}. {reason}",
     "ACCOUNT_TOKEN_SIGNED": "{performedBy} was granted access to the application {onClient}.",
     "EXTENDED_ACCESS_ACCEPTED": "{performedBy} approved the request by {onAccount} to get extended access to {onGroup} until {parameter3}. {reason}",
@@ -5959,7 +6085,7 @@
       "BUSINESS_RULE": "{performedBy} has modified {onAccount}'s membership of the access profile {onAccessProfile}. {onAccount} is now a forced member."
     },
     "AUDITOR_EXPORT_GENERATED": "{performedBy} generated an export with hash: {parameter1}.",
-    "UPDATE_LICENSE_REQUESTED": "{performedBy} requested to take a new license into use. {reason}",
+    "UPDATE_LICENSE_REQUESTED": "{performedBy} requested to take a new licence into use. {reason}",
     "CLIENT_CREATED": "{performedBy} added a new application {onClient}.",
     "RESET_PASSWORD_ACCEPTED": "The request to recover the password for {onAccount} was approved by {performedBy}. {reason}",
     "CREATE_SERVICE_ACCOUNT_DECLINED": "{performedBy} declined the request by {onAccount} to create the service account {parameter3} on {onSystem}. {reason}",
@@ -5995,10 +6121,10 @@
       "n": "The request to remove {parameter2} groups was declined by {performedBy}. {reason}"
     },
     "REVOKE_ADMIN_DECLINED": "{performedBy} declined the request to remove {onAccount} from KeyHub Administrators. {reason}",
-    "ACCOUNT_PASSWORD_CHANGED": "{performedBy} changed his/her password.",
+    "ACCOUNT_PASSWORD_CHANGED": "{performedBy} changed their password.",
     "SETUP_NESTED_GROUP_CONNECT_ACCEPTED": "{performedBy} approved the request to have {onGroup} nested within {onGroup2}. {reason}",
     "CLIENT_PERMISSION_GRANTED": "The permission '{parameter3}' is granted to {onClient}.",
-    "VAULT_PERSONAL_RESET": "{performedBy} reset his/her personal vault.",
+    "VAULT_PERSONAL_RESET": "{performedBy} reset their personal vault.",
     "GROUP_CREATED": "{performedBy} added a new group {onGroup}.",
     "resumeSearch": "Search further back",
     "ACCOUNT_GROUP_PROVISIONED": "{onAccount} enabled {gosType} {gosName} on {onSystem} via {onGroup}.",
@@ -6044,7 +6170,7 @@
     "GROUP_MODIFIED": "{performedBy} modified the group {onGroup}.",
     "ADD_GROUP_ADMIN_DECLINED": "{performedBy} declined the request to give {onAccount} management privileges for the group {onGroup}. {reason}",
     "RESET_PASSWORD_FINISHED": "{performedBy} finished the password recovery.",
-    "VAULT_PERSONAL_SETUP": "{performedBy} setup access to his/her vaults.",
+    "VAULT_PERSONAL_SETUP": "{performedBy} set up access to their vaults.",
     "resultsEnd": "Results until {0}",
     "REMOVE_ORGANIZATIONAL_UNIT_DECLINED": "The request to remove the organisational unit {onOrganizationalUnit} was declined by {performedBy}. {reason}",
     "TRANSFER_ACCESS_PROFILE_OWNERSHIP_REQUESTED": "{performedBy} requested to transfer ownership of {onAccessProfile} to {onGroup}. {reason}",
@@ -6062,8 +6188,8 @@
     "TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP_DECLINED": "The request to transfer ownership of {gosType} {gosName} on {onSystem} to {onGroup} was rejected by {performedBy}. {reason}",
     "GROUP_NESTING_CONNECTED": "{performedBy} nested the group {onGroup} within {onGroup2}.",
     "REMOVE_GROUP_REQUESTED": {
-      "n": "{performedBy} requested to remove {parameter2} groups {onGroup}. {reason}",
-      "1": "{performedBy} requested to remove group {onGroup}. {reason}"
+      "n": "{performedBy} requested to remove {parameter2} groups. {reason}",
+      "1": "{performedBy} requested to remove the group {onGroup}. {reason}"
     },
     "DIRECTORY_HELPDESK_MODIFIED": {
       "unset": "{performedBy} has withdrawn the help desk function for {onGroup} for the directory {onDirectory}.",
@@ -6083,7 +6209,7 @@
     "GROUP_EXCLUSION_CREATED": "{performedBy} created a group exclusion between {onGroup} and {onGroup2}.",
     "GROUP_ADDED_TO_ACCESS_PROFILE": "{onGroup} was added to the access profile {onAccessProfile}.",
     "DISABLE_2FA_REQUESTED": "{performedBy} requested to disable 2FA. {reason}",
-    "RESET_PASSWORD_REQUESTED": "{performedBy} requested to recover his/her password. {reason}",
+    "RESET_PASSWORD_REQUESTED": "{performedBy} requested to recover their password. {reason}",
     "TRANSFER_ACCESS_PROFILE_OWNERSHIP_DECLINED": "The request to transfer ownership of {onAccessProfile} to {onGroup} was rejected by {performedBy}. {reason}",
     "ACCOUNT_PROVISIONED": "{onAccount} was enabled on the linked system {onSystem}.",
     "CLIENT_REMOVED_FROM_GROUP": "The application {onClient} was removed from the group {onGroup}.",
@@ -6144,7 +6270,7 @@
       "used": "Used",
       "status": "Status",
       "createdat": "Created at",
-      "licenserole": "License role",
+      "licenserole": "Licence role",
       "passwordRotation": "Password rotation",
       "nameInSystem": "Group on system",
       "lastActive": "Last sign in",
@@ -6160,6 +6286,7 @@
       "writes": "Writes",
       "completedAt": "Completed at",
       "email": "E-mail",
+      "contentAdministrator": "Content administration",
       "minionid": "Identifier",
       "accessProfileInKeyHub": "Access profiles",
       "technicalAdministrator": "Technical administration",
@@ -6172,6 +6299,7 @@
       "nrAccounts": "# Accounts",
       "active": "Enabled",
       "expiresat": "Expires at",
+      "readmodifywrites": "Reads/modifications/writes",
       "application": "Application",
       "middleName": "Middle name",
       "message": "Message",
@@ -6192,6 +6320,7 @@
       "name": "Name",
       "action": "Action",
       "accountProvisioning": "Provisioning",
+      "modifies": "Modifications",
       "displayName": "Display name",
       "errors": "Errors",
       "version": "Version",
@@ -6425,8 +6554,8 @@
         "ENABLE_PROFILE_ADMINISTRATION": "Enable access profile administration on a group",
         "TRANSFER_PROVISIONED_SYSTEM_ADMINISTRATION": "Transfer administration of linked system",
         "SETUP_NESTED_GROUP": {
-          "connect": "Unlink nested group",
-          "disconnect": "Remove authorisation"
+          "connect": "Link nested group",
+          "disconnect": "Unlink nested group"
         },
         "MOVE_GROUPS": "Move groups",
         "GRANT_APPLICATION": "Grant access to application",
@@ -6452,7 +6581,7 @@
           "connect": "Setup group exclusion"
         },
         "CREATE_PROVISIONED_NAMESPACE": "Create new namespace",
-        "UPDATE_LICENSE": "Update the license",
+        "UPDATE_LICENSE": "Update the licence",
         "REMOVE_PROVISIONED_SYSTEM": "Remove linked system",
         "ENABLE_TECHNICAL_ADMINISTRATION": "Enable technical administration on a group",
         "TRANSFER_SERVICE_ACCOUNT_ADMINISTRATION": "Transfer administration of service account",
@@ -6502,7 +6631,7 @@
     },
     "type": {
       "ACCOUNT_PASSWORD_CHANGED": "Password changed",
-      "ACCOUNT_REMOVED_FROM_ORGANIZATIONAL_UNIT": "Removed account from an organizational unit",
+      "ACCOUNT_REMOVED_FROM_ORGANIZATIONAL_UNIT": "Removed account from an organisational unit",
       "GROUP_CLASSIFICATION_ASSIGNED": "Group classification assigned",
       "ACCOUNT_GROUP_ACTIVATED": "Group activated",
       "ACCOUNT_PROVISIONED": "Account enabled on linked system",
@@ -6514,6 +6643,7 @@
       "SERVICE_ACCOUNT_GROUP_DEPROVISIONED": "Group for service account disabled on linked system",
       "ACCOUNT_MODIFIED_FOR_GROUP": "Account within group modified",
       "ACCOUNT_LOGIN_FAILED": "Failed authentication",
+      "DEVICE_CODE_REJECTED": "Device code rejected",
       "ACCOUNT_TOTP_OFFSET_CHANGED": "Account TOTP offset changed",
       "ACCOUNT_REMOVED": "Account removed",
       "ACCOUNT_SSH_PUBLIC_KEY_MODIFIED": "Account - SSH public key set",
@@ -6543,6 +6673,7 @@
       "GROUP_MOVED": "Group moved",
       "VAULT_PERSONAL_RESET": "Personal vault reset",
       "SERVICE_ACCOUNT_REMOVED_FROM_GROUP": "Service account removed from a group",
+      "DEVICE_CODE_ISSUED": "Device code issued",
       "ACCOUNT_REREGISTERED": "Account re-registered",
       "ACCOUNT_GROUP_ACTIVATION_REASON": "Group activation reason",
       "CLIENT_PERMISSION_REVOKED": "Permission revoked from application",
@@ -6551,9 +6682,9 @@
       "SETTING_MODIFIED": "Setting modified",
       "ACCOUNT_ENABLED": "Account enabled",
       "ACCOUNT_CREATED": "Account created",
-      "ACCOUNT_ADDED_TO_ORGANIZATIONAL_UNIT": "Added account to an organizational unit",
+      "ACCOUNT_ADDED_TO_ORGANIZATIONAL_UNIT": "Added account to an organisational unit",
       "SERVICE_ACCOUNT_PROVISIONING_DESTROYED": "Removed service account from linked system",
-      "LICENSE_KEY_UPLOADED": "License key uploaded",
+      "LICENSE_KEY_UPLOADED": "Licence key uploaded",
       "CLIENT_PERMISSION_GRANTED": "Permission granted to application",
       "GROUP_ON_SYSTEM_PROVISIONED": "Group created on linked system",
       "GROUP_AUDIT_REQUESTED": "An audit has been requested for a group",
@@ -6568,6 +6699,7 @@
       "ACCOUNT_VAULT_UNLOCKED": "Vault unlocked",
       "ACCOUNT_MODIFIED_FOR_ACCESS_PROFILE": "Account within access profile modified",
       "ACCOUNT_ACTIVATION_CODE_USED": "Activation code used",
+      "DEVICE_CODE_VERIFIED": "Device code verified",
       "GROUP_AUTHORIZATION_DISCONNECTED": "Extra authorisation removed for a group",
       "SERVICE_ACCOUNT_GROUP_PROVISIONED": "Group for service account enabled on linked system",
       "INTERNAL_ACCOUNT_ACTIVATED": "Internal account activated",
@@ -6639,7 +6771,7 @@
           },
           "groupsystem": "When <strong>{0}<\/strong> is removed, all members of the group will lose access to the linked system.",
           "organizationalunitclientapplication": "If you remove <strong>{0}<\/strong> from organisational unit {1}, the application will lose access to groups and configuration that belong to this organisational unit.",
-          "accessprofileprov": "When <strong>{0}<\/strong> is removed, all members of the access profile will lose access to group on the linked system.",
+          "accessprofileprov": "When <strong>{0}<\/strong> is removed, all members of the access profile will lose access to the group on the linked system.",
           "profile": "When <strong>{0}<\/strong> is removed, all data associated with this access profile will also be removed. All access granted through this access profile will be revoked.",
           "saml2application": "When <strong>{0}<\/strong> is removed, all connections with groups are also removed.",
           "certificate": "You are about to delete the certificate <strong>{0}<\/strong>. Once deleted, this certificate cannot be restored without the original files.",
@@ -6867,7 +6999,7 @@
         "transferapplicationownership": "{from} requests to transfer ownership of {application} to {group}",
         "removeaccessprofile": "{from} wants to remove the access profile {accessProfile}",
         "reviewaudit": "{from} requests a review of an audit of {group}.",
-        "disable2fa": "{from} wants 2fa to be disabled",
+        "disable2fa": "{from} wants 2FA to be disabled",
         "updatelicense": "{from} wants to make a change to the license",
         "removeorganizationalunit": "{from} wants to remove the organisational unit {organizationalUnit}",
         "transfergrouponsystemownership": "{from} requests to transfer ownership of {gosType} {gosName} on {system} to {group}",
@@ -6885,7 +7017,7 @@
       },
       "license-expired": "Topicus KeyHub license expired",
       "request-audit": "{from} requests an audit of the group {group}",
-      "passwordrecovery-notice": "A request to recovery your password has been submitted",
+      "passwordrecovery-notice": "A request to recover your password has been submitted",
       "license-registration-failed": "Registration failed: Topicus KeyHub license limit reached",
       "processed": {
         "CANCELLED": "Cancelled: {0}",
@@ -6944,7 +7076,7 @@
       },
       "nestedhidden": "> {0} accounts inherited from the parent group {1}",
       "allaudits": "Show all audits...",
-      "noaudits": "<< no audits >>>",
+      "noaudits": "<< no audits >>",
       "actionstep": "{0} at {1}",
       "omschrijving": "Group audit for {0}"
     },
@@ -6963,6 +7095,9 @@
       "main": "Has management privileges for the group",
       "delegated": "You have delegated management privileges",
       "self": "You have management privileges"
+    },
+    "setupgroupexclusion": {
+      "title": "Group exclusion"
     },
     "map": {
       "toevoegen": "Add folder",
@@ -6987,19 +7122,6 @@
       },
       "count": "{0} groups"
     },
-    "removegroups": {
-      "report": {
-        "title": "Remove groups report"
-      },
-      "request": {
-        "title": "Remove groups",
-        "groups": {
-          "error": {
-            "nogroups": "You need to select at least one group."
-          }
-        }
-      }
-    },
     "groups": {
       "hidden": {
         "1": "1 hidden group",
@@ -7008,6 +7130,16 @@
     },
     "groupexclusions": {
       "header": "Excluded groups"
+    },
+    "removegroups": {
+      "request": {
+        "title": "Remove groups",
+        "groups": {
+          "error": {
+            "nogroups": "You need to select at least one group."
+          }
+        }
+      }
     },
     "los": "Groups displayed separately",
     "verborgen": "Hidden groups",
@@ -7049,10 +7181,10 @@
         }
       },
       "old": {
-        "info": "Welcome to KeyHubs password wizard. You will be guided through 3 steps to change your password. Start with entering the password you currently use to logon to KeyHub below.",
+        "info": "Welcome to KeyHub's password wizard. You will be guided through 3 steps to change your password. Start with entering the password you currently use to log on to KeyHub below.",
         "head": "Current password for {0}",
-        "infofed": "Welcome to KeyHubs password wizard. You will be guided through 3 steps to change your password. Your account is managed in an external directory. Therefore, you can directly skip to the next step.",
-        "info1": "Your current password for KeyHub needs to be changed. You will be guided through 3 steps to change your password. Start with entering the password you currently use to logon to KeyHub below."
+        "infofed": "Welcome to KeyHub's password wizard. You will be guided through 3 steps to change your password. Your account is managed in an external directory. Therefore, you can directly skip to the next step.",
+        "info1": "Your current password for KeyHub needs to be changed. You will be guided through 3 steps to change your password. Start with entering the password you currently use to log on to KeyHub below."
       },
       "step": {
         "vault": "Vault",
@@ -7083,7 +7215,7 @@
         }
       },
       "int": {
-        "ok": "Your current password meets KeyHubs requirements. You can choose a new password, but this is not required.",
+        "ok": "Your current password meets KeyHub's requirements. You can choose a new password, but this is not required.",
         "notok": "Your current password is too short or too weak to be used in KeyHub. Choose a new password which is at least {minlength} characters long."
       },
       "choosenew": {
@@ -7093,9 +7225,9 @@
         "notoktwo": "Your current KeyHub password does not meet the requirements. You have to choose a new password."
       },
       "fed": {
-        "ok": "Your current password meets KeyHubs requirements. You can choose a new password, but this is not required.",
+        "ok": "Your current password meets KeyHub's requirements. You can choose a new password, but this is not required.",
         "notok": "Your current KeyHub password is too short or too weak. Choose a new password which is at least {minlength} characters long.",
-        "new": "Choose a KeyHub-password which is at least {minlength} characters long. You will use this password to open your vaults and when signing on to linked systems."
+        "new": "Choose a KeyHub password which is at least {minlength} characters long. You will use this password to open your vaults and when signing on to linked systems."
       },
       "vault": {
         "info": "To update your password, your vault needs to be opened. Enter the password you use for your vaults below.",
@@ -7115,7 +7247,7 @@
         "tkhpwddesc": "Enter the password with which your vault is encrypted. This can be a previous password for {0} or a password chosen during password recovery.",
         "header": "Synchronise password"
       },
-      "ok": "Your password for {directory} meets KeyHubs requirements. You can choose to use this password within KeyHub as well, which is recommended. You can also choose to use another password within KeyHub that differs from your {directory} password.",
+      "ok": "Your password for {directory} meets KeyHub's requirements. You can choose to use this password within KeyHub as well, which is recommended. You can also choose to use another password within KeyHub that differs from your {directory} password.",
       "sync": {
         "label": "Synchronise with {0}",
         "description": "Synchronise your KeyHub password with your {0} password. Note that your {0} password may also be used by other services (such as e-mail) and your password for those services will change as well if you change your password below."
@@ -7238,13 +7370,13 @@
     "GROUP_HAS_APPS": "This group owns or administers one or more applications and can therefore not be removed.",
     "GROUP_EXCLUSION_WITH_NESTING_NOT_ALLOWED": "Group exclusions are not possible for groups involved in nesting.",
     "LICENSE_WRONG_DOMAIN": {
-      "login": "Unfortunately, the license for this Topicus KeyHub installation seems to be invalid and therefore you are unable to login. Contact your Topicus KeyHub administrators for assistance.",
-      "main": "Your Topicus KeyHub license is for another domain."
+      "login": "Unfortunately, the licence for this Topicus KeyHub installation seems to be invalid and therefore you are unable to log in. Contact your Topicus KeyHub administrators for assistance.",
+      "main": "Your Topicus KeyHub licence is for another domain."
     },
     "GROUP_AUDIT_ALTERED_CONFLICT": "The group has changed after starting this audit, check the changes and save again.",
     "RESET_INVALID_PASSWORD": "The password does not match the password provided when the request was submitted.",
     "CLIENT_PERMISSION_ALREADY_EXISTS": "The requested permission is already granted to this application.",
-    "VAULT_TARGET_NOT_INITIALIZED": "The selected user did not yet setup a vault password.",
+    "VAULT_TARGET_NOT_INITIALIZED": "The selected user did not yet set up a vault password.",
     "CLIENT_NOT_ALLOWED": {
       "n": "You are not allowed to sign in to {client}. Sign in to the KeyHub console and request access to the one of the following groups: {groups} or {lastGroup}.",
       "1": "You are not allowed to sign in to {client}. Sign in to the KeyHub console and request access to the group {group}.",
@@ -7253,45 +7385,45 @@
     "PROVISIONED_SYSTEM_HAS_NAMESPACE": "This linked system cannot be deleted because it still contains namespaces. First delete the namespaces.",
     "VAULT_RECOVERY_KEY_MISSING": "A recovery key must be configured before vaults can be created. This must be done by a KeyHub administrator.",
     "NO_CHANGE_REQUIRED": "The action has been cancelled because no changes were made.",
-    "SAML_ERROR": "It is currently not possible to login on this SAML2-application. Contact an administrator of the application.",
+    "SAML_ERROR": "It is currently not possible to log in to this SAML2-application. Contact an administrator of the application.",
     "PROVISIONED_SYSTEM_TESTED": "{system} was tested with the following outcome: {message}",
     "ID_IN_DIRECTORY_ALREADY_EXISTS": "You already have a KeyHub account",
     "INVALID_ACTIVATION": "The given code is incorrect or not fit for purpose.",
     "EXCESSIVE_ATTEMPTS": "Your account is blocked temporarily. Try again in {retryPeriod}.",
     "DUPLICATE_RESOURCE": "This object already exists.",
     "LICENSE_TERMINATED": {
-      "login": "Unfortunately, the license for this Topicus KeyHub installation seems to be invalid and therefore you are unable to login. Contact your Topicus KeyHub administrators for assistance.",
-      "main": "Your Topicus KeyHub license is terminated."
+      "login": "Unfortunately, the licence for this Topicus KeyHub installation seems to be invalid and therefore you are unable to log in. Contact your Topicus KeyHub administrators for assistance.",
+      "main": "Your Topicus KeyHub licence is terminated."
     },
     "CANNOT_EDIT_OWN_PRIVILEGES": "You cannot edit your own privileges.",
     "SERVICEACCOUNT_IS_ACTIVE": "To perform this action, the service account must first be deactivated.",
     "OIDC_REFUSED": "You did not give KeyHub permission for Single Sign-on.",
     "DUPLICATE_VALUE": "The value must be unique, '{value}' is already in use.",
-    "VAULT_TARGET_DOES_NOT_EXIST": "The user {username} does not exist or did not yet setup a vault password.",
+    "VAULT_TARGET_DOES_NOT_EXIST": "The user {username} does not exist or did not yet set up a vault password.",
     "LICENSE_LIMIT_REACHED": {
-      "login": "Unfortunately, the limits of the license for this Topicus KeyHub installation have been reached and therefore you are unable to register an account. Contact your Topicus KeyHub administrators for assistance.",
-      "main": "You've reached the limits of your Topicus KeyHub license and can add no more accounts."
+      "login": "Unfortunately, the limits of the licence for this Topicus KeyHub installation have been reached and therefore you are unable to register an account. Contact your Topicus KeyHub administrators for assistance.",
+      "main": "You've reached the limits of your Topicus KeyHub licence and can add no more accounts."
     },
     "CERTIFICATE_IN_USE": "This certificate is in use and therefore cannot be modified or removed.",
     "VAULT_INVALID_RECOVERY_KEY": "The given private key is invalid or does not match the current public key.",
     "TOTP_OFFSET_CHANGE_TOKENS_ERROR": "The provided codes are invalid. Make sure to enter two consecutive codes.",
-    "VAULT_RECORD_SHARE_DATE_TIME_BOTH_FILLED": "The share end date and share duration can't both be filled.",
-    "MODIFICATION_ALREADY_REQUESTED": "You already submitted a similar request. Please wait until a manager or administrator processed it.",
+    "VAULT_RECORD_SHARE_DATE_TIME_BOTH_FILLED": "The share end date and share duration cannot both be filled.",
+    "MODIFICATION_ALREADY_REQUESTED": "You already submitted a similar request. Please wait until a manager or administrator has processed it.",
     "CERTIFICATE_FETCH_ERROR": "An error occurred while fetching the certificate: {reason}",
     "CLIENT_ID_ALREADY_IN_USE": "The client identifier must be unique, '{clientid}' is already in use.",
     "VAULT_TEMP_LOCKED": "Access to your vaults has been temporarily blocked. Try again in {retryPeriod}.",
     "MODIFICATION_DELEGATION_WITH_NESTING_NOT_ALLOWED": "Delegating management is not possible for groups involved in nesting.",
     "LICENSE_NOT_YET_ACTIVE": {
-      "login": "Unfortunately, the license for this Topicus KeyHub installation seems to be invalid and therefore you are unable to login. Contact your Topicus KeyHub administrators for assistance.",
-      "main": "Your Topicus KeyHub license is not yet valid."
+      "login": "Unfortunately, the licence for this Topicus KeyHub installation seems to be invalid and therefore you are unable to log in. Contact your Topicus KeyHub administrators for assistance.",
+      "main": "Your Topicus KeyHub licence is not yet valid."
     },
     "TOKEN_LOGIN_NOT_POSSIBLE": {
-      "main": "Two-factor authentication is required for this action. Enable 2fa under your profile.",
-      "login": "Two-factor authentication is required for {client}. Sign in to the KeyHub console to enable 2fa."
+      "main": "Two-factor authentication is required for this action. Enable 2FA under your profile.",
+      "login": "Two-factor authentication is required for {client}. Sign in to the KeyHub console to enable 2FA."
     },
     "LICENSE_KEY_MALFORMED": {
-      "login": "Unfortunately, we've been unable to verify the license for this Topicus KeyHub installation and therefore you are unable to login. Contact your Topicus KeyHub administrators for assistance.",
-      "main": "The license key is malformed."
+      "login": "Unfortunately, we've been unable to verify the licence for this Topicus KeyHub installation and therefore you are unable to log in. Contact your Topicus KeyHub administrators for assistance.",
+      "main": "The licence key is malformed."
     },
     "ORGANIZATIONAL_UNIT_NOT_UNDER_BASE": "The organisational unit is not a descendant of the user's base organisational unit.",
     "VAULT_RECOVERY_KEY_NOT_INITIALIZED": "The vault does not have a recovery key.",
@@ -7304,7 +7436,7 @@
     "VAULT_RECORD_DERIVED_SHARE_ONLY": "Derived records can only be shared with other vaults.",
     "PASSWORD_INCORRECT": "The given password is incorrect.",
     "ILLEGAL_BRANDINGLOGO": "The branding logo does not meet the requirements. Only a .png of 540 by 280 pixels is allowed.",
-    "ORGANIZATIONAL_UNIT_GROUP_NOT_UNDER_NEW_OU": "The group {group} is not under the new organisational unit and is directly or indirectly linked this group on system.",
+    "ORGANIZATIONAL_UNIT_GROUP_NOT_UNDER_NEW_OU": "The group {group} is not under the new organisational unit and is directly or indirectly linked to this group on system.",
     "NAME_ALREADY_IN_USE": "The name must be unique, '{name}' is already in use.",
     "PROVISIONING_ERROR": "Your account in {system} could not be updated due to an error. If this problem persists, please contact a member of {admins}.",
     "MODIFICATION_AUTHORIZATION_ALREADY_SETUP": "This type of authorisation is already set up for this group.",
@@ -7312,14 +7444,14 @@
     "INVALID_REGISTRATION_CREDENTIALS": "The given username and password do not match an existing user in the directory.",
     "ATTRIBUTE_IN_USE_BY_DIRECTORY": "This attribute definition is still in use by the directory {directory} and can therefore not be modified or removed.",
     "ATTRIBUTE_IN_USE_BY_PROFILE": "This attribute definition is still in use by the access profile {profile} and can therefore not be modified or removed.",
-    "LICENSE_FEATURE_IN_USE": "Your Topicus KeyHub installation is using features that are not allowed by the license:",
+    "LICENSE_FEATURE_IN_USE": "Your Topicus KeyHub installation is using features that are not allowed by the licence:",
     "CLIENT_CREDENTIALS_NOT_ALLOWED": "This application does not support the client credentials grant and can therefore not get access to a vault.",
     "USERNAME_ALREADY_IN_USE": "This username already exists.",
     "GROUP_EXCLUSION_CONFLICT": "{account} is a member of an excluded group.",
     "KEYHUB_CREDENTIALS_EXPECTED": "You entered the wrong password. Please enter your KeyHub password.",
     "LAUNCHPAD_TILE_IDP_INITIATED_NOT_SUPPORTED": "IdP-initiated login is not supported by this application.",
     "ATTRIBUTE_IN_USE_BY_SYSTEM": "This attribute definition is still in use by the linked system {system} and can therefore not be modified or removed.",
-    "ORGANIZATIONAL_UNIT_CANNOT_REMOVE_CLIENT_BASE": "Cannot remove the base organizational unit from the application.",
+    "ORGANIZATIONAL_UNIT_CANNOT_REMOVE_CLIENT_BASE": "Cannot remove the base organisational unit from the application.",
     "MODIFICATION_CIRCULAR_GROUP_NESTING": "{nested} cannot be nested within {parent} because {parent} is already directly or indirectly nested within {nested}.",
     "VAULT_PUBLIC_KEY_NOT_INITIALIZED": "The target vault is not yet ready. The vault must first be opened by someone with access.",
     "ORGANIZATIONAL_UNIT_MISMATCH": "There is a mismatch between the organisational units involved.",
@@ -7332,7 +7464,7 @@
     "MODIFICATION_GROUP_ALREADY_NESTED": "The chosen group is already nested.",
     "CLIENT_ACTIVATION_REQUIRED": {
       "1": "To log in to {client}, the group {group} must first be activated.",
-      "n": "To login to {client}, one of the following groups must first be activated: {groups} or {lastGroup}."
+      "n": "To log in to {client}, one of the following groups must first be activated: {groups} or {lastGroup}."
     },
     "ATTRIBUTE_IN_USE_BY_CLIENT": "This attribute definition is still in use by the application {client} and can therefore not be modified or removed.",
     "INVALID_CSV": "The CSV file is invalid: {error}",
@@ -7342,17 +7474,17 @@
     "NUMBER_SEQUENCE_IN_USE": "This number sequence is still in use.",
     "PROVISIONED_SYSTEM_INVALID_TENANT": "The given Azure tenant is invalid.",
     "MODIFICATION_RESET_NO_TARGETS": "There are not enough users to handle your request.",
-    "CANNOT_REMOVE_LAST_2FA_METHOD": "Your last 2FA method can not be removed. First add another method in order to then remove this one.",
+    "CANNOT_REMOVE_LAST_2FA_METHOD": "Your last 2FA method cannot be removed. First add another method in order to then remove this one.",
     "ORGANIZATIONAL_UNIT_USER_NO_ACCESS": "The user does not have access to the chosen organisational unit.",
     "VAULT_FOR_ACCOUNT_NOT_CREATED": "Your account is configured incorrectly. Go to your profile and reset your password to correct this.",
     "PROVISIONED_SYSTEM_IN_USE": "{system} is already in use as {otherSystem}",
-    "VAULT_RECORD_CANNOT_RESHARE": "Shared records can not be moved to or shared with other vaults.",
-    "ORGANIZATIONAL_UNIT_TOO_DEEP": "Organizational units can only be nested up to 5 deep.",
+    "VAULT_RECORD_CANNOT_RESHARE": "Shared records cannot be moved to or shared with other vaults.",
+    "ORGANIZATIONAL_UNIT_TOO_DEEP": "Organisational units can only be nested up to 5 deep.",
     "GROUP_CANNOT_BE_MOVED": "One or more groups cannot be moved.",
     "PROVISIONED_SYSTEM_ERROR": "The operation on {system} could not be completed. The system reports: {message}",
     "INVALID_ATTRIBUTE_VALUE": "The value {value} is invalid.",
     "PASSWORD_ROTATING_REQUIRED": "Rotating password is required for this action. This can be enabled on your profile page.",
-    "LICENSE_BUSINESS_LIMIT_REACHED": "You've reached the limits of your Topicus KeyHub license and can add no more 'Business' accounts.",
+    "LICENSE_BUSINESS_LIMIT_REACHED": "You've reached the limits of your Topicus KeyHub licence and can add no more 'Business' accounts.",
     "PASSWORD_CHANGE_REJECTED": "Your new password does not meet the requirements set by {directory}. Please try a different password.",
     "CLIENT_IN_USE_FOR_PROVISIONING": "This application is in use by the linked system '{system}'. Remove this system first.",
     "PASSWORD_CHANGE_ERROR": "The password could not be set on {directory}. If this problem persists, please contact a KeyHub administrator.",
@@ -7364,10 +7496,10 @@
     "DEFAULT_DIRECTORY_ALREADY_EXISTS": "There can be only one default directory. {name} is already set as the default directory.",
     "PROVISIONED_SYSTEM_DN_NOT_UNIQUE": "The provided DN must be unique, '{dn}' is already in use in system '{system}'.",
     "PASSWORD_WEAK": "The given password is too weak. This password is listed in a collection of commonly used passwords.",
-    "LICENSE_PRO_LIMIT_REACHED": "You've reached the limits of your Topicus KeyHub license and can add no more 'Pro' accounts.",
+    "LICENSE_PRO_LIMIT_REACHED": "You've reached the limits of your Topicus KeyHub licence and can add no more 'Pro' accounts.",
     "PROVISIONING_MISSING_PERMISSION": "The application is missing a required permission: {role}",
     "PROVISIONED_SYSTEM_NO_UUID": "{system} did not provide a correct UUID",
-    "LICENSE_AT_LEAST_BUSINESS_REQUIRED": "At least a Business license is required for {username} to allow group memberships or a personal vault.",
+    "LICENSE_AT_LEAST_BUSINESS_REQUIRED": "At least a Business licence is required for {username} to allow group memberships or a personal vault.",
     "GROUP_EXCLUSION_ALREADY_SETUP": "A group exclusion already exists between these groups.",
     "MODIFICATION_GROUPACCOUNT_STATUS_CONFLICT": "This group membership is in an unexpected state.",
     "GROUP_ACCOUNT_HAS_LAST_SECRET": "{account} cannot be removed from {group} because it is the last account with access to the group's vault.",
@@ -7376,7 +7508,7 @@
     "PROVISIONING_CONFLICT": "Due to a change in configuration, your action could not be processed. Please try again.",
     "PASSWORD_TOO_SHORT": "The given password is too short. A minimum of {minlength} characters is required.",
     "VAULT_ACTIVATION_REQUIRED": "To read vault records for this group, the group must first be activated.",
-    "MODIFICATION_DELEGATION_REQUIRES_MEMBERSHIP_AUTH": "The selected group does not have extra authorization on group membership. This is required for delegation of management.",
+    "MODIFICATION_DELEGATION_REQUIRES_MEMBERSHIP_AUTH": "The selected group does not have extra authorisation on group membership. This is required for delegation of management.",
     "DIRECTORY_TESTED": "{directory} was tested with the following outcome: {message}",
     "INVALID_TOTP_TOKEN": "The given code is incorrect. Is the time on your phone set correctly?",
     "MODIFICATION_NESTED_MEMBERSHIP_AUTH_NOT_ALLOWED": "A nested group cannot get authorisation on membership.",
@@ -7436,7 +7568,7 @@
       "confirm": "delete accounts"
     },
     "search": {
-      "licenserole": "Accounts with license role...",
+      "licenserole": "Accounts with licence role...",
       "group": "Accounts in group...",
       "accounts": "Search in accounts",
       "validity": "Accounts with validity...",
@@ -7453,8 +7585,8 @@
     },
     "valideerNu": "Validate now",
     "switchLicenseRole": {
-      "title": "Switch license role",
-      "subtitle": "Choose the new license role for {0}.",
+      "title": "Switch licence role",
+      "subtitle": "Choose the new licence role for {0}.",
       "main": "Switch role"
     },
     "joinGroups": {
@@ -7576,7 +7708,7 @@
         "warning": "This password is reused within this vault."
       },
       "add": "Add record",
-      "unshare": "Use you sure you want to stop sharing this record?"
+      "unshare": "Are you sure you want to stop sharing this record?"
     },
     "unlock": {
       "header": "Unlock vaults",
@@ -7704,7 +7836,7 @@
       "expired": "EXPIRED"
     },
     "licensestatus": {
-      "head": "Topicus KeyHub license",
+      "head": "Topicus KeyHub licence",
       "description": {
         "BUSINESS_LIMIT_EXCEEDED": "The license limit of the number of Business users has been reached.",
         "HARD_LIMIT_REACHED": "The license limit of Topicus KeyHub is reached. There are {activeAccounts} active accounts out of the maximum of {hardLimit}.",
@@ -7717,7 +7849,7 @@
         "WRONG_DOMAIN": "The Topicus KeyHub license is for a different domain.",
         "SOFT_LIMIT_REACHED": "The license limit of Topicus KeyHub is almost reached. There are {activeAccounts} active accounts out of the maximum of {hardLimit}."
       },
-      "alert": "License"
+      "alert": "Licence"
     },
     "oldapiversion": {
       "info": "This version is no longer supported and may be discontinued in a future update of Topicus KeyHub.",
@@ -7729,7 +7861,7 @@
       "description": "This Topicus KeyHub installation has not been updated for a while. It is important to always run the latest version with the most recent security updates.",
       "alert": "UPDATE",
       "view": "View updates",
-      "releasenotes": "Check for updates"
+      "releasenotes": "Release notes"
     },
     "oldapiusage": {
       "description": "The application {client} uses the outdated API version {apiVersion}."
@@ -7773,9 +7905,6 @@
           "label": "To organisational unit"
         },
         "title": "Move groups"
-      },
-      "report": {
-        "title": "Report"
       }
     },
     "account": {
@@ -7846,7 +7975,7 @@
     },
     "addadmin": {
       "header": "Add manager",
-      "explain": "Submit a request to give a user management privileges for {0}. If the user is not yet member of the group, he/she will be added."
+      "explain": "Submit a request to give a user management privileges for {0}. If the user is not yet member of the group, they will be added."
     },
     "account": {
       "subtitle": {
@@ -7936,7 +8065,7 @@
     },
     "attribute": {
       "summary": {
-        "OUT_OF_SYNC": "The expected value '{expected}' is not synchronized. The current value is '{current}'.",
+        "OUT_OF_SYNC": "The expected value '{expected}' is not synchronised. The current value is '{current}'.",
         "ERROR": "An error occurred while calculating the value. The current value is '{current}'.",
         "DUPLICATE": "The selected value '{context}' conflicts with another user. The current value is '{current}'.",
         "UNKNOWN": "The status is unknown.",
@@ -8046,10 +8175,13 @@
   },
   "filter": {
     "loglevel": "Filter on log level...",
+    "attribute": "Filter on attribute...",
     "system": "System",
     "group": "Select a group...",
+    "status": "Filter on status...",
     "type": "Filter on type...",
     "overig": "Other",
+    "source": "Filter on source...",
     "keyhub": "KeyHub",
     "account": "Select an account...",
     "action": "Filter on action...",
@@ -8264,12 +8396,12 @@
   },
   "about": {
     "updatelicense": {
-      "sent": "The request to enter a new license has been sent.",
+      "sent": "The request to enter a new licence has been sent.",
       "changevia": "{1} via {0}",
-      "saved": "The license has been updated.",
-      "explain": "Upload the new license file.",
-      "main": "Update license",
-      "reason": "Making the license change requires disabling functionality. Provide a reason for the change here."
+      "saved": "The licence has been updated.",
+      "explain": "Upload the new licence file.",
+      "main": "Update licence",
+      "reason": "Making the licence change requires disabling functionality. Provide a reason for the change here."
     },
     "header": {
       "about": "About Topicus KeyHub",
@@ -8279,7 +8411,7 @@
         "now": "Now"
       },
       "license": {
-        "conditions": "License conditions"
+        "conditions": "Licence conditions"
       }
     },
     "activeusers": {
@@ -8360,6 +8492,12 @@
     "invalidPublicKeyFile": "Invalid PEM file. The file is of incorrect format.",
     "filesizeTooLarge": "Invalid PEM file. The file is too large."
   },
+  "AfasUrlValidator": {
+    "host": "The host must match '{subscriberId}.{environment}.afas.online' (e.g. '12345.rest.afas.online').",
+    "scheme": "The URL must start with 'https://'.",
+    "url": "'{input}' is not a valid URL.",
+    "path": "The path must be '/ProfitRestServices'."
+  },
   "nee": "No",
   "dashboard": {
     "provisioning": {
@@ -8407,7 +8545,7 @@
   },
   "persistentlogin": {
     "terminateothers": {
-      "hover": "Logout all sessions but the current",
+      "hover": "Log out all sessions but the current",
       "main": "Logout all"
     },
     "actievesessies": "Active sessions",
@@ -8420,6 +8558,9 @@
   },
   "en": "and",
   "ja": "Yes",
+  "synclogs": {
+    "header": "Synchronisations"
+  },
   "LoadListenerFactorValidator": {
     "memrequired": "The overload protection setting requires at least {required} MB of memory for the Topicus KeyHub application.",
     "cpurequired": "The overload protection setting requires at least {required} CPU cores."

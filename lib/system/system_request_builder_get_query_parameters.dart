@@ -14,6 +14,8 @@ class SystemRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     List<int>? accessProfileProvisioning;
     ///  Filter the systems by provisioned accounts, specified by id. This parameter supports composition with all parameters from the provisioned account resource.
     List<int>? account;
+    ///  Filter systems on the attribute definition used for account matching, specified by id. This parameter supports composition with all parameters from the attribute definition resource.
+    List<int>? accountMatchingAttribute;
     ///  Only return source directory provisioning systems for which accounts are writable.
     List<bool>? accountsWritable;
     ///  Only return systems whose active status matches any of the provided values.
@@ -99,6 +101,7 @@ class SystemRequestBuilderGetQueryParameters implements AbstractQueryParameters 
             'accessprofile' : accessprofile,
             'accessProfileProvisioning' : accessProfileProvisioning,
             'account' : account,
+            'accountMatchingAttribute' : accountMatchingAttribute,
             'accountsWritable' : accountsWritable,
             'activeStatus' : activeStatus,
             'additional' : additional,

@@ -7,6 +7,7 @@ import './accessprofile_item_request_builder_put_query_parameters.dart';
 import './account/account_request_builder.dart';
 import './attributerule/attributerule_request_builder.dart';
 import './attributes/attributes_request_builder.dart';
+import './synchronize/synchronize_request_builder.dart';
 
 /// auto generated
 /// Builds and executes requests for operations under \profile\{accessprofile-id}
@@ -22,6 +23,10 @@ class AccessprofileItemRequestBuilder extends BaseRequestBuilder<AccessprofileIt
     ///  The attributes property
     AttributesRequestBuilder get attributes {
         return AttributesRequestBuilder(pathParameters, requestAdapter);
+    }
+    ///  The synchronize property
+    SynchronizeRequestBuilder get synchronize {
+        return SynchronizeRequestBuilder(pathParameters, requestAdapter);
     }
     /// Clones the requestbuilder.
     @override
@@ -60,7 +65,7 @@ class AccessprofileItemRequestBuilder extends BaseRequestBuilder<AccessprofileIt
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AccessprofileItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AccessprofileItemRequestBuilderGetQueryParameters>(requestConfiguration, () => AccessprofileItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
         return requestInfo;
     }
     /// Updates the access profile identified by the id.
@@ -69,8 +74,8 @@ class AccessprofileItemRequestBuilder extends BaseRequestBuilder<AccessprofileIt
     RequestInformation toPutRequestInformation(AccessProfile body, [void Function(RequestConfiguration<AccessprofileItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AccessprofileItemRequestBuilderPutQueryParameters>(requestConfiguration, () => AccessprofileItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=84');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=84', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=85', body);
         return requestInfo;
     }
 }

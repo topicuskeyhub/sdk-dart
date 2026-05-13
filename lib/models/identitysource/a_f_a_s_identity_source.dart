@@ -1,9 +1,12 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
+import '../misc/attribute_customization.dart';
 import './identity_source.dart';
 
 /// auto generated
 class AFASIdentitySource extends IdentitySource implements Parsable {
+    ///  The attributes property
+    Iterable<AttributeCustomization>? attributes;
     ///  The schedule property
     String? schedule;
     ///  The token property
@@ -23,6 +26,7 @@ class AFASIdentitySource extends IdentitySource implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['attributes'] = (node) => attributes = node.getCollectionOfObjectValues<AttributeCustomization>(AttributeCustomization.createFromDiscriminatorValue);
         deserializerMap['schedule'] = (node) => schedule = node.getStringValue();
         deserializerMap['token'] = (node) => token = node.getStringValue();
         deserializerMap['url'] = (node) => url = node.getStringValue();
@@ -33,6 +37,7 @@ class AFASIdentitySource extends IdentitySource implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeCollectionOfObjectValues<AttributeCustomization>('attributes', attributes);
         writer.writeStringValue('schedule', schedule);
         writer.writeStringValue('token', token);
         writer.writeStringValue('url', url);

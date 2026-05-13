@@ -11,6 +11,8 @@ class ClientConsent extends Linkable implements Parsable {
     ClientApplicationPrimer? client;
     ///  The identifier property
     String? identifier;
+    ///  The trustedIPs property
+    Iterable<String>? trustedIPs;
     /// Instantiates a new [ClientConsent] and sets the default values.
     ClientConsent() : super() {
         type_ = 'client.ClientConsent';
@@ -27,6 +29,7 @@ class ClientConsent extends Linkable implements Parsable {
         deserializerMap['allowedScopes'] = (node) => allowedScopes = node.getCollectionOfPrimitiveValues<String>();
         deserializerMap['client'] = (node) => client = node.getObjectValue<ClientApplicationPrimer>(ClientApplicationPrimer.createFromDiscriminatorValue);
         deserializerMap['identifier'] = (node) => identifier = node.getStringValue();
+        deserializerMap['trustedIPs'] = (node) => trustedIPs = node.getCollectionOfPrimitiveValues<String>();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -36,5 +39,6 @@ class ClientConsent extends Linkable implements Parsable {
         super.serialize(writer);
         writer.writeCollectionOfPrimitiveValues<String?>('allowedScopes', allowedScopes);
         writer.writeObjectValue<ClientApplicationPrimer>('client', client);
+        writer.writeCollectionOfPrimitiveValues<String?>('trustedIPs', trustedIPs);
     }
 }

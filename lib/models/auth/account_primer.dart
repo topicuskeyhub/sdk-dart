@@ -4,7 +4,6 @@ import '../group/group_account.dart';
 import '../linkable.dart';
 import '../organization/organizational_unit_account.dart';
 import '../profile/access_profile_account.dart';
-import '../profile/access_profile_account_with_attributes.dart';
 import '../provisioning/provisioned_account.dart';
 import './account.dart';
 import './account_validity.dart';
@@ -36,7 +35,6 @@ class AccountPrimer extends Linkable implements Parsable {
             'group.GroupAccount' => GroupAccount(),
             'organization.OrganizationalUnitAccount' => OrganizationalUnitAccount(),
             'profile.AccessProfileAccount' => AccessProfileAccount(),
-            'profile.AccessProfileAccountWithAttributes' => AccessProfileAccountWithAttributes(),
             'provisioning.ProvisionedAccount' => ProvisionedAccount(),
             _ => AccountPrimer(),
         };

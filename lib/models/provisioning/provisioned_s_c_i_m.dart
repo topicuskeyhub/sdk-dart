@@ -20,6 +20,8 @@ class ProvisionedSCIM extends ProvisionedSystem implements Parsable {
     String? bearerToken;
     ///  The connectorConfiguration property
     String? connectorConfiguration;
+    ///  The cursorBasedPagination property
+    bool? cursorBasedPagination;
     ///  The customHeaderName property
     String? customHeaderName;
     ///  The customHeaderValue property
@@ -61,6 +63,7 @@ class ProvisionedSCIM extends ProvisionedSystem implements Parsable {
         deserializerMap['basicAuthUsername'] = (node) => basicAuthUsername = node.getStringValue();
         deserializerMap['bearerToken'] = (node) => bearerToken = node.getStringValue();
         deserializerMap['connectorConfiguration'] = (node) => connectorConfiguration = node.getStringValue();
+        deserializerMap['cursorBasedPagination'] = (node) => cursorBasedPagination = node.getBoolValue();
         deserializerMap['customHeaderName'] = (node) => customHeaderName = node.getStringValue();
         deserializerMap['customHeaderValue'] = (node) => customHeaderValue = node.getStringValue();
         deserializerMap['externalIdSupported'] = (node) => externalIdSupported = node.getBoolValue();
@@ -85,6 +88,7 @@ class ProvisionedSCIM extends ProvisionedSystem implements Parsable {
         writer.writeStringValue('basicAuthUsername', basicAuthUsername);
         writer.writeStringValue('bearerToken', bearerToken);
         writer.writeStringValue('connectorConfiguration', connectorConfiguration);
+        writer.writeBoolValue('cursorBasedPagination', value:cursorBasedPagination);
         writer.writeStringValue('customHeaderName', customHeaderName);
         writer.writeStringValue('customHeaderValue', customHeaderValue);
         writer.writeBoolValue('externalIdSupported', value:externalIdSupported);

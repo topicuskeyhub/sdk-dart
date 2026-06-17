@@ -55,6 +55,8 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     List<String>? q;
     ///  Filter the clients by the secret shared in a vault, specified by id. This parameter supports composition with all parameters from the vault resource.
     List<int>? sharedSecret;
+    ///  Filter the OAuth 2.0 clients by their party signing key, specified by id. This parameter supports composition with all parameters from the signing key resource.
+    List<int>? signingKey;
     ///  Sort the items. Use 'asc-<name>' for ascending and 'desc-<name>' for descending order.
     List<String>? sort;
     ///  Filter the clients for which the given group is technical administrator, specified by id. This parameter supports composition with all parameters from the group resource.
@@ -102,6 +104,7 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
             'ownedBy' : ownedBy,
             'q' : q,
             'sharedSecret' : sharedSecret,
+            'signingKey' : signingKey,
             'sort' : sort,
             'technicalAdministrator' : technicalAdministrator,
             'type_' : type_,

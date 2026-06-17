@@ -55,6 +55,8 @@ import './launchpad/manual_launchpad_tile.dart';
 import './launchpad/sso_application_launchpad_tile.dart';
 import './launchpad/vault_record_launchpad_tile.dart';
 import './link.dart';
+import './log/operation_log.dart';
+import './log/operation_log_line.dart';
 import './organization/account_organizational_unit.dart';
 import './organization/client_application_organizational_unit.dart';
 import './organization/organizational_unit.dart';
@@ -84,8 +86,6 @@ import './provisioning/provisioned_namespace.dart';
 import './provisioning/provisioned_s_c_i_m.dart';
 import './provisioning/provisioned_system.dart';
 import './provisioning/provisioned_system_primer.dart';
-import './provisioning/provisioning_operation_log.dart';
-import './provisioning/provisioning_operation_log_line.dart';
 import './request/abstract_access_profile_modification_request.dart';
 import './request/abstract_application_modification_request.dart';
 import './request/abstract_organizational_unit_modification_request.dart';
@@ -215,6 +215,8 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'launchpad.ManualLaunchpadTile' => ManualLaunchpadTile(),
             'launchpad.SsoApplicationLaunchpadTile' => SsoApplicationLaunchpadTile(),
             'launchpad.VaultRecordLaunchpadTile' => VaultRecordLaunchpadTile(),
+            'log.OperationLog' => OperationLog(),
+            'log.OperationLogLine' => OperationLogLine(),
             'organization.AccountOrganizationalUnit' => AccountOrganizationalUnit(),
             'organization.ClientApplicationOrganizationalUnit' => ClientApplicationOrganizationalUnit(),
             'organization.OrganizationalUnit' => OrganizationalUnit(),
@@ -243,8 +245,6 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'provisioning.ProvisionedSCIM' => ProvisionedSCIM(),
             'provisioning.ProvisionedSystem' => ProvisionedSystem(),
             'provisioning.ProvisionedSystemPrimer' => ProvisionedSystemPrimer(),
-            'provisioning.ProvisioningOperationLog' => ProvisioningOperationLog(),
-            'provisioning.ProvisioningOperationLogLine' => ProvisioningOperationLogLine(),
             'provisioning.ProvisionNumberSequence' => ProvisionNumberSequence(),
             'request.AbstractAccessProfileModificationRequest' => AbstractAccessProfileModificationRequest(),
             'request.AbstractApplicationModificationRequest' => AbstractApplicationModificationRequest(),

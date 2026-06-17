@@ -25,6 +25,8 @@ class CertificateRequestBuilderGetQueryParameters implements AbstractQueryParame
     List<int>? id;
     ///  Only return records that have been modified since the given instant.
     List<DateTime>? modifiedSince;
+    ///  Filter certificates on (part of) the alias or uuid.
+    List<String>? nameContains;
     ///  Filter records on a complex CQL query.
     List<String>? q;
     ///  Sort the items. Use 'asc-<name>' for ascending and 'desc-<name>' for descending order.
@@ -45,6 +47,7 @@ class CertificateRequestBuilderGetQueryParameters implements AbstractQueryParame
             'global' : global,
             'id' : id,
             'modifiedSince' : modifiedSince,
+            'nameContains' : nameContains,
             'q' : q,
             'sort' : sort,
             'uuid' : uuid,

@@ -1,26 +1,28 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../linkable.dart';
-import './provisioning_operation_type.dart';
+import './operation_type.dart';
 
 /// auto generated
-class ProvisioningOperationLog extends Linkable implements Parsable {
+class OperationLog extends Linkable implements Parsable {
     ///  The context property
     String? context;
     ///  The endTime property
     DateTime? endTime;
     ///  The type property
-    ProvisioningOperationType? provisioningOperationLogType;
+    OperationType? operationLogType;
     ///  The startTime property
     DateTime? startTime;
-    /// Instantiates a new [ProvisioningOperationLog] and sets the default values.
-    ProvisioningOperationLog() : super() {
-        type_ = 'provisioning.ProvisioningOperationLog';
+    ///  The successful property
+    bool? successful;
+    /// Instantiates a new [OperationLog] and sets the default values.
+    OperationLog() : super() {
+        type_ = 'log.OperationLog';
     }
     /// Creates a new instance of the appropriate class based on discriminator value
     ///  [parseNode] The parse node to use to read the discriminator value and create the object
-    static ProvisioningOperationLog createFromDiscriminatorValue(ParseNode parseNode) {
-        return ProvisioningOperationLog();
+    static OperationLog createFromDiscriminatorValue(ParseNode parseNode) {
+        return OperationLog();
     }
     /// The deserialization information for the current model
     @override
@@ -28,8 +30,9 @@ class ProvisioningOperationLog extends Linkable implements Parsable {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['context'] = (node) => context = node.getStringValue();
         deserializerMap['endTime'] = (node) => endTime = node.getDateTimeValue();
-        deserializerMap['type'] = (node) => provisioningOperationLogType = node.getEnumValue<ProvisioningOperationType>((stringValue) => ProvisioningOperationType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['type'] = (node) => operationLogType = node.getEnumValue<OperationType>((stringValue) => OperationType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['startTime'] = (node) => startTime = node.getDateTimeValue();
+        deserializerMap['successful'] = (node) => successful = node.getBoolValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -37,6 +40,6 @@ class ProvisioningOperationLog extends Linkable implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
-        writer.writeEnumValue<ProvisioningOperationType>('type', provisioningOperationLogType, (e) => e?.value);
+        writer.writeEnumValue<OperationType>('type', operationLogType, (e) => e?.value);
     }
 }

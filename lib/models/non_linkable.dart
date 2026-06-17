@@ -10,6 +10,7 @@ import './auth/accounts_audit_stats.dart';
 import './auth/effective_account_permissions.dart';
 import './auth/internal_account_status_object.dart';
 import './auth/move_internal_account.dart';
+import './client/client_application_status.dart';
 import './directory/account_directory_status_report.dart';
 import './generate_secret.dart';
 import './group/group_access_info.dart';
@@ -35,6 +36,7 @@ import './misc/attribute_customization.dart';
 import './notification/certificate_expired_notification.dart';
 import './notification/group_audit_required_notification.dart';
 import './notification/group_edit_required_notification.dart';
+import './notification/invalid_signature_owner.dart';
 import './notification/invalid_signatures_detected_notification.dart';
 import './notification/license_status_notification.dart';
 import './notification/modification_request_notification.dart';
@@ -43,6 +45,7 @@ import './notification/notifications.dart';
 import './notification/old_api_version_usage_notification.dart';
 import './notification/provision_config_required_notification.dart';
 import './notification/rotating_password_required_notification.dart';
+import './notification/system_wide_invalid_signatures_detected_notification.dart';
 import './notification/update_available_notification.dart';
 import './notification/vault_record_expired_notification.dart';
 import './organization/organizational_unit_settings.dart';
@@ -69,7 +72,6 @@ import './request/modification_request_report_object_change_details.dart';
 import './request/password_reset_request_status.dart';
 import './secret.dart';
 import './segment_count.dart';
-import './serviceaccount/service_account_status.dart';
 import './serviceaccount/service_account_supported_features.dart';
 import './serviceaccount/service_accounts_audit_stats.dart';
 import './simple/string_value.dart';
@@ -112,6 +114,7 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'auth.EffectiveAccountPermissions' => EffectiveAccountPermissions(),
             'auth.InternalAccountStatusObject' => InternalAccountStatusObject(),
             'auth.MoveInternalAccount' => MoveInternalAccount(),
+            'client.ClientApplicationStatus' => ClientApplicationStatus(),
             'directory.AccountDirectoryStatusReport' => AccountDirectoryStatusReport(),
             'GenerateSecret' => GenerateSecret(),
             'group.GroupAccessInfo' => GroupAccessInfo(),
@@ -137,6 +140,7 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'notification.CertificateExpiredNotification' => CertificateExpiredNotification(),
             'notification.GroupAuditRequiredNotification' => GroupAuditRequiredNotification(),
             'notification.GroupEditRequiredNotification' => GroupEditRequiredNotification(),
+            'notification.InvalidSignatureOwner' => InvalidSignatureOwner(),
             'notification.InvalidSignaturesDetectedNotification' => InvalidSignaturesDetectedNotification(),
             'notification.LicenseStatusNotification' => LicenseStatusNotification(),
             'notification.ModificationRequestNotification' => ModificationRequestNotification(),
@@ -145,6 +149,7 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'notification.OldApiVersionUsageNotification' => OldApiVersionUsageNotification(),
             'notification.ProvisionConfigRequiredNotification' => ProvisionConfigRequiredNotification(),
             'notification.RotatingPasswordRequiredNotification' => RotatingPasswordRequiredNotification(),
+            'notification.SystemWideInvalidSignaturesDetectedNotification' => SystemWideInvalidSignaturesDetectedNotification(),
             'notification.UpdateAvailableNotification' => UpdateAvailableNotification(),
             'notification.VaultRecordExpiredNotification' => VaultRecordExpiredNotification(),
             'organization.OrganizationalUnitSettings' => OrganizationalUnitSettings(),
@@ -172,7 +177,6 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'Secret' => Secret(),
             'SegmentCount' => SegmentCount(),
             'serviceaccount.ServiceAccountsAuditStats' => ServiceAccountsAuditStats(),
-            'serviceaccount.ServiceAccountStatus' => ServiceAccountStatus(),
             'serviceaccount.ServiceAccountSupportedFeatures' => ServiceAccountSupportedFeatures(),
             'simple.StringValue' => StringValue(),
             'simple.VersionInfo' => VersionInfo(),

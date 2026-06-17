@@ -3,6 +3,7 @@ import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../../models/client/client_application.dart';
 import '../../models/error_report.dart';
 import './permission/permission_request_builder.dart';
+import './status/status_request_builder.dart';
 import './vault/vault_request_builder.dart';
 import './with_client_item_request_builder_get_query_parameters.dart';
 import './with_client_item_request_builder_put_query_parameters.dart';
@@ -13,6 +14,10 @@ class WithClientItemRequestBuilder extends BaseRequestBuilder<WithClientItemRequ
     ///  The permission property
     PermissionRequestBuilder get permission {
         return PermissionRequestBuilder(pathParameters, requestAdapter);
+    }
+    ///  The status property
+    StatusRequestBuilder get status {
+        return StatusRequestBuilder(pathParameters, requestAdapter);
     }
     ///  The vault property
     VaultRequestBuilder get vault {
@@ -64,7 +69,7 @@ class WithClientItemRequestBuilder extends BaseRequestBuilder<WithClientItemRequ
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
         return requestInfo;
     }
     /// Returns the client identified by the id.
@@ -72,7 +77,7 @@ class WithClientItemRequestBuilder extends BaseRequestBuilder<WithClientItemRequ
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithClientItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithClientItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithClientItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
         return requestInfo;
     }
     /// Updates the client identified by the id.
@@ -81,8 +86,8 @@ class WithClientItemRequestBuilder extends BaseRequestBuilder<WithClientItemRequ
     RequestInformation toPutRequestInformation(ClientApplication body, [void Function(RequestConfiguration<WithClientItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithClientItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithClientItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=85', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=86', body);
         return requestInfo;
     }
 }

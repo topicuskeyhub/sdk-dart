@@ -21,6 +21,8 @@ class NumberseqRequestBuilderGetQueryParameters implements AbstractQueryParamete
     List<DateTime>? modifiedSince;
     ///  Filter number sequences on the exact name.
     List<String>? name;
+    ///  Filter number sequences on (part of) the name.
+    List<String>? nameContains;
     ///  Filter records on a complex CQL query.
     List<String>? q;
     ///  Sort the items. Use 'asc-<name>' for ascending and 'desc-<name>' for descending order.
@@ -37,6 +39,7 @@ class NumberseqRequestBuilderGetQueryParameters implements AbstractQueryParamete
             'id' : id,
             'modifiedSince' : modifiedSince,
             'name' : name,
+            'nameContains' : nameContains,
             'q' : q,
             'sort' : sort,
         };

@@ -10,6 +10,7 @@ import './modification_request_notification.dart';
 import './old_api_version_usage_notification.dart';
 import './provision_config_required_notification.dart';
 import './rotating_password_required_notification.dart';
+import './system_wide_invalid_signatures_detected_notification.dart';
 import './update_available_notification.dart';
 import './vault_record_expired_notification.dart';
 
@@ -35,6 +36,7 @@ class Notification extends NonLinkable implements Parsable {
             'notification.OldApiVersionUsageNotification' => OldApiVersionUsageNotification(),
             'notification.ProvisionConfigRequiredNotification' => ProvisionConfigRequiredNotification(),
             'notification.RotatingPasswordRequiredNotification' => RotatingPasswordRequiredNotification(),
+            'notification.SystemWideInvalidSignaturesDetectedNotification' => SystemWideInvalidSignaturesDetectedNotification(),
             'notification.UpdateAvailableNotification' => UpdateAvailableNotification(),
             'notification.VaultRecordExpiredNotification' => VaultRecordExpiredNotification(),
             _ => Notification(),

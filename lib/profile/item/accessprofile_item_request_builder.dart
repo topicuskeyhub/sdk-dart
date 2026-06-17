@@ -65,7 +65,7 @@ class AccessprofileItemRequestBuilder extends BaseRequestBuilder<AccessprofileIt
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AccessprofileItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AccessprofileItemRequestBuilderGetQueryParameters>(requestConfiguration, () => AccessprofileItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
         return requestInfo;
     }
     /// Updates the access profile identified by the id.
@@ -74,8 +74,8 @@ class AccessprofileItemRequestBuilder extends BaseRequestBuilder<AccessprofileIt
     RequestInformation toPutRequestInformation(AccessProfile body, [void Function(RequestConfiguration<AccessprofileItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AccessprofileItemRequestBuilderPutQueryParameters>(requestConfiguration, () => AccessprofileItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=85', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=86', body);
         return requestInfo;
     }
 }

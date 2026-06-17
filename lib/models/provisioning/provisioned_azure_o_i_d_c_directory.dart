@@ -1,10 +1,15 @@
 // ignore_for_file: type=lint
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../directory/account_directory_primer.dart';
+import '../identity/account_attribute_definition.dart';
 import './provisioned_system.dart';
 
 /// auto generated
 class ProvisionedAzureOIDCDirectory extends ProvisionedSystem implements Parsable {
+    ///  The accountMatchingAttribute property
+    AccountAttributeDefinition? accountMatchingAttribute;
+    ///  The accountMatchingAttributeName property
+    String? accountMatchingAttributeName;
     ///  The accountsWritable property
     bool? accountsWritable;
     ///  The directory property
@@ -24,6 +29,8 @@ class ProvisionedAzureOIDCDirectory extends ProvisionedSystem implements Parsabl
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['accountMatchingAttribute'] = (node) => accountMatchingAttribute = node.getObjectValue<AccountAttributeDefinition>(AccountAttributeDefinition.createFromDiscriminatorValue);
+        deserializerMap['accountMatchingAttributeName'] = (node) => accountMatchingAttributeName = node.getStringValue();
         deserializerMap['accountsWritable'] = (node) => accountsWritable = node.getBoolValue();
         deserializerMap['directory'] = (node) => directory = node.getObjectValue<AccountDirectoryPrimer>(AccountDirectoryPrimer.createFromDiscriminatorValue);
         deserializerMap['tenant'] = (node) => tenant = node.getStringValue();
@@ -34,6 +41,8 @@ class ProvisionedAzureOIDCDirectory extends ProvisionedSystem implements Parsabl
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeObjectValue<AccountAttributeDefinition>('accountMatchingAttribute', accountMatchingAttribute);
+        writer.writeStringValue('accountMatchingAttributeName', accountMatchingAttributeName);
         writer.writeBoolValue('accountsWritable', value:accountsWritable);
         writer.writeObjectValue<AccountDirectoryPrimer>('directory', directory);
         writer.writeStringValue('tenant', tenant);

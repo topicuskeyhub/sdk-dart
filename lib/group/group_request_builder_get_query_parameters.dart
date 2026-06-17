@@ -33,6 +33,8 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     List<bool>? auditRequested;
     ///  Filter groups for which audits are reviewed by one of the given groups, specified by id. This parameter supports composition with all parameters from the group resource.
     List<int>? auditsReviewedBy;
+    ///  Filter the groups by their authorization signing key, specified by id. This parameter supports composition with all parameters from the signing key resource.
+    List<int>? authorizationSigningKey;
     ///  Filter groups for which the given groups perform some form of authorization, specified by id.
     List<int>? authorizedBy;
     ///  Filter groups by classification, specified by id. This parameter supports composition with all parameters from the group classification resource.
@@ -165,6 +167,7 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
             'auditOverDue' : auditOverDue,
             'auditRequested' : auditRequested,
             'auditsReviewedBy' : auditsReviewedBy,
+            'authorizationSigningKey' : authorizationSigningKey,
             'authorizedBy' : authorizedBy,
             'classification' : classification,
             'containsAccount' : containsAccount,

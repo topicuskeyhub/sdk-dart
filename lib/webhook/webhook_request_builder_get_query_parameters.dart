@@ -46,6 +46,10 @@ class WebhookRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<DateTime>? modifiedSince;
     ///  Filter webhooks on (part of) the name, uuid or URL.
     List<String>? nameContains;
+    ///  Only return webhooks for which the name does not start with the given prefix.
+    List<String>? nameDoesNotStartWith;
+    ///  Only return webhooks for which the name starts with the given prefix.
+    List<String>? nameStartsWith;
     ///  Filter records on a complex CQL query.
     List<String>? q;
     ///  Filter webhooks on the given service accounts, specified by id.
@@ -91,6 +95,8 @@ class WebhookRequestBuilderGetQueryParameters implements AbstractQueryParameters
             'id' : id,
             'modifiedSince' : modifiedSince,
             'nameContains' : nameContains,
+            'nameDoesNotStartWith' : nameDoesNotStartWith,
+            'nameStartsWith' : nameStartsWith,
             'q' : q,
             'serviceAccount' : serviceAccount,
             'serviceAccountNotNull' : serviceAccountNotNull,

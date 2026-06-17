@@ -10,6 +10,8 @@ import './saml2_client.dart';
 
 /// auto generated
 class ClientApplicationPrimer extends Linkable implements Parsable {
+    ///  The active property
+    bool? active;
     ///  The type property
     ClientApplicationType? clientApplicationPrimerType;
     ///  The clientId property
@@ -43,6 +45,7 @@ class ClientApplicationPrimer extends Linkable implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['active'] = (node) => active = node.getBoolValue();
         deserializerMap['type'] = (node) => clientApplicationPrimerType = node.getEnumValue<ClientApplicationType>((stringValue) => ClientApplicationType.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
         deserializerMap['clientId'] = (node) => clientId = node.getStringValue();
         deserializerMap['name'] = (node) => name = node.getStringValue();
@@ -56,6 +59,7 @@ class ClientApplicationPrimer extends Linkable implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeBoolValue('active', value:active);
         writer.writeEnumValue<ClientApplicationType>('type', clientApplicationPrimerType, (e) => e?.value);
         writer.writeStringValue('clientId', clientId);
         writer.writeStringValue('name', name);

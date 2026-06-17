@@ -52,7 +52,7 @@ class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<int>? hasVaultSecretForGroup;
     ///  Filter the results on the given ids.
     List<int>? id;
-    ///  Filter accounts by exact match on the id in the directory.
+    ///  Filter accounts by exact case-insensitive match on the id in the directory.
     List<String>? idInDirectory;
     ///  Only return accounts that have not been active since the given instant.
     List<DateTime>? inactiveSince;
@@ -86,6 +86,8 @@ class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<bool>? reregistrationRequired;
     ///  Only return accounts that have or don't have rotating password enabled.
     List<bool>? rotatingPasswordEnabled;
+    ///  Filter the accounts by their party signing key, specified by id. This parameter supports composition with all parameters from the signing key resource.
+    List<int>? signingKey;
     ///  Sort the items. Use 'asc-<name>' for ascending and 'desc-<name>' for descending order.
     List<String>? sort;
     ///  Only return accounts that match the given 2FA status. Note that {@code APP} only matches the accounts who only have a KeyHub app linked, and similar for {@code TOTP} and {@code WEBAUTHN}. {@code MIXED} matches those who have both one or more WebAuthn keys, and either a KeyHub app or generic Totp app linked.
@@ -145,6 +147,7 @@ class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters
             'q' : q,
             'reregistrationRequired' : reregistrationRequired,
             'rotatingPasswordEnabled' : rotatingPasswordEnabled,
+            'signingKey' : signingKey,
             'sort' : sort,
             'twoFactorStatus' : twoFactorStatus,
             'username' : username,

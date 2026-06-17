@@ -24,11 +24,11 @@ class NumberseqRequestBuilder extends BaseRequestBuilder<NumberseqRequestBuilder
     /// Instantiates a new [NumberseqRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    NumberseqRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/numberseq{?additional*,any*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,name*,q*,sort*}", pathParameters) ;
+    NumberseqRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/numberseq{?additional*,any*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,name*,nameContains*,q*,sort*}", pathParameters) ;
     /// Instantiates a new [NumberseqRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    NumberseqRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/numberseq{?additional*,any*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,name*,q*,sort*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    NumberseqRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/numberseq{?additional*,any*,createdAfter*,createdBefore*,exclude*,id*,modifiedSince*,name*,nameContains*,q*,sort*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for all provision number sequences in Topicus KeyHub. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<ProvisionNumberSequenceLinkableWrapper?> getAsync([void Function(RequestConfiguration<NumberseqRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
@@ -53,7 +53,7 @@ class NumberseqRequestBuilder extends BaseRequestBuilder<NumberseqRequestBuilder
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<NumberseqRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<NumberseqRequestBuilderGetQueryParameters>(requestConfiguration, () => NumberseqRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
         return requestInfo;
     }
     /// Creates one or more new provision number sequences and returns the newly created sequences.
@@ -62,8 +62,8 @@ class NumberseqRequestBuilder extends BaseRequestBuilder<NumberseqRequestBuilder
     RequestInformation toPostRequestInformation(ProvisionNumberSequenceLinkableWrapper body, [void Function(RequestConfiguration<NumberseqRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<NumberseqRequestBuilderPostQueryParameters>(requestConfiguration, () => NumberseqRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=85', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=86', body);
         return requestInfo;
     }
 }

@@ -1022,6 +1022,9 @@
               "LDAPDirectoryPasswordRecovery#VERIFY_2FA": "Verificatie via 2FA",
               "LDAPDirectoryPasswordRecovery#VERIFY_MAIL_AND_2FA": "Verificatie via e-mail en 2FA",
               "AccountDirectoryStatus#DEGRADED": "Failover",
+              "AccountDirectory#status": {
+                "label": "Status"
+              },
               "AccountDirectoryStatus#NON_REDUNDANT": "Niet-redundant",
               "AccountDirectoryType#INTERNAL": "Intern",
               "AccountDirectoryType#LDAP": "LDAP",
@@ -1879,6 +1882,10 @@
                 "label": "Accounts schrijfbaar",
                 "description": "Indien aangevinkt beheert KeyHub ook de accounts op de directory."
               },
+              "ProvisionedAzureOIDCDirectory#accountMatchingAttribute": {
+                "description": "Het attribuut van het externe systeem dat als reserve dient voor het koppelen van accounts aan gebruikers in KeyHub.",
+                "label": "Account-matchingattribuut"
+              },
               "ProvisionedLDAP#gid": {
                 "description": "De primaire groep van aangemaakte gebruikers",
                 "label": "Primaire Group ID (gid)"
@@ -1980,7 +1987,8 @@
               },
               "GroupOnSystemType#GROUP_OF_NAMES": "groupOfNames",
               "ProvisionedLDAPDirectory#accountMatchingAttribute": {
-                "label": "Account-matchingattribuut"
+                "label": "Account-matchingattribuut",
+                "description": "Het attribuut van het externe systeem dat als reserve dient voor het koppelen van accounts aan gebruikers in KeyHub."
               },
               "ProvisionedLDAPDirectory#attributes": {
                 "label": "Custom attributen"
@@ -2046,6 +2054,10 @@
                 "description": "De RDN onder base DN waaronder serviceaccounts aangemaakt worden."
               },
               "GroupOnSystemType#GROUP_UNKNOWN": "group (overig)",
+              "ProvisionedSCIM#cursorBasedPagination": {
+                "label": "Gebruikt cursorgebaseerde paginering",
+                "description": "Gebruikt cursorgebaseerde paginering zoals beschreven in RFC-9865."
+              },
               "ProvisionNumberSequence#nextID": {
                 "label": "Volgende ID"
               },
@@ -2378,6 +2390,9 @@
                 "description": "Indien ingeschakeld, wordt een landingspagina getoond voordat naar de applicatie genavigeerd wordt. Schakel deze optie in als de applicatie een native desktopapplicatie is en het browservenster blijft hangen op de login."
               },
               "OAuth2ClientProfile#SERVER_TO_SERVER": "Server-to-server-applicatie",
+              "ClientApplicationPrimer#active": {
+                "label": "Actief"
+              },
               "SubjectFormat#EMAIL": "E-mailadres",
               "OAuth2ClientProfile#PUBLIC_NATIVE_APPLICATION_WITH_SECURE_STORAGE": "Publieke native applicatie met beveiligde opslag",
               "ClientApplicationType#OAUTH2": "OAuth2/OIDC"
@@ -3142,6 +3157,7 @@
       "internaldirectory": "Interne directory",
       "login": "Login",
       "auditorgroupauditlog": "Auditlog van de groep",
+      "pendingaccountsdirectory": "Directory met aangevraagde accounts",
       "group": {
         "removegroups": {
           "confirm": "Bevestig verwijdering"
@@ -3183,6 +3199,7 @@
       },
       "authorizedgroupsdashboard": "Dashboard voor geautoriseerde groepen",
       "accessprofiles": "Toegangsprofielen",
+      "serviceaccountauditlog": "Auditlog van een serviceaccount",
       "system": {
         "namespaces": "Namespaces",
         "groupsinsystem": "Groepen op systeem",
@@ -3207,7 +3224,6 @@
       "webhook": "Webhook",
       "ldapapplication": "LDAP Applicatie",
       "requestgroup": "Lidmaatschap aanvragen voor een groep",
-      "auditorserviceaccountauditlog": "Auditlog van een serviceaccount",
       "passwordprompt": "Wachtwoord",
       "launchpad": "Launchpad",
       "logs": "Logs",
@@ -3280,15 +3296,13 @@
       "confirmtotpoffsetchange": "Tijdsverschuiving van verificatiecode bevestigen",
       "mygroupauditlog": "Auditlog van de groep",
       "accountaudit": "Account auditlog",
-      "serviceaccount": {
-        "groupsonsystem": "Groepen op systeem",
-        "main": "Serviceaccount"
-      },
       "grouponsystem": "Koppelgroep",
       "auditorserviceaccountdetails": "Serviceaccountdetails",
       "dashboard": "Dashboard",
+      "serviceaccount": "Serviceaccount",
       "addprovisioninggroup": "Koppelgroep aanvragen",
-      "auditoraccountdetails": "Accountdetails"
+      "auditoraccountdetails": "Accountdetails",
+      "maintenancedirectory": "Onderhoudsdirectory"
     },
     "error": {
       "ontwikkelaars": "De ontwikkelaars willen graag onderstaande informatie weten.",
@@ -4794,6 +4808,22 @@
         "INTERNAL": {
           "long": "Interne directory",
           "main": "Interne directory"
+        },
+        "MAINTENANCE": {
+          "long": "Onderhoudsdirectory",
+          "main": "Onderhoudsdirectory"
+        },
+        "PENDING_ACCOUNTS": {
+          "main": "Aangevraagde accounts",
+          "long": "Directory met aangevraagde accounts"
+        },
+        "LDAP": {
+          "main": "LDAP-directory",
+          "long": "LDAP-directory"
+        },
+        "OIDC": {
+          "long": "OIDC-directory",
+          "main": "OIDC-directory"
         }
       },
       "webhook": {
@@ -4876,6 +4906,7 @@
           "head": "De opgegeven configuratie doorvoeren",
           "1certs": "Validiteit van de certificaten testen",
           "revert": "Configuratie terugdraaien naar vorige instellingen",
+          "partial": "Configuratie doorgevoerd op {0} van {1} nodes:\n{2}",
           "4internet": "Internetconnectiviteit testen",
           "5url": "Bereikbaarheid van de URL testen",
           "3redirect": "De sessie overdragen aan de nieuwe URL",
@@ -5020,9 +5051,9 @@
         "label": "Distributiekanaal"
       },
       "LOGGING_REMOTE_TLS_CA_BUNDLE": {
-        "placeholder": "Kies een CA bundel (PEM)",
-        "label": "Certificaatautoriteit(en)",
-        "description": "Geef een PEM-bundel met alle certificaten die nodig zijn om een volledige certificaatketen te construeren van root tot het uiteindelijke certificaat. Deze keten moet gebruikt worden voor zowel het certificaat van de log server als, indien van toepassing, het clientcertificaat."
+        "placeholder": "Kies een PEM-bestand",
+        "label": "Vertrouwde certificaten",
+        "description": "De certificaten die KeyHub gebruikt om de logserver te valideren."
       },
       "MONITORING_OTLP_TLS_LEVEL": {
         "label": "TLS"
@@ -5437,6 +5468,10 @@
       },
       "task": {
         "upgrade_db": "PostgreSQL updaten",
+        "adminrestart": {
+          "partial": "Appliance manager herstart op {0} van {1} nodes:\n{2}",
+          "main": "Appliance manager herstarten"
+        },
         "setunavailable": "Node uit het cluster halen",
         "performosupgrade": "Besturingssysteem bijwerken",
         "backupkeys": "Het back-up-sleutelpaar genereren",
@@ -5448,7 +5483,6 @@
         "unpack_update_file": "Updatebestand uitpakken",
         "uploadrecovery": "Kluisherstel-public key opslaan",
         "update_tkh": "Topicus KeyHub updaten",
-        "adminrestart": "Appliance manager herstarten",
         "failover": "Taken overdragen aan andere nodes in het cluster",
         "decrypt_update_file": "Updatebestand verifiëren",
         "finalize_db": "Database-upgrade afronden",
@@ -5826,12 +5860,19 @@
       "AUDITING": "{performedBy} heeft voor het auditen van de groep {onGroup} de extra autorisatie door {onGroup2} verwijderd."
     },
     "INVALID_SIGNATURE_DETECTED": {
-      "GROUP_MEMBERSHIP": "Een ongeldige ondertekening is gedetecteerd voor het lidmaatschap van {onAccount} van de groep {onGroup}.",
+      "GROUP_MEMBERSHIP": {
+        "main": "Een ongeldige ondertekening is gedetecteerd voor het lidmaatschap van {onAccount} van de groep {onGroup}.",
+        "group": "Een ongeldige ondertekening is gedetecteerd voor een lidmaatschap van de groep {onGroup}."
+      },
       "KEY_AUTHENTICATION_CODE": {
         "account": "Een ongeldige authenticatiecode is gedetecteerd voor het account van {onAccount}.",
-        "group": "Een ongeldige authenticatiecode is gedetecteerd voor de groep {onGroup}."
+        "group": "Een ongeldige authenticatiecode is gedetecteerd voor de groep {onGroup}.",
+        "client": "Een ongeldige authenticatiecode is gedetecteerd voor de applicatie {onClient}."
       },
-      "ACCOUNT_SIGNED_ATTESTATIONS": "Een ongeldige ondertekening is gedetecteerd voor het account van {onAccount}.",
+      "ACCOUNT_SIGNED_ATTESTATIONS": {
+        "main": "Een ongeldige ondertekening is gedetecteerd voor het account van {onAccount}.",
+        "client": "Een ongeldige ondertekening is gedetecteerd voor de applicatie {onClient}."
+      },
       "GROUP_KEY_ATTESTATION": "Er is een ongeldige attestatie gedetecteerd voor de sleutel van {onGroup} door {onAccount}.",
       "REPLACEMENT_KEY": "Een ongeldige ondertekening is gedetecteerd voor een vervangende sleutel voor de groep {onGroup}.",
       "GROUP_AUTHORIZATION": "Een ongeldige ondertekening is gedetecteerd voor eigenschappen van de groep {onGroup}."
@@ -6222,7 +6263,7 @@
     "ACCOUNT_TOTP_OFFSET_CHANGED": "De tijdsverschuiving van de verificatiecode voor {performedBy} is gewijzigd in {parameter1}.",
     "PROVISIONED_SYSTEM_CREATED": "{performedBy} heeft een nieuwe koppeling {onSystem} toegevoegd.",
     "JOIN_GROUP_REQUESTED": {
-      "profile": "Er is een verzoek aangemaakt vanuit het toegangsprofiel {onAccessProfile} om {onAccount} toe te voegen aan de groep {onGroup}. {reason}",
+      "profile": "Er is een verzoek aangemaakt vanuit het toegangsprofiel {onAccessProfile} om {onAccount} toe te voegen aan de groep {onGroup}.",
       "group": "{onAccount} heeft een verzoek ingediend om toegevoegd te worden aan de groep {onGroup}. {reason}"
     },
     "REVIEW_AUDIT_DECLINED": "{performedBy} heeft een audit van {onGroup2} afgekeurd. {reason}",
@@ -6496,10 +6537,6 @@
     },
     "systems": "Koppelingen",
     "administration": "Beheer",
-    "serviceaccount": {
-      "details": "Details",
-      "groupsonsystem": "Groepen op systeem"
-    },
     "uitloggen": "Uitloggen",
     "directory": {
       "details": "Details",
@@ -7377,6 +7414,7 @@
     "RESET_INVALID_PASSWORD": "Het wachtwoord komt niet overeen met het wachtwoord dat opgegeven is bij het indienen van het verzoek.",
     "CLIENT_PERMISSION_ALREADY_EXISTS": "Het gevraagde recht is al toegekend aan deze applicatie.",
     "VAULT_TARGET_NOT_INITIALIZED": "De gekozen gebruiker heeft nog geen kluiswachtwoord ingesteld.",
+    "MULTIPLE_MATCHES": "Er zijn te veel overeenkomsten gevonden.",
     "CLIENT_NOT_ALLOWED": {
       "n": "Je mag niet inloggen op {client}. Log in op de KeyHub console en vraag toegang tot één van de volgende groepen: {groups} of {lastGroup}.",
       "1": "Je mag niet inloggen op {client}. Log in op de KeyHub console en vraag toegang tot de groep {group}.",
@@ -7482,6 +7520,7 @@
     "ORGANIZATIONAL_UNIT_TOO_DEEP": "Organisatie-eenheden kunnen maximaal tot 5 diep genest worden.",
     "GROUP_CANNOT_BE_MOVED": "Één of meer groepen kunnen niet verplaatst worden.",
     "PROVISIONED_SYSTEM_ERROR": "De bewerking op {system} kon niet doorgevoerd worden. Het systeem rapporteert: {message}",
+    "GROUP_SIGNING_KEY_RETIRED": "De ondertekeningssleutel van groep {group} gebruikt een cryptografisch algoritme dat ingetrokken is in KeyHub-versie {version} en door een groepsbeheerder gemigreerd moet worden. Herstel de groep, of verwijder de volledige kluistoegang van deze applicatie tot de groep, voordat de secret geroteerd wordt.",
     "INVALID_ATTRIBUTE_VALUE": "De waarde {value} is ongeldig.",
     "PASSWORD_ROTATING_REQUIRED": "Roterend wachtwoord is vereist voor deze actie. Dit kan worden ingeschakeld op je profielpagina.",
     "LICENSE_BUSINESS_LIMIT_REACHED": "Je hebt de grenzen van je Topicus KeyHub licentie bereikt en kunt geen 'Business' accounts meer toevoegen.",
@@ -7851,6 +7890,21 @@
       },
       "alert": "Licentie"
     },
+    "systemwideinvalidsignature": {
+      "ownertype": {
+        "oauth2client": "OAuth2-client",
+        "group": "Groep",
+        "account": "Account"
+      },
+      "alert": "ONDERTEKENING",
+      "moreinfo": "Meer informatie",
+      "retired": "ingetrokken algoritme (sinds versie {0})",
+      "description": {
+        "retired": "Er zijn ongeldige ondertekeningen gevonden voor {count} groep(en), account(s) of OAuth2-client(s). {retiredCount} hiervan worden veroorzaakt door een cryptografisch algoritme dat ingetrokken is in KeyHub-versie {version} en moeten gemigreerd worden.",
+        "main": "Er zijn ongeldige ondertekeningen gevonden voor {count} groep(en), account(s) of OAuth2-client(s)."
+      },
+      "head": "Ongeldige ondertekeningen gedetecteerd"
+    },
     "oldapiversion": {
       "info": "Deze versie wordt niet meer ondersteund en kan bij een toekomstige update van Topicus KeyHub komen te vervallen.",
       "alert": "API-VERSIE",
@@ -8119,6 +8173,7 @@
       "link": "Attributen",
       "insync": "Gesynchroniseerd"
     },
+    "name": "Toegangsprofiel",
     "apporsystem": {
       "add": {
         "main": "Toegang toevoegen",
@@ -8176,27 +8231,14 @@
   "filter": {
     "loglevel": "Filter op log level...",
     "attribute": "Filter op attribuut...",
-    "system": "Systeem",
     "group": "Selecteer een groep...",
     "status": "Filter op status...",
     "type": "Filter op type...",
     "overig": "Overig",
     "source": "Filter op bron...",
-    "keyhub": "KeyHub",
     "account": "Selecteer een account...",
     "action": "Filter op actie...",
     "alles": "Alles"
-  },
-  "serviceaccount": {
-    "group": {
-      "header": "Groep van een serviceaccount",
-      "subtitle": "Het serviceaccount {0} heeft toegang tot de genoemde groep op {1}."
-    },
-    "search": {
-      "serviceaccounts": "Zoek in serviceaccounts",
-      "technicaladministrator": "Beheerd door..."
-    },
-    "header": "Serviceaccount"
   },
   "groupaudit": {
     "savedraft": "Opslaan als concept",
@@ -8222,6 +8264,13 @@
       "finished": "Alle openstaande groepsaudits afgerond."
     },
     "main": "Groepsaudit"
+  },
+  "serviceaccount": {
+    "search": {
+      "serviceaccounts": "Zoek in serviceaccounts",
+      "technicaladministrator": "Beheerd door..."
+    },
+    "header": "Serviceaccount"
   },
   "attributedefinition": {
     "prop": {
@@ -8364,9 +8413,18 @@
       "header": "LDAP-directory - {0}",
       "customfilter": "Aangepast filter"
     },
+    "header": {
+      "accounts": "Accounts"
+    },
     "toevoegen": {
       "main": "Directory toevoegen",
       "subtitle": "Kies het type van de nieuwe directory."
+    },
+    "pendingaccounts": {
+      "header": "Directory met aangevraagde accounts - {0}"
+    },
+    "maintenance": {
+      "header": "Onderhoudsdirectory - {0}"
     },
     "oidc": {
       "header": "OIDC-directory - {0}"

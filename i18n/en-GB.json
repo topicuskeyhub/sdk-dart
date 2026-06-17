@@ -1022,6 +1022,9 @@
               "LDAPDirectoryPasswordRecovery#VERIFY_2FA": "Verification via 2FA",
               "LDAPDirectoryPasswordRecovery#VERIFY_MAIL_AND_2FA": "Verification via e-mail and 2FA",
               "AccountDirectoryStatus#DEGRADED": "Failover",
+              "AccountDirectory#status": {
+                "label": "Status"
+              },
               "AccountDirectoryStatus#NON_REDUNDANT": "Non-redundant",
               "AccountDirectoryType#INTERNAL": "Internal",
               "AccountDirectoryType#LDAP": "LDAP",
@@ -1879,6 +1882,10 @@
                 "label": "Accounts writable",
                 "description": "If checked, KeyHub also manages the accounts on the directory."
               },
+              "ProvisionedAzureOIDCDirectory#accountMatchingAttribute": {
+                "description": "The external system attribute used as a fallback for matching accounts to users in KeyHub.",
+                "label": "Account matching attribute"
+              },
               "ProvisionedLDAP#gid": {
                 "description": "The primary group for users",
                 "label": "Primary Group ID (gid)"
@@ -1980,7 +1987,8 @@
               },
               "GroupOnSystemType#GROUP_OF_NAMES": "groupOfNames",
               "ProvisionedLDAPDirectory#accountMatchingAttribute": {
-                "label": "Account matching attribute"
+                "label": "Account matching attribute",
+                "description": "The external system attribute used as a fallback for matching accounts to users in KeyHub."
               },
               "ProvisionedLDAPDirectory#attributes": {
                 "label": "Custom attributes"
@@ -2046,6 +2054,10 @@
                 "description": "The RDN under base DN under which service accounts are created."
               },
               "GroupOnSystemType#GROUP_UNKNOWN": "group (other)",
+              "ProvisionedSCIM#cursorBasedPagination": {
+                "label": "Uses cursor-based pagination",
+                "description": "Uses cursor-based pagination as described in RFC-9865."
+              },
               "ProvisionNumberSequence#nextID": {
                 "label": "Next ID"
               },
@@ -2378,6 +2390,9 @@
                 "description": "If enabled, a landing page is shown before navigating to the application. Enable this option if the application is a native desktop application and the browser window is stuck on the login."
               },
               "OAuth2ClientProfile#SERVER_TO_SERVER": "Server-to-server application",
+              "ClientApplicationPrimer#active": {
+                "label": "Enabled"
+              },
               "SubjectFormat#EMAIL": "E-mail address",
               "OAuth2ClientProfile#PUBLIC_NATIVE_APPLICATION_WITH_SECURE_STORAGE": "Public native application with secure storage",
               "ClientApplicationType#OAUTH2": "OAuth2/OIDC"
@@ -3142,6 +3157,7 @@
       "internaldirectory": "Internal directory",
       "login": "Login",
       "auditorgroupauditlog": "Group audit log",
+      "pendingaccountsdirectory": "Pending accounts directory",
       "group": {
         "removegroups": {
           "confirm": "Confirm deletion"
@@ -3183,6 +3199,7 @@
       },
       "authorizedgroupsdashboard": "Dashboard for authorised groups",
       "accessprofiles": "Access profiles",
+      "serviceaccountauditlog": "Service account audit log",
       "system": {
         "namespaces": "Namespaces",
         "groupsinsystem": "Groups on system",
@@ -3207,7 +3224,6 @@
       "webhook": "Webhook",
       "ldapapplication": "LDAP Application",
       "requestgroup": "Request access to a group",
-      "auditorserviceaccountauditlog": "Service account audit log",
       "passwordprompt": "Password",
       "launchpad": "Launchpad",
       "logs": "Logs",
@@ -3280,15 +3296,13 @@
       "confirmtotpoffsetchange": "Confirm verification code time drift",
       "mygroupauditlog": "Group audit log",
       "accountaudit": "Account audit log",
-      "serviceaccount": {
-        "groupsonsystem": "Groups on system",
-        "main": "Service account"
-      },
       "grouponsystem": "Group on system",
       "auditorserviceaccountdetails": "Service account details",
       "dashboard": "Dashboard",
+      "serviceaccount": "Service account",
       "addprovisioninggroup": "Request group on system",
-      "auditoraccountdetails": "Account details"
+      "auditoraccountdetails": "Account details",
+      "maintenancedirectory": "Maintenance directory"
     },
     "error": {
       "ontwikkelaars": "The developers would like to get the information below.",
@@ -4794,6 +4808,22 @@
         "INTERNAL": {
           "long": "Internal directory",
           "main": "Internal directory"
+        },
+        "MAINTENANCE": {
+          "long": "Maintenance directory",
+          "main": "Maintenance directory"
+        },
+        "PENDING_ACCOUNTS": {
+          "main": "Pending accounts",
+          "long": "Pending accounts directory"
+        },
+        "LDAP": {
+          "main": "LDAP directory",
+          "long": "LDAP directory"
+        },
+        "OIDC": {
+          "long": "OIDC directory",
+          "main": "OIDC directory"
         }
       },
       "webhook": {
@@ -4876,6 +4906,7 @@
           "head": "Apply the given configuration",
           "1certs": "Testing certificate validity",
           "revert": "Reverting configuration to previous settings",
+          "partial": "Configuration applied on {0} of {1} nodes:\n{2}",
           "4internet": "Testing internet connectivity",
           "5url": "Testing URL reachability",
           "3redirect": "Redirect the session to the new URL",
@@ -5020,9 +5051,9 @@
         "label": "Release channel"
       },
       "LOGGING_REMOTE_TLS_CA_BUNDLE": {
-        "placeholder": "Choose a CA bundle (PEM)",
-        "label": "Certificate authority(-ies)",
-        "description": "Provide a PEM bundle with all the certificates needed to construct a complete certificate chain from root to the final certificate. This chain must be used both for the log server's certificate and, if appropriate, for the client certificate."
+        "placeholder": "Choose a PEM file",
+        "label": "Trusted certificate(s)",
+        "description": "The certificate(s) KeyHub uses to validate the log server."
       },
       "MONITORING_OTLP_TLS_LEVEL": {
         "label": "TLS"
@@ -5437,6 +5468,10 @@
       },
       "task": {
         "upgrade_db": "Updating PostgreSQL",
+        "adminrestart": {
+          "partial": "Appliance manager restarted on {0} of {1} nodes:\n{2}",
+          "main": "Restarting appliance manager"
+        },
         "setunavailable": "Removing the node from the cluster",
         "performosupgrade": "Updating the operating system",
         "backupkeys": "Generating the backup encryption keypair",
@@ -5448,7 +5483,6 @@
         "unpack_update_file": "Unpacking update file",
         "uploadrecovery": "Storing vault recovery public key",
         "update_tkh": "Updating Topicus KeyHub",
-        "adminrestart": "Restarting appliance manager",
         "failover": "Assign tasks to other nodes in the cluster",
         "decrypt_update_file": "Verifying update file",
         "finalize_db": "Finalising database upgrade",
@@ -5826,12 +5860,19 @@
       "AUDITING": "{performedBy} has removed the extra authorisation for auditing by {onGroup2} for the group {onGroup}."
     },
     "INVALID_SIGNATURE_DETECTED": {
-      "GROUP_MEMBERSHIP": "An invalid signature was detected for the membership of {onAccount} of the group {onGroup}.",
+      "GROUP_MEMBERSHIP": {
+        "main": "An invalid signature was detected for the membership of {onAccount} of the group {onGroup}.",
+        "group": "An invalid signature was detected for a membership of the group {onGroup}."
+      },
       "KEY_AUTHENTICATION_CODE": {
         "account": "An invalid authentication code was detected for {onAccount}'s account.",
-        "group": "An invalid authentication code was detected for the group {onGroup}."
+        "group": "An invalid authentication code was detected for the group {onGroup}.",
+        "client": "An invalid authentication code was detected for the application {onClient}."
       },
-      "ACCOUNT_SIGNED_ATTESTATIONS": "An invalid signature was detected for {onAccount}'s account.",
+      "ACCOUNT_SIGNED_ATTESTATIONS": {
+        "main": "An invalid signature was detected for {onAccount}'s account.",
+        "client": "An invalid signature was detected for the application {onClient}."
+      },
       "GROUP_KEY_ATTESTATION": "An invalid attestation was detected for the key of {onGroup} by {onAccount}.",
       "REPLACEMENT_KEY": "An invalid signature was detected for a replacement key for the group {onGroup}.",
       "GROUP_AUTHORIZATION": "An invalid signature was detected for properties of the group {onGroup}."
@@ -6222,7 +6263,7 @@
     "ACCOUNT_TOTP_OFFSET_CHANGED": "The verification code time offset for {performedBy} was changed to {parameter1}.",
     "PROVISIONED_SYSTEM_CREATED": "{performedBy} added a new linked system {onSystem}.",
     "JOIN_GROUP_REQUESTED": {
-      "profile": "A request was created from the access profile {onAccessProfile} to add {onAccount} to the group {onGroup}. {reason}",
+      "profile": "A request was created from the access profile {onAccessProfile} to add {onAccount} to the group {onGroup}.",
       "group": "{onAccount} requested to be added to the group {onGroup}. {reason}"
     },
     "REVIEW_AUDIT_DECLINED": "{performedBy} declined an audit of {onGroup2}. {reason}",
@@ -6496,10 +6537,6 @@
     },
     "systems": "Linked systems",
     "administration": "Administration",
-    "serviceaccount": {
-      "details": "Details",
-      "groupsonsystem": "Groups on system"
-    },
     "uitloggen": "Logout",
     "directory": {
       "details": "Details",
@@ -7377,6 +7414,7 @@
     "RESET_INVALID_PASSWORD": "The password does not match the password provided when the request was submitted.",
     "CLIENT_PERMISSION_ALREADY_EXISTS": "The requested permission is already granted to this application.",
     "VAULT_TARGET_NOT_INITIALIZED": "The selected user did not yet set up a vault password.",
+    "MULTIPLE_MATCHES": "Too many matches were found.",
     "CLIENT_NOT_ALLOWED": {
       "n": "You are not allowed to sign in to {client}. Sign in to the KeyHub console and request access to the one of the following groups: {groups} or {lastGroup}.",
       "1": "You are not allowed to sign in to {client}. Sign in to the KeyHub console and request access to the group {group}.",
@@ -7482,6 +7520,7 @@
     "ORGANIZATIONAL_UNIT_TOO_DEEP": "Organisational units can only be nested up to 5 deep.",
     "GROUP_CANNOT_BE_MOVED": "One or more groups cannot be moved.",
     "PROVISIONED_SYSTEM_ERROR": "The operation on {system} could not be completed. The system reports: {message}",
+    "GROUP_SIGNING_KEY_RETIRED": "The signing key of group {group} uses a cryptographic algorithm that was retired in KeyHub version {version} and must be migrated by a group manager. Repair the group, or remove this application's full vault access to it, before rotating the secret.",
     "INVALID_ATTRIBUTE_VALUE": "The value {value} is invalid.",
     "PASSWORD_ROTATING_REQUIRED": "Rotating password is required for this action. This can be enabled on your profile page.",
     "LICENSE_BUSINESS_LIMIT_REACHED": "You've reached the limits of your Topicus KeyHub licence and can add no more 'Business' accounts.",
@@ -7851,6 +7890,21 @@
       },
       "alert": "Licence"
     },
+    "systemwideinvalidsignature": {
+      "ownertype": {
+        "oauth2client": "OAuth2 client",
+        "group": "Group",
+        "account": "Account"
+      },
+      "alert": "SIGNATURE",
+      "moreinfo": "More information",
+      "retired": "retired algorithm (since version {0})",
+      "description": {
+        "retired": "Invalid signatures were detected for {count} group(s), account(s) or OAuth2 client(s). {retiredCount} of these are caused by a cryptographic algorithm that was retired in KeyHub version {version} and must be migrated.",
+        "main": "Invalid signatures were detected for {count} group(s), account(s) or OAuth2 client(s)."
+      },
+      "head": "Invalid signatures detected"
+    },
     "oldapiversion": {
       "info": "This version is no longer supported and may be discontinued in a future update of Topicus KeyHub.",
       "alert": "API VERSION",
@@ -8119,6 +8173,7 @@
       "link": "Attributes",
       "insync": "Synchronised"
     },
+    "name": "Access profile",
     "apporsystem": {
       "add": {
         "main": "Add access",
@@ -8176,27 +8231,14 @@
   "filter": {
     "loglevel": "Filter on log level...",
     "attribute": "Filter on attribute...",
-    "system": "System",
     "group": "Select a group...",
     "status": "Filter on status...",
     "type": "Filter on type...",
     "overig": "Other",
     "source": "Filter on source...",
-    "keyhub": "KeyHub",
     "account": "Select an account...",
     "action": "Filter on action...",
     "alles": "All"
-  },
-  "serviceaccount": {
-    "group": {
-      "header": "Group on a service account",
-      "subtitle": "The service account {0} has access to the named group on {1}."
-    },
-    "search": {
-      "serviceaccounts": "Search in service accounts",
-      "technicaladministrator": "Administered by..."
-    },
-    "header": "Service account"
   },
   "groupaudit": {
     "savedraft": "Save as draft",
@@ -8222,6 +8264,13 @@
       "finished": "Completed all open group audits."
     },
     "main": "Group audit"
+  },
+  "serviceaccount": {
+    "search": {
+      "serviceaccounts": "Search in service accounts",
+      "technicaladministrator": "Administered by..."
+    },
+    "header": "Service account"
   },
   "attributedefinition": {
     "prop": {
@@ -8364,9 +8413,18 @@
       "header": "LDAP directory - {0}",
       "customfilter": "Custom filter"
     },
+    "header": {
+      "accounts": "Accounts"
+    },
     "toevoegen": {
       "main": "Add directory",
       "subtitle": "Choose the type for the new directory."
+    },
+    "pendingaccounts": {
+      "header": "Pending accounts directory - {0}"
+    },
+    "maintenance": {
+      "header": "Maintenance directory - {0}"
     },
     "oidc": {
       "header": "OIDC directory - {0}"

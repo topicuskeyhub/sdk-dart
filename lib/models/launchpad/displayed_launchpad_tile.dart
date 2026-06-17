@@ -2,10 +2,13 @@
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../group/group_primer.dart';
 import '../linkable.dart';
+import '../profile/access_profile_primer.dart';
 import './launchpad_tile_primer.dart';
 
 /// auto generated
 class DisplayedLaunchpadTile extends Linkable implements Parsable {
+    ///  The accessProfile property
+    AccessProfilePrimer? accessProfile;
     ///  The group property
     GroupPrimer? group;
     ///  The identiconCode property
@@ -31,6 +34,7 @@ class DisplayedLaunchpadTile extends Linkable implements Parsable {
     @override
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
+        deserializerMap['accessProfile'] = (node) => accessProfile = node.getObjectValue<AccessProfilePrimer>(AccessProfilePrimer.createFromDiscriminatorValue);
         deserializerMap['group'] = (node) => group = node.getObjectValue<GroupPrimer>(GroupPrimer.createFromDiscriminatorValue);
         deserializerMap['identiconCode'] = (node) => identiconCode = node.getIntValue();
         deserializerMap['logo'] = (node) => logo = node.getCollectionOfPrimitiveValues<int>();
@@ -44,6 +48,7 @@ class DisplayedLaunchpadTile extends Linkable implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeObjectValue<AccessProfilePrimer>('accessProfile', accessProfile);
         writer.writeObjectValue<GroupPrimer>('group', group);
         writer.writeIntValue('identiconCode', identiconCode);
         writer.writeCollectionOfPrimitiveValues<int>('logo', logo);

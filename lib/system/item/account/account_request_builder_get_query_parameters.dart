@@ -20,6 +20,8 @@ class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters
     List<int>? exclude;
     ///  Filter the results on the given ids.
     List<int>? id;
+    ///  Filter accounts by exact case-insensitive match on the identifier of the provisioned account.
+    List<String>? identifier;
     ///  Only return records that have been modified since the given instant.
     List<DateTime>? modifiedSince;
     ///  Filter records on a complex CQL query.
@@ -41,6 +43,7 @@ class AccountRequestBuilderGetQueryParameters implements AbstractQueryParameters
             'createdBefore' : createdBefore,
             'exclude' : exclude,
             'id' : id,
+            'identifier' : identifier,
             'modifiedSince' : modifiedSince,
             'q' : q,
             'sort' : sort,

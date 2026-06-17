@@ -19,6 +19,8 @@ class DeletedvaultholderRequestBuilderGetQueryParameters implements AbstractQuer
     List<int>? id;
     ///  Only return records that have been modified since the given instant.
     List<DateTime>? modifiedSince;
+    ///  Filter deleted vault holders on (part of) the name.
+    List<String>? nameContains;
     ///  Filter records on a complex CQL query.
     List<String>? q;
     ///  Sort the items. Use 'asc-<name>' for ascending and 'desc-<name>' for descending order.
@@ -36,6 +38,7 @@ class DeletedvaultholderRequestBuilderGetQueryParameters implements AbstractQuer
             'exclude' : exclude,
             'id' : id,
             'modifiedSince' : modifiedSince,
+            'nameContains' : nameContains,
             'q' : q,
             'sort' : sort,
             'vault' : vault,

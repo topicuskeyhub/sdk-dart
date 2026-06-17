@@ -4,7 +4,6 @@ import '../../models/error_report.dart';
 import '../../models/serviceaccount/service_account.dart';
 import './deactivate/deactivate_request_builder.dart';
 import './group/group_request_builder.dart';
-import './status/status_request_builder.dart';
 import './with_serviceaccount_item_request_builder_get_query_parameters.dart';
 import './with_serviceaccount_item_request_builder_put_query_parameters.dart';
 
@@ -18,10 +17,6 @@ class WithServiceaccountItemRequestBuilder extends BaseRequestBuilder<WithServic
     ///  The group property
     GroupRequestBuilder get group {
         return GroupRequestBuilder(pathParameters, requestAdapter);
-    }
-    ///  The status property
-    StatusRequestBuilder get status {
-        return StatusRequestBuilder(pathParameters, requestAdapter);
     }
     /// Clones the requestbuilder.
     @override
@@ -67,7 +62,7 @@ class WithServiceaccountItemRequestBuilder extends BaseRequestBuilder<WithServic
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
         return requestInfo;
     }
     /// Returns the service account identified by the id.
@@ -75,7 +70,7 @@ class WithServiceaccountItemRequestBuilder extends BaseRequestBuilder<WithServic
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithServiceaccountItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithServiceaccountItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithServiceaccountItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
         return requestInfo;
     }
     /// Updates the service account identified by the id.
@@ -84,8 +79,8 @@ class WithServiceaccountItemRequestBuilder extends BaseRequestBuilder<WithServic
     RequestInformation toPutRequestInformation(ServiceAccount body, [void Function(RequestConfiguration<WithServiceaccountItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithServiceaccountItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithServiceaccountItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=85');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=85', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=86', body);
         return requestInfo;
     }
 }

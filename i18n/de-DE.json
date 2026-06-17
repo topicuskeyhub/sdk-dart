@@ -1022,6 +1022,9 @@
               "LDAPDirectoryPasswordRecovery#VERIFY_2FA": "Verifizierung per 2FA",
               "LDAPDirectoryPasswordRecovery#VERIFY_MAIL_AND_2FA": "Verifizierung per E-Mail und 2FA",
               "AccountDirectoryStatus#DEGRADED": "Failover",
+              "AccountDirectory#status": {
+                "label": "Status"
+              },
               "AccountDirectoryStatus#NON_REDUNDANT": "Nicht-redundant",
               "AccountDirectoryType#INTERNAL": "Intern",
               "AccountDirectoryType#LDAP": "LDAP",
@@ -1879,6 +1882,10 @@
                 "label": "Konten beschreibbar",
                 "description": "Wenn diese Option aktiviert ist, verwaltet KeyHub auch die Konten im Verzeichnis."
               },
+              "ProvisionedAzureOIDCDirectory#accountMatchingAttribute": {
+                "description": "Das Attribut des externen Systems, das ersatzweise zum Abgleich von Konten mit Benutzern in KeyHub dient.",
+                "label": "Kontoabstimmungsattribut"
+              },
               "ProvisionedLDAP#gid": {
                 "description": "Die primäre Gruppe für Benutzer",
                 "label": "Primäre Group ID (gid)"
@@ -1980,7 +1987,8 @@
               },
               "GroupOnSystemType#GROUP_OF_NAMES": "groupOfNames",
               "ProvisionedLDAPDirectory#accountMatchingAttribute": {
-                "label": "Kontoabstimmungsattribut"
+                "label": "Kontoabstimmungsattribut",
+                "description": "Das Attribut des externen Systems, das ersatzweise zum Abgleich von Konten mit Benutzern in KeyHub dient."
               },
               "ProvisionedLDAPDirectory#attributes": {
                 "label": "Custom Attribute"
@@ -2046,6 +2054,10 @@
                 "description": "Der RDN unter dem Basis-DN, unter dem Dienstkonten erstellt werden."
               },
               "GroupOnSystemType#GROUP_UNKNOWN": "group (andere)",
+              "ProvisionedSCIM#cursorBasedPagination": {
+                "label": "Verwendet cursorbasierte Paginierung",
+                "description": "Verwendet cursorbasierte Paginierung gemäß RFC-9865."
+              },
               "ProvisionNumberSequence#nextID": {
                 "label": "Nächste ID"
               },
@@ -2378,6 +2390,9 @@
                 "description": "Wenn aktiviert, wird eine Zielseite angezeigt, bevor Sie zur Anwendung navigieren. Aktivieren Sie diese Option, wenn die Anwendung eine native Desktopanwendung ist und das Browserfenster bei der Anmeldung hängen bleibt."
               },
               "OAuth2ClientProfile#SERVER_TO_SERVER": "Server-zu-Server-Anwendung",
+              "ClientApplicationPrimer#active": {
+                "label": "Aktiv"
+              },
               "SubjectFormat#EMAIL": "E-Mail-Adresse",
               "OAuth2ClientProfile#PUBLIC_NATIVE_APPLICATION_WITH_SECURE_STORAGE": "Öffentliche native Anwendung mit sicherer Speicherung",
               "ClientApplicationType#OAUTH2": "OAuth2/OIDC"
@@ -3142,6 +3157,7 @@
       "internaldirectory": "Internes Verzeichnis",
       "login": "Anmelden",
       "auditorgroupauditlog": "Audit-Log der Gruppe",
+      "pendingaccountsdirectory": "Verzeichnis ausstehender Konten",
       "group": {
         "removegroups": {
           "confirm": "Löschung bestätigen"
@@ -3183,6 +3199,7 @@
       },
       "authorizedgroupsdashboard": "Dashboard für autorisierte Gruppen",
       "accessprofiles": "Zugriffsprofile",
+      "serviceaccountauditlog": "Audit-Log eines Dienstkontos",
       "system": {
         "namespaces": "Namespaces",
         "groupsinsystem": "Gruppen im System",
@@ -3207,7 +3224,6 @@
       "webhook": "Webhook",
       "ldapapplication": "LDAP Anwendung",
       "requestgroup": "Zugriff auf eine Gruppe beantragen",
-      "auditorserviceaccountauditlog": "Audit-Log eines Dienstkontos",
       "passwordprompt": "Passwort",
       "launchpad": "Launchpad",
       "logs": "Systemprotokolle",
@@ -3280,15 +3296,13 @@
       "confirmtotpoffsetchange": "Bestätigungscode-Zeitverschiebung bestätigen",
       "mygroupauditlog": "Audit-Log der Gruppe",
       "accountaudit": "Konto Audit-Log",
-      "serviceaccount": {
-        "groupsonsystem": "Gruppen im System",
-        "main": "Dienstkonto"
-      },
       "grouponsystem": "Gruppe im System",
       "auditorserviceaccountdetails": "Dienstkonto-Details",
       "dashboard": "Dashboard",
+      "serviceaccount": "Dienstkonto",
       "addprovisioninggroup": "Gruppe im System anfordern",
-      "auditoraccountdetails": "Konto-Details"
+      "auditoraccountdetails": "Konto-Details",
+      "maintenancedirectory": "Wartungsverzeichnis"
     },
     "error": {
       "ontwikkelaars": "Die Entwickler möchten gerne die folgenden Informationen haben.",
@@ -4794,6 +4808,22 @@
         "INTERNAL": {
           "long": "Internes Verzeichnis",
           "main": "Internes Verzeichnis"
+        },
+        "MAINTENANCE": {
+          "long": "Wartungsverzeichnis",
+          "main": "Wartungsverzeichnis"
+        },
+        "PENDING_ACCOUNTS": {
+          "main": "Ausstehende Konten",
+          "long": "Verzeichnis ausstehender Konten"
+        },
+        "LDAP": {
+          "main": "LDAP-Verzeichnis",
+          "long": "LDAP-Verzeichnis"
+        },
+        "OIDC": {
+          "long": "OIDC-Verzeichnis",
+          "main": "OIDC-Verzeichnis"
         }
       },
       "webhook": {
@@ -4876,6 +4906,7 @@
           "head": "Die angegebene Konfiguration anwenden",
           "1certs": "Gültigkeit des Zertifikats überprüfen",
           "revert": "Konfiguration auf vorherige Einstellungen zurücksetzen",
+          "partial": "Konfiguration auf {0} von {1} Nodes angewendet:\n{2}",
           "4internet": "Internetverbindung überprüfen",
           "5url": "Erreichbarkeit der URL überprüfen",
           "3redirect": "Session zur neuen URL umleiten",
@@ -5020,9 +5051,9 @@
         "label": "Freigabekanal"
       },
       "LOGGING_REMOTE_TLS_CA_BUNDLE": {
-        "placeholder": "Wählen Sie ein CA Bündel (PEM)",
-        "label": "Zertifizierungsstelle(n)",
-        "description": "Stellen Sie ein PEM-Bundle mit allen Zertifikaten bereit, die zum Erstellen einer vollständigen Zertifikatkette vom Stammzertifikat bis zum endgültigen Zertifikat erforderlich sind. Diese Zertifikatkette muss sowohl für das Zertifikat des Logservers als auch ggf. für das Clientzertifikat verwendet werden."
+        "placeholder": "Wählen Sie eine PEM-Datei",
+        "label": "Vertrauenswürdige Zertifikate",
+        "description": "Die Zertifikate, die KeyHub zur Validierung des Logservers verwendet."
       },
       "MONITORING_OTLP_TLS_LEVEL": {
         "label": "TLS"
@@ -5437,6 +5468,10 @@
       },
       "task": {
         "upgrade_db": "PostgreSQL aktualisieren",
+        "adminrestart": {
+          "partial": "Appliance Manager auf {0} von {1} Nodes neu gestartet:\n{2}",
+          "main": "Appliance Manager neu starten"
+        },
         "setunavailable": "Entfernen des Knotens aus dem Cluster",
         "performosupgrade": "Das Betriebssystem wird aktualisiert",
         "backupkeys": "Generieren des Backup-Schlüsselpaars",
@@ -5448,7 +5483,6 @@
         "unpack_update_file": "Update-Datei entpacken",
         "uploadrecovery": "Safe-Wiederherstellungs-Public Key speichern",
         "update_tkh": "Topicus KeyHub wird aktualisiert",
-        "adminrestart": "Appliance Manager neu starten",
         "failover": "Übertragen von Aufgaben auf andere Knoten im Cluster",
         "decrypt_update_file": "Update-Datei überprüfen",
         "finalize_db": "Datenbank-Upgrade abschließen",
@@ -5826,12 +5860,19 @@
       "AUDITING": "{performedBy} hat die zusätzliche Autorisierung durch {onGroup2} für die Auditierung von der Gruppe {onGroup} beendet."
     },
     "INVALID_SIGNATURE_DETECTED": {
-      "GROUP_MEMBERSHIP": "Für die Mitgliedschaft von {onAccount} in der Gruppe {onGroup} wurde eine ungültige Signatur erkannt.",
+      "GROUP_MEMBERSHIP": {
+        "main": "Für die Mitgliedschaft von {onAccount} in der Gruppe {onGroup} wurde eine ungültige Signatur erkannt.",
+        "group": "Für eine Mitgliedschaft in der Gruppe {onGroup} wurde eine ungültige Signatur erkannt."
+      },
       "KEY_AUTHENTICATION_CODE": {
         "account": "Für das Konto von {onAccount} wurde ein ungültiger Authentifizierungscode erkannt.",
-        "group": "Für die Gruppe {onGroup} wurde ein ungültiger Authentifizierungscode erkannt."
+        "group": "Für die Gruppe {onGroup} wurde ein ungültiger Authentifizierungscode erkannt.",
+        "client": "Für die Anwendung {onClient} wurde ein ungültiger Authentifizierungscode erkannt."
       },
-      "ACCOUNT_SIGNED_ATTESTATIONS": "Für das Konto von {onAccount} wurde eine ungültige Signatur erkannt.",
+      "ACCOUNT_SIGNED_ATTESTATIONS": {
+        "main": "Für das Konto von {onAccount} wurde eine ungültige Signatur erkannt.",
+        "client": "Für die Anwendung {onClient} wurde eine ungültige Signatur erkannt."
+      },
       "GROUP_KEY_ATTESTATION": "Für den Schlüssel von {onGroup} wurde eine ungültige Bestätigung von {onAccount} erkannt.",
       "REPLACEMENT_KEY": "Für einen Ersatzschlüssel für die Gruppe {onGroup} wurde eine ungültige Signatur erkannt.",
       "GROUP_AUTHORIZATION": "Für Eigenschaften der Gruppe {onGroup} wurde eine ungültige Signatur erkannt."
@@ -6222,7 +6263,7 @@
     "ACCOUNT_TOTP_OFFSET_CHANGED": "Die Zeitverschiebung des Bestätigungscodes für {performedBy} wurde in {parameter1} geändert.",
     "PROVISIONED_SYSTEM_CREATED": "{performedBy} hat ein neues gekoppeltes System {onSystem} erstellt.",
     "JOIN_GROUP_REQUESTED": {
-      "profile": "Aus dem Zugriffsprofil {onAccessProfile} wurde eine Anfrage erstellt, {onAccount} zur Gruppe {onGroup} hinzuzufügen. {reason}",
+      "profile": "Aus dem Zugriffsprofil {onAccessProfile} wurde eine Anfrage erstellt, {onAccount} zur Gruppe {onGroup} hinzuzufügen.",
       "group": "{onAccount} hat beantragt, der Gruppe {onGroup} beizutreten. {reason}"
     },
     "REVIEW_AUDIT_DECLINED": "{performedBy} hat ein Audit von {onGroup2} abgelehnt. {reason}",
@@ -6496,10 +6537,6 @@
     },
     "systems": "Gekoppelte Systeme",
     "administration": "Verwaltung",
-    "serviceaccount": {
-      "details": "Details",
-      "groupsonsystem": "Gruppen im System"
-    },
     "uitloggen": "Abmelden",
     "directory": {
       "details": "Details",
@@ -7377,6 +7414,7 @@
     "RESET_INVALID_PASSWORD": "Das Passwort stimmt nicht mit dem Passwort überein, das beim Senden der Anfrage angegeben wurde.",
     "CLIENT_PERMISSION_ALREADY_EXISTS": "Die beantragte Berechtigung wurde dieser Anwendung bereits erteilt.",
     "VAULT_TARGET_NOT_INITIALIZED": "Der ausgewählte Benutzer hat noch kein Safe-Passwort festgelegt.",
+    "MULTIPLE_MATCHES": "Es wurden zu viele Treffer gefunden.",
     "CLIENT_NOT_ALLOWED": {
       "n": "Sie dürfen sich nicht bei {client} anmelden. Melden Sie sich bei KeyHub an und fordern Sie Zugriff auf die folgenden Gruppen: {groups} oder {lastGroup}.",
       "1": "Sie dürfen sich nicht bei {client} anmelden. Melden Sie sich bei KeyHub an und fordern Sie Zugriff auf die Gruppe {group}.",
@@ -7482,6 +7520,7 @@
     "ORGANIZATIONAL_UNIT_TOO_DEEP": "Organisationseinheiten können nur bis zu 5 tief verschachtelt werden.",
     "GROUP_CANNOT_BE_MOVED": "Eine oder mehrere Gruppen können nicht verschoben werden.",
     "PROVISIONED_SYSTEM_ERROR": "Der Vorgang auf {system} konnte nicht durchgeführt werden. Das System meldet: {message}",
+    "GROUP_SIGNING_KEY_RETIRED": "Der Signaturschlüssel der Gruppe {group} verwendet einen kryptografischen Algorithmus, der in KeyHub-Version {version} zurückgezogen wurde und von einem Gruppenmanager migriert werden muss. Reparieren Sie die Gruppe oder entfernen Sie den vollständigen Safe-Zugriff dieser Anwendung auf die Gruppe, bevor Sie das Secret rotieren.",
     "INVALID_ATTRIBUTE_VALUE": "Der Wert {value} ist ungültig.",
     "PASSWORD_ROTATING_REQUIRED": "Für diese Aktion ist ein rotierendes Passwort erforderlich. Dies kann auf Ihrer Profilseite aktiviert werden.",
     "LICENSE_BUSINESS_LIMIT_REACHED": "Sie haben das Limit Ihrer Topicus KeyHub Lizenz erreicht und können keine 'Business'-Konten mehr hinzufügen.",
@@ -7851,6 +7890,21 @@
       },
       "alert": "Lizenz"
     },
+    "systemwideinvalidsignature": {
+      "ownertype": {
+        "oauth2client": "OAuth2-Client",
+        "group": "Gruppe",
+        "account": "Konto"
+      },
+      "alert": "SIGNATUR",
+      "moreinfo": "Mehr Informationen",
+      "retired": "zurückgezogener Algorithmus (seit Version {0})",
+      "description": {
+        "retired": "Für {count} Gruppe(n), Konto/Konten oder OAuth2-Client(s) wurden ungültige Signaturen festgestellt. {retiredCount} davon werden durch einen kryptografischen Algorithmus verursacht, der in KeyHub-Version {version} zurückgezogen wurde und migriert werden muss.",
+        "main": "Für {count} Gruppe(n), Konto/Konten oder OAuth2-Client(s) wurden ungültige Signaturen festgestellt."
+      },
+      "head": "Ungültige Signaturen festgestellt"
+    },
     "oldapiversion": {
       "info": "Diese Version wird nicht mehr unterstützt und wird möglicherweise in einem zukünftigen Update von Topicus KeyHub eingestellt.",
       "alert": "API-VERSION",
@@ -8119,6 +8173,7 @@
       "link": "Attribute",
       "insync": "Synchronisiert"
     },
+    "name": "Zugriffsprofil",
     "apporsystem": {
       "add": {
         "main": "Zugriff hinzufügen",
@@ -8176,27 +8231,14 @@
   "filter": {
     "loglevel": "Nach Log Level filtern...",
     "attribute": "Nach Attribut filtern...",
-    "system": "System",
     "group": "Wählen Sie eine Gruppe...",
     "status": "Nach Status filtern...",
     "type": "Nach Typ filtern...",
     "overig": "Sonstige",
     "source": "Nach Quelle filtern...",
-    "keyhub": "KeyHub",
     "account": "Wählen Sie ein Konto...",
     "action": "Nach Aktion filtern...",
     "alles": "Alle"
-  },
-  "serviceaccount": {
-    "group": {
-      "header": "Gruppe eines Dienstkontos",
-      "subtitle": "Das Dienstkonto {0} hat Zugriff auf die benannte Gruppe auf {1}."
-    },
-    "search": {
-      "serviceaccounts": "Suche in Dienstkonten",
-      "technicaladministrator": "Verwaltet von..."
-    },
-    "header": "Dienstkonto"
   },
   "groupaudit": {
     "savedraft": "Als Entwurf speichern",
@@ -8222,6 +8264,13 @@
       "finished": "Alle offenen Gruppenprüfungen abgeschlossen."
     },
     "main": "Gruppenprüfung"
+  },
+  "serviceaccount": {
+    "search": {
+      "serviceaccounts": "Suche in Dienstkonten",
+      "technicaladministrator": "Verwaltet von..."
+    },
+    "header": "Dienstkonto"
   },
   "attributedefinition": {
     "prop": {
@@ -8364,9 +8413,18 @@
       "header": "LDAP-Verzeichnis - {0}",
       "customfilter": "Benutzerdefinierter Filter"
     },
+    "header": {
+      "accounts": "Konten"
+    },
     "toevoegen": {
       "main": "Verzeichnis hinzufügen",
       "subtitle": "Wählen Sie den Typ des neuen Verzeichnisses aus."
+    },
+    "pendingaccounts": {
+      "header": "Verzeichnis ausstehender Konten - {0}"
+    },
+    "maintenance": {
+      "header": "Wartungsverzeichnis - {0}"
     },
     "oidc": {
       "header": "OIDC-Verzeichnis - {0}"

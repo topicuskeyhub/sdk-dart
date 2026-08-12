@@ -32,6 +32,7 @@ enum ModificationRequestReportChange {
     groupActivationForSsoDisabled('GROUP_ACTIVATION_FOR_SSO_DISABLED'),
     groupActivationForProvisioningDisabled('GROUP_ACTIVATION_FOR_PROVISIONING_DISABLED'),
     identitySourceRemoved('IDENTITY_SOURCE_REMOVED'),
+    accessProfileLifecycleActionRemoved('ACCESS_PROFILE_LIFECYCLE_ACTION_REMOVED'),
     groupExclusionWillBeRemoved('GROUP_EXCLUSION_WILL_BE_REMOVED'),
     vaultRecordsWillBeRemoved('VAULT_RECORDS_WILL_BE_REMOVED'),
     vaultRecordsWillBeRemovedUnrecoverable('VAULT_RECORDS_WILL_BE_REMOVED_UNRECOVERABLE'),

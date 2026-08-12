@@ -47,6 +47,7 @@ class GroupOnSystemPrimer extends Linkable implements Parsable {
     @override
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
+        writer.writeStringValue('displayName', displayName);
         writer.writeEnumValue<GroupOnSystemType>('type', groupOnSystemPrimerType, (e) => e?.value);
         writer.writeStringValue('nameInSystem', nameInSystem);
     }

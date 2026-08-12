@@ -103,6 +103,7 @@
                 "description": "Wählen Sie ob die Konfiguration der Appliance auch zurückgesetzt werden soll.",
                 "label": "Konfiguration der Appliance"
               },
+              "ExportAuditorProvisioningPanel$AuditorExportType#GOS": "Gruppen im System",
               "AccessProfileAccountEditPanel$AccountEditBean#manual": {
                 "label": "Zwangsmitgliedschaft",
                 "description": "Für diese Mitgliedschaft gelten keine Business-Rules."
@@ -125,13 +126,16 @@
                 "label": "Dateigröße"
               },
               "ExportAuditorServiceAccountsPanel$AuditorExportType#SERVICEACCOUNTS_GROUPS": "Gruppen im System",
+              "ExportAuditorProvisioningPanel$AuditorExportType#GOS_ACCESSPROFILE": "GoS - Zugriffsprofile",
               "ApplicationOrSystemAddToGroupPanel$ServiceAccountType#SERVICE_ACCOUNT": "Dienstkonto",
               "GroupAccountEditPanel$AccountEditBean#endDate": {
                 "label": "Enddatum der Mitgliedschaft"
               },
+              "ExportAuditorProvisioningPanel$AuditorExportType#GOS_GROUP": "GoS - Gruppen",
               "AccountDirectoryAddPanel$DirectoryTypeBean#type": {
                 "label": "Typ"
               },
+              "ExportAuditorProvisioningPanel$AuditorExportType#GOS_SERVICEACCOUNT": "GoS - Dienstkonten",
               "RestoreBackupPanel$RestoreBackupBean#restoreKey": {
                 "label": "Backup-Entschlüsselungsschlüssel",
                 "placeholder": "Backup-Entschlüsselungsschlüssel"
@@ -199,6 +203,9 @@
               },
               "ExportAuditorServiceAccountsPanel$ExportTypeBean#type": {
                 "label": "Typ"
+              },
+              "ExportAuditorProvisioningPanel$ExportTypeBean#type": {
+                "label": "Typ"
               }
             },
             "settings": {
@@ -230,11 +237,11 @@
                 "ChangeApplicationBean$ReleaseChannel#ACCEPTANCE": "acceptance - Die Staging Version."
               }
             },
-            "filter": {
-              "VaultRecordFilterBarPanel$VaultRecordOrdering#VAULT": "Sortieren nach Safes",
-              "VaultRecordFilterBarPanel$VaultRecordOrdering#NAME": "Sortieren nach Namen"
-            },
             "panel": {
+              "AbstractConfirmationPanel$Confirmation#firePendingLifecycleEvents": {
+                "description": "Löse die ausstehenden Lebenszyklus-Ereignisse des Kontos vor dem Entfernen aus, inklusive E-Mail-Versand, anstatt sie abzubrechen.",
+                "label": "Ausstehende Lebenszyklus-Ereignisse jetzt auslösen"
+              },
               "AbstractConfirmationPanel$Confirmation#removeFromSystem": {
                 "description": "Lösche auch die Gruppe vom System",
                 "label": "Lösche vom System"
@@ -260,6 +267,10 @@
                 "label": "Secret"
               }
             },
+            "filter": {
+              "VaultRecordFilterBarPanel$VaultRecordOrdering#VAULT": "Sortieren nach Safes",
+              "VaultRecordFilterBarPanel$VaultRecordOrdering#NAME": "Sortieren nach Namen"
+            },
             "formcomponent": {
               "PrivateKeyAndCertificateEditPanel$KeyStoreType#PKCS12": "PKCS#12 (.pfx oder .p12)",
               "PrivateKeyAndCertificateEditPanel$KeyStoreType#PEM": "PEM (in separaten Dateien)"
@@ -273,23 +284,42 @@
                 "label": "Regel für Aktivierung",
                 "description": "Ein Skript, um zu bestimmen, ob die Konten innerhalb der verknüpften Systeme aktiv sein sollten. Weitere Erläuterungen finden Sie im Handbuch."
               },
+              "AccessProfileLifecycleAnchor#REMOVE": "Wird entfernt",
+              "AccessProfileLifecycleEventStatus#CANCELLED": "Abgebrochen",
+              "AccessProfileLifecycleEventStatus#PENDING": "Ausstehend",
               "AccessProfile#owner": {
                 "description": "Manager der ausgewählten Gruppe sind verantwortlich für dieses Zugriffsprofil.",
                 "label": "Verantwortliche Gruppe",
                 "placeholder": "Wähle eine Gruppe..."
               },
+              "AccessProfileLifecycleAction#name": {
+                "label": "Name"
+              },
               "AccessProfile#directory": {
                 "label": "Verknüpftes Verzeichnis",
                 "description": "Das Verzeichnis, für das dieses Zugriffsprofil Kontoattribute verwalten kann."
               },
+              "AccessProfileLifecycleAction#offset": {
+                "label": "Zeitpunkt",
+                "description": "Wie lange vor oder nach dem Übergang die Aktion ausgelöst wird."
+              },
               "AccessProfileProvisioning#groupOnSystem": {
                 "label": "Gruppe im System"
               },
+              "AccessProfileLifecycleAnchor#ACTIVATE": "Wird aktiviert",
               "AccessProfileClient#accessProfile": {
                 "label": "Zugriffsprofil"
               },
               "AccessProfileAccountActivation#ACTIVE": "Aktiv (es gelten die Geschäftsregeln)",
               "AccessProfileAccountActivation#INACTIVE": "Inaktiv (es gelten die Geschäftsregeln)",
+              "AccessProfileMailLifecycleAction#mailSubjectTemplate": {
+                "label": "Betreffvorlage"
+              },
+              "AccessProfileLifecycleAction#anchor": {
+                "label": "Übergang",
+                "description": "Der Mitgliedschafts- oder Aktivierungsübergang, auf den diese Aktion ausgelöst wird."
+              },
+              "AccessProfileLifecycleEventStatus#FIRED": "Ausgeführt",
               "AccessProfileProvisioning#groupOnSystemDisplayName": {
                 "label": "Anzeigename"
               },
@@ -303,22 +333,32 @@
               "AccessProfileProvisioning#system": {
                 "label": "Gekoppeltes System"
               },
+              "AccessProfileLifecycleEventStatus#FAILED": "Fehlgeschlagen",
+              "AccessProfileMailLifecycleAction#mailBodyTemplate": {
+                "label": "Textvorlage"
+              },
+              "AccessProfileMailLifecycleAction#recipients": {
+                "label": "Empfänger"
+              },
               "AccessProfileAccountActivation#FORCE_INACTIVE": "Inaktiv (manuell überschrieben)",
               "AccessProfile#description": {
                 "label": "Beschreibung"
               },
+              "AccessProfileLifecycleAnchor#DEACTIVATE": "Wird deaktiviert",
               "AccessProfileProvisioning#accessProfile": {
                 "label": "Zugriffsprofil"
               },
               "AccessProfilePrimer#uuid": {
                 "label": "UUID"
               },
+              "AccessProfileLifecycleAnchor#ADD": "Wird Mitglied",
               "AccessProfileAccountActivation#FORCE_ACTIVE": "Aktiv (manuell überschrieben)"
             },
             "audit": {
               "AuditAccountAction#CHANGE_TO_MANAGER": "Managerrechte erteilen",
               "AuditRecordType#TRANSFER_ACCESS_PROFILE_OWNERSHIP_DECLINED": "Verantwortung des Zugriffsprofils übertragen - Abgelehnt",
               "AuditRecordType#TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP_REQUESTED": "Verantwortung der Gruppe im System übertragen - Beantragt",
+              "AuditRecordType#ACCESS_PROFILE_LIFECYCLE_EVENT_FAILED": "Zugriffsprofil - Lebenszyklusereignis fehlgeschlagen",
               "AuditRecordType#SERVICE_ACCOUNT_MODIFIED": "Dienstkonto - Bearbeitet",
               "AuditRecordType#IDENTITY_SOURCE_MODIFIED": "Identitätsquelle - Bearbeitet",
               "AuditRecordType#ACCOUNT_REREGISTERED": "Konto - Erneut registriert",
@@ -365,6 +405,7 @@
               "AuditRecordType#WEBHOOK_MODIFIED": "Webhook - Bearbeitet",
               "AuditRecordType#ACCOUNT_REMOVED": "Konto - Gelöscht",
               "AuditRecordType#CLIENT_MODIFIED": "Anwendung - Bearbeitet",
+              "AuditRecordType#ACCOUNT_DEACTIVATED_FOR_ACCESS_PROFILE": "Konto - Für ein Zugriffsprofil deaktiviert",
               "AuditRecordType#ADD_GROUP_TO_ACCESS_PROFILE_DECLINED": "Gruppe zum Zugriffsprofil hinzufügen - Abgelehnt",
               "AuditRecordType#IDENTITY_SOURCE_REMOVED": "Identitätsquelle - Gelöscht",
               "AuditRecordType#PROVISIONED_SYSTEM_UNKNOWN_ACCOUNT_DESTROYED": "Gekoppeltes System - Unbekanntes Konto gelöscht",
@@ -430,6 +471,7 @@
               "AuditRecordType#ACCOUNT_ACTIVATION_CODE_USED": "Konto - Aktivierungscode verwendet",
               "AuditRecordType#TRANSFER_PROVISIONED_SYSTEM_OWNERSHIP_DECLINED": "Verantwortung des gekoppelten Systems übertragen - Abgelehnt",
               "AuditRecordType#ADD_GROUP_ADMIN_DECLINED": "Gruppenmanager hinzufügen - Abgelehnt",
+              "AuditRecordType#ACCOUNT_ACTIVATED_FOR_ACCESS_PROFILE": "Konto - Für ein Zugriffsprofil aktiviert",
               "AuditRecordType#ORGANIZATIONAL_UNIT_MODIFIED": "Organisationseinheit - Bearbeitet",
               "AuditRecordType#CREATE_GROUP_DECLINED": "Gruppe erstellen - Abgelehnt",
               "AuditRecordType#DIRECTORY_HELPDESK_MODIFIED": "Helpdesk geändert",
@@ -537,6 +579,7 @@
               },
               "AuditRecordType#TRANSFER_ORGANIZATIONAL_UNIT_OWNERSHIP_REQUESTED": "Verantwortung der Organisationseinheit übertragen - Beantragt",
               "AuditRecordType#TRANSFER_APPLICATION_ADMINISTRATION_ACCEPTED": "Verwaltung der Anwendung übertragen - Genehmigt",
+              "AuditRecordType#ACCESS_PROFILE_LIFECYCLE_EVENT_FIRED": "Zugriffsprofil - Lebenszyklusereignis ausgeführt",
               "AuditRecordType#TRANSFER_APPLICATION_ADMINISTRATION_REQUESTED": "Verwaltung der Anwendung übertragen - Beantragt",
               "AuditRecordType#ACCOUNT_2FA_ENABLED": "Konto - 2FA aktiviert",
               "AuditRecordType#GROUP_NESTING_DISCONNECTED": "Gruppe - Verknüpfte verschachtelte Gruppe aufgehoben",
@@ -580,6 +623,7 @@
               "AuditRecordType#GROUP_ON_SYSTEM_DEPROVISIONED": "Gruppe im System - Entfernt vom gekoppelten System",
               "AuditRecordType#PROVISIONED_SYSTEM_MODIFIED": "Gekoppeltes System - Bearbeitet",
               "AuditRecordType#VERIFY_INTERNAL_ACCOUNT_REQUESTED": "Überprüfung des internen Kontos - Beantragt",
+              "AuditRecordType#ACCESS_PROFILE_LIFECYCLE_EVENT_CANCELLED": "Zugriffsprofil - Lebenszyklusereignis abgebrochen",
               "AuditRecordType#REVOKE_ADMIN_ACCEPTED": "KeyHub-Administrator entfernen - Genehmigt",
               "AuditRecordType#REMOVE_ORGANIZATIONAL_UNIT_DECLINED": "Organisationseinheit löschen - Abgelehnt",
               "AuditRecordType#UPDATE_LICENSE_REQUESTED": "Die Lizenz ändern - Beantragt",
@@ -767,6 +811,7 @@
               "ModificationRequestReportChange#GROUP_NESTING_REMOVED": "Die Verschachtelung dieser Gruppen wird entfernt.",
               "AuthorizingGroupType#MEMBERSHIP": "Änderungen in der Gruppenmitgliedschaft",
               "ModificationRequestReportError#APPLICATION_CANNOT_BE_REMOVED": "Keine Berechtigung, {2}: {1} ({3}) zu löschen.",
+              "ModificationRequestReportChange#ACCESS_PROFILE_LIFECYCLE_ACTION_REMOVED": "Diese Lebenszyklusaktionen werden gelöscht.",
               "ModificationRequestReportChange#PROVISIONING_GROUP_REMOVED_OWNER": "Die Gruppe im System {0} wird mit dieser Gruppe verschoben. Die KeyHub-Gruppe {1} verliert den Zugriff.",
               "ModificationRequestType#SETUP_GROUP_EXCLUSION": "AUSSCHLUSS",
               "ModificationRequestReportChange#PROVISIONING_GROUP_WILL_BE_REMOVED": "Die Gruppe {1} verliert den Zugriff auf die Gruppe im System {2}.",
@@ -1774,6 +1819,22 @@
               "ProvisionedAzureTenant#clientId": {
                 "label": "Client Identifier"
               },
+              "GroupOnSystemType": {
+                "short#GROUP_UNKNOWN": "Andere",
+                "short#AZURE_SECURITY_GROUP": "Sicherheitsgruppe",
+                "short#AZURE_DYNAMIC_UNIFIED_GROUP": "Microsoft 365 (dynamisch)",
+                "short#GROUP_OF_NAMES": "groupOfNames",
+                "short#POSIX_GROUP": "posixGroup",
+                "short#AZURE_DYNAMIC_SECURITY_GROUP": "Sicherheitsgruppe (dynamisch)",
+                "short#GROUP_UNIVERSAL_SECURITY": "Universal security",
+                "short#AZURE_UNIFIED_GROUP": "Microsoft 365",
+                "short#GROUP_LOCAL_SECURITY": "Local security",
+                "short#GROUP_OF_UNIQUE_NAMES": "groupOfUniqueNames",
+                "short#AZURE_ROLE": "Verzeichnisrolle",
+                "short#GROUP_GLOBAL_SECURITY": "Global security",
+                "short#ACCOUNT_ONLY": "Nur-Konto",
+                "short#SCIM": "SCIM"
+              },
               "ProvisionedAzureTenant#attributes": {
                 "label": "Custom Attribute"
               },
@@ -1970,6 +2031,7 @@
                 "label": "Client-Zertifikat"
               },
               "GroupOnSystemProvisioning#NOT_PROVISIONED_BY_DEFAULT_CAN_ONLY_BE_ENABLED": "Standardmäßig deaktiviert, kann nicht deaktiviert werden - Die Verwaltung von Gruppen durch KeyHub ist standardmäßig deaktiviert und kann nur aktiviert werden.",
+              "GroupOnSystemType#SCIM": "SCIM",
               "ProvisionedAzureSyncLDAPDirectory#directory": {
                 "description": "Azure AD Connect muss auf diesem Active Directory aktiviert werden, das sich mit dem ausgewählten Azure Tenant synchronisiert.",
                 "label": "LDAP-Verzeichnis"
@@ -2598,10 +2660,6 @@
                 "label": "'Gruppe erstellen' genehmigen",
                 "description": "Anfragen zum Erstellen neuer Gruppen werden von der ausgewählten Gruppe bearbeitet."
               },
-              "VaultRecoveryKey#privateKey": {
-                "placeholder": "Der alte Private Key",
-                "description": "Laden Sie den alten, zu ersetzenden Private Key hoch. Wenn dieser nicht mehr verfügbar ist, kann das Feld leer gelassen werden. Es ist dann nicht möglich Safes wiederherzustellen, bis sie zumindest einmal geöffnet wurden."
-              },
               "Settings#twoFactorAuthTimeout": {
                 "label": "Zeitlimit für 2FA-Authentifizierung",
                 "description": "Legen Sie die Gültigkeitsdauer der 2FA-Authentifizierung fest. Verwenden Sie 'm' für Minuten, 'h' für Stunden und 'd' für Tage, z. B. '7d'."
@@ -2617,6 +2675,10 @@
                 "placeholder": "Branding logo",
                 "label": "Branding logo",
                 "description": "Wählen Sie eine .png-Datei, um Topicus KeyHub mit Ihrem Firmenlogo zu versehen. Dieses Logo muss 540 x 280 Pixel groß sein."
+              },
+              "VaultRecoveryKey#previousPrivateKey": {
+                "placeholder": "Der alte Private Key",
+                "label": "Wiederherstellungs-Private-Key"
               },
               "Settings#maintenanceMessage": {
                 "label": "Wartungsmeldung",
@@ -2634,9 +2696,8 @@
                 "label": "Absenderadresse für E-Mail",
                 "description": "Wenn festgelegt, sendet Topicus KeyHub E-Mails mit dieser Absenderadresse. Wenn dieses Feld leer gelassen wird, wird die E-Mail-Adresse des Benutzers als Absender verwendet."
               },
-              "VaultRecoveryKey#publicKey": {
-                "description": "Dieser Key wird verwendet, um den Zugriff auf Safes wiederherzustellen. Ohne einen Recovery Key können Safes nicht genutzt werden.",
-                "placeholder": "Wählen Sie eine Public Key Datei"
+              "VaultRecoveryKey#downloadGenerated": {
+                "required": "Laden Sie den neu generierten Private Key herunter, bevor Sie speichern. Ohne ihn ist die Wiederherstellung von Safes nicht mehr möglich."
               },
               "Settings#createGroupPlaceholder": {
                 "label": "Hinweis für neue Gruppennamen",
@@ -2649,9 +2710,6 @@
               "Settings#passwordMinLength": {
                 "description": "Wählen Sie einen Wert zwischen 8 und 20. Für eine optimale Sicherheit ist es empfehlenswert, mindestens 12 zu wählen.",
                 "label": "Mindestanzahl an Zeichen"
-              },
-              "Settings#vaultRecoveryKey": {
-                "label": "Public Key für Wiederherstellung"
               },
               "Settings#auditRecordRetention": {
                 "label": "Audit-Log-Aufbewahrung",
@@ -3185,6 +3243,7 @@
           "select": "Zu verschiebende Gruppen auswählen"
         },
         "clients": "Anwendungen",
+        "edit": "Organisationseinheit bearbeiten",
         "accounts": "Konten"
       },
       "oidcdirectory": "OIDC-Verzeichnis",
@@ -3224,9 +3283,11 @@
       "webhook": "Webhook",
       "ldapapplication": "LDAP Anwendung",
       "requestgroup": "Zugriff auf eine Gruppe beantragen",
+      "auditorgrouponsystemdetails": "Gruppen-im-System-Details",
       "passwordprompt": "Passwort",
       "launchpad": "Launchpad",
       "logs": "Systemprotokolle",
+      "grouponsystemauditlog": "Audit-Log einer Gruppe im System",
       "internalaccount": "Internes Konto",
       "provisionedldapdirectory": "Gekoppeltes LDAP-Sourceverzeichnis",
       "inloggen": "Anmelden",
@@ -3254,6 +3315,7 @@
       "consent": "Erlaubnis erteilen",
       "sequences": "Nummernfolgen",
       "classification": "Klassifizierung",
+      "auditorgrouponsystemauditlog": "Audit-Log einer Gruppe im System",
       "provisionednamespace": "Namespace",
       "auditorgroupsdashboard": "Auditor-Dashboard Gruppen",
       "mygroups": {
@@ -3281,6 +3343,7 @@
       "vaultrecovery": "Safe-Wiederherstellung",
       "activationcode": "Aktivierungscode",
       "vaults": "Safes",
+      "auditorprovisioningdashboard": "Auditor-Dashboard Provisionierung",
       "access": "Zugriff verwalten",
       "about": {
         "updatelicense": "Lizenzaktualisierung bestätigen",
@@ -3332,6 +3395,7 @@
       "removegroups": "Löschen",
       "auditordashboard": {
         "accounts": "Auditor-Dashboard Konten",
+        "provisioning": "Auditor-Dashboard Provisionierung",
         "serviceaccounts": "Auditor-Dashboard Dienstkonten",
         "groups": "Auditor-Dashboard Gruppen"
       },
@@ -4243,6 +4307,12 @@
       "subtitle": "Senden Sie eine Anfrage für zusätzliche Berechtigungen für die Anwendung {0}.",
       "header": "Berechtigungen erteilen"
     },
+    "updategroupmembership": {
+      "accept": {
+        "options": "Enddatum ändern"
+      },
+      "sent": "Ihre Mitgliedschaftsanfrage für {0} für {1} wurde gesendet."
+    },
     "transferaccessprofileownership": {
       "header": "Verantwortung übertragen",
       "subtitle": "Verantwortung für {0} auf eine andere Gruppe übertragen.",
@@ -4296,10 +4366,7 @@
       "sent": "Ihre Anfrage, {0} von KeyHub-Administratoren zu entfernen wurde gesendet."
     },
     "errorcount": "{0} Fehler",
-    "nocomment": "Keinen Grund angegeben",
-    "updategroupmembership": {
-      "sent": "Ihre Mitgliedschaftsanfrage für {0} für {1} wurde gesendet."
-    }
+    "nocomment": "Keinen Grund angegeben"
   },
   "provisioning": {
     "authorization": {
@@ -4491,6 +4558,7 @@
       "step": {
         "groups": "Gruppen anfragen",
         "pwd": "Passwort wählen",
+        "vaultkey": "Sicherheitsschlüssel",
         "2fa": "2FA einrichten"
       },
       "2fa": {
@@ -4590,6 +4658,9 @@
       "header": "Lizenzlimit erreicht"
     },
     "resetpassword": "Passwort zurücksetzen und zugehörige Daten löschen",
+    "LICENSE_KEY_UNKNOWN_SIGNING_KEY": {
+      "header": "Ungültige Lizenz"
+    },
     "systeemnietbeschikbaar": "KeyHub ist vorübergehend nicht verfügbar, bitte versuchen Sie es später noch einmal.",
     "username": {
       "placeholder": "Benutzername"
@@ -5984,6 +6055,7 @@
       "profile": "{performedBy} hat beantragt, den Benutzern im Zugriffsprofil {onAccessProfile} Zugriff auf {gosType} {gosName} in {onSystem} zu gewähren. {reason}",
       "group": "{performedBy} hat beantragt, den Benutzern in der Gruppe {onGroup} Zugriff auf {gosType} {gosName} in {onSystem} zu gewähren. {reason}"
     },
+    "ACCESS_PROFILE_LIFECYCLE_EVENT_FIRED": "Die Lebenszyklus-Aktion {parameter2} für {onAccount} im Zugriffsprofil {onAccessProfile} wurde ausgeführt.",
     "PROVISIONED_SYSTEM_UNKNOWN_ACCOUNT_DESTROYED": "Das unbekannte Konto {parameter1} wurde aus dem gekoppelten System {onSystem} entfernt.",
     "GROUP_CLASSIFICATION_MODIFIED": "{performedBy} hat die Gruppenklassifizierung {onGroupClassification} bearbeitet.",
     "ACCOUNT_GROUP_ACTIVATED": "{performedBy} hat {onGroup} aktiviert.",
@@ -6139,9 +6211,11 @@
     "PROVISIONED_SYSTEM_MODIFIED": "{performedBy} hat das gekoppelte System {onSystem} bearbeitet.",
     "CLIENT_ADDED_TO_ACCESS_PROFILE": "{onClient} wurde zum Zugriffsprofil {onAccessProfile} hinzugefügt.",
     "DISABLE_2FA_DECLINED": "Die Anfrage, die Zwei-Faktor-Authentifizierung für {onAccount} zu deaktivieren, wurde von {performedBy} abgelehnt. {reason}",
+    "ACCESS_PROFILE_LIFECYCLE_EVENT_CANCELLED": "Die geplante Lebenszyklus-Aktion {parameter2} für {onAccount} im Zugriffsprofil {onAccessProfile} wurde abgebrochen.",
     "ACCOUNT_PROVISIONING_MOVED": "{onAccount} wurde innerhalb des gekoppelten Systems {onSystem} von {parameter1} nach {parameter2} verschoben.",
     "EXTENDED_ACCESS_DECLINED": "{performedBy} hat den Antrag von {onAccount}, den Zugriff auf {onGroup} bis {parameter3} zu verlängern, abgelehnt. {reason}",
     "toonEigenRecords": "Nur meine Daten anzeigen",
+    "ACCOUNT_ACTIVATED_FOR_ACCESS_PROFILE": "{onAccount} wurde für das Zugriffsprofil {onAccessProfile} aktiviert.",
     "EXTENDED_ACCESS_REQUESTED": "{performedBy} hat beantragt, den Zugriff auf {onGroup} bis {parameter3} zu verlängern. {reason}",
     "ACCOUNT_REREGISTERED": "Das Konto von {performedBy} ist neu registriert worden. Der vorherige Benutzername war {parameter1}.",
     "PROVISIONED_SYSTEM_REMOVED_FROM_ACCESS_PROFILE": "{gosTypeCap} {gosName} im {onSystem} wurde aus dem Zugriffsprofil {onAccessProfile} entfernt.",
@@ -6224,6 +6298,7 @@
     "GRANT_CLIENT_PERMISSION_ACCEPTED": "Der Antrag, {onClient} die Berechtigung '{parameter3}' zu erteilen, wurde von {performedBy} genehmigt. {reason}",
     "IDENTITY_SOURCE_CREATED": "{performedBy} hat eine neue Identitätsquelle {onIdentitySource} erstellt.",
     "CLIENT_MODIFIED": "{performedBy} hat die Anwendung {onClient} bearbeitet.",
+    "ACCOUNT_DEACTIVATED_FOR_ACCESS_PROFILE": "{onAccount} wurde für das Zugriffsprofil {onAccessProfile} deaktiviert.",
     "GROUP_ON_SYSTEM_DEPROVISIONED": "{gosTypeCap} {gosName} wurde von dem System {onSystem} entfernt.",
     "SETUP_GROUP_EXCLUSION_DISCONNECT_REQUESTED": "{performedBy} hat die Aufhebung des Gruppenausschlusses zwischen {onGroup2} und {onGroup} beantragt. {reason}",
     "TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP_DECLINED": "Der Antrag zur Übertragung der Verantwortung für {gosType} {gosName} auf {onSystem} auf {onGroup} wurde von {performedBy} abgelehnt. {reason}",
@@ -6260,6 +6335,7 @@
     "ACCOUNT_GROUP_ACTIVATION_REASON": "{performedBy} hat {onGroup} aus folgendem Grund aktiviert: {parameter1}.",
     "ACCOUNT_ACTIVATION_CODE_USED": "{performedBy} hat den Aktivierungscode {parameter1} für eine Passwortwiederherstellung verwendet.",
     "IDENTITY_SOURCE_MODIFIED": "{performedBy} hat die Identitätsquelle {onIdentitySource} bearbeitet.",
+    "ACCESS_PROFILE_LIFECYCLE_EVENT_FAILED": "Die Lebenszyklus-Aktion {parameter2} für {onAccount} im Zugriffsprofil {onAccessProfile} konnte nicht ausgeführt werden und wurde als fehlgeschlagen markiert.",
     "ACCOUNT_TOTP_OFFSET_CHANGED": "Die Zeitverschiebung des Bestätigungscodes für {performedBy} wurde in {parameter1} geändert.",
     "PROVISIONED_SYSTEM_CREATED": "{performedBy} hat ein neues gekoppeltes System {onSystem} erstellt.",
     "JOIN_GROUP_REQUESTED": {
@@ -6303,6 +6379,7 @@
       "subjectdn": "Subject DN",
       "groups": "Gruppen",
       "directory": "Verzeichnis",
+      "parent": "Übergeordnete Einheit",
       "readwrites": "Lese-/Schreibaktionen",
       "datetime": "Zeit",
       "accessProfile": "Zugriffsprofil",
@@ -6320,6 +6397,7 @@
       "encrypted": "Verschlüsselt",
       "records": "Anzahl Einträge",
       "thread": "Thread",
+      "nameonos": "Name im System",
       "index": "#",
       "errorwarnings": "Fehler/Warnungen",
       "clientId": "Client ID",
@@ -6452,6 +6530,7 @@
       "dashboard": {
         "groups": "Gruppen",
         "serviceaccounts": "Dienstkonten",
+        "provisioning": "Provisionierung",
         "main": "Dashboard",
         "accounts": "Konten"
       },
@@ -6674,6 +6753,7 @@
       "ACCOUNT_PROVISIONED": "Konto auf dem gekoppelten System aktiviert",
       "ACCOUNT_PROVISIONING_INITED": "Konto dem gekoppelten System hinzugefügt",
       "ACCOUNT_DEPROVISIONED": "Konto auf dem gekoppelten System deaktiviert",
+      "ACCOUNT_DEACTIVATED_FOR_ACCESS_PROFILE": "Konto für ein Zugriffsprofil deaktiviert",
       "ACCOUNT_REMOVED_FROM_ACCESS_PROFILE": "Konto aus einem Zugriffsprofil entfernt",
       "DIRECTORY_HELPDESK_MODIFIED": "Helpdesk geändert",
       "ACCOUNT_LOGIN": "Erfolgreiche Authentifizierung",
@@ -6681,9 +6761,11 @@
       "ACCOUNT_MODIFIED_FOR_GROUP": "Konto innerhalb der Gruppe bearbeitet",
       "ACCOUNT_LOGIN_FAILED": "Fehlgeschlagene Authentifizierung",
       "DEVICE_CODE_REJECTED": "Gerätecode abgelehnt",
+      "ACCOUNT_ACTIVATED_FOR_ACCESS_PROFILE": "Konto für ein Zugriffsprofil aktiviert",
       "ACCOUNT_TOTP_OFFSET_CHANGED": "TOTP-Offset von Konto geändert",
       "ACCOUNT_REMOVED": "Konto gelöscht",
       "ACCOUNT_SSH_PUBLIC_KEY_MODIFIED": "Konto - Öffentlichen SSH-Schlüssel festgelegt",
+      "ACCESS_PROFILE_LIFECYCLE_EVENT_FIRED": "Lebenszyklus-Ereignis des Zugriffsprofils ausgeführt",
       "VAULT_EXPORTED": "Der Inhalt eines Safes wurde exportiert",
       "CLIENT_ADDED_TO_ORGANIZATIONAL_UNIT": "Anwendung - Einer Organisationseinheit hinzugefügt",
       "SERVICE_ACCOUNT_PROVISIONING_INITED": "Dienstkonto dem gekoppelten System hinzugefügt",
@@ -6712,6 +6794,7 @@
       "SERVICE_ACCOUNT_REMOVED_FROM_GROUP": "Dienstkonto aus einer Gruppe entfernt",
       "DEVICE_CODE_ISSUED": "Gerätecode ausgestellt",
       "ACCOUNT_REREGISTERED": "Konto ist erneut registriert worden",
+      "ACCESS_PROFILE_LIFECYCLE_EVENT_CANCELLED": "Lebenszyklus-Ereignis des Zugriffsprofils abgebrochen",
       "ACCOUNT_GROUP_ACTIVATION_REASON": "Gruppenaktivierungsgrund",
       "CLIENT_PERMISSION_REVOKED": "Berechtigung wurde Anwendung entzogen",
       "ACCOUNT_TOKEN_SIGNED": "Token für eine Anwendung ausgegeben",
@@ -6732,6 +6815,7 @@
       "ACCOUNT_2FA_ENABLED": "2FA aktiviert",
       "VAULT_RECORD_MOVED_COPIED_SHARED": "Safe-Eintrag verschoben/kopiert/geteilt",
       "CLIENT_REMOVED_FROM_ORGANIZATIONAL_UNIT": "Anwendung - Aus einer Organisationseinheit entfernt",
+      "ACCESS_PROFILE_LIFECYCLE_EVENT_FAILED": "Lebenszyklus-Ereignis des Zugriffsprofils fehlgeschlagen",
       "SERVICE_ACCOUNT_DEPROVISIONED": "Dienstkonto auf dem gekoppelten System deaktiviert",
       "ACCOUNT_VAULT_UNLOCKED": "Safe geöffnet",
       "ACCOUNT_MODIFIED_FOR_ACCESS_PROFILE": "Konto innerhalb des Zugriffsprofils bearbeitet",
@@ -7329,6 +7413,7 @@
         "disable": "Authenticator App deaktivieren"
       },
       "webauthn": {
+        "nounlock": "Dieser Schlüssel ist nicht eingerichtet, um Ihren Safe zu entsperren.",
         "header": "Sicherheitsschlüssel",
         "add": "Sicherheitsschlüssel hinzufügen",
         "prf": "Dieser Schlüssel öffnet Ihren Safe."
@@ -7356,6 +7441,130 @@
     },
     "rotatingpassword": "Rotierendes Passwort"
   },
+  "vault": {
+    "unlock": {
+      "subtitle": {
+        "webauthn": "Verwenden Sie Ihren Sicherheitsschlüssel, um Ihre Safes zu öffnen.",
+        "main": "Geben Sie das Passwort ein, um Ihre Safes zu öffnen."
+      },
+      "header": "Safes öffnen",
+      "webauthn": {
+        "failed": "Ihre Safes konnten mit diesem Sicherheitsschlüssel nicht geöffnet werden. Geben Sie stattdessen Ihr Passwort ein.",
+        "explanation": "Ihr Browser öffnet gleich eine Eingabeaufforderung Ihres Betriebssystems. Berühren Sie Ihren Sicherheitsschlüssel, um Ihre Safes zu öffnen."
+      },
+      "passwordlost": "Vergessen?",
+      "switchToPassword": "Passwort verwenden"
+    },
+    "recover": {
+      "deleted": {
+        "header": "Einen gelöschten Safe wiederherstellen",
+        "explain": "Stellen Sie die Daten eines gelöschten Safes wieder her, indem Sie sie zu einem bereits existierenden Safe hinzufügen."
+      },
+      "panel": {
+        "header": "Einen Safe wiederherstellen"
+      },
+      "explain": "Wählen Sie einen Safe und den Nutzer, um Zugriff auf den Safe zu geben. Bei Gruppen-Safes muss dies ein Mitglied dieser Gruppe sein.",
+      "header": "Zugriff auf einen Safe wiederherstellen",
+      "main": "Zugriff wiederherstellen",
+      "group": "Gruppe",
+      "done": "{0} hat jetzt Zugriff auf den Safe von {1}."
+    },
+    "secret": {
+      "totpinvalid": "Der Key ist nicht gültig. Nur 'A-Z' und '2-7' sind erlaubt. Der Key muss mindestens 4 Zeichen lang sein.",
+      "edit": {
+        "password": "Passwort ändern",
+        "totp": "Key ändern"
+      },
+      "refreshtotp": "TOTP-Code aktualisieren",
+      "generate": "Passwort generieren"
+    },
+    "record": {
+      "sharedfrom": {
+        "header": "Geteilt von",
+        "main": "Geteilt von {0}"
+      },
+      "sharedwith": {
+        "main": "Geteilt mit {0}",
+        "header": "Geteilt mit"
+      },
+      "move": {
+        "confirm": {
+          "copy": {
+            "sub": "Sie sind dabei, <strong>{0}<\/strong> in den Safe von <strong>{1}<\/strong> zu kopieren. Sind Sie sicher?",
+            "head": "Eintrag kopieren"
+          },
+          "move": {
+            "sub": "Sie sind dabei, <strong>{0}<\/strong> in den Safe von <strong>{1}<\/strong> zu verschieben. Sind Sie sicher?",
+            "head": "Eintrag verschieben"
+          }
+        },
+        "specific": "Eintrag teilen, kopieren oder verschieben",
+        "title": "Verschieben, kopieren oder teilen",
+        "target": {
+          "true": "Gruppe",
+          "false": "Persönlicher Safe"
+        },
+        "useCustomDuration": {
+          "true": "Spezifisches Datum",
+          "false": "Fester Zeitraum"
+        },
+        "sharewarning": "<strong>Dieser Safe muss aktiviert werden<\/strong> <br>Für den Zielsafe gelten möglicherweise weniger strenge Zugriffsbestimmungen.",
+        "info": "Wählen Sie den Zielsafe für {0}."
+      },
+      "shared": {
+        "main": "Geteilt mit:",
+        "parentRecordName": "Name des ursprünglichen Safe-Eintrags: {0}"
+      },
+      "strength": {
+        "average": "Dieses Passwort ist nicht sehr sicher. Wählen Sie nach Möglichkeit ein stärkeres Passwort.",
+        "weak": "Dieses Passwort ist sehr schwach. Wählen Sie ein stärkeres Passwort.",
+        "strong": "Dieses Passwort hat eine akzeptable Stärke."
+      },
+      "enddate": {
+        "warning": "Dieser Safe-Eintrag wird am {0} ablaufen.",
+        "main": "Enddatum",
+        "error": "Dieser Safe-Eintrag ist abgelaufen."
+      },
+      "holder": {
+        "sharedend": "(geteilt von {0} bis {1})",
+        "shared": "(geteilt von {0})"
+      },
+      "shareend": "{0} (geteilt bis {1})",
+      "derived": "Abgeleitet von einer Anwendung oder einem Dienstkonto",
+      "header": "Safe-Eintrag - {0}",
+      "duplicate": {
+        "warning": "Dieses Passwort wird in diesem Safe wiederverwendet."
+      },
+      "add": "Eintrag hinzufügen",
+      "unshare": "Möchten Sie diesen Eintrag wirklich nicht mehr teilen?"
+    },
+    "export": {
+      "title": "Safe exportieren",
+      "subtitle": "Wählen Sie einen Safe zum Exportieren in CSV aus."
+    },
+    "activation": {
+      "warn": "Die Aktivierung der Gruppe ist erforderlich. Das Passwort, der TOTP-Code, die Datei und der Kommentar sind nicht verfügbar."
+    },
+    "personal": {
+      "lost": {
+        "subtitle": "Dies wird durch ein Passwort-Reset verursacht.",
+        "help": "Klicken Sie auf \"Safe zurücksetzen\", um Ihren persönlichen Safe zu leeren. Danach können Sie neue Passwörter hinzufügen.",
+        "main": "Ihr persönlicher Safe ist nicht verfügbar"
+      },
+      "delete": "Safe zurücksetzen",
+      "anon": "Persönlicher Safe",
+      "main": "Persönlicher Safe von {0}"
+    },
+    "filter": {
+      "group": "Wählen Sie einen Safe..."
+    },
+    "recovered": "WIEDERHERGESTELLT - ",
+    "totp": "2FA",
+    "password": "Passwort",
+    "locked": {
+      "warn": "Ihr Safe ist geschlossen. Das Passwort, der TOTP-Code, die Datei und der Kommentar sind nicht verfügbar."
+    }
+  },
   "auditor": {
     "dashboard": {
       "groupaudits": {
@@ -7378,6 +7587,23 @@
         "title": "Exportieren"
       },
       "accountdirectories": "Verzeichnisse",
+      "gos": {
+        "access": {
+          "groups": {
+            "short": "g"
+          },
+          "serviceaccounts": {
+            "short": "s"
+          },
+          "accessprofiles": {
+            "short": "p"
+          }
+        },
+        "provisioning": {
+          "disabledkeepactive": "Deaktiviert*"
+        },
+        "accesstooltip": "{0} Gruppen / {1} Zugriffsprofile / {2} Dienstkonten"
+      },
       "vaultrecordtooltip": "{0} gesamt / {1} mit Enddatum / {2} abgelaufen",
       "classifications": "Klassifizierungen",
       "pwrotationscheme": "Dienstkonten",
@@ -7412,6 +7638,7 @@
     },
     "GROUP_AUDIT_ALTERED_CONFLICT": "Die Gruppe wurde geändert nach dem Start des Audits. Bitte prüfen Sie die Änderungen und speichern Sie erneut.",
     "RESET_INVALID_PASSWORD": "Das Passwort stimmt nicht mit dem Passwort überein, das beim Senden der Anfrage angegeben wurde.",
+    "WEBAUTHN_KEY_PRF_REQUIRED": "Dieser Sicherheitsschlüssel kann nicht verwendet werden, um Ihren Safe zu entsperren. Versuchen Sie es erneut mit einem anderen Sicherheitsschlüssel.",
     "CLIENT_PERMISSION_ALREADY_EXISTS": "Die beantragte Berechtigung wurde dieser Anwendung bereits erteilt.",
     "VAULT_TARGET_NOT_INITIALIZED": "Der ausgewählte Benutzer hat noch kein Safe-Passwort festgelegt.",
     "MULTIPLE_MATCHES": "Es wurden zu viele Treffer gefunden.",
@@ -7423,6 +7650,10 @@
     "PROVISIONED_SYSTEM_HAS_NAMESPACE": "Dieses gekoppelte System kann nicht gelöscht werden, da darin noch Namespaces vorhanden sind. Löschen Sie zunächst die Namensräume.",
     "VAULT_RECOVERY_KEY_MISSING": "Vor der Erstellung eines Safes muss ein Wiederherstellungsschlüssel konfiguriert werden. Bitten Sie einen KeyHub-Administrator dies durchzuführen.",
     "NO_CHANGE_REQUIRED": "Die Aktion wurde abgebrochen, da keine Änderungen vorgenommen wurden.",
+    "LICENSE_KEY_UNKNOWN_SIGNING_KEY": {
+      "login": "Leider wurde die Lizenz für diese Topicus KeyHub-Installation mit einem unbekannten Signaturschlüssel signiert, daher können Sie sich nicht anmelden. Wenden Sie sich an Ihre Topicus KeyHub-Administratoren.",
+      "main": "Dieser Lizenzschlüssel wurde mit einem Signaturschlüssel signiert, der dieser Version von Topicus KeyHub nicht bekannt ist. Wahrscheinlich wurde er für eine neuere Version ausgestellt; aktualisieren Sie zuerst Topicus KeyHub oder fordern Sie eine Lizenz für diese Version an."
+    },
     "SAML_ERROR": "Die Anmeldung bei dieser SAML2-Anwendung ist derzeit nicht möglich. Wenden Sie sich an einen Administrator der Anwendung.",
     "PROVISIONED_SYSTEM_TESTED": "{system} wurde mit folgendem Ergebnis getestet: {message}",
     "ID_IN_DIRECTORY_ALREADY_EXISTS": "Sie haben bereits ein KeyHub-Konto.",
@@ -7466,6 +7697,7 @@
     "ORGANIZATIONAL_UNIT_NOT_UNDER_BASE": "Die Organisationseinheit ist kein untergeordneter Bestandteil der Basisorganisationseinheit des Benutzers.",
     "VAULT_RECOVERY_KEY_NOT_INITIALIZED": "Der Safe hat keinen Wiederherstellungsschlüssel.",
     "ATTRIBUTE_HAS_VALUES": "Für diese Attributdefinition gibt es schon Werte und daher kann sie nicht einzigartig gemacht werden.",
+    "MODIFICATION_ALREADY_REQUESTED_BY": "{account} hat bereits eine ähnliche Anfrage gestellt. Bitte warten Sie, bis sie von einem Manager oder Administrator bearbeitet wurde.",
     "CANNOT_REMOVE_LAST_MANAGER": "Das Konto für {account} kann nicht gelöscht werden da es in {group} das letzte Manager-Konto ohne Enddatum ist. Wählen Sie zuerst einen neuen Manager für die Gruppe.",
     "DIRECTORY_CREDENTIALS_EXPECTED": "Sie haben das falsche Passwort eingegeben. Bitte geben Sie Ihr {directory}-Passwort ein.",
     "DIRECTORY_IN_USE": "Ein Verzeichnis kann nicht gelöscht werden, solange nicht alle darin gekoppelten Konten gelöscht wurden.",
@@ -7478,6 +7710,8 @@
     "NAME_ALREADY_IN_USE": "Der Name muss einzigartig sein, '{name}' wird bereits verwendet.",
     "PROVISIONING_ERROR": "Aufgrund eines Fehlers in {system} konnte Ihr Konto nicht aktualisiert werden. Sollte dieses Problem weiterhin bestehen, wenden Sie sich bitte an ein Mitglied von {admins}.",
     "MODIFICATION_AUTHORIZATION_ALREADY_SETUP": "Diese Art der Autorisierung ist für diese Gruppe bereits eingerichtet.",
+    "TWO_FA_ENFORCED_BY_DIRECTORY": "Die Zwei-Faktor-Authentifizierung wird vom Verzeichnis verwaltet und kann in KeyHub nicht zurückgesetzt werden.",
+    "MODIFICATION_END_DATE_IN_PAST": "Das eingegebene Datum liegt in der Vergangenheit, bitte wählen Sie ein anderes Datum.",
     "FILE_SIZE_INCORRECT": "Die Datei für {for_name} hat eine falsche Große.",
     "INVALID_REGISTRATION_CREDENTIALS": "Benutzername und Passwort stimmen mit keinem existierenden Benutzer überein.",
     "ATTRIBUTE_IN_USE_BY_DIRECTORY": "Diese Attributdefinition wird noch vom Verzeichnis {directory} verwendet und kann daher nicht geändert oder gelöscht werden.",
@@ -7487,6 +7721,7 @@
     "USERNAME_ALREADY_IN_USE": "Dieser Benutzername existiert schon.",
     "GROUP_EXCLUSION_CONFLICT": "{account} gehört einer ausgeschlossenen Gruppe an.",
     "KEYHUB_CREDENTIALS_EXPECTED": "Sie haben das falsche Passwort eingegeben. Bitte geben Sie Ihr KeyHub-Passwort ein.",
+    "ACCESS_PROFILE_GROUP_EXCLUSION_CONFLICT": "Gruppe kann nicht hinzugefügt werden, da sie mit der ausgeschlossenen Gruppe {group} in Konflikt steht.",
     "LAUNCHPAD_TILE_IDP_INITIATED_NOT_SUPPORTED": "Die von IdP initiierte Anmeldung wird von dieser Anwendung nicht unterstützt.",
     "ATTRIBUTE_IN_USE_BY_SYSTEM": "Diese Attributdefinition wird noch vom gekoppelten System {system} verwendet und kann daher nicht geändert oder gelöscht werden.",
     "ORGANIZATIONAL_UNIT_CANNOT_REMOVE_CLIENT_BASE": "Kann die Basis-Organisationseinheit nicht von der Anwendung entfernen.",
@@ -7507,6 +7742,7 @@
     "ATTRIBUTE_IN_USE_BY_CLIENT": "Diese Attributdefinition wird noch von der Anwendung {client} verwendet und kann daher nicht geändert oder gelöscht werden.",
     "INVALID_CSV": "Die CSV-Datei ist ungültig: {error}",
     "VAULT_RECORD_ALREADY_SHARED": "Der Safe-Eintrag ist bereits mit dem ausgewählten Safe geteilt.",
+    "WEBAUTHN_KEY_CANNOT_UNLOCK_VAULT": "Dieser Sicherheitsschlüssel kann nicht verwendet werden, um Ihren Safe zu entsperren.",
     "INVALID_CREDENTIALS": "Das Passwort ist nicht korrekt.",
     "MODIFICATION_DELEGATION_ADMIN_NOT_ALLOWED": "Das Delegieren des Management ist für KeyHub Administrators nicht möglich.",
     "NUMBER_SEQUENCE_IN_USE": "Diese Nummernfolge wird noch verwendet.",
@@ -7538,6 +7774,7 @@
     "LICENSE_PRO_LIMIT_REACHED": "Sie haben das Limit Ihrer Topicus KeyHub Lizenz erreicht und können keine 'Pro'-Konten mehr hinzufügen.",
     "PROVISIONING_MISSING_PERMISSION": "Der Anwendung fehlt eine erforderliche Berechtigung: {role}",
     "PROVISIONED_SYSTEM_NO_UUID": "{system} hat keine korrekte UUID angegeben",
+    "LIFECYCLE_ACTION_MISSING_TO_RECIPIENT": "Eine Mail-Aktion muss mindestens einen 'An'-Empfänger haben.",
     "LICENSE_AT_LEAST_BUSINESS_REQUIRED": "Für {username} ist mindestens eine Business-Lizenz erforderlich, um Gruppenmitgliedschaften oder einen persönlichen Safe zu ermöglichen.",
     "GROUP_EXCLUSION_ALREADY_SETUP": "Zwischen diesen Gruppen besteht bereits ein Gruppenausschluss.",
     "MODIFICATION_GROUPACCOUNT_STATUS_CONFLICT": "Diese Gruppenmitgliedschaft befindet sich in einem unerwarteten Zustand.",
@@ -7558,9 +7795,6 @@
     "GROUP_AUDIT_DRAFT_EXISTS": "Für diese Gruppe wurde bereits ein Auditsentwurf gespeichert. Öffnen Sie diesen Entwurf, anstatt einen neuen zu erstellen.",
     "IDENTITY_SOURCE_COMPLEX_ATTRIBUTE_FETCH_SEPARATELY": "Das Attribut {attribute} ist komplex und muss daher separat abgerufen werden.",
     "NO_VAULT_TO_RESTORE": "Der Benutzer {username} hat keinen Safe zum Wiederherstellen."
-  },
-  "DerRSAPublicKeyValidator": {
-    "invalidkey": "Ungültiger RSA Public Key. Verwenden Sie einen RSA Public Key in DER-encoding."
   },
   "account": {
     "enable2fa": {
@@ -7667,119 +7901,6 @@
     },
     "more": "{0} fragt nach zusätzlichem Zugriff. In der Vergangenheit haben Sie {0} Zugriff zu manchen Informationen gewährt. Gewähren Sie den Zugriff auf neue Daten nur, wenn Sie {0} folgenden Genehmigungen trauen:",
     "help": "{0} fragt nach Zugriff auf Ihre Daten. Stimmen Sie nur zu, wenn Sie {0} folgenden Zugriff gewähren möchten:"
-  },
-  "vault": {
-    "recover": {
-      "deleted": {
-        "header": "Einen gelöschten Safe wiederherstellen",
-        "explain": "Stellen Sie die Daten eines gelöschten Safes wieder her, indem Sie sie zu einem bereits existierenden Safe hinzufügen."
-      },
-      "explain": "Wählen Sie einen Safe und den Nutzer, um Zugriff auf den Safe zu geben. Bei Gruppen-Safes muss dies ein Mitglied dieser Gruppe sein.",
-      "header": "Zugriff auf einen Safe wiederherstellen",
-      "main": "Zugriff wiederherstellen",
-      "group": "Gruppe",
-      "done": "{0} hat jetzt Zugriff auf den Safe von {1}."
-    },
-    "secret": {
-      "totpinvalid": "Der Key ist nicht gültig. Nur 'A-Z' und '2-7' sind erlaubt. Der Key muss mindestens 4 Zeichen lang sein.",
-      "edit": {
-        "password": "Passwort ändern",
-        "totp": "Key ändern"
-      },
-      "refreshtotp": "TOTP-Code aktualisieren",
-      "generate": "Passwort generieren"
-    },
-    "record": {
-      "sharedfrom": {
-        "header": "Geteilt von",
-        "main": "Geteilt von {0}"
-      },
-      "sharedwith": {
-        "main": "Geteilt mit {0}",
-        "header": "Geteilt mit"
-      },
-      "move": {
-        "confirm": {
-          "copy": {
-            "sub": "Sie sind dabei, <strong>{0}<\/strong> in den Safe von <strong>{1}<\/strong> zu kopieren. Sind Sie sicher?",
-            "head": "Eintrag kopieren"
-          },
-          "move": {
-            "sub": "Sie sind dabei, <strong>{0}<\/strong> in den Safe von <strong>{1}<\/strong> zu verschieben. Sind Sie sicher?",
-            "head": "Eintrag verschieben"
-          }
-        },
-        "specific": "Eintrag teilen, kopieren oder verschieben",
-        "title": "Verschieben, kopieren oder teilen",
-        "target": {
-          "true": "Gruppe",
-          "false": "Persönlicher Safe"
-        },
-        "useCustomDuration": {
-          "true": "Spezifisches Datum",
-          "false": "Fester Zeitraum"
-        },
-        "sharewarning": "<strong>Dieser Safe muss aktiviert werden<\/strong> <br>Für den Zielsafe gelten möglicherweise weniger strenge Zugriffsbestimmungen.",
-        "info": "Wählen Sie den Zielsafe für {0}."
-      },
-      "shared": {
-        "main": "Geteilt mit:",
-        "parentRecordName": "Name des ursprünglichen Safe-Eintrags: {0}"
-      },
-      "strength": {
-        "average": "Dieses Passwort ist nicht sehr sicher. Wählen Sie nach Möglichkeit ein stärkeres Passwort.",
-        "weak": "Dieses Passwort ist sehr schwach. Wählen Sie ein stärkeres Passwort.",
-        "strong": "Dieses Passwort hat eine akzeptable Stärke."
-      },
-      "enddate": {
-        "warning": "Dieser Safe-Eintrag wird am {0} ablaufen.",
-        "main": "Enddatum",
-        "error": "Dieser Safe-Eintrag ist abgelaufen."
-      },
-      "holder": {
-        "sharedend": "(geteilt von {0} bis {1})",
-        "shared": "(geteilt von {0})"
-      },
-      "shareend": "{0} (geteilt bis {1})",
-      "derived": "Abgeleitet von einer Anwendung oder einem Dienstkonto",
-      "header": "Safe-Eintrag - {0}",
-      "duplicate": {
-        "warning": "Dieses Passwort wird in diesem Safe wiederverwendet."
-      },
-      "add": "Eintrag hinzufügen",
-      "unshare": "Möchten Sie diesen Eintrag wirklich nicht mehr teilen?"
-    },
-    "unlock": {
-      "header": "Safes öffnen",
-      "subtitle": "Geben Sie das Passwort ein, um Ihre Safes zu öffnen.",
-      "passwordlost": "Vergessen?"
-    },
-    "export": {
-      "title": "Safe exportieren",
-      "subtitle": "Wählen Sie einen Safe zum Exportieren in CSV aus."
-    },
-    "activation": {
-      "warn": "Die Aktivierung der Gruppe ist erforderlich. Das Passwort, der TOTP-Code, die Datei und der Kommentar sind nicht verfügbar."
-    },
-    "personal": {
-      "lost": {
-        "subtitle": "Dies wird durch ein Passwort-Reset verursacht.",
-        "help": "Klicken Sie auf \"Safe zurücksetzen\", um Ihren persönlichen Safe zu leeren. Danach können Sie neue Passwörter hinzufügen.",
-        "main": "Ihr persönlicher Safe ist nicht verfügbar"
-      },
-      "delete": "Safe zurücksetzen",
-      "anon": "Persönlicher Safe",
-      "main": "Persönlicher Safe von {0}"
-    },
-    "filter": {
-      "group": "Wählen Sie einen Safe..."
-    },
-    "recovered": "WIEDERHERGESTELLT - ",
-    "totp": "2FA",
-    "password": "Passwort",
-    "locked": {
-      "warn": "Ihr Safe ist geschlossen. Das Passwort, der TOTP-Code, die Datei und der Kommentar sind nicht verfügbar."
-    }
   },
   "notification": {
     "groupeditrequired": {
@@ -7977,8 +8098,16 @@
       "header": "Organisationseinheitsmitgliedschaft"
     },
     "groupsetting": "Wählen Sie eine Gruppe...",
-    "header": "Organisationseinheit - {0}",
+    "details": {
+      "header": "Details"
+    },
+    "header": {
+      "main": "Organisationseinheit - {0}",
+      "accounts": "Konten",
+      "applications": "Anwendungen"
+    },
     "inheritedgroupsetting": "{0} geerbt von {1}...",
+    "transferownership": "Eigentum übertragen",
     "settings": {
       "header": "Einstellungen"
     }
@@ -8088,6 +8217,11 @@
     "leave": "Diese Gruppe verlassen"
   },
   "grouponsystem": {
+    "search": {
+      "ownergroup": "Verantwortliche Gruppe...",
+      "system": "Gekoppeltes System...",
+      "type": "Typ..."
+    },
     "header": {
       "group": "Gruppe",
       "main": "Gruppe im System - {0}",
@@ -8107,6 +8241,21 @@
         "subtitle": "Dieses Zugriffsprofil hat Zugriff auf die Gruppe im gekoppelten System."
       }
     },
+    "lifecycleaction": {
+      "recipient": {
+        "bcc": "Bcc",
+        "cc": "Cc",
+        "to": "An",
+        "select": "Empfängertyp wählen..."
+      },
+      "offset": {
+        "before": "Vor",
+        "after": "Nach"
+      },
+      "recipients": {
+        "add": "Empfänger hinzufügen"
+      }
+    },
     "client": {
       "details": {
         "subtitle": "Wählen Sie die Optionen für den Zugriff auf die Anwendung über dieses Zugriffsprofil.",
@@ -8116,6 +8265,27 @@
     "attributerules": {
       "new": "Neues Attribut",
       "header": "Verwaltete Attribute"
+    },
+    "header": {
+      "lifecycleresult": "Ergebnis",
+      "source": "Quelle",
+      "lifecycleduedate": "Fälligkeitsdatum",
+      "attributes": "Attribute",
+      "attributerule": "Attribut",
+      "lifecycleanchor": "Übergang",
+      "lifecycleaction": "Aktion",
+      "main": "Zugriffsprofil - {0}",
+      "manual": "Manuell",
+      "expected": "Erwarteter Wert",
+      "date": "Datum",
+      "type": "Typ",
+      "current": "Aktueller Wert",
+      "group": "Gruppe",
+      "account": "Benutzer",
+      "lifecyclestatus": "Status",
+      "lifecycletiming": "Zeitpunkt",
+      "predictedtransitions": "Erwartete Übergänge",
+      "activation": "Aktivierung"
     },
     "attribute": {
       "summary": {
@@ -8138,17 +8308,15 @@
       "ERROR": "{0}",
       "VALID": "{0}"
     },
-    "header": {
-      "source": "Quelle",
-      "attributes": "Attribute",
-      "attributerule": "Attribut",
-      "main": "Zugriffsprofil - {0}",
-      "manual": "Manuell",
-      "expected": "Erwarteter Wert",
-      "current": "Aktueller Wert",
-      "group": "Gruppe",
-      "account": "Benutzer",
-      "activation": "Aktivierung"
+    "lifecycleactions": {
+      "new": "Neue Lebenszyklusaktion",
+      "header": "Lebenszyklusaktionen"
+    },
+    "prediction": {
+      "deactivatesat": "deaktiviert {0}",
+      "addsat": "tritt bei {0}",
+      "removesat": "Mitgliedschaft endet {0}",
+      "activatesat": "aktiviert {0}"
     },
     "access": {
       "header": "Zugriff"
@@ -8173,6 +8341,12 @@
       "link": "Attribute",
       "insync": "Synchronisiert"
     },
+    "lifecycleevents": {
+      "header": "Lebenszyklusereignisse"
+    },
+    "lifecycleevent": {
+      "attempts": "Nach {0} Versuch(en)"
+    },
     "name": "Zugriffsprofil",
     "apporsystem": {
       "add": {
@@ -8185,6 +8359,10 @@
     },
     "error": {
       "duplicateattr": "Das Attribut {0} wurde mehrfach angegeben."
+    },
+    "predictions": {
+      "empty": "Keine bevorstehenden oder kürzlichen Übergänge.",
+      "header": "Bevorstehende und kürzliche Übergänge"
     },
     "accounts": {
       "header": "Mitglieder"
@@ -8228,6 +8406,71 @@
       "cap": " "
     }
   },
+  "2fa": {
+    "webauthn": {
+      "intro": {
+        "text": {
+          "main": "Nach dem Hinzufügen verwenden Sie diesen Sicherheitsschlüssel als zweiten Faktor bei der Anmeldung, anstelle von oder zusätzlich zu Ihrer Telefon-App.",
+          "external": "Nach dem Hinzufügen verwenden Sie diesen Sicherheitsschlüssel, um Ihren Safe zu entsperren. Die Zwei-Faktor-Authentifizierung bei der Anmeldung wird von Ihrer Organisation verwaltet."
+        }
+      },
+      "vaultunlock": {
+        "setup": "Ja, einrichten",
+        "error": "Etwas ist schief gelaufen. Haben Sie zu lange gewartet oder einen anderen Sicherheitsschlüssel verwendet?",
+        "touch": "Ihr Browser öffnet gleich eine Eingabeaufforderung Ihres Betriebssystems. Berühren Sie Ihren Sicherheitsschlüssel erneut, um zu bestätigen.",
+        "title": "Safe-Entsperrung",
+        "skip": "Überspringen",
+        "success": "Geschafft! Ab jetzt öffnet sich Ihr Safe mit diesem Sicherheitsschlüssel.",
+        "subtitle": "Verwenden Sie Ihren Sicherheitsschlüssel, um Ihren Safe zu entsperren.",
+        "question": "Möchten Sie diesen Sicherheitsschlüssel auch verwenden, um Ihren Safe zu entsperren? Sobald dies eingerichtet ist, öffnen Sie Ihren Safe damit anstelle Ihres Passworts, das weiterhin funktioniert."
+      },
+      "subtitle": "Verwenden Sie Ihren Sicherheitsschlüssel, um ihn für Ihr Konto zu registrieren.",
+      "register": {
+        "name": {
+          "main": "Name für diesen Schlüssel",
+          "placeholder": "Arbeitslaptop"
+        },
+        "error": "Etwas ist schief gelaufen. Haben Sie zu lange gewartet oder versuchen Sie vielleicht, denselben Sicherheitsschlüssel zweimal zu registrieren?",
+        "success": "Sicherheitsschlüssel erfolgreich registriert"
+      },
+      "editkey": {
+        "enable": "Safe-Entsperrung einrichten",
+        "subtitle": "Geben Sie Ihrem Sicherheitsschlüssel einen anderen Namen oder verwalten Sie die Safe-Entsperrung.",
+        "disable": {
+          "main": "Safe-Entsperrung deaktivieren",
+          "success": "Die Safe-Entsperrung ist für diesen Sicherheitsschlüssel deaktiviert."
+        },
+        "title": "Sicherheitsschlüssel"
+      },
+      "authenticate": {
+        "error": "Etwas ist schief gelaufen. Verwenden Sie den richtigen Sicherheitsschlüssel? Haben Sie ihn berührt, um ihn zu aktivieren?"
+      }
+    },
+    "totp": {
+      "verification": {
+        "long": "Bestätigen Sie die Zwei-Faktor-Authentifizierung mit dem angezeigten Code.",
+        "secret": "Schlüssel",
+        "main": "Bestätigungscode"
+      },
+      "invalidcode": "Der eingegebene Bestätigungscode ist nicht korrekt. Überprüfen Sie die Zeit auf Ihrem Handy, scannen Sie den QR-code erneut und versuchen Sie es noch einmal.",
+      "appgekoppeld": "Sie haben den QR-Code mit der KeyHub App gescannt. Bitte überprüfen Sie den Namen des Gerätes und klicken Sie auf 'Aktivieren' um die Zwei-Faktor-Authentifizierung zu ermöglichen.",
+      "subtitle": "Scannen Sie den QR-Code mit der KeyHub App oder einer anderen App mit TOTP-Unterstützung oder geben Sie den Schlüssel per Hand ein.",
+      "offsetchange": {
+        "secondtoken": "Nächster Bestätigungscode",
+        "firsttoken": "Aktueller Bestätigungscode"
+      },
+      "scan": "Scannen Sie den QR-Code mit der KeyHub App oder einer anderen App mit TOTP-Unterstützung oder geben Sie den Schlüssel per Hand ein: {0}"
+    },
+    "vaultkey": {
+      "header": "Sicherheitsschlüssel hinzufügen",
+      "add": "Ja, hinzufügen",
+      "question": "Möchten Sie einen Sicherheitsschlüssel hinzufügen, um Ihren Safe zu entsperren? Sobald dies eingerichtet ist, öffnen Sie Ihren Safe durch Berühren des Schlüssels anstelle Ihres Passworts, das weiterhin funktioniert."
+    },
+    "denied": "Die Zwei-Faktor-Authentifizierung wurde abgebrochen.",
+    "header": "Zwei-Faktor-Authentifizierung einrichten",
+    "switchToApp": "2FA-App verwenden",
+    "switchToSecurityKey": "Sicherheitsschlüssel verwenden"
+  },
   "filter": {
     "loglevel": "Nach Log Level filtern...",
     "attribute": "Nach Attribut filtern...",
@@ -8239,6 +8482,9 @@
     "account": "Wählen Sie ein Konto...",
     "action": "Nach Aktion filtern...",
     "alles": "Alle"
+  },
+  "auditordashboard": {
+    "provisioning": "Auditor-Dashboard Provisionierung"
   },
   "groupaudit": {
     "savedraft": "Als Entwurf speichern",
@@ -8315,40 +8561,32 @@
   "notificationcentre": {
     "header": "Benachrichtigungseinstellungen"
   },
-  "2fa": {
-    "totp": {
-      "verification": {
-        "long": "Bestätigen Sie die Zwei-Faktor-Authentifizierung mit dem angezeigten Code.",
-        "secret": "Schlüssel",
-        "main": "Bestätigungscode"
-      },
-      "invalidcode": "Der eingegebene Bestätigungscode ist nicht korrekt. Überprüfen Sie die Zeit auf Ihrem Handy, scannen Sie den QR-code erneut und versuchen Sie es noch einmal.",
-      "appgekoppeld": "Sie haben den QR-Code mit der KeyHub App gescannt. Bitte überprüfen Sie den Namen des Gerätes und klicken Sie auf 'Aktivieren' um die Zwei-Faktor-Authentifizierung zu ermöglichen.",
-      "subtitle": "Scannen Sie den QR-Code mit der KeyHub App oder einer anderen App mit TOTP-Unterstützung oder geben Sie den Schlüssel per Hand ein.",
-      "offsetchange": {
-        "secondtoken": "Nächster Bestätigungscode",
-        "firsttoken": "Aktueller Bestätigungscode"
-      },
-      "scan": "Scannen Sie den QR-Code mit der KeyHub App oder einer anderen App mit TOTP-Unterstützung oder geben Sie den Schlüssel per Hand ein: {0}"
+  "vaultrecoverykey": {
+    "check": {
+      "action": "Prüfen",
+      "main": "Private Key prüfen",
+      "explain": "Laden Sie Ihren Wiederherstellungs-Private-Key hoch, um zu prüfen, ob er zum gespeicherten Public Key passt.",
+      "label": "Wiederherstellungs-Private-Key",
+      "success": "Der Private Key passt zum gespeicherten Public Key.",
+      "header": "Wiederherstellungs-Private-Key prüfen"
     },
-    "webauthn": {
-      "subtitle": "Verwenden Sie Ihren Sicherheitsschlüssel, um ihn für Ihr Konto zu registrieren.",
-      "editkey": {
-        "subtitle": "Geben Sie Ihrem Sicherheitsschlüssel einen anderen Namen.",
-        "title": "Sicherheitsschlüssel"
+    "regenerate": {
+      "header": "Wiederherstellungsschlüssel neu generieren",
+      "done": "Der Wiederherstellungsschlüssel wurde ersetzt.",
+      "upload": {
+        "explain": "Laden Sie den alten Private Key hoch, um die bestehenden Safes neu zu verschlüsseln, oder fahren Sie ohne ihn fort.",
+        "label": "Alter Private Key",
+        "header": "Bestehende Safes neu verschlüsseln",
+        "nokey": "Kein Key",
+        "skip": "Ich habe keinen alten Key"
       },
-      "register": {
-        "error": "Etwas ist schief gelaufen. Haben Sie zu lange gewartet oder versuchen Sie vielleicht, denselben Sicherheitsschlüssel zweimal zu registrieren?",
-        "success": "Sicherheitsschlüssel erfolgreich registriert"
-      },
-      "authenticate": {
-        "error": "Etwas ist schief gelaufen. Verwenden Sie den richtigen Sicherheitsschlüssel? Haben Sie ihn berührt, um ihn zu aktivieren?"
-      }
+      "explain": "Ein neuer Wiederherstellungsschlüssel wurde generiert. Laden Sie den neuen Private Key herunter, bevor Sie fortfahren.",
+      "main": "Schlüssel neu generieren"
     },
-    "denied": "Die Zwei-Faktor-Authentifizierung wurde abgebrochen.",
-    "header": "Zwei-Faktor-Authentifizierung einrichten",
-    "switchToApp": "2FA-App verwenden",
-    "switchToSecurityKey": "Sicherheitsschlüssel verwenden"
+    "key": "Wiederherstellungsschlüssel",
+    "panel": {
+      "header": "Wiederherstellungsschlüssel"
+    }
   },
   "validatie": {
     "fileTooLarge": "{0} ist größer als {1}Kb",
@@ -8360,6 +8598,15 @@
   },
   "browser": {
     "unknown": "Unbekannt"
+  },
+  "java": {
+    "time": {
+      "temporal": {
+        "ChronoUnit#DAYS": "Tage",
+        "ChronoUnit#MONTHS": "Monate",
+        "ChronoUnit#WEEKS": "Wochen"
+      }
+    }
   },
   "apporsystem": {
     "add": {
@@ -8505,6 +8752,13 @@
     "filesizeTooLarge": "Ungültige PEM Datei. Die Datei ist zu groß.",
     "invalidPublicKeyFile": "Ungültige PEM Datei. Die Datei hat ein falsches Format."
   },
+  "downloadencryptionkey": {
+    "generated": "Generiert am {0}",
+    "download": {
+      "public": "Public Key herunterladen",
+      "private": "Private Key herunterladen"
+    }
+  },
   "groupauditaccount": {
     "comment": {
       "placeholder": "Anmerkungen für dieses Konto"
@@ -8629,6 +8883,7 @@
     "selected": "# Typ(en) ausgewählt",
     "noneSelected": "(alle Datentypen)"
   },
+  "DuplicateAttributeNameValidator": "Der Name \"{name}\" darf nur einmal verwendet werden.",
   "DerRSAPrivateKeyValidator": {
     "invalidkey": "Ungültiger RSA Private Key. Verwenden Sie einen RSA Private Key in DER-encoding."
   },

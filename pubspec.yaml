@@ -13,8 +13,8 @@ dependencies:
   microsoft_kiota_http: ^0.0.7
   microsoft_kiota_serialization_json: ^0.0.8
   http: ^1.6.0
-  uuid: ^4.5.3
+  uuid: ^4.6.0
 
 dev_dependencies:
   lints: ^6.1.0
-  test: ^1.31.1
+  test: ^1.31.2

@@ -36,8 +36,8 @@ class BulkRequestBuilder extends BaseRequestBuilder<BulkRequestBuilder> {
     RequestInformation toPutRequestInformation(AccountBulkUpdate body, [void Function(RequestConfiguration<BulkRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<BulkRequestBuilderPutQueryParameters>(requestConfiguration, () => BulkRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=86', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=87', body);
         return requestInfo;
     }
 }

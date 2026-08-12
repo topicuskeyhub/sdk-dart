@@ -7,6 +7,7 @@ import './accept_create_provisioned_namespace_request_parameters.dart';
 import './accept_create_service_account_request_parameters.dart';
 import './accept_grant_access_request_parameters.dart';
 import './accept_join_group_request_parameters.dart';
+import './accept_update_group_membership_request_parameters.dart';
 
 /// auto generated
 class AcceptModificationRequestParameters extends NonLinkable implements Parsable {
@@ -25,6 +26,7 @@ class AcceptModificationRequestParameters extends NonLinkable implements Parsabl
             'request.AcceptCreateServiceAccountRequestParameters' => AcceptCreateServiceAccountRequestParameters(),
             'request.AcceptGrantAccessRequestParameters' => AcceptGrantAccessRequestParameters(),
             'request.AcceptJoinGroupRequestParameters' => AcceptJoinGroupRequestParameters(),
+            'request.AcceptUpdateGroupMembershipRequestParameters' => AcceptUpdateGroupMembershipRequestParameters(),
             _ => AcceptModificationRequestParameters(),
         };
     }

@@ -103,6 +103,7 @@
                 "description": "Selecteer of de configuratie van de appliance ook teruggezet moet worden.",
                 "label": "Appliance-configuratie"
               },
+              "ExportAuditorProvisioningPanel$AuditorExportType#GOS": "Groepen op systemen",
               "AccessProfileAccountEditPanel$AccountEditBean#manual": {
                 "label": "Geforceerd lidmaatschap",
                 "description": "Op dit lidmaatschap zijn geen business rules van toepassing."
@@ -125,13 +126,16 @@
                 "label": "Bestandsgrootte"
               },
               "ExportAuditorServiceAccountsPanel$AuditorExportType#SERVICEACCOUNTS_GROUPS": "Koppelgroepen",
+              "ExportAuditorProvisioningPanel$AuditorExportType#GOS_ACCESSPROFILE": "GoS - Toegangsprofielen",
               "ApplicationOrSystemAddToGroupPanel$ServiceAccountType#SERVICE_ACCOUNT": "Serviceaccount",
               "GroupAccountEditPanel$AccountEditBean#endDate": {
                 "label": "Einddatum voor lidmaatschap"
               },
+              "ExportAuditorProvisioningPanel$AuditorExportType#GOS_GROUP": "GoS - Groepen",
               "AccountDirectoryAddPanel$DirectoryTypeBean#type": {
                 "label": "Type"
               },
+              "ExportAuditorProvisioningPanel$AuditorExportType#GOS_SERVICEACCOUNT": "GoS - Serviceaccounts",
               "RestoreBackupPanel$RestoreBackupBean#restoreKey": {
                 "label": "Back-up-decoderingssleutel",
                 "placeholder": "Back-up-decoderingssleutel"
@@ -199,6 +203,9 @@
               },
               "ExportAuditorServiceAccountsPanel$ExportTypeBean#type": {
                 "label": "Type"
+              },
+              "ExportAuditorProvisioningPanel$ExportTypeBean#type": {
+                "label": "Type"
               }
             },
             "settings": {
@@ -230,11 +237,11 @@
                 "ChangeApplicationBean$ReleaseChannel#ACCEPTANCE": "acceptance - De versie die getest wordt voor acceptatie."
               }
             },
-            "filter": {
-              "VaultRecordFilterBarPanel$VaultRecordOrdering#VAULT": "Sorteer op kluis",
-              "VaultRecordFilterBarPanel$VaultRecordOrdering#NAME": "Sorteer op naam"
-            },
             "panel": {
+              "AbstractConfirmationPanel$Confirmation#firePendingLifecycleEvents": {
+                "description": "Verstuur de openstaande levenscyclusgebeurtenissen van het account, inclusief hun e-mail, voor het verwijderen in plaats van ze te annuleren.",
+                "label": "Openstaande levenscyclusgebeurtenissen nu versturen"
+              },
               "AbstractConfirmationPanel$Confirmation#removeFromSystem": {
                 "description": "Verwijder de groep ook van het systeem",
                 "label": "Verwijder van systeem"
@@ -260,6 +267,10 @@
                 "label": "Secret"
               }
             },
+            "filter": {
+              "VaultRecordFilterBarPanel$VaultRecordOrdering#VAULT": "Sorteer op kluis",
+              "VaultRecordFilterBarPanel$VaultRecordOrdering#NAME": "Sorteer op naam"
+            },
             "formcomponent": {
               "PrivateKeyAndCertificateEditPanel$KeyStoreType#PKCS12": "PKCS#12 (.pfx of .p12)",
               "PrivateKeyAndCertificateEditPanel$KeyStoreType#PEM": "PEM (in losse bestanden)"
@@ -273,23 +284,42 @@
                 "label": "Regel voor activatie",
                 "description": "Een script om te bepalen of de accounts binnen de gekoppelde systemen actief moeten zijn. Raadpleeg de handleiding voor meer uitleg."
               },
+              "AccessProfileLifecycleAnchor#REMOVE": "Wordt verwijderd",
+              "AccessProfileLifecycleEventStatus#CANCELLED": "Geannuleerd",
+              "AccessProfileLifecycleEventStatus#PENDING": "In afwachting",
               "AccessProfile#owner": {
                 "description": "Managers uit de gekozen groep zijn verantwoordelijk voor dit toegangsprofiel.",
                 "label": "Verantwoordelijke groep",
                 "placeholder": "Kies een groep..."
               },
+              "AccessProfileLifecycleAction#name": {
+                "label": "Naam"
+              },
               "AccessProfile#directory": {
                 "label": "Gekoppelde directory",
                 "description": "De directory waarvoor dit toegangsprofiel account-attributen kan beheren."
               },
+              "AccessProfileLifecycleAction#offset": {
+                "label": "Tijdstip",
+                "description": "Hoe lang vóór of na de overgang de actie wordt getriggerd."
+              },
               "AccessProfileProvisioning#groupOnSystem": {
                 "label": "Koppelgroep"
               },
+              "AccessProfileLifecycleAnchor#ACTIVATE": "Wordt geactiveerd",
               "AccessProfileClient#accessProfile": {
                 "label": "Toegangsprofiel"
               },
               "AccessProfileAccountActivation#ACTIVE": "Actief (business rules zijn van toepassing)",
               "AccessProfileAccountActivation#INACTIVE": "Inactief (business rules zijn van toepassing)",
+              "AccessProfileMailLifecycleAction#mailSubjectTemplate": {
+                "label": "Onderwerptemplate"
+              },
+              "AccessProfileLifecycleAction#anchor": {
+                "label": "Overgang",
+                "description": "De lidmaatschaps- of activeringsovergang waarop deze actie wordt getriggerd."
+              },
+              "AccessProfileLifecycleEventStatus#FIRED": "Uitgevoerd",
               "AccessProfileProvisioning#groupOnSystemDisplayName": {
                 "label": "Weergavenaam"
               },
@@ -303,22 +333,32 @@
               "AccessProfileProvisioning#system": {
                 "label": "Koppeling"
               },
+              "AccessProfileLifecycleEventStatus#FAILED": "Mislukt",
+              "AccessProfileMailLifecycleAction#mailBodyTemplate": {
+                "label": "Berichttemplate"
+              },
+              "AccessProfileMailLifecycleAction#recipients": {
+                "label": "Ontvangers"
+              },
               "AccessProfileAccountActivation#FORCE_INACTIVE": "Inactief (handmatig overschreven)",
               "AccessProfile#description": {
                 "label": "Omschrijving"
               },
+              "AccessProfileLifecycleAnchor#DEACTIVATE": "Wordt gedeactiveerd",
               "AccessProfileProvisioning#accessProfile": {
                 "label": "Toegangsprofiel"
               },
               "AccessProfilePrimer#uuid": {
                 "label": "UUID"
               },
+              "AccessProfileLifecycleAnchor#ADD": "Wordt lid",
               "AccessProfileAccountActivation#FORCE_ACTIVE": "Actief (handmatig overschreven)"
             },
             "audit": {
               "AuditAccountAction#CHANGE_TO_MANAGER": "Managementrechten geven",
               "AuditRecordType#TRANSFER_ACCESS_PROFILE_OWNERSHIP_DECLINED": "Draag verantwoordelijkheid over toegangsprofiel over - Afgewezen",
               "AuditRecordType#TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP_REQUESTED": "Draag verantwoordelijkheid over groep op systeem over - Aangevraagd",
+              "AuditRecordType#ACCESS_PROFILE_LIFECYCLE_EVENT_FAILED": "Toegangsprofiel - Levenscyclusgebeurtenis mislukt",
               "AuditRecordType#SERVICE_ACCOUNT_MODIFIED": "Serviceaccount - Bewerkt",
               "AuditRecordType#IDENTITY_SOURCE_MODIFIED": "Identiteitsbron - Bewerkt",
               "AuditRecordType#ACCOUNT_REREGISTERED": "Account - Opnieuw geregistreerd",
@@ -365,6 +405,7 @@
               "AuditRecordType#WEBHOOK_MODIFIED": "Webhook - Bewerkt",
               "AuditRecordType#ACCOUNT_REMOVED": "Account - Verwijderd",
               "AuditRecordType#CLIENT_MODIFIED": "Applicatie - Bewerkt",
+              "AuditRecordType#ACCOUNT_DEACTIVATED_FOR_ACCESS_PROFILE": "Account - Gedeactiveerd voor een toegangsprofiel",
               "AuditRecordType#ADD_GROUP_TO_ACCESS_PROFILE_DECLINED": "Groep aan toegangsprofiel toevoegen - Afgewezen",
               "AuditRecordType#IDENTITY_SOURCE_REMOVED": "Identiteitsbron - Verwijderd",
               "AuditRecordType#PROVISIONED_SYSTEM_UNKNOWN_ACCOUNT_DESTROYED": "Gekoppeld systeem - Onbekend account verwijderd",
@@ -430,6 +471,7 @@
               "AuditRecordType#ACCOUNT_ACTIVATION_CODE_USED": "Account - Activatiecode gebruikt",
               "AuditRecordType#TRANSFER_PROVISIONED_SYSTEM_OWNERSHIP_DECLINED": "Draag verantwoordelijkheid over gekoppeld systeem over - Afgewezen",
               "AuditRecordType#ADD_GROUP_ADMIN_DECLINED": "Groepsmanager toevoegen - Afgewezen",
+              "AuditRecordType#ACCOUNT_ACTIVATED_FOR_ACCESS_PROFILE": "Account - Geactiveerd voor een toegangsprofiel",
               "AuditRecordType#ORGANIZATIONAL_UNIT_MODIFIED": "Organisatie-eenheid - Bewerkt",
               "AuditRecordType#CREATE_GROUP_DECLINED": "Groep aanmaken - Afgewezen",
               "AuditRecordType#DIRECTORY_HELPDESK_MODIFIED": "Helpdesk aangepast",
@@ -537,6 +579,7 @@
               },
               "AuditRecordType#TRANSFER_ORGANIZATIONAL_UNIT_OWNERSHIP_REQUESTED": "Draag verantwoordelijkheid over organisatie-eenheid over - Aangevraagd",
               "AuditRecordType#TRANSFER_APPLICATION_ADMINISTRATION_ACCEPTED": "Draag beheer van applicatie over - Goedgekeurd",
+              "AuditRecordType#ACCESS_PROFILE_LIFECYCLE_EVENT_FIRED": "Toegangsprofiel - Levenscyclusgebeurtenis uitgevoerd",
               "AuditRecordType#TRANSFER_APPLICATION_ADMINISTRATION_REQUESTED": "Draag beheer van applicatie over - Aangevraagd",
               "AuditRecordType#ACCOUNT_2FA_ENABLED": "Account - 2FA ingeschakeld",
               "AuditRecordType#GROUP_NESTING_DISCONNECTED": "Groep - Geneste groep ontkoppeld",
@@ -580,6 +623,7 @@
               "AuditRecordType#GROUP_ON_SYSTEM_DEPROVISIONED": "Koppelgroep - Verwijderd van gekoppeld systeem",
               "AuditRecordType#PROVISIONED_SYSTEM_MODIFIED": "Gekoppeld systeem - Bewerkt",
               "AuditRecordType#VERIFY_INTERNAL_ACCOUNT_REQUESTED": "Verifieer intern account - Aangevraagd",
+              "AuditRecordType#ACCESS_PROFILE_LIFECYCLE_EVENT_CANCELLED": "Toegangsprofiel - Levenscyclusgebeurtenis geannuleerd",
               "AuditRecordType#REVOKE_ADMIN_ACCEPTED": "Verwijder KeyHub Administrator - Goedgekeurd",
               "AuditRecordType#REMOVE_ORGANIZATIONAL_UNIT_DECLINED": "Verwijder organisatie-eenheid - Afgewezen",
               "AuditRecordType#UPDATE_LICENSE_REQUESTED": "Wijzig de licentie - Aangevraagd",
@@ -767,6 +811,7 @@
               "ModificationRequestReportChange#GROUP_NESTING_REMOVED": "De genestheid van deze groepen wordt verwijderd.",
               "AuthorizingGroupType#MEMBERSHIP": "Wijzigingen in groepslidmaatschap",
               "ModificationRequestReportError#APPLICATION_CANNOT_BE_REMOVED": "Geen rechten om {2}: {1} ({3}) te verwijderen.",
+              "ModificationRequestReportChange#ACCESS_PROFILE_LIFECYCLE_ACTION_REMOVED": "Deze levenscyclusacties zullen verwijderd worden.",
               "ModificationRequestReportChange#PROVISIONING_GROUP_REMOVED_OWNER": "De koppelgroep {0} verplaatst mee met deze groep. De KeyHub-groep {1} verliest toegang.",
               "ModificationRequestType#SETUP_GROUP_EXCLUSION": "UITSLUITING",
               "ModificationRequestReportChange#PROVISIONING_GROUP_WILL_BE_REMOVED": "De groep {1} verliest toegang tot de koppelgroep {2}.",
@@ -1774,6 +1819,22 @@
               "ProvisionedAzureTenant#clientId": {
                 "label": "Client identifier"
               },
+              "GroupOnSystemType": {
+                "short#GROUP_UNKNOWN": "Overig",
+                "short#AZURE_SECURITY_GROUP": "Beveiligingsgroep",
+                "short#AZURE_DYNAMIC_UNIFIED_GROUP": "Microsoft 365 (dynamisch)",
+                "short#GROUP_OF_NAMES": "groupOfNames",
+                "short#POSIX_GROUP": "posixGroup",
+                "short#AZURE_DYNAMIC_SECURITY_GROUP": "Beveiligingsgroep (dynamisch)",
+                "short#GROUP_UNIVERSAL_SECURITY": "Universal security",
+                "short#AZURE_UNIFIED_GROUP": "Microsoft 365",
+                "short#GROUP_LOCAL_SECURITY": "Local security",
+                "short#GROUP_OF_UNIQUE_NAMES": "groupOfUniqueNames",
+                "short#AZURE_ROLE": "Directory-rol",
+                "short#GROUP_GLOBAL_SECURITY": "Global security",
+                "short#ACCOUNT_ONLY": "Enkel-account",
+                "short#SCIM": "SCIM"
+              },
               "ProvisionedAzureTenant#attributes": {
                 "label": "Custom attributen"
               },
@@ -1970,6 +2031,7 @@
                 "label": "Clientcertificaat"
               },
               "GroupOnSystemProvisioning#NOT_PROVISIONED_BY_DEFAULT_CAN_ONLY_BE_ENABLED": "Standaard uitgeschakeld, niet te deactiveren - Beheer van groepen door KeyHub staat standaard uit en kan alleen ingeschakeld worden.",
+              "GroupOnSystemType#SCIM": "SCIM",
               "ProvisionedAzureSyncLDAPDirectory#directory": {
                 "description": "Op deze Active Directory dient Azure AD Connect geactiveerd te zijn welke synchroniseert met de gekozen Azure tenant.",
                 "label": "LDAP-directory"
@@ -2598,10 +2660,6 @@
                 "label": "'Groep aanmaken' goedkeuren",
                 "description": "Verzoeken voor het aanmaken van nieuwe groepen worden behandeld door de gekozen groep."
               },
-              "VaultRecoveryKey#privateKey": {
-                "placeholder": "De oude private key",
-                "description": "Upload de oude, te vervangen private key. Indien deze niet meer beschikbaar is, kan dit veld leeggelaten worden. Het is dan niet meer mogelijk om kluizen te herstellen tot ze tenminste éénmaal geopend zijn."
-              },
               "Settings#twoFactorAuthTimeout": {
                 "label": "2FA-authenticatie-timeout",
                 "description": "Stel de geldigheidsduur van 2FA-authenticatie in. Gebruik 'm' voor minuten, 'h' voor uren en 'd' voor dagen, bijvoorbeeld '7d'."
@@ -2617,6 +2675,10 @@
                 "placeholder": "Branding logo",
                 "label": "Branding logo",
                 "description": "Kies een .png-bestand om Topicus KeyHub te voorzien van uw bedrijfslogo. Dit logo moet 540 bij 280 pixels zijn."
+              },
+              "VaultRecoveryKey#previousPrivateKey": {
+                "placeholder": "De oude private key",
+                "label": "Herstel-private key"
               },
               "Settings#maintenanceMessage": {
                 "label": "Onderhoudsbericht",
@@ -2634,9 +2696,8 @@
                 "label": "Afzenderadres voor e-mail",
                 "description": "Indien gevuld, zal Topicus KeyHub e-mail sturen met dit afzenderadres. Als dit leeggelaten wordt, zal het e-mailadres van de gebruiker gebruikt worden als afzender."
               },
-              "VaultRecoveryKey#publicKey": {
-                "description": "Deze key wordt gebruikt voor het kunnen herstellen van toegang tot kluizen. Zonder een recovery key is het niet mogelijk om kluizen te gebruiken.",
-                "placeholder": "Kies een public key-bestand"
+              "VaultRecoveryKey#downloadGenerated": {
+                "required": "Download de zojuist gegenereerde private key voordat je opslaat. Zonder deze key is het herstellen van kluizen niet meer mogelijk."
               },
               "Settings#createGroupPlaceholder": {
                 "label": "Hint voor nieuwe groepsnamen",
@@ -2649,9 +2710,6 @@
               "Settings#passwordMinLength": {
                 "description": "Kies een waarde tussen 8 en 20. Voor optimale beveiliging is het aan te raden tenminste 12 te kiezen.",
                 "label": "Minimum wachtwoordlengte"
-              },
-              "Settings#vaultRecoveryKey": {
-                "label": "Public key voor herstel"
               },
               "Settings#auditRecordRetention": {
                 "label": "Auditlogretentie",
@@ -3185,6 +3243,7 @@
           "select": "Selecteer groepen om te verplaatsen"
         },
         "clients": "Applicaties",
+        "edit": "Organisatie-eenheid bewerken",
         "accounts": "Accounts"
       },
       "oidcdirectory": "OIDC-Directory",
@@ -3224,9 +3283,11 @@
       "webhook": "Webhook",
       "ldapapplication": "LDAP Applicatie",
       "requestgroup": "Lidmaatschap aanvragen voor een groep",
+      "auditorgrouponsystemdetails": "Groep op systeem details",
       "passwordprompt": "Wachtwoord",
       "launchpad": "Launchpad",
       "logs": "Logs",
+      "grouponsystemauditlog": "Auditlog van groep op systeem",
       "internalaccount": "Intern account",
       "provisionedldapdirectory": "Gekoppelde LDAP-brondirectory",
       "inloggen": "Inloggen",
@@ -3254,6 +3315,7 @@
       "consent": "Geef toestemming",
       "sequences": "Nummerreeksen",
       "classification": "Classificatie",
+      "auditorgrouponsystemauditlog": "Auditlog van groep op systeem",
       "provisionednamespace": "Namespace",
       "auditorgroupsdashboard": "Auditor-dashboard groepen",
       "mygroups": {
@@ -3281,6 +3343,7 @@
       "vaultrecovery": "Kluisherstel",
       "activationcode": "Activatiecode",
       "vaults": "Kluizen",
+      "auditorprovisioningdashboard": "Auditor-dashboard provisioning",
       "access": "Beheer toegang",
       "about": {
         "updatelicense": "Bevestig licentie bijwerken",
@@ -3332,6 +3395,7 @@
       "removegroups": "Verwijderen",
       "auditordashboard": {
         "accounts": "Auditor-dashboard accounts",
+        "provisioning": "Auditor-dashboard provisioning",
         "serviceaccounts": "Auditor-dashboard serviceaccounts",
         "groups": "Auditor-dashboard groepen"
       },
@@ -4243,6 +4307,12 @@
       "subtitle": "Vraag extra rechten aan voor de applicatie {0}.",
       "header": "Rechten toekennen"
     },
+    "updategroupmembership": {
+      "accept": {
+        "options": "Einddatum wijzigen"
+      },
+      "sent": "Je lidmaatschapsverzoek voor {0} voor {1} is verstuurd."
+    },
     "transferaccessprofileownership": {
       "header": "Verantwoordelijkheid overdragen",
       "subtitle": "Draag de verantwoordelijkheid over {0} over aan een andere groep.",
@@ -4296,10 +4366,7 @@
       "sent": "Je verzoek om {0} uit KeyHub Administrators te verwijderen is verstuurd."
     },
     "errorcount": "{0} fout(en)",
-    "nocomment": "Geen reden opgegeven",
-    "updategroupmembership": {
-      "sent": "Je lidmaatschapsverzoek voor {0} voor {1} is verstuurd."
-    }
+    "nocomment": "Geen reden opgegeven"
   },
   "provisioning": {
     "authorization": {
@@ -4491,6 +4558,7 @@
       "step": {
         "groups": "Groepen aanvragen",
         "pwd": "Kies je wachtwoord",
+        "vaultkey": "Security key",
         "2fa": "2FA instellen"
       },
       "2fa": {
@@ -4590,6 +4658,9 @@
       "header": "Licentie limiet bereikt"
     },
     "resetpassword": "Wachtwoord resetten en bijbehorende gegevens wissen",
+    "LICENSE_KEY_UNKNOWN_SIGNING_KEY": {
+      "header": "Ongeldige licentie"
+    },
     "systeemnietbeschikbaar": "KeyHub is tijdelijk niet beschikbaar, probeer het later nog een keer.",
     "username": {
       "placeholder": "Gebruikersnaam"
@@ -5984,6 +6055,7 @@
       "profile": "{performedBy} heeft een verzoek ingediend om de gebruikers in het toegangsprofiel {onAccessProfile} toegang te geven tot {gosType} {gosName} op {onSystem}. {reason}",
       "group": "{performedBy} heeft een verzoek ingediend om de gebruikers in de groep {onGroup} toegang te geven tot {gosType} {gosName} op {onSystem}. {reason}"
     },
+    "ACCESS_PROFILE_LIFECYCLE_EVENT_FIRED": "De levenscyclusactie {parameter2} voor {onAccount} op het toegangsprofiel {onAccessProfile} is uitgevoerd.",
     "PROVISIONED_SYSTEM_UNKNOWN_ACCOUNT_DESTROYED": "Het onbekende account {parameter1} is verwijderd van de koppeling {onSystem}.",
     "GROUP_CLASSIFICATION_MODIFIED": "{performedBy} heeft de groepsclassificatie {onGroupClassification} aangepast.",
     "ACCOUNT_GROUP_ACTIVATED": "{performedBy} heeft {onGroup} geactiveerd.",
@@ -6139,9 +6211,11 @@
     "PROVISIONED_SYSTEM_MODIFIED": "{performedBy} heeft de koppeling {onSystem} aangepast.",
     "CLIENT_ADDED_TO_ACCESS_PROFILE": "{onClient} is toegevoegd aan het toegangsprofiel {onAccessProfile}.",
     "DISABLE_2FA_DECLINED": "Het verzoek om 2FA uit te schakelen voor {onAccount} is afgekeurd door {performedBy}. {reason}",
+    "ACCESS_PROFILE_LIFECYCLE_EVENT_CANCELLED": "De geplande levenscyclusactie {parameter2} voor {onAccount} op het toegangsprofiel {onAccessProfile} is geannuleerd.",
     "ACCOUNT_PROVISIONING_MOVED": "{onAccount} is verplaatst binnen de koppeling {onSystem} van {parameter1} naar {parameter2}.",
     "EXTENDED_ACCESS_DECLINED": "{performedBy} heeft het verzoek van {onAccount} afgekeurd om verlengde toegang tot {onGroup} te krijgen tot {parameter3}. {reason}",
     "toonEigenRecords": "Toon alleen eigen records",
+    "ACCOUNT_ACTIVATED_FOR_ACCESS_PROFILE": "{onAccount} is geactiveerd voor het toegangsprofiel {onAccessProfile}.",
     "EXTENDED_ACCESS_REQUESTED": "{performedBy} heeft een verzoek ingediend om verlengde toegang tot {onGroup} te krijgen tot {parameter3}. {reason}",
     "ACCOUNT_REREGISTERED": "Het account van {performedBy} is opnieuw geregistreerd. De oude gebruikersnaam was {parameter1}.",
     "PROVISIONED_SYSTEM_REMOVED_FROM_ACCESS_PROFILE": "{gosTypeCap} {gosName} op {onSystem} is verwijderd uit het toegangsprofiel {onAccessProfile}.",
@@ -6224,6 +6298,7 @@
     "GRANT_CLIENT_PERMISSION_ACCEPTED": "Het verzoek om {onClient} het recht '{parameter3}' te geven is goedgekeurd door {performedBy}. {reason}",
     "IDENTITY_SOURCE_CREATED": "{performedBy} heeft een nieuwe identiteitsbron {onIdentitySource} toegevoegd.",
     "CLIENT_MODIFIED": "{performedBy} heeft de applicatie {onClient} aangepast.",
+    "ACCOUNT_DEACTIVATED_FOR_ACCESS_PROFILE": "{onAccount} is gedeactiveerd voor het toegangsprofiel {onAccessProfile}.",
     "GROUP_ON_SYSTEM_DEPROVISIONED": "{gosTypeCap} {gosName} is verwijderd van het systeem {onSystem}.",
     "SETUP_GROUP_EXCLUSION_DISCONNECT_REQUESTED": "{performedBy} heeft een verzoek ingediend om de groepsuitsluiting tussen {onGroup2} en {onGroup} te verwijderen. {reason}",
     "TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP_DECLINED": "Het verzoek om de verantwoordelijkheid over {gosType} {gosName} op {onSystem} over te dragen aan {onGroup} is afgekeurd door {performedBy}. {reason}",
@@ -6260,6 +6335,7 @@
     "ACCOUNT_GROUP_ACTIVATION_REASON": "{performedBy} heeft {onGroup} geactiveerd met de volgende reden: {parameter1}.",
     "ACCOUNT_ACTIVATION_CODE_USED": "{performedBy} heeft de activatiecode {parameter1} gebruikt voor wachtwoordherstel.",
     "IDENTITY_SOURCE_MODIFIED": "{performedBy} heeft de identiteitsbron {onIdentitySource} aangepast.",
+    "ACCESS_PROFILE_LIFECYCLE_EVENT_FAILED": "De levenscyclusactie {parameter2} voor {onAccount} op het toegangsprofiel {onAccessProfile} kon niet worden uitgevoerd en is gemarkeerd als mislukt.",
     "ACCOUNT_TOTP_OFFSET_CHANGED": "De tijdsverschuiving van de verificatiecode voor {performedBy} is gewijzigd in {parameter1}.",
     "PROVISIONED_SYSTEM_CREATED": "{performedBy} heeft een nieuwe koppeling {onSystem} toegevoegd.",
     "JOIN_GROUP_REQUESTED": {
@@ -6303,6 +6379,7 @@
       "subjectdn": "Subject DN",
       "groups": "Groepen",
       "directory": "Directory",
+      "parent": "Bovenliggende eenheid",
       "readwrites": "Lees-/schrijfacties",
       "datetime": "Tijd",
       "accessProfile": "Toegangsprofiel",
@@ -6320,6 +6397,7 @@
       "encrypted": "Versleuteld",
       "records": "Aantal regels",
       "thread": "Thread",
+      "nameonos": "Naam op systeem",
       "index": "#",
       "errorwarnings": "Fouten/waarsch.",
       "clientId": "Client ID",
@@ -6452,6 +6530,7 @@
       "dashboard": {
         "groups": "Groepen",
         "serviceaccounts": "Serviceaccounts",
+        "provisioning": "Provisioning",
         "main": "Dashboard",
         "accounts": "Accounts"
       },
@@ -6674,6 +6753,7 @@
       "ACCOUNT_PROVISIONED": "Account geactiveerd op gekoppeld systeem",
       "ACCOUNT_PROVISIONING_INITED": "Account toegevoegd aan gekoppeld systeem",
       "ACCOUNT_DEPROVISIONED": "Account gedeactiveerd op gekoppeld systeem",
+      "ACCOUNT_DEACTIVATED_FOR_ACCESS_PROFILE": "Account gedeactiveerd voor een toegangsprofiel",
       "ACCOUNT_REMOVED_FROM_ACCESS_PROFILE": "Account verwijderd uit een toegangsprofiel",
       "DIRECTORY_HELPDESK_MODIFIED": "Helpdesk aangepast",
       "ACCOUNT_LOGIN": "Succesvolle authenticatie",
@@ -6681,9 +6761,11 @@
       "ACCOUNT_MODIFIED_FOR_GROUP": "Account binnen groep bewerkt",
       "ACCOUNT_LOGIN_FAILED": "Mislukte authenticatie",
       "DEVICE_CODE_REJECTED": "Apparaatcode afgewezen",
+      "ACCOUNT_ACTIVATED_FOR_ACCESS_PROFILE": "Account geactiveerd voor een toegangsprofiel",
       "ACCOUNT_TOTP_OFFSET_CHANGED": "TOTP-offset account gewijzigd",
       "ACCOUNT_REMOVED": "Account verwijderd",
       "ACCOUNT_SSH_PUBLIC_KEY_MODIFIED": "Account - SSH public key ingesteld",
+      "ACCESS_PROFILE_LIFECYCLE_EVENT_FIRED": "Levenscyclusgebeurtenis toegangsprofiel uitgevoerd",
       "VAULT_EXPORTED": "De inhoud van een kluis is geëxporteerd",
       "CLIENT_ADDED_TO_ORGANIZATIONAL_UNIT": "Applicatie - Toegevoegd aan een organisatie-eenheid",
       "SERVICE_ACCOUNT_PROVISIONING_INITED": "Serviceaccount toegevoegd aan gekoppeld systeem",
@@ -6712,6 +6794,7 @@
       "SERVICE_ACCOUNT_REMOVED_FROM_GROUP": "Serviceaccount verwijderd uit een groep",
       "DEVICE_CODE_ISSUED": "Apparaatcode uitgegeven",
       "ACCOUNT_REREGISTERED": "Account opnieuw geregistreerd",
+      "ACCESS_PROFILE_LIFECYCLE_EVENT_CANCELLED": "Levenscyclusgebeurtenis toegangsprofiel geannuleerd",
       "ACCOUNT_GROUP_ACTIVATION_REASON": "Groepsactivatiereden",
       "CLIENT_PERMISSION_REVOKED": "Recht ingetrokken van applicatie",
       "ACCOUNT_TOKEN_SIGNED": "Token uitgegeven voor een applicatie",
@@ -6732,6 +6815,7 @@
       "ACCOUNT_2FA_ENABLED": "2FA ingeschakeld",
       "VAULT_RECORD_MOVED_COPIED_SHARED": "Kluisregel verplaatst/gekopieerd/gedeeld",
       "CLIENT_REMOVED_FROM_ORGANIZATIONAL_UNIT": "Applicatie - Verwijderd uit een organisatie-eenheid",
+      "ACCESS_PROFILE_LIFECYCLE_EVENT_FAILED": "Levenscyclusgebeurtenis toegangsprofiel mislukt",
       "SERVICE_ACCOUNT_DEPROVISIONED": "Serviceaccount gedeactiveerd op gekoppeld systeem",
       "ACCOUNT_VAULT_UNLOCKED": "Kluis geopend",
       "ACCOUNT_MODIFIED_FOR_ACCESS_PROFILE": "Account binnen toegangsprofiel bewerkt",
@@ -7329,6 +7413,7 @@
         "disable": "Authenticator app uitschakelen"
       },
       "webauthn": {
+        "nounlock": "Deze sleutel is niet ingesteld om jouw kluis te ontgrendelen.",
         "header": "Security keys",
         "add": "Security key toevoegen",
         "prf": "Deze sleutel opent jouw kluis."
@@ -7356,6 +7441,130 @@
     },
     "rotatingpassword": "Roterend wachtwoord"
   },
+  "vault": {
+    "unlock": {
+      "subtitle": {
+        "webauthn": "Gebruik je security key voor het openen van je kluizen.",
+        "main": "Geef het wachtwoord voor het openen van je kluizen."
+      },
+      "header": "Kluizen openen",
+      "webauthn": {
+        "failed": "Je kluizen konden niet worden geopend met deze security key. Geef in plaats daarvan je wachtwoord.",
+        "explanation": "Je browser opent zo een prompt van je besturingssysteem. Raak je security key aan om je kluizen te openen."
+      },
+      "passwordlost": "Vergeten?",
+      "switchToPassword": "Gebruik je wachtwoord"
+    },
+    "recover": {
+      "deleted": {
+        "header": "Een verwijderde kluis herstellen",
+        "explain": "Herstel alle regels van een verwijderde kluis door deze aan een andere kluis toe te voegen."
+      },
+      "panel": {
+        "header": "Een kluis herstellen"
+      },
+      "explain": "Kies een kluis en een gebruiker die toegang tot de kluis moet krijgen. Bij groepskluizen moet dit een lid van de groep zijn.",
+      "header": "Toegang tot een kluis herstellen",
+      "main": "Toegang herstellen",
+      "group": "Groep",
+      "done": "{0} heeft nu toegang tot de kluis van {1}."
+    },
+    "secret": {
+      "totpinvalid": "De sleutel is niet in een geldig formaat. Alleen 'A-Z' en '2-7' zijn toegestaan. De sleutel moet tenminste 4 tekens lang zijn.",
+      "edit": {
+        "password": "Wachtwoord bewerken",
+        "totp": "Sleutel bewerken"
+      },
+      "refreshtotp": "TOTP-code verversen",
+      "generate": "Wachtwoord genereren"
+    },
+    "record": {
+      "sharedfrom": {
+        "header": "Gedeeld vanuit",
+        "main": "Gedeeld vanuit {0}"
+      },
+      "sharedwith": {
+        "main": "Gedeeld met {0}",
+        "header": "Gedeeld met"
+      },
+      "move": {
+        "confirm": {
+          "copy": {
+            "sub": "Je staat op het punt om <strong>{0}<\/strong> te kopiëren naar de kluis van <strong>{1}<\/strong>. Weet je dit zeker?",
+            "head": "Regel kopiëren"
+          },
+          "move": {
+            "sub": "Je staat op het punt om <strong>{0}<\/strong> te verplaatsen naar de kluis van <strong>{1}<\/strong>. Weet je dit zeker?",
+            "head": "Regel verplaatsen"
+          }
+        },
+        "specific": "Regel delen, kopiëren of verplaatsen",
+        "title": "Verplaatsen, kopiëren of delen",
+        "target": {
+          "true": "Groep",
+          "false": "Persoonlijke kluis"
+        },
+        "useCustomDuration": {
+          "true": "Specifieke datum",
+          "false": "Vaste periode"
+        },
+        "sharewarning": "<strong>Deze kluis vereist activatie<\/strong> <br>De doel-kluis heeft mogelijk minder strikte toegangseisen.",
+        "info": "Kies de doelkluis voor {0}."
+      },
+      "shared": {
+        "main": "Gedeeld met:",
+        "parentRecordName": "Naam originele kluisregel: {0}"
+      },
+      "strength": {
+        "average": "Dit wachtwoord is niet heel sterk. Kies een sterker wachtwoord indien mogelijk.",
+        "weak": "Dit wachtwoord is zeer zwak. Kies een sterker wachtwoord.",
+        "strong": "Dit wachtwoord heeft een acceptabele sterkte."
+      },
+      "enddate": {
+        "warning": "Deze kluisregel zal op {0} verlopen.",
+        "main": "Einddatum",
+        "error": "Deze kluisregel is verlopen."
+      },
+      "holder": {
+        "sharedend": "(gedeeld vanuit {0} tot {1})",
+        "shared": "(gedeeld vanuit {0})"
+      },
+      "shareend": "{0} (gedeeld tot {1})",
+      "derived": "Afgeleid van een applicatie of serviceaccount",
+      "header": "Kluisregel - {0}",
+      "duplicate": {
+        "warning": "Dit wachtwoord wordt hergebruikt binnen deze kluis."
+      },
+      "add": "Regel toevoegen",
+      "unshare": "Weet je zeker dat je het delen van deze regel wilt stoppen?"
+    },
+    "export": {
+      "title": "Kluis exporteren",
+      "subtitle": "Kies een kluis om te exporteren naar CSV."
+    },
+    "activation": {
+      "warn": "Activatie van de groep is vereist. Het wachtwoord, TOTP-code, bestand en commentaar zijn niet beschikbaar."
+    },
+    "personal": {
+      "lost": {
+        "subtitle": "Dit is veroorzaakt door een wachtwoordreset.",
+        "help": "Klik op 'Reset kluis' om je persoonlijke kluis leeg te maken zodat je weer nieuwe wachtwoorden kunt toevoegen.",
+        "main": "Je persoonlijke kluis is niet benaderbaar"
+      },
+      "delete": "Reset kluis",
+      "anon": "Persoonlijke kluis",
+      "main": "Persoonlijke kluis van {0}"
+    },
+    "filter": {
+      "group": "Selecteer een kluis..."
+    },
+    "recovered": "HERSTELD - ",
+    "totp": "2FA",
+    "password": "Wachtwoord",
+    "locked": {
+      "warn": "Je kluis is gesloten. Het wachtwoord, TOTP-code, bestand en commentaar zijn niet beschikbaar."
+    }
+  },
   "auditor": {
     "dashboard": {
       "groupaudits": {
@@ -7378,6 +7587,23 @@
         "title": "Exporteren"
       },
       "accountdirectories": "Directories",
+      "gos": {
+        "access": {
+          "groups": {
+            "short": "g"
+          },
+          "serviceaccounts": {
+            "short": "s"
+          },
+          "accessprofiles": {
+            "short": "p"
+          }
+        },
+        "provisioning": {
+          "disabledkeepactive": "Uitgeschakeld*"
+        },
+        "accesstooltip": "{0} groepen / {1} toegangsprofielen / {2} serviceaccounts"
+      },
       "vaultrecordtooltip": "{0} totaal / {1} met einddatum / {2} verlopen",
       "classifications": "Classificaties",
       "pwrotationscheme": "Serviceaccounts",
@@ -7412,6 +7638,7 @@
     },
     "GROUP_AUDIT_ALTERED_CONFLICT": "De groep is gewijzigd na het starten van deze audit, controleer de wijzigingen en sla opnieuw op.",
     "RESET_INVALID_PASSWORD": "Het wachtwoord komt niet overeen met het wachtwoord dat opgegeven is bij het indienen van het verzoek.",
+    "WEBAUTHN_KEY_PRF_REQUIRED": "Deze security key kan niet gebruikt worden om je kluis te ontgrendelen. Probeer het opnieuw met een andere security key.",
     "CLIENT_PERMISSION_ALREADY_EXISTS": "Het gevraagde recht is al toegekend aan deze applicatie.",
     "VAULT_TARGET_NOT_INITIALIZED": "De gekozen gebruiker heeft nog geen kluiswachtwoord ingesteld.",
     "MULTIPLE_MATCHES": "Er zijn te veel overeenkomsten gevonden.",
@@ -7423,6 +7650,10 @@
     "PROVISIONED_SYSTEM_HAS_NAMESPACE": "Dit gekoppelde systeem kan niet verwijderd worden omdat er nog namespaces binnen bestaan. Verwijder eerst de namespaces.",
     "VAULT_RECOVERY_KEY_MISSING": "Er moet een recovery key ingesteld worden om kluizen te kunnen maken. Vraag een KeyHub-administrator om dit te doen.",
     "NO_CHANGE_REQUIRED": "De actie is geannuleerd omdat er geen wijzigingen zijn aangebracht.",
+    "LICENSE_KEY_UNKNOWN_SIGNING_KEY": {
+      "login": "Helaas is de licentie voor deze Topicus KeyHub installatie ondertekend met een onbekende sleutel en daarom kun je je niet aanmelden. Neem contact op met je Topicus KeyHub administrators.",
+      "main": "Deze licentiesleutel is ondertekend met een sleutel die deze versie van Topicus KeyHub niet kent. Waarschijnlijk is de licentie uitgegeven voor een nieuwere versie; werk Topicus KeyHub eerst bij of vraag een licentie voor deze versie aan."
+    },
     "SAML_ERROR": "Het is op dit moment niet mogelijk op deze SAML2-applicatie in te loggen. Neem contact op met een beheerder van de applicatie.",
     "PROVISIONED_SYSTEM_TESTED": "{system} is getest met als uitkomst: {message}",
     "ID_IN_DIRECTORY_ALREADY_EXISTS": "Je hebt al een account binnen KeyHub.",
@@ -7466,6 +7697,7 @@
     "ORGANIZATIONAL_UNIT_NOT_UNDER_BASE": "De organisatie-eenheid is geen onderliggende organisatie-eenheid van de basisorganisatie-eenheid van de gebruiker.",
     "VAULT_RECOVERY_KEY_NOT_INITIALIZED": "De kluis heeft geen herstelsleutel.",
     "ATTRIBUTE_HAS_VALUES": "Er zijn reeds waarden voor deze attribuutdefinitie en deze kan daarom niet uniek worden gemaakt.",
+    "MODIFICATION_ALREADY_REQUESTED_BY": "{account} heeft dit verzoek al ingediend. Wacht tot het verwerkt is door een manager of administrator.",
     "CANNOT_REMOVE_LAST_MANAGER": "Het account voor {account} is de laatste manager zonder einddatum van {group} en kan daarom niet verwijderd worden. Kies eerst een vervangende manager voor de groep.",
     "DIRECTORY_CREDENTIALS_EXPECTED": "Je hebt het verkeerde wachtwoord ingevoerd. Voer je {directory}-wachtwoord in.",
     "DIRECTORY_IN_USE": "Een directory kan niet verwijderd worden als nog niet alle bijbehorende accounts verwijderd zijn.",
@@ -7478,6 +7710,8 @@
     "NAME_ALREADY_IN_USE": "De naam moet uniek zijn, en '{name}' is al in gebruik.",
     "PROVISIONING_ERROR": "Door een storing in {system} kon je account niet bijgewerkt worden. Indien deze storing aanhoudt, neem dan contact op met een lid van {admins}.",
     "MODIFICATION_AUTHORIZATION_ALREADY_SETUP": "Dit type autorisatie is al ingesteld voor deze groep.",
+    "TWO_FA_ENFORCED_BY_DIRECTORY": "Two-factor authenticatie wordt beheerd door de directory en kan niet worden gereset in KeyHub.",
+    "MODIFICATION_END_DATE_IN_PAST": "De ingevoerde datum ligt in het verleden, selecteer een andere datum.",
     "FILE_SIZE_INCORRECT": "Het bestand voor {for_name} heeft de verkeerde grootte.",
     "INVALID_REGISTRATION_CREDENTIALS": "De opgegeven gebruikersnaam- en wachtwoord-combinatie bestaat niet binnen de gekozen directory.",
     "ATTRIBUTE_IN_USE_BY_DIRECTORY": "Deze attribuutdefinitie wordt nog gebruikt door de directory {directory} en kan daarom niet worden gewijzigd of verwijderd.",
@@ -7487,6 +7721,7 @@
     "USERNAME_ALREADY_IN_USE": "Deze gebruikersnaam bestaat reeds.",
     "GROUP_EXCLUSION_CONFLICT": "{account} is lid van een uitgesloten groep.",
     "KEYHUB_CREDENTIALS_EXPECTED": "Je hebt het verkeerde wachtwoord ingevoerd. Voer je KeyHub-wachtwoord in.",
+    "ACCESS_PROFILE_GROUP_EXCLUSION_CONFLICT": "Groep kan niet worden toegevoegd: conflicteert met uitgesloten groep {group}.",
     "LAUNCHPAD_TILE_IDP_INITIATED_NOT_SUPPORTED": "IdP-initiated login is niet ondersteund door deze applicatie.",
     "ATTRIBUTE_IN_USE_BY_SYSTEM": "Deze attribuutdefinitie wordt nog gebruikt door het gekoppelde systeem {system} en kan daarom niet worden gewijzigd of verwijderd.",
     "ORGANIZATIONAL_UNIT_CANNOT_REMOVE_CLIENT_BASE": "Kan de basisorganisatie-eenheid van de applicatie niet verwijderen.",
@@ -7507,6 +7742,7 @@
     "ATTRIBUTE_IN_USE_BY_CLIENT": "Deze attribuutdefinitie wordt nog gebruikt door de applicatie {client} en kan daarom niet worden gewijzigd of verwijderd.",
     "INVALID_CSV": "Het CSV-bestand is ongeldig: {error}",
     "VAULT_RECORD_ALREADY_SHARED": "De kluisregel is al gedeeld met de gekozen kluis.",
+    "WEBAUTHN_KEY_CANNOT_UNLOCK_VAULT": "Deze security key kan niet gebruikt worden om je kluis te ontgrendelen.",
     "INVALID_CREDENTIALS": "Het wachtwoord is incorrect.",
     "MODIFICATION_DELEGATION_ADMIN_NOT_ALLOWED": "Het delegeren van management is niet mogelijk voor KeyHub Administrators.",
     "NUMBER_SEQUENCE_IN_USE": "Deze nummerreeks is nog in gebruik.",
@@ -7538,6 +7774,7 @@
     "LICENSE_PRO_LIMIT_REACHED": "Je hebt de grenzen van je Topicus KeyHub licentie bereikt en kunt geen 'Pro' accounts meer toevoegen.",
     "PROVISIONING_MISSING_PERMISSION": "De toepassing mist een vereist recht: {role}",
     "PROVISIONED_SYSTEM_NO_UUID": "{system} geeft geen correcte UUID terug",
+    "LIFECYCLE_ACTION_MISSING_TO_RECIPIENT": "Een mailactie moet minstens één 'Aan'-ontvanger hebben.",
     "LICENSE_AT_LEAST_BUSINESS_REQUIRED": "Er is minimaal een Business-licentie vereist voor {username} om groepslidmaatschappen of een persoonlijke kluis toe te staan.",
     "GROUP_EXCLUSION_ALREADY_SETUP": "Er bestaat al een groepsuitsluiting tussen deze groepen.",
     "MODIFICATION_GROUPACCOUNT_STATUS_CONFLICT": "Dit groepslidmaatschap bevindt zich in een onverwachte toestand.",
@@ -7558,9 +7795,6 @@
     "GROUP_AUDIT_DRAFT_EXISTS": "Er is al een conceptaudit opgeslagen voor deze groep. Open dit concept in plaats van een nieuwe aan te maken.",
     "IDENTITY_SOURCE_COMPLEX_ATTRIBUTE_FETCH_SEPARATELY": "Het attribuut {attribute} is complex en moet daarom los opgehaald worden.",
     "NO_VAULT_TO_RESTORE": "De gebruiker {username} heeft geen kluis om te herstellen."
-  },
-  "DerRSAPublicKeyValidator": {
-    "invalidkey": "Ongeldige RSA public key. Gebruik een RSA public key in DER-encoding."
   },
   "account": {
     "enable2fa": {
@@ -7667,119 +7901,6 @@
     },
     "more": "{0} vraagt om toegang tot meer gegevens. In het verleden heb je {0} sommige rechten verleend. Geef enkel toestemming tot de nieuwe data indien je {0} de volgende toegang wilt geven:",
     "help": "{0} vraagt toegang tot je gegevens. Geef enkel toestemming indien je {0} de volgende toegang wilt geven:"
-  },
-  "vault": {
-    "recover": {
-      "deleted": {
-        "header": "Een verwijderde kluis herstellen",
-        "explain": "Herstel alle regels van een verwijderde kluis door deze aan een andere kluis toe te voegen."
-      },
-      "explain": "Kies een kluis en een gebruiker die toegang tot de kluis moet krijgen. Bij groepskluizen moet dit een lid van de groep zijn.",
-      "header": "Toegang tot een kluis herstellen",
-      "main": "Toegang herstellen",
-      "group": "Groep",
-      "done": "{0} heeft nu toegang tot de kluis van {1}."
-    },
-    "secret": {
-      "totpinvalid": "De sleutel is niet in een geldig formaat. Alleen 'A-Z' en '2-7' zijn toegestaan. De sleutel moet tenminste 4 tekens lang zijn.",
-      "edit": {
-        "password": "Wachtwoord bewerken",
-        "totp": "Sleutel bewerken"
-      },
-      "refreshtotp": "TOTP-code verversen",
-      "generate": "Wachtwoord genereren"
-    },
-    "record": {
-      "sharedfrom": {
-        "header": "Gedeeld vanuit",
-        "main": "Gedeeld vanuit {0}"
-      },
-      "sharedwith": {
-        "main": "Gedeeld met {0}",
-        "header": "Gedeeld met"
-      },
-      "move": {
-        "confirm": {
-          "copy": {
-            "sub": "Je staat op het punt om <strong>{0}<\/strong> te kopiëren naar de kluis van <strong>{1}<\/strong>. Weet je dit zeker?",
-            "head": "Regel kopiëren"
-          },
-          "move": {
-            "sub": "Je staat op het punt om <strong>{0}<\/strong> te verplaatsen naar de kluis van <strong>{1}<\/strong>. Weet je dit zeker?",
-            "head": "Regel verplaatsen"
-          }
-        },
-        "specific": "Regel delen, kopiëren of verplaatsen",
-        "title": "Verplaatsen, kopiëren of delen",
-        "target": {
-          "true": "Groep",
-          "false": "Persoonlijke kluis"
-        },
-        "useCustomDuration": {
-          "true": "Specifieke datum",
-          "false": "Vaste periode"
-        },
-        "sharewarning": "<strong>Deze kluis vereist activatie<\/strong> <br>De doel-kluis heeft mogelijk minder strikte toegangseisen.",
-        "info": "Kies de doelkluis voor {0}."
-      },
-      "shared": {
-        "main": "Gedeeld met:",
-        "parentRecordName": "Naam originele kluisregel: {0}"
-      },
-      "strength": {
-        "average": "Dit wachtwoord is niet heel sterk. Kies een sterker wachtwoord indien mogelijk.",
-        "weak": "Dit wachtwoord is zeer zwak. Kies een sterker wachtwoord.",
-        "strong": "Dit wachtwoord heeft een acceptabele sterkte."
-      },
-      "enddate": {
-        "warning": "Deze kluisregel zal op {0} verlopen.",
-        "main": "Einddatum",
-        "error": "Deze kluisregel is verlopen."
-      },
-      "holder": {
-        "sharedend": "(gedeeld vanuit {0} tot {1})",
-        "shared": "(gedeeld vanuit {0})"
-      },
-      "shareend": "{0} (gedeeld tot {1})",
-      "derived": "Afgeleid van een applicatie of serviceaccount",
-      "header": "Kluisregel - {0}",
-      "duplicate": {
-        "warning": "Dit wachtwoord wordt hergebruikt binnen deze kluis."
-      },
-      "add": "Regel toevoegen",
-      "unshare": "Weet je zeker dat je het delen van deze regel wilt stoppen?"
-    },
-    "unlock": {
-      "header": "Kluizen openen",
-      "subtitle": "Geef het wachtwoord voor het openen van je kluizen.",
-      "passwordlost": "Vergeten?"
-    },
-    "export": {
-      "title": "Kluis exporteren",
-      "subtitle": "Kies een kluis om te exporteren naar CSV."
-    },
-    "activation": {
-      "warn": "Activatie van de groep is vereist. Het wachtwoord, TOTP-code, bestand en commentaar zijn niet beschikbaar."
-    },
-    "personal": {
-      "lost": {
-        "subtitle": "Dit is veroorzaakt door een wachtwoordreset.",
-        "help": "Klik op 'Reset kluis' om je persoonlijke kluis leeg te maken zodat je weer nieuwe wachtwoorden kunt toevoegen.",
-        "main": "Je persoonlijke kluis is niet benaderbaar"
-      },
-      "delete": "Reset kluis",
-      "anon": "Persoonlijke kluis",
-      "main": "Persoonlijke kluis van {0}"
-    },
-    "filter": {
-      "group": "Selecteer een kluis..."
-    },
-    "recovered": "HERSTELD - ",
-    "totp": "2FA",
-    "password": "Wachtwoord",
-    "locked": {
-      "warn": "Je kluis is gesloten. Het wachtwoord, TOTP-code, bestand en commentaar zijn niet beschikbaar."
-    }
   },
   "notification": {
     "groupeditrequired": {
@@ -7977,8 +8098,16 @@
       "header": "Organisatie-eenheidlidmaatschap"
     },
     "groupsetting": "Selecteer een groep...",
-    "header": "Organisatie-eenheid - {0}",
+    "details": {
+      "header": "Details"
+    },
+    "header": {
+      "main": "Organisatie-eenheid - {0}",
+      "accounts": "Accounts",
+      "applications": "Applicaties"
+    },
     "inheritedgroupsetting": "{0} overgenomen van {1}...",
+    "transferownership": "Eigenaar overdragen",
     "settings": {
       "header": "Instellingen"
     }
@@ -8088,6 +8217,11 @@
     "leave": "Verlaat deze groep"
   },
   "grouponsystem": {
+    "search": {
+      "ownergroup": "Verantwoordelijke groep...",
+      "system": "Gekoppeld systeem...",
+      "type": "Type..."
+    },
     "header": {
       "group": "Groep",
       "main": "Koppelgroep - {0}",
@@ -8107,6 +8241,21 @@
         "subtitle": "Dit toegangsprofiel heeft toegang tot de koppelgroep."
       }
     },
+    "lifecycleaction": {
+      "recipient": {
+        "bcc": "Bcc",
+        "cc": "Cc",
+        "to": "Aan",
+        "select": "Kies een ontvangertype..."
+      },
+      "offset": {
+        "before": "Ervoor",
+        "after": "Erna"
+      },
+      "recipients": {
+        "add": "Ontvanger toevoegen"
+      }
+    },
     "client": {
       "details": {
         "subtitle": "Kies de opties voor toegang tot de applicatie via dit toegangsprofiel.",
@@ -8116,6 +8265,27 @@
     "attributerules": {
       "new": "Nieuw attribuut",
       "header": "Beheerde attributen"
+    },
+    "header": {
+      "lifecycleresult": "Resultaat",
+      "source": "Bron",
+      "lifecycleduedate": "Vervaldatum",
+      "attributes": "Attributen",
+      "attributerule": "Attribuut",
+      "lifecycleanchor": "Overgang",
+      "lifecycleaction": "Actie",
+      "main": "Toegangsprofiel - {0}",
+      "manual": "Handmatig",
+      "expected": "Verwachte waarde",
+      "date": "Datum",
+      "type": "Type",
+      "current": "Huidige waarde",
+      "group": "Groep",
+      "account": "Gebruiker",
+      "lifecyclestatus": "Status",
+      "lifecycletiming": "Tijdstip",
+      "predictedtransitions": "Verwachte overgangen",
+      "activation": "Activatie"
     },
     "attribute": {
       "summary": {
@@ -8138,17 +8308,15 @@
       "ERROR": "{0}",
       "VALID": "{0}"
     },
-    "header": {
-      "source": "Bron",
-      "attributes": "Attributen",
-      "attributerule": "Attribuut",
-      "main": "Toegangsprofiel - {0}",
-      "manual": "Handmatig",
-      "expected": "Verwachte waarde",
-      "current": "Huidige waarde",
-      "group": "Groep",
-      "account": "Gebruiker",
-      "activation": "Activatie"
+    "lifecycleactions": {
+      "new": "Nieuwe levenscyclusactie",
+      "header": "Levenscyclusacties"
+    },
+    "prediction": {
+      "deactivatesat": "deactiveert {0}",
+      "addsat": "wordt lid {0}",
+      "removesat": "lidmaatschap eindigt {0}",
+      "activatesat": "activeert {0}"
     },
     "access": {
       "header": "Toegang"
@@ -8173,6 +8341,12 @@
       "link": "Attributen",
       "insync": "Gesynchroniseerd"
     },
+    "lifecycleevents": {
+      "header": "Levenscyclusgebeurtenissen"
+    },
+    "lifecycleevent": {
+      "attempts": "Na {0} poging(en)"
+    },
     "name": "Toegangsprofiel",
     "apporsystem": {
       "add": {
@@ -8185,6 +8359,10 @@
     },
     "error": {
       "duplicateattr": "Het attribuut {0} is meerdere keren opgegeven."
+    },
+    "predictions": {
+      "empty": "Geen verwachte of recente overgangen.",
+      "header": "Verwachte en recente overgangen"
     },
     "accounts": {
       "header": "Leden"
@@ -8228,6 +8406,71 @@
       "cap": " "
     }
   },
+  "2fa": {
+    "webauthn": {
+      "intro": {
+        "text": {
+          "main": "Na het toevoegen gebruik je deze security key als tweede factor bij het inloggen, in plaats van of naast je telefoon-app.",
+          "external": "Na het toevoegen gebruik je deze security key om je kluis te ontgrendelen. Two-factor authenticatie bij het inloggen wordt door je organisatie geregeld."
+        }
+      },
+      "vaultunlock": {
+        "setup": "Ja, instellen",
+        "error": "Er ging iets mis. Heb je te lang gewacht of heb je een andere security key gebruikt?",
+        "touch": "Je browser opent zo een prompt van je besturingssysteem. Raak je security key opnieuw aan om te bevestigen.",
+        "title": "Vault unlock",
+        "skip": "Sla over",
+        "success": "Het is gelukt! Voortaan opent je kluis met deze security key.",
+        "subtitle": "Gebruik je security key om je kluis te ontgrendelen.",
+        "question": "Wil je deze security key ook gebruiken om je kluis te ontgrendelen? Zodra dit is ingesteld, open je je kluis hiermee in plaats van met je wachtwoord, dat gewoon blijft werken."
+      },
+      "subtitle": "Gebruik je security key om deze te koppelen aan je account.",
+      "register": {
+        "name": {
+          "main": "Naam voor deze key",
+          "placeholder": "Werklaptop"
+        },
+        "error": "Er ging iets mis. Heb je te lang gewacht of probeer je misschien dezelfde security key nogmaals te koppelen?",
+        "success": "Security key succesvol geregistreerd"
+      },
+      "editkey": {
+        "enable": "Vault unlock instellen",
+        "subtitle": "Geef je security key een andere naam of beheer vault unlock.",
+        "disable": {
+          "main": "Vault unlock uitzetten",
+          "success": "Vault unlock staat uit voor deze security key."
+        },
+        "title": "Security key"
+      },
+      "authenticate": {
+        "error": "Er ging iets mis. Gebruik je de juiste security key? Heb je deze aangeraakt om deze te activeren?"
+      }
+    },
+    "totp": {
+      "verification": {
+        "long": "Verifieer je 2FA met de getoonde code",
+        "secret": "Sleutel",
+        "main": "Verificatiecode"
+      },
+      "invalidcode": "De opgegeven verificatiecode is onjuist. Controleer de tijd op je mobiel, scan de QR-code opnieuw, en probeer het nog een keer.",
+      "appgekoppeld": "Je hebt de QR-code gescand met de KeyHub app. Controleer de naam van het apparaat en klik op activeren om 2FA in te schakelen.",
+      "subtitle": "Scan de QR-code met de KeyHub app of een andere app met TOTP-ondersteuning of neem de sleutel handmatig over in de app.",
+      "offsetchange": {
+        "secondtoken": "Volgende verificatiecode",
+        "firsttoken": "Huidige verificatiecode"
+      },
+      "scan": "Scan de QR-code met de KeyHub app of een andere app met TOTP-ondersteuning of neem de sleutel handmatig over in de app: {0}"
+    },
+    "vaultkey": {
+      "header": "Voeg een security key toe",
+      "add": "Ja, toevoegen",
+      "question": "Wil je een security key toevoegen om je kluis te ontgrendelen? Zodra dit is ingesteld, open je je kluis door de key aan te raken in plaats van met je wachtwoord, dat gewoon blijft werken."
+    },
+    "denied": "Je two-factor authenticatie is afgebroken.",
+    "header": "Stel two-factor authenticatie in",
+    "switchToApp": "Gebruik een 2FA app",
+    "switchToSecurityKey": "Gebruik een security key"
+  },
   "filter": {
     "loglevel": "Filter op log level...",
     "attribute": "Filter op attribuut...",
@@ -8239,6 +8482,9 @@
     "account": "Selecteer een account...",
     "action": "Filter op actie...",
     "alles": "Alles"
+  },
+  "auditordashboard": {
+    "provisioning": "Auditor-dashboard provisioning"
   },
   "groupaudit": {
     "savedraft": "Opslaan als concept",
@@ -8315,40 +8561,32 @@
   "notificationcentre": {
     "header": "Notificatie-instellingen"
   },
-  "2fa": {
-    "totp": {
-      "verification": {
-        "long": "Verifieer je 2FA met de getoonde code",
-        "secret": "Sleutel",
-        "main": "Verificatiecode"
-      },
-      "invalidcode": "De opgegeven verificatiecode is onjuist. Controleer de tijd op je mobiel, scan de QR-code opnieuw, en probeer het nog een keer.",
-      "appgekoppeld": "Je hebt de QR-code gescand met de KeyHub app. Controleer de naam van het apparaat en klik op activeren om 2FA in te schakelen.",
-      "subtitle": "Scan de QR-code met de KeyHub app of een andere app met TOTP-ondersteuning of neem de sleutel handmatig over in de app.",
-      "offsetchange": {
-        "secondtoken": "Volgende verificatiecode",
-        "firsttoken": "Huidige verificatiecode"
-      },
-      "scan": "Scan de QR-code met de KeyHub app of een andere app met TOTP-ondersteuning of neem de sleutel handmatig over in de app: {0}"
+  "vaultrecoverykey": {
+    "check": {
+      "action": "Controleren",
+      "main": "Private key controleren",
+      "explain": "Upload je herstel-private key om te controleren of deze overeenkomt met de opgeslagen public key.",
+      "label": "Herstel-private key",
+      "success": "De private key komt overeen met de opgeslagen public key.",
+      "header": "Herstel-private key controleren"
     },
-    "webauthn": {
-      "subtitle": "Gebruik je security key om deze te koppelen aan je account.",
-      "editkey": {
-        "subtitle": "Geef je security key een andere naam.",
-        "title": "Security key"
+    "regenerate": {
+      "header": "Herstel-key opnieuw genereren",
+      "done": "De herstel-key is vervangen.",
+      "upload": {
+        "explain": "Upload de oude private key om de bestaande kluizen opnieuw te versleutelen, of ga verder zonder.",
+        "label": "Oude private key",
+        "header": "Bestaande kluizen opnieuw versleutelen",
+        "nokey": "Geen key",
+        "skip": "Ik heb geen oude key"
       },
-      "register": {
-        "error": "Er ging iets mis. Heb je te lang gewacht of probeer je misschien dezelfde security key nogmaals te koppelen?",
-        "success": "Security key succesvol geregistreerd"
-      },
-      "authenticate": {
-        "error": "Er ging iets mis. Gebruik je de juiste security key? Heb je deze aangeraakt om deze te activeren?"
-      }
+      "explain": "Er is een nieuwe herstel-key gegenereerd. Download de nieuwe private key voordat je verdergaat.",
+      "main": "Key opnieuw genereren"
     },
-    "denied": "Je two-factor authenticatie is afgebroken.",
-    "header": "Stel two-factor authenticatie in",
-    "switchToApp": "Gebruik een 2FA app",
-    "switchToSecurityKey": "Gebruik een security key"
+    "key": "Herstel-key",
+    "panel": {
+      "header": "Herstel-key"
+    }
   },
   "validatie": {
     "fileTooLarge": "{0} is groter dan {1}Kb",
@@ -8360,6 +8598,15 @@
   },
   "browser": {
     "unknown": "Onbekend"
+  },
+  "java": {
+    "time": {
+      "temporal": {
+        "ChronoUnit#DAYS": "Dagen",
+        "ChronoUnit#MONTHS": "Maanden",
+        "ChronoUnit#WEEKS": "Weken"
+      }
+    }
   },
   "apporsystem": {
     "add": {
@@ -8505,6 +8752,13 @@
     "filesizeTooLarge": "Ongeldig PEM-bestand. Het bestand is te groot.",
     "invalidPublicKeyFile": "Ongeldig PEM-bestand. Het bestand is een incorrect formaat."
   },
+  "downloadencryptionkey": {
+    "generated": "Gegenereerd op {0}",
+    "download": {
+      "public": "Public key downloaden",
+      "private": "Private key downloaden"
+    }
+  },
   "groupauditaccount": {
     "comment": {
       "placeholder": "Opmerkingen voor dit account"
@@ -8629,6 +8883,7 @@
     "selected": "# type(s) geselecteerd",
     "noneSelected": "(Alle recordtypes)"
   },
+  "DuplicateAttributeNameValidator": "De naam \"{name}\" mag slechts eenmaal worden gebruikt.",
   "DerRSAPrivateKeyValidator": {
     "invalidkey": "Ongeldige RSA private key. Gebruik een RSA private key in DER-encoding."
   },

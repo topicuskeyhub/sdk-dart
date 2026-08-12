@@ -30,8 +30,12 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     List<DateTime>? modifiedSince;
     ///  Search groups on (part of) the display name or the name in system.
     List<String>? nameContains;
+    ///  Filter groups on system whose name in system does not start with the given values.
+    List<String>? nameDoesNotStartWith;
     ///  Filter groups on system on the exact name in system.
     List<String>? nameInSystem;
+    ///  Filter groups on system on the start of the name in system.
+    List<String>? nameStartsWith;
     ///  Only return groups on system that do not have a provisioning group with one of the given groups, specified by id.
     List<int>? notLinkedToGroup;
     ///  Only return groups on system that do are not linked to the given service account, specified by id.
@@ -74,7 +78,9 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
             'id' : id,
             'modifiedSince' : modifiedSince,
             'nameContains' : nameContains,
+            'nameDoesNotStartWith' : nameDoesNotStartWith,
             'nameInSystem' : nameInSystem,
+            'nameStartsWith' : nameStartsWith,
             'notLinkedToGroup' : notLinkedToGroup,
             'notLinkedToServiceAccount' : notLinkedToServiceAccount,
             'organizationalUnit' : organizationalUnit,

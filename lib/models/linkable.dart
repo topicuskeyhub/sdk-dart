@@ -65,8 +65,12 @@ import './organization/organizational_unit_client_application.dart';
 import './organization/organizational_unit_primer.dart';
 import './profile/access_profile.dart';
 import './profile/access_profile_account.dart';
+import './profile/access_profile_account_prediction.dart';
 import './profile/access_profile_client.dart';
 import './profile/access_profile_group.dart';
+import './profile/access_profile_lifecycle_action.dart';
+import './profile/access_profile_lifecycle_event.dart';
+import './profile/access_profile_mail_lifecycle_action.dart';
 import './profile/access_profile_primer.dart';
 import './profile/access_profile_provisioning.dart';
 import './profile/account_access_profile.dart';
@@ -225,8 +229,12 @@ class Linkable implements AdditionalDataHolder, Parsable {
             'organization.OrganizationalUnitPrimer' => OrganizationalUnitPrimer(),
             'profile.AccessProfile' => AccessProfile(),
             'profile.AccessProfileAccount' => AccessProfileAccount(),
+            'profile.AccessProfileAccountPrediction' => AccessProfileAccountPrediction(),
             'profile.AccessProfileClient' => AccessProfileClient(),
             'profile.AccessProfileGroup' => AccessProfileGroup(),
+            'profile.AccessProfileLifecycleAction' => AccessProfileLifecycleAction(),
+            'profile.AccessProfileLifecycleEvent' => AccessProfileLifecycleEvent(),
+            'profile.AccessProfileMailLifecycleAction' => AccessProfileMailLifecycleAction(),
             'profile.AccessProfilePrimer' => AccessProfilePrimer(),
             'profile.AccessProfileProvisioning' => AccessProfileProvisioning(),
             'profile.AccountAccessProfile' => AccountAccessProfile(),

@@ -1,10 +1,10 @@
 // ignore_for_file: type=lint
 /// auto generated
 enum WebAuthnPRFSupported {
-    unknown('UNKNOWN'),
-    supportedNotLinked('SUPPORTED_NOT_LINKED'),
     supported('SUPPORTED'),
-    notSupported('NOT_SUPPORTED');
+    notSupported('NOT_SUPPORTED'),
+    disabled('DISABLED'),
+    supportedNotLinked('SUPPORTED_NOT_LINKED');
     const WebAuthnPRFSupported(this.value);
     final String value;
 }

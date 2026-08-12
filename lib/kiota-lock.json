@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "BD1A57360A88E0E89491591E290C17E9F07A7C6D8B5DDB0234D2C4986D28F71714A2AD147148597C03FAA4B627E60FB9D0724224C090381E4C3422C730F6E8CF",
+  "descriptionHash": "77465472B0EB21079FC1615A89157503B82DC547D0643AE3A021F90D6556B3E49FF4C8E391A8327D06B402273F36EFF881F84761AA25ABB145E57E1062827009",
   "descriptionLocation": "../openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.32.2",
+  "kiotaVersion": "1.34.1",
   "clientClassName": "KeyHubClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "ApiSdk",
@@ -22,5 +22,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

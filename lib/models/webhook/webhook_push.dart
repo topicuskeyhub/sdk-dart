@@ -29,6 +29,8 @@ class WebhookPush extends NonLinkable implements Parsable {
     WebhookNameUuid? groupOnSystem;
     ///  The identitySource property
     WebhookNameUuid? identitySource;
+    ///  The machineHostname property
+    String? machineHostname;
     ///  The modificationRequest property
     WebhookNameUuid? modificationRequest;
     ///  The organizationalUnit property
@@ -83,6 +85,7 @@ class WebhookPush extends NonLinkable implements Parsable {
         deserializerMap['groupClassification'] = (node) => groupClassification = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['groupOnSystem'] = (node) => groupOnSystem = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['identitySource'] = (node) => identitySource = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
+        deserializerMap['machineHostname'] = (node) => machineHostname = node.getStringValue();
         deserializerMap['modificationRequest'] = (node) => modificationRequest = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['organizationalUnit'] = (node) => organizationalUnit = node.getObjectValue<WebhookNameUuid>(WebhookNameUuid.createFromDiscriminatorValue);
         deserializerMap['origin'] = (node) => origin = node.getStringValue();
@@ -116,6 +119,7 @@ class WebhookPush extends NonLinkable implements Parsable {
         writer.writeObjectValue<WebhookNameUuid>('groupClassification', groupClassification);
         writer.writeObjectValue<WebhookNameUuid>('groupOnSystem', groupOnSystem);
         writer.writeObjectValue<WebhookNameUuid>('identitySource', identitySource);
+        writer.writeStringValue('machineHostname', machineHostname);
         writer.writeObjectValue<WebhookNameUuid>('modificationRequest', modificationRequest);
         writer.writeObjectValue<WebhookNameUuid>('organizationalUnit', organizationalUnit);
         writer.writeStringValue('origin', origin);

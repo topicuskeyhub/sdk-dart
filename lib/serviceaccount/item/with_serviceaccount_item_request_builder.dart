@@ -62,7 +62,7 @@ class WithServiceaccountItemRequestBuilder extends BaseRequestBuilder<WithServic
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
         return requestInfo;
     }
     /// Returns the service account identified by the id.
@@ -70,7 +70,7 @@ class WithServiceaccountItemRequestBuilder extends BaseRequestBuilder<WithServic
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithServiceaccountItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithServiceaccountItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithServiceaccountItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
         return requestInfo;
     }
     /// Updates the service account identified by the id.
@@ -79,8 +79,8 @@ class WithServiceaccountItemRequestBuilder extends BaseRequestBuilder<WithServic
     RequestInformation toPutRequestInformation(ServiceAccount body, [void Function(RequestConfiguration<WithServiceaccountItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithServiceaccountItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithServiceaccountItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=86', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=87', body);
         return requestInfo;
     }
 }

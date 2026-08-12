@@ -103,6 +103,7 @@
                 "description": "Choose if the configuration of the appliance must be restored or not.",
                 "label": "Appliance configuration"
               },
+              "ExportAuditorProvisioningPanel$AuditorExportType#GOS": "Group on systems",
               "AccessProfileAccountEditPanel$AccountEditBean#manual": {
                 "label": "Forced membership",
                 "description": "No business rules apply to this membership."
@@ -125,13 +126,16 @@
                 "label": "File size"
               },
               "ExportAuditorServiceAccountsPanel$AuditorExportType#SERVICEACCOUNTS_GROUPS": "Groups on system",
+              "ExportAuditorProvisioningPanel$AuditorExportType#GOS_ACCESSPROFILE": "GoS - Access profiles",
               "ApplicationOrSystemAddToGroupPanel$ServiceAccountType#SERVICE_ACCOUNT": "Service account",
               "GroupAccountEditPanel$AccountEditBean#endDate": {
                 "label": "End date for membership"
               },
+              "ExportAuditorProvisioningPanel$AuditorExportType#GOS_GROUP": "GoS - Groups",
               "AccountDirectoryAddPanel$DirectoryTypeBean#type": {
                 "label": "Type"
               },
+              "ExportAuditorProvisioningPanel$AuditorExportType#GOS_SERVICEACCOUNT": "GoS - Service accounts",
               "RestoreBackupPanel$RestoreBackupBean#restoreKey": {
                 "label": "Backup decryption key",
                 "placeholder": "Backup decryption key"
@@ -199,6 +203,9 @@
               },
               "ExportAuditorServiceAccountsPanel$ExportTypeBean#type": {
                 "label": "Type"
+              },
+              "ExportAuditorProvisioningPanel$ExportTypeBean#type": {
+                "label": "Type"
               }
             },
             "settings": {
@@ -230,11 +237,11 @@
                 "ChangeApplicationBean$ReleaseChannel#ACCEPTANCE": "acceptance - The version currently being tested for acceptance."
               }
             },
-            "filter": {
-              "VaultRecordFilterBarPanel$VaultRecordOrdering#VAULT": "Sort on vault",
-              "VaultRecordFilterBarPanel$VaultRecordOrdering#NAME": "Sort on name"
-            },
             "panel": {
+              "AbstractConfirmationPanel$Confirmation#firePendingLifecycleEvents": {
+                "description": "Fire the account's pending access profile lifecycle events, delivering their mail, before removal instead of cancelling them.",
+                "label": "Fire pending lifecycle events now"
+              },
               "AbstractConfirmationPanel$Confirmation#removeFromSystem": {
                 "description": "Also remove the group from the system",
                 "label": "Remove from system"
@@ -260,6 +267,10 @@
                 "label": "Secret"
               }
             },
+            "filter": {
+              "VaultRecordFilterBarPanel$VaultRecordOrdering#VAULT": "Sort on vault",
+              "VaultRecordFilterBarPanel$VaultRecordOrdering#NAME": "Sort on name"
+            },
             "formcomponent": {
               "PrivateKeyAndCertificateEditPanel$KeyStoreType#PKCS12": "PKCS#12 (.pfx or .p12)",
               "PrivateKeyAndCertificateEditPanel$KeyStoreType#PEM": "PEM (in separate files)"
@@ -273,23 +284,42 @@
                 "label": "Rule for activation",
                 "description": "A script to determine whether the accounts within the linked systems should be active. Please refer to the manual for further explanation."
               },
+              "AccessProfileLifecycleAnchor#REMOVE": "Is removed",
+              "AccessProfileLifecycleEventStatus#CANCELLED": "Cancelled",
+              "AccessProfileLifecycleEventStatus#PENDING": "Pending",
               "AccessProfile#owner": {
                 "description": "Managers from the selected group are responsible for this access profile.",
                 "label": "Group with ownership",
                 "placeholder": "Select a group..."
               },
+              "AccessProfileLifecycleAction#name": {
+                "label": "Name"
+              },
               "AccessProfile#directory": {
                 "label": "Linked directory",
                 "description": "The directory for which this access profile can manage account attributes."
               },
+              "AccessProfileLifecycleAction#offset": {
+                "label": "Timing",
+                "description": "How long before or after the transition the action triggers."
+              },
               "AccessProfileProvisioning#groupOnSystem": {
                 "label": "Group on system"
               },
+              "AccessProfileLifecycleAnchor#ACTIVATE": "Is activated",
               "AccessProfileClient#accessProfile": {
                 "label": "Access profile"
               },
               "AccessProfileAccountActivation#ACTIVE": "Active (business rules apply)",
               "AccessProfileAccountActivation#INACTIVE": "Inactive (business rules apply)",
+              "AccessProfileMailLifecycleAction#mailSubjectTemplate": {
+                "label": "Subject template"
+              },
+              "AccessProfileLifecycleAction#anchor": {
+                "label": "Transition",
+                "description": "The membership or activation transition this action is triggered relative to."
+              },
+              "AccessProfileLifecycleEventStatus#FIRED": "Fired",
               "AccessProfileProvisioning#groupOnSystemDisplayName": {
                 "label": "Display name"
               },
@@ -303,22 +333,32 @@
               "AccessProfileProvisioning#system": {
                 "label": "Linked system"
               },
+              "AccessProfileLifecycleEventStatus#FAILED": "Failed",
+              "AccessProfileMailLifecycleAction#mailBodyTemplate": {
+                "label": "Body template"
+              },
+              "AccessProfileMailLifecycleAction#recipients": {
+                "label": "Recipients"
+              },
               "AccessProfileAccountActivation#FORCE_INACTIVE": "Inactive (manually overridden)",
               "AccessProfile#description": {
                 "label": "Description"
               },
+              "AccessProfileLifecycleAnchor#DEACTIVATE": "Is deactivated",
               "AccessProfileProvisioning#accessProfile": {
                 "label": "Access profile"
               },
               "AccessProfilePrimer#uuid": {
                 "label": "UUID"
               },
+              "AccessProfileLifecycleAnchor#ADD": "Becomes a member",
               "AccessProfileAccountActivation#FORCE_ACTIVE": "Active (manually overridden)"
             },
             "audit": {
               "AuditAccountAction#CHANGE_TO_MANAGER": "Give management privileges",
               "AuditRecordType#TRANSFER_ACCESS_PROFILE_OWNERSHIP_DECLINED": "Transfer ownership of access profile - Declined",
               "AuditRecordType#TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP_REQUESTED": "Transfer ownership of group on system - Requested",
+              "AuditRecordType#ACCESS_PROFILE_LIFECYCLE_EVENT_FAILED": "Access profile - Lifecycle event failed",
               "AuditRecordType#SERVICE_ACCOUNT_MODIFIED": "Service account - Modified",
               "AuditRecordType#IDENTITY_SOURCE_MODIFIED": "Identity source - Modified",
               "AuditRecordType#ACCOUNT_REREGISTERED": "Account - Re-registered",
@@ -365,6 +405,7 @@
               "AuditRecordType#WEBHOOK_MODIFIED": "Webhook - Modified",
               "AuditRecordType#ACCOUNT_REMOVED": "Account - Removed",
               "AuditRecordType#CLIENT_MODIFIED": "Application - Modified",
+              "AuditRecordType#ACCOUNT_DEACTIVATED_FOR_ACCESS_PROFILE": "Account - Deactivated for an access profile",
               "AuditRecordType#ADD_GROUP_TO_ACCESS_PROFILE_DECLINED": "Add group to access profile - Declined",
               "AuditRecordType#IDENTITY_SOURCE_REMOVED": "Identity source - Removed",
               "AuditRecordType#PROVISIONED_SYSTEM_UNKNOWN_ACCOUNT_DESTROYED": "Linked system - Unknown account removed",
@@ -430,6 +471,7 @@
               "AuditRecordType#ACCOUNT_ACTIVATION_CODE_USED": "Account - Activation code used",
               "AuditRecordType#TRANSFER_PROVISIONED_SYSTEM_OWNERSHIP_DECLINED": "Transfer ownership of linked system - Declined",
               "AuditRecordType#ADD_GROUP_ADMIN_DECLINED": "Add group manager - Declined",
+              "AuditRecordType#ACCOUNT_ACTIVATED_FOR_ACCESS_PROFILE": "Account - Activated for an access profile",
               "AuditRecordType#ORGANIZATIONAL_UNIT_MODIFIED": "Organisational unit - Modified",
               "AuditRecordType#CREATE_GROUP_DECLINED": "Create group - Declined",
               "AuditRecordType#DIRECTORY_HELPDESK_MODIFIED": "Help desk modified",
@@ -537,6 +579,7 @@
               },
               "AuditRecordType#TRANSFER_ORGANIZATIONAL_UNIT_OWNERSHIP_REQUESTED": "Transfer ownership of organisational unit - Requested",
               "AuditRecordType#TRANSFER_APPLICATION_ADMINISTRATION_ACCEPTED": "Transfer administration of application - Approved",
+              "AuditRecordType#ACCESS_PROFILE_LIFECYCLE_EVENT_FIRED": "Access profile - Lifecycle event fired",
               "AuditRecordType#TRANSFER_APPLICATION_ADMINISTRATION_REQUESTED": "Transfer administration of application - Requested",
               "AuditRecordType#ACCOUNT_2FA_ENABLED": "Account - 2FA enabled",
               "AuditRecordType#GROUP_NESTING_DISCONNECTED": "Group - Nested group unlinked",
@@ -580,6 +623,7 @@
               "AuditRecordType#GROUP_ON_SYSTEM_DEPROVISIONED": "Group on system - Removed from linked system",
               "AuditRecordType#PROVISIONED_SYSTEM_MODIFIED": "Linked system - Modified",
               "AuditRecordType#VERIFY_INTERNAL_ACCOUNT_REQUESTED": "Verify internal account - Requested",
+              "AuditRecordType#ACCESS_PROFILE_LIFECYCLE_EVENT_CANCELLED": "Access profile - Lifecycle event cancelled",
               "AuditRecordType#REVOKE_ADMIN_ACCEPTED": "Remove KeyHub Administrator - Approved",
               "AuditRecordType#REMOVE_ORGANIZATIONAL_UNIT_DECLINED": "Remove organisational unit - Declined",
               "AuditRecordType#UPDATE_LICENSE_REQUESTED": "Update the licence - Requested",
@@ -767,6 +811,7 @@
               "ModificationRequestReportChange#GROUP_NESTING_REMOVED": "The nesting of these groups will be removed.",
               "AuthorizingGroupType#MEMBERSHIP": "Changes in group membership",
               "ModificationRequestReportError#APPLICATION_CANNOT_BE_REMOVED": "No permissions to delete {2}: {1} ({3}).",
+              "ModificationRequestReportChange#ACCESS_PROFILE_LIFECYCLE_ACTION_REMOVED": "These lifecycle actions will be removed.",
               "ModificationRequestReportChange#PROVISIONING_GROUP_REMOVED_OWNER": "The group on system {0} moves with this group. The KeyHub group {1} loses access.",
               "ModificationRequestType#SETUP_GROUP_EXCLUSION": "EXCLUSION",
               "ModificationRequestReportChange#PROVISIONING_GROUP_WILL_BE_REMOVED": "The group {1} will lose access to the group on system {2}.",
@@ -1774,6 +1819,22 @@
               "ProvisionedAzureTenant#clientId": {
                 "label": "Client identifier"
               },
+              "GroupOnSystemType": {
+                "short#GROUP_UNKNOWN": "Other",
+                "short#AZURE_SECURITY_GROUP": "Security group",
+                "short#AZURE_DYNAMIC_UNIFIED_GROUP": "Microsoft 365 (dynamic)",
+                "short#GROUP_OF_NAMES": "groupOfNames",
+                "short#POSIX_GROUP": "posixGroup",
+                "short#AZURE_DYNAMIC_SECURITY_GROUP": "Security group (dynamic)",
+                "short#GROUP_UNIVERSAL_SECURITY": "Universal security",
+                "short#AZURE_UNIFIED_GROUP": "Microsoft 365",
+                "short#GROUP_LOCAL_SECURITY": "Local security",
+                "short#GROUP_OF_UNIQUE_NAMES": "groupOfUniqueNames",
+                "short#AZURE_ROLE": "Directory role",
+                "short#GROUP_GLOBAL_SECURITY": "Global security",
+                "short#ACCOUNT_ONLY": "Account-only",
+                "short#SCIM": "SCIM"
+              },
               "ProvisionedAzureTenant#attributes": {
                 "label": "Custom attributes"
               },
@@ -1970,6 +2031,7 @@
                 "label": "Client certificate"
               },
               "GroupOnSystemProvisioning#NOT_PROVISIONED_BY_DEFAULT_CAN_ONLY_BE_ENABLED": "Disabled by default, cannot be disabled - KeyHub management of groups is disabled by default and can only be enabled.",
+              "GroupOnSystemType#SCIM": "SCIM",
               "ProvisionedAzureSyncLDAPDirectory#directory": {
                 "description": "Azure AD Connect must be activated on this Active Directory, which synchronizes with the chosen Azure tenant.",
                 "label": "LDAP directory"
@@ -2598,10 +2660,6 @@
                 "label": "Approve 'Create group'",
                 "description": "Requests to create new groups are handled by the chosen group."
               },
-              "VaultRecoveryKey#privateKey": {
-                "placeholder": "The old private key",
-                "description": "Upload the old, to be replaced, private key. This can be left blank in case the old key is no longer available. This will make it impossible to recover vaults until they are opened at least once."
-              },
               "Settings#twoFactorAuthTimeout": {
                 "label": "2FA authentication timeout",
                 "description": "Set the validity period of 2FA authentication. Use 'm' for minutes, 'h' for hours and 'd' for days, for example '7d'."
@@ -2617,6 +2675,10 @@
                 "placeholder": "Branding logo",
                 "label": "Branding logo",
                 "description": "Choose a .png file to brand Topicus KeyHub with your company logo. This logo must be 540 by 280 pixels."
+              },
+              "VaultRecoveryKey#previousPrivateKey": {
+                "placeholder": "The old private key",
+                "label": "Recovery private key"
               },
               "Settings#maintenanceMessage": {
                 "label": "Maintenance message",
@@ -2634,9 +2696,8 @@
                 "label": "Sender address for E-mail",
                 "description": "If set, Topicus KeyHub will send e-mails with this sender address. If this is left blank, the e-mail address of the user will be used as the sender."
               },
-              "VaultRecoveryKey#publicKey": {
-                "description": "This key is used to recover access to vaults. Without a recovery key, vaults cannot be used.",
-                "placeholder": "Choose a public key file"
+              "VaultRecoveryKey#downloadGenerated": {
+                "required": "Download the newly generated private key before saving. Without it, recovering vaults will be impossible."
               },
               "Settings#createGroupPlaceholder": {
                 "label": "Hint for new group names",
@@ -2649,9 +2710,6 @@
               "Settings#passwordMinLength": {
                 "description": "Choose a value between 8 and 20. For optimum security, it is recommended to choose a value of 12 or higher.",
                 "label": "Minimum password length"
-              },
-              "Settings#vaultRecoveryKey": {
-                "label": "Public key for recovery"
               },
               "Settings#auditRecordRetention": {
                 "label": "Audit log retention",
@@ -3185,6 +3243,7 @@
           "select": "Select groups to move"
         },
         "clients": "Applications",
+        "edit": "Edit organisational unit",
         "accounts": "Accounts"
       },
       "oidcdirectory": "OIDC Directory",
@@ -3224,9 +3283,11 @@
       "webhook": "Webhook",
       "ldapapplication": "LDAP Application",
       "requestgroup": "Request access to a group",
+      "auditorgrouponsystemdetails": "Group on system details",
       "passwordprompt": "Password",
       "launchpad": "Launchpad",
       "logs": "Logs",
+      "grouponsystemauditlog": "Group on system audit log",
       "internalaccount": "Internal account",
       "provisionedldapdirectory": "Linked LDAP source directory",
       "inloggen": "Sign in",
@@ -3254,6 +3315,7 @@
       "consent": "Give consent",
       "sequences": "Number sequences",
       "classification": "Classification",
+      "auditorgrouponsystemauditlog": "Group on system audit log",
       "provisionednamespace": "Namespace",
       "auditorgroupsdashboard": "Auditor dashboard groups",
       "mygroups": {
@@ -3281,6 +3343,7 @@
       "vaultrecovery": "Vault recovery",
       "activationcode": "Activation code",
       "vaults": "Vaults",
+      "auditorprovisioningdashboard": "Auditor dashboard provisioning",
       "access": "Manage access",
       "about": {
         "updatelicense": "Confirm licence update",
@@ -3332,6 +3395,7 @@
       "removegroups": "Remove",
       "auditordashboard": {
         "accounts": "Auditor dashboard accounts",
+        "provisioning": "Auditor dashboard provisioning",
         "serviceaccounts": "Auditor dashboard service accounts",
         "groups": "Auditor dashboard groups"
       },
@@ -4243,6 +4307,12 @@
       "subtitle": "Request additional permissions for the application {0}.",
       "header": "Grant permissions"
     },
+    "updategroupmembership": {
+      "accept": {
+        "options": "Change end date"
+      },
+      "sent": "Your membership request for {0} for {1} has been submitted."
+    },
     "transferaccessprofileownership": {
       "header": "Transfer ownership",
       "subtitle": "Transfer the ownership of {0} to another group.",
@@ -4296,10 +4366,7 @@
       "sent": "Your request to remove {0} from KeyHub Administrators has been submitted."
     },
     "errorcount": "{0} error(s)",
-    "nocomment": "No reason given",
-    "updategroupmembership": {
-      "sent": "Your membership request for {0} for {1} has been submitted."
-    }
+    "nocomment": "No reason given"
   },
   "provisioning": {
     "authorization": {
@@ -4491,6 +4558,7 @@
       "step": {
         "groups": "Request groups",
         "pwd": "Choose password",
+        "vaultkey": "Security key",
         "2fa": "Set up 2FA"
       },
       "2fa": {
@@ -4590,6 +4658,9 @@
       "header": "Licence limit reached"
     },
     "resetpassword": "Reset password and wipe associated data",
+    "LICENSE_KEY_UNKNOWN_SIGNING_KEY": {
+      "header": "Invalid licence"
+    },
     "systeemnietbeschikbaar": "KeyHub is currently unavailable. Please try again later.",
     "username": {
       "placeholder": "Username"
@@ -5984,6 +6055,7 @@
       "profile": "{performedBy} requested to give the users in the access profile {onAccessProfile} access to {gosType} {gosName} on {onSystem}. {reason}",
       "group": "{performedBy} requested to give the users in the group {onGroup} access to {gosType} {gosName} on {onSystem}. {reason}"
     },
+    "ACCESS_PROFILE_LIFECYCLE_EVENT_FIRED": "The lifecycle action {parameter2} for {onAccount} on the access profile {onAccessProfile} has fired.",
     "PROVISIONED_SYSTEM_UNKNOWN_ACCOUNT_DESTROYED": "The unknown account {parameter1} was removed from the linked system {onSystem}.",
     "GROUP_CLASSIFICATION_MODIFIED": "{performedBy} modified the group classification {onGroupClassification}.",
     "ACCOUNT_GROUP_ACTIVATED": "{performedBy} activated {onGroup}.",
@@ -6139,9 +6211,11 @@
     "PROVISIONED_SYSTEM_MODIFIED": "{performedBy} modified a linked system {onSystem}.",
     "CLIENT_ADDED_TO_ACCESS_PROFILE": "{onClient} was added to the access profile {onAccessProfile}.",
     "DISABLE_2FA_DECLINED": "The request to disable 2FA for {onAccount} was declined by {performedBy}. {reason}",
+    "ACCESS_PROFILE_LIFECYCLE_EVENT_CANCELLED": "The pending lifecycle action {parameter2} for {onAccount} on the access profile {onAccessProfile} has been cancelled.",
     "ACCOUNT_PROVISIONING_MOVED": "{onAccount} was moved within the linked system {onSystem} from {parameter1} to {parameter2}.",
     "EXTENDED_ACCESS_DECLINED": "{performedBy} declined the request by {onAccount} to get extended access to {onGroup} until {parameter3}. {reason}",
     "toonEigenRecords": "Only show my records",
+    "ACCOUNT_ACTIVATED_FOR_ACCESS_PROFILE": "{onAccount} has been activated for the access profile {onAccessProfile}.",
     "EXTENDED_ACCESS_REQUESTED": "{performedBy} requested extended access to the group {onGroup} until {parameter3}. {reason}",
     "ACCOUNT_REREGISTERED": "{performedBy}'s account has been re-registered. The old username was {parameter1}.",
     "PROVISIONED_SYSTEM_REMOVED_FROM_ACCESS_PROFILE": "{gosTypeCap} {gosName} on {onSystem} was removed from the access profile {onAccessProfile}.",
@@ -6224,6 +6298,7 @@
     "GRANT_CLIENT_PERMISSION_ACCEPTED": "The request to grant {onClient} the permission '{parameter3}' was approved by {performedBy}. {reason}",
     "IDENTITY_SOURCE_CREATED": "{performedBy} added a new identity source {onIdentitySource}.",
     "CLIENT_MODIFIED": "{performedBy} modified the application {onClient}.",
+    "ACCOUNT_DEACTIVATED_FOR_ACCESS_PROFILE": "{onAccount} has been deactivated for the access profile {onAccessProfile}.",
     "GROUP_ON_SYSTEM_DEPROVISIONED": "{gosTypeCap} {gosName} has been removed from the system {onSystem}.",
     "SETUP_GROUP_EXCLUSION_DISCONNECT_REQUESTED": "{performedBy} requested to remove the group exclusion between {onGroup2} and {onGroup}. {reason}",
     "TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP_DECLINED": "The request to transfer ownership of {gosType} {gosName} on {onSystem} to {onGroup} was rejected by {performedBy}. {reason}",
@@ -6260,6 +6335,7 @@
     "ACCOUNT_GROUP_ACTIVATION_REASON": "{performedBy} activated {onGroup} with the following reason: {parameter1}.",
     "ACCOUNT_ACTIVATION_CODE_USED": "{performedBy} used the activation code {parameter1} for a password recovery.",
     "IDENTITY_SOURCE_MODIFIED": "{performedBy} modified the identity source {onIdentitySource}.",
+    "ACCESS_PROFILE_LIFECYCLE_EVENT_FAILED": "The lifecycle action {parameter2} for {onAccount} on the access profile {onAccessProfile} could not be executed and has been marked as failed.",
     "ACCOUNT_TOTP_OFFSET_CHANGED": "The verification code time offset for {performedBy} was changed to {parameter1}.",
     "PROVISIONED_SYSTEM_CREATED": "{performedBy} added a new linked system {onSystem}.",
     "JOIN_GROUP_REQUESTED": {
@@ -6303,6 +6379,7 @@
       "subjectdn": "Subject DN",
       "groups": "Groups",
       "directory": "Directory",
+      "parent": "Parent",
       "readwrites": "Reads/writes",
       "datetime": "Time",
       "accessProfile": "Access profile",
@@ -6320,6 +6397,7 @@
       "encrypted": "Encrypted",
       "records": "Number of records",
       "thread": "Thread",
+      "nameonos": "Name on system",
       "index": "#",
       "errorwarnings": "Errors/warnings",
       "clientId": "Client ID",
@@ -6452,6 +6530,7 @@
       "dashboard": {
         "groups": "Groups",
         "serviceaccounts": "Service accounts",
+        "provisioning": "Provisioning",
         "main": "Dashboard",
         "accounts": "Accounts"
       },
@@ -6674,6 +6753,7 @@
       "ACCOUNT_PROVISIONED": "Account enabled on linked system",
       "ACCOUNT_PROVISIONING_INITED": "Added account to linked system",
       "ACCOUNT_DEPROVISIONED": "Account disabled on linked system",
+      "ACCOUNT_DEACTIVATED_FOR_ACCESS_PROFILE": "Deactivated account for an access profile",
       "ACCOUNT_REMOVED_FROM_ACCESS_PROFILE": "Removed account from an access profile",
       "DIRECTORY_HELPDESK_MODIFIED": "Help desk modified",
       "ACCOUNT_LOGIN": "Successful authentication",
@@ -6681,9 +6761,11 @@
       "ACCOUNT_MODIFIED_FOR_GROUP": "Account within group modified",
       "ACCOUNT_LOGIN_FAILED": "Failed authentication",
       "DEVICE_CODE_REJECTED": "Device code rejected",
+      "ACCOUNT_ACTIVATED_FOR_ACCESS_PROFILE": "Activated account for an access profile",
       "ACCOUNT_TOTP_OFFSET_CHANGED": "Account TOTP offset changed",
       "ACCOUNT_REMOVED": "Account removed",
       "ACCOUNT_SSH_PUBLIC_KEY_MODIFIED": "Account - SSH public key set",
+      "ACCESS_PROFILE_LIFECYCLE_EVENT_FIRED": "Access profile lifecycle event fired",
       "VAULT_EXPORTED": "The contents of a vault have been exported",
       "CLIENT_ADDED_TO_ORGANIZATIONAL_UNIT": "Application - Added to an organisational unit",
       "SERVICE_ACCOUNT_PROVISIONING_INITED": "Added service account to linked system",
@@ -6712,6 +6794,7 @@
       "SERVICE_ACCOUNT_REMOVED_FROM_GROUP": "Service account removed from a group",
       "DEVICE_CODE_ISSUED": "Device code issued",
       "ACCOUNT_REREGISTERED": "Account re-registered",
+      "ACCESS_PROFILE_LIFECYCLE_EVENT_CANCELLED": "Access profile lifecycle event cancelled",
       "ACCOUNT_GROUP_ACTIVATION_REASON": "Group activation reason",
       "CLIENT_PERMISSION_REVOKED": "Permission revoked from application",
       "ACCOUNT_TOKEN_SIGNED": "Token issued for an application",
@@ -6732,6 +6815,7 @@
       "ACCOUNT_2FA_ENABLED": "2FA enabled",
       "VAULT_RECORD_MOVED_COPIED_SHARED": "Vault record moved/copied/shared",
       "CLIENT_REMOVED_FROM_ORGANIZATIONAL_UNIT": "Application - Removed from an organisational unit",
+      "ACCESS_PROFILE_LIFECYCLE_EVENT_FAILED": "Access profile lifecycle event failed",
       "SERVICE_ACCOUNT_DEPROVISIONED": "Service account disabled on linked system",
       "ACCOUNT_VAULT_UNLOCKED": "Vault unlocked",
       "ACCOUNT_MODIFIED_FOR_ACCESS_PROFILE": "Account within access profile modified",
@@ -7329,6 +7413,7 @@
         "disable": "Disable authenticator app"
       },
       "webauthn": {
+        "nounlock": "This key is not set up to unlock your vault.",
         "header": "Security keys",
         "add": "Add security key",
         "prf": "This key unlocks your vault."
@@ -7356,6 +7441,130 @@
     },
     "rotatingpassword": "Rotating password"
   },
+  "vault": {
+    "unlock": {
+      "subtitle": {
+        "webauthn": "Use your security key to unlock your vaults.",
+        "main": "Enter the password to unlock your vaults."
+      },
+      "header": "Unlock vaults",
+      "webauthn": {
+        "failed": "Your vaults could not be unlocked with this security key. Enter your password instead.",
+        "explanation": "Your browser will open a prompt from your operating system. Touch your security key to unlock your vaults."
+      },
+      "passwordlost": "Forgotten?",
+      "switchToPassword": "Use your password"
+    },
+    "recover": {
+      "deleted": {
+        "header": "Restore a deleted vault",
+        "explain": "Restore all records of a removed vault by adding them to an existing vault."
+      },
+      "panel": {
+        "header": "Recover a vault"
+      },
+      "explain": "Choose a vault and the user to give access to the vault. For group vaults this must be a member of the group.",
+      "header": "Restore access to a vault",
+      "main": "Restore access",
+      "group": "Group",
+      "done": "{0} now has access to the vault for {1}."
+    },
+    "secret": {
+      "totpinvalid": "The key is not valid. Only 'A-Z' and '2-7' are allowed. The key must be at least 4 characters long.",
+      "edit": {
+        "password": "Modify password",
+        "totp": "Modify key"
+      },
+      "refreshtotp": "Refresh TOTP code",
+      "generate": "Generate a password"
+    },
+    "record": {
+      "sharedfrom": {
+        "header": "Shared from",
+        "main": "Shared from {0}"
+      },
+      "sharedwith": {
+        "main": "Shared with {0}",
+        "header": "Shared with"
+      },
+      "move": {
+        "confirm": {
+          "copy": {
+            "sub": "You are about to copy <strong>{0}<\/strong> to <strong>{1}<\/strong>'s vault. Are you sure?",
+            "head": "Copy record"
+          },
+          "move": {
+            "sub": "You are about to move <strong>{0}<\/strong> to <strong>{1}<\/strong>'s vault. Are you sure?",
+            "head": "Move record"
+          }
+        },
+        "specific": "Share, copy or move record",
+        "title": "Move, copy or share",
+        "target": {
+          "true": "Group",
+          "false": "Personal vault"
+        },
+        "useCustomDuration": {
+          "true": "Specific date",
+          "false": "Fixed period"
+        },
+        "sharewarning": "<strong>This vault requires activation<\/strong> <br>The target vault may have less strict access requirements.",
+        "info": "Choose a destination vault for {0}."
+      },
+      "shared": {
+        "main": "Shared with:",
+        "parentRecordName": "Name original vault record: {0}"
+      },
+      "strength": {
+        "average": "This password is not very strong. Choose a stronger password if possible.",
+        "weak": "This password is very weak. Choose a stronger password.",
+        "strong": "This password has an acceptable strength."
+      },
+      "enddate": {
+        "warning": "This vault record will expire on {0}.",
+        "main": "End date",
+        "error": "This vault record has expired."
+      },
+      "holder": {
+        "sharedend": "(shared from {0} until {1})",
+        "shared": "(shared from {0})"
+      },
+      "shareend": "{0} (shared until {1})",
+      "derived": "Derived from an application or service account",
+      "header": "Vault record - {0}",
+      "duplicate": {
+        "warning": "This password is reused within this vault."
+      },
+      "add": "Add record",
+      "unshare": "Are you sure you want to stop sharing this record?"
+    },
+    "export": {
+      "title": "Export vault",
+      "subtitle": "Choose a vault to export to CSV."
+    },
+    "activation": {
+      "warn": "Activation of the group is required. The password, TOTP code, file and comment are not available."
+    },
+    "personal": {
+      "lost": {
+        "subtitle": "This is caused by a password reset.",
+        "help": "Press 'Reset vault' to empty your personal vault after which you can add new passwords.",
+        "main": "Your personal vault is invalid"
+      },
+      "delete": "Reset vault",
+      "anon": "Personal vault",
+      "main": "{0}'s personal vault"
+    },
+    "filter": {
+      "group": "Select a vault..."
+    },
+    "recovered": "RECOVERED - ",
+    "totp": "2FA",
+    "password": "Password",
+    "locked": {
+      "warn": "Your vault is locked. The password, TOTP code, file and comment are not available."
+    }
+  },
   "auditor": {
     "dashboard": {
       "groupaudits": {
@@ -7378,6 +7587,23 @@
         "title": "Export"
       },
       "accountdirectories": "Directories",
+      "gos": {
+        "access": {
+          "groups": {
+            "short": "g"
+          },
+          "serviceaccounts": {
+            "short": "s"
+          },
+          "accessprofiles": {
+            "short": "p"
+          }
+        },
+        "provisioning": {
+          "disabledkeepactive": "Disabled*"
+        },
+        "accesstooltip": "{0} groups / {1} access profiles / {2} service accounts"
+      },
       "vaultrecordtooltip": "{0} total / {1} with end date / {2} expired",
       "classifications": "Classifications",
       "pwrotationscheme": "Service accounts",
@@ -7412,6 +7638,7 @@
     },
     "GROUP_AUDIT_ALTERED_CONFLICT": "The group has changed after starting this audit, check the changes and save again.",
     "RESET_INVALID_PASSWORD": "The password does not match the password provided when the request was submitted.",
+    "WEBAUTHN_KEY_PRF_REQUIRED": "This security key cannot be used to unlock your vault. Try again with a different security key.",
     "CLIENT_PERMISSION_ALREADY_EXISTS": "The requested permission is already granted to this application.",
     "VAULT_TARGET_NOT_INITIALIZED": "The selected user did not yet set up a vault password.",
     "MULTIPLE_MATCHES": "Too many matches were found.",
@@ -7423,6 +7650,10 @@
     "PROVISIONED_SYSTEM_HAS_NAMESPACE": "This linked system cannot be deleted because it still contains namespaces. First delete the namespaces.",
     "VAULT_RECOVERY_KEY_MISSING": "A recovery key must be configured before vaults can be created. This must be done by a KeyHub administrator.",
     "NO_CHANGE_REQUIRED": "The action has been cancelled because no changes were made.",
+    "LICENSE_KEY_UNKNOWN_SIGNING_KEY": {
+      "login": "Unfortunately, the licence for this Topicus KeyHub installation was signed with an unknown signing key and therefore you are unable to log in. Contact your Topicus KeyHub administrators for assistance.",
+      "main": "This licence key was signed with a signing key that is unknown to this version of Topicus KeyHub. It was probably issued for a newer version; update Topicus KeyHub first, or request a licence for this version."
+    },
     "SAML_ERROR": "It is currently not possible to log in to this SAML2-application. Contact an administrator of the application.",
     "PROVISIONED_SYSTEM_TESTED": "{system} was tested with the following outcome: {message}",
     "ID_IN_DIRECTORY_ALREADY_EXISTS": "You already have a KeyHub account",
@@ -7466,6 +7697,7 @@
     "ORGANIZATIONAL_UNIT_NOT_UNDER_BASE": "The organisational unit is not a descendant of the user's base organisational unit.",
     "VAULT_RECOVERY_KEY_NOT_INITIALIZED": "The vault does not have a recovery key.",
     "ATTRIBUTE_HAS_VALUES": "There are already values for this attribute definition and therefore it cannot be made unique.",
+    "MODIFICATION_ALREADY_REQUESTED_BY": "{account} already submitted a similar request. Please wait until a manager or administrator has processed it.",
     "CANNOT_REMOVE_LAST_MANAGER": "The account for {account} cannot be removed because it is the last account without an end date and with management privileges in {group}. Choose a new manager for the group first.",
     "DIRECTORY_CREDENTIALS_EXPECTED": "You entered the wrong password. Please enter your {directory} password.",
     "DIRECTORY_IN_USE": "A directory can only be removed after all its accounts are removed.",
@@ -7478,6 +7710,8 @@
     "NAME_ALREADY_IN_USE": "The name must be unique, '{name}' is already in use.",
     "PROVISIONING_ERROR": "Your account in {system} could not be updated due to an error. If this problem persists, please contact a member of {admins}.",
     "MODIFICATION_AUTHORIZATION_ALREADY_SETUP": "This type of authorisation is already set up for this group.",
+    "TWO_FA_ENFORCED_BY_DIRECTORY": "Two-factor authentication is managed by the directory and cannot be reset in KeyHub.",
+    "MODIFICATION_END_DATE_IN_PAST": "The entered date lies in the past, please select a different date.",
     "FILE_SIZE_INCORRECT": "The given file for {for_name} is of incorrect size.",
     "INVALID_REGISTRATION_CREDENTIALS": "The given username and password do not match an existing user in the directory.",
     "ATTRIBUTE_IN_USE_BY_DIRECTORY": "This attribute definition is still in use by the directory {directory} and can therefore not be modified or removed.",
@@ -7487,6 +7721,7 @@
     "USERNAME_ALREADY_IN_USE": "This username already exists.",
     "GROUP_EXCLUSION_CONFLICT": "{account} is a member of an excluded group.",
     "KEYHUB_CREDENTIALS_EXPECTED": "You entered the wrong password. Please enter your KeyHub password.",
+    "ACCESS_PROFILE_GROUP_EXCLUSION_CONFLICT": "Group cannot be added because it conflicts with excluded group {group}.",
     "LAUNCHPAD_TILE_IDP_INITIATED_NOT_SUPPORTED": "IdP-initiated login is not supported by this application.",
     "ATTRIBUTE_IN_USE_BY_SYSTEM": "This attribute definition is still in use by the linked system {system} and can therefore not be modified or removed.",
     "ORGANIZATIONAL_UNIT_CANNOT_REMOVE_CLIENT_BASE": "Cannot remove the base organisational unit from the application.",
@@ -7507,6 +7742,7 @@
     "ATTRIBUTE_IN_USE_BY_CLIENT": "This attribute definition is still in use by the application {client} and can therefore not be modified or removed.",
     "INVALID_CSV": "The CSV file is invalid: {error}",
     "VAULT_RECORD_ALREADY_SHARED": "The vault record is already shared with the selected vault.",
+    "WEBAUTHN_KEY_CANNOT_UNLOCK_VAULT": "This security key cannot be used to unlock your vault.",
     "INVALID_CREDENTIALS": "The given password is incorrect.",
     "MODIFICATION_DELEGATION_ADMIN_NOT_ALLOWED": "Delegating management is not possible for KeyHub Administrators.",
     "NUMBER_SEQUENCE_IN_USE": "This number sequence is still in use.",
@@ -7538,6 +7774,7 @@
     "LICENSE_PRO_LIMIT_REACHED": "You've reached the limits of your Topicus KeyHub licence and can add no more 'Pro' accounts.",
     "PROVISIONING_MISSING_PERMISSION": "The application is missing a required permission: {role}",
     "PROVISIONED_SYSTEM_NO_UUID": "{system} did not provide a correct UUID",
+    "LIFECYCLE_ACTION_MISSING_TO_RECIPIENT": "A mail action must have at least one 'To' recipient.",
     "LICENSE_AT_LEAST_BUSINESS_REQUIRED": "At least a Business licence is required for {username} to allow group memberships or a personal vault.",
     "GROUP_EXCLUSION_ALREADY_SETUP": "A group exclusion already exists between these groups.",
     "MODIFICATION_GROUPACCOUNT_STATUS_CONFLICT": "This group membership is in an unexpected state.",
@@ -7558,9 +7795,6 @@
     "GROUP_AUDIT_DRAFT_EXISTS": "A draft audit has already been saved for this group. Open this draft instead of creating a new one.",
     "IDENTITY_SOURCE_COMPLEX_ATTRIBUTE_FETCH_SEPARATELY": "The attribute {attribute} is complex and must therefore be fetched separately.",
     "NO_VAULT_TO_RESTORE": "The user {username} does not have a vault to restore."
-  },
-  "DerRSAPublicKeyValidator": {
-    "invalidkey": "Invalid RSA public key. Use an RSA public key in DER-encoding."
   },
   "account": {
     "enable2fa": {
@@ -7667,119 +7901,6 @@
     },
     "more": "{0} requests additional access. You gave {0} access to some of your data in the past. You should only approve the request if you trust it with the following permissions:",
     "help": "{0} requests access to your data. You should only grant {0} access if you trust it with the following permissions:"
-  },
-  "vault": {
-    "recover": {
-      "deleted": {
-        "header": "Restore a deleted vault",
-        "explain": "Restore all records of a removed vault by adding them to an existing vault."
-      },
-      "explain": "Choose a vault and the user to give access to the vault. For group vaults this must be a member of the group.",
-      "header": "Restore access to a vault",
-      "main": "Restore access",
-      "group": "Group",
-      "done": "{0} now has access to the vault for {1}."
-    },
-    "secret": {
-      "totpinvalid": "The key is not valid. Only 'A-Z' and '2-7' are allowed. The key must be at least 4 characters long.",
-      "edit": {
-        "password": "Modify password",
-        "totp": "Modify key"
-      },
-      "refreshtotp": "Refresh TOTP code",
-      "generate": "Generate a password"
-    },
-    "record": {
-      "sharedfrom": {
-        "header": "Shared from",
-        "main": "Shared from {0}"
-      },
-      "sharedwith": {
-        "main": "Shared with {0}",
-        "header": "Shared with"
-      },
-      "move": {
-        "confirm": {
-          "copy": {
-            "sub": "You are about to copy <strong>{0}<\/strong> to <strong>{1}<\/strong>'s vault. Are you sure?",
-            "head": "Copy record"
-          },
-          "move": {
-            "sub": "You are about to move <strong>{0}<\/strong> to <strong>{1}<\/strong>'s vault. Are you sure?",
-            "head": "Move record"
-          }
-        },
-        "specific": "Share, copy or move record",
-        "title": "Move, copy or share",
-        "target": {
-          "true": "Group",
-          "false": "Personal vault"
-        },
-        "useCustomDuration": {
-          "true": "Specific date",
-          "false": "Fixed period"
-        },
-        "sharewarning": "<strong>This vault requires activation<\/strong> <br>The target vault may have less strict access requirements.",
-        "info": "Choose a destination vault for {0}."
-      },
-      "shared": {
-        "main": "Shared with:",
-        "parentRecordName": "Name original vault record: {0}"
-      },
-      "strength": {
-        "average": "This password is not very strong. Choose a stronger password if possible.",
-        "weak": "This password is very weak. Choose a stronger password.",
-        "strong": "This password has an acceptable strength."
-      },
-      "enddate": {
-        "warning": "This vault record will expire on {0}.",
-        "main": "End date",
-        "error": "This vault record has expired."
-      },
-      "holder": {
-        "sharedend": "(shared from {0} until {1})",
-        "shared": "(shared from {0})"
-      },
-      "shareend": "{0} (shared until {1})",
-      "derived": "Derived from an application or service account",
-      "header": "Vault record - {0}",
-      "duplicate": {
-        "warning": "This password is reused within this vault."
-      },
-      "add": "Add record",
-      "unshare": "Are you sure you want to stop sharing this record?"
-    },
-    "unlock": {
-      "header": "Unlock vaults",
-      "subtitle": "Enter the password to unlock your vaults.",
-      "passwordlost": "Forgotten?"
-    },
-    "export": {
-      "title": "Export vault",
-      "subtitle": "Choose a vault to export to CSV."
-    },
-    "activation": {
-      "warn": "Activation of the group is required. The password, TOTP code, file and comment are not available."
-    },
-    "personal": {
-      "lost": {
-        "subtitle": "This is caused by a password reset.",
-        "help": "Press 'Reset vault' to empty your personal vault after which you can add new passwords.",
-        "main": "Your personal vault is invalid"
-      },
-      "delete": "Reset vault",
-      "anon": "Personal vault",
-      "main": "{0}'s personal vault"
-    },
-    "filter": {
-      "group": "Select a vault..."
-    },
-    "recovered": "RECOVERED - ",
-    "totp": "2FA",
-    "password": "Password",
-    "locked": {
-      "warn": "Your vault is locked. The password, TOTP code, file and comment are not available."
-    }
   },
   "notification": {
     "groupeditrequired": {
@@ -7977,8 +8098,16 @@
       "header": "Organisational unit membership"
     },
     "groupsetting": "Select a group...",
-    "header": "Organisational unit - {0}",
+    "details": {
+      "header": "Details"
+    },
+    "header": {
+      "main": "Organisational unit - {0}",
+      "accounts": "Accounts",
+      "applications": "Applications"
+    },
     "inheritedgroupsetting": "{0} inherited from {1}...",
+    "transferownership": "Transfer ownership",
     "settings": {
       "header": "Settings"
     }
@@ -8088,6 +8217,11 @@
     "leave": "Leave this group"
   },
   "grouponsystem": {
+    "search": {
+      "ownergroup": "Responsible group...",
+      "system": "Linked system...",
+      "type": "Type..."
+    },
     "header": {
       "group": "Group",
       "main": "Group on System - {0}",
@@ -8107,6 +8241,21 @@
         "subtitle": "This access profile has access to the group on the linked system."
       }
     },
+    "lifecycleaction": {
+      "recipient": {
+        "bcc": "Bcc",
+        "cc": "Cc",
+        "to": "To",
+        "select": "Select a recipient type..."
+      },
+      "offset": {
+        "before": "Before",
+        "after": "After"
+      },
+      "recipients": {
+        "add": "Add recipient"
+      }
+    },
     "client": {
       "details": {
         "subtitle": "Select the options for accessing the application via this access profile.",
@@ -8116,6 +8265,27 @@
     "attributerules": {
       "new": "New attribute",
       "header": "Managed attributes"
+    },
+    "header": {
+      "lifecycleresult": "Result",
+      "source": "Source",
+      "lifecycleduedate": "Due date",
+      "attributes": "Attributes",
+      "attributerule": "Attribute",
+      "lifecycleanchor": "Transition",
+      "lifecycleaction": "Action",
+      "main": "Access profile - {0}",
+      "manual": "Manual",
+      "expected": "Expected value",
+      "date": "Date",
+      "type": "Type",
+      "current": "Current value",
+      "group": "Group",
+      "account": "User",
+      "lifecyclestatus": "Status",
+      "lifecycletiming": "Timing",
+      "predictedtransitions": "Predicted transitions",
+      "activation": "Activation"
     },
     "attribute": {
       "summary": {
@@ -8138,17 +8308,15 @@
       "ERROR": "{0}",
       "VALID": "{0}"
     },
-    "header": {
-      "source": "Source",
-      "attributes": "Attributes",
-      "attributerule": "Attribute",
-      "main": "Access profile - {0}",
-      "manual": "Manual",
-      "expected": "Expected value",
-      "current": "Current value",
-      "group": "Group",
-      "account": "User",
-      "activation": "Activation"
+    "lifecycleactions": {
+      "new": "New lifecycle action",
+      "header": "Lifecycle actions"
+    },
+    "prediction": {
+      "deactivatesat": "deactivates {0}",
+      "addsat": "joins {0}",
+      "removesat": "membership ends {0}",
+      "activatesat": "activates {0}"
     },
     "access": {
       "header": "Access"
@@ -8173,6 +8341,12 @@
       "link": "Attributes",
       "insync": "Synchronised"
     },
+    "lifecycleevents": {
+      "header": "Lifecycle events"
+    },
+    "lifecycleevent": {
+      "attempts": "After {0} attempt(s)"
+    },
     "name": "Access profile",
     "apporsystem": {
       "add": {
@@ -8185,6 +8359,10 @@
     },
     "error": {
       "duplicateattr": "The attribute {0} has been specified multiple times."
+    },
+    "predictions": {
+      "empty": "No upcoming or recent transitions.",
+      "header": "Upcoming and recent transitions"
     },
     "accounts": {
       "header": "Members"
@@ -8228,6 +8406,71 @@
       "cap": " "
     }
   },
+  "2fa": {
+    "webauthn": {
+      "intro": {
+        "text": {
+          "main": "After adding it, you will use this security key as a second factor when logging in, instead of or alongside your phone app.",
+          "external": "After adding it, you will use this security key to unlock your vault. Two-factor authentication when logging in is handled by your organisation."
+        }
+      },
+      "vaultunlock": {
+        "setup": "Yes, set up",
+        "error": "Something went wrong. Did you wait too long or did you use a different security key?",
+        "touch": "Your browser will open a prompt from your operating system. Touch your security key again to confirm.",
+        "title": "Vault unlock",
+        "skip": "Skip",
+        "success": "Done! From now on your vault opens with this security key.",
+        "subtitle": "Use your security key to unlock your vault.",
+        "question": "Do you want to use this security key to unlock your vault? Once set up, you can open your vault with it instead of your password, which keeps working too."
+      },
+      "subtitle": "Use your security key to register it for your account.",
+      "register": {
+        "name": {
+          "main": "Name for this key",
+          "placeholder": "Work laptop"
+        },
+        "error": "Something went wrong. Did you wait too long or are you trying to register the same security key twice?",
+        "success": "Security key successfully registered"
+      },
+      "editkey": {
+        "enable": "Enable vault unlock",
+        "subtitle": "Give your security key a different name or manage vault unlock.",
+        "disable": {
+          "main": "Disable vault unlock",
+          "success": "Vault unlock is disabled for this security key."
+        },
+        "title": "Security key"
+      },
+      "authenticate": {
+        "error": "Something went wrong. Are you using the right security key? Did you touch it to activate it?"
+      }
+    },
+    "totp": {
+      "verification": {
+        "long": "Verify your 2FA with the given code",
+        "secret": "Key",
+        "main": "Verification code"
+      },
+      "invalidcode": "The given verification code is incorrect. Check your mobile's time settings, re-scan the QR-code and try again.",
+      "appgekoppeld": "You scanned the QR-code with the KeyHub app. Check the device name and press activate to enable 2FA.",
+      "subtitle": "Scan the QR-code with the KeyHub app or any other app with TOTP support or enter the key manually in the app.",
+      "offsetchange": {
+        "secondtoken": "Next verification code",
+        "firsttoken": "Current verification code"
+      },
+      "scan": "Scan the QR-code with the KeyHub app or any other app with TOTP support or enter the key manually in the app: {0}"
+    },
+    "vaultkey": {
+      "header": "Add a security key",
+      "add": "Yes, add",
+      "question": "Do you want to add a security key to unlock your vault? Once set up, you can open your vault by touching the key instead of entering your password, which keeps working too."
+    },
+    "denied": "Your two-factor authentication is cancelled.",
+    "header": "Configure two-factor authentication",
+    "switchToApp": "Use a 2FA app",
+    "switchToSecurityKey": "Use a security key"
+  },
   "filter": {
     "loglevel": "Filter on log level...",
     "attribute": "Filter on attribute...",
@@ -8239,6 +8482,9 @@
     "account": "Select an account...",
     "action": "Filter on action...",
     "alles": "All"
+  },
+  "auditordashboard": {
+    "provisioning": "Auditor Dashboard Provisioning"
   },
   "groupaudit": {
     "savedraft": "Save as draft",
@@ -8315,40 +8561,32 @@
   "notificationcentre": {
     "header": "Notification settings"
   },
-  "2fa": {
-    "totp": {
-      "verification": {
-        "long": "Verify your 2FA with the given code",
-        "secret": "Key",
-        "main": "Verification code"
-      },
-      "invalidcode": "The given verification code is incorrect. Check your mobile's time settings, re-scan the QR-code and try again.",
-      "appgekoppeld": "You scanned the QR-code with the KeyHub app. Check the device name and press activate to enable 2FA.",
-      "subtitle": "Scan the QR-code with the KeyHub app or any other app with TOTP support or enter the key manually in the app.",
-      "offsetchange": {
-        "secondtoken": "Next verification code",
-        "firsttoken": "Current verification code"
-      },
-      "scan": "Scan the QR-code with the KeyHub app or any other app with TOTP support or enter the key manually in the app: {0}"
+  "vaultrecoverykey": {
+    "check": {
+      "action": "Check",
+      "main": "Check private key",
+      "explain": "Upload your recovery private key to verify it matches the stored public key.",
+      "label": "Recovery private key",
+      "success": "The private key matches the stored public key.",
+      "header": "Check the recovery private key"
     },
-    "webauthn": {
-      "subtitle": "Use your security key to register it for your account.",
-      "editkey": {
-        "subtitle": "Give your security key a different name.",
-        "title": "Security key"
+    "regenerate": {
+      "header": "Regenerate the recovery key",
+      "done": "The recovery key has been replaced.",
+      "upload": {
+        "explain": "Upload the old private key to re-encrypt the existing vaults, or continue without it.",
+        "label": "Old private key",
+        "header": "Re-encrypt existing vaults",
+        "nokey": "No key",
+        "skip": "I have no old key"
       },
-      "register": {
-        "error": "Something went wrong. Did you wait too long or are you trying to register the same security key twice?",
-        "success": "Security key successfully registered"
-      },
-      "authenticate": {
-        "error": "Something went wrong. Are you using the right security key? Did you touch it to activate it?"
-      }
+      "explain": "A new recovery key has been generated. Download the new private key before continuing.",
+      "main": "Regenerate key"
     },
-    "denied": "Your two-factor authentication is cancelled.",
-    "header": "Configure two-factor authentication",
-    "switchToApp": "Use a 2FA app",
-    "switchToSecurityKey": "Use a security key"
+    "key": "Recovery key",
+    "panel": {
+      "header": "Recovery key"
+    }
   },
   "validatie": {
     "fileTooLarge": "{0} is larger than {1}Kb",
@@ -8360,6 +8598,15 @@
   },
   "browser": {
     "unknown": "Unknown"
+  },
+  "java": {
+    "time": {
+      "temporal": {
+        "ChronoUnit#DAYS": "Days",
+        "ChronoUnit#MONTHS": "Months",
+        "ChronoUnit#WEEKS": "Weeks"
+      }
+    }
   },
   "apporsystem": {
     "add": {
@@ -8505,6 +8752,13 @@
     "filesizeTooLarge": "Invalid PEM file. The file is too large.",
     "invalidPublicKeyFile": "Invalid PEM file. The file is of incorrect format."
   },
+  "downloadencryptionkey": {
+    "generated": "Generated on {0}",
+    "download": {
+      "public": "Download public key",
+      "private": "Download private key"
+    }
+  },
   "groupauditaccount": {
     "comment": {
       "placeholder": "Comments for this account"
@@ -8629,6 +8883,7 @@
     "selected": "# type(s) selected",
     "noneSelected": "(All record types)"
   },
+  "DuplicateAttributeNameValidator": "The name \"{name}\" may be used only once.",
   "DerRSAPrivateKeyValidator": {
     "invalidkey": "Invalid RSA private key. Use an RSA private key in DER-encoding."
   },

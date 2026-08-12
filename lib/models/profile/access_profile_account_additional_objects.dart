@@ -2,6 +2,7 @@
 import 'package:microsoft_kiota_abstractions/microsoft_kiota_abstractions.dart';
 import '../audit_info.dart';
 import '../non_linkable_wrapper.dart';
+import './access_profile_account_prediction.dart';
 
 /// auto generated
 class AccessProfileAccountAdditionalObjects implements AdditionalDataHolder, Parsable {
@@ -12,6 +13,8 @@ class AccessProfileAccountAdditionalObjects implements AdditionalDataHolder, Par
     NonLinkableWrapper? attributeSummaries;
     ///  The audit property
     AuditInfo? audit;
+    ///  The prediction property
+    AccessProfileAccountPrediction? prediction;
     /// Instantiates a new [AccessProfileAccountAdditionalObjects] and sets the default values.
     AccessProfileAccountAdditionalObjects() :  
         additionalData = {};
@@ -26,6 +29,7 @@ class AccessProfileAccountAdditionalObjects implements AdditionalDataHolder, Par
         var deserializerMap = <String, void Function(ParseNode)>{};
         deserializerMap['attributeSummaries'] = (node) => attributeSummaries = node.getObjectValue<NonLinkableWrapper>(NonLinkableWrapper.createFromDiscriminatorValue);
         deserializerMap['audit'] = (node) => audit = node.getObjectValue<AuditInfo>(AuditInfo.createFromDiscriminatorValue);
+        deserializerMap['prediction'] = (node) => prediction = node.getObjectValue<AccessProfileAccountPrediction>(AccessProfileAccountPrediction.createFromDiscriminatorValue);
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -34,6 +38,7 @@ class AccessProfileAccountAdditionalObjects implements AdditionalDataHolder, Par
     void serialize(SerializationWriter writer) {
         writer.writeObjectValue<NonLinkableWrapper>('attributeSummaries', attributeSummaries);
         writer.writeObjectValue<AuditInfo>('audit', audit);
+        writer.writeObjectValue<AccessProfileAccountPrediction>('prediction', prediction);
         writer.writeAdditionalData(additionalData);
     }
 }

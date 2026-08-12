@@ -2,7 +2,8 @@
 /// auto generated
 enum PostAdditionalQueryParameterType {
     attributeSummaries('attributeSummaries'),
-    audit('audit');
+    audit('audit'),
+    prediction('prediction');
     const PostAdditionalQueryParameterType(this.value);
     final String value;
 }

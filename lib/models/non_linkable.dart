@@ -65,6 +65,7 @@ import './request/accept_create_service_account_request_parameters.dart';
 import './request/accept_grant_access_request_parameters.dart';
 import './request/accept_join_group_request_parameters.dart';
 import './request/accept_modification_request_parameters.dart';
+import './request/accept_update_group_membership_request_parameters.dart';
 import './request/modification_request_report.dart';
 import './request/modification_request_report_change_description.dart';
 import './request/modification_request_report_change_details.dart';
@@ -169,6 +170,7 @@ class NonLinkable implements AdditionalDataHolder, Parsable {
             'request.AcceptGrantAccessRequestParameters' => AcceptGrantAccessRequestParameters(),
             'request.AcceptJoinGroupRequestParameters' => AcceptJoinGroupRequestParameters(),
             'request.AcceptModificationRequestParameters' => AcceptModificationRequestParameters(),
+            'request.AcceptUpdateGroupMembershipRequestParameters' => AcceptUpdateGroupMembershipRequestParameters(),
             'request.ModificationRequestReport' => ModificationRequestReport(),
             'request.ModificationRequestReportChangeDescription' => ModificationRequestReportChangeDescription(),
             'request.ModificationRequestReportChangeDetails' => ModificationRequestReportChangeDetails(),

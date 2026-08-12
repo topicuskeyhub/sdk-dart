@@ -34,7 +34,7 @@ class ContainersRequestBuilder extends BaseRequestBuilder<ContainersRequestBuild
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ContainersRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ContainersRequestBuilderGetQueryParameters>(requestConfiguration, () => ContainersRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
         return requestInfo;
     }
 }

@@ -7,6 +7,9 @@ import './accessprofile_item_request_builder_put_query_parameters.dart';
 import './account/account_request_builder.dart';
 import './attributerule/attributerule_request_builder.dart';
 import './attributes/attributes_request_builder.dart';
+import './lifecycleaction/lifecycleaction_request_builder.dart';
+import './lifecycleevent/lifecycleevent_request_builder.dart';
+import './prediction/prediction_request_builder.dart';
 import './synchronize/synchronize_request_builder.dart';
 
 /// auto generated
@@ -23,6 +26,18 @@ class AccessprofileItemRequestBuilder extends BaseRequestBuilder<AccessprofileIt
     ///  The attributes property
     AttributesRequestBuilder get attributes {
         return AttributesRequestBuilder(pathParameters, requestAdapter);
+    }
+    ///  The lifecycleaction property
+    LifecycleactionRequestBuilder get lifecycleaction {
+        return LifecycleactionRequestBuilder(pathParameters, requestAdapter);
+    }
+    ///  The lifecycleevent property
+    LifecycleeventRequestBuilder get lifecycleevent {
+        return LifecycleeventRequestBuilder(pathParameters, requestAdapter);
+    }
+    ///  The prediction property
+    PredictionRequestBuilder get prediction {
+        return PredictionRequestBuilder(pathParameters, requestAdapter);
     }
     ///  The synchronize property
     SynchronizeRequestBuilder get synchronize {
@@ -65,7 +80,7 @@ class AccessprofileItemRequestBuilder extends BaseRequestBuilder<AccessprofileIt
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AccessprofileItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AccessprofileItemRequestBuilderGetQueryParameters>(requestConfiguration, () => AccessprofileItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
         return requestInfo;
     }
     /// Updates the access profile identified by the id.
@@ -74,8 +89,8 @@ class AccessprofileItemRequestBuilder extends BaseRequestBuilder<AccessprofileIt
     RequestInformation toPutRequestInformation(AccessProfile body, [void Function(RequestConfiguration<AccessprofileItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AccessprofileItemRequestBuilderPutQueryParameters>(requestConfiguration, () => AccessprofileItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=86');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=86', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=87', body);
         return requestInfo;
     }
 }

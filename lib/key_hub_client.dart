@@ -5,6 +5,7 @@ import './accessprofileclient/accessprofileclient_request_builder.dart';
 import './account/account_request_builder.dart';
 import './attributedef/attributedef_request_builder.dart';
 import './audit/audit_request_builder.dart';
+import './auditorprovisioning/auditorprovisioning_request_builder.dart';
 import './certificate/certificate_request_builder.dart';
 import './client/client_request_builder.dart';
 import './deletedvaultholder/deletedvaultholder_request_builder.dart';
@@ -47,6 +48,10 @@ class KeyHubClient extends BaseRequestBuilder<KeyHubClient> {
     ///  The audit property
     AuditRequestBuilder get audit {
         return AuditRequestBuilder(pathParameters, requestAdapter);
+    }
+    ///  The auditorprovisioning property
+    AuditorprovisioningRequestBuilder get auditorprovisioning {
+        return AuditorprovisioningRequestBuilder(pathParameters, requestAdapter);
     }
     ///  The certificate property
     CertificateRequestBuilder get certificate {

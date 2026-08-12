@@ -31,6 +31,8 @@ class ExportRequestBuilderPostQueryParameters implements AbstractQueryParameters
     List<int>? onGroup;
     ///  Only return audit records targeting the given group specifically as onGroup1, specified by id.
     List<int>? onGroup1;
+    ///  Only return audit records targeting the given group on system, specified by id.
+    List<int>? onGroupOnSystem;
     ///  Only return audit records performed by or targeting the given account, specified by id.
     List<int>? onOrByAccount;
     ///  Only return audit records performed by or targeting the given client, specified by id.
@@ -66,6 +68,7 @@ class ExportRequestBuilderPostQueryParameters implements AbstractQueryParameters
             'onDirectory' : onDirectory,
             'onGroup' : onGroup,
             'onGroup1' : onGroup1,
+            'onGroupOnSystem' : onGroupOnSystem,
             'onOrByAccount' : onOrByAccount,
             'onOrByClient' : onOrByClient,
             'onServiceAccount' : onServiceAccount,

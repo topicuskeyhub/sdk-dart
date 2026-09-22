@@ -53,7 +53,7 @@ class LifecycleactionRequestBuilder extends BaseRequestBuilder<LifecycleactionRe
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<LifecycleactionRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<LifecycleactionRequestBuilderGetQueryParameters>(requestConfiguration, () => LifecycleactionRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=88');
         return requestInfo;
     }
     /// Creates one or more new lifecycle actions on an access profile and returns the newly created actions.
@@ -62,8 +62,8 @@ class LifecycleactionRequestBuilder extends BaseRequestBuilder<LifecycleactionRe
     RequestInformation toPostRequestInformation(AccessProfileLifecycleActionLinkableWrapper body, [void Function(RequestConfiguration<LifecycleactionRequestBuilderPostQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<LifecycleactionRequestBuilderPostQueryParameters>(requestConfiguration, () => LifecycleactionRequestBuilderPostQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=87', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=88');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=88', body);
         return requestInfo;
     }
 }

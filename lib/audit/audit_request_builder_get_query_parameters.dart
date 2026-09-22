@@ -28,6 +28,8 @@ class AuditRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     List<bool>? includeDaily;
     ///  Only return records that have been modified since the given instant.
     List<DateTime>? modifiedSince;
+    ///  Only return audit records targeting the given access profile, specified by id.
+    List<int>? onAccessProfile;
     ///  Only return audit records targeting the given directory, specified by id.
     List<int>? onDirectory;
     ///  Only return audit records targeting the given group either via onGroup1 or onGroup2, specified by id.
@@ -42,6 +44,8 @@ class AuditRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     List<int>? onOrByClient;
     ///  Only return audit records targeting the given service account, specified by id.
     List<int>? onServiceAccount;
+    ///  Only return audit records targeting the given vault record, specified by id.
+    List<int>? onVaultRecord;
     ///  Only return audit records that have the performed-by-name set or not set.
     List<bool>? performedByNameSet;
     ///  Only return audit records that are performed by the given account or client, specified by uuid.
@@ -51,6 +55,7 @@ class AuditRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Sort the items. Use 'asc-<name>' for ascending and 'desc-<name>' for descending order.
     List<String>? sort;
     ///  Filter audit records on the given type(s).
+    /// @QueryParameter('type')
     List<AuditRecordType>? type_;
     ///  Only return audit records that are meant to be displayed to the given account, specified by id.
     List<int>? visibleFor;
@@ -69,6 +74,7 @@ class AuditRequestBuilderGetQueryParameters implements AbstractQueryParameters {
             'id' : id,
             'includeDaily' : includeDaily,
             'modifiedSince' : modifiedSince,
+            'onAccessProfile' : onAccessProfile,
             'onDirectory' : onDirectory,
             'onGroup' : onGroup,
             'onGroup1' : onGroup1,
@@ -76,11 +82,12 @@ class AuditRequestBuilderGetQueryParameters implements AbstractQueryParameters {
             'onOrByAccount' : onOrByAccount,
             'onOrByClient' : onOrByClient,
             'onServiceAccount' : onServiceAccount,
+            'onVaultRecord' : onVaultRecord,
             'performedByNameSet' : performedByNameSet,
             'performedByUuid' : performedByUuid,
             'q' : q,
             'sort' : sort,
-            'type_' : type_,
+            'type' : type_,
             'visibleFor' : visibleFor,
         };
     }

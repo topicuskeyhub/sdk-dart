@@ -34,7 +34,7 @@ class WithAuditorprovisioningItemRequestBuilder extends BaseRequestBuilder<WithA
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithAuditorprovisioningItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithAuditorprovisioningItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithAuditorprovisioningItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=88');
         return requestInfo;
     }
 }

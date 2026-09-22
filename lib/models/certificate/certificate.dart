@@ -8,7 +8,7 @@ class Certificate extends CertificatePrimer implements Parsable {
     ///  The additionalObjects property
     CertificateAdditionalObjects? additionalObjects;
     ///  The keyData property
-    Iterable<int>? keyData;
+    String? keyData;
     /// Instantiates a new [Certificate] and sets the default values.
     Certificate() : super() {
         type_ = 'certificate.Certificate';
@@ -23,7 +23,7 @@ class Certificate extends CertificatePrimer implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['additionalObjects'] = (node) => additionalObjects = node.getObjectValue<CertificateAdditionalObjects>(CertificateAdditionalObjects.createFromDiscriminatorValue);
-        deserializerMap['keyData'] = (node) => keyData = node.getCollectionOfPrimitiveValues<int>();
+        deserializerMap['keyData'] = (node) => keyData = node.getStringValue();
         return deserializerMap;
     }
     /// Serializes information the current object
@@ -32,6 +32,6 @@ class Certificate extends CertificatePrimer implements Parsable {
     void serialize(SerializationWriter writer) {
         super.serialize(writer);
         writer.writeObjectValue<CertificateAdditionalObjects>('additionalObjects', additionalObjects);
-        writer.writeCollectionOfPrimitiveValues<int>('keyData', keyData);
+        writer.writeStringValue('keyData', keyData);
     }
 }

@@ -42,7 +42,7 @@ class PredictionRequestBuilder extends BaseRequestBuilder<PredictionRequestBuild
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<PredictionRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<PredictionRequestBuilderGetQueryParameters>(requestConfiguration, () => PredictionRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=88');
         return requestInfo;
     }
 }

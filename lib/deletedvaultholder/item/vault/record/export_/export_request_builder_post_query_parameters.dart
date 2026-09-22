@@ -41,12 +41,16 @@ class ExportRequestBuilderPostQueryParameters implements AbstractQueryParameters
     List<bool>? hasValidPolicy;
     ///  Filter the results on the given ids.
     List<int>? id;
+    ///  Only return records that were last read before the given moment. Records that have never been read are not returned; use {@code neverRead} to select those.
+    List<DateTime>? lastReadBefore;
     ///  Only return records that have been modified since the given instant.
     List<DateTime>? modifiedSince;
     ///  Filter records on the exact name.
     List<String>? name;
     ///  Search records on (part of) the UUID, name, filename, URI or username.
     List<String>? nameContains;
+    ///  Only return records that have never been read, or only those that have. Records predating read-tracking count as never read.
+    List<bool>? neverRead;
     ///  Filter records that are shared from the specified parent record, specified by id.
     List<int>? parent;
     ///  Filter records on a complex CQL query.
@@ -87,9 +91,11 @@ class ExportRequestBuilderPostQueryParameters implements AbstractQueryParameters
             'hasParent' : hasParent,
             'hasValidPolicy' : hasValidPolicy,
             'id' : id,
+            'lastReadBefore' : lastReadBefore,
             'modifiedSince' : modifiedSince,
             'name' : name,
             'nameContains' : nameContains,
+            'neverRead' : neverRead,
             'parent' : parent,
             'q' : q,
             'secret' : secret,

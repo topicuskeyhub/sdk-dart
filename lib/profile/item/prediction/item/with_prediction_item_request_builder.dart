@@ -34,7 +34,7 @@ class WithPredictionItemRequestBuilder extends BaseRequestBuilder<WithPrediction
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithPredictionItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithPredictionItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithPredictionItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=88');
         return requestInfo;
     }
 }

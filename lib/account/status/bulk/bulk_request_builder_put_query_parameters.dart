@@ -13,6 +13,8 @@ class BulkRequestBuilderPutQueryParameters implements AbstractQueryParameters {
     List<String>? activationCode;
     ///  Only return accounts that have an activation deadline that expires at or after the given instant.
     List<DateTime>? activationDeadlineAtOrAfter;
+    ///  Only return accounts whose activation mail is or is not being held back until their user object appears in Entra.
+    List<bool>? activationMailDeferred;
     ///  Only return active or inactive accounts.
     List<bool>? active;
     ///  Only return accounts that have been active since the given instant.
@@ -108,6 +110,7 @@ class BulkRequestBuilderPutQueryParameters implements AbstractQueryParameters {
             'accessProfile' : accessProfile,
             'activationCode' : activationCode,
             'activationDeadlineAtOrAfter' : activationDeadlineAtOrAfter,
+            'activationMailDeferred' : activationMailDeferred,
             'active' : active,
             'activeSince' : activeSince,
             'admin' : admin,

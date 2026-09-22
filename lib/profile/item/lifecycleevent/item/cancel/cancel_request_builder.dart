@@ -30,7 +30,7 @@ class CancelRequestBuilder extends BaseRequestBuilder<CancelRequestBuilder> {
     RequestInformation toPostRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.post, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json, application/vnd.topicus.keyhub+xml, application/vnd.topicus.keyhub+json;version=87');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json, application/vnd.topicus.keyhub+xml, application/vnd.topicus.keyhub+json;version=88');
         return requestInfo;
     }
 }

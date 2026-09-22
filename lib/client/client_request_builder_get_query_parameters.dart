@@ -62,6 +62,7 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     ///  Filter the clients for which the given group is technical administrator, specified by id. This parameter supports composition with all parameters from the group resource.
     List<int>? technicalAdministrator;
     ///  Only return clients of the given type(s).
+    /// @QueryParameter('type')
     List<String>? type_;
     ///  Only return OAuth2 clients that use or do not use the client credentials grant.
     List<bool>? useClientCredentials;
@@ -107,7 +108,7 @@ class ClientRequestBuilderGetQueryParameters implements AbstractQueryParameters 
             'signingKey' : signingKey,
             'sort' : sort,
             'technicalAdministrator' : technicalAdministrator,
-            'type_' : type_,
+            'type' : type_,
             'useClientCredentials' : useClientCredentials,
             'uuid' : uuid,
             'vault' : vault,

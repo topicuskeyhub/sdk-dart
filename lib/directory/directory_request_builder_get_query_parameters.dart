@@ -56,6 +56,7 @@ class DirectoryRequestBuilderGetQueryParameters implements AbstractQueryParamete
     ///  Filter LDAP directories on TLS setting(s) used.
     List<TLSLevel>? tls;
     ///  Only return directories of the given type(s).
+    /// @QueryParameter('type')
     List<String>? type_;
     ///  Filter results on one or more UUIDs.
     List<String>? uuid;
@@ -86,7 +87,7 @@ class DirectoryRequestBuilderGetQueryParameters implements AbstractQueryParamete
             'q' : q,
             'sort' : sort,
             'tls' : tls,
-            'type_' : type_,
+            'type' : type_,
             'uuid' : uuid,
         };
     }

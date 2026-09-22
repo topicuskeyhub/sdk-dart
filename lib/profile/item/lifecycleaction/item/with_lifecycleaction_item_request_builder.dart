@@ -54,7 +54,7 @@ class WithLifecycleactionItemRequestBuilder extends BaseRequestBuilder<WithLifec
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=88');
         return requestInfo;
     }
     /// Returns the lifecycle action identified by the id.
@@ -62,7 +62,7 @@ class WithLifecycleactionItemRequestBuilder extends BaseRequestBuilder<WithLifec
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithLifecycleactionItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithLifecycleactionItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithLifecycleactionItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=88');
         return requestInfo;
     }
     /// Updates the lifecycle action identified by the id.
@@ -71,8 +71,8 @@ class WithLifecycleactionItemRequestBuilder extends BaseRequestBuilder<WithLifec
     RequestInformation toPutRequestInformation(AccessProfileLifecycleAction body, [void Function(RequestConfiguration<WithLifecycleactionItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithLifecycleactionItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithLifecycleactionItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=87', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=88');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=88', body);
         return requestInfo;
     }
 }

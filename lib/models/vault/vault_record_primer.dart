@@ -8,6 +8,8 @@ import './vault_record_color.dart';
 class VaultRecordPrimer extends Linkable implements Parsable {
     ///  The color property
     VaultRecordColor? color;
+    ///  The lastReadAt property
+    DateTime? lastReadAt;
     ///  The name property
     String? name;
     ///  The shareEndTime property
@@ -32,6 +34,7 @@ class VaultRecordPrimer extends Linkable implements Parsable {
     Map<String, void Function(ParseNode)> getFieldDeserializers() {
         var deserializerMap = super.getFieldDeserializers();
         deserializerMap['color'] = (node) => color = node.getEnumValue<VaultRecordColor>((stringValue) => VaultRecordColor.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
+        deserializerMap['lastReadAt'] = (node) => lastReadAt = node.getDateTimeValue();
         deserializerMap['name'] = (node) => name = node.getStringValue();
         deserializerMap['shareEndTime'] = (node) => shareEndTime = node.getDateTimeValue();
         deserializerMap['uuid'] = (node) => uuid = node.getStringValue();

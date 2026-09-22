@@ -42,7 +42,7 @@ class LifecycleeventRequestBuilder extends BaseRequestBuilder<LifecycleeventRequ
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<LifecycleeventRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<LifecycleeventRequestBuilderGetQueryParameters>(requestConfiguration, () => LifecycleeventRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=88');
         return requestInfo;
     }
 }

@@ -30,8 +30,14 @@ class ProvisionedSCIM extends ProvisionedSystem implements Parsable {
     bool? externalIdSupported;
     ///  The filterActiveUsersSupported property
     bool? filterActiveUsersSupported;
+    ///  The filterGroupMembersSupported property
+    bool? filterGroupMembersSupported;
+    ///  The groupMembersInListResponse property
+    bool? groupMembersInListResponse;
     ///  The groupsSupported property
     bool? groupsSupported;
+    ///  The lowerCaseFilterComparators property
+    bool? lowerCaseFilterComparators;
     ///  The pageSize property
     int? pageSize;
     ///  The passwordSupported property
@@ -68,7 +74,10 @@ class ProvisionedSCIM extends ProvisionedSystem implements Parsable {
         deserializerMap['customHeaderValue'] = (node) => customHeaderValue = node.getStringValue();
         deserializerMap['externalIdSupported'] = (node) => externalIdSupported = node.getBoolValue();
         deserializerMap['filterActiveUsersSupported'] = (node) => filterActiveUsersSupported = node.getBoolValue();
+        deserializerMap['filterGroupMembersSupported'] = (node) => filterGroupMembersSupported = node.getBoolValue();
+        deserializerMap['groupMembersInListResponse'] = (node) => groupMembersInListResponse = node.getBoolValue();
         deserializerMap['groupsSupported'] = (node) => groupsSupported = node.getBoolValue();
+        deserializerMap['lowerCaseFilterComparators'] = (node) => lowerCaseFilterComparators = node.getBoolValue();
         deserializerMap['pageSize'] = (node) => pageSize = node.getIntValue();
         deserializerMap['passwordSupported'] = (node) => passwordSupported = node.getBoolValue();
         deserializerMap['updateStrategy'] = (node) => updateStrategy = node.getEnumValue<SCIMUpdateStrategy>((stringValue) => SCIMUpdateStrategy.values.where((enumVal) => enumVal.value == stringValue).firstOrNull);
@@ -93,7 +102,10 @@ class ProvisionedSCIM extends ProvisionedSystem implements Parsable {
         writer.writeStringValue('customHeaderValue', customHeaderValue);
         writer.writeBoolValue('externalIdSupported', value:externalIdSupported);
         writer.writeBoolValue('filterActiveUsersSupported', value:filterActiveUsersSupported);
+        writer.writeBoolValue('filterGroupMembersSupported', value:filterGroupMembersSupported);
+        writer.writeBoolValue('groupMembersInListResponse', value:groupMembersInListResponse);
         writer.writeBoolValue('groupsSupported', value:groupsSupported);
+        writer.writeBoolValue('lowerCaseFilterComparators', value:lowerCaseFilterComparators);
         writer.writeIntValue('pageSize', pageSize);
         writer.writeBoolValue('passwordSupported', value:passwordSupported);
         writer.writeEnumValue<SCIMUpdateStrategy>('updateStrategy', updateStrategy, (e) => e?.value);

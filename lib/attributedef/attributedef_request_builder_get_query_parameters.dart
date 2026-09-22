@@ -34,6 +34,7 @@ class AttributedefRequestBuilderGetQueryParameters implements AbstractQueryParam
     ///  Filter records on a complex CQL query.
     List<String>? q;
     ///  Only return account attribute definitions that are or are not required.
+    /// @QueryParameter('required')
     List<bool>? required_;
     ///  Only return account attributes which are available for self-service to all of the provided accounts.
     List<int>? selfServiceableByAccount;
@@ -60,7 +61,7 @@ class AttributedefRequestBuilderGetQueryParameters implements AbstractQueryParam
             'name' : name,
             'nameContains' : nameContains,
             'q' : q,
-            'required_' : required_,
+            'required' : required_,
             'selfServiceableByAccount' : selfServiceableByAccount,
             'sort' : sort,
             'systemDefinition' : systemDefinition,

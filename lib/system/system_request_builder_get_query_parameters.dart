@@ -91,7 +91,10 @@ class SystemRequestBuilderGetQueryParameters implements AbstractQueryParameters 
     ///  Filter the systems on the TLS setting used.
     List<TLSLevel>? tls;
     ///  Only return systems of the given type(s).
+    /// @QueryParameter('type')
     List<String>? type_;
+    ///  Only return source provisioning systems that serve the given account directory, in either of their directory references, specified by id.
+    List<int>? usedAsSourceDirectory;
     ///  Filter results on one or more UUIDs.
     List<String>? uuid;
     /// Extracts the query parameters into a map for the URI template parsing.
@@ -139,7 +142,8 @@ class SystemRequestBuilderGetQueryParameters implements AbstractQueryParameters 
             'sort' : sort,
             'technicalAdministrator' : technicalAdministrator,
             'tls' : tls,
-            'type_' : type_,
+            'type' : type_,
+            'usedAsSourceDirectory' : usedAsSourceDirectory,
             'uuid' : uuid,
         };
     }

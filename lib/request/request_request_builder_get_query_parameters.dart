@@ -90,6 +90,7 @@ class RequestRequestBuilderGetQueryParameters implements AbstractQueryParameters
     ///  Only return requests that did or did not trigger a follow up request.
     List<bool>? triggeredFollowUpRequest;
     ///  Only return requests of the given type(s).
+    /// @QueryParameter('type')
     List<String>? type_;
     ///  Only return UpdateGroupMembershipRequest(s) of the given update type.
     List<UpdateGroupMembershipType>? updateGroupMembershipType;
@@ -139,7 +140,7 @@ class RequestRequestBuilderGetQueryParameters implements AbstractQueryParameters
             'status' : status,
             'system' : system,
             'triggeredFollowUpRequest' : triggeredFollowUpRequest,
-            'type_' : type_,
+            'type' : type_,
             'updateGroupMembershipType' : updateGroupMembershipType,
             'wasProcessedBy' : wasProcessedBy,
         };

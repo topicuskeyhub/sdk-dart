@@ -35,8 +35,8 @@ class ClassificationRequestBuilder extends BaseRequestBuilder<ClassificationRequ
     RequestInformation toPutRequestInformation(GroupClassificationUpdate body, [void Function(RequestConfiguration<DefaultQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<DefaultQueryParameters>(requestConfiguration, () => DefaultQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=87', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=88');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=88', body);
         return requestInfo;
     }
 }

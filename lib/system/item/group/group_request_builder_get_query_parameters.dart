@@ -30,11 +30,11 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     List<DateTime>? modifiedSince;
     ///  Search groups on (part of) the display name or the name in system.
     List<String>? nameContains;
-    ///  Filter groups on system whose name in system does not start with the given values.
+    ///  Filter groups on system whose displayed name does not start with any of the given values. See `nameStartsWith` for how the displayed name is determined.
     List<String>? nameDoesNotStartWith;
     ///  Filter groups on system on the exact name in system.
     List<String>? nameInSystem;
-    ///  Filter groups on system on the start of the name in system.
+    ///  Filter groups on system on the start of the displayed name. The displayed name is the display name when the target system provides one, and otherwise the name in system without the leading RDN of a distinguished name, such as `cn=`. Matching is case insensitive.
     List<String>? nameStartsWith;
     ///  Only return groups on system that do not have a provisioning group with one of the given groups, specified by id.
     List<int>? notLinkedToGroup;
@@ -59,6 +59,7 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     ///  Filter the groups on system on groups that are tier 2 owner for them, specified by id. A tier 2 owner is an owner of a group on system that is linked to a service account this group on system is also linked to.
     List<int>? tier2OwnedBy;
     ///  Filter groups on system on the type.
+    /// @QueryParameter('type')
     List<GroupOnSystemType>? type_;
     ///  Filter results on one or more UUIDs.
     List<String>? uuid;
@@ -92,7 +93,7 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
             'systemForEnforcement' : systemForEnforcement,
             'systemOwnedBy' : systemOwnedBy,
             'tier2OwnedBy' : tier2OwnedBy,
-            'type_' : type_,
+            'type' : type_,
             'uuid' : uuid,
         };
     }

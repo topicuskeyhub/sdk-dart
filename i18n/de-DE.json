@@ -269,6 +269,7 @@
             },
             "filter": {
               "VaultRecordFilterBarPanel$VaultRecordOrdering#VAULT": "Sortieren nach Safes",
+              "VaultRecordFilterBarPanel$VaultRecordOrdering#LAST_READ": "Sortieren nach letztem Lesezugriff",
               "VaultRecordFilterBarPanel$VaultRecordOrdering#NAME": "Sortieren nach Namen"
             },
             "formcomponent": {
@@ -285,8 +286,20 @@
                 "description": "Ein Skript, um zu bestimmen, ob die Konten innerhalb der verknüpften Systeme aktiv sein sollten. Weitere Erläuterungen finden Sie im Handbuch."
               },
               "AccessProfileLifecycleAnchor#REMOVE": "Wird entfernt",
+              "AccessProfileAccountActivation": {
+                "short#INACTIVE": "Inaktiv (Regel)",
+                "short#FORCE_INACTIVE": "Inaktiv (manuell)",
+                "short#ACTIVE": "Aktiv (Regel)",
+                "short#FORCE_ACTIVE": "Aktiv (manuell)"
+              },
               "AccessProfileLifecycleEventStatus#CANCELLED": "Abgebrochen",
               "AccessProfileLifecycleEventStatus#PENDING": "Ausstehend",
+              "AccessProfileLifecycleAnchor": {
+                "past#DEACTIVATE": "Wurde deaktiviert",
+                "past#REMOVE": "Wurde entfernt",
+                "past#ADD": "Wurde Mitglied",
+                "past#ACTIVATE": "Wurde aktiviert"
+              },
               "AccessProfile#owner": {
                 "description": "Manager der ausgewählten Gruppe sind verantwortlich für dieses Zugriffsprofil.",
                 "label": "Verantwortliche Gruppe",
@@ -1754,6 +1767,10 @@
                 "description": "Wählen Sie eine vorhandene Nummernfolge für GIDs oder starten Sie eine neue Nummernfolge.",
                 "label": "Group ID (gid) Nummernfolge"
               },
+              "ProvisionedLDAPDirectory#failoverHost": {
+                "label": "Failover Host",
+                "description": "Wenn der primäre Host nicht verfügbar ist, wird auf diesen Host mit demselben Port zurückgegriffen."
+              },
               "ProvisionedSystemType#ACTIVE_DIRECTORY": "Active Directory",
               "ProvisionedSCIM#bearerToken": {
                 "label": "Bearer Token"
@@ -1806,6 +1823,10 @@
               "AbstractProvisionedLDAP#host": {
                 "label": "Primärer Host"
               },
+              "ProvisionedLDAPDirectory#dialect": {
+                "description": "Der Typ des LDAP-Servers, in den geschrieben wird. Wird vom LDAP-Verzeichnis geliefert, sofern eines gekoppelt ist.",
+                "label": "Dialekt"
+              },
               "AbstractProvisionedLDAP#bindDN": {
                 "description": "Die DN, mit der das Verzeichnis gebunden wird. Dies muss eine vollständig qualifizierte DN sein.",
                 "label": "Bind DN",
@@ -1841,6 +1862,10 @@
               "AbstractProvisionedLDAP#groupDN": {
                 "description": "Der RDN unter dem Basis-DN, der Gruppen beinhaltet.",
                 "label": "Gruppen-RDN"
+              },
+              "ProvisionedLDAPDirectory#oidcDirectory": {
+                "label": "OIDC-Verzeichnis",
+                "description": "Konten aus diesem Verzeichnis melden sich anderswo an, während ihre Benutzerobjekte in LDAP verwaltet werden."
               },
               "ProvisionedSCIMVendor#TOPICUS_KEYHUB_CONNECTOR": "Topicus KeyHub Connector",
               "ProvisionedAzureOIDCDirectory#tenant": {
@@ -1899,6 +1924,14 @@
               "GroupOnSystemType#GROUP_OF_UNIQUE_NAMES": "groupOfUniqueNames",
               "ProvisionedSystemType#INTERNAL_LDAP": "Internes LDAP",
               "ProvisionedSystemType#LDAP": "LDAP",
+              "ProvisionedLDAPDirectory#clientCertificate": {
+                "label": "Client-Zertifikat",
+                "description": "Das Zertifikat, das zur Authentifizierung zum Server verwendet werden muss. Ein Client-Zertifikat besteht aus dem Zertifikat selbst und dem zugehörigen Private Key.  "
+              },
+              "ProvisionedLDAPDirectory#baseDN": {
+                "description": "Der Basis-DN, unter dem sich im Verzeichnis die Benutzer- und Gruppen-DNs befinden.",
+                "label": "Basis-DN"
+              },
               "ProvisionedSystem#owner": {
                 "description": "Manager der ausgewählten Gruppe sind verantwortlich für den Zugriff und die Verwaltung dieses gekoppelten Systems.",
                 "placeholder": "Wähle eine Gruppe...",
@@ -1925,6 +1958,9 @@
               },
               "ChangeProvisionedSystemStatus#newActiveStatus": {
                 "label": "Status"
+              },
+              "ProvisionedLDAPDirectory#tls": {
+                "label": "TLS"
               },
               "ProvisionedAzureTenant#clientSecret": {
                 "label": "Client Secret"
@@ -1956,6 +1992,10 @@
                 "label": "Vertrauenswürdiges Zertifikat für den Failover Server",
                 "description": "Das Zertifikat vom Failover Server, dem vertraut werden muss. Dies kann auch eines der Zertifikate sein, die das Zertifikat signiert haben."
               },
+              "ProvisionedLDAPDirectory#trustedCertificate": {
+                "description": "Das Zertifikat des Servers, dem vertraut werden muss. Dies kann auch eines der Zertifikate sein, die das Zertifikat signiert haben.",
+                "label": "Vertrauenswürdiges Zertifikat"
+              },
               "GroupOnSystem#system": {
                 "label": "Gekoppeltes System"
               },
@@ -1967,9 +2007,17 @@
                 "description": "Angabe, welche Aktionen beim Deaktivieren durchgeführt werden sollen.",
                 "label": "Aktion bei Deaktivierung"
               },
+              "ProvisionedAzureSyncLDAPDirectory#oidcDirectory": {
+                "label": "OIDC-Verzeichnis",
+                "description": "Dieses Verzeichnis liefert Client-ID und Secret; seine Konten werden von dieser Kopplung bedient."
+              },
               "ProvisionedAzureOIDCDirectory#accountsWritable": {
                 "label": "Konten beschreibbar",
                 "description": "Wenn diese Option aktiviert ist, verwaltet KeyHub auch die Konten im Verzeichnis."
+              },
+              "ProvisionedLDAPDirectory#bindDN": {
+                "description": "Die DN, mit der das Verzeichnis gebunden wird. Dies muss eine vollständig qualifizierte DN sein.",
+                "label": "Bind DN"
               },
               "AbstractProvisionedLDAP#baseDN": {
                 "placeholder": "OU=department,DC=company,DC=local",
@@ -1980,6 +2028,10 @@
               "GroupOnSystemProvisioningStatus#DISABLED": "Deaktiviert",
               "SCIMUpdateStrategy#PATCH": "PATCH",
               "GroupOnSystemProvisioning#NOT_PROVISIONED_BY_DEFAULT": "Standardmäßig deaktiviert - Die Verwaltung von Gruppen durch KeyHub ist standardmäßig deaktiviert.",
+              "ProvisionedLDAPDirectory#failoverTrustedCertificate": {
+                "label": "Vertrauenswürdiges Zertifikat für den Failover Server",
+                "description": "Das Zertifikat vom Failover Server, dem vertraut werden muss. Dies kann auch eines der Zertifikate sein, die das Zertifikat signiert haben."
+              },
               "AbstractProvisionedLDAP#port": {
                 "label": "Port"
               },
@@ -1989,6 +2041,10 @@
               "AbstractProvisionedLDAP#sshPublicKeySupport": {
                 "description": "Wählen Sie aus, wie ein öffentlicher SSH-Schlüssel auf einem Konto platziert werden soll.",
                 "label": "SSH Public Key"
+              },
+              "ProvisionedSCIM#filterGroupMembersSupported": {
+                "description": "Manche Dienste erlauben das Filtern von Gruppen nur nach Namen. Deaktivieren Sie diese Option für solche Dienste; Topicus KeyHub liest dann alle Mitgliedschaften des Dienstes auf einmal und ermittelt die Mitgliedschaften selbst. Das setzt voraus, dass der Dienst Gruppenmitglieder beim Auflisten von Gruppen zurückgibt.",
+                "label": "Unterstützt das Filtern von Gruppen nach Mitglied"
               },
               "GroupOnSystemType#AZURE_DYNAMIC_SECURITY_GROUP": "Sicherheitsgruppe (dynamische Mitgliedschaft)",
               "ProvisionedSystemStatus#READ_ONLY": "Nur lesbar",
@@ -2056,6 +2112,10 @@
                 "label": "Custom Attribute"
               },
               "ProvisionedSystemType": "Gekoppeltes System",
+              "ProvisionedSCIM#lowerCaseFilterComparators": {
+                "label": "Verwendet Kleinbuchstaben in Filteroperatoren",
+                "description": "Manche Dienste akzeptieren Filteroperatoren nur in Kleinbuchstaben (eq), obwohl der SCIM-Standard sie unabhängig von der Groß-/Kleinschreibung behandelt. Aktivieren Sie diese Option für solche Dienste."
+              },
               "ProvisionedAzureSyncLDAPDirectory#tenant": {
                 "label": "Azure Tenant"
               },
@@ -2085,6 +2145,10 @@
               },
               "GroupOnSystemType#AZURE_ROLE": "Verzeichnisrolle",
               "SCIMUpdateStrategy#DELETE_POST": "DELETE + POST",
+              "ProvisionedSCIMVendor#ATLASSIAN": "Atlassian",
+              "ProvisionedSCIM#groupMembersInListResponse": {
+                "label": "Gibt Gruppenmitglieder beim Auflisten von Gruppen zurück"
+              },
               "GroupOnSystemPrimer#displayName": {
                 "label": "Anzeigename"
               },
@@ -2108,6 +2172,10 @@
               },
               "ProvisionedSystemStatus#ACTIVE": "Aktiv",
               "ADSamAccountNameScheme#TRANSFER": "Wert übernehmen - Nehmen Sie den Wert aus dem Attribut sAMAccountName des Kontos.",
+              "ProvisionedLDAPDirectory#bindPassword": {
+                "label": "Bind Passwort",
+                "description": "Das Passwort, mit dem das Verzeichnis gebunden wird."
+              },
               "ProvisionedSCIM#connectorConfiguration": {
                 "label": "Connector-Konfiguration"
               },
@@ -2134,6 +2202,9 @@
               "LDAPSshPublicKeySupport#DISABLED": "Ausgeschaltet",
               "ProvisionedSCIMVendor#DEFAULT": "Standard",
               "GroupOnSystemType#POSIX_GROUP": "posixGroup",
+              "ProvisionedLDAPDirectory#port": {
+                "label": "Port"
+              },
               "ProvisionedSystemType#SOURCE_AZURE_OIDC_DIRECTORY": "Azure OIDC-Sourceverzeichnis",
               "ADSamAccountNameScheme#TRANSFER_TRUNCATE": "Wert übernehmen und abschneiden - Nehmen Sie den Wert aus dem Attribut sAMAccountName des Kontos und kürzen Sie ihn, wenn das Ergebnis zu lang ist.",
               "ProvisionedSCIMVendor#KEYSTONE": "Keystone",
@@ -2143,6 +2214,9 @@
               },
               "ProvisionedSCIM#customHeaderName": {
                 "label": "Headername"
+              },
+              "ProvisionedLDAPDirectory#host": {
+                "label": "Primärer Host"
               },
               "ADSamAccountNameScheme#OMIT": "Auslassen - Das AD wählt einen zufälligen Wert.",
               "GroupOnSystemType#GROUP_UNIVERSAL_SECURITY": "group (universal security)",
@@ -2165,6 +2239,141 @@
               },
               "ProvisionedSCIM#updateStrategy": {
                 "label": "Updatestrategie"
+              }
+            },
+            "vault": {
+              "VaultRecord#comment": {
+                "description": "Diese Anmerkung wird verschlüsselt gespeichert.",
+                "label": "Anmerkung"
+              },
+              "VaultRecordWarningPeriod#TWO_WEEKS": "Erinnere mich zwei Wochen im Voraus",
+              "VaultRecordColor#ANDROID_GREEN": "Android",
+              "DeletedVaultRecovery#prefix": {
+                "label": "Präfix",
+                "description": "Dieser Präfix wird jedem Datennamen während der Wiederherstellung hinzugefügt."
+              },
+              "VaultRecord#holder": {
+                "label": "Safe"
+              },
+              "MoveVaultRecordAction#SHARE": "Teilen mit",
+              "VaultRecordWarningPeriod#AT_EXPIRATION": "Erinnere mich nicht im Voraus",
+              "VaultRecord#totp": {
+                "description": "Speichern Sie einen TOTP/2FA-Schlüssel, um automatisch 6-stellige Codes für 2FA zu generieren. Dieser Schlüssel wird beim Pairing von 2FA häufig zusammen mit einem QR-Code angezeigt.",
+                "label": "TOTP/2FA-Key"
+              },
+              "VaultRecordPrimer#name": {
+                "placeholder": "(erforderlich)",
+                "label": "Name"
+              },
+              "VaultRecord#readOnly": {
+                "label": "Nur lesen"
+              },
+              "MoveVaultRecord#shareEndDate": {
+                "description": "Nach diesem Datum wird der Safe-Eintrag automatisch aus dem Ziel-Safe entfernt.",
+                "label": "Teilen bis einschließlich eines bestimmten Datums"
+              },
+              "VaultRecordColor#GREEN": "Grün",
+              "MoveVaultRecord#shareDuration": {
+                "description": "Nach diesem Zeitraum wird der Safe-Eintrag automatisch aus dem Zielsafe entfernt.",
+                "label": "Für eine begrenzte Dauer teilen"
+              },
+              "VaultHolderType#CLIENT": "Anwendungs-Safe",
+              "VaultRecord#url": {
+                "description": "Ein Link (URL), der auf die Anwendung verweist. Dies ist normalerweise 'https://', aber zum Beispiel kann 'rdp://' für eine Verbindung zu einem Remotedesktop verwendet werden.",
+                "label": "Link"
+              },
+              "VaultRecovery#account": {
+                "label": "Benutzer"
+              },
+              "MoveVaultRecordAction#MOVE": "Verschieben nach",
+              "VaultRecordColor#RED": "Rot",
+              "VaultRecord#additionalURLs": {
+                "description": "Zusätzliche URLs, für die diese Regel gilt (eine pro Zeile).",
+                "label": "Zusätzliche Links"
+              },
+              "MoveVaultRecord#target": {
+                "label": "Ziel"
+              },
+              "VaultUnlock#password": {
+                "placeholder": "* * *"
+              },
+              "VaultRecordPrimer#color": {
+                "label": "Farbe"
+              },
+              "VaultRecordColor#SAGE": "Salbei",
+              "VaultRecord#file": {
+                "placeholder": "Wählen Sie eine Datei",
+                "label": "Datei"
+              },
+              "VaultRecordColor#PINK_LAVENDER": "Rosa",
+              "DeletedVaultHolder#type": {
+                "label": "Typ"
+              },
+              "VaultHolderType#ACCOUNT": "Persönlicher Safe",
+              "VaultRecordPrimer#lastReadAt": {
+                "label": "Zuletzt gelesen"
+              },
+              "VaultRecordWarningPeriod#SIX_MONTHS": "Erinnere mich sechs Monate im Voraus",
+              "DeletedVaultHolder#name": {
+                "label": "Name"
+              },
+              "VaultRecordPrimer#uuid": {
+                "label": "UUID"
+              },
+              "VaultRecordWarningPeriod#THREE_MONTHS": "Erinnere mich drei Monate im Voraus",
+              "VaultRecordColor#ARTICHOKE": "Artischocke",
+              "VaultRecordWarningPeriod#ONE_MONTH": "Erinnere mich einen Monat im Voraus",
+              "VaultRecord#endDate": {
+                "description": "Geben Sie an, bis wann dieser Eintrag gültig ist und fügen Sie dem Ablauf des Eintrags eine Warnung hinzu. Dies ist nur ein Hinweis.",
+                "label": "Enddatum"
+              },
+              "DeletedVaultHolder#records": {
+                "label": "Einträge"
+              },
+              "DeletedVaultRecovery#privateKey": {
+                "placeholder": "Recovery Private Key",
+                "label": "Recovery Private Key"
+              },
+              "VaultRecord#warningPeriod": {
+                "label": "Benachrichtigungszeitraum"
+              },
+              "MoveVaultRecord#account": {
+                "label": "Benutzer"
+              },
+              "VaultRecordWarningPeriod#TWO_MONTHS": "Erinnere mich zwei Monate im Voraus",
+              "VaultRecovery#privateKey": {
+                "label": "Recovery Private Key",
+                "placeholder": "Recovery Private Key"
+              },
+              "VaultRecordColor#MIDDLE_YELLOW": "Gelb",
+              "VaultHolderType#GROUP": "Gruppen-Safe",
+              "VaultRecordWarningPeriod#NEVER": "Erinnere mich nicht",
+              "VaultRecordColor#CRIMSON_RED": "Karmesin",
+              "DeletedVaultRecovery#targetGroup": {
+                "label": "Ziel",
+                "placeholder": "Wählen Sie eine Gruppe"
+              },
+              "MoveVaultRecord#action": {
+                "label": "Aktion"
+              },
+              "VaultRecordColor#DARK": "Dunkel",
+              "VaultRecordColor#NONE": "Keine Farbe",
+              "VaultRecordColor#BLUE": "Blau",
+              "MoveVaultRecordAction#COPY": "Kopieren in",
+              "VaultRecord#username": {
+                "label": "Benutzername"
+              },
+              "VaultRecord#password": {
+                "label": "Passwort/Secret"
+              },
+              "MoveVaultRecord#useCustomDuration": {
+                "label": "Gültigkeitsdauer"
+              },
+              "MoveVaultRecord#group": {
+                "label": "Gruppe"
+              },
+              "VaultRecord#launchpadTile": {
+                "label": "Launchpad-Kachel"
               }
             },
             "webhook": {
@@ -2281,9 +2490,9 @@
                   "context": "Konten abfragen und lesen"
                 },
                 "GROUP_SET_AUTHORIZATION": {
-                  "main": "Eine Gruppe für zusätzliche Genehmigung oder Verschachtelung konfigurieren",
-                  "context": "Die Gruppe {group} konfigurieren für zusätzliche Genehmigung oder Verschachtelung",
-                  "long": "Gruppen - Eine Gruppe konfigurieren für zusätzliche Genehmigung oder Verschachtelung"
+                  "main": "Eine Gruppe für zusätzliche Genehmigung, Verschachtelung oder Gruppenausschluss konfigurieren",
+                  "context": "Die Gruppe {group} konfigurieren für zusätzliche Genehmigung, Verschachtelung oder Gruppenausschluss",
+                  "long": "Gruppen - Eine Gruppe konfigurieren für zusätzliche Genehmigung, Verschachtelung oder Gruppenausschluss"
                 },
                 "ACCOUNTS_REMOVE": {
                   "main": "Konten löschen",
@@ -2459,131 +2668,13 @@
               "OAuth2ClientProfile#PUBLIC_NATIVE_APPLICATION_WITH_SECURE_STORAGE": "Öffentliche native Anwendung mit sicherer Speicherung",
               "ClientApplicationType#OAUTH2": "OAuth2/OIDC"
             },
-            "vault": {
-              "VaultRecordWarningPeriod#TWO_WEEKS": "Erinnere mich zwei Wochen im Voraus",
-              "VaultRecordColor#ANDROID_GREEN": "Android",
-              "DeletedVaultRecovery#prefix": {
-                "label": "Präfix",
-                "description": "Dieser Präfix wird jedem Datennamen während der Wiederherstellung hinzugefügt."
-              },
-              "VaultRecord#holder": {
-                "label": "Safe"
-              },
-              "MoveVaultRecordAction#SHARE": "Teilen mit",
-              "VaultRecordWarningPeriod#AT_EXPIRATION": "Erinnere mich nicht im Voraus",
-              "VaultRecord#totp": {
-                "description": "Speichern Sie einen TOTP/2FA-Schlüssel, um automatisch 6-stellige Codes für 2FA zu generieren. Dieser Schlüssel wird beim Pairing von 2FA häufig zusammen mit einem QR-Code angezeigt.",
-                "label": "TOTP/2FA-Key"
-              },
-              "VaultRecordPrimer#name": {
-                "placeholder": "(erforderlich)",
-                "label": "Name"
-              },
-              "MoveVaultRecord#shareEndDate": {
-                "description": "Nach diesem Datum wird der Safe-Eintrag automatisch aus dem Ziel-Safe entfernt.",
-                "label": "Teilen bis einschließlich eines bestimmten Datums"
-              },
-              "VaultRecordColor#GREEN": "Grün",
-              "MoveVaultRecord#shareDuration": {
-                "description": "Nach diesem Zeitraum wird der Safe-Eintrag automatisch aus dem Zielsafe entfernt.",
-                "label": "Für eine begrenzte Dauer teilen"
-              },
-              "VaultHolderType#CLIENT": "Anwendungs-Safe",
-              "VaultRecord#url": {
-                "description": "Ein Link (URL), der auf die Anwendung verweist. Dies ist normalerweise 'https://', aber zum Beispiel kann 'rdp://' für eine Verbindung zu einem Remotedesktop verwendet werden.",
-                "label": "Link"
-              },
-              "VaultRecovery#account": {
-                "label": "Benutzer"
-              },
-              "MoveVaultRecordAction#MOVE": "Verschieben nach",
-              "VaultRecordColor#RED": "Rot",
-              "VaultRecord#additionalURLs": {
-                "description": "Zusätzliche URLs, für die diese Regel gilt (eine pro Zeile).",
-                "label": "Zusätzliche Links"
-              },
-              "MoveVaultRecord#target": {
-                "label": "Ziel"
-              },
-              "VaultUnlock#password": {
-                "placeholder": "* * *"
-              },
-              "VaultRecordColor#SAGE": "Salbei",
-              "VaultRecord#file": {
-                "placeholder": "Wählen Sie eine Datei",
-                "label": "Datei"
-              },
-              "VaultRecordColor#PINK_LAVENDER": "Rosa",
-              "DeletedVaultHolder#type": {
-                "label": "Typ"
-              },
-              "VaultHolderType#ACCOUNT": "Persönlicher Safe",
-              "VaultRecordWarningPeriod#SIX_MONTHS": "Erinnere mich sechs Monate im Voraus",
-              "DeletedVaultHolder#name": {
-                "label": "Name"
-              },
-              "VaultRecordPrimer#uuid": {
-                "label": "UUID"
-              },
-              "VaultRecordWarningPeriod#THREE_MONTHS": "Erinnere mich drei Monate im Voraus",
-              "VaultRecordColor#ARTICHOKE": "Artischocke",
-              "VaultRecordWarningPeriod#ONE_MONTH": "Erinnere mich einen Monat im Voraus",
-              "VaultRecord#endDate": {
-                "description": "Geben Sie an, bis wann dieser Eintrag gültig ist und fügen Sie dem Ablauf des Eintrags eine Warnung hinzu. Dies ist nur ein Hinweis.",
-                "label": "Enddatum"
-              },
-              "DeletedVaultHolder#records": {
-                "label": "Einträge"
-              },
-              "VaultRecord#comment": {
-                "label": "Diese Anmerkung wird verschlüsselt gespeichert."
-              },
-              "DeletedVaultRecovery#privateKey": {
-                "placeholder": "Recovery Private Key",
-                "label": "Recovery Private Key"
-              },
-              "MoveVaultRecord#account": {
-                "label": "Benutzer"
-              },
-              "VaultRecordWarningPeriod#TWO_MONTHS": "Erinnere mich zwei Monate im Voraus",
-              "VaultRecovery#privateKey": {
-                "label": "Recovery Private Key",
-                "placeholder": "Recovery Private Key"
-              },
-              "VaultRecordColor#MIDDLE_YELLOW": "Gelb",
-              "VaultHolderType#GROUP": "Gruppen-Safe",
-              "VaultRecordWarningPeriod#NEVER": "Erinnere mich nicht",
-              "VaultRecordColor#CRIMSON_RED": "Karmesin",
-              "DeletedVaultRecovery#targetGroup": {
-                "label": "Ziel",
-                "placeholder": "Wählen Sie eine Gruppe"
-              },
-              "MoveVaultRecord#action": {
-                "label": "Aktion"
-              },
-              "VaultRecordColor#DARK": "Dunkel",
-              "VaultRecordColor#NONE": "Keine Farbe",
-              "VaultRecordColor#BLUE": "Blau",
-              "MoveVaultRecordAction#COPY": "Kopieren in",
-              "VaultRecord#username": {
-                "label": "Benutzername"
-              },
-              "VaultRecord#password": {
-                "label": "Passwort/Secret"
-              },
-              "MoveVaultRecord#useCustomDuration": {
-                "label": "Gültigkeitsdauer"
-              },
-              "MoveVaultRecord#group": {
-                "label": "Gruppe"
-              },
-              "VaultRecord#launchpadTile": {
-                "label": "Launchpad-Kachel"
-              }
-            },
             "identitysource": {
               "AFASIdentitySource#attributes": {
                 "label": "Attribute zum Zurückschreiben"
+              },
+              "AFASIdentitySource#identifier": {
+                "label": "Kontokennung",
+                "description": "Das Attribut, das zum Auffinden eines vorhandenen Kontos für eine eingehende Identität verwendet wird. Bei einer Übereinstimmung wird die Identität mit diesem Konto zusammengeführt, anstatt ein neues Konto anzulegen. Das Attribut muss eindeutig sein und muss eine Attributzuweisung haben."
               },
               "IdentitySourcePrimer#uuid": {
                 "label": "UUID"
@@ -2743,6 +2834,10 @@
                   "main": "Bereitstellung - Create group on system",
                   "short": "Create group on system"
                 },
+                "PROVISIONING_RELEASE_DEFERRED_ACTIVATION": {
+                  "short": "Release deferred activation",
+                  "main": "Bereitstellung - Release deferred activation"
+                },
                 "PROVISIONING_ROTATE_PASSWORDS": {
                   "short": "Rotate passwords",
                   "main": "Bereitstellung - Rotate passwords"
@@ -2770,6 +2865,10 @@
                 "PROVISIONING_PRE_PROVISIONING_CHECK": {
                   "short": "Pre-provisioning check",
                   "main": "Bereitstellung - Pre-provisioning check"
+                },
+                "PROVISIONING_ISSUE_LOGIN_PASS": {
+                  "short": "Issue login pass",
+                  "main": "Bereitstellung - Issue login pass"
                 },
                 "PROVISIONING_DESTROY_SERVICE_ACCOUNT": {
                   "short": "Destroy service account",
@@ -2937,6 +3036,7 @@
               "short#APPLICATION_NOT_LIVE": "Anwendung offline",
               "short#NONE": "Ok",
               "short#NODE_DISABLED": "Knoten deaktiviert",
+              "short#DATABASE_EMPTY": "Datenbank leer",
               "short#SSH_UNREACHABLE": "SSH nicht erreichbar",
               "short#PGPOOL_DOWN": "Pgpool offline",
               "short#MULTIPLE_PRIMARY_DATABASES": "Mehrere Primärdatenbanken",
@@ -2954,6 +3054,7 @@
             "ReplicationInfo#pgPrimary": {
               "label": "Primärdatenbank"
             },
+            "ReplicationProblem#DATABASE_EMPTY": "Die Datenbank auf diesem Clusterknoten enthält keine Daten von Topicus KeyHub.",
             "ReplicationNodeInfo#readyStatus": {
               "label": "Verfügbarkeit"
             },
@@ -3214,7 +3315,6 @@
       "logindone": "Login abgeschlossen",
       "internaldirectory": "Internes Verzeichnis",
       "login": "Anmelden",
-      "auditorgroupauditlog": "Audit-Log der Gruppe",
       "pendingaccountsdirectory": "Verzeichnis ausstehender Konten",
       "group": {
         "removegroups": {
@@ -3247,7 +3347,6 @@
         "accounts": "Konten"
       },
       "oidcdirectory": "OIDC-Verzeichnis",
-      "auditoraccountauditlog": "Audit-Log eines Kontos",
       "attrdefs": "Kontoattributdefinitionen",
       "account": {
         "sessies": "Sessions",
@@ -3258,7 +3357,6 @@
       },
       "authorizedgroupsdashboard": "Dashboard für autorisierte Gruppen",
       "accessprofiles": "Zugriffsprofile",
-      "serviceaccountauditlog": "Audit-Log eines Dienstkontos",
       "system": {
         "namespaces": "Namespaces",
         "groupsinsystem": "Gruppen im System",
@@ -3275,7 +3373,6 @@
       },
       "backups": "Sicherungen",
       "applications": "Anwendungen",
-      "applicationaudit": "Audit-Log der Anwendung",
       "provisionedazureoidcdirectory": "Gekoppeltes Azure OIDC-Sourceverzeichnis",
       "auditorgroupdetails": "Gruppen-Details",
       "tokenprompt": "Bestätigungscode",
@@ -3287,7 +3384,6 @@
       "passwordprompt": "Passwort",
       "launchpad": "Launchpad",
       "logs": "Systemprotokolle",
-      "grouponsystemauditlog": "Audit-Log einer Gruppe im System",
       "internalaccount": "Internes Konto",
       "provisionedldapdirectory": "Gekoppeltes LDAP-Sourceverzeichnis",
       "inloggen": "Anmelden",
@@ -3315,7 +3411,6 @@
       "consent": "Erlaubnis erteilen",
       "sequences": "Nummernfolgen",
       "classification": "Klassifizierung",
-      "auditorgrouponsystemauditlog": "Audit-Log einer Gruppe im System",
       "provisionednamespace": "Namespace",
       "auditorgroupsdashboard": "Auditor-Dashboard Gruppen",
       "mygroups": {
@@ -3357,8 +3452,6 @@
       "vaultrecord": "Safe-Eintrag",
       "managedgroupsdashboard": "Dashboard für verwaltete Gruppen",
       "confirmtotpoffsetchange": "Bestätigungscode-Zeitverschiebung bestätigen",
-      "mygroupauditlog": "Audit-Log der Gruppe",
-      "accountaudit": "Konto Audit-Log",
       "grouponsystem": "Gruppe im System",
       "auditorserviceaccountdetails": "Dienstkonto-Details",
       "dashboard": "Dashboard",
@@ -3382,6 +3475,21 @@
     },
     "breadcrumb": {
       "namespaces": "Namespaces",
+      "new": {
+        "client": "Neue Anwendung",
+        "record": "Neuer Safe-Eintrag",
+        "system": "Neues gekoppeltes System",
+        "attrdef": "Neue Attributdefinition",
+        "serviceaccount": "Neues Dienstkonto",
+        "orgunit": "Neue Organisationseinheit",
+        "profile": "Neues Zugriffsprofil",
+        "directory": "Neues Verzeichnis",
+        "idsource": "Neue Identitätsquelle",
+        "classification": "Neue Klassifizierung",
+        "group": "Neue Gruppe",
+        "webhook": "Neuer Webhook",
+        "account": "Neues Konto"
+      },
       "request": "Beantragen",
       "sessions": "Sessions",
       "setupgroupexclusion": "Gruppenausschluss",
@@ -3876,8 +3984,8 @@
           "main": "{requester} möchte der Anwendung {application} Berechtigungen zum Bearbeiten von Dienstkonten für {group} erteilen."
         },
         "GROUP_SET_AUTHORIZATION": {
-          "main": "{requester} möchte der Anwendung {application} die Berechtigung erteilen, {groupName} als Gruppe für zusätzliche Genehmigung zu konfigurieren, oder andere Gruppen darunter zu verschachteln.",
-          "me": "Ich möchte der Anwendung {application} die Berechtigung erteilen, {groupName} als Gruppe für zusätzliche Genehmigung zu konfigurieren, oder andere Gruppen darunter zu verschachteln."
+          "main": "{requester} möchte der Anwendung {application} die Berechtigung erteilen, {groupName} als Gruppe für zusätzliche Genehmigung zu konfigurieren, andere Gruppen darunter zu verschachteln oder Gruppenausschlüsse einzurichten.",
+          "me": "Ich möchte der Anwendung {application} die Berechtigung erteilen, {groupName} als Gruppe für zusätzliche Genehmigung zu konfigurieren, andere Gruppen darunter zu verschachteln oder Gruppenausschlüsse einzurichten."
         },
         "ACCOUNTS_QUERY": {
           "main": "{requester} möchte der Anwendung {application} Berechtigungen zum Lesen und Abfragen von Konten erteilen.",
@@ -4385,7 +4493,8 @@
       "next": "Nächste ID",
       "subtitle": "Diese Nummernfolge kann für die Generierung von UIDs bei der Bereitstellung von LDAP-Systemen verwendet werden.",
       "bewerken": "Nummernfolge bearbeiten",
-      "new": "Neue Nummernfolge anfangen"
+      "new": "Neue Nummernfolge anfangen",
+      "predefined": "Vordefinierte Nummernfolge"
     },
     "header": {
       "scim": {
@@ -4559,7 +4668,8 @@
         "groups": "Gruppen anfragen",
         "pwd": "Passwort wählen",
         "vaultkey": "Sicherheitsschlüssel",
-        "2fa": "2FA einrichten"
+        "2fa": "2FA einrichten",
+        "federated": "Bei Ihrer Organisation anmelden"
       },
       "2fa": {
         "main": "Die Zwei-Faktor-Authentifizierung (oder 2FA) erhöht die Sicherheit Ihres Kontos und ist für viele Teile von KeyHub erforderlich. Um 2FA zu verwenden, benötigen Sie eine App auf Ihrem Handy. KeyHub unterstützt das sogenannte TOTP-System. Hierfür stehen mehrere Apps zur Verfügung, zum Beispiel Google Authenticator, Duo Mobile oder Microsoft Authenticator. Doch für die beste Erfahrung ist es empfehlenswert, die KeyHub 2FA App zu verwenden. Diese App nutzt eine Push-Benachrichtigung um die Überprüfung durchzuführen, damit Sie den 6-stelligen Code nicht eingeben müssen.",
@@ -4588,6 +4698,16 @@
         "on": "bei {0} anmelden als {1}"
       },
       "on": "bei {0} anmelden"
+    },
+    "activeer": {
+      "pass": {
+        "continue": "Weiter zu Ihrer Organisation",
+        "help": "Kopieren Sie den Code unten, folgen Sie dann dem Link und melden Sie sich mit dem Code statt mit Ihrem Kennwort an.",
+        "unavailable": "Es konnte kein Einmalcode ausgestellt werden. Melden Sie sich bei Ihrer Organisation mit dem Kennwort an, das Sie gerade gewählt haben. Es kann bis zu zehn Minuten dauern, bis Ihre Organisation dieses Kennwort akzeptiert; wird es abgelehnt, versuchen Sie es später erneut.",
+        "header": "Ihr Einmalcode"
+      },
+      "help": "Kontrollieren Sie die untenstehenden Details und wählen Sie Ihr Passwort. Wenn die Informationen nicht korrekt sind, wenden Sie sich bitte an Ihre Kontaktperson.",
+      "header": "Aktivieren Sie Ihr Konto"
     },
     "passwordlost": {
       "main": "Ich habe mein Passwort vergessen",
@@ -4618,9 +4738,6 @@
     "TOKEN_LOGIN_NOT_POSSIBLE": {
       "header": "Zwei-Faktor-Authentifizierung erforderlich"
     },
-    "heractiveer": {
-      "header": "Reaktivieren Sie Ihr Konto"
-    },
     "activationcode": {
       "placeholder": "Code",
       "ongeldig": "Der eingegebene Code ist ungültig. Der Code ist möglicherweise abgelaufen.",
@@ -4635,10 +4752,6 @@
       "main": "Ihr Benutzername und/oder Passwort ist falsch oder Ihr Konto ist inaktiv.",
       "remote": "Ihr Konto existiert nicht bei Topicus KeyHub. Registrieren Sie zuerst ein Konto.",
       "2fa": "Ihr Zwei-Faktor-Authentifizierung Code ist falsch."
-    },
-    "activeer": {
-      "help": "Kontrollieren Sie die untenstehenden Details und wählen Sie Ihr Passwort. Wenn die Informationen nicht korrekt sind, wenden Sie sich bitte an Ihre Kontaktperson.",
-      "header": "Aktivieren Sie Ihr Konto"
     },
     "2fa": {
       "webauthn": "Verwenden Sie Ihren Sicherheitsschlüssel, um sich bei KeyHub anzumelden.",
@@ -4710,6 +4823,7 @@
       "annuleren": "Abbrechen",
       "bewerken": "Bearbeiten",
       "restorebackup": "Backup wiederherstellen",
+      "unshare": "Freigabe beenden",
       "verwijderen": {
         "main": "Löschen",
         "succes": {
@@ -4724,6 +4838,7 @@
         },
         "main": "Speichern"
       },
+      "moveup": "Nach oben verschieben",
       "applyall": "Alles anwenden",
       "activeer": "Aktivieren",
       "download": "Runterladen",
@@ -4731,7 +4846,9 @@
       "bevestig": "Bestätigen",
       "enable": "Aktivieren",
       "newgroup": "Neue Gruppe anfordern",
+      "regenerate": "Neu generieren",
       "afronden": "Beenden",
+      "showdetails": "Details anzeigen",
       "share": "Teilen",
       "toevoegen": "Hinzufügen",
       "revoke": "Zugang entziehen",
@@ -4746,6 +4863,7 @@
       "retry": "Wiederholen",
       "apply": "Anwenden",
       "instellen": "Konfigurieren",
+      "movedown": "Nach unten verschieben",
       "reject": "Ablehnen",
       "start": "Starten",
       "assign": "Zuweisen",
@@ -4768,7 +4886,6 @@
       "export": "Exportieren",
       "test": "Testen"
     },
-    "all": "Alle",
     "more": {
       "load": "Mehr laden",
       "1": "1 weiteres Element",
@@ -4802,6 +4919,9 @@
     "off": "Aus",
     "blocked": "Dieses Feld ist abgeschirmt.",
     "filter": "Filter",
+    "icon": {
+      "transfer": "Übertragen"
+    },
     "or": "oder",
     "on": "An",
     "generated": "Nach dem Speichern verfügbar",
@@ -5217,6 +5337,7 @@
         "label": "Neues Wartungspasswort"
       },
       "time": "Zeit",
+      "scope": "Konfigurationsbereich",
       "SHUTDOWN_ON_LOST_QUORUM": {
         "description": "Stoppen Sie die Anwendung auf Knoten, die kein Quorum innerhalb des Clusters haben. Dies verhindert ein mögliches Split-Brain-Szenario, erhöht aber auch die Wahrscheinlichkeit von Ausfallzeiten bei Ausfällen.",
         "label": "Shutdown bei verlorenem Quorum"
@@ -5371,6 +5492,11 @@
         },
         "repair": {
           "ok": "Die Operation wurde ausgeführt. Der Effekt sollte innerhalb weniger Minuten sichtbar sein."
+        },
+        "DATABASE_EMPTY": {
+          "repair": {
+            "label": "Datenbank wiederherstellen"
+          }
         },
         "NO_PRIMARY_DATABASE": {
           "repair": {
@@ -5856,6 +5982,7 @@
       "failed": "Das Zertifikat konnte nicht abgerufen werden.",
       "main": "Laden Sie das Zertifikat vom Server herunter"
     },
+    "predefined": "Vordefiniertes Zertifikat",
     "toevoegen": "Zertifikat hinzufügen",
     "keypassword": "Passwort",
     "pkcs12": {
@@ -5896,14 +6023,14 @@
       "PROVISIONING": "{performedBy} hat die Anfrage genehmigt, dass die Aktivierung von {onGroup} von {onGroup2} genehmigt wird. {reason}",
       "DELEGATION": "{performedBy} hat die Anfrage genehmigt, die Delegierung des Managements von {onGroup} an {onGroup2} zu erteilen. {reason}"
     },
-    "SETUP_NESTED_GROUP_DISCONNECT_ACCEPTED": "{performedBy} hat die Anfrage genehmigt, die Verschachtelung von {onGroup2} innerhalb von {onGroup} zu entfernen. {reason}",
+    "SETUP_NESTED_GROUP_DISCONNECT_ACCEPTED": "{performedBy} hat die Anfrage genehmigt, die Verschachtelung von {onGroup} innerhalb von {onGroup2} zu entfernen. {reason}",
     "ENABLE_TECHNICAL_ADMINISTRATION_ACCEPTED": "Der Antrag technische Verwaltung einzuschalten für {onGroup}, wurde von {performedBy} genehmigt. {reason}",
     "VERIFY_INTERNAL_ACCOUNT_REQUESTED": "{performedBy} hat beantragt, das interne Konto {onAccount} zu überprüfen. {reason}",
     "export": {
       "subtitle": "Geben Sie einen Bereich für das zu exportierende Audit-Log an.",
       "title": "Exportieren"
     },
-    "SETUP_GROUP_EXCLUSION_DISCONNECT_ACCEPTED": "{performedBy} hat den Antrag auf Aufhebung des Gruppenausschlusses zwischen {onGroup2} und {onGroup} genehmigt. {reason}",
+    "SETUP_GROUP_EXCLUSION_DISCONNECT_ACCEPTED": "{performedBy} hat den Antrag auf Aufhebung des Gruppenausschlusses zwischen {onGroup} und {onGroup2} genehmigt. {reason}",
     "MOVE_GROUPS_ACCEPTED": "{performedBy} hat die Anfrage von {onAccount}, {parameter2} Gruppen nach {onOrganizationalUnit} zu verschieben, genehmigt. {reason}",
     "updaterequest": {
       "NORMAL": {
@@ -6027,7 +6154,7 @@
     "GRANT_ACCESS_ACCEPTED": "{performedBy} hat die Anfrage von {onAccount} für Zugriff zu {onGroup2} bis zum {parameter3} genehmigt. {reason}",
     "PROVISIONED_SYSTEM_REMOVED_FROM_GROUP": "{gosTypeCap} {gosName} im {onSystem} wurde aus der Gruppe {onGroup} entfernt.",
     "CREATE_PROVISIONED_NAMESPACE_REQUESTED": "{performedBy} hat beantragt, einen Namespace {parameter3}, basierend auf {onSystem}, zu erstellen. {reason}",
-    "SETUP_NESTED_GROUP_DISCONNECT_DECLINED": "{performedBy} hat die Anfrage abgelehnt, die Verschachtelung von {onGroup2} innerhalb von {onGroup} zu entfernen. {reason}",
+    "SETUP_NESTED_GROUP_DISCONNECT_DECLINED": "{performedBy} hat die Anfrage abgelehnt, die Verschachtelung von {onGroup} innerhalb von {onGroup2} zu entfernen. {reason}",
     "GROUP_AUTHORIZATION_CONNECTED": {
       "MEMBERSHIP": "{performedBy} hat zusätzliche Autorisierung durch {onGroup2} für die Mitgliederverwaltung von der Gruppe {onGroup} eingerichtet.",
       "AUDITING": "{performedBy} hat zusätzliche Autorisierung durch {onGroup2} für die Auditierung von der Gruppe {onGroup} eingerichtet.",
@@ -6137,7 +6264,7 @@
     "ACCOUNT_GROUP_DEPROVISIONED": "{onAccount} hat {gosType} {gosName} für {onSystem} durch {onGroup} deaktiviert.",
     "SETUP_GROUP_EXCLUSION_CONNECT_ACCEPTED": "{performedBy} hat die Anfrage für einen Gruppenausschluss zwischen {onGroup} und {onGroup2} genehmigt. {reason}",
     "TRANSFER_ORGANIZATIONAL_UNIT_OWNERSHIP_DECLINED": "Der Antrag zur Übertragung der Verantwortung für {onOrganizationalUnit} auf {onGroup} wurde von {performedBy} abgelehnt. {reason}",
-    "SETUP_GROUP_EXCLUSION_DISCONNECT_DECLINED": "{performedBy} hat die Anfrage zur Aufhebung des Gruppenausschlusses zwischen {onGroup2} und {onGroup} abgelehnt. {reason}",
+    "SETUP_GROUP_EXCLUSION_DISCONNECT_DECLINED": "{performedBy} hat die Anfrage zur Aufhebung des Gruppenausschlusses zwischen {onGroup} und {onGroup2} abgelehnt. {reason}",
     "TRANSFER_PROVISIONED_SYSTEM_ADMINISTRATION_ACCEPTED": "Der Antrag, die Verwaltung von {onSystem} auf {onGroup} zu übertragen wurde von {performedBy} genehmigt. {reason}",
     "PROVISIONED_SYSTEM_ADDED_TO_ACCESS_PROFILE": "{gosTypeCap} {gosName} im {onSystem} wurde dem Zugriffsprofil {onAccessProfile} hinzugefügt.",
     "LINK_DIRECTORY_TO_ACCESS_PROFILE_ACCEPTED": "Der Antrag, die Verwaltung von Attributen für Konten aus {onDirectory} dem Zugriffsprofil {onAccessProfile} zuzuweisen, wurde von {performedBy} genehmigt. {reason}",
@@ -6158,7 +6285,7 @@
       "profile": "Der Antrag, den Benutzern im Zugriffsprofil {onAccessProfile} Zugriff auf {onClient} zu geben, wurde von {performedBy} abgelehnt. {reason}"
     },
     "CERTIFICATE_MODIFIED": "{performedBy} hat das Zertifikat {onCertificate} bearbeitet.",
-    "SETUP_NESTED_GROUP_DISCONNECT_REQUESTED": "{performedBy} hat beantragt, die Verschachtelung von {onGroup2} innerhalb von {onGroup} zu entfernen. {reason}",
+    "SETUP_NESTED_GROUP_DISCONNECT_REQUESTED": "{performedBy} hat beantragt, die Verschachtelung von {onGroup} innerhalb von {onGroup2} zu entfernen. {reason}",
     "ACCOUNT_MODIFIED_FOR_GROUP": {
       "NORMAL": {
         "main": "{performedBy} hat {onAccount} normale Rechte für die Gruppe {onGroup} erteilt.",
@@ -6300,7 +6427,7 @@
     "CLIENT_MODIFIED": "{performedBy} hat die Anwendung {onClient} bearbeitet.",
     "ACCOUNT_DEACTIVATED_FOR_ACCESS_PROFILE": "{onAccount} wurde für das Zugriffsprofil {onAccessProfile} deaktiviert.",
     "GROUP_ON_SYSTEM_DEPROVISIONED": "{gosTypeCap} {gosName} wurde von dem System {onSystem} entfernt.",
-    "SETUP_GROUP_EXCLUSION_DISCONNECT_REQUESTED": "{performedBy} hat die Aufhebung des Gruppenausschlusses zwischen {onGroup2} und {onGroup} beantragt. {reason}",
+    "SETUP_GROUP_EXCLUSION_DISCONNECT_REQUESTED": "{performedBy} hat die Aufhebung des Gruppenausschlusses zwischen {onGroup} und {onGroup2} beantragt. {reason}",
     "TRANSFER_GROUP_ON_SYSTEM_OWNERSHIP_DECLINED": "Der Antrag zur Übertragung der Verantwortung für {gosType} {gosName} auf {onSystem} auf {onGroup} wurde von {performedBy} abgelehnt. {reason}",
     "GROUP_NESTING_CONNECTED": "{performedBy} hat die Gruppe {onGroup} in {onGroup2} verschachtelt.",
     "REMOVE_GROUP_REQUESTED": {
@@ -6374,6 +6501,7 @@
       "modifications": "# Modifikationen",
       "owner": "Verantwortliche",
       "organizationalunits": "Organisationseinheiten",
+      "comment": "Anmerkungen",
       "access": "Zugriff",
       "filedate": "Dateidatum",
       "subjectdn": "Subject DN",
@@ -6443,6 +6571,7 @@
       "displayName": "Anzeigename",
       "errors": "Fehler",
       "version": "Version",
+      "uuid": "UUID",
       "level": "Log level",
       "description": "Beschreibung"
     }
@@ -6511,7 +6640,10 @@
     },
     "attribute": {
       "script": "Script",
-      "definition": "Wählen Sie eine Attributdefinition...",
+      "definition": {
+        "main": "Wählen Sie eine Attributdefinition...",
+        "label": "Attributdefinition"
+      },
       "usescript": "Das nachfolgende Skript ausführen...",
       "add": "Attribut hinzufügen",
       "name": "Attributname",
@@ -6631,6 +6763,7 @@
     },
     "dashboard": "Dashboard",
     "access": "Zugriff verwalten",
+    "open": "Menü öffnen",
     "directories": "Verzeichnisse",
     "help": "Hilfe",
     "replication": {
@@ -7158,6 +7291,21 @@
       "license-terminated": "Topicus KeyHub-Lizenz beendet"
     }
   },
+  "launchpad": {
+    "tile": {
+      "logo": "Logo der Kachel",
+      "title": "Launchpad-Kachel",
+      "vaultRecord": "Safe-Eintrag",
+      "enable": "Als Kachel auf dem Launchpad anzeigen",
+      "subtitle": "Geben Sie die Eigenschaften der Launchpad-Kachel an.",
+      "add": "Kachel hinzufügen",
+      "edit": "Klicken Sie zum Bearbeiten auf das Logo.",
+      "application": "Anwendung"
+    },
+    "filter": {
+      "group": "Wählen Sie eine Gruppe..."
+    }
+  },
   "mygroups": {
     "users": {
       "header": "Mitglieder"
@@ -7384,8 +7532,12 @@
       "link": "Verbinden",
       "install": {
         "main": "Installieren",
+        "apple": "Aus dem App Store installieren",
         "title": "Browser Add-on installieren",
-        "subtitle": "Wählen Sie Ihren Browser"
+        "subtitle": "Wählen Sie Ihren Browser",
+        "edge": "Für Edge installieren",
+        "firefox": "Für Firefox installieren",
+        "chrome": "Für Chrome installieren"
       },
       "linked": "Browser Add-on verbunden",
       "notinstalled": "Browser Add-on nicht installiert",
@@ -7476,9 +7628,14 @@
         "totp": "Key ändern"
       },
       "refreshtotp": "TOTP-Code aktualisieren",
+      "show": "Passwort anzeigen",
       "generate": "Passwort generieren"
     },
     "record": {
+      "lastread": {
+        "main": "Zuletzt gelesen",
+        "unknown": "Unbekannt"
+      },
       "sharedfrom": {
         "header": "Geteilt von",
         "main": "Geteilt von {0}"
@@ -7511,10 +7668,6 @@
         "sharewarning": "<strong>Dieser Safe muss aktiviert werden<\/strong> <br>Für den Zielsafe gelten möglicherweise weniger strenge Zugriffsbestimmungen.",
         "info": "Wählen Sie den Zielsafe für {0}."
       },
-      "shared": {
-        "main": "Geteilt mit:",
-        "parentRecordName": "Name des ursprünglichen Safe-Eintrags: {0}"
-      },
       "strength": {
         "average": "Dieses Passwort ist nicht sehr sicher. Wählen Sie nach Möglichkeit ein stärkeres Passwort.",
         "weak": "Dieses Passwort ist sehr schwach. Wählen Sie ein stärkeres Passwort.",
@@ -7529,7 +7682,13 @@
         "sharedend": "(geteilt von {0} bis {1})",
         "shared": "(geteilt von {0})"
       },
+      "shared": {
+        "parentRecordName": "Name des ursprünglichen Safe-Eintrags: {0}"
+      },
       "shareend": "{0} (geteilt bis {1})",
+      "comment": {
+        "show": "Anmerkung anzeigen"
+      },
       "derived": "Abgeleitet von einer Anwendung oder einem Dienstkonto",
       "header": "Safe-Eintrag - {0}",
       "duplicate": {
@@ -7541,6 +7700,10 @@
     "export": {
       "title": "Safe exportieren",
       "subtitle": "Wählen Sie einen Safe zum Exportieren in CSV aus."
+    },
+    "filter": {
+      "ordering": "Sortierreihenfolge",
+      "group": "Wählen Sie einen Safe..."
     },
     "activation": {
       "warn": "Die Aktivierung der Gruppe ist erforderlich. Das Passwort, der TOTP-Code, die Datei und der Kommentar sind nicht verfügbar."
@@ -7555,9 +7718,7 @@
       "anon": "Persönlicher Safe",
       "main": "Persönlicher Safe von {0}"
     },
-    "filter": {
-      "group": "Wählen Sie einen Safe..."
-    },
+    "file": "Datei",
     "recovered": "WIEDERHERGESTELLT - ",
     "totp": "2FA",
     "password": "Passwort",
@@ -7702,6 +7863,7 @@
     "DIRECTORY_CREDENTIALS_EXPECTED": "Sie haben das falsche Passwort eingegeben. Bitte geben Sie Ihr {directory}-Passwort ein.",
     "DIRECTORY_IN_USE": "Ein Verzeichnis kann nicht gelöscht werden, solange nicht alle darin gekoppelten Konten gelöscht wurden.",
     "MODIFICATION_STATUS_INVALID": "Dieser Antrag wurde bereits bearbeitet oder annulliert.",
+    "SOURCE_DIRECTORY_CREDENTIALS_REQUIRED": "Ohne gekoppeltes OIDC-Verzeichnis benötigt dieses System eigene Graph-Anmeldedaten: Client Identifier und Client Secret sind beide erforderlich.",
     "VAULT_KEY_MISSING": "Für diese Aktion wird Zugriff zum Safe von {holder} benötigt. Versuchen Sie es erneut nachdem Sie Zugriff auf den Safe angefragt haben.",
     "VAULT_RECORD_DERIVED_SHARE_ONLY": "Abgeleitete Safe-Einträge können nur mit anderen Safes geteilt werden.",
     "PASSWORD_INCORRECT": "Das Passwort ist nicht korrekt.",
@@ -7714,6 +7876,7 @@
     "MODIFICATION_END_DATE_IN_PAST": "Das eingegebene Datum liegt in der Vergangenheit, bitte wählen Sie ein anderes Datum.",
     "FILE_SIZE_INCORRECT": "Die Datei für {for_name} hat eine falsche Große.",
     "INVALID_REGISTRATION_CREDENTIALS": "Benutzername und Passwort stimmen mit keinem existierenden Benutzer überein.",
+    "IDENTITY_SOURCE_INVALID_IDENTIFIER": "Die Kontokennung {attribute} muss ein eindeutiges, einwertiges Attribut sein, das in dieser Identitätsquelle zugewiesen ist.",
     "ATTRIBUTE_IN_USE_BY_DIRECTORY": "Diese Attributdefinition wird noch vom Verzeichnis {directory} verwendet und kann daher nicht geändert oder gelöscht werden.",
     "ATTRIBUTE_IN_USE_BY_PROFILE": "Diese Attributdefinition wird noch vom Zugriffsprofil {profile} verwendet und kann daher nicht geändert oder gelöscht werden.",
     "LICENSE_FEATURE_IN_USE": "Ihre Topicus KeyHub-Installation verwendet Funktionen, die von der Lizenz nicht zugelassen sind:",
@@ -7742,6 +7905,7 @@
     "ATTRIBUTE_IN_USE_BY_CLIENT": "Diese Attributdefinition wird noch von der Anwendung {client} verwendet und kann daher nicht geändert oder gelöscht werden.",
     "INVALID_CSV": "Die CSV-Datei ist ungültig: {error}",
     "VAULT_RECORD_ALREADY_SHARED": "Der Safe-Eintrag ist bereits mit dem ausgewählten Safe geteilt.",
+    "SOURCE_DIRECTORY_CONNECTION_REQUIRED": "Ohne gekoppeltes LDAP-Verzeichnis benötigt dieses System eine eigene Verbindung: Dialekt, primärer Host, Port, Basis-DN und TLS sind alle erforderlich.",
     "WEBAUTHN_KEY_CANNOT_UNLOCK_VAULT": "Dieser Sicherheitsschlüssel kann nicht verwendet werden, um Ihren Safe zu entsperren.",
     "INVALID_CREDENTIALS": "Das Passwort ist nicht korrekt.",
     "MODIFICATION_DELEGATION_ADMIN_NOT_ALLOWED": "Das Delegieren des Management ist für KeyHub Administrators nicht möglich.",
@@ -7767,12 +7931,14 @@
     "AUTHENTICATION_ERROR": "Unerwarteter Authentifizierungsfehler: {cause}",
     "CANNOT_REVOKE_LAST_MANAGER": "Das Konto für {account} ist der letzte Manager von {group} und kann daher nicht in ein normales Konto umgewandelt werden.",
     "EMAIL_ALREADY_IN_USE": "Die E-Mail-Adresse muss einzigartig sein, '{email}' wird bereits verwendet.",
-    "VAULT_RECORD_SECRET_REQUIRED": "Es ist erforderlich, mindestens ein Passwort, einen 2FA-Schlüssel, eine Datei oder eine Anmerkung einzugeben.",
+    "VAULT_RECORD_SECRET_REQUIRED": "Dieser Safe-Eintrag hat keinen Inhalt: Geben Sie mindestens ein Passwort, einen 2FA-Schlüssel, eine Datei oder eine Anmerkung ein.",
     "DEFAULT_DIRECTORY_ALREADY_EXISTS": "Nur ein Standardverzeichnis ist möglich. {name} ist bereits als Standardverzeichnis eingestellt.",
     "PROVISIONED_SYSTEM_DN_NOT_UNIQUE": "Der DN muss einzigartig sein, '{dn}' wird bereits verwendet für System '{system}'.",
     "PASSWORD_WEAK": "Das Passwort ist zu schwach. Dieses Passwort ist in einer Sammlung von häufig verwendeten Passwörtern aufgelistet.",
+    "VAULT_NOT_UNLOCKED": "Ihre Safes sind gesperrt. Entsperren Sie Ihre Safes und versuchen Sie es erneut.",
     "LICENSE_PRO_LIMIT_REACHED": "Sie haben das Limit Ihrer Topicus KeyHub Lizenz erreicht und können keine 'Pro'-Konten mehr hinzufügen.",
     "PROVISIONING_MISSING_PERMISSION": "Der Anwendung fehlt eine erforderliche Berechtigung: {role}",
+    "SOURCE_DIRECTORY_REQUIRED": "Ein Quell-Provisionierungssystem benötigt mindestens ein Verzeichnis: ein LDAP-Verzeichnis, ein OIDC-Verzeichnis oder beide.",
     "PROVISIONED_SYSTEM_NO_UUID": "{system} hat keine korrekte UUID angegeben",
     "LIFECYCLE_ACTION_MISSING_TO_RECIPIENT": "Eine Mail-Aktion muss mindestens einen 'An'-Empfänger haben.",
     "LICENSE_AT_LEAST_BUSINESS_REQUIRED": "Für {username} ist mindestens eine Business-Lizenz erforderlich, um Gruppenmitgliedschaften oder einen persönlichen Safe zu ermöglichen.",
@@ -7782,8 +7948,11 @@
     "CANNOT_REMOVE_ADMIN": "KeyHub-Administrator kann nicht gelöscht werden.",
     "FEDERATION_ERROR": "Beim Single Sign-on ist ein Fehler aufgetreten: {cause}",
     "PROVISIONING_CONFLICT": "Aufgrund einer Konfigurationsänderung, konnte Ihre Handlung nicht bearbeitet werden. Versuchen Sie es bitte erneut.",
+    "DIRECTORY_IN_USE_BY_PROVISIONED_SYSTEM": "Dieses Verzeichnis wird von {system} für die Quell-Provisionierung verwendet. Entfernen Sie das Verzeichnis zuerst aus dieser Kopplung.",
     "PASSWORD_TOO_SHORT": "Das Passwort ist zu kurz. Passwörter müssen mindestens {minlength} Zeichen lang sein.",
     "VAULT_ACTIVATION_REQUIRED": "Um Safe-Einträge für diese Gruppe zu lesen, muss die Gruppe zuerst aktiviert werden.",
+    "WEBAUTHN_PRF_ASSERTION_FAILED": "Der Sicherheitsschlüssel hat das Entsperren des Safes nicht bestätigt. Versuchen Sie es erneut.",
+    "PROVISIONED_SYSTEM_GROUPS_WITHOUT_MEMBERSHIP_READ": "Gruppenunterstützung erfordert eine Möglichkeit, Gruppenmitgliedschaften auszulesen. Aktivieren Sie \"Unterstützt das Filtern von Gruppen nach Mitglied\" oder \"Gibt Gruppenmitglieder beim Auflisten von Gruppen zurück\", oder deaktivieren Sie \"Unterstützt Gruppen\".",
     "MODIFICATION_DELEGATION_REQUIRES_MEMBERSHIP_AUTH": "Die ausgewählte Gruppe hat keine zusätzliche Autorisierung zur Gruppenmitgliedschaft. Dies ist für die Delegierung von Rechten erforderlich.",
     "DIRECTORY_TESTED": "{directory} wurde mit folgendem Ergebnis getestet: {message}",
     "INVALID_TOTP_TOKEN": "Der eingegebene Code ist ungültig. Ist die Zeit auf Ihrem Handy korrekt?",
@@ -8101,6 +8270,9 @@
     "details": {
       "header": "Details"
     },
+    "add": {
+      "child": "Untergeordnete Organisationseinheit hinzufügen"
+    },
     "header": {
       "main": "Organisationseinheit - {0}",
       "accounts": "Konten",
@@ -8220,6 +8392,7 @@
     "search": {
       "ownergroup": "Verantwortliche Gruppe...",
       "system": "Gekoppeltes System...",
+      "grouponsystems": "Suche in Gruppen im System",
       "type": "Typ..."
     },
     "header": {
@@ -8473,10 +8646,13 @@
   },
   "filter": {
     "loglevel": "Nach Log Level filtern...",
+    "type": {
+      "label": "Typ",
+      "main": "Nach Typ filtern..."
+    },
     "attribute": "Nach Attribut filtern...",
     "group": "Wählen Sie eine Gruppe...",
     "status": "Nach Status filtern...",
-    "type": "Nach Typ filtern...",
     "overig": "Sonstige",
     "source": "Nach Quelle filtern...",
     "account": "Wählen Sie ein Konto...",
@@ -8618,6 +8794,7 @@
     "dns": "{line} ist keine gültige IPv4 Adresse.",
     "main": "{input} ist keine gültige IPv4 Adresse."
   },
+  "Required": "Das Pflichtfeld '{label}' wurde nicht ausgefüllt.",
   "request": {
     "popup": {
       "subtitle": {
@@ -8638,20 +8815,6 @@
           "label": "Anzahl der Gruppen"
         }
       }
-    }
-  },
-  "launchpad": {
-    "tile": {
-      "title": "Launchpad-Kachel",
-      "vaultRecord": "Safe-Eintrag",
-      "enable": "Als Kachel auf dem Launchpad anzeigen",
-      "subtitle": "Geben Sie die Eigenschaften der Launchpad-Kachel an.",
-      "add": "Kachel hinzufügen",
-      "edit": "Klicken Sie zum Bearbeiten auf das Logo.",
-      "application": "Anwendung"
-    },
-    "filter": {
-      "group": "Wählen Sie eine Gruppe..."
     }
   },
   "directory": {

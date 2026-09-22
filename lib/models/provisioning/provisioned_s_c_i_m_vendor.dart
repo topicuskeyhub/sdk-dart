@@ -2,6 +2,7 @@
 /// auto generated
 enum ProvisionedSCIMVendor {
     default_('DEFAULT'),
+    atlassian('ATLASSIAN'),
     aws('AWS'),
     keystone('KEYSTONE'),
     topicusKeyhubConnector('TOPICUS_KEYHUB_CONNECTOR'),

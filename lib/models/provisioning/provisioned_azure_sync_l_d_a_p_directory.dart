@@ -11,6 +11,8 @@ class ProvisionedAzureSyncLDAPDirectory extends ProvisionedSystem implements Par
     String? clientSecret;
     ///  The directory property
     AccountDirectoryPrimer? directory;
+    ///  The oidcDirectory property
+    AccountDirectoryPrimer? oidcDirectory;
     ///  The tenant property
     String? tenant;
     /// Instantiates a new [ProvisionedAzureSyncLDAPDirectory] and sets the default values.
@@ -29,6 +31,7 @@ class ProvisionedAzureSyncLDAPDirectory extends ProvisionedSystem implements Par
         deserializerMap['clientId'] = (node) => clientId = node.getStringValue();
         deserializerMap['clientSecret'] = (node) => clientSecret = node.getStringValue();
         deserializerMap['directory'] = (node) => directory = node.getObjectValue<AccountDirectoryPrimer>(AccountDirectoryPrimer.createFromDiscriminatorValue);
+        deserializerMap['oidcDirectory'] = (node) => oidcDirectory = node.getObjectValue<AccountDirectoryPrimer>(AccountDirectoryPrimer.createFromDiscriminatorValue);
         deserializerMap['tenant'] = (node) => tenant = node.getStringValue();
         return deserializerMap;
     }
@@ -40,6 +43,7 @@ class ProvisionedAzureSyncLDAPDirectory extends ProvisionedSystem implements Par
         writer.writeStringValue('clientId', clientId);
         writer.writeStringValue('clientSecret', clientSecret);
         writer.writeObjectValue<AccountDirectoryPrimer>('directory', directory);
+        writer.writeObjectValue<AccountDirectoryPrimer>('oidcDirectory', oidcDirectory);
         writer.writeStringValue('tenant', tenant);
     }
 }

@@ -23,11 +23,11 @@ class ProfileprovisioningRequestBuilder extends BaseRequestBuilder<Profileprovis
     /// Instantiates a new [ProfileprovisioningRequestBuilder] and sets the default values.
     ///  [pathParameters] Path parameters for the request
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    ProfileprovisioningRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profileprovisioning{?accessProfile*,additional*,any*,createdAfter*,createdBefore*,exclude*,groupOnSystem*,groupOnSystemOwnerGroup*,id*,modifiedSince*,ownedBy*,q*,sort*,system*,systemAdminGroup*,systemContentAdminGroup*,systemOwnerGroup*}", pathParameters) ;
+    ProfileprovisioningRequestBuilder(Map<String, dynamic> pathParameters, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profileprovisioning{?accessProfile*,additional*,any*,createdAfter*,createdBefore*,exclude*,groupOnSystem*,groupOnSystemOwnerGroup*,id*,modifiedSince*,organizationalUnitForEnforcement*,ownedBy*,q*,sort*,system*,systemAdminGroup*,systemContentAdminGroup*,systemOwnerGroup*}", pathParameters) ;
     /// Instantiates a new [ProfileprovisioningRequestBuilder] and sets the default values.
     ///  [rawUrl] The raw URL to use for the request builder.
     ///  [requestAdapter] The request adapter to use to execute the requests.
-    ProfileprovisioningRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profileprovisioning{?accessProfile*,additional*,any*,createdAfter*,createdBefore*,exclude*,groupOnSystem*,groupOnSystemOwnerGroup*,id*,modifiedSince*,ownedBy*,q*,sort*,system*,systemAdminGroup*,systemContentAdminGroup*,systemOwnerGroup*}", {RequestInformation.rawUrlKey : rawUrl}) ;
+    ProfileprovisioningRequestBuilder.withUrl(String rawUrl, RequestAdapter requestAdapter) : super(requestAdapter, "{+baseurl}/profileprovisioning{?accessProfile*,additional*,any*,createdAfter*,createdBefore*,exclude*,groupOnSystem*,groupOnSystemOwnerGroup*,id*,modifiedSince*,organizationalUnitForEnforcement*,ownedBy*,q*,sort*,system*,systemAdminGroup*,systemContentAdminGroup*,systemOwnerGroup*}", {RequestInformation.rawUrlKey : rawUrl}) ;
     /// Query for all access profile provisioning links in Topicus KeyHub. The various query parameters can be used to filter the response.
     ///  [requestConfiguration] Configuration for the request such as headers, query parameters, and middleware options.
     Future<AccessProfileProvisioningLinkableWrapper?> getAsync([void Function(RequestConfiguration<ProfileprovisioningRequestBuilderGetQueryParameters>)? requestConfiguration]) async {
@@ -42,7 +42,7 @@ class ProfileprovisioningRequestBuilder extends BaseRequestBuilder<Profileprovis
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<ProfileprovisioningRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<ProfileprovisioningRequestBuilderGetQueryParameters>(requestConfiguration, () => ProfileprovisioningRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=88');
         return requestInfo;
     }
 }

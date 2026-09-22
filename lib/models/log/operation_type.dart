@@ -21,6 +21,8 @@ enum OperationType {
     provisioningDestroyAccount('PROVISIONING_DESTROY_ACCOUNT'),
     provisioningDestroyServiceAccount('PROVISIONING_DESTROY_SERVICE_ACCOUNT'),
     provisioningCleanupOldAccounts('PROVISIONING_CLEANUP_OLD_ACCOUNTS'),
+    provisioningReleaseDeferredActivation('PROVISIONING_RELEASE_DEFERRED_ACTIVATION'),
+    provisioningIssueLoginPass('PROVISIONING_ISSUE_LOGIN_PASS'),
     identitySourceFullSync('IDENTITY_SOURCE_FULL_SYNC'),
     identitySourceIncrementalSync('IDENTITY_SOURCE_INCREMENTAL_SYNC');
     const OperationType(this.value);

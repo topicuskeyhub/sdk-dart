@@ -67,6 +67,7 @@ class WebhookRequestBuilderGetQueryParameters implements AbstractQueryParameters
     ///  Filter results on the given TLS mode(s).
     List<TLSLevel>? tls;
     ///  Only return webhooks that trigger on one of the given type(s).
+    /// @QueryParameter('type')
     List<AuditRecordType>? type_;
     ///  Filter results on one or more URLs.
     List<String>? url;
@@ -105,7 +106,7 @@ class WebhookRequestBuilderGetQueryParameters implements AbstractQueryParameters
             'systemAdminGroup' : systemAdminGroup,
             'systemOwnerGroup' : systemOwnerGroup,
             'tls' : tls,
-            'type_' : type_,
+            'type' : type_,
             'url' : url,
             'uuid' : uuid,
         };

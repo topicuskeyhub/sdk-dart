@@ -21,6 +21,8 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
     List<int>? id;
     ///  Only return records that have been modified since the given instant.
     List<DateTime>? modifiedSince;
+    ///  Filter the service account groups on the organizational units of their service account, specified by id. This parameter supports composition with all parameters from the organizational unit resource.
+    List<int>? organizationalUnitForEnforcement;
     ///  Filter records on a complex CQL query.
     List<String>? q;
     ///  Filter the service account groups on the service accounts, specified by id. This parameter supports composition with all parameters from the service account resource.
@@ -39,6 +41,7 @@ class GroupRequestBuilderGetQueryParameters implements AbstractQueryParameters {
             'groupOnSystem' : groupOnSystem,
             'id' : id,
             'modifiedSince' : modifiedSince,
+            'organizationalUnitForEnforcement' : organizationalUnitForEnforcement,
             'q' : q,
             'serviceAccount' : serviceAccount,
             'sort' : sort,

@@ -62,7 +62,7 @@ class AuditorprovisioningRequestBuilder extends BaseRequestBuilder<Auditorprovis
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<AuditorprovisioningRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<AuditorprovisioningRequestBuilderGetQueryParameters>(requestConfiguration, () => AuditorprovisioningRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=88');
         return requestInfo;
     }
 }

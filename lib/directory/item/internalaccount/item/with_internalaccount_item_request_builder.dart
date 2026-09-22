@@ -65,7 +65,7 @@ class WithInternalaccountItemRequestBuilder extends BaseRequestBuilder<WithInter
     RequestInformation toDeleteRequestInformation([void Function(RequestConfiguration<WithInternalaccountItemRequestBuilderDeleteQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.delete, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithInternalaccountItemRequestBuilderDeleteQueryParameters>(requestConfiguration, () => WithInternalaccountItemRequestBuilderDeleteQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=88');
         return requestInfo;
     }
     /// Returns the single internal accounts within a directory.
@@ -73,7 +73,7 @@ class WithInternalaccountItemRequestBuilder extends BaseRequestBuilder<WithInter
     RequestInformation toGetRequestInformation([void Function(RequestConfiguration<WithInternalaccountItemRequestBuilderGetQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.get, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithInternalaccountItemRequestBuilderGetQueryParameters>(requestConfiguration, () => WithInternalaccountItemRequestBuilderGetQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=88');
         return requestInfo;
     }
     /// Updates the internal accounts within a directory identified by the id.
@@ -82,8 +82,8 @@ class WithInternalaccountItemRequestBuilder extends BaseRequestBuilder<WithInter
     RequestInformation toPutRequestInformation(InternalAccount body, [void Function(RequestConfiguration<WithInternalaccountItemRequestBuilderPutQueryParameters>)? requestConfiguration]) {
         var requestInfo = RequestInformation(httpMethod : HttpMethod.put, urlTemplate : urlTemplate, pathParameters :  pathParameters);
         requestInfo.configure<WithInternalaccountItemRequestBuilderPutQueryParameters>(requestConfiguration, () => WithInternalaccountItemRequestBuilderPutQueryParameters());
-        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=87');
-        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=87', body);
+        requestInfo.headers.put('Accept', 'application/vnd.topicus.keyhub+json;version=88');
+        requestInfo.setContentFromParsable(requestAdapter, 'application/vnd.topicus.keyhub+json;version=88', body);
         return requestInfo;
     }
 }
